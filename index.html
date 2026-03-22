@@ -117,21 +117,21 @@ nav.scrolled {
 }
 nav .container { display: flex; align-items: center; justify-content: space-between; }
 
-.nav-logo { font-family: var(--font-heading); font-weight: 300; font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; }
-.nav-logo em { font-style: normal; color: var(--text-tertiary); font-weight: 200; }
+.nav-logo { font-family: var(--font-heading); font-weight: 400; font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; }
+.nav-logo em { font-style: normal; color: var(--text-secondary); font-weight: 300; }
 
 .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
 .nav-links a {
   font-size: 0.72rem; font-weight: 400; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--text-tertiary); transition: color 0.3s ease;
+  text-transform: uppercase; color: var(--text-secondary); transition: color 0.3s ease;
   position: relative;
 }
 .nav-links a::after {
   content: ''; position: absolute; bottom: -4px; left: 0;
-  width: 0; height: 1px; background: var(--text-primary);
+  width: 0; height: 1px; background: var(--accent-blue);
   transition: width 0.3s var(--ease-out);
 }
-.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover { color: var(--accent-blue); }
 .nav-links a:hover::after { width: 100%; }
 
 .nav-cta {
@@ -154,8 +154,8 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
 .footer-copy { font-size: 0.68rem; color: var(--text-tertiary); }
 
 /* --- SCROLL ANIMATIONS --- */
-.reveal { opacity: 1; transform: none; }
-.reveal.visible { opacity: 1; transform: none; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-d1 { transition-delay: 0.1s; }
 .reveal-d2 { transition-delay: 0.2s; }
 .reveal-d3 { transition-delay: 0.3s; }
@@ -178,7 +178,44 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
   .footer-layout { flex-direction: column; text-align: center; }
 }
 
-</style>
+
+/* DROPDOWN */
+.nav-links .dropdown { position: relative; }
+.nav-links .dropdown > a::after { display: none; }
+.dropdown-menu {
+  display: none; position: absolute; top: 100%; padding-top: 12px; left: 50%;
+  transform: translateX(-50%); background: rgba(10,10,10,0.97);
+  backdrop-filter: blur(20px); border: 1px solid var(--border-subtle);
+  min-width: 200px; padding: 8px 0; z-index: 999;
+}
+.dropdown-menu a {
+  display: block; padding: 10px 20px; font-size: 0.72rem;
+  font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-tertiary); transition: color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+.dropdown-menu a:hover { color: var(--text-primary); background: var(--bg-tertiary); }
+.nav-links .dropdown:hover .dropdown-menu { display: block; }
+
+    .has-dropdown { position: relative; }
+    .has-dropdown > ul.dropdown {
+      display: none; position: absolute; top: 100%; left: 0;
+      background: var(--bg-secondary, #111); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 4px; padding-top: 8px; min-width: 200px;
+      z-index: 200; list-style: none; margin: 0;
+    }
+    .has-dropdown > ul.dropdown li a {
+      display: block; padding: 8px 20px; font-size: .75rem;
+      color: #9A9A9A; text-transform: none; letter-spacing: .02em;
+      white-space: nowrap; transition: color .2s; text-decoration: none;
+    }
+    .has-dropdown > ul.dropdown li a:hover { color: #F0EDE8; background: rgba(255,255,255,.03); }
+    .has-dropdown:hover > ul.dropdown { display: block; }
+    @media(max-width:768px){
+      .has-dropdown > ul.dropdown { position: static; background: transparent; border: none; padding: 0 0 0 16px; min-width: 0; }
+      .has-dropdown > ul.dropdown li a { padding: 6px 0; font-size: .8rem; }
+    }
+  </style>
   <style>
     /* ===== PAGE-SPECIFIC STYLES ===== */
 
@@ -252,7 +289,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     .problem-card .num { font-family: var(--font-heading); font-size: 0.75rem; color: var(--text-tertiary); margin-bottom: 14px; }
     .problem-card h3 { margin-bottom: 8px; font-size: 1.1rem; }
     .problem-card p { font-size: 0.85rem; line-height: 1.65; }
-    /* Staggered */
+    /* Staggered reveal */
     .problem-card.reveal:nth-child(1) { transition-delay: 0s; }
     .problem-card.reveal:nth-child(2) { transition-delay: 0.12s; }
     .problem-card.reveal:nth-child(3) { transition-delay: 0.24s; }
@@ -429,19 +466,6 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       .del-card { position: relative; top: 0 !important; grid-template-columns: 1fr; min-height: auto; }
       .image-band { height: 200px; }
     }
-  
-    .has-dropdown{position:relative}
-    .dropdown{display:none;position:absolute;top:100%;left:0;background:var(--bg-secondary);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:8px 0;min-width:200px;z-index:200;list-style:none;margin:0;padding-top:8px}
-    .dropdown li{padding:0}
-    .dropdown li a{display:block;padding:8px 20px;font-size:.75rem;color:var(--text-secondary);text-transform:none;letter-spacing:.02em;white-space:nowrap;transition:color .2s}
-    .dropdown li a:hover{color:var(--text-primary);background:rgba(255,255,255,.03)}
-    .has-dropdown:hover .dropdown{display:block}
-    @media(max-width:768px){
-      .dropdown{position:static;display:none;background:transparent;border:none;padding:0 0 0 16px;min-width:0;margin:4px 0}
-      .dropdown li a{padding:6px 0;font-size:.8rem}
-      .has-dropdown:hover .dropdown,.nav-links.open .has-dropdown .dropdown{display:block}
-    }
-
   </style>
 </head>
 <body>
@@ -451,7 +475,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     <div class="container">
       <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
       <ul class="nav-links" id="navLinks">
-<li><a href="#problem">What</a></li>
+        <li><a href="/#problem">What</a></li>
         <li class="has-dropdown"><a href="/audit.html">How</a>
           <ul class="dropdown">
             <li><a href="/audit.html">Intelligence Audit</a></li>
@@ -459,18 +483,24 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
             <li><a href="/roi.html">ROI Calculator</a></li>
           </ul>
         </li>
-        <li class="has-dropdown"><a href="#solution">Solutions</a>
+        <li class="has-dropdown"><a href="/#solution">Solutions</a>
           <ul class="dropdown">
             <li><a href="/solutions/cro.html">For the CRO</a></li>
             <li><a href="/solutions/ceo.html">For the CEO</a></li>
             <li><a href="/solutions/cfo.html">For the CFO</a></li>
             <li><a href="/solutions/sales-director.html">For Sales Directors</a></li>
-            <li><a href="/solutions/pmm.html">For PMM & Enablement</a></li>
+            <li><a href="/solutions/pmm.html">For PMM &amp; Enablement</a></li>
             <li><a href="/solutions/revops.html">For RevOps</a></li>
             <li><a href="/solutions/training.html">For Sales Training</a></li>
           </ul>
         </li>
-        <li><a href="/blog/">Resources</a></li>
+        <li class="has-dropdown"><a href="/blog/">Resources</a>
+          <ul class="dropdown">
+            <li><a href="/blog/">Articles</a></li>
+            <li><a href="/roi.html">ROI Calculator</a></li>
+            <li><a href="/about.html">Founder</a></li>
+          </ul>
+        </li>
         <li><a href="/contact.html" class="nav-cta">Contact</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -500,7 +530,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
   </section>
 
   <!-- QUOTE BANNER -->
-  <div class="quote-banner">
+  <div class="quote-banner reveal">
     <!-- REPLACE: add background-image url and remove .placeholder class -->
     <div class="quote-bg placeholder"></div>
     <div class="container--narrow">
@@ -512,16 +542,16 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
   <!-- PROBLEM -->
   <section id="problem">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <div class="label">The Problem</div>
         <h2>Revenue teams are flying blind.</h2>
         <p>Your tools capture everything. They synthesize nothing. The gap between data and intelligence is where deals die.</p>
       </div>
       <div class="problem-grid">
-        <div class="problem-card"><div class="num">01</div><h3>No pattern synthesis at scale</h3><p>Your team listened to 20 calls last quarter. You recorded 500. The patterns in the other 480 are invisible.</p></div>
-        <div class="problem-card"><div class="num">02</div><h3>Stale competitive intelligence</h3><p>Battlecards built 18 months ago by a PMM who's since left. Pricing is wrong. Positioning is stale. Reps stopped using them.</p></div>
-        <div class="problem-card"><div class="num">03</div><h3>No buyer voice analysis</h3><p>You lost 12 deals to Competitor X. You don't know the three objections that killed them — or the talk track that could have saved them.</p></div>
-        <div class="problem-card"><div class="num">04</div><h3>Leaders watch the scoreboard, not the game</h3><p>Dashboards show what happened. Nobody is telling you why — or what to do differently tomorrow.</p></div>
+        <div class="problem-card reveal"><div class="num">01</div><h3>No pattern synthesis at scale</h3><p>Your team listened to 20 calls last quarter. You recorded 500. The patterns in the other 480 are invisible.</p></div>
+        <div class="problem-card reveal"><div class="num">02</div><h3>Stale competitive intelligence</h3><p>Battlecards built 18 months ago by a PMM who's since left. Pricing is wrong. Positioning is stale. Reps stopped using them.</p></div>
+        <div class="problem-card reveal"><div class="num">03</div><h3>No buyer voice analysis</h3><p>You lost 12 deals to Competitor X. You don't know the three objections that killed them — or the talk track that could have saved them.</p></div>
+        <div class="problem-card reveal"><div class="num">04</div><h3>Leaders watch the scoreboard, not the game</h3><p>Dashboards show what happened. Nobody is telling you why — or what to do differently tomorrow.</p></div>
       </div>
     </div>
   </section>
@@ -538,11 +568,11 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
   <!-- CASE STUDIES -->
   <section id="results" class="cases">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <div class="label">Results</div>
         <h2>Capability, proven.</h2>
       </div>
-      <div class="case-card">
+      <div class="case-card reveal">
         <div class="case-info">
           <div class="case-meta"><span class="label">Case Study</span><span class="dot"></span><span class="label">Austin, TX</span></div>
           <h3>B2B Endpoint Security Platform</h3>
@@ -555,7 +585,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           <div class="metric"><div class="val">-40%</div><div class="ml">Rep ramp time</div></div>
         </div>
       </div>
-      <div class="case-card" style="margin-top: 2px;">
+      <div class="case-card reveal" style="margin-top: 2px;">
         <div class="case-info">
           <div class="case-meta"><span class="label">Case Study</span><span class="dot"></span><span class="label">Denver, CO</span></div>
           <h3>B2B Data Integration & ETL Platform</h3>
@@ -579,21 +609,21 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
   </div>
 
   <!-- ANIMATED DIVIDER -->
-  <div class="divider-animated"></div>
+  <div class="divider-animated reveal"></div>
 
   <!-- SOLUTION -->
   <section id="solution">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <div class="label">The Solution</div>
         <h2><span class="typewriter-scroll" id="typeSolution" data-text="What RAINCLOUD does differently."></span></h2>
         <p>Wider analysis. Deeper synthesis. A human intelligence layer no platform can replicate.</p>
       </div>
       <div class="diff-grid">
-        <div class="diff-card"><h3>Scale, not samples</h3><p>500+ calls per quarter analyzed — not 10 interviews. Statistical patterns from your entire call library, not anecdotes from a cherry-picked sample.</p></div>
-        <div class="diff-card"><h3>Cross-source synthesis</h3><p>Sales calls + CRM deal data + emails + post-mortem feedback — all correlated. What buyers told you, what reps said, what the CRM shows.</p></div>
-        <div class="diff-card"><h3>Actionable output, not artifacts</h3><p>Living battlecards. Board-ready narratives. Weekly competitive radar. Delivered to your inbox — zero logins, zero dashboards.</p></div>
-        <div class="diff-card"><h3>Built by a 3x VP of Sales</h3><p>Not consultants guessing from the outside. A practitioner who's sat in the CRO chair and knows which insights actually change pipeline outcomes.</p></div>
+        <div class="diff-card reveal"><h3>Scale, not samples</h3><p>500+ calls per quarter analyzed — not 10 interviews. Statistical patterns from your entire call library, not anecdotes from a cherry-picked sample.</p></div>
+        <div class="diff-card reveal"><h3>Cross-source synthesis</h3><p>Sales calls + CRM deal data + emails + post-mortem feedback — all correlated. What buyers told you, what reps said, what the CRM shows.</p></div>
+        <div class="diff-card reveal"><h3>Actionable output, not artifacts</h3><p>Living battlecards. Board-ready narratives. Weekly competitive radar. Delivered to your inbox — zero logins, zero dashboards.</p></div>
+        <div class="diff-card reveal"><h3>Built by a 3x VP of Sales</h3><p>Not consultants guessing from the outside. A practitioner who's sat in the CRO chair and knows which insights actually change pipeline outcomes.</p></div>
       </div>
       <a href="/landscape.html" class="landscape-link">See how we compare to Klue, Clozd, Gong, and others <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
@@ -611,17 +641,17 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
   <!-- PROCESS + DELIVERABLES -->
   <section id="process" style="background: var(--bg-secondary);">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <div class="label">Process</div>
         <h2>From flying blind to higher close rates in 30 days.</h2>
       </div>
-      <div class="process-row">
+      <div class="process-row reveal">
         <div class="process-step"><div class="sn">01</div><h3><a href="/audit.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid var(--border-medium);">Intelligence Audit</a></h3><p>We connect to your call recording software (Gong, Chorus, Fireflies, etc), analyze your last two quarters of competitive deals, and present a full synthesis with artifacts showing the patterns you've been missing to leadership in a 60 minute session.</p><div class="price">$7,500 one-time — credited against any ongoing retainer</div></div>
         <div class="process-step"><div class="sn">02</div><h3>System Deployment</h3><p>We build your intelligence layer — automated call analysis, competitive monitoring, battlecard generation. Deliverables land in your inbox. Operational within 30 days.</p><div class="price">Fully deployed in under a month</div></div>
         <div class="process-step"><div class="sn">03</div><h3>Continuous Intelligence</h3><p>Quarterly win/loss analysis. Monthly battlecard refreshes. Weekly competitive radar. Board-ready narratives. Intelligence that compounds every quarter.</p><div class="price">Starting at $25,000 per quarter</div></div>
       </div>
 
-      <div class="section-header" style="margin-top: clamp(48px, 8vh, 80px);">
+      <div class="section-header reveal" style="margin-top: clamp(48px, 8vh, 80px);">
         <h2>Four deliverables. <span style="color: var(--text-tertiary);">Zero dashboards.</span></h2>
       </div>
       <div class="del-stack">
@@ -654,7 +684,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
   <!-- FOUNDER -->
   <section id="founder">
     <div class="container">
-      <div class="founder-row">
+      <div class="founder-row reveal">
         <div class="founder-photo"><img src="assets/founder-headshot.jpg" alt="Colin Dowling, Founder of RAINCLOUD"></div>
         <div class="founder-info">
           <div class="label" style="margin-bottom: 16px;">About the Founder</div>
@@ -696,7 +726,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <span class="footer-logo">RAINCLOUD</span>
         <ul class="footer-links">
           <li><a href="/blog/">Resources</a></li>
-          <li><a href="mailto:hello@rncld.com">hello@rncld.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#1c74797070735c6e727f7078327f7371"><span class="__cf_email__" data-cfemail="e68e838a8a89a69488858a82c885898b">[email&#160;protected]</span></a></li>
           <li><a href="https://rncld.com" target="_blank">rncld.com</a></li>
         </ul>
         <span class="footer-copy">&copy; 2026 RAINCLOUD. All rights reserved.</span>
@@ -704,7 +734,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Nav scroll
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
@@ -714,7 +744,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     t.addEventListener('click', () => l.classList.toggle('open'));
     l.querySelectorAll('a').forEach(a => a.addEventListener('click', () => l.classList.remove('open')));
 
-    // Scroll
+    // Scroll reveal
     const obs = new IntersectionObserver(entries => {
       entries.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); });
     }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
@@ -784,36 +814,4 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        const href = a.getAttribute('href');
-        if (href.startsWith('#')) {
-          const target = document.querySelector(href);
-          if (target) target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Nav scroll effect
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    });
-
-    // Mobile nav toggle
-    document.getElementById('navToggle').addEventListener('click', () => {
-      document.getElementById('navLinks').classList.toggle('open');
-    });
-
-    // Reveal on scroll
-    constEls = document.querySelectorAll('.reveal');
-    constObs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1 });
-   Els.forEach(el =>Obs.observe(el));
-
-  </script>
-</body>
-</html>
+      a.addEventListener('cli
