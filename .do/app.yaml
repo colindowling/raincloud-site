@@ -1,0 +1,14 @@
+name: raincloud-site
+region: nyc
+static_sites:
+  - name: raincloud-web
+    github:
+      repo: your-github-username/raincloud-site
+      branch: main
+      deploy_on_push: true
+    source_dir: /
+    build_command: ""
+    output_dir: /
+    routes:
+      - path: /
+    environment_slug: html

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROI Calculator - RAINCLOUD</title>
+  <meta name="description" content="Calculate the ROI of competitive intelligence for your sales team. Enter your numbers and see what a 10-point close rate improvement means for revenue.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}:root{--bg:#0A0A0A;--card:#111111;--border:#1e1e1e;--border2:#2a2a2a;--text:#F0EDE8;--dim:#8a8a8a;--muted:#6a6a6a;--faint:#5a5a5a;--blue:#4A9EBF;--green:#4AC878;--gold:#C8A84A;--red:#C84A4A}body{background:var(--bg);color:var(--text);font-family:'Manrope',sans-serif;padding:0 20px}a{color:var(--text);text-decoration:none}.h{font-family:'Montserrat',sans-serif}
+    .wrap{max-width:860px;margin:0 auto;padding:48px 0 80px}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:16px 20px}
+    .nav-inner{max-width:860px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+    .nav-logo{font-family:'Montserrat',sans-serif;font-weight:300;font-size:1rem;letter-spacing:.25em;text-transform:uppercase}.nav-logo em{font-style:normal;color:var(--dim);font-weight:200}
+    .nav-link{font-size:.75rem;padding:8px 20px;border:1px solid var(--text);color:var(--text);font-family:'Montserrat',sans-serif;letter-spacing:.1em;text-transform:uppercase;transition:all .3s}.nav-link:hover{background:var(--text);color:var(--bg)}
+    .label{font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:var(--blue);margin-bottom:12px}
+    h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:200;line-height:1.2;margin-bottom:12px}
+    .sub{font-size:14px;color:var(--muted);line-height:1.7;max-width:540px;margin-bottom:48px}
+    .input-box{padding:36px 32px 20px;background:var(--card);border:1px solid var(--border);border-radius:4px;margin-bottom:40px}
+    .slider-wrap{margin-bottom:36px}
+    .slider-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+    .slider-label{font-size:13px;color:var(--dim);letter-spacing:.04em}
+    .slider-val{font-size:22px;font-weight:200;color:var(--text);font-family:'Montserrat',sans-serif}
+    .slider-track{position:relative;height:36px;display:flex;align-items:center}
+    .track-bg{position:absolute;width:100%;height:2px;background:var(--border2);border-radius:1px}
+    .track-fill{position:absolute;height:2px;background:var(--blue);border-radius:1px;transition:width .1s}
+    .track-thumb{position:absolute;width:16px;height:16px;border-radius:50%;background:var(--text);box-shadow:0 0 12px rgba(74,158,191,.3);pointer-events:none;transition:left .1s}
+    input[type=range]{position:absolute;width:100%;height:36px;opacity:0;cursor:pointer;margin:0}
+    .verdict{padding:24px 32px;background:var(--card);border-radius:4px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .verdict-label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:4px}
+    .verdict-text{font-size:20px;font-weight:300;font-family:'Montserrat',sans-serif}
+    .verdict-roi{font-size:32px;font-weight:200;font-family:'Montserrat',sans-serif;text-align:right}
+    .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--border);border-radius:4px;overflow:hidden;margin-bottom:40px}
+    .metric-card{background:var(--bg);padding:24px 20px}
+    .metric-card.hl{background:rgba(74,158,191,.04)}
+    .mc-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:4px}
+    .mc-val{font-size:24px;font-weight:200;color:var(--text);font-family:'Montserrat',sans-serif;line-height:1.2}
+    .mc-val.blue{color:var(--blue)}
+    .mc-sub{font-size:12px;color:var(--faint);margin-top:2px}
+    .bars{padding:32px;background:var(--card);border:1px solid var(--border);border-radius:4px;margin-bottom:40px}
+    .bars-label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:24px}
+    .bar-item{margin-bottom:16px}
+    .bar-head{display:flex;justify-content:space-between;margin-bottom:6px;font-size:12px}
+    .bar-name{color:var(--dim)}.bar-amt{font-family:'Montserrat',sans-serif}
+    .bar-track{height:6px;background:#1a1a1a;border-radius:3px;overflow:hidden}
+    .bar-fill{height:100%;border-radius:3px;transition:width .6s cubic-bezier(.25,1,.5,1)}
+    .bar-diff{margin-top:20px;padding-top:16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:baseline}
+    .bar-diff-label{font-size:12px;color:var(--muted)}
+    .bar-diff-val{font-size:18px;font-weight:300;color:var(--green);font-family:'Montserrat',sans-serif}
+    .cta-box{padding:40px 32px;background:var(--card);border:1px solid var(--border);border-radius:4px;text-align:center}
+    .cta-box h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:200;margin-bottom:12px;line-height:1.4}
+    .cta-box p{font-size:13px;color:var(--muted);line-height:1.7;max-width:480px;margin:0 auto 24px}
+    .cta-btn{display:inline-block;padding:14px 32px;background:transparent;color:var(--text);border:1px solid var(--text);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .3s}.cta-btn:hover{background:var(--text);color:var(--bg)}
+    .disclaimer{font-size:11px;color:#3a3a3a;margin-top:24px;line-height:1.6;text-align:center}
+  
+    .has-dropdown{position:relative}
+    .dropdown{display:none;position:absolute;top:100%;left:0;background:var(--bg-secondary);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:8px 0;min-width:200px;z-index:200;list-style:none;margin:8px 0 0}
+    .dropdown li{padding:0}
+    .dropdown li a{display:block;padding:8px 20px;font-size:.75rem;color:var(--text-secondary);text-transform:none;letter-spacing:.02em;white-space:nowrap;transition:color .2s}
+    .dropdown li a:hover{color:var(--text-primary);background:rgba(255,255,255,.03)}
+    .has-dropdown:hover .dropdown{display:block}
+    @media(max-width:768px){
+      .dropdown{position:static;display:none;background:transparent;border:none;padding:0 0 0 16px;min-width:0;margin:4px 0}
+      .dropdown li a{padding:6px 0;font-size:.8rem}
+      .has-dropdown:hover .dropdown,.nav-links.open .has-dropdown .dropdown{display:block}
+    }
+
+  </style>
+</head>
+<body>
+  <nav class="nav"><div class="nav-inner"><a href="/" class="nav-logo">RAIN<em>CLOUD</em></a><a href="/contact.html" class="nav-link">Contact</a></div></nav>
+
+  <div class="wrap" style="padding-top:100px">
+    <div class="label">RAINCLOUD ROI Calculator</div>
+    <h1>Is competitive intelligence<br>worth it for your team?</h1>
+    <p class="sub">Enter your numbers. We'll show what a 10-point close rate improvement means for your revenue.</p>
+
+    <div class="input-box">
+      <div class="slider-wrap">
+        <div class="slider-head"><span class="slider-label">Average Deal Size</span><span class="slider-val" id="ds-val">$50K</span></div>
+        <div class="slider-track"><div class="track-bg"></div><div class="track-fill" id="ds-fill"></div><div class="track-thumb" id="ds-thumb"></div><input type="range" min="10000" max="500000" step="5000" value="50000" id="ds"></div>
+      </div>
+      <div class="slider-wrap">
+        <div class="slider-head"><span class="slider-label">Current Competitive Close Rate</span><span class="slider-val" id="cr-val">35%</span></div>
+        <div class="slider-track"><div class="track-bg"></div><div class="track-fill" id="cr-fill"></div><div class="track-thumb" id="cr-thumb"></div><input type="range" min="10" max="70" step="1" value="35" id="cr"></div>
+      </div>
+      <div class="slider-wrap">
+        <div class="slider-head"><span class="slider-label">Competitive Deals Per Quarter</span><span class="slider-val" id="dq-val">80</span></div>
+        <div class="slider-track"><div class="track-bg"></div><div class="track-fill" id="dq-fill"></div><div class="track-thumb" id="dq-thumb"></div><input type="range" min="10" max="300" step="5" value="80" id="dq"></div>
+      </div>
+    </div>
+
+    <div class="verdict" id="verdict"></div>
+    <div class="metrics" id="metrics"></div>
+    <div class="bars" id="bars"></div>
+    <div class="cta-box" id="cta"></div>
+    <p class="disclaimer">This calculator assumes a 10-point close rate improvement in competitive deals, consistent with outcomes observed across RAINCLOUD engagements. Actual results vary. The Intelligence Audit provides a data-backed projection specific to your pipeline.</p>
+  </div>
+
+  <script>
+    const $ = id => document.getElementById(id);
+    const fmt = n => '$' + Math.round(n).toLocaleString();
+    const ANNUAL = 100000;
+
+    function updateSlider(id, min, max) {
+      const el = $(id);
+      const pct = ((el.value - min) / (max - min)) * 100;
+      $(id+'-fill').style.width = pct + '%';
+      $(id+'-thumb').style.left = pct + '%';
+    }
+
+    function calc() {
+      const ds = +$('ds').value, cr = +$('cr').value, dq = +$('dq').value;
+      $('ds-val').textContent = '$' + (ds/1000).toFixed(0) + 'K';
+      $('cr-val').textContent = cr + '%';
+      $('dq-val').textContent = dq;
+      updateSlider('ds', 10000, 500000);
+      updateSlider('cr', 10, 70);
+      updateSlider('dq', 10, 300);
+
+      const ncr = cr + 10;
+      const curWins = dq * (cr/100), newWins = dq * (ncr/100);
+      const addWins = newWins - curWins;
+      const addRevQ = addWins * ds, addRevY = addRevQ * 4;
+      const roi = addRevY / ANNUAL;
+      const curRevQ = curWins * ds, newRevQ = newWins * ds;
+
+      const vc = roi >= 10 ? 'var(--green)' : roi >= 5 ? 'var(--blue)' : roi >= 2 ? 'var(--gold)' : 'var(--red)';
+      const vt = roi >= 10 ? 'No-brainer' : roi >= 5 ? 'Strong fit' : roi >= 2 ? 'Worth exploring' : 'May not be the right fit yet';
+
+      $('verdict').style.borderColor = vc.replace('var(--green)','#4AC87833').replace('var(--blue)','#4A9EBF33').replace('var(--gold)','#C8A84A33').replace('var(--red)','#C84A4A33');
+      $('verdict').innerHTML = '<div><div class="verdict-label">Verdict</div><div class="verdict-text" style="color:'+vc+'">'+vt+'</div></div><div style="text-align:right"><div class="verdict-label">Annual ROI</div><div class="verdict-roi" style="color:'+vc+'">'+roi.toFixed(1)+'x</div></div>';
+
+      $('metrics').innerHTML = `
+        <div class="metric-card hl"><div class="mc-label">Additional Revenue / Quarter</div><div class="mc-val blue">${fmt(addRevQ)}</div><div class="mc-sub">${addWins.toFixed(1)} additional wins</div></div>
+        <div class="metric-card hl"><div class="mc-label">Additional Revenue / Year</div><div class="mc-val blue">${fmt(addRevY)}</div><div class="mc-sub">At 10pt close rate improvement</div></div>
+        <div class="metric-card"><div class="mc-label">RAINCLOUD Annual Cost</div><div class="mc-val">$100K</div><div class="mc-sub">$25K/quarter after audit</div></div>
+        <div class="metric-card"><div class="mc-label">Net Revenue Gain / Year</div><div class="mc-val">${fmt(addRevY - ANNUAL)}</div><div class="mc-sub">After RAINCLOUD investment</div></div>`;
+
+      const maxRev = newRevQ;
+      $('bars').innerHTML = `
+        <div class="bars-label">Quarterly Revenue Comparison</div>
+        <div class="bar-item"><div class="bar-head"><span class="bar-name">Current (${cr}% close rate)</span><span class="bar-amt" style="color:var(--dim)">${fmt(curRevQ)}</span></div><div class="bar-track"><div class="bar-fill" style="width:${(curRevQ/maxRev*100).toFixed(1)}%;background:#3a3a3a"></div></div></div>
+        <div class="bar-item"><div class="bar-head"><span class="bar-name">With RAINCLOUD (${ncr}% close rate)</span><span class="bar-amt" style="color:var(--blue)">${fmt(newRevQ)}</span></div><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--blue)"></div></div></div>
+        <div class="bar-diff"><span class="bar-diff-label">Quarterly difference</span><span class="bar-diff-val">+${fmt(addRevQ)}</span></div>`;
+
+      const ctaText = roi >= 5 ? 'Your pipeline math makes this an easy decision.' : roi >= 2 ? 'The numbers suggest it\'s worth a conversation.' : 'Let\'s find out if there\'s a fit.';
+      $('cta').innerHTML = `<h2>${ctaText}</h2><p>The Intelligence Audit costs $7,500, takes two weeks, and is credited against any ongoing retainer. See the patterns hiding in your data before you commit to anything.</p><a href="/audit.html" class="cta-btn">Book Your Intelligence Audit &rarr;</a>`;
+    }
+
+    $('ds').addEventListener('input', calc);
+    $('cr').addEventListener('input', calc);
+    $('dq').addEventListener('input', calc);
+    calc();
+  </script>
+</body>
+</html>

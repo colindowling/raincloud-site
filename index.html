@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAINCLOUD — Adaptive GTM Intelligence</title>
+  <meta name="description" content="RAINCLOUD analyzes your call and CRM data at scale, delivering competitive intelligence that changes outcomes. Win/loss patterns. Living battlecards. Competitive alerts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+/* ========================================
+   RAINCLOUD DESIGN SYSTEM
+   Montserrat Light headings / Manrope body
+   Dark, monochromatic, premium
+   ======================================== */
+
+/* --- VARIABLES --- */
+:root {
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #111111;
+  --bg-tertiary: #181818;
+  --bg-card: #141414;
+  --text-primary: #F0EDE8;
+  --text-secondary: #9A9A9A;
+  --text-tertiary: #5A5A5A;
+  --accent-blue: #4A9EBF;
+  --accent-blue-dim: rgba(74, 158, 191, 0.12);
+  --accent-red: #BF4A4A;
+  --accent-green: #4ABF7A;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-medium: rgba(255, 255, 255, 0.1);
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --container: 1280px;
+  --container-narrow: 880px;
+}
+
+/* --- RESET --- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-body); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
+::selection { background: var(--accent-blue); color: var(--bg-primary); }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* --- GRAIN OVERLAY --- */
+body::after {
+  content: '';
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9999; opacity: 0.4;
+}
+
+/* --- LAYOUT --- */
+.container { max-width: var(--container); margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+.container--narrow { max-width: var(--container-narrow); margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+section { padding: clamp(64px, 10vh, 140px) 0; }
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.4rem, 5.5vw, 4.5rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+h3 { font-size: clamp(1.2rem, 1.8vw, 1.5rem); font-weight: 400; }
+p { font-size: clamp(0.9rem, 1vw, 1rem); color: var(--text-secondary); max-width: 600px; }
+
+.label {
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary);
+}
+.label--accent { color: var(--accent-blue); }
+
+.section-header { margin-bottom: clamp(40px, 5vh, 64px); }
+.section-header .label { margin-bottom: 16px; }
+.section-header p { margin-top: 16px; }
+
+.divider { width: 100%; height: 1px; background: var(--border-subtle); }
+
+/* --- BUTTONS --- */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 32px; font-family: var(--font-body); font-size: 0.8rem;
+  font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+  border: 1px solid var(--border-medium); background: transparent;
+  color: var(--text-primary); cursor: pointer; position: relative; overflow: hidden;
+  transition: all 0.4s var(--ease-out);
+}
+.btn::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: var(--text-primary); transform: translateX(-101%);
+  transition: transform 0.4s var(--ease-out);
+}
+.btn:hover::before { transform: translateX(0); }
+.btn:hover { color: var(--bg-primary); border-color: var(--text-primary); }
+.btn span, .btn svg { position: relative; z-index: 1; }
+.btn svg { transition: transform 0.4s var(--ease-out); }
+.btn:hover svg { transform: translateX(4px); }
+
+.btn--primary { background: var(--bg-primary); color: var(--text-primary); border-color: var(--text-primary); }
+.btn--primary::before { background: var(--text-primary); }
+.btn--primary:hover { color: var(--bg-primary); }
+
+.btn-arrow {
+  width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2;
+}
+
+/* --- NAVIGATION --- */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 18px 0; transition: all 0.5s var(--ease-out);
+}
+nav.scrolled {
+  background: rgba(10, 10, 10, 0.92); backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-subtle);
+  padding: 12px 0;
+}
+nav .container { display: flex; align-items: center; justify-content: space-between; }
+
+.nav-logo { font-family: var(--font-heading); font-weight: 300; font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; }
+.nav-logo em { font-style: normal; color: var(--text-tertiary); font-weight: 200; }
+
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 0.72rem; font-weight: 400; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-tertiary); transition: color 0.3s ease;
+  position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px; background: var(--text-primary);
+  transition: width 0.3s var(--ease-out);
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  font-size: 0.68rem !important; padding: 8px 20px;
+  border: 1px solid var(--border-medium); transition: all 0.3s ease;
+}
+.nav-cta:hover { border-color: var(--text-primary); background: var(--text-primary); color: var(--bg-primary) !important; }
+.nav-cta::after { display: none !important; }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1px; background: var(--text-primary); margin: 5px 0; transition: all 0.3s ease; }
+
+/* --- FOOTER --- */
+footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
+.footer-layout { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 300; font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-tertiary); }
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a { font-size: 0.72rem; color: var(--text-tertiary); transition: color 0.3s ease; }
+.footer-links a:hover { color: var(--text-primary); }
+.footer-copy { font-size: 0.68rem; color: var(--text-tertiary); }
+
+/* --- SCROLL ANIMATIONS --- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: 100%; left: 0; right: 0; background: rgba(10, 10, 10, 0.97);
+    backdrop-filter: blur(20px); padding: 28px; gap: 20px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .footer-layout { flex-direction: column; text-align: center; }
+}
+
+</style>
+  <style>
+    /* ===== PAGE-SPECIFIC STYLES ===== */
+
+    /* HERO */
+    .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 100px; position: relative; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 12px; margin-bottom: 32px;
+      opacity: 0; animation: fadeUp 0.7s var(--ease-out) 0.2s forwards;
+    }
+    .hero-eyebrow .line { width: 36px; height: 1px; background: var(--accent-blue); }
+    .hero h1 { margin-bottom: 24px; max-width: 780px; }
+    .hero h1 .thin { font-weight: 200; color: var(--accent-blue); }
+    .hero h1 .typewriter {
+      display: inline;
+      border-right: 2px solid var(--text-primary);
+      animation: blink 0.8s step-end infinite;
+    }
+    .hero h1 .typewriter.done { border-right-color: transparent; animation: none; }
+    .hero h1 .line2 { opacity: 0; }
+    .hero h1 .line2.typing { opacity: 1; }
+    .hero h1 .line2 .typewriter { border-right: 2px solid var(--accent-blue); }
+    @keyframes blink { 50% { border-color: transparent; } }
+    .hero-sub {
+      font-size: clamp(0.95rem, 1.2vw, 1.08rem); line-height: 1.7; margin-bottom: 40px;
+      max-width: 540px; opacity: 0; animation: fadeUp 0.7s var(--ease-out) 0.5s forwards;
+    }
+    .hero-cta { opacity: 0; animation: fadeUp 0.7s var(--ease-out) 0.65s forwards; }
+    .hero-stats {
+      display: flex; gap: 48px; margin-top: 72px; padding-top: 32px;
+      border-top: 1px solid var(--border-subtle);
+      opacity: 0; animation: fadeUp 0.7s var(--ease-out) 0.8s forwards;
+    }
+    .hero-stat .num { font-family: var(--font-heading); font-size: 2rem; font-weight: 200; letter-spacing: -0.02em; }
+    .hero-stat .desc { font-size: 0.75rem; color: var(--text-tertiary); margin-top: 2px; }
+
+    /* QUOTE BANNER */
+    .quote-banner {
+      position: relative; padding: clamp(80px, 10vh, 120px) 0; text-align: center; overflow: hidden;
+    }
+    .quote-banner .quote-bg {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background-size: cover; background-position: center;
+      filter: grayscale(100%) brightness(0.2) contrast(1.3);
+    }
+    .quote-banner .quote-bg.placeholder { background: var(--bg-secondary); }
+    .quote-banner::after {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(10,10,10,0.7); pointer-events: none;
+    }
+    .quote-banner .container--narrow { position: relative; z-index: 2; }
+    .quote-banner blockquote {
+      font-family: var(--font-heading); font-size: clamp(1.3rem, 2.5vw, 2rem);
+      font-weight: 200; font-style: italic; line-height: 1.4; max-width: 700px; margin: 0 auto 16px;
+    }
+    .quote-banner cite { font-style: normal; font-size: 0.8rem; color: var(--text-tertiary); }
+    .quote-banner cite strong { color: var(--text-secondary); font-weight: 500; }
+
+    /* ANIMATED DIVIDER */
+    .divider-animated { width: 100%; height: 1px; position: relative; overflow: hidden; }
+    .divider-animated::after {
+      content: ''; position: absolute; top: 0; left: 0; height: 1px; width: 100%;
+      background: linear-gradient(to right, transparent, var(--border-medium) 20%, var(--border-medium) 80%, transparent);
+      transform: scaleX(0); transform-origin: left; transition: transform 1.2s var(--ease-out);
+    }
+    .divider-animated.visible::after { transform: scaleX(1); }
+
+    /* PROBLEM */
+    .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-subtle); }
+    .problem-card { background: var(--bg-primary); padding: clamp(28px, 3.5vw, 44px); transition: background 0.3s ease; }
+    .problem-card:hover { background: var(--bg-tertiary); }
+    .problem-card .num { font-family: var(--font-heading); font-size: 0.75rem; color: var(--text-tertiary); margin-bottom: 14px; }
+    .problem-card h3 { margin-bottom: 8px; font-size: 1.1rem; }
+    .problem-card p { font-size: 0.85rem; line-height: 1.65; }
+    /* Staggered reveal */
+    .problem-card.reveal:nth-child(1) { transition-delay: 0s; }
+    .problem-card.reveal:nth-child(2) { transition-delay: 0.12s; }
+    .problem-card.reveal:nth-child(3) { transition-delay: 0.24s; }
+    .problem-card.reveal:nth-child(4) { transition-delay: 0.36s; }
+
+    /* IMAGE BAND */
+    .image-band { position: relative; height: clamp(280px, 40vh, 440px); overflow: hidden; }
+    .image-band.band-tall { height: clamp(480px, 75vh, 760px); }
+    .image-band.band-tall-2 { height: clamp(380px, 55vh, 600px); }
+    .image-band .band-img {
+      position: absolute; top: -20%; left: 0; width: 100%; height: 140%;
+      object-fit: cover; filter: grayscale(100%) brightness(0.45) contrast(1.2); will-change: transform;
+    }
+    video.band-img {
+      top: 0; height: 100%; object-position: top center;
+    }
+    .image-band .band-placeholder {
+      width: 100%; height: 100%; background: var(--bg-secondary);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-tertiary); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .image-band .band-overlay {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to bottom, var(--bg-primary) 0%, rgba(10,10,10,0.25) 20%, rgba(10,10,10,0.25) 80%, var(--bg-primary) 100%);
+      pointer-events: none;
+    }
+    .band-cta-layer {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center; gap: 24px; z-index: 3;
+    }
+    .band-cta-layer a {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 18px 36px; font-family: var(--font-heading); font-size: 0.8rem;
+      font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.3s ease;
+    }
+    .band-cta-layer .cta-primary {
+      background: var(--bg-primary); color: var(--text-primary);
+      border: 1px solid var(--text-primary);
+    }
+    .band-cta-layer .cta-primary:hover { background: var(--text-primary); color: var(--bg-primary); }
+    .band-cta-layer .cta-secondary {
+      background: transparent; color: var(--text-primary);
+      border: 1px solid var(--border-medium);
+    }
+    .band-cta-layer .cta-secondary:hover { border-color: var(--text-primary); }
+
+    /* CASES */
+    .cases { background: var(--bg-secondary); }
+    .case-card { display: grid; grid-template-columns: 1.2fr 1fr; gap: 0; border: 1px solid var(--border-subtle); margin-bottom: 2px; }
+    .case-info { padding: clamp(28px, 3.5vw, 44px); }
+    .case-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .case-meta .dot { width: 5px; height: 5px; background: var(--accent-blue); border-radius: 50%; }
+    .case-info h3 { font-size: clamp(1.1rem, 1.6vw, 1.3rem); margin-bottom: 10px; }
+    .case-info p { font-size: 0.85rem; line-height: 1.65; }
+    .case-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-subtle); border-left: 1px solid var(--border-subtle); }
+    .metric { background: var(--bg-secondary); padding: clamp(18px, 2vw, 28px); }
+    .metric .val { font-family: var(--font-heading); font-size: clamp(1.4rem, 2.2vw, 1.8rem); font-weight: 200; letter-spacing: -0.02em; }
+    .metric .val--g { color: var(--accent-green); }
+    .metric .ml { font-size: 0.7rem; color: var(--text-tertiary); margin-top: 4px; line-height: 1.35; }
+    .case-note { font-size: 0.68rem; color: var(--text-tertiary); margin-top: 16px; font-style: italic; }
+
+    /* DIFFERENTIATOR */
+    .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-subtle); }
+    .diff-card { background: var(--bg-primary); padding: clamp(28px, 3.5vw, 44px); border-top: 3px solid transparent; }
+    .diff-card:nth-child(1) { border-color: var(--accent-blue); }
+    .diff-card:nth-child(2) { border-color: var(--accent-green); }
+    .diff-card:nth-child(3) { border-color: #BFA94A; }
+    .diff-card:nth-child(4) { border-color: var(--text-secondary); }
+    .diff-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .diff-card p { font-size: 0.85rem; line-height: 1.6; }
+    .diff-card.reveal:nth-child(1) { transition-delay: 0s; }
+    .diff-card.reveal:nth-child(2) { transition-delay: 0.15s; }
+    .diff-card.reveal:nth-child(3) { transition-delay: 0.3s; }
+    .diff-card.reveal:nth-child(4) { transition-delay: 0.45s; }
+
+    /* Scroll-triggered typewriter */
+    .typewriter-scroll {
+      display: inline;
+      border-right: 2px solid var(--text-primary);
+      animation: blink 0.8s step-end infinite;
+    }
+    .typewriter-scroll.done { border-right-color: transparent; animation: none; }
+    .landscape-link {
+      display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 32px;
+      font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-tertiary); transition: color 0.3s ease;
+    }
+    .landscape-link:hover { color: var(--text-primary); }
+    .landscape-link svg { transition: transform 0.3s var(--ease-out); }
+    .landscape-link:hover svg { transform: translateX(4px); }
+
+    /* PROCESS */
+    .process-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border-subtle); }
+    .process-step { background: var(--bg-secondary); padding: clamp(28px, 3.5vw, 44px); }
+    .process-step .sn {
+      font-family: var(--font-heading); font-size: 2.4rem; font-weight: 200;
+      color: var(--text-tertiary); margin-bottom: 16px; transition: color 0.3s ease;
+    }
+    .process-step:hover .sn { color: var(--accent-blue); }
+    .process-step h3 { font-size: 1.05rem; margin-bottom: 10px; }
+    .process-step p { font-size: 0.85rem; line-height: 1.65; }
+    .process-step .price { font-size: 0.75rem; color: var(--accent-blue); margin-top: 14px; font-weight: 500; }
+
+    /* STACKING DELIVERABLES */
+    .del-stack { position: relative; padding-bottom: 40px; }
+    .del-card {
+      position: sticky; top: 80px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      border: 1px solid var(--border-subtle); background: var(--bg-primary);
+      margin-bottom: 24px; min-height: 340px;
+      box-shadow: 0 -8px 30px rgba(0,0,0,0.5);
+    }
+    .del-card:nth-child(1) { z-index: 1; }
+    .del-card:nth-child(2) { z-index: 2; }
+    .del-card:nth-child(3) { z-index: 3; }
+    .del-card:nth-child(4) { z-index: 4; }
+    .del-text {
+      padding: clamp(28px, 3.5vw, 48px); display: flex; flex-direction: column; justify-content: center;
+    }
+    .del-text .cadence {
+      display: inline-block; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; padding: 4px 10px; margin-bottom: 14px; border: 1px solid; width: fit-content;
+    }
+    .c-w { color: var(--accent-blue); border-color: var(--accent-blue); }
+    .c-m { color: var(--accent-green); border-color: var(--accent-green); }
+    .c-q { color: #BFA94A; border-color: #BFA94A; }
+    .del-text h3 { font-size: clamp(1.2rem, 1.8vw, 1.5rem); margin-bottom: 12px; }
+    .del-text p { font-size: 0.88rem; line-height: 1.65; }
+    .del-img { position: relative; overflow: hidden; background: var(--bg-secondary); }
+    .del-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) brightness(0.55) contrast(1.15); }
+    .del-img .img-placeholder {
+      width: 100%; height: 100%; min-height: 280px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-tertiary); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
+    }
+
+    /* FOUNDER */
+    .founder-row { display: grid; grid-template-columns: 220px 1fr; gap: clamp(32px, 4vw, 64px); align-items: start; }
+    .founder-photo {
+      aspect-ratio: 3/4; background: var(--bg-secondary); border: 1px solid var(--border-subtle);
+      overflow: hidden; display: flex; align-items: center; justify-content: center;
+      color: var(--text-tertiary); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .founder-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) brightness(0.75) contrast(1.1); }
+    .founder-info h2 { margin-bottom: 6px; }
+    .founder-title { font-size: 0.8rem; color: var(--accent-blue); margin-bottom: 20px; }
+    .founder-info p { font-size: 0.9rem; line-height: 1.75; margin-bottom: 16px; }
+    .creds { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    .cred { font-size: 0.68rem; padding: 6px 14px; border: 1px solid var(--border-subtle); color: var(--text-tertiary); }
+
+    /* CTA */
+    .final-cta { text-align: left; padding: clamp(80px, 12vh, 140px) 0; position: relative; }
+    .final-cta::before {
+      content: ''; position: absolute; top: 0; left: clamp(20px, 5vw, 80px);
+      width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--border-medium));
+    }
+    .final-cta h2 { margin-bottom: 16px; }
+    .final-cta p { margin: 0 0 32px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .case-card { grid-template-columns: 1fr; }
+      .case-metrics { border-left: none; border-top: 1px solid var(--border-subtle); }
+      .del-card { grid-template-columns: 1fr; }
+      .del-img .img-placeholder { min-height: 220px; }
+    }
+    @media (max-width: 768px) {
+      .hero-stats { flex-direction: column; gap: 20px; }
+      .problem-grid, .diff-grid { grid-template-columns: 1fr; }
+      .process-row { grid-template-columns: 1fr; }
+      .founder-row { grid-template-columns: 1fr; }
+      .founder-photo { max-width: 180px; }
+      .del-card { position: relative; top: 0 !important; grid-template-columns: 1fr; min-height: auto; }
+      .image-band { height: 200px; }
+    }
+  
+    .has-dropdown{position:relative}
+    .dropdown{display:none;position:absolute;top:100%;left:0;background:var(--bg-secondary);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:8px 0;min-width:200px;z-index:200;list-style:none;margin:8px 0 0}
+    .dropdown li{padding:0}
+    .dropdown li a{display:block;padding:8px 20px;font-size:.75rem;color:var(--text-secondary);text-transform:none;letter-spacing:.02em;white-space:nowrap;transition:color .2s}
+    .dropdown li a:hover{color:var(--text-primary);background:rgba(255,255,255,.03)}
+    .has-dropdown:hover .dropdown{display:block}
+    @media(max-width:768px){
+      .dropdown{position:static;display:none;background:transparent;border:none;padding:0 0 0 16px;min-width:0;margin:4px 0}
+      .dropdown li a{padding:6px 0;font-size:.8rem}
+      .has-dropdown:hover .dropdown,.nav-links.open .has-dropdown .dropdown{display:block}
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="container">
+      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
+      <ul class="nav-links" id="navLinks">
+<li><a href="#problem">What</a></li>
+        <li class="has-dropdown"><a href="/audit.html">How</a>
+          <ul class="dropdown">
+            <li><a href="/audit.html">Intelligence Audit</a></li>
+            <li><a href="/how-it-works.html">How It Works</a></li>
+            <li><a href="/roi.html">ROI Calculator</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown"><a href="#solution">Solutions</a>
+          <ul class="dropdown">
+            <li><a href="/solutions/cro.html">For the CRO</a></li>
+            <li><a href="/solutions/ceo.html">For the CEO</a></li>
+            <li><a href="/solutions/cfo.html">For the CFO</a></li>
+            <li><a href="/solutions/sales-director.html">For Sales Directors</a></li>
+            <li><a href="/solutions/pmm.html">For PMM & Enablement</a></li>
+            <li><a href="/solutions/revops.html">For RevOps</a></li>
+            <li><a href="/solutions/training.html">For Sales Training</a></li>
+          </ul>
+        </li>
+        <li><a href="/blog/">Resources</a></li>
+        <li><a href="/contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>
+        <span class="line1"><span class="typewriter" id="type1"></span></span><br>
+        <span class="line2 thin"><span class="typewriter" id="type2"></span></span>
+      </h1>
+      <p class="hero-sub">RAINCLOUD analyzes your call recordings, CRM data, and deal history over time and at scale — then delivers the competitive intelligence your revenue team needs to win more deals.<br><br>No dashboards. No new logins. Just answers.</p>
+      <div class="hero-cta">
+        <a href="/contact.html" class="btn btn--primary">
+          <span>Improve Your Close Rate by 10% in 30 Days</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">500+</div><div class="desc">Calls analyzed per customer, per quarter</div></div>
+        <div class="hero-stat"><div class="num">&lt;30</div><div class="desc">Avg. days to first measurable lift</div></div>
+        <div class="hero-stat"><div class="num">+23pt</div><div class="desc">Avg. competitive win rate improvement</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE BANNER -->
+  <div class="quote-banner reveal">
+    <!-- REPLACE: add background-image url and remove .placeholder class -->
+    <div class="quote-bg placeholder"></div>
+    <div class="container--narrow">
+      <blockquote>"You've built Palantir for sales analytics."</blockquote>
+      <cite><strong>Jacob Valentine</strong> — Managing Director, Claymore Capital</cite>
+    </div>
+  </div>
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">The Problem</div>
+        <h2>Revenue teams are flying blind.</h2>
+        <p>Your tools capture everything. They synthesize nothing. The gap between data and intelligence is where deals die.</p>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-card reveal"><div class="num">01</div><h3>No pattern synthesis at scale</h3><p>Your team listened to 20 calls last quarter. You recorded 500. The patterns in the other 480 are invisible.</p></div>
+        <div class="problem-card reveal"><div class="num">02</div><h3>Stale competitive intelligence</h3><p>Battlecards built 18 months ago by a PMM who's since left. Pricing is wrong. Positioning is stale. Reps stopped using them.</p></div>
+        <div class="problem-card reveal"><div class="num">03</div><h3>No buyer voice analysis</h3><p>You lost 12 deals to Competitor X. You don't know the three objections that killed them — or the talk track that could have saved them.</p></div>
+        <div class="problem-card reveal"><div class="num">04</div><h3>Leaders watch the scoreboard, not the game</h3><p>Dashboards show what happened. Nobody is telling you why — or what to do differently tomorrow.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO BAND -->
+  <div class="image-band band-tall">
+    <video class="band-img" autoplay muted loop playsinline src="assets/band-video.mp4"></video>
+    <div class="band-overlay"></div>
+    <div class="band-cta-layer">
+      <a href="/contact.html" class="cta-primary">Equip Your Team with the Intelligence They Need →</a>
+    </div>
+  </div>
+
+  <!-- CASE STUDIES -->
+  <section id="results" class="cases">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Results</div>
+        <h2>Capability, proven.</h2>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-info">
+          <div class="case-meta"><span class="label">Case Study</span><span class="dot"></span><span class="label">Austin, TX</span></div>
+          <h3>B2B Endpoint Security Platform</h3>
+          <p>Series B ($29M ARR). Win rate plateaued at 38% in competitive deals — 12-person team losing winnable deals to stale battlecards. Full competitive intelligence deployment: 500+ call analysis, living battlecards, weekly radar.</p>
+        </div>
+        <div class="case-metrics">
+          <div class="metric"><div class="val val--g">+23pts</div><div class="ml">Win rate: 38% → 61%</div></div>
+          <div class="metric"><div class="val">28 Days</div><div class="ml">To first measurable lift</div></div>
+          <div class="metric"><div class="val val--g">$4.2M</div><div class="ml">Pipeline recovered</div></div>
+          <div class="metric"><div class="val">-40%</div><div class="ml">Rep ramp time</div></div>
+        </div>
+      </div>
+      <div class="case-card reveal" style="margin-top: 2px;">
+        <div class="case-info">
+          <div class="case-meta"><span class="label">Case Study</span><span class="dot"></span><span class="label">Denver, CO</span></div>
+          <h3>B2B Data Integration & ETL Platform</h3>
+          <p>Series A ($11M ARR). Well-funded competitor dropped pricing 30% and launched displacement campaign. Sales team was reactive — learning about competitor moves mid-deal. Deployed competitive radar + living battlecards.</p>
+        </div>
+        <div class="case-metrics">
+          <div class="metric"><div class="val val--g">+18pts</div><div class="ml">Win rate: 29% → 47%</div></div>
+          <div class="metric"><div class="val">+31%</div><div class="ml">Deal velocity</div></div>
+          <div class="metric"><div class="val val--g">92%</div><div class="ml">Pricing holds (was 76%)</div></div>
+          <div class="metric"><div class="val">6x</div><div class="ml">Battlecard usage/rep</div></div>
+        </div>
+      </div>
+      <div class="case-note">* Details, verification, and references provided upon request.</div>
+    </div>
+  </section>
+
+  <!-- DATA VIZ BAND -->
+  <div class="image-band">
+    <img class="band-img" src="assets/band-dataviz.jpg" alt="Data network visualization" style="filter: grayscale(100%) brightness(0.35) contrast(1.3);">
+    <div class="band-overlay" style="background: linear-gradient(to bottom, var(--bg-primary) 0%, rgba(10,10,10,0.4) 20%, rgba(10,10,10,0.4) 80%, var(--bg-primary) 100%);"></div>
+  </div>
+
+  <!-- ANIMATED DIVIDER -->
+  <div class="divider-animated reveal"></div>
+
+  <!-- SOLUTION -->
+  <section id="solution">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">The Solution</div>
+        <h2><span class="typewriter-scroll" id="typeSolution" data-text="What RAINCLOUD does differently."></span></h2>
+        <p>Wider analysis. Deeper synthesis. A human intelligence layer no platform can replicate.</p>
+      </div>
+      <div class="diff-grid">
+        <div class="diff-card reveal"><h3>Scale, not samples</h3><p>500+ calls per quarter analyzed — not 10 interviews. Statistical patterns from your entire call library, not anecdotes from a cherry-picked sample.</p></div>
+        <div class="diff-card reveal"><h3>Cross-source synthesis</h3><p>Sales calls + CRM deal data + emails + post-mortem feedback — all correlated. What buyers told you, what reps said, what the CRM shows.</p></div>
+        <div class="diff-card reveal"><h3>Actionable output, not artifacts</h3><p>Living battlecards. Board-ready narratives. Weekly competitive radar. Delivered to your inbox — zero logins, zero dashboards.</p></div>
+        <div class="diff-card reveal"><h3>Built by a 3x VP of Sales</h3><p>Not consultants guessing from the outside. A practitioner who's sat in the CRO chair and knows which insights actually change pipeline outcomes.</p></div>
+      </div>
+      <a href="/landscape.html" class="landscape-link">See how we compare to Klue, Clozd, Gong, and others <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </section>
+
+  <!-- CITYSCAPE BAND -->
+  <div class="image-band band-tall-2">
+    <img class="band-img" src="assets/band-city.png" alt="City skyline at night">
+    <div class="band-overlay"></div>
+    <div class="band-cta-layer">
+      <a href="/contact.html" class="cta-primary">Learn What Makes RAINCLOUD Different →</a>
+    </div>
+  </div>
+
+  <!-- PROCESS + DELIVERABLES -->
+  <section id="process" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Process</div>
+        <h2>From flying blind to higher close rates in 30 days.</h2>
+      </div>
+      <div class="process-row reveal">
+        <div class="process-step"><div class="sn">01</div><h3><a href="/audit.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid var(--border-medium);">Intelligence Audit</a></h3><p>We connect to your call recording software (Gong, Chorus, Fireflies, etc), analyze your last two quarters of competitive deals, and present a full synthesis with artifacts showing the patterns you've been missing to leadership in a 60 minute session.</p><div class="price">$7,500 one-time — credited against any ongoing retainer</div></div>
+        <div class="process-step"><div class="sn">02</div><h3>System Deployment</h3><p>We build your intelligence layer — automated call analysis, competitive monitoring, battlecard generation. Deliverables land in your inbox. Operational within 30 days.</p><div class="price">Fully deployed in under a month</div></div>
+        <div class="process-step"><div class="sn">03</div><h3>Continuous Intelligence</h3><p>Quarterly win/loss analysis. Monthly battlecard refreshes. Weekly competitive radar. Board-ready narratives. Intelligence that compounds every quarter.</p><div class="price">Starting at $25,000 per quarter</div></div>
+      </div>
+
+      <div class="section-header reveal" style="margin-top: clamp(48px, 8vh, 80px);">
+        <h2>Four deliverables. <span style="color: var(--text-tertiary);">Zero dashboards.</span></h2>
+      </div>
+      <div class="del-stack">
+        <div class="del-card">
+          <div class="del-text"><span class="cadence c-q">Quarterly</span><h3>Win/Loss Pattern Analysis</h3><p>Statistical patterns from every competitive deal. Which objections kill deals? Which talk tracks win? 15–20 page report + walkthrough.</p></div>
+          <div class="del-img"><img src="assets/del-winloss.png" alt="Win/Loss Pattern Analysis Dashboard"></div>
+        </div>
+        <div class="del-card">
+          <div class="del-text"><span class="cadence c-m">Monthly</span><h3>Living Battlecards</h3><p>Updated from real buyer conversations. New objections, pricing intel, and counter-positioning proven to work.</p></div>
+          <div class="del-img"><img src="assets/del-battlecard.png" alt="Living Battlecard"></div>
+        </div>
+        <div class="del-card">
+          <div class="del-text"><span class="cadence c-w">Weekly</span><h3>Competitive Radar</h3><p>Competitor moves that matter: product launches, pricing changes, hiring signals, review sentiment. Signal, not noise.</p></div>
+          <div class="del-img"><img src="assets/del-radar.png" alt="Competitive Radar Digest"></div>
+        </div>
+        <div class="del-card">
+          <div class="del-text"><span class="cadence c-q">Quarterly</span><h3>Board-Ready Narrative</h3><p>Strategic synthesis your CEO drops into the board deck. Win rate trends, competitive threats, recommended responses.</p></div>
+          <div class="del-img"><img src="assets/del-board.png" alt="Board-Ready Narrative Slide"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOARDROOM BAND -->
+  <div class="image-band band-tall-2">
+    <img class="band-img" src="assets/band-boardroom.png" alt="Executive boardroom" style="filter: grayscale(100%) brightness(0.95) contrast(1.2);">
+    <div class="band-overlay" style="background: linear-gradient(to bottom, var(--bg-secondary) 0%, rgba(10,10,10,0.1) 15%, rgba(10,10,10,0.1) 85%, var(--bg-primary) 100%);"></div>
+  </div>
+
+  <!-- FOUNDER -->
+  <section id="founder">
+    <div class="container">
+      <div class="founder-row reveal">
+        <div class="founder-photo"><img src="assets/founder-headshot.jpg" alt="Colin Dowling, Founder of RAINCLOUD"></div>
+        <div class="founder-info">
+          <div class="label" style="margin-bottom: 16px;">About the Founder</div>
+          <h2>Colin Dowling</h2>
+          <div class="founder-title">Founder, RAINCLOUD</div>
+          <p>I've been in the VP of Sales seat multiple times. From VP of Sales for GoDaddy's Enterprise Sales division to VP of Channel for a PE-backed $100M cloud infrastructure firm, to serving as SVP of Revenue at a $650M AI startup, I know first-hand the battles that sales leaders face and the tools and tactics that help win the war.</p>
+          <p>That's why I built RAINCLOUD — so revenue leaders and their teams can enter competitive deals with the best possible chance to win every time.</p>
+          <div class="creds">
+            <span class="cred">VP Enterprise Sales — GoDaddy (NYSE: GDDY)</span>
+            <span class="cred">SVP Revenue — Alembic (Seed → $145M B)</span>
+            <span class="cred">VP Partnerships — Liquid Web</span>
+            <span class="cred">Enterprise Sales — WP Engine</span>
+            <span class="cred">3x Founder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="reveal">
+        <div class="label label--accent" style="margin-bottom: 20px;">Get Started</div>
+        <h2>An entire intelligence department.<br>Deployed, ramped, and working in under 30 days.</h2>
+        <p>We connect to your call recordings and CRM, analyze your last two quarters of competitive deals, and present the patterns you've been missing in a 60-minute session with your leadership team. Most CROs find at least one surprise.</p>
+        <a href="/audit.html" class="btn btn--primary">
+          <span>Book Your Intelligence Audit</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-layout">
+        <span class="footer-logo">RAINCLOUD</span>
+        <ul class="footer-links">
+          <li><a href="/blog/">Resources</a></li>
+          <li><a href="mailto:hello@rncld.com">hello@rncld.com</a></li>
+          <li><a href="https://rncld.com" target="_blank">rncld.com</a></li>
+        </ul>
+        <span class="footer-copy">&copy; 2026 RAINCLOUD. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+    // Mobile toggle
+    const t = document.getElementById('navToggle'), l = document.getElementById('navLinks');
+    t.addEventListener('click', () => l.classList.toggle('open'));
+    l.querySelectorAll('a').forEach(a => a.addEventListener('click', () => l.classList.remove('open')));
+
+    // Scroll reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Parallax on image bands
+    function parallax() {
+      document.querySelectorAll('[data-parallax]').forEach(img => {
+        const band = img.parentElement;
+        const rect = band.getBoundingClientRect();
+        const vh = window.innerHeight;
+        if (rect.top < vh && rect.bottom > 0) {
+          const progress = (vh - rect.top) / (vh + rect.height);
+          img.style.transform = `translateY(${(progress - 0.5) * 60}px)`;
+        }
+      });
+    }
+    window.addEventListener('scroll', parallax, { passive: true });
+
+    // Typewriter effect
+    function typewrite(el, text, speed, cb) {
+      let i = 0;
+      function tick() {
+        if (i <= text.length) {
+          el.textContent = text.slice(0, i);
+          i++;
+          setTimeout(tick, speed);
+        } else if (cb) {
+          el.classList.add('done');
+          cb();
+        }
+      }
+      tick();
+    }
+    setTimeout(() => {
+      typewrite(document.getElementById('type1'), 'Dashboards tell you what happened.', 38, () => {
+        const line2 = document.querySelector('.line2');
+        line2.classList.add('typing');
+        setTimeout(() => {
+          typewrite(document.getElementById('type2'), 'We tell you why.', 50);
+        }, 300);
+      });
+    }, 400);
+
+    // Scroll-triggered typewriter
+    const scrollTypeEls = document.querySelectorAll('.typewriter-scroll');
+    const typeObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.started) {
+          entry.target.dataset.started = 'true';
+          const text = entry.target.dataset.text;
+          let i = 0;
+          function tick() {
+            if (i <= text.length) {
+              entry.target.textContent = text.slice(0, i);
+              i++;
+              setTimeout(tick, 35);
+            } else {
+              entry.target.classList.add('done');
+            }
+          }
+          tick();
+        }
+      });
+    }, { threshold: 0.5 });
+    scrollTypeEls.forEach(el => typeObs.observe(el));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('cli

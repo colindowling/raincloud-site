@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Intelligence for the CEO - RAINCLOUD</title>
+  <meta name="description" content="The board wants data-backed competitive strategy. RAINCLOUD gives you the early warning system to deliver it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+
+/* ========================================
+   RAINCLOUD DESIGN SYSTEM
+   Montserrat Light headings / Manrope body
+   Dark, monochromatic, premium
+   ======================================== */
+
+/* --- VARIABLES --- */
+:root {
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #111111;
+  --bg-tertiary: #181818;
+  --bg-card: #141414;
+  --text-primary: #F0EDE8;
+  --text-secondary: #9A9A9A;
+  --text-tertiary: #5A5A5A;
+  --accent-blue: #4A9EBF;
+  --accent-blue-dim: rgba(74, 158, 191, 0.12);
+  --accent-red: #BF4A4A;
+  --accent-green: #4ABF7A;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-medium: rgba(255, 255, 255, 0.1);
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --container: 1280px;
+  --container-narrow: 880px;
+}
+
+/* --- RESET --- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-body); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
+::selection { background: var(--accent-blue); color: var(--bg-primary); }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* --- GRAIN OVERLAY --- */
+body::after {
+  content: '';
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9999; opacity: 0.4;
+}
+
+/* --- LAYOUT --- */
+.container { max-width: var(--container); margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+.container--narrow { max-width: var(--container-narrow); margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+section { padding: clamp(64px, 10vh, 140px) 0; }
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.4rem, 5.5vw, 4.5rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+h3 { font-size: clamp(1.2rem, 1.8vw, 1.5rem); font-weight: 400; }
+p { font-size: clamp(0.9rem, 1vw, 1rem); color: var(--text-secondary); max-width: 600px; }
+
+.label {
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary);
+}
+.label--accent { color: var(--accent-blue); }
+
+.section-header { margin-bottom: clamp(40px, 5vh, 64px); }
+.section-header .label { margin-bottom: 16px; }
+.section-header p { margin-top: 16px; }
+
+.divider { width: 100%; height: 1px; background: var(--border-subtle); }
+
+/* --- BUTTONS --- */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 32px; font-family: var(--font-body); font-size: 0.8rem;
+  font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+  border: 1px solid var(--border-medium); background: transparent;
+  color: var(--text-primary); cursor: pointer; position: relative; overflow: hidden;
+  transition: all 0.4s var(--ease-out);
+}
+.btn::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: var(--text-primary); transform: translateX(-101%);
+  transition: transform 0.4s var(--ease-out);
+}
+.btn:hover::before { transform: translateX(0); }
+.btn:hover { color: var(--bg-primary); border-color: var(--text-primary); }
+.btn span, .btn svg { position: relative; z-index: 1; }
+.btn svg { transition: transform 0.4s var(--ease-out); }
+.btn:hover svg { transform: translateX(4px); }
+
+.btn--primary { background: var(--bg-primary); color: var(--text-primary); border-color: var(--text-primary); }
+.btn--primary::before { background: var(--text-primary); }
+.btn--primary:hover { color: var(--bg-primary); }
+
+.btn-arrow {
+  width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2;
+}
+
+/* --- NAVIGATION --- */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 18px 0; transition: all 0.5s var(--ease-out);
+}
+nav.scrolled {
+  background: rgba(10, 10, 10, 0.92); backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-subtle);
+  padding: 12px 0;
+}
+nav .container { display: flex; align-items: center; justify-content: space-between; }
+
+.nav-logo { font-family: var(--font-heading); font-weight: 300; font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; }
+.nav-logo em { font-style: normal; color: var(--text-tertiary); font-weight: 200; }
+
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 0.72rem; font-weight: 400; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-tertiary); transition: color 0.3s ease;
+  position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px; background: var(--text-primary);
+  transition: width 0.3s var(--ease-out);
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  font-size: 0.68rem !important; padding: 8px 20px;
+  border: 1px solid var(--border-medium); transition: all 0.3s ease;
+}
+.nav-cta:hover { border-color: var(--text-primary); background: var(--text-primary); color: var(--bg-primary) !important; }
+.nav-cta::after { display: none !important; }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1px; background: var(--text-primary); margin: 5px 0; transition: all 0.3s ease; }
+
+/* --- FOOTER --- */
+footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
+.footer-layout { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 300; font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-tertiary); }
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a { font-size: 0.72rem; color: var(--text-tertiary); transition: color 0.3s ease; }
+.footer-links a:hover { color: var(--text-primary); }
+.footer-copy { font-size: 0.68rem; color: var(--text-tertiary); }
+
+/* --- SCROLL ANIMATIONS --- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: 100%; left: 0; right: 0; background: rgba(10, 10, 10, 0.97);
+    backdrop-filter: blur(20px); padding: 28px; gap: 20px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .footer-layout { flex-direction: column; text-align: center; }
+}
+
+
+</style>
+  <style>
+    .persona-hero{min-height:70vh;display:flex;align-items:center;padding:160px 0 80px;position:relative;border-bottom:1px solid var(--border-subtle)}.persona-hero .label{font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--accent-blue);margin-bottom:16px}.persona-hero h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:200;line-height:1.15;margin-bottom:24px;max-width:800px}.persona-hero .hero-sub{font-size:1.05rem;line-height:1.7;color:var(--text-secondary);max-width:640px;margin-bottom:36px}.persona-hero .hero-cta,.persona-cta .hero-cta{display:inline-flex;align-items:center;gap:12px;padding:16px 32px;background:var(--bg-primary);color:var(--text-primary);border:1px solid var(--text-primary);font-family:var(--font-heading);font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .3s ease}.persona-hero .hero-cta:hover,.persona-cta .hero-cta:hover{background:var(--text-primary);color:var(--bg-primary)}.reality{padding:100px 0}.reality h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:200;margin-bottom:60px}.reality-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px 60px}@media(max-width:768px){.reality-grid{grid-template-columns:1fr}}.reality-item{padding-bottom:40px;border-bottom:1px solid var(--border-subtle)}.reality-item h3{font-size:1.1rem;font-weight:400;margin-bottom:12px;color:var(--text-primary)}.reality-item p{font-size:.9rem;line-height:1.75;color:var(--text-secondary)}.reality-item .moment{font-style:italic;color:var(--text-tertiary);font-size:.85rem;margin-top:12px;padding-left:16px;border-left:2px solid var(--border-medium)}.artifact-section{padding:80px 0;background:var(--bg-secondary)}.artifact-section h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:200;margin-bottom:16px}.artifact-section .subtitle{font-size:.95rem;color:var(--text-secondary);max-width:600px;margin-bottom:48px;line-height:1.7}.artifact-showcase{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:start}@media(max-width:768px){.artifact-showcase{grid-template-columns:1fr}}.artifact-image{border:1px solid var(--border-subtle);border-radius:4px;overflow:hidden;background:var(--bg-primary)}.artifact-image img{width:100%;display:block}.artifact-details h3{font-size:1.1rem;margin-bottom:12px;color:var(--text-primary)}.artifact-details p{font-size:.88rem;line-height:1.75;color:var(--text-secondary);margin-bottom:20px}.artifact-details .detail-list{list-style:none;padding:0;margin:0}.artifact-details .detail-list li{font-size:.85rem;color:var(--text-secondary);padding:10px 0;border-bottom:1px solid var(--border-subtle);line-height:1.6}.artifact-details .detail-list li::before{content:'\2192 ';color:var(--accent-blue)}.outcomes{padding:100px 0}.outcomes h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:200;margin-bottom:60px}.outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-subtle)}@media(max-width:768px){.outcome-grid{grid-template-columns:1fr}}.outcome-card{background:var(--bg-primary);padding:40px}.outcome-card .metric{font-family:var(--font-heading);font-size:2rem;font-weight:200;color:var(--text-primary);margin-bottom:8px}.outcome-card h3{font-size:.95rem;font-weight:500;margin-bottom:10px}.outcome-card p{font-size:.85rem;line-height:1.7;color:var(--text-secondary)}.pullquote-section{padding:80px 0;text-align:center}.pullquote{font-family:var(--font-heading);font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:200;font-style:italic;color:var(--text-primary);max-width:740px;margin:0 auto 20px;line-height:1.5}.pullquote-attr{font-size:.8rem;color:var(--text-tertiary);letter-spacing:.05em}.persona-cta{padding:100px 0}.persona-cta h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:200;margin-bottom:20px}.persona-cta p{font-size:.95rem;line-height:1.75;color:var(--text-secondary);max-width:560px;margin-bottom:36px}.persona-band{position:relative;height:clamp(280px,40vh,440px);overflow:hidden}.persona-band img{position:absolute;top:-20%;left:0;width:100%;height:140%;object-fit:cover;filter:grayscale(100%) brightness(.4) contrast(1.2)}.persona-band .overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,var(--bg-primary) 0%,rgba(10,10,10,.2) 20%,rgba(10,10,10,.2) 80%,var(--bg-secondary) 100%);pointer-events:none}
+  
+    .has-dropdown{position:relative}
+    .dropdown{display:none;position:absolute;top:100%;left:0;background:var(--bg-secondary);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:8px 0;min-width:200px;z-index:200;list-style:none;margin:8px 0 0}
+    .dropdown li{padding:0}
+    .dropdown li a{display:block;padding:8px 20px;font-size:.75rem;color:var(--text-secondary);text-transform:none;letter-spacing:.02em;white-space:nowrap;transition:color .2s}
+    .dropdown li a:hover{color:var(--text-primary);background:rgba(255,255,255,.03)}
+    .has-dropdown:hover .dropdown{display:block}
+    @media(max-width:768px){
+      .dropdown{position:static;display:none;background:transparent;border:none;padding:0 0 0 16px;min-width:0;margin:4px 0}
+      .dropdown li a{padding:6px 0;font-size:.8rem}
+      .has-dropdown:hover .dropdown,.nav-links.open .has-dropdown .dropdown{display:block}
+    }
+
+  </style>
+</head>
+<body>
+  <nav id="nav" class="scrolled"><div class="container nav-inner"><a href="/" class="nav-logo">RAIN<em>CLOUD</em></a><ul class="nav-links" id="navLinks"><li><a href="/#problem">What</a></li>
+        <li class="has-dropdown"><a href="/audit.html">How</a>
+          <ul class="dropdown">
+            <li><a href="/audit.html">Intelligence Audit</a></li>
+            <li><a href="/how-it-works.html">How It Works</a></li>
+            <li><a href="/roi.html">ROI Calculator</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown"><a href="/#solution">Solutions</a>
+          <ul class="dropdown">
+            <li><a href="/solutions/cro.html">For the CRO</a></li>
+            <li><a href="/solutions/ceo.html">For the CEO</a></li>
+            <li><a href="/solutions/cfo.html">For the CFO</a></li>
+            <li><a href="/solutions/sales-director.html">For Sales Directors</a></li>
+            <li><a href="/solutions/pmm.html">For PMM & Enablement</a></li>
+            <li><a href="/solutions/revops.html">For RevOps</a></li>
+            <li><a href="/solutions/training.html">For Sales Training</a></li>
+          </ul>
+        </li>
+        <li><a href="/blog/">Resources</a></li>
+        <li><a href="/contact.html" class="nav-cta">Contact</a></li></ul><button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
+
+  <section class="persona-hero"><div class="container">
+    <div class="label">Sales Intelligence for the CEO</div>
+    <h1>The board wants to know<br>why you're winning &mdash; or losing.</h1>
+    <p class="hero-sub">You're expected to have a data-backed competitive strategy. Instead, you're relying on tribal knowledge, stale battlecards, and whatever your sales team mentioned last week. RAINCLOUD gives you a strategic early warning system and board-ready narrative that turns competitive intelligence from a guessing game into a governance capability.</p>
+    <a href="/contact.html" class="hero-cta">Get Strategic Clarity &rarr;</a>
+  </div></section>
+
+  <section class="reality"><div class="container">
+    <h2>The board meeting is next week.<br>What's your competitive strategy?</h2>
+    <div class="reality-grid">
+      <div class="reality-item"><h3>You're presenting intuition as strategy</h3><p>The board asks about your competitive position every quarter. You assemble something from sales anecdotes, a few G2 reviews, and whatever the CRO mentioned in your last 1:1. It's not wrong &mdash; it's just not rigorous. And the board members who came from data-driven companies can tell the difference.</p><div class="moment">A board member asks: "What's your win rate against your top three competitors, and what's driving the trend?" You give a directional answer. They wanted a number.</div></div>
+      <div class="reality-item"><h3>You find out about market shifts when they hit the pipeline</h3><p>A competitor drops pricing 30%. A well-funded startup enters your space. A key competitor hires an industry analyst. By the time these signals reach you, they've already been affecting deals for weeks. Your sales team is the canary in the coal mine, but nobody is listening to the canary at scale.</p><div class="moment">Your largest enterprise customer mentions in a QBR that a competitor has been pitching them for three months. Nobody on your team flagged it.</div></div>
+      <div class="reality-item"><h3>You can't tell if it's a product problem or a sales problem</h3><p>Win rate is down. The CRO says the market is more competitive. The CPO says the product is fine. The truth is probably somewhere in between, but you have no mechanism to decompose losses into root causes. Without attribution, you're making investment decisions based on opinions, not data.</p><div class="moment">You approved three engineering sprints to close a "critical product gap." Six months later, win rate hasn't moved. The real problem was stale competitive intel, not missing features.</div></div>
+      <div class="reality-item"><h3>Competitive intelligence walks out the door with every departure</h3><p>Your best rep knows exactly how to compete against DataCore. When she leaves &mdash; and eventually she will &mdash; that knowledge leaves with her. There's no system to capture what works, distribute it, or preserve institutional competitive memory. Every departure resets your competitive readiness to zero.</p><div class="moment">Your top enterprise rep leaves for a competitor. Within 60 days, your win rate against DataCore drops 15 points. The team is relearning lessons she'd already mastered.</div></div>
+    </div>
+  </div></section>
+
+  <div class="persona-band"><img src="../assets/band-boardroom.png" alt="" style="filter:grayscale(100%) brightness(0.8) contrast(1.2)"><div class="overlay"></div></div>
+
+  <section class="artifact-section"><div class="container">
+    <h2>What changes when the board gets real intelligence.</h2>
+    <p class="subtitle">Every quarter, you receive a strategic early warning system &mdash; a synthesized narrative covering your competitive landscape, what it means, and exactly what to do about it.</p>
+    <div class="artifact-showcase">
+      <div class="artifact-image"><img src="../assets/ceo-early-warning.png" alt="Strategic Early Warning System"></div>
+      <div class="artifact-details">
+        <h3>Strategic Early Warning System</h3>
+        <p>Market position, threat assessment, product vs. sales attribution, and a recommended board narrative &mdash; all backed by the analysis of every competitive conversation your team had this quarter.</p>
+        <ul class="detail-list">
+          <li>Market position summary with competitive win rate trends</li>
+          <li>Product vs. sales execution attribution backed by call data</li>
+          <li>90-day threat outlook with recommended responses</li>
+          <li>Board-ready narrative you can drop into the deck</li>
+          <li>Institutional competitive memory that outlasts any single employee</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="pullquote-section"><div class="container">
+    <blockquote class="pullquote">"The first time I presented the RAINCLOUD narrative to the board, a director said 'this is the first data-backed competitive strategy I've seen from a portfolio company at this stage.' That changed how they saw us."</blockquote>
+    <div class="pullquote-attr">CEO, Series B Enterprise SaaS (42 employees, $18M ARR)</div>
+  </div></section>
+
+  <section class="outcomes" style="background:var(--bg-secondary)"><div class="container">
+    <h2>What CEOs see in the first 90 days with RAINCLOUD.</h2>
+    <div class="outcome-grid">
+      <div class="outcome-card"><div class="metric">Board-ready</div><h3>Quarterly competitive narrative</h3><p>A document you present with confidence. Data-backed. Attribution-clear. The board stops asking "what's your competitive strategy?" because you just showed them.</p></div>
+      <div class="outcome-card"><div class="metric">68/32</div><h3>Product vs. sales attribution</h3><p>For the first time, a data-driven answer to "is this a product problem or a sales problem?" Investment decisions get sharper.</p></div>
+      <div class="outcome-card"><div class="metric">90 days</div><h3>Strategic threat visibility</h3><p>An early warning system that surfaces competitive moves before they hit your pipeline. React in weeks, not quarters.</p></div>
+      <div class="outcome-card"><div class="metric">+23pts</div><h3>Competitive win rate improvement</h3><p>The downstream effect of arming your team with current intelligence. Same reps, same product, better outcomes.</p></div>
+      <div class="outcome-card"><div class="metric">Zero</div><h3>Knowledge lost to turnover</h3><p>Institutional competitive memory that doesn't walk out the door. Every pattern, every talk track, every insight captured and compounding.</p></div>
+      <div class="outcome-card"><div class="metric">$100K/yr</div><h3>Less than one hire</h3><p>An entire competitive intelligence capability for less than a junior analyst's fully loaded cost. Producing artifacts from day one.</p></div>
+    </div>
+  </div></section>
+
+  <div class="persona-band"><img src="../assets/band-city.png" alt=""><div class="overlay" style="background:linear-gradient(to bottom,var(--bg-secondary) 0%,rgba(10,10,10,.2) 20%,rgba(10,10,10,.2) 80%,var(--bg-primary) 100%)"></div></div>
+
+  <section class="persona-cta"><div class="container">
+    <h2>Compete on intelligence,<br>not intuition.</h2>
+    <p>The Intelligence Audit analyzes your last two quarters of competitive deals and shows you the patterns your team has been missing. Two weeks. $7,500. Credited against any ongoing retainer.</p>
+    <a href="/audit.html" class="hero-cta">Book Your Intelligence Audit &rarr;</a>
+  </div></section>
+
+  <footer><div class="container footer-inner"><div class="footer-left"><div class="footer-logo">RAIN<em>CLOUD</em></div></div><div class="footer-right"><ul class="footer-links"><li><a href="/blog/">Resources</a></li><li><a href="mailto:hello@rncld.com">hello@rncld.com</a></li><li><a href="https://rncld.com" target="_blank">rncld.com</a></li></ul><span class="footer-copy">&copy; 2026 RAINCLOUD. All rights reserved.</span></div></div></footer>
