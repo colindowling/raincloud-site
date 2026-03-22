@@ -154,7 +154,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
 .footer-copy { font-size: 0.68rem; color: var(--text-tertiary); }
 
 /* --- SCROLL ANIMATIONS --- */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.reveal { opacity: 1; transform: translateY(0); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-d1 { transition-delay: 0.1s; }
 .reveal-d2 { transition-delay: 0.2s; }
@@ -196,26 +196,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
 }
 .dropdown-menu a:hover { color: var(--text-primary); background: var(--bg-tertiary); }
 .nav-links .dropdown:hover .dropdown-menu { display: block; }
-
-    .has-dropdown { position: relative; }
-    .has-dropdown > ul.dropdown {
-      display: none; position: absolute; top: 100%; left: 0;
-      background: var(--bg-secondary, #111); border: 1px solid rgba(255,255,255,.08);
-      border-radius: 4px; padding-top: 8px; min-width: 200px;
-      z-index: 200; list-style: none; margin: 0;
-    }
-    .has-dropdown > ul.dropdown li a {
-      display: block; padding: 8px 20px; font-size: .75rem;
-      color: #9A9A9A; text-transform: none; letter-spacing: .02em;
-      white-space: nowrap; transition: color .2s; text-decoration: none;
-    }
-    .has-dropdown > ul.dropdown li a:hover { color: #F0EDE8; background: rgba(255,255,255,.03); }
-    .has-dropdown:hover > ul.dropdown { display: block; }
-    @media(max-width:768px){
-      .has-dropdown > ul.dropdown { position: static; background: transparent; border: none; padding: 0 0 0 16px; min-width: 0; }
-      .has-dropdown > ul.dropdown li a { padding: 6px 0; font-size: .8rem; }
-    }
-  </style>
+</style>
   <style>
     /* ===== PAGE-SPECIFIC STYLES ===== */
 
@@ -476,30 +457,23 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
       <ul class="nav-links" id="navLinks">
         <li><a href="/#problem">What</a></li>
-        <li class="has-dropdown"><a href="/audit.html">How</a>
-          <ul class="dropdown">
-            <li><a href="/audit.html">Intelligence Audit</a></li>
-            <li><a href="/how-it-works.html">How It Works</a></li>
-            <li><a href="/roi.html">ROI Calculator</a></li>
-          </ul>
+        <li><a href="/audit.html">How</a></li>
+        <li><a href="/#solution">Why</a></li>
+        <li class="dropdown">
+          <a href="#">Solutions</a>
+          <div class="dropdown-menu">
+            <a href="/solutions/cro.html">CRO</a>
+            <a href="/solutions/cfo.html">CFO</a>
+            <a href="/solutions/sales-director.html">Sales Director</a>
+          </div>
         </li>
-        <li class="has-dropdown"><a href="/#solution">Solutions</a>
-          <ul class="dropdown">
-            <li><a href="/solutions/cro.html">For the CRO</a></li>
-            <li><a href="/solutions/ceo.html">For the CEO</a></li>
-            <li><a href="/solutions/cfo.html">For the CFO</a></li>
-            <li><a href="/solutions/sales-director.html">For Sales Directors</a></li>
-            <li><a href="/solutions/pmm.html">For PMM &amp; Enablement</a></li>
-            <li><a href="/solutions/revops.html">For RevOps</a></li>
-            <li><a href="/solutions/training.html">For Sales Training</a></li>
-          </ul>
-        </li>
-        <li class="has-dropdown"><a href="/blog/">Resources</a>
-          <ul class="dropdown">
-            <li><a href="/blog/">Articles</a></li>
-            <li><a href="/roi.html">ROI Calculator</a></li>
-            <li><a href="/about.html">Founder</a></li>
-          </ul>
+        <li class="dropdown">
+          <a href="#">Resources</a>
+          <div class="dropdown-menu">
+            <a href="/blog/">Blog</a>
+            <a href="/landscape.html">How We Compare</a>
+            <a href="/#faq">FAQ</a>
+          </div>
         </li>
         <li><a href="/contact.html" class="nav-cta">Contact</a></li>
       </ul>
@@ -726,7 +700,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <span class="footer-logo">RAINCLOUD</span>
         <ul class="footer-links">
           <li><a href="/blog/">Resources</a></li>
-          <li><a href="/cdn-cgi/l/email-protection#1c74797070735c6e727f7078327f7371"><span class="__cf_email__" data-cfemail="e68e838a8a89a69488858a82c885898b">[email&#160;protected]</span></a></li>
+          <li><a href="/cdn-cgi/l/email-protection#08606d646467487a666b646c266b6765"><span class="__cf_email__" data-cfemail="e38b868f8f8ca3918d808f87cd808c8e">[email&#160;protected]</span></a></li>
           <li><a href="https://rncld.com" target="_blank">rncld.com</a></li>
         </ul>
         <span class="footer-copy">&copy; 2026 RAINCLOUD. All rights reserved.</span>
