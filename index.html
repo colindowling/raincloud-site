@@ -788,4 +788,36 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('cli
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const href = a.getAttribute('href');
+        if (href.startsWith('#')) {
+          const target = document.querySelector(href);
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Mobile nav toggle
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObs.observe(el));
+
+  </script>
+</body>
+</html>
