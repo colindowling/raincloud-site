@@ -55,7 +55,7 @@
     .disclaimer{font-size:11px;color:#3a3a3a;margin-top:24px;line-height:1.6;text-align:center}
   
     .has-dropdown{position:relative}
-    .dropdown{display:none;position:absolute;top:100%;left:0;background:var(--bg-secondary);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:8px 0;min-width:200px;z-index:200;list-style:none;margin:8px 0 0}
+    .dropdown{display:none;position:absolute;top:100%;left:0;background:var(--bg-secondary);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:8px 0;min-width:200px;z-index:200;list-style:none;margin:0;padding-top:8px}
     .dropdown li{padding:0}
     .dropdown li a{display:block;padding:8px 20px;font-size:.75rem;color:var(--text-secondary);text-transform:none;letter-spacing:.02em;white-space:nowrap;transition:color .2s}
     .dropdown li a:hover{color:var(--text-primary);background:rgba(255,255,255,.03)}
@@ -69,7 +69,35 @@
   </style>
 </head>
 <body>
-  <nav class="nav"><div class="nav-inner"><a href="/" class="nav-logo">RAIN<em>CLOUD</em></a><a href="/contact.html" class="nav-link">Contact</a></div></nav>
+    <nav id="nav" class="scrolled">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/#problem">What</a></li>
+        <li class="has-dropdown"><a href="/audit.html">How</a>
+          <ul class="dropdown">
+            <li><a href="/audit.html">Intelligence Audit</a></li>
+            <li><a href="/how-it-works.html">How It Works</a></li>
+            <li><a href="/roi.html">ROI Calculator</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown"><a href="/#solution">Solutions</a>
+          <ul class="dropdown">
+            <li><a href="/solutions/cro.html">For the CRO</a></li>
+            <li><a href="/solutions/ceo.html">For the CEO</a></li>
+            <li><a href="/solutions/cfo.html">For the CFO</a></li>
+            <li><a href="/solutions/sales-director.html">For Sales Directors</a></li>
+            <li><a href="/solutions/pmm.html">For PMM &amp; Enablement</a></li>
+            <li><a href="/solutions/revops.html">For RevOps</a></li>
+            <li><a href="/solutions/training.html">For Sales Training</a></li>
+          </ul>
+        </li>
+        <li><a href="/blog/">Resources</a></li>
+        <li><a href="/contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
 
   <div class="wrap" style="padding-top:100px">
     <div class="label">RAINCLOUD ROI Calculator</div>

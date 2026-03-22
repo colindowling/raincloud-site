@@ -267,7 +267,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     }
   
     .has-dropdown{position:relative}
-    .dropdown{display:none;position:absolute;top:100%;left:0;background:var(--bg-secondary);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:8px 0;min-width:200px;z-index:200;list-style:none;margin:8px 0 0}
+    .dropdown{display:none;position:absolute;top:100%;left:0;background:var(--bg-secondary);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:8px 0;min-width:200px;z-index:200;list-style:none;margin:0;padding-top:8px}
     .dropdown li{padding:0}
     .dropdown li a{display:block;padding:8px 20px;font-size:.75rem;color:var(--text-secondary);text-transform:none;letter-spacing:.02em;white-space:nowrap;transition:color .2s}
     .dropdown li a:hover{color:var(--text-primary);background:rgba(255,255,255,.03)}
@@ -279,22 +279,38 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     }
 
   </style>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
 
-  <nav id="nav" class="scrolled">
+    <nav id="nav" class="scrolled">
     <div class="container nav-inner">
       <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
       <ul class="nav-links" id="navLinks">
         <li><a href="/#problem">What</a></li>
-        <li><a href="/audit.html">How</a></li>
-        <li><a href="/#solution">Why</a></li>
+        <li class="has-dropdown"><a href="/audit.html">How</a>
+          <ul class="dropdown">
+            <li><a href="/audit.html">Intelligence Audit</a></li>
+            <li><a href="/how-it-works.html">How It Works</a></li>
+            <li><a href="/roi.html">ROI Calculator</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown"><a href="/#solution">Solutions</a>
+          <ul class="dropdown">
+            <li><a href="/solutions/cro.html">For the CRO</a></li>
+            <li><a href="/solutions/ceo.html">For the CEO</a></li>
+            <li><a href="/solutions/cfo.html">For the CFO</a></li>
+            <li><a href="/solutions/sales-director.html">For Sales Directors</a></li>
+            <li><a href="/solutions/pmm.html">For PMM &amp; Enablement</a></li>
+            <li><a href="/solutions/revops.html">For RevOps</a></li>
+            <li><a href="/solutions/training.html">For Sales Training</a></li>
+          </ul>
+        </li>
         <li><a href="/blog/">Resources</a></li>
         <li><a href="/contact.html" class="nav-cta" style="color: var(--text-primary);">Contact</a></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
@@ -312,7 +328,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           <h3>Get in Touch</h3>
           <div class="contact-detail">
             <div class="label">Email</div>
-            <a href="mailto:hello@rncld.com">hello@rncld.com</a>
+            <a href="/cdn-cgi/l/email-protection#94fcf1f8f8fbd4e6faf7f8f0baf7fbf9"><span class="__cf_email__" data-cfemail="98f0fdf4f4f7d8eaf6fbf4fcb6fbf7f5">[email&#160;protected]</span></a>
           </div>
           <div class="contact-detail">
             <div class="label">Website</div>
@@ -343,7 +359,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
 
       <div style="margin-top: 48px; padding: 32px; background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; text-align: center;">
         <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 8px;">Prefer email? Reach Colin directly:</p>
-        <a href="mailto:hello@rncld.com" style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--accent-blue); text-decoration: none; letter-spacing: 0.03em;">hello@rncld.com</a>
+        <a href="/cdn-cgi/l/email-protection#e68e838a8a89a69488858a82c885898b" style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--accent-blue); text-decoration: none; letter-spacing: 0.03em;"><span class="__cf_email__" data-cfemail="2c44494040436c5e424f4048024f4341">[email&#160;protected]</span></a>
       </div>
     </div>
   </section>
@@ -356,11 +372,4 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       <div class="footer-right">
         <ul class="footer-links">
           <li><a href="/blog/">Resources</a></li>
-          <li><a href="mailto:hello@rncld.com">hello@rncld.com</a></li>
-          <li><a href="https://rncld.com" target="_blank">rncld.com</a></li>
-        </ul>
-        <span class="footer-copy">&copy; 2026 RAINCLOUD. All rights reserved.</span>
-      </div>
-    </div>
-  </footer>
-
+          <li><a href="/cdn-cgi
