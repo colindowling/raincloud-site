@@ -154,7 +154,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
 .footer-copy { font-size: 0.68rem; color: var(--text-tertiary); }
 
 /* --- SCROLL ANIMATIONS --- */
-.reveal { opacity: 1; transform: translateY(0); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-d1 { transition-delay: 0.1s; }
 .reveal-d2 { transition-delay: 0.2s; }
@@ -796,17 +796,6 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           if (target) target.scrollIntoView({ behavior: 'smooth' });
         }
       });
-    });
-
-    // Nav scroll effect
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    });
-
-    // Mobile nav toggle
-    document.getElementById('navToggle').addEventListener('click', () => {
-      document.getElementById('navLinks').classList.toggle('open');
     });
 
     // Reveal on scroll
