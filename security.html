@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data & Security — RAINCLOUD</title>
+  <meta name="description" content="How RAINCLOUD handles your sales call data and CRM information. Read-only access. Private infrastructure. No training on your data. Built for security-conscious revenue teams.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+/* RAINCLOUD DESIGN SYSTEM */
+:root {
+  --bg-primary: #0A0A0A; --bg-secondary: #111111; --bg-tertiary: #181818; --bg-card: #141414;
+  --text-primary: #F0EDE8; --text-secondary: #9A9A9A; --text-tertiary: #5A5A5A;
+  --accent-blue: #4A9EBF; --accent-blue-dim: rgba(74, 158, 191, 0.12);
+  --accent-red: #BF4A4A; --accent-green: #4ABF7A;
+  --border-subtle: rgba(255, 255, 255, 0.06); --border-medium: rgba(255, 255, 255, 0.1);
+  --font-heading: 'Montserrat', sans-serif; --font-body: 'Manrope', sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --container: 1280px; --container-narrow: 880px;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-body); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
+::selection { background: var(--accent-blue); color: var(--bg-primary); }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+body::after {
+  content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9999; opacity: 0.4;
+}
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+.container--narrow { max-width: var(--container-narrow); margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+section { padding: clamp(64px, 10vh, 140px) 0; }
+
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 200; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 200; }
+h3 { font-size: clamp(1rem, 1.5vw, 1.15rem); font-weight: 500; }
+p { font-size: clamp(0.9rem, 1vw, 1rem); color: var(--text-secondary); }
+
+.label {
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary);
+}
+.label--accent { color: var(--accent-blue); }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 18px 0; transition: all 0.5s var(--ease-out); }
+nav.scrolled { background: rgba(10, 10, 10, 0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-subtle); padding: 12px 0; }
+nav .container { display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-family: var(--font-heading); font-weight: 300; font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; }
+.nav-logo em { font-style: normal; color: var(--text-tertiary); font-weight: 200; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); transition: color 0.3s ease; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--text-primary); transition: width 0.3s var(--ease-out); }
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1px; background: var(--text-primary); margin: 5px 0; transition: all 0.3s ease; }
+
+.has-dropdown { position: relative; }
+.dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 8px 0; min-width: 200px; z-index: 200; list-style: none; margin: 0; padding-top: 8px; }
+.dropdown li { padding: 0; }
+.dropdown li a { display: block; padding: 8px 20px; font-size: 0.75rem; color: var(--text-secondary); text-transform: none; letter-spacing: 0.02em; white-space: nowrap; transition: color 0.2s; }
+.dropdown li a::after { display: none; }
+.dropdown li a:hover { color: var(--text-primary); background: rgba(255,255,255,0.03); }
+.has-dropdown:hover .dropdown { display: block; }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 300; font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-tertiary); }
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a { font-size: 0.72rem; color: var(--text-tertiary); transition: color 0.3s ease; }
+.footer-links a:hover { color: var(--text-primary); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10, 10, 10, 0.97); backdrop-filter: blur(20px); padding: 28px; gap: 20px; border-bottom: 1px solid var(--border-subtle); }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .dropdown { position: static; display: none; background: transparent; border: none; padding: 0 0 0 16px; min-width: 0; margin: 4px 0; }
+  .dropdown li a { padding: 6px 0; font-size: 0.8rem; }
+  .has-dropdown:hover .dropdown, .nav-links.open .has-dropdown .dropdown { display: block; }
+}
+
+  </style>
+  <style>
+    /* ===== PAGE-SPECIFIC ===== */
+
+    /* HERO */
+    .sec-hero {
+      min-height: 70vh; display: flex; align-items: center;
+      padding: 160px 0 80px; position: relative;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .sec-hero .label { color: var(--accent-blue); margin-bottom: 16px; }
+    .sec-hero h1 { line-height: 1.1; margin-bottom: 24px; max-width: 820px; }
+    .sec-hero .hero-sub {
+      font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);
+      max-width: 680px;
+    }
+
+    /* PRINCIPLES */
+    .principles { background: var(--bg-secondary); }
+    .principles .section-header { margin-bottom: 56px; max-width: 720px; }
+    .principles .section-header .label { margin-bottom: 14px; }
+    .principles .section-header h2 { margin-bottom: 14px; }
+    .principles .section-header p { line-height: 1.7; max-width: 600px; }
+    .principles-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      background: var(--border-subtle); border: 1px solid var(--border-subtle);
+    }
+    @media (max-width: 768px) { .principles-grid { grid-template-columns: 1fr; } }
+    .pr-card {
+      background: var(--bg-secondary); padding: clamp(32px, 4vw, 48px);
+    }
+    .pr-card .pr-num {
+      font-family: var(--font-heading); font-size: 0.72rem;
+      letter-spacing: 0.22em; color: var(--accent-blue);
+      font-weight: 500; margin-bottom: 14px;
+    }
+    .pr-card h3 {
+      font-size: clamp(1.15rem, 1.7vw, 1.4rem); font-weight: 400;
+      letter-spacing: -0.01em; margin-bottom: 12px;
+    }
+    .pr-card p {
+      font-size: 0.92rem; line-height: 1.7; color: var(--text-secondary);
+      max-width: 360px;
+    }
+
+    /* IS / ISN'T */
+    .does-doesnt { background: var(--bg-primary); }
+    .does-doesnt .section-header { margin-bottom: 56px; max-width: 720px; }
+    .does-doesnt .section-header .label { margin-bottom: 14px; }
+    .does-doesnt .section-header h2 { margin-bottom: 14px; }
+    .does-doesnt .section-header p { line-height: 1.7; max-width: 600px; }
+    .dd-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+    }
+    @media (max-width: 768px) { .dd-grid { grid-template-columns: 1fr; } }
+    .dd-card {
+      padding: 36px 32px; border: 1px solid var(--border-subtle); border-radius: 4px;
+    }
+    .dd-card.does { background: rgba(74, 200, 120, 0.03); border-color: rgba(74, 200, 120, 0.15); }
+    .dd-card.doesnt { background: rgba(200, 74, 74, 0.03); border-color: rgba(200, 74, 74, 0.15); }
+    .dd-card .dd-label {
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.18em;
+      margin-bottom: 22px; font-weight: 600;
+    }
+    .dd-card.does .dd-label { color: rgb(74, 200, 120); }
+    .dd-card.doesnt .dd-label { color: rgb(200, 74, 74); }
+    .dd-item { padding: 14px 0; border-bottom: 1px solid var(--border-subtle); }
+    .dd-item:last-child { border-bottom: none; }
+    .dd-item h3 { font-size: 0.95rem; font-weight: 500; margin-bottom: 4px; }
+    .dd-item p { font-size: 0.85rem; line-height: 1.65; color: var(--text-secondary); }
+
+    /* SPECS GRID (architecture & compliance) */
+    .specs { background: var(--bg-secondary); }
+    .specs .section-header { margin-bottom: 56px; max-width: 720px; }
+    .specs .section-header .label { margin-bottom: 14px; }
+    .specs .section-header h2 { margin-bottom: 14px; }
+    .specs .section-header p { line-height: 1.7; max-width: 620px; }
+    .specs-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px 56px;
+    }
+    @media (max-width: 768px) { .specs-grid { grid-template-columns: 1fr; gap: 28px; } }
+    .spec-item {
+      padding-bottom: 28px; border-bottom: 1px solid var(--border-subtle);
+    }
+    .spec-item .spec-label {
+      font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--accent-blue); margin-bottom: 10px; font-weight: 600;
+    }
+    .spec-item h3 { font-size: 1rem; font-weight: 500; margin-bottom: 8px; }
+    .spec-item p { font-size: 0.88rem; line-height: 1.7; color: var(--text-secondary); }
+
+    /* FAQ */
+    .faq { background: var(--bg-primary); }
+    .faq .section-header { margin-bottom: 56px; max-width: 720px; }
+    .faq .section-header .label { margin-bottom: 14px; }
+    .faq .section-header h2 { margin-bottom: 14px; }
+    .faq-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 40px 56px;
+    }
+    @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; gap: 32px; } }
+    .faq-item h3 {
+      font-size: 1rem; font-weight: 500; margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    .faq-item p { font-size: 0.88rem; line-height: 1.7; color: var(--text-secondary); }
+
+    /* CTA */
+    .sec-cta { padding: clamp(72px, 10vh, 120px) 0; background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); }
+    .sec-cta h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 200; margin-bottom: 20px; max-width: 720px; line-height: 1.3; }
+    .sec-cta p {
+      font-size: 0.95rem; color: var(--text-secondary);
+      max-width: 580px; margin-bottom: 32px; line-height: 1.7;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 16px 32px; background: var(--bg-primary); color: var(--text-primary);
+      border: 1px solid var(--text-primary); font-family: var(--font-heading);
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; text-decoration: none; transition: all 0.3s ease;
+    }
+    .hero-cta:hover { background: var(--text-primary); color: var(--bg-primary); }
+
+  </style>
+</head>
+<body>
+
+  <nav id="nav" class="scrolled">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
+            <ul class="nav-links" id="navLinks">
+        <li><a href="/what.html">What</a></li>
+        <li class="has-dropdown"><a href="/audit.html">How</a>
+          <ul class="dropdown">
+            <li><a href="/audit.html">Intelligence Audit</a></li>
+            <li><a href="/how-it-works.html">How It Works</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown"><a href="/#solution">Solutions</a>
+          <ul class="dropdown">
+            <li><a href="/solutions/cro.html">For the CRO</a></li>
+            <li><a href="/solutions/ceo.html">For the CEO</a></li>
+            <li><a href="/solutions/cfo.html">For the CFO</a></li>
+            <li><a href="/solutions/sales-director.html">For Sales Directors</a></li>
+            <li><a href="/solutions/pmm.html">For PMM &amp; Enablement</a></li>
+            <li><a href="/solutions/revops.html">For RevOps</a></li>
+            <li><a href="/solutions/training.html">For Sales Training</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown"><a href="/landscape.html">Compare</a>
+          <ul class="dropdown">
+            <li><a href="/landscape.html">Competitive Landscape</a></li>
+            <li><a href="/vs/gong.html">vs Gong</a></li>
+            <li><a href="/vs/klue.html">vs Klue</a></li>
+            <li><a href="/vs/clozd.html">vs Clozd</a></li>
+            <li><a href="/vs/crayon.html">vs Crayon</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown"><a href="/blog/">Resources</a>
+          <ul class="dropdown">
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/blog/">Articles</a></li>
+            <li><a href="/roi.html">ROI Calculator</a></li>
+            <li><a href="/about.html">Founder</a></li>
+            <li><a href="/security.html">Data &amp; Security</a></li>
+          </ul>
+        </li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="sec-hero">
+    <div class="container">
+      <div class="label">Data &amp; Security</div>
+      <h1>Your data never leaves your control.</h1>
+      <p class="hero-sub">RAINCLOUD analyzes your competitive deals on infrastructure we own, with read-only access to systems you already trust, and zero training of any model on your data. Below: exactly what we touch, where it runs, and how to keep us honest.</p>
+    </div>
+  </section>
+
+  <!-- THREE PRINCIPLES -->
+  <section class="principles">
+    <div class="container">
+      <div class="section-header">
+        <div class="label label--accent">Three Principles</div>
+        <h2>How we approach your data.</h2>
+        <p>Every architectural decision flows from three commitments. Everything else on this page is the supporting detail.</p>
+      </div>
+      <div class="principles-grid">
+        <div class="pr-card">
+          <div class="pr-num">01 · ACCESS</div>
+          <h3>Read-only, by default.</h3>
+          <p>We never write to your CRM, your call platform, or any production system. Connections are scoped to read-only API tokens or OAuth grants you can revoke at any time. You are always in control of what we can see.</p>
+        </div>
+        <div class="pr-card">
+          <div class="pr-num">02 · INFRASTRUCTURE</div>
+          <h3>Private models, private compute.</h3>
+          <p>Our language models run on private infrastructure that we own and operate. Your call data is never sent to OpenAI, Anthropic, or any third-party AI API. No shared models. No public LLMs. Full architectural control.</p>
+        </div>
+        <div class="pr-card">
+          <div class="pr-num">03 · TRAINING</div>
+          <h3>Your data is not model fuel.</h3>
+          <p>We do not train, fine-tune, or improve any model on your call recordings, CRM data, or competitive intelligence outputs. Your data analyzes your business. It does not become a feature in someone else's product.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOES / DOESN'T -->
+  <section class="does-doesnt">
+    <div class="container">
+      <div class="section-header">
+        <div class="label">What We Touch &amp; What We Don't</div>
+        <h2>Specifically, in plain language.</h2>
+        <p>The honest version of "what data does RAINCLOUD see?" — written so a security team can read it once and check the boxes.</p>
+      </div>
+      <div class="dd-grid">
+
+        <div class="dd-card does">
+          <div class="dd-label">RAINCLOUD does</div>
+
+          <div class="dd-item">
+            <h3>Read scoped sales call recordings &amp; transcripts</h3>
+            <p>Via your call platform's read-only API: Gong, Chorus, Fireflies, CallRail, and similar. We only access calls flagged or filtered for the engagement scope.</p>
+          </div>
+          <div class="dd-item">
+            <h3>Read scoped CRM deal records</h3>
+            <p>Stages, amounts, close dates, competitor mentions, win/loss outcomes — via read-only Salesforce, HubSpot, or similar API tokens.</p>
+          </div>
+          <div class="dd-item">
+            <h3>Read win-loss interview transcripts you provide</h3>
+            <p>Only what your team explicitly shares with us as part of the engagement.</p>
+          </div>
+          <div class="dd-item">
+            <h3>Generate aggregated intelligence artifacts</h3>
+            <p>Battlecards, win/loss reports, competitive radar, board narratives — synthesized from the data above and delivered to your inbox.</p>
+          </div>
+        </div>
+
+        <div class="dd-card doesnt">
+          <div class="dd-label">RAINCLOUD does not</div>
+
+          <div class="dd-item">
+            <h3>Send your data to third-party AI APIs</h3>
+            <p>No OpenAI. No Anthropic. No Gemini. No public LLM endpoints. Our analysis runs on private models on infrastructure we control.</p>
+          </div>
+          <div class="dd-item">
+            <h3>Train, fine-tune, or improve models on your data</h3>
+            <p>Your call recordings and deal data are inputs to your analysis only. They are never used to improve a model that touches another customer.</p>
+          </div>
+          <div class="dd-item">
+            <h3>Export raw call recordings or transcripts</h3>
+            <p>Our deliverables are aggregated artifacts — not raw conversations. Raw audio and transcripts stay in your call platform.</p>
+          </div>
+          <div class="dd-item">
+            <h3>Touch customer PII outside the engagement scope</h3>
+            <p>If a system contains data we don't need (HR records, financials, support tickets), we don't connect to it. Scope is documented and signed off before kickoff.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE & COMPLIANCE -->
+  <section class="specs">
+    <div class="container">
+      <div class="section-header">
+        <div class="label label--accent">Architecture &amp; Compliance</div>
+        <h2>The technical &amp; legal details.</h2>
+        <p>For your security team's review. We're happy to discuss any of these in a vendor-review call and adjust where it makes sense.</p>
+      </div>
+      <div class="specs-grid">
+
+        <div class="spec-item">
+          <div class="spec-label">Encryption</div>
+          <h3>In transit and at rest.</h3>
+          <p>All data flowing into RAINCLOUD systems is encrypted in transit via TLS 1.2+. Data at rest is encrypted using <!-- EDIT: specify your encryption standard, e.g. AES-256 -->[AES-256 / your standard]. <!-- EDIT: specify key management approach if applicable -->Keys are managed via [your key management approach].</p>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-label">Hosting &amp; Sub-processors</div>
+          <h3>A short, named list.</h3>
+          <p>RAINCLOUD runs on <!-- EDIT: list your hosting provider(s) — e.g., AWS us-east-1, Hetzner Frankfurt, your own colocation -->[your hosting provider and region]. Sub-processors include: <!-- EDIT: list any third parties handling customer data, e.g., transactional email provider, error monitoring -->[list your sub-processors here]. We notify customers in writing before adding any new sub-processor that touches customer data.</p>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-label">Data Residency</div>
+          <h3>Where it lives.</h3>
+          <p>Customer data is stored in <!-- EDIT: specify region(s) -->[your data residency region]. Data does not cross regions without explicit customer consent. <!-- EDIT: optionally mention EU-only customers or other regional capabilities -->Customers with EU residency requirements can request EU-only processing.</p>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-label">Data Retention</div>
+          <h3>Kept only as long as needed.</h3>
+          <p>Working analysis files are retained for the duration of the engagement plus <!-- EDIT: specify retention window, e.g., 90 days -->[retention period after engagement ends]. After that, working data is deleted. Final deliverables (battlecards, reports) are retained at your option for reference. You can request deletion of all RAINCLOUD-held data at any time and we will confirm in writing within <!-- EDIT: turnaround commitment -->[X business days].</p>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-label">Compliance Posture</div>
+          <h3>Where we stand.</h3>
+          <p>RAINCLOUD <!-- EDIT: pick the honest one — "is SOC 2 Type II certified", "is in active SOC 2 Type I preparation", "operates to SOC 2 controls without certification at this stage", etc. -->[SOC 2 status statement]. We comply with GDPR, CCPA, and applicable data-protection regulations. We do not handle PHI and are not currently HIPAA-covered; <!-- EDIT: note if HIPAA is on roadmap -->talk to us if your engagement requires it.</p>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-label">Contracts &amp; Reviews</div>
+          <h3>NDAs, DPAs, vendor reviews.</h3>
+          <p>We sign mutual NDAs as a default. We sign Data Processing Addenda (DPAs) on request — our standard DPA is available on request, or we can review yours. We complete vendor security questionnaires (SIG, CAIQ, custom) and join vendor-review calls with your security team before contract signature.</p>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-label">Access Controls</div>
+          <h3>Who at RAINCLOUD sees what.</h3>
+          <p>Access to customer data is restricted to <!-- EDIT: specify, e.g., "the small set of senior practitioners assigned to your engagement" -->[your access policy]. All access is logged and auditable. Customers can request an access log on request. Access is revoked when an engagement ends or a team member departs.</p>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-label">Incident Response</div>
+          <h3>If something goes wrong.</h3>
+          <p>In the unlikely event of a security incident affecting customer data, we will notify affected customers in writing within <!-- EDIT: e.g., 72 hours -->[notification window], with a description of what happened, what data was affected, and the remediation plan. We support customers' regulatory notification obligations (GDPR Article 33, state breach laws, etc.).</p>
+        </div>
+
+        <div class="spec-item">
+          <div class="spec-label">Customer Controls</div>
+          <h3>You can pull the plug at any time.</h3>
+          <p>Read-only API tokens you grant us can be revoked instantly from your side. Once revoked, our access stops. We will confirm receipt and proceed with deletion per your engagement's offboarding terms.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="label">Frequently Asked</div>
+        <h2>Common security questions.</h2>
+        <p>Most of what we get from security teams during vendor review. If yours isn't here, ask us directly — we'll add it.</p>
+      </div>
+      <div class="faq-grid">
+
+        <div class="faq-item">
+          <h3>Are our call recordings shared with OpenAI or any public AI service?</h3>
+          <p>No. Our language models run on private infrastructure. Your data does not transit OpenAI, Anthropic, Google, or any third-party AI API. This is an architectural commitment, not a configuration setting.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Will you sign our DPA?</h3>
+          <p>Yes. We can review your standard DPA or provide ours for your review. Either path takes a few business days. No surprises in the standard terms — read-only access, encryption, deletion on request, breach notification.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How long do you keep our data?</h3>
+          <p>Working analysis files for the duration of the engagement plus <!-- EDIT -->[retention window]. Final deliverables stay accessible to you. You can request deletion of all RAINCLOUD-held data at any time.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can we audit your access?</h3>
+          <p>Yes. Read-only API tokens we use are visible in your platform's admin logs. We can also provide our internal access logs on request. Frequency: ad-hoc on customer request, or quarterly if you prefer a standing cadence.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What happens to our data when we end the engagement?</h3>
+          <p>Working data is deleted within <!-- EDIT -->[deletion window]. Final deliverables (battlecards, reports, etc.) are retained at your option for future reference, or deleted on your request. We confirm completion in writing.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Are you SOC 2 certified?</h3>
+          <p><!-- EDIT: Replace with your honest current status. Examples below — pick one and delete the rest:
+            * "Yes — SOC 2 Type II report available under NDA on request."
+            * "We are in active preparation for SOC 2 Type I, target completion [date]."
+            * "We are not yet SOC 2 certified at this stage of the company. We operate to the SOC 2 Trust Services Criteria — encryption, access control, change management, incident response — and can walk your security team through our controls in a vendor-review call."
+          -->[SOC 2 status answer]. Happy to walk your security team through our controls in a vendor-review call regardless of formal status.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Where is our data physically stored?</h3>
+          <p><!-- EDIT -->[Your data residency answer — e.g., "All customer data is stored in AWS us-east-1 by default. Customers requiring EU residency can request EU-only processing on Hetzner Frankfurt."]</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What if our internal policy bans cloud processing of customer voice data?</h3>
+          <p>Talk to us. Our model is read-only access via your platform's API, which means voice data already lives in a service you've vetted (Gong, Chorus, etc.). What flows to RAINCLOUD is transcripts and metadata — not raw audio. If you have additional constraints, we'll work them out before contract.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="sec-cta">
+    <div class="container">
+      <h2>Got a security review process?<br>We're ready for it.</h2>
+      <p>We've worked with security teams at organizations from Series A startups to public-company-owned subsidiaries. Send us your questionnaire, schedule a call, or both. We'd rather sort this out before contract than answer it during.</p>
+      <a href="/contact.html" class="hero-cta">Talk to RAINCLOUD →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">RAIN<em>CLOUD</em></div>
+      </div>
+      <div class="footer-right">
+        <ul class="footer-links">
+          <li><a href="/blog/">Resources</a></li>
+          <li><a href="mailto:hello@rncld.com"><!--email_off-->hello@rncld.com<!--/email_off--></a></li>
+          <li><a href="https://rncld.com" target="_blank" rel="noopener noreferrer">rncld.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    if (nav) window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+    // Mobile toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    }
+  </script>
+</body>
+</html>
