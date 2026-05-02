@@ -1,0 +1,54 @@
+# RAINCLOUD
+
+> 4D Sales Intelligence for B2B revenue teams. RAINCLOUD analyzes competitive deals across width (every call), depth (synthesized across sources), time (patterns over quarters), and perspective (buyer's voice and seller's voice) — then delivers finished intelligence as living battlecards, win/loss patterns, weekly competitive radar, and board-ready narratives. No dashboards. No new logins. No SaaS to learn.
+
+RAINCLOUD is a technology-enabled consultancy founded by Colin Dowling (3x VP of Sales — GoDaddy Enterprise, Alembic SVP Revenue, Liquid Web VP Channel). Proprietary AI models running on private AWS infrastructure analyze your call recordings, CRM data, and win/loss interviews at scale. Senior practitioners synthesize the patterns. Output ships as finished documents — not another tool your team has to operate.
+
+Core engagement model: a $7,500 two-week Intelligence Audit (credited against any ongoing retainer), then quarterly engagements starting at $25K/quarter. Typical outcomes from existing case studies: +18 to +23 percentage point lift in competitive close rates within 30 days.
+
+## Core Pages
+
+- [Home](https://rncld.com/): RAINCLOUD overview — Adaptive GTM Intelligence positioning, the four problems revenue teams face when flying blind, two case studies (Series B endpoint security: +23pt win rate; Series A data integration: +18pt win rate), the four deliverables (win/loss analysis, living battlecards, competitive radar, board narrative), the founder.
+- [What is RAINCLOUD](https://rncld.com/what.html): The 4D Sales Intelligence framework explained — Width (every call, not 20), Depth (synthesized across calls + CRM + emails + post-mortems), Time (patterns over quarters, not snapshots), Perspective (buyer's voice and seller's voice). Plus 7 role-card grid linking to each Solutions page and a benchmark report download CTA.
+- [How It Works](https://rncld.com/how-it-works.html): RAINCLOUD as technology-enabled service. Private models on private infrastructure. Read-only access, finished intelligence delivered to inbox. The is/is-not framing — RAINCLOUD is not a SaaS platform, not a CI tool to manage, not consultants billing by the hour.
+- [Intelligence Audit](https://rncld.com/audit.html): The $7,500 two-week engagement. Connect read-only to call recording platform + CRM. Analyze last two quarters of competitive deals. Present findings to leadership in a 60-minute session. Includes FAQ on Gong/Chorus/Fireflies compatibility, security, what happens after.
+- [Competitive Landscape](https://rncld.com/landscape.html): How RAINCLOUD compares to traditional consulting, conversation intelligence platforms (Gong, Chorus), battlecard SaaS (Klue, Crayon), and win/loss firms (Clozd).
+- [ROI Calculator](https://rncld.com/roi.html): Interactive calculator. Three sliders (avg deal size, current competitive close rate, competitive deals per quarter). Models a 5–13 percentage point close rate improvement based on starting position (more headroom at lower starts; diminishing returns near the ceiling). Outputs verdict, ROI multiple, additional revenue per quarter and year, quarterly comparison bars.
+
+## Solutions (by role)
+
+- [For the CRO](https://rncld.com/solutions/cro.html): Forecast accuracy from competitive deal intelligence. Win/loss patterns the dashboard can't see. Board-ready competitive narrative each quarter.
+- [For the CEO](https://rncld.com/solutions/ceo.html): The competitive threat picture before investors ask. Early warning on win-rate drift. Strategic synthesis your CRO doesn't have bandwidth to produce.
+- [For the CFO](https://rncld.com/solutions/cfo.html): Pipeline leakage. Spend efficiency in GTM. Where deal economics are eroding before they show up in the variance report.
+- [For Sales Directors](https://rncld.com/solutions/sales-director.html): Battlecards refreshed monthly from real buyer conversations. Rep readiness signal. Talk tracks proven to work across multiple reps.
+- [For PMM & Enablement](https://rncld.com/solutions/pmm.html): Cross-source competitive synthesis your team doesn't have bandwidth for. Call analysis at scale; you keep narrative ownership.
+- [For RevOps](https://rncld.com/solutions/revops.html): The synthesized signal layer your CRM was never designed to produce. QBR inputs that connect deal data to deal causes.
+- [For Sales Training](https://rncld.com/solutions/training.html): Real talk tracks pulled from real wins. Replace generic training with proven competitive plays from your own deal library.
+
+## Competitor Comparisons
+
+- [vs Gong](https://rncld.com/vs/gong.html): Why conversation intelligence platforms (Gong, Chorus, Fireflies) record and transcribe at the call level but don't cross-reference hundreds of calls to extract competitive patterns. RAINCLOUD starts where Gong's analytics end.
+- [vs Klue](https://rncld.com/vs/klue.html): Where battlecard SaaS falls short. The 73% staleness problem. Why teams stop opening Klue and what they actually need instead.
+- [vs Clozd](https://rncld.com/vs/clozd.html): Why traditional win/loss interview programs (10-20 buyer interviews per quarter) miss the patterns visible only at the corpus level (500+ calls).
+- [vs Crayon](https://rncld.com/vs/crayon.html): Competitive monitoring vs competitive intelligence. The difference between "your competitor changed their pricing page" and "here's how their reps are positioning against you in active deals."
+
+## Articles
+
+- [The 480-Call Problem](https://rncld.com/blog/the-480-call-problem.html): You record 500 sales calls per quarter and listen to 20. Everything you'd want to know is in the 480 you skipped. Why sampling fails, why your conversation intelligence platform isn't fixing it, what it actually takes to solve.
+- [Scoreboard vs. Game Film](https://rncld.com/blog/scoreboard-vs-game-film.html): Revenue dashboards are scoreboards (outcome reporting). Call corpora are game film (pattern recognition). Most revenue leaders watch the scoreboard. The teams that watch the film pull ahead.
+- [Why Your Battlecards Are Costing You Deals](https://rncld.com/blog/why-your-battlecards-cost-you-deals.html): 73% of battlecards are never updated after creation. What happens to win rates when you fix that.
+- [Blog Index](https://rncld.com/blog/): All RAINCLOUD perspectives on competitive intelligence, revenue operations, and the intelligence gap in modern SaaS.
+
+## Resources
+
+- [2026 B2B Technology Sales Benchmark Report](https://rncld.com/resources/benchmark-2026.html): Free gated download (name + email + company). The Intelligence Gap: what separates the top quartile from everyone else. Built on 4.2 million analyzed opportunities, 50,000 structured win-loss interviews, 939 tracked B2B companies, and synthesis from 30+ published benchmark studies. Sections include the revenue math, the zombie pipeline, champion departure risk model, competitive event framework, and stage-specific guidance for Series A through Series C.
+
+## About & Contact
+
+- [Founder: Colin Dowling](https://rncld.com/about.html): 3x VP of Sales. VP Enterprise Sales at GoDaddy (NYSE: GDDY), SVP Revenue at Alembic (Seed → $145M Series B), VP Channel at PE-backed cloud infrastructure firm Liquid Web. Built RAINCLOUD so revenue leaders can enter every competitive deal with the best possible chance to win.
+- [Contact](https://rncld.com/contact.html): Book a 30-minute discovery call via Calendly, or send a message. Direct email: hello@rncld.com.
+- [Data & Security](https://rncld.com/security.html): How RAINCLOUD handles customer data. Three principles: read-only access, private models on AWS infrastructure dedicated to RAINCLOUD, no training on your data. Operates as a data processor under GDPR. Detailed coverage of encryption (AES-256, AWS KMS), sub-processors, data residency (us-east-1 default, EU regions on request), retention (engagement + 90 days), incident response (72-hour notification), and access controls.
+
+## Optional
+
+- [Series B SaaS Landing Page](https://rncld.com/lp/series-b-saas.html): Campaign-specific landing page targeting Series B SaaS revenue teams running 500+ calls per quarter. Minimal nav. Conversion-focused.
