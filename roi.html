@@ -10,10 +10,25 @@
   <style>
     *{margin:0;padding:0;box-sizing:border-box}:root{--bg:#0A0A0A;--card:#111111;--border:#1e1e1e;--border2:#2a2a2a;--text:#F0EDE8;--dim:#8a8a8a;--muted:#6a6a6a;--faint:#5a5a5a;--blue:#4A9EBF;--green:#4AC878;--gold:#C8A84A;--red:#C84A4A}body{background:var(--bg);color:var(--text);font-family:'Manrope',sans-serif;padding:0 20px}a{color:var(--text);text-decoration:none}.h{font-family:'Montserrat',sans-serif}
     .wrap{max-width:860px;margin:0 auto;padding:48px 0 80px}
-    .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:16px 20px}
-    .nav-inner{max-width:860px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
-    .nav-logo{font-family:'Montserrat',sans-serif;font-weight:300;font-size:1rem;letter-spacing:.25em;text-transform:uppercase}.nav-logo em{font-style:normal;color:var(--dim);font-weight:200}
-    .nav-link{font-size:.75rem;padding:8px 20px;border:1px solid var(--text);color:var(--text);font-family:'Montserrat',sans-serif;letter-spacing:.1em;text-transform:uppercase;transition:all .3s}.nav-link:hover{background:var(--text);color:var(--bg)}
+    /* Canonical menu nav */
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 0;transition:all .5s ease-out}
+    nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 0}
+    nav .nav-inner{max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,80px);display:flex;justify-content:space-between;align-items:center}
+    .nav-logo{font-family:'Montserrat',sans-serif;font-weight:300;font-size:1.1rem;letter-spacing:.25em;text-transform:uppercase;color:var(--text)}
+    .nav-logo em{font-style:normal;color:var(--muted);font-weight:200}
+    .nav-links{display:flex;align-items:center;gap:32px;list-style:none;margin:0;padding:0}
+    .nav-links>li{list-style:none}
+    .nav-links a{font-size:.72rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);transition:color .3s;position:relative}
+    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--text);transition:width .3s ease-out}
+    .nav-links a:hover{color:var(--text)}
+    .nav-links a:hover::after{width:100%}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+    .nav-toggle span{display:block;width:22px;height:1px;background:var(--text);margin:5px 0;transition:all .3s}
+    @media(max-width:768px){
+      .nav-links{display:none}
+      .nav-toggle{display:block}
+      .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(10,10,10,.97);backdrop-filter:blur(20px);padding:28px;gap:20px;border-bottom:1px solid var(--border)}
+    }
     .label{font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:var(--blue);margin-bottom:12px}
     h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:200;line-height:1.2;margin-bottom:12px}
     .sub{font-size:14px;color:var(--muted);line-height:1.7;max-width:540px;margin-bottom:48px}
@@ -202,6 +217,14 @@
     $('cr').addEventListener('input', calc);
     $('dq').addEventListener('input', calc);
     calc();
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    }
   </script>
 </body>
 </html>
