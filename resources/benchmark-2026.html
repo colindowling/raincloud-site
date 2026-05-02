@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 B2B Sales Benchmark Report — RAINCLOUD</title>
+  <meta name="description" content="The 2026 B2B Technology Sales Benchmark Report. Built on 4.2M analyzed opportunities, 50,000 win-loss interviews, and 939 tracked B2B companies. The Intelligence Gap: what separates the top quartile from everyone else. Free download.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+/* RAINCLOUD DESIGN SYSTEM */
+:root {
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #111111;
+  --bg-tertiary: #181818;
+  --bg-card: #141414;
+  --text-primary: #F0EDE8;
+  --text-secondary: #9A9A9A;
+  --text-tertiary: #5A5A5A;
+  --accent-blue: #4A9EBF;
+  --accent-blue-dim: rgba(74, 158, 191, 0.12);
+  --accent-red: #BF4A4A;
+  --accent-green: #4ABF7A;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-medium: rgba(255, 255, 255, 0.1);
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --container: 1280px;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-body); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
+::selection { background: var(--accent-blue); color: var(--bg-primary); }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+body::after {
+  content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9999; opacity: 0.4;
+}
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+h3 { font-size: clamp(1.05rem, 1.6vw, 1.3rem); font-weight: 400; }
+p { font-size: clamp(0.9rem, 1vw, 1rem); color: var(--text-secondary); }
+
+.label {
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary);
+}
+.label--accent { color: var(--accent-blue); }
+
+/* MINIMAL NAV (LP-style) */
+.lp-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 18px 0; background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.lp-nav .lp-nav-inner {
+  max-width: var(--container); margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 80px);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.lp-nav .nav-logo {
+  font-family: var(--font-heading); font-weight: 300; font-size: 1.1rem;
+  letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-primary);
+}
+.lp-nav .nav-logo em { font-style: normal; color: var(--text-tertiary); font-weight: 200; }
+.lp-nav .back-link {
+  font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-tertiary); transition: color 0.3s;
+}
+.lp-nav .back-link:hover { color: var(--text-primary); }
+
+/* HERO SPLIT */
+.report-hero {
+  padding: 140px 0 80px; min-height: 92vh;
+  display: flex; align-items: center;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.report-grid {
+  display: grid; grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(40px, 6vw, 100px); width: 100%; align-items: start;
+}
+@media (max-width: 980px) {
+  .report-grid { grid-template-columns: 1fr; gap: 56px; }
+  .report-hero { padding: 120px 0 60px; min-height: 0; }
+}
+
+.report-info .label { margin-bottom: 18px; }
+.report-info h1 {
+  font-weight: 200; line-height: 1.08; margin-bottom: 18px; max-width: 600px;
+}
+.report-info .subtitle {
+  font-family: var(--font-heading); font-weight: 300;
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  color: var(--accent-blue); line-height: 1.45; margin-bottom: 32px;
+  max-width: 540px; letter-spacing: -0.01em;
+}
+.report-info .lede {
+  font-size: 1.0rem; line-height: 1.7; color: var(--text-secondary);
+  max-width: 540px; margin-bottom: 36px;
+}
+
+.report-stats {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+  border-top: 1px solid var(--border-subtle); padding-top: 32px;
+  max-width: 540px;
+}
+.r-stat .num {
+  font-family: var(--font-heading); font-size: 1.8rem;
+  font-weight: 200; color: var(--text-primary);
+  letter-spacing: -0.02em; margin-bottom: 4px;
+}
+.r-stat .desc {
+  font-size: 0.78rem; color: var(--text-tertiary);
+  letter-spacing: 0.04em; line-height: 1.5;
+}
+
+/* FORM CARD */
+.report-form-wrap {
+  position: sticky; top: 100px;
+}
+@media (max-width: 980px) { .report-form-wrap { position: static; } }
+.report-form {
+  background: var(--bg-card); border: 1px solid var(--border-subtle);
+  border-radius: 6px; padding: clamp(28px, 3.5vw, 44px);
+  position: relative;
+}
+.report-form::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent-blue) 0%, transparent 100%);
+  border-radius: 6px 6px 0 0;
+}
+.form-eyebrow {
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--accent-blue); margin-bottom: 28px; font-weight: 600;
+}
+.form-title {
+  font-family: var(--font-heading); font-weight: 300;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 8px;
+}
+.form-meta {
+  font-size: 0.85rem; color: var(--text-secondary);
+  margin-bottom: 28px; line-height: 1.55;
+}
+.form-row { margin-bottom: 16px; position: relative; }
+.form-row label {
+  display: block; font-size: 0.7rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--text-tertiary);
+  margin-bottom: 8px; font-weight: 500;
+}
+.form-row input {
+  width: 100%; padding: 13px 16px; background: var(--bg-primary);
+  border: 1px solid var(--border-medium); color: var(--text-primary);
+  font-family: var(--font-body); font-size: 0.95rem;
+  border-radius: 4px; transition: all 0.25s ease; outline: none;
+}
+.form-row input:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(74, 158, 191, 0.12);
+}
+.form-row input::placeholder { color: var(--text-tertiary); }
+
+.form-submit {
+  width: 100%; margin-top: 12px; padding: 16px 24px;
+  background: var(--text-primary); color: var(--bg-primary);
+  border: 1px solid var(--text-primary);
+  font-family: var(--font-heading); font-size: 0.78rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  cursor: pointer; transition: all 0.3s ease;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+}
+.form-submit:hover { background: var(--accent-blue); border-color: var(--accent-blue); color: var(--text-primary); }
+.form-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+.form-submit svg { transition: transform 0.3s ease; }
+.form-submit:hover svg { transform: translateX(3px); }
+
+.form-fineprint {
+  margin-top: 16px; font-size: 0.72rem; color: var(--text-tertiary);
+  line-height: 1.55; text-align: center;
+}
+
+.form-success {
+  display: none; padding: 24px; text-align: center;
+  border: 1px solid rgba(74, 200, 120, 0.2);
+  background: rgba(74, 200, 120, 0.04);
+  border-radius: 4px;
+}
+.form-success.active { display: block; }
+.form-success h3 {
+  font-size: 1.05rem; color: var(--accent-green);
+  margin-bottom: 10px; font-weight: 400;
+}
+.form-success p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 16px; }
+.form-success .download-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 22px; background: transparent;
+  border: 1px solid var(--text-primary); color: var(--text-primary);
+  font-family: var(--font-heading); font-size: 0.72rem;
+  font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+  border-radius: 3px; transition: all 0.3s ease;
+}
+.form-success .download-link:hover { background: var(--text-primary); color: var(--bg-primary); }
+
+.form-error {
+  display: none; margin-top: 12px; font-size: 0.82rem;
+  color: var(--accent-red); padding: 10px 14px;
+  background: rgba(191, 74, 74, 0.08);
+  border-left: 2px solid var(--accent-red); border-radius: 2px;
+}
+.form-error.active { display: block; }
+
+/* INSIDE THE REPORT */
+.inside { background: var(--bg-secondary); padding: clamp(64px, 10vh, 120px) 0; }
+.inside .section-header { margin-bottom: 56px; max-width: 720px; }
+.inside .section-header .label { margin-bottom: 16px; }
+.inside .section-header h2 { margin-bottom: 16px; }
+.inside .section-header p { line-height: 1.7; max-width: 600px; }
+
+.inside-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+  background: var(--border-subtle);
+  border: 1px solid var(--border-subtle);
+}
+@media (max-width: 768px) { .inside-grid { grid-template-columns: 1fr; } }
+.inside-card {
+  background: var(--bg-secondary); padding: clamp(28px, 3.5vw, 44px);
+  position: relative;
+}
+.inside-card .card-num {
+  font-family: var(--font-heading); font-size: 0.72rem;
+  letter-spacing: 0.22em; color: var(--accent-blue);
+  font-weight: 500; margin-bottom: 14px;
+}
+.inside-card h3 {
+  font-size: clamp(1.15rem, 1.7vw, 1.4rem); font-weight: 400;
+  letter-spacing: -0.01em; margin-bottom: 12px;
+}
+.inside-card p {
+  font-size: 0.9rem; line-height: 1.7; color: var(--text-secondary);
+  max-width: 480px;
+}
+
+/* METHODOLOGY STRIP */
+.method-strip {
+  padding: clamp(48px, 7vh, 80px) 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-primary);
+}
+.method-strip .label { margin-bottom: 20px; color: var(--text-tertiary); }
+.method-strip h2 {
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem); font-weight: 200;
+  max-width: 880px; line-height: 1.35; margin-bottom: 8px;
+}
+.method-strip h2 em { font-style: normal; color: var(--accent-blue); }
+.method-strip p {
+  margin-top: 14px; max-width: 720px; font-size: 0.92rem;
+  line-height: 1.7; color: var(--text-tertiary);
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 36px 0; background: var(--bg-primary);
+}
+.footer-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-logo {
+  font-family: var(--font-heading); font-weight: 300; font-size: 0.85rem;
+  letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-tertiary);
+}
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a { font-size: 0.72rem; color: var(--text-tertiary); transition: color 0.3s; }
+.footer-links a:hover { color: var(--text-primary); }
+
+@media (max-width: 768px) {
+  .footer-inner { flex-direction: column; text-align: center; }
+}
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+  </style>
+</head>
+<body>
+
+  <!-- MINIMAL LP NAV -->
+  <div class="lp-nav">
+    <div class="lp-nav-inner">
+      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
+      <a href="/what.html" class="back-link">← Back to RAINCLOUD</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="report-hero">
+    <div class="container">
+      <div class="report-grid">
+
+        <div class="report-info">
+          <div class="label label--accent">Free Report · 2026 Edition</div>
+          <h1>The 2026 B2B Technology Sales Benchmark Report.</h1>
+          <p class="subtitle">The Intelligence Gap: what separates the top quartile from everyone else.</p>
+          <p class="lede">Something is wrong in B2B technology sales. Win rates have fallen to 21 percent. Sales cycles are 38 percent longer than they were in 2021. Nearly three out of every four reps missed quota last year. The data points to a single, organizing conclusion — and the teams that close the gap consistently outperform those that don't. Not by five percent. By fifty percent within twelve months.</p>
+
+          <div class="report-stats">
+            <div class="r-stat">
+              <div class="num">4.2<span style="font-size: 0.65em; color: var(--text-tertiary);">M</span></div>
+              <div class="desc">Analyzed opportunities</div>
+            </div>
+            <div class="r-stat">
+              <div class="num">50,000</div>
+              <div class="desc">Structured win-loss interviews</div>
+            </div>
+            <div class="r-stat">
+              <div class="num">939</div>
+              <div class="desc">B2B companies tracked</div>
+            </div>
+            <div class="r-stat">
+              <div class="num">30+</div>
+              <div class="desc">Benchmark studies synthesized</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="report-form-wrap">
+          <div class="report-form" id="formCard">
+            <div class="form-eyebrow">Get the Report</div>
+
+            <form id="benchmarkForm" novalidate>
+              <div class="form-row">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="First and last name" required autocomplete="name">
+              </div>
+              <div class="form-row">
+                <label for="email">Work email</label>
+                <input type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email">
+              </div>
+              <div class="form-row">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Company name" required autocomplete="organization">
+              </div>
+
+              <button type="submit" class="form-submit" id="submitBtn">
+                <span>Download the Report</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+              </button>
+
+              <div class="form-error" id="formError"></div>
+              <p class="form-fineprint">By downloading, you agree to receive an occasional update from RAINCLOUD. Unsubscribe anytime.</p>
+            </form>
+
+            <div class="form-success" id="formSuccess">
+              <h3>Your download is ready.</h3>
+              <p>If the download didn't start automatically, use the link below.</p>
+              <a href="/assets/RAINCLOUD_2026_Benchmark_Report.pdf" class="download-link" download>
+                Download PDF
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIDE THE REPORT -->
+  <section class="inside">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Inside the Report</div>
+        <h2>What you'll learn.</h2>
+        <p>Twelve sections of evidence-based analysis. The data is sourced. The methodology is documented. The conclusions are uncomfortable for teams operating without a systematic intelligence function.</p>
+      </div>
+      <div class="inside-grid">
+        <div class="inside-card reveal">
+          <div class="card-num">SECTION 02</div>
+          <h3>The Revenue Math</h3>
+          <p>What the intelligence gap is actually costing your organization, calculated from your win rate, deal size, and cycle length. The number is usually larger than leaders expect.</p>
+        </div>
+        <div class="inside-card reveal">
+          <div class="card-num">SECTION 05</div>
+          <h3>The Zombie Pipeline</h3>
+          <p>How to identify the deals in your pipeline that are already lost — and how much pipeline coverage you actually have once those zombies are removed. Most teams are forecasting against a number that's mathematically impossible.</p>
+        </div>
+        <div class="inside-card reveal">
+          <div class="card-num">SECTION 06</div>
+          <h3>The Champion Departure Risk Model</h3>
+          <p>Your champion just left their company. The data on what happens next, the exposure window, and the playbook for re-anchoring the deal before the new buyer rolls back the project.</p>
+        </div>
+        <div class="inside-card reveal">
+          <div class="card-num">SECTION 08</div>
+          <h3>The Competitive Event Framework</h3>
+          <p>What a competitor's pricing change, leadership hire, or product launch does to your win rate over the following two quarters — and how the top quartile responds inside the first 14 days.</p>
+        </div>
+        <div class="inside-card reveal">
+          <div class="card-num">SECTION 12</div>
+          <h3>Stage-Specific Guidance</h3>
+          <p>The intelligence priorities, instrumentation, and team structure that map to your funding stage. Series A, B, and C each have a different version of the gap. The fix is stage-specific.</p>
+        </div>
+        <div class="inside-card reveal">
+          <div class="card-num">FULL APPENDIX</div>
+          <h3>Sources, Citations & Derivations</h3>
+          <p>Every analysis traces to its primary source, with derivations shown for original calculations. No single dataset is cited more than three times, by design — the breadth of the evidence base is the point.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY STRIP -->
+  <div class="method-strip">
+    <div class="container">
+      <div class="label">Methodology</div>
+      <h2>Built on <em>4.2 million analyzed opportunities</em>, <em>50,000 win-loss interviews</em>, <em>700 competitive intelligence practitioners</em>, <em>939 tracked B2B companies</em>, and synthesis from more than thirty published benchmark studies.</h2>
+      <p>RAINCLOUD's perspective, where it appears, reflects the analytical framework applied to that data — the lens through which revenue teams diagnose competitive deal patterns, win-loss drivers, and intelligence gaps. The full citation list and derivations appear in the appendix.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">RAIN<em style="font-style:normal;color:var(--text-tertiary);font-weight:200;">CLOUD</em></div>
+        <ul class="footer-links">
+          <li><a href="/what.html">What is RAINCLOUD</a></li>
+          <li><a href="/audit.html">Intelligence Audit</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="https://rncld.com" target="_blank" rel="noopener noreferrer">rncld.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ====================================================================
+    // FORM ENDPOINT — wire this up to your real lead-capture handler.
+    //
+    // Set FORM_ENDPOINT to your form service URL to capture leads:
+    //   - Formspree:    'https://formspree.io/f/YOUR_FORM_ID'
+    //   - HubSpot:      use the HubSpot Forms script instead (replace this form)
+    //   - Custom webhook: 'https://your-zapier-or-make-webhook-url'
+    //
+    // Leave as empty string ('') to skip lead capture and just deliver the PDF.
+    // The PDF will still download whether the endpoint POST succeeds or not,
+    // so users always get the report.
+    // ====================================================================
+    const FORM_ENDPOINT = 'https://formspree.io/f/xwvypjob';
+    const PDF_URL = '/assets/RAINCLOUD_2026_Benchmark_Report.pdf';
+
+    const form = document.getElementById('benchmarkForm');
+    const formCard = document.getElementById('formCard');
+    const success = document.getElementById('formSuccess');
+    const submitBtn = document.getElementById('submitBtn');
+    const errorBox = document.getElementById('formError');
+
+    function showError(msg) {
+      errorBox.textContent = msg;
+      errorBox.classList.add('active');
+    }
+    function clearError() {
+      errorBox.classList.remove('active');
+      errorBox.textContent = '';
+    }
+
+    function triggerDownload() {
+      const a = document.createElement('a');
+      a.href = PDF_URL;
+      a.download = 'RAINCLOUD_2026_Benchmark_Report.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      clearError();
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const company = form.company.value.trim();
+
+      if (!name || !email || !company) {
+        showError('Please fill in all fields.');
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showError('Please enter a valid email address.');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.querySelector('span').textContent = 'Preparing your download…';
+
+      const payload = {
+        name, email, company,
+        source: 'benchmark-2026-lp',
+        ts: new Date().toISOString()
+      };
+
+      function resetBtn() {
+        submitBtn.disabled = false;
+        submitBtn.querySelector('span').textContent = 'Download the Report';
+      }
+
+      // Gated download — POST to Formspree first; only deliver PDF on success.
+      if (FORM_ENDPOINT) {
+        try {
+          const res = await fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          if (!res.ok) {
+            const data = await res.json().catch(() => ({}));
+            showError(data?.error || (data?.errors && data.errors[0]?.message) || 'Something went wrong. Please try again or email colin@rncld.com directly.');
+            resetBtn();
+            return;
+          }
+        } catch (err) {
+          showError('Network error. Please try again or email colin@rncld.com directly.');
+          resetBtn();
+          return;
+        }
+      }
+
+      // Capture succeeded (or no endpoint set) — deliver the PDF
+      triggerDownload();
+      form.style.display = 'none';
+      success.classList.add('active');
+    });
+
+    // Reveal on scroll
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

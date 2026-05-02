@@ -180,22 +180,28 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
 
 
 /* DROPDOWN */
-.nav-links .dropdown { position: relative; }
-.nav-links .dropdown > a::after { display: none; }
-.dropdown-menu {
-  display: none; position: absolute; top: 100%; padding-top: 12px; left: 50%;
-  transform: translateX(-50%); background: rgba(10,10,10,0.97);
-  backdrop-filter: blur(20px); border: 1px solid var(--border-subtle);
-  min-width: 200px; padding: 8px 0; z-index: 999;
+.has-dropdown { position: relative; }
+.has-dropdown > a::after { display: none; }
+.dropdown {
+  display: none; position: absolute; top: 100%; left: 0;
+  background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px; padding: 8px 0; min-width: 200px; z-index: 200;
+  list-style: none; margin: 0;
 }
-.dropdown-menu a {
-  display: block; padding: 10px 20px; font-size: 0.72rem;
-  font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--text-tertiary); transition: color 0.2s ease, background 0.2s ease;
-  white-space: nowrap;
+.dropdown li { padding: 0; }
+.dropdown li a {
+  display: block; padding: 8px 20px; font-size: 0.75rem;
+  color: var(--text-secondary); text-transform: none; letter-spacing: 0.02em;
+  white-space: nowrap; transition: color 0.2s;
 }
-.dropdown-menu a:hover { color: var(--text-primary); background: var(--bg-tertiary); }
-.nav-links .dropdown:hover .dropdown-menu { display: block; }
+.dropdown li a::after { display: none; }
+.dropdown li a:hover { color: var(--text-primary); background: rgba(255,255,255,0.03); }
+.has-dropdown:hover .dropdown { display: block; }
+@media(max-width:768px) {
+  .dropdown { position: static; display: none; background: transparent; border: none; padding: 0 0 0 16px; min-width: 0; margin: 4px 0; }
+  .dropdown li a { padding: 6px 0; font-size: 0.8rem; }
+  .has-dropdown:hover .dropdown, .nav-links.open .has-dropdown .dropdown { display: block; }
+}
 </style>
   <style>
     /* ===== PAGE-SPECIFIC STYLES ===== */
@@ -452,39 +458,46 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
 <body>
 
   <!-- NAV -->
-  <nav id="nav">
-    <div class="container">
+  <nav id="nav" class="scrolled">
+    <div class="container nav-inner">
       <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
             <ul class="nav-links" id="navLinks">
-        <li><a href="/#problem">What</a></li>
-        <li class="dropdown">
-          <a href="/audit.html">How</a>
-          <div class="dropdown-menu">
-            <a href="/audit.html">Intelligence Audit</a>
-            <a href="/how-it-works.html">How It Works</a>
-          </div>
+        <li><a href="/what.html">What</a></li>
+        <li class="has-dropdown"><a href="/audit.html">How</a>
+          <ul class="dropdown">
+            <li><a href="/audit.html">Intelligence Audit</a></li>
+            <li><a href="/how-it-works.html">How It Works</a></li>
+          </ul>
         </li>
-        <li class="dropdown">
-          <a href="/#solution">Solutions</a>
-          <div class="dropdown-menu">
-            <a href="/solutions/cro.html">For the CRO</a>
-            <a href="/solutions/ceo.html">For the CEO</a>
-            <a href="/solutions/cfo.html">For the CFO</a>
-            <a href="/solutions/sales-director.html">For Sales Directors</a>
-            <a href="/solutions/pmm.html">For PMM &amp; Enablement</a>
-            <a href="/solutions/revops.html">For RevOps</a>
-            <a href="/solutions/training.html">For Sales Training</a>
-          </div>
+        <li class="has-dropdown"><a href="/#solution">Solutions</a>
+          <ul class="dropdown">
+            <li><a href="/solutions/cro.html">For the CRO</a></li>
+            <li><a href="/solutions/ceo.html">For the CEO</a></li>
+            <li><a href="/solutions/cfo.html">For the CFO</a></li>
+            <li><a href="/solutions/sales-director.html">For Sales Directors</a></li>
+            <li><a href="/solutions/pmm.html">For PMM &amp; Enablement</a></li>
+            <li><a href="/solutions/revops.html">For RevOps</a></li>
+            <li><a href="/solutions/training.html">For Sales Training</a></li>
+          </ul>
         </li>
-        <li class="dropdown">
-          <a href="/blog/">Resources</a>
-          <div class="dropdown-menu">
-            <a href="/blog/">Articles</a>
-            <a href="/roi.html">ROI Calculator</a>
-            <a href="/about.html">Founder</a>
-          </div>
+        <li class="has-dropdown"><a href="/landscape.html">Compare</a>
+          <ul class="dropdown">
+            <li><a href="/landscape.html">Competitive Landscape</a></li>
+            <li><a href="/vs/gong.html">vs Gong</a></li>
+            <li><a href="/vs/klue.html">vs Klue</a></li>
+            <li><a href="/vs/clozd.html">vs Clozd</a></li>
+            <li><a href="/vs/crayon.html">vs Crayon</a></li>
+          </ul>
         </li>
-        <li><a href="/contact.html" class="nav-cta">Contact</a></li>
+        <li class="has-dropdown"><a href="/blog/">Resources</a>
+          <ul class="dropdown">
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/blog/">Articles</a></li>
+            <li><a href="/roi.html">ROI Calculator</a></li>
+            <li><a href="/about.html">Founder</a></li>
+            <li><a href="/security.html">Data &amp; Security</a></li>
+          </ul>
+        </li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -709,7 +722,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <span class="footer-logo">RAINCLOUD</span>
         <ul class="footer-links">
           <li><a href="/blog/">Resources</a></li>
-          <li><a href="/cdn-cgi/l/email-protection#b2dad7dededdf2c0dcd1ded69cd1dddf"><span class="__cf_email__" data-cfemail="a2cac7cececde2d0ccc1cec68cc1cdcf">[email&#160;protected]</span></a></li>
+          <li><a href="mailto:hello@rncld.com"><!--email_off-->hello@rncld.com<!--/email_off--></a></li>
           <li><a href="https://rncld.com" target="_blank">rncld.com</a></li>
         </ul>
         <span class="footer-copy">&copy; 2026 RAINCLOUD. All rights reserved.</span>

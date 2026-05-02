@@ -265,7 +265,84 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       min-width: 100%;
       height: 660px;
     }
-  
+
+    /* CONTACT FORM (alongside Calendly) */
+    .contact-form-section {
+      background: var(--bg-secondary);
+      padding: clamp(64px, 9vh, 110px) 0;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .contact-form-section .form-header {
+      margin-bottom: 40px; max-width: 640px;
+    }
+    .contact-form-section .form-header .label { margin-bottom: 14px; }
+    .contact-form-section .form-header h2 {
+      margin-bottom: 14px; font-weight: 200;
+      font-size: clamp(1.7rem, 3vw, 2.4rem); letter-spacing: -0.02em;
+    }
+    .contact-form-section .form-header p {
+      font-size: 1rem; color: var(--text-secondary); line-height: 1.7;
+    }
+
+    .contact-msg-form { max-width: 600px; }
+    .cf-row { margin-bottom: 18px; position: relative; }
+    .cf-row label {
+      display: block; font-size: 0.7rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-tertiary);
+      margin-bottom: 8px; font-weight: 500;
+    }
+    .cf-row input,
+    .cf-row textarea {
+      width: 100%; padding: 13px 16px; background: var(--bg-primary);
+      border: 1px solid var(--border-medium); color: var(--text-primary);
+      font-family: var(--font-body); font-size: 0.95rem;
+      border-radius: 4px; transition: all 0.25s ease; outline: none;
+      font-weight: 400;
+    }
+    .cf-row textarea {
+      resize: vertical; min-height: 140px; line-height: 1.55;
+    }
+    .cf-row input:focus,
+    .cf-row textarea:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(74, 158, 191, 0.12);
+    }
+    .cf-row input::placeholder, .cf-row textarea::placeholder {
+      color: var(--text-tertiary);
+    }
+    .cf-submit {
+      margin-top: 8px; padding: 16px 32px;
+      background: var(--text-primary); color: var(--bg-primary);
+      border: 1px solid var(--text-primary);
+      font-family: var(--font-heading); font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      cursor: pointer; transition: all 0.3s ease;
+      display: inline-flex; align-items: center; gap: 10px;
+    }
+    .cf-submit:hover { background: var(--accent-blue); border-color: var(--accent-blue); color: var(--text-primary); }
+    .cf-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    .cf-submit svg { transition: transform 0.3s ease; }
+    .cf-submit:hover svg { transform: translateX(3px); }
+    .cf-error {
+      display: none; margin-top: 14px; font-size: 0.82rem;
+      color: var(--accent-red); padding: 10px 14px;
+      background: rgba(191,74,74,0.08);
+      border-left: 2px solid var(--accent-red); border-radius: 2px;
+    }
+    .cf-error.active { display: block; }
+    .cf-success {
+      display: none; padding: 32px 28px; max-width: 600px;
+      border: 1px solid rgba(74, 200, 120, 0.25);
+      background: rgba(74, 200, 120, 0.04);
+      border-radius: 4px;
+    }
+    .cf-success.active { display: block; }
+    .cf-success h3 {
+      font-size: 1.15rem; color: var(--accent-green);
+      margin-bottom: 10px; font-weight: 400;
+    }
+    .cf-success p { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.65; }
+
     .has-dropdown{position:relative}
     .dropdown{display:none;position:absolute;top:100%;left:0;background:var(--bg-secondary);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:8px 0;min-width:200px;z-index:200;list-style:none;margin:0;padding-top:8px}
     .dropdown li{padding:0}
@@ -372,9 +449,43 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         </div>
       </div>
 
-      <div style="margin-top: 48px; padding: 32px; background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; text-align: center;">
-        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 8px;">Prefer email? Reach Colin directly:</p>
-        <a href="/cdn-cgi/l/email-protection#e68e838a8a89a69488858a82c885898b" style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--accent-blue); text-decoration: none; letter-spacing: 0.03em;"><span class="__cf_email__" data-cfemail="2c44494040436c5e424f4048024f4341">[email&#160;protected]</span></a>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM SECTION (alongside Calendly above) -->
+  <section class="contact-form-section">
+    <div class="container">
+      <div class="form-header">
+        <div class="label label--accent">Or Send a Message</div>
+        <h2>Not ready to book?</h2>
+        <p>Drop us a note instead. Colin replies personally, usually within one business day.</p>
+      </div>
+      <form id="contactForm" class="contact-msg-form" novalidate>
+        <div class="cf-row">
+          <label for="cname">Name</label>
+          <input type="text" id="cname" name="name" placeholder="First and last name" required autocomplete="name">
+        </div>
+        <div class="cf-row">
+          <label for="cemail">Work email</label>
+          <input type="email" id="cemail" name="email" placeholder="you@company.com" required autocomplete="email">
+        </div>
+        <div class="cf-row">
+          <label for="ccompany">Company</label>
+          <input type="text" id="ccompany" name="company" placeholder="Company name" required autocomplete="organization">
+        </div>
+        <div class="cf-row">
+          <label for="cmessage">Message</label>
+          <textarea id="cmessage" name="message" placeholder="What's on your mind?" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="cf-submit" id="cfSubmitBtn">
+          <span>Send Message</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <div class="cf-error" id="cfError"></div>
+      </form>
+      <div class="cf-success" id="cfSuccess">
+        <h3>Message sent.</h3>
+        <p>Thanks. Colin will reply within one business day at the email address you provided.</p>
       </div>
     </div>
   </section>
@@ -387,4 +498,86 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       <div class="footer-right">
         <ul class="footer-links">
           <li><a href="/blog/">Resources</a></li>
-          <li><a href="/cdn-cgi
+          <li><a href="mailto:colin@rncld.com">colin@rncld.com</a></li>
+          <li><a href="https://rncld.com" target="_blank" rel="noopener noreferrer">rncld.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    if (nav) {
+      window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+    }
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    }
+
+    // ====================================================================
+    // Contact form → Formspree
+    // ====================================================================
+    const CONTACT_ENDPOINT = 'https://formspree.io/f/xjglkdyp';
+
+    const cForm = document.getElementById('contactForm');
+    const cSuccess = document.getElementById('cfSuccess');
+    const cError = document.getElementById('cfError');
+    const cBtn = document.getElementById('cfSubmitBtn');
+
+    function cfShowError(msg) { cError.textContent = msg; cError.classList.add('active'); }
+    function cfClearError() { cError.classList.remove('active'); cError.textContent = ''; }
+
+    if (cForm) {
+      cForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        cfClearError();
+
+        const name = cForm.name.value.trim();
+        const email = cForm.email.value.trim();
+        const company = cForm.company.value.trim();
+        const message = cForm.message.value.trim();
+
+        if (!name || !email || !company || !message) {
+          cfShowError('Please fill in all fields.');
+          return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          cfShowError('Please enter a valid email address.');
+          return;
+        }
+
+        cBtn.disabled = true;
+        cBtn.querySelector('span').textContent = 'Sending…';
+
+        try {
+          const res = await fetch(CONTACT_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({ name, email, company, message, source: 'contact-page' })
+          });
+
+          if (res.ok) {
+            cForm.style.display = 'none';
+            cSuccess.classList.add('active');
+          } else {
+            const data = await res.json().catch(() => ({}));
+            cfShowError(data?.error || 'Something went wrong. Please try again or email colin@rncld.com directly.');
+            cBtn.disabled = false;
+            cBtn.querySelector('span').textContent = 'Send Message';
+          }
+        } catch (err) {
+          cfShowError('Network error. Please try again or email colin@rncld.com directly.');
+          cBtn.disabled = false;
+          cBtn.querySelector('span').textContent = 'Send Message';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

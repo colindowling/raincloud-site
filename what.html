@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is RAINCLOUD — 4D Sales Intelligence</title>
+  <meta name="description" content="RAINCLOUD is 4D Sales Intelligence — analyzing your competitive deals across width, depth, time, and perspective. Synthesized from your own data. Delivered as answers, not dashboards.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+/* ========================================
+   RAINCLOUD DESIGN SYSTEM
+   Montserrat Light headings / Manrope body
+   Dark, monochromatic, premium
+   ======================================== */
+
+/* --- VARIABLES --- */
+:root {
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #111111;
+  --bg-tertiary: #181818;
+  --bg-card: #141414;
+  --text-primary: #F0EDE8;
+  --text-secondary: #9A9A9A;
+  --text-tertiary: #5A5A5A;
+  --accent-blue: #4A9EBF;
+  --accent-blue-dim: rgba(74, 158, 191, 0.12);
+  --accent-red: #BF4A4A;
+  --accent-green: #4ABF7A;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-medium: rgba(255, 255, 255, 0.1);
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --container: 1280px;
+  --container-narrow: 880px;
+}
+
+/* --- RESET --- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-body); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
+::selection { background: var(--accent-blue); color: var(--bg-primary); }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* --- GRAIN OVERLAY --- */
+body::after {
+  content: '';
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9999; opacity: 0.4;
+}
+
+/* --- LAYOUT --- */
+.container { max-width: var(--container); margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+.container--narrow { max-width: var(--container-narrow); margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+section { padding: clamp(64px, 10vh, 140px) 0; }
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.4rem, 5.5vw, 4.5rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+h3 { font-size: clamp(1.2rem, 1.8vw, 1.5rem); font-weight: 400; }
+p { font-size: clamp(0.9rem, 1vw, 1rem); color: var(--text-secondary); max-width: 600px; }
+
+.label {
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary);
+}
+.label--accent { color: var(--accent-blue); }
+
+.section-header { margin-bottom: clamp(40px, 5vh, 64px); }
+.section-header .label { margin-bottom: 16px; }
+.section-header p { margin-top: 16px; }
+
+.divider { width: 100%; height: 1px; background: var(--border-subtle); }
+
+/* --- BUTTONS --- */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 32px; font-family: var(--font-body); font-size: 0.8rem;
+  font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+  border: 1px solid var(--border-medium); background: transparent;
+  color: var(--text-primary); cursor: pointer; position: relative; overflow: hidden;
+  transition: all 0.4s var(--ease-out);
+}
+.btn::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: var(--text-primary); transform: translateX(-101%);
+  transition: transform 0.4s var(--ease-out);
+}
+.btn:hover::before { transform: translateX(0); }
+.btn:hover { color: var(--bg-primary); border-color: var(--text-primary); }
+.btn span, .btn svg { position: relative; z-index: 1; }
+.btn svg { transition: transform 0.4s var(--ease-out); }
+.btn:hover svg { transform: translateX(4px); }
+
+.btn--primary { background: var(--bg-primary); color: var(--text-primary); border-color: var(--text-primary); }
+.btn--primary::before { background: var(--text-primary); }
+.btn--primary:hover { color: var(--bg-primary); }
+
+/* --- NAVIGATION --- */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 18px 0; transition: all 0.5s var(--ease-out);
+}
+nav.scrolled {
+  background: rgba(10, 10, 10, 0.92); backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-subtle);
+  padding: 12px 0;
+}
+nav .container { display: flex; align-items: center; justify-content: space-between; }
+
+.nav-logo { font-family: var(--font-heading); font-weight: 300; font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; }
+.nav-logo em { font-style: normal; color: var(--text-tertiary); font-weight: 200; }
+
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 0.72rem; font-weight: 400; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-tertiary); transition: color 0.3s ease;
+  position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px; background: var(--text-primary);
+  transition: width 0.3s var(--ease-out);
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  font-size: 0.68rem !important; padding: 8px 20px;
+  border: 1px solid var(--border-medium); transition: all 0.3s ease;
+}
+.nav-cta:hover { border-color: var(--text-primary); background: var(--text-primary); color: var(--bg-primary) !important; }
+.nav-cta::after { display: none !important; }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1px; background: var(--text-primary); margin: 5px 0; transition: all 0.3s ease; }
+
+/* DROPDOWN */
+.has-dropdown { position: relative; }
+.dropdown {
+  display: none; position: absolute; top: 100%; left: 0;
+  background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px; padding: 8px 0; min-width: 200px; z-index: 200;
+  list-style: none; margin: 0;
+}
+.dropdown li { padding: 0; }
+.dropdown li a {
+  display: block; padding: 8px 20px; font-size: 0.75rem;
+  color: var(--text-secondary); text-transform: none; letter-spacing: 0.02em;
+  white-space: nowrap; transition: color 0.2s;
+}
+.dropdown li a::after { display: none; }
+.dropdown li a:hover { color: var(--text-primary); background: rgba(255,255,255,0.03); }
+.has-dropdown:hover .dropdown { display: block; }
+
+/* --- FOOTER --- */
+footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 300; font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-tertiary); }
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a { font-size: 0.72rem; color: var(--text-tertiary); transition: color 0.3s ease; }
+.footer-links a:hover { color: var(--text-primary); }
+
+/* --- SCROLL ANIMATIONS --- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: 100%; left: 0; right: 0; background: rgba(10, 10, 10, 0.97);
+    backdrop-filter: blur(20px); padding: 28px; gap: 20px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .dropdown { position: static; display: none; background: transparent; border: none; padding: 0 0 0 16px; min-width: 0; margin: 4px 0; }
+  .dropdown li a { padding: 6px 0; font-size: 0.8rem; }
+  .has-dropdown:hover .dropdown, .nav-links.open .has-dropdown .dropdown { display: block; }
+}
+
+  </style>
+  <style>
+    /* ===== PAGE-SPECIFIC STYLES ===== */
+
+    /* HERO */
+    .what-hero {
+      min-height: 78vh; display: flex; align-items: center;
+      padding: 160px 0 80px; position: relative;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .what-hero .label {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--accent-blue); margin-bottom: 16px;
+    }
+    .what-hero h1 {
+      font-size: clamp(2.6rem, 5.5vw, 4.4rem); font-weight: 200;
+      line-height: 1.1; margin-bottom: 28px; max-width: 920px;
+    }
+    .what-hero h1 .accent {
+      display: block; margin-top: 10px;
+      color: var(--text-secondary); font-weight: 200;
+      font-size: 0.62em; letter-spacing: -0.01em;
+    }
+    .what-hero .hero-sub {
+      font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);
+      max-width: 680px; margin-bottom: 36px;
+    }
+    .hero-cta-row {
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 16px 32px; background: var(--bg-primary); color: var(--text-primary);
+      border: 1px solid var(--text-primary); font-family: var(--font-heading);
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; text-decoration: none; transition: all 0.3s ease;
+    }
+    .hero-cta:hover { background: var(--text-primary); color: var(--bg-primary); }
+    .hero-meta {
+      font-size: 0.8rem; color: var(--text-tertiary); letter-spacing: 0.03em;
+    }
+
+    /* STATS BAR */
+    .what-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      background: var(--border-subtle);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    @media (max-width: 768px) { .what-stats { grid-template-columns: 1fr; } }
+    .what-stat {
+      background: var(--bg-primary); padding: 48px 32px; text-align: center;
+    }
+    .what-stat .num {
+      font-family: var(--font-heading); font-size: 2.6rem; font-weight: 200;
+      color: var(--text-primary); margin-bottom: 8px; letter-spacing: -0.02em;
+    }
+    .what-stat .num em { font-style: normal; color: var(--accent-blue); }
+    .what-stat .desc {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text-tertiary); max-width: 280px; margin: 0 auto;
+    }
+
+    /* IMAGE BANDS */
+    .image-band { position: relative; height: clamp(260px, 38vh, 420px); overflow: hidden; }
+    .image-band.band-tall-2 { height: clamp(380px, 55vh, 600px); }
+    .image-band .band-img {
+      position: absolute; top: -20%; left: 0; width: 100%; height: 140%;
+      object-fit: cover; filter: grayscale(100%) brightness(0.45) contrast(1.2);
+    }
+    .image-band .band-overlay {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to bottom, var(--bg-primary) 0%, rgba(10,10,10,0.25) 20%, rgba(10,10,10,0.25) 80%, var(--bg-primary) 100%);
+      pointer-events: none;
+    }
+    .band-cta-layer {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center; gap: 24px; z-index: 3;
+    }
+    .band-cta-layer .cta-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 18px 36px; background: var(--bg-primary); color: var(--text-primary);
+      border: 1px solid var(--text-primary);
+      font-family: var(--font-heading); font-size: 0.8rem;
+      font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.3s ease;
+    }
+    .band-cta-layer .cta-primary:hover { background: var(--text-primary); color: var(--bg-primary); }
+
+    /* 4D FRAMEWORK */
+    .four-d { background: var(--bg-primary); }
+    .four-d-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+      background: var(--border-subtle);
+      border: 1px solid var(--border-subtle);
+    }
+    @media (max-width: 768px) { .four-d-grid { grid-template-columns: 1fr; } }
+    .four-d-card {
+      background: var(--bg-primary); padding: clamp(36px, 5vw, 60px);
+      position: relative; min-height: 280px;
+    }
+    .four-d-card .dim-num {
+      font-family: var(--font-heading); font-size: 0.78rem;
+      letter-spacing: 0.25em; color: var(--accent-blue);
+      margin-bottom: 18px; font-weight: 500;
+    }
+    .four-d-card h3 {
+      font-size: clamp(1.6rem, 2.4vw, 2.2rem); font-weight: 200;
+      letter-spacing: -0.02em; margin-bottom: 6px;
+    }
+    .four-d-card .dim-tag {
+      font-family: var(--font-heading); font-size: 0.85rem;
+      color: var(--text-primary); font-weight: 300;
+      letter-spacing: 0.02em; margin-bottom: 18px; max-width: none;
+    }
+    .four-d-card p:not(.dim-tag) {
+      font-size: 0.92rem; line-height: 1.75; color: var(--text-secondary);
+      max-width: 460px;
+    }
+
+    /* WHO IT'S FOR */
+    .who-for { background: var(--bg-secondary); }
+    .role-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px; background: var(--border-subtle);
+      border: 1px solid var(--border-subtle);
+    }
+    .role-card {
+      display: flex; flex-direction: column;
+      background: var(--bg-secondary);
+      padding: 32px 28px 28px; position: relative;
+      transition: background 0.3s ease;
+      min-height: 220px;
+    }
+    .role-card:hover { background: var(--bg-tertiary); }
+    .role-card .role-label {
+      font-family: var(--font-heading); font-size: 0.7rem;
+      letter-spacing: 0.18em; color: var(--accent-blue);
+      font-weight: 500; margin-bottom: 12px;
+    }
+    .role-card h3 {
+      font-size: 1.15rem; font-weight: 400; letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+    .role-card p {
+      font-size: 0.86rem; line-height: 1.65; color: var(--text-secondary);
+      flex: 1; margin-bottom: 20px;
+    }
+    .role-card .role-arrow {
+      font-family: var(--font-heading); font-size: 0.9rem;
+      color: var(--text-tertiary); align-self: flex-end;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .role-card:hover .role-arrow {
+      color: var(--text-primary); transform: translateX(4px);
+    }
+    /* CTA variant of role-card (benchmark report) */
+    .role-card.is-cta {
+      background: linear-gradient(180deg, rgba(74,158,191,0.06) 0%, rgba(74,158,191,0.02) 100%);
+      border-left: 1px solid var(--accent-blue-dim);
+    }
+    .role-card.is-cta:hover {
+      background: linear-gradient(180deg, rgba(74,158,191,0.10) 0%, rgba(74,158,191,0.04) 100%);
+    }
+    .role-card.is-cta .role-label { color: var(--accent-blue); }
+    .role-card.is-cta .role-meta {
+      font-size: 0.7rem; color: var(--text-tertiary);
+      letter-spacing: 0.06em; margin-top: 2px;
+    }
+    .role-card .cta-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 20px; background: var(--bg-primary); color: var(--text-primary);
+      border: 1px solid var(--text-primary);
+      font-family: var(--font-heading); font-size: 0.72rem;
+      font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+      transition: all 0.3s ease; align-self: flex-start;
+    }
+    .role-card:hover .cta-link {
+      background: var(--text-primary); color: var(--bg-primary);
+    }
+
+    /* WHAT IT ISN'T */
+    .what-isnt { background: var(--bg-primary); }
+    .isnt-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 768px) { .isnt-grid { grid-template-columns: 1fr; } }
+    .isnt-card {
+      padding: 36px 32px; border: 1px solid var(--border-subtle);
+      border-radius: 4px; background: var(--bg-card);
+      position: relative;
+    }
+    .isnt-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%;
+      background: var(--accent-red); opacity: 0.5;
+    }
+    .isnt-card h3 {
+      font-size: 1.15rem; font-weight: 400; letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+    .isnt-card p {
+      font-size: 0.9rem; line-height: 1.7; color: var(--text-secondary);
+      max-width: none;
+    }
+    .isnt-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-heading); font-size: 0.8rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--accent-blue); transition: color 0.3s ease;
+    }
+    .isnt-link:hover { color: var(--text-primary); }
+
+    /* FINAL CTA */
+    .what-final-cta { padding: clamp(72px, 10vh, 120px) 0; }
+    .what-final-cta h2 {
+      font-size: clamp(1.7rem, 3.2vw, 2.6rem); font-weight: 200;
+      line-height: 1.25; margin-bottom: 24px; max-width: 880px;
+    }
+    .what-final-cta p {
+      font-size: 1rem; color: var(--text-secondary);
+      max-width: 640px; margin-bottom: 36px; line-height: 1.7;
+    }
+    .what-final-cta .hero-meta a { color: var(--accent-blue); }
+    .what-final-cta .hero-meta a:hover { color: var(--text-primary); }
+
+  </style>
+</head>
+<body>
+
+  <nav id="nav" class="scrolled">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
+            <ul class="nav-links" id="navLinks">
+        <li><a href="/what.html">What</a></li>
+        <li class="has-dropdown"><a href="/audit.html">How</a>
+          <ul class="dropdown">
+            <li><a href="/audit.html">Intelligence Audit</a></li>
+            <li><a href="/how-it-works.html">How It Works</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown"><a href="/#solution">Solutions</a>
+          <ul class="dropdown">
+            <li><a href="/solutions/cro.html">For the CRO</a></li>
+            <li><a href="/solutions/ceo.html">For the CEO</a></li>
+            <li><a href="/solutions/cfo.html">For the CFO</a></li>
+            <li><a href="/solutions/sales-director.html">For Sales Directors</a></li>
+            <li><a href="/solutions/pmm.html">For PMM &amp; Enablement</a></li>
+            <li><a href="/solutions/revops.html">For RevOps</a></li>
+            <li><a href="/solutions/training.html">For Sales Training</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown"><a href="/landscape.html">Compare</a>
+          <ul class="dropdown">
+            <li><a href="/landscape.html">Competitive Landscape</a></li>
+            <li><a href="/vs/gong.html">vs Gong</a></li>
+            <li><a href="/vs/klue.html">vs Klue</a></li>
+            <li><a href="/vs/clozd.html">vs Clozd</a></li>
+            <li><a href="/vs/crayon.html">vs Crayon</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown"><a href="/blog/">Resources</a>
+          <ul class="dropdown">
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/blog/">Articles</a></li>
+            <li><a href="/roi.html">ROI Calculator</a></li>
+            <li><a href="/about.html">Founder</a></li>
+            <li><a href="/security.html">Data &amp; Security</a></li>
+          </ul>
+        </li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="what-hero">
+    <div class="container">
+      <div class="label">What is RAINCLOUD</div>
+      <h1>4D Sales Intelligence.<span class="accent">Built from your data. Delivered as answers.</span></h1>
+      <p class="hero-sub">RAINCLOUD analyzes your competitive deals across four dimensions — every call, every signal, across time, from both sides of the table — and delivers the patterns nobody has had time to find as finished intelligence. No dashboards. No new logins. Just answers.</p>
+      <div class="hero-cta-row">
+        <a href="/contact.html" class="hero-cta">Talk to the Founder →</a>
+        <span class="hero-meta">$7,500 Intelligence Audit · Credited against retainer</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="what-stats">
+    <div class="what-stat">
+      <div class="num"><em>4</em></div>
+      <div class="desc">Dimensions of competitive intelligence, captured at scale</div>
+    </div>
+    <div class="what-stat">
+      <div class="num">500+</div>
+      <div class="desc">Calls analyzed per customer per quarter</div>
+    </div>
+    <div class="what-stat">
+      <div class="num">0</div>
+      <div class="desc">Dashboards. Logins. New tools to learn.</div>
+    </div>
+  </div>
+
+  <!-- IMAGE BAND -->
+  <div class="image-band">
+    <img class="band-img" src="assets/band-dataviz.jpg" alt="Data network visualization">
+    <div class="band-overlay"></div>
+  </div>
+
+  <!-- 4D FRAMEWORK -->
+  <section class="four-d">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">The Category</div>
+        <h2>Why we call it 4D Sales Intelligence.</h2>
+        <p>Most CI tools work in one or two dimensions. Dashboards show what happened. Alerts fire when a competitor moves. That is flat. Real competitive intelligence requires four dimensions — and synthesis across all of them.</p>
+      </div>
+      <div class="four-d-grid">
+        <div class="four-d-card reveal">
+          <div class="dim-num">D1 · WIDTH</div>
+          <h3>Width.</h3>
+          <p class="dim-tag">Every call. Every deal.</p>
+          <p>Most teams listen to 10 or 20 calls per quarter. We analyze 500 or more. Statistical patterns from your entire competitive deal flow — not anecdotes from a cherry-picked sample. The objections that keep killing deals are visible only when the sample is your whole library.</p>
+        </div>
+        <div class="four-d-card reveal">
+          <div class="dim-num">D2 · DEPTH</div>
+          <h3>Depth.</h3>
+          <p class="dim-tag">Synthesized across sources.</p>
+          <p>Sales calls, CRM deal data, win/loss interviews, prospect emails, post-mortem feedback — correlated as one intelligence layer. What buyers told you, what reps said, what the CRM shows, what closed and why. Single-source CI is half the story.</p>
+        </div>
+        <div class="four-d-card reveal">
+          <div class="dim-num">D3 · TIME</div>
+          <h3>Time.</h3>
+          <p class="dim-tag">Patterns over quarters.</p>
+          <p>Point-in-time alerts are noise without context. We track competitive movement across quarters: pricing shifts, positioning drift, objection evolution, win-rate trajectory by competitor. The story your data tells is in the trend, not the snapshot.</p>
+        </div>
+        <div class="four-d-card reveal">
+          <div class="dim-num">D4 · PERSPECTIVE</div>
+          <h3>Perspective.</h3>
+          <p class="dim-tag">Buyer's voice and seller's voice.</p>
+          <p>Most platforms hear only one side. We capture both: what your buyers actually said in calls and emails, and what your reps positioned, conceded, and asked. The truth lives in the gap between them — and that gap is where the deals you should have won went sideways.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE BAND -->
+  <div class="image-band">
+    <img class="band-img" src="assets/band-city.png" alt="City skyline at night">
+    <div class="band-overlay"></div>
+  </div>
+
+  <!-- WHO IT'S FOR -->
+  <section class="who-for">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Who it's for</div>
+        <h2>Built for revenue leaders who can't afford to be wrong.</h2>
+        <p>RAINCLOUD is purpose-built for the people whose decisions ride on what your data is actually telling you. Each role gets intelligence shaped for the calls they have to make.</p>
+      </div>
+      <div class="role-grid">
+        <a href="/solutions/cro.html" class="role-card">
+          <div class="role-label">CRO</div>
+          <h3>For the CRO</h3>
+          <p>Forecast accuracy depends on knowing why deals close and why they stall. We deliver the win/loss patterns dashboards can't see.</p>
+          <span class="role-arrow">→</span>
+        </a>
+        <a href="/solutions/ceo.html" class="role-card">
+          <div class="role-label">CEO</div>
+          <h3>For the CEO</h3>
+          <p>Board-ready competitive narrative every quarter. Know the threat picture before your investors ask.</p>
+          <span class="role-arrow">→</span>
+        </a>
+        <a href="/solutions/cfo.html" class="role-card">
+          <div class="role-label">CFO</div>
+          <h3>For the CFO</h3>
+          <p>Pipeline leakage costs money. We surface where deal economics are eroding before they show up in the variance report.</p>
+          <span class="role-arrow">→</span>
+        </a>
+        <a href="/solutions/sales-director.html" class="role-card">
+          <div class="role-label">SALES DIRECTOR</div>
+          <h3>For Sales Directors</h3>
+          <p>Battlecards your team will actually use, refreshed monthly from real buyer conversations — not 18-month-old PMM artifacts.</p>
+          <span class="role-arrow">→</span>
+        </a>
+        <a href="/solutions/pmm.html" class="role-card">
+          <div class="role-label">PMM &amp; ENABLEMENT</div>
+          <h3>For PMM &amp; Enablement</h3>
+          <p>The competitive analysis you don't have bandwidth for. We handle the pattern work; you keep ownership of the narrative.</p>
+          <span class="role-arrow">→</span>
+        </a>
+        <a href="/solutions/revops.html" class="role-card">
+          <div class="role-label">REVOPS</div>
+          <h3>For RevOps</h3>
+          <p>Beyond pipeline hygiene — the synthesized signal layer your CRM was never designed to produce.</p>
+          <span class="role-arrow">→</span>
+        </a>
+        <a href="/solutions/training.html" class="role-card">
+          <div class="role-label">SALES TRAINING</div>
+          <h3>For Sales Training</h3>
+          <p>Real talk tracks pulled from real wins. Replace generic training with proven competitive plays from your own deal library.</p>
+          <span class="role-arrow">→</span>
+        </a>
+        <a href="/resources/benchmark-2026.html" class="role-card is-cta">
+          <div class="role-label">FREE REPORT</div>
+          <h3>2026 B2B Sales Benchmark Report</h3>
+          <p>Where revenue teams are winning — and where they're leaving money on the table. The annual breakdown of competitive deal data, win-rate trends, and the patterns separating top-quartile teams from the rest.</p>
+          <span class="cta-link">Download Report →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IT ISN'T -->
+  <section class="what-isnt">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">What it isn't</div>
+        <h2>It's not another tool you have to log into.</h2>
+        <p>If you've evaluated competitive intelligence software before, here's what RAINCLOUD is deliberately not.</p>
+      </div>
+      <div class="isnt-grid">
+        <div class="isnt-card reveal">
+          <h3>Not a dashboard.</h3>
+          <p>You don't need another login. Intelligence arrives by email, Slack, or finished document. Your team consumes it, not operates it.</p>
+        </div>
+        <div class="isnt-card reveal">
+          <h3>Not a SaaS platform.</h3>
+          <p>No seat licenses. No implementation project. No adoption problem. Nothing to configure, maintain, or train your team on.</p>
+        </div>
+        <div class="isnt-card reveal">
+          <h3>Not an outsourced PMM.</h3>
+          <p>We don't replace your team. We do the cross-source synthesis they don't have time for, in a form that makes them measurably more effective.</p>
+        </div>
+        <div class="isnt-card reveal">
+          <h3>Not consultants billing by the hour.</h3>
+          <p>We don't shadow reps for six months and produce a deck. Proprietary AI runs the scale; senior practitioners run the judgment. Predictable cost. Predictable cadence.</p>
+        </div>
+      </div>
+      <a href="/landscape.html" class="isnt-link">See how we compare to Klue, Clozd, Gong, and others →</a>
+    </div>
+  </section>
+
+  <!-- BOARDROOM BAND WITH CTA -->
+  <div class="image-band band-tall-2">
+    <img class="band-img" src="assets/band-boardroom.png" alt="Executive boardroom">
+    <div class="band-overlay"></div>
+    <div class="band-cta-layer">
+      <a href="/contact.html" class="cta-primary">See It On Your Own Data →</a>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <section class="what-final-cta">
+    <div class="container">
+      <h2>The patterns are already in your data.<br>Four dimensions are already there.<br>Nobody has had time to find them.</h2>
+      <p>Two weeks. $7,500. A complete picture of what's happening across all four dimensions of your competitive landscape — credited against any ongoing engagement.</p>
+      <div class="hero-cta-row">
+        <a href="/audit.html" class="hero-cta">Start with the Intelligence Audit →</a>
+        <span class="hero-meta">Or talk to the founder first — <a href="/contact.html">contact</a>.</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">RAIN<em>CLOUD</em></div>
+      </div>
+      <div class="footer-right">
+        <ul class="footer-links">
+          <li><a href="/blog/">Resources</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="https://rncld.com" target="_blank" rel="noopener noreferrer">rncld.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+    // Mobile toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    }
+
+    // Scroll reveal
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // Smooth scroll for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if (href.length > 1) {
+          const target = document.querySelector(href);
+          if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
