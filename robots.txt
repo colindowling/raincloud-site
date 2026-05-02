@@ -1,0 +1,15 @@
+# RAINCLOUD — robots.txt
+# https://rncld.com
+
+User-agent: *
+Allow: /
+
+# Block crawlers from the gated benchmark report PDF
+# (the landing page at /resources/benchmark-2026.html is still indexable)
+Disallow: /assets/RAINCLOUD_2026_Benchmark_Report.pdf
+
+# Block Cloudflare internals
+Disallow: /cdn-cgi/
+
+# Sitemap
+Sitemap: https://rncld.com/sitemap.xml
