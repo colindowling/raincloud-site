@@ -23,9 +23,9 @@
     .slider-label{font-size:13px;color:var(--dim);letter-spacing:.04em}
     .slider-val{font-size:22px;font-weight:200;color:var(--text);font-family:'Montserrat',sans-serif}
     .slider-track{position:relative;height:36px;display:flex;align-items:center}
-    .track-bg{position:absolute;width:100%;height:2px;background:var(--border2);border-radius:1px}
-    .track-fill{position:absolute;height:2px;background:var(--blue);border-radius:1px;transition:width .1s}
-    .track-thumb{position:absolute;width:16px;height:16px;border-radius:50%;background:var(--text);box-shadow:0 0 12px rgba(74,158,191,.3);pointer-events:none;transition:left .1s}
+    .track-bg{position:absolute;width:100%;height:2px;background:var(--border2);border-radius:1px;pointer-events:none}
+    .track-fill{position:absolute;height:2px;background:var(--blue);border-radius:1px;transition:width .1s;pointer-events:none}
+    .track-thumb{position:absolute;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:var(--text);box-shadow:0 0 12px rgba(74,158,191,.3);pointer-events:none;transition:left .1s}
     input[type=range]{position:absolute;width:100%;height:36px;opacity:0;cursor:pointer;margin:0}
     .verdict{padding:24px 32px;background:var(--card);border-radius:4px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
     .verdict-label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:4px}
@@ -117,7 +117,7 @@
   <div class="wrap" style="padding-top:100px">
     <div class="label">RAINCLOUD ROI Calculator</div>
     <h1>Is competitive intelligence<br>worth it for your team?</h1>
-    <p class="sub">Enter your numbers. We'll show what a 10-point close rate improvement means for your revenue.</p>
+    <p class="sub">Enter your numbers. We'll model what a realistic close rate lift means for your revenue — calibrated to your starting position.</p>
 
     <div class="input-box">
       <div class="slider-wrap">
@@ -138,7 +138,7 @@
     <div class="metrics" id="metrics"></div>
     <div class="bars" id="bars"></div>
     <div class="cta-box" id="cta"></div>
-    <p class="disclaimer">This calculator assumes a 10-point close rate improvement in competitive deals, consistent with outcomes observed across RAINCLOUD engagements. Actual results vary. The Intelligence Audit provides a data-backed projection specific to your pipeline.</p>
+    <p class="disclaimer">This calculator models a 5–13 percentage point close rate improvement, varying with your starting position — bigger gains where intelligence gaps are largest (lower starting rates), diminishing returns as teams approach the competitive ceiling. RAINCLOUD case studies have observed +18 to +23 point improvements at typical starting rates. Actual results vary. The Intelligence Audit provides a data-backed projection specific to your pipeline.</p>
   </div>
 
   <script>
@@ -162,7 +162,13 @@
       updateSlider('cr', 10, 70);
       updateSlider('dq', 10, 300);
 
-      const ncr = cr + 10;
+      // Variable close-rate improvement based on starting position.
+      // Lower starting rates have more intelligence-gap headroom → larger absolute gains.
+      // Higher rates approach the competitive ceiling → diminishing returns.
+      // Anchored at ~10 points for a typical 30% starting rate (RAINCLOUD's marketed claim).
+      // Range: 5–13 points across the slider span (10–70%).
+      const improvement = Math.round(Math.max(5, Math.min(13, 14 - cr * 0.12)));
+      const ncr = cr + improvement;
       const curWins = dq * (cr/100), newWins = dq * (ncr/100);
       const addWins = newWins - curWins;
       const addRevQ = addWins * ds, addRevY = addRevQ * 4;
@@ -173,11 +179,11 @@
       const vt = roi >= 10 ? 'No-brainer' : roi >= 5 ? 'Strong fit' : roi >= 2 ? 'Worth exploring' : 'May not be the right fit yet';
 
       $('verdict').style.borderColor = vc.replace('var(--green)','#4AC87833').replace('var(--blue)','#4A9EBF33').replace('var(--gold)','#C8A84A33').replace('var(--red)','#C84A4A33');
-      $('verdict').innerHTML = '<div><div class="verdict-label">Verdict</div><div class="verdict-text" style="color:'+vc+'">'+vt+'</div></div><div style="text-align:right"><div class="verdict-label">Annual ROI</div><div class="verdict-roi" style="color:'+vc+'">'+roi.toFixed(1)+'x</div></div>';
+      $('verdict').innerHTML = '<div><div class="verdict-label">Verdict</div><div class="verdict-text" style="color:'+vc+'">'+vt+'</div><div class="verdict-label" style="margin-top:6px;color:var(--faint)">Modeled lift: +'+improvement+' pts ('+cr+'% → '+ncr+'%)</div></div><div style="text-align:right"><div class="verdict-label">Annual ROI</div><div class="verdict-roi" style="color:'+vc+'">'+roi.toFixed(1)+'x</div></div>';
 
       $('metrics').innerHTML = `
         <div class="metric-card hl"><div class="mc-label">Additional Revenue / Quarter</div><div class="mc-val blue">${fmt(addRevQ)}</div><div class="mc-sub">${addWins.toFixed(1)} additional wins</div></div>
-        <div class="metric-card hl"><div class="mc-label">Additional Revenue / Year</div><div class="mc-val blue">${fmt(addRevY)}</div><div class="mc-sub">At 10pt close rate improvement</div></div>
+        <div class="metric-card hl"><div class="mc-label">Additional Revenue / Year</div><div class="mc-val blue">${fmt(addRevY)}</div><div class="mc-sub">At +${improvement}pt close rate improvement</div></div>
         <div class="metric-card"><div class="mc-label">RAINCLOUD Annual Cost</div><div class="mc-val">$100K</div><div class="mc-sub">$25K/quarter after audit</div></div>
         <div class="metric-card"><div class="mc-label">Net Revenue Gain / Year</div><div class="mc-val">${fmt(addRevY - ANNUAL)}</div><div class="mc-sub">After RAINCLOUD investment</div></div>`;
 
@@ -185,7 +191,7 @@
       $('bars').innerHTML = `
         <div class="bars-label">Quarterly Revenue Comparison</div>
         <div class="bar-item"><div class="bar-head"><span class="bar-name">Current (${cr}% close rate)</span><span class="bar-amt" style="color:var(--dim)">${fmt(curRevQ)}</span></div><div class="bar-track"><div class="bar-fill" style="width:${(curRevQ/maxRev*100).toFixed(1)}%;background:#3a3a3a"></div></div></div>
-        <div class="bar-item"><div class="bar-head"><span class="bar-name">With RAINCLOUD (${ncr}% close rate)</span><span class="bar-amt" style="color:var(--blue)">${fmt(newRevQ)}</span></div><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--blue)"></div></div></div>
+        <div class="bar-item"><div class="bar-head"><span class="bar-name">With RAINCLOUD (${ncr}% close rate, +${improvement}pt)</span><span class="bar-amt" style="color:var(--blue)">${fmt(newRevQ)}</span></div><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--blue)"></div></div></div>
         <div class="bar-diff"><span class="bar-diff-label">Quarterly difference</span><span class="bar-diff-val">+${fmt(addRevQ)}</span></div>`;
 
       const ctaText = roi >= 5 ? 'Your pipeline math makes this an easy decision.' : roi >= 2 ? 'The numbers suggest it\'s worth a conversation.' : 'Let\'s find out if there\'s a fit.';
