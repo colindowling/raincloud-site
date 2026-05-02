@@ -10,6 +10,20 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-041BP5G4HF');
+
+    // Custom event: audit_cta_click — body-content links to /audit.html or /contact.html
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (!/\/(audit|contact)(\.html)?(\?|#|$)/.test(href)) return;
+      if (a.closest('nav') || a.closest('footer')) return;
+      gtag('event', 'audit_cta_click', {
+        cta_text: (a.textContent || '').trim().slice(0, 100),
+        cta_destination: href,
+        cta_location: window.location.pathname
+      });
+    });
   </script>
   <title>Contact — RAINCLOUD</title>
   <meta name="description" content="Book a GTM Intelligence Audit with RAINCLOUD. 60-minute session showing the competitive patterns you've been missing.">
@@ -573,6 +587,9 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           if (res.ok) {
             cForm.style.display = 'none';
             cSuccess.classList.add('active');
+            if (typeof gtag === 'function') {
+              gtag('event', 'contact_form_submit', { form_location: 'contact-page' });
+            }
           } else {
             const data = await res.json().catch(() => ({}));
             cfShowError(data?.error || 'Something went wrong. Please try again or email colin@rncld.com directly.');

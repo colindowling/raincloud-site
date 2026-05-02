@@ -10,6 +10,20 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-041BP5G4HF');
+
+    // Custom event: audit_cta_click — body-content links to /audit.html or /contact.html
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (!/\/(audit|contact)(\.html)?(\?|#|$)/.test(href)) return;
+      if (a.closest('nav') || a.closest('footer')) return;
+      gtag('event', 'audit_cta_click', {
+        cta_text: (a.textContent || '').trim().slice(0, 100),
+        cta_destination: href,
+        cta_location: window.location.pathname
+      });
+    });
   </script>
   <title>The Intelligence Audit — RAINCLOUD</title>
   <meta name="description" content="Two weeks. $7,500. A complete picture of what's happening in your competitive deals — and a clear plan for what to do about it. Credited against any ongoing retainer.">

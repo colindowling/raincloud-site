@@ -10,6 +10,20 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-041BP5G4HF');
+
+    // Custom event: audit_cta_click — body-content links to /audit.html or /contact.html
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (!/\/(audit|contact)(\.html)?(\?|#|$)/.test(href)) return;
+      if (a.closest('nav') || a.closest('footer')) return;
+      gtag('event', 'audit_cta_click', {
+        cta_text: (a.textContent || '').trim().slice(0, 100),
+        cta_destination: href,
+        cta_location: window.location.pathname
+      });
+    });
   </script>
   <!-- UPDATE: title, description, og tags per post -->
   <title>Why Your Battlecards Are Costing You Deals — RAINCLOUD</title>
