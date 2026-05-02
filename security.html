@@ -264,7 +264,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     <div class="container">
       <div class="label">Data &amp; Security</div>
       <h1>Your data never leaves your control.</h1>
-      <p class="hero-sub">RAINCLOUD analyzes your competitive deals on infrastructure we own, with read-only access to systems you already trust, and zero training of any model on your data. Below: exactly what we touch, where it runs, and how to keep us honest.</p>
+      <p class="hero-sub">RAINCLOUD analyzes your competitive deals on our own AWS infrastructure, with read-only access to systems you already trust, and zero training of any model on your data. We act as a data processor on your behalf — your organization remains the data controller. Below: exactly what we touch, where it runs, and how to keep us honest.</p>
     </div>
   </section>
 
@@ -284,8 +284,8 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         </div>
         <div class="pr-card">
           <div class="pr-num">02 · INFRASTRUCTURE</div>
-          <h3>Private models, private compute.</h3>
-          <p>Our language models run on private infrastructure that we own and operate. Your call data is never sent to OpenAI, Anthropic, or any third-party AI API. No shared models. No public LLMs. Full architectural control.</p>
+          <h3>Private models on AWS we control.</h3>
+          <p>Our language models run on AWS infrastructure dedicated to RAINCLOUD — our own AWS account, isolated VPC, no shared SaaS in the path. Your call data is never sent to OpenAI, Anthropic, Google, or any third-party AI API. End-to-end architectural control.</p>
         </div>
         <div class="pr-card">
           <div class="pr-num">03 · TRAINING</div>
@@ -365,31 +365,31 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <div class="spec-item">
           <div class="spec-label">Encryption</div>
           <h3>In transit and at rest.</h3>
-          <p>All data flowing into RAINCLOUD systems is encrypted in transit via TLS 1.2+. Data at rest is encrypted using <!-- EDIT: specify your encryption standard, e.g. AES-256 -->[AES-256 / your standard]. <!-- EDIT: specify key management approach if applicable -->Keys are managed via [your key management approach].</p>
+          <p>All data flowing into RAINCLOUD systems is encrypted in transit via TLS 1.2+. Data at rest is encrypted using AES-256 — the AWS default for S3, EBS, and RDS storage. Encryption keys are managed via AWS Key Management Service (KMS) with AWS-enforced rotation policies.</p>
         </div>
 
         <div class="spec-item">
           <div class="spec-label">Hosting &amp; Sub-processors</div>
           <h3>A short, named list.</h3>
-          <p>RAINCLOUD runs on <!-- EDIT: list your hosting provider(s) — e.g., AWS us-east-1, Hetzner Frankfurt, your own colocation -->[your hosting provider and region]. Sub-processors include: <!-- EDIT: list any third parties handling customer data, e.g., transactional email provider, error monitoring -->[list your sub-processors here]. We notify customers in writing before adding any new sub-processor that touches customer data.</p>
+          <p>RAINCLOUD runs entirely on Amazon Web Services (AWS) — primarily in the us-east-1 region. AWS is our single infrastructure-of-record for compute, storage, model serving, and key management. We keep additional sub-processors to a minimum and disclose the current list in the engagement agreement. We notify customers in writing before adding any new sub-processor that touches customer data.</p>
         </div>
 
         <div class="spec-item">
           <div class="spec-label">Data Residency</div>
           <h3>Where it lives.</h3>
-          <p>Customer data is stored in <!-- EDIT: specify region(s) -->[your data residency region]. Data does not cross regions without explicit customer consent. <!-- EDIT: optionally mention EU-only customers or other regional capabilities -->Customers with EU residency requirements can request EU-only processing.</p>
+          <p>By default, customer data is stored in AWS us-east-1 (Northern Virginia, USA). Data does not cross AWS regions without explicit customer consent. Customers with EU residency requirements can request EU-only processing in AWS eu-west-1 (Ireland) or eu-central-1 (Frankfurt) — discussed during engagement scoping.</p>
         </div>
 
         <div class="spec-item">
           <div class="spec-label">Data Retention</div>
           <h3>Kept only as long as needed.</h3>
-          <p>Working analysis files are retained for the duration of the engagement plus <!-- EDIT: specify retention window, e.g., 90 days -->[retention period after engagement ends]. After that, working data is deleted. Final deliverables (battlecards, reports) are retained at your option for reference. You can request deletion of all RAINCLOUD-held data at any time and we will confirm in writing within <!-- EDIT: turnaround commitment -->[X business days].</p>
+          <p>Working analysis files are retained for the duration of the engagement plus 90 days, then deleted. Final deliverables (battlecards, reports, narratives) are retained at your option for ongoing reference, or deleted on request. You can request deletion of all RAINCLOUD-held data at any time and we will confirm completion in writing within 5 business days.</p>
         </div>
 
         <div class="spec-item">
-          <div class="spec-label">Compliance Posture</div>
-          <h3>Where we stand.</h3>
-          <p>RAINCLOUD <!-- EDIT: pick the honest one — "is SOC 2 Type II certified", "is in active SOC 2 Type I preparation", "operates to SOC 2 controls without certification at this stage", etc. -->[SOC 2 status statement]. We comply with GDPR, CCPA, and applicable data-protection regulations. We do not handle PHI and are not currently HIPAA-covered; <!-- EDIT: note if HIPAA is on roadmap -->talk to us if your engagement requires it.</p>
+          <div class="spec-label">Our Role &amp; Compliance Posture</div>
+          <h3>Data processor by design.</h3>
+          <p>RAINCLOUD operates as a <strong>data processor</strong> on your behalf — your organization remains the data controller for the customer data we analyze. We comply with applicable data-protection regulations (GDPR, CCPA) in that role. Our security posture covers the controls security teams typically care about: encryption in transit and at rest, scoped read-only access, access logging, change management, and a documented incident response process. We are not currently certified to a third-party security framework at this stage of the company; we are happy to walk your security team through our specific controls in a vendor-review call. We do not handle PHI and are not HIPAA-covered.</p>
         </div>
 
         <div class="spec-item">
@@ -401,13 +401,13 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <div class="spec-item">
           <div class="spec-label">Access Controls</div>
           <h3>Who at RAINCLOUD sees what.</h3>
-          <p>Access to customer data is restricted to <!-- EDIT: specify, e.g., "the small set of senior practitioners assigned to your engagement" -->[your access policy]. All access is logged and auditable. Customers can request an access log on request. Access is revoked when an engagement ends or a team member departs.</p>
+          <p>Access to customer data is restricted to the senior practitioners assigned to your engagement — typically 1 to 3 named individuals identified at kickoff. All access is logged and auditable. Customers can request an access log at any time. Access is revoked when an engagement ends or a team member departs.</p>
         </div>
 
         <div class="spec-item">
           <div class="spec-label">Incident Response</div>
           <h3>If something goes wrong.</h3>
-          <p>In the unlikely event of a security incident affecting customer data, we will notify affected customers in writing within <!-- EDIT: e.g., 72 hours -->[notification window], with a description of what happened, what data was affected, and the remediation plan. We support customers' regulatory notification obligations (GDPR Article 33, state breach laws, etc.).</p>
+          <p>In the unlikely event of a security incident affecting customer data, we will notify affected customers in writing within 72 hours of confirmed detection (matching the GDPR Article 33 standard), with a description of what happened, what data was affected, and the remediation plan. We support customers' regulatory notification obligations (GDPR Article 33, state breach laws, etc.) as their data processor.</p>
         </div>
 
         <div class="spec-item">
@@ -442,7 +442,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
 
         <div class="faq-item">
           <h3>How long do you keep our data?</h3>
-          <p>Working analysis files for the duration of the engagement plus <!-- EDIT -->[retention window]. Final deliverables stay accessible to you. You can request deletion of all RAINCLOUD-held data at any time.</p>
+          <p>Working analysis files for the duration of the engagement plus 90 days, then deleted. Final deliverables stay accessible to you for as long as you want them. You can request deletion of all RAINCLOUD-held data at any time, with confirmation in writing within 5 business days.</p>
         </div>
 
         <div class="faq-item">
@@ -452,21 +452,17 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
 
         <div class="faq-item">
           <h3>What happens to our data when we end the engagement?</h3>
-          <p>Working data is deleted within <!-- EDIT -->[deletion window]. Final deliverables (battlecards, reports, etc.) are retained at your option for future reference, or deleted on your request. We confirm completion in writing.</p>
+          <p>Working data is deleted within 90 days of engagement end. Final deliverables (battlecards, reports, etc.) are retained at your option for future reference, or deleted on your request. We confirm completion in writing within 5 business days of the deletion request.</p>
         </div>
 
         <div class="faq-item">
-          <h3>Are you SOC 2 certified?</h3>
-          <p><!-- EDIT: Replace with your honest current status. Examples below — pick one and delete the rest:
-            * "Yes — SOC 2 Type II report available under NDA on request."
-            * "We are in active preparation for SOC 2 Type I, target completion [date]."
-            * "We are not yet SOC 2 certified at this stage of the company. We operate to the SOC 2 Trust Services Criteria — encryption, access control, change management, incident response — and can walk your security team through our controls in a vendor-review call."
-          -->[SOC 2 status answer]. Happy to walk your security team through our controls in a vendor-review call regardless of formal status.</p>
+          <h3>Do you have any third-party security certifications or attestations?</h3>
+          <p>Not at this stage of the company. We operate to industry-standard security controls — encryption in transit and at rest, scoped read-only access to your systems, access logging, change management, and a documented incident response process — and can walk your security team through our specific controls in a vendor-review call. As we grow, we'll pursue formal attestations appropriate to our customer base; if your vendor onboarding requires a specific certification, tell us and we'll discuss what's reasonable to commit to.</p>
         </div>
 
         <div class="faq-item">
           <h3>Where is our data physically stored?</h3>
-          <p><!-- EDIT -->[Your data residency answer — e.g., "All customer data is stored in AWS us-east-1 by default. Customers requiring EU residency can request EU-only processing on Hetzner Frankfurt."]</p>
+          <p>By default, all customer data is stored in AWS us-east-1 (Northern Virginia, USA). Customers with EU residency requirements can request EU-only processing in AWS eu-west-1 (Ireland) or eu-central-1 (Frankfurt) — discussed during engagement scoping.</p>
         </div>
 
         <div class="faq-item">
