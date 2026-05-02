@@ -24,6 +24,41 @@
         cta_location: window.location.pathname
       });
     });
+
+    // Mobile-aware nav toggle: hamburger opens menu; on mobile, parent dropdown taps expand/collapse instead of navigating; leaf taps close the menu.
+    document.addEventListener('DOMContentLoaded', function() {
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+      if (!navToggle || !navLinks) return;
+      navToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('open');
+        // Reset expanded states when closing
+        if (!navLinks.classList.contains('open')) {
+          navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+            item.classList.remove('expanded');
+          });
+        }
+      });
+      navLinks.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          var li = a.parentElement;
+          var isDropdownParent = li && li.classList.contains('has-dropdown');
+          var isMobile = window.innerWidth <= 768;
+          var navOpen = navLinks.classList.contains('open');
+          if (isDropdownParent && isMobile && navOpen) {
+            // On mobile while menu is open, tapping a dropdown parent expands/collapses it
+            e.preventDefault();
+            li.classList.toggle('expanded');
+          } else {
+            // Any other link click closes the menu and resets expanded states
+            navLinks.classList.remove('open');
+            navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+              item.classList.remove('expanded');
+            });
+          }
+        });
+      });
+    });
   </script>
   <title>Contact — RAINCLOUD</title>
   <meta name="description" content="Book a GTM Intelligence Audit with RAINCLOUD. 60-minute session showing the competitive patterns you've been missing.">
@@ -374,7 +409,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     @media(max-width:768px){
       .dropdown{position:static;display:none;background:transparent;border:none;padding:0 0 0 16px;min-width:0;margin:4px 0}
       .dropdown li a{padding:6px 0;font-size:.8rem}
-      .has-dropdown:hover .dropdown,.nav-links.open .has-dropdown .dropdown{display:block}
+      .nav-links.open .has-dropdown.expanded > .dropdown{display:block}
     }
 
   </style>
@@ -534,13 +569,6 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
     }
 
-    // Mobile nav toggle
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    if (navToggle && navLinks) {
-      navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-    }
 
     // ====================================================================
     // Contact form → Formspree
