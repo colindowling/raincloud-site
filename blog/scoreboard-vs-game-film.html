@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scoreboard vs. Game Film — RAINCLOUD</title>
+  <meta name="description" content="Revenue dashboards tell you the score. They don't tell you the game. Coaches watch film. Most sales leaders only watch the scoreboard — and that's why losses keep repeating.">
+  <meta property="og:title" content="Scoreboard vs. Game Film — RAINCLOUD">
+  <meta property="og:description" content="Revenue dashboards are scoreboards. Game film is in your call corpus. The teams that watch the film pull ahead.">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+/* ========================================
+   RAINCLOUD DESIGN SYSTEM
+   Montserrat Light headings / Manrope body
+   Dark, monochromatic, premium
+   ======================================== */
+
+/* --- VARIABLES --- */
+:root {
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #111111;
+  --bg-tertiary: #181818;
+  --bg-card: #141414;
+  --text-primary: #F0EDE8;
+  --text-secondary: #9A9A9A;
+  --text-tertiary: #5A5A5A;
+  --accent-blue: #4A9EBF;
+  --accent-blue-dim: rgba(74, 158, 191, 0.12);
+  --accent-red: #BF4A4A;
+  --accent-green: #4ABF7A;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-medium: rgba(255, 255, 255, 0.1);
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --container: 1280px;
+  --container-narrow: 880px;
+}
+
+/* --- RESET --- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-body); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
+::selection { background: var(--accent-blue); color: var(--bg-primary); }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* --- GRAIN OVERLAY --- */
+body::after {
+  content: '';
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9999; opacity: 0.4;
+}
+
+/* --- LAYOUT --- */
+.container { max-width: var(--container); margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+.container--narrow { max-width: var(--container-narrow); margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+section { padding: clamp(64px, 10vh, 140px) 0; }
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.4rem, 5.5vw, 4.5rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+h3 { font-size: clamp(1.2rem, 1.8vw, 1.5rem); font-weight: 400; }
+p { font-size: clamp(0.9rem, 1vw, 1rem); color: var(--text-secondary); max-width: 600px; }
+
+.label {
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary);
+}
+.label--accent { color: var(--accent-blue); }
+
+.section-header { margin-bottom: clamp(40px, 5vh, 64px); }
+.section-header .label { margin-bottom: 16px; }
+.section-header p { margin-top: 16px; }
+
+.divider { width: 100%; height: 1px; background: var(--border-subtle); }
+
+/* --- BUTTONS --- */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 32px; font-family: var(--font-body); font-size: 0.8rem;
+  font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+  border: 1px solid var(--border-medium); background: transparent;
+  color: var(--text-primary); cursor: pointer; position: relative; overflow: hidden;
+  transition: all 0.4s var(--ease-out);
+}
+.btn::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: var(--text-primary); transform: translateX(-101%);
+  transition: transform 0.4s var(--ease-out);
+}
+.btn:hover::before { transform: translateX(0); }
+.btn:hover { color: var(--bg-primary); border-color: var(--text-primary); }
+.btn span, .btn svg { position: relative; z-index: 1; }
+.btn svg { transition: transform 0.4s var(--ease-out); }
+.btn:hover svg { transform: translateX(4px); }
+
+.btn--primary { background: var(--bg-primary); color: var(--text-primary); border-color: var(--text-primary); }
+.btn--primary::before { background: var(--text-primary); }
+.btn--primary:hover { color: var(--bg-primary); }
+
+.btn-arrow {
+  width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2;
+}
+
+/* --- NAVIGATION --- */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 18px 0; transition: all 0.5s var(--ease-out);
+}
+nav.scrolled {
+  background: rgba(10, 10, 10, 0.92); backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-subtle);
+  padding: 12px 0;
+}
+nav .container { display: flex; align-items: center; justify-content: space-between; }
+
+.nav-logo { font-family: var(--font-heading); font-weight: 300; font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; }
+.nav-logo em { font-style: normal; color: var(--text-tertiary); font-weight: 200; }
+
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 0.72rem; font-weight: 400; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-tertiary); transition: color 0.3s ease;
+  position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px; background: var(--text-primary);
+  transition: width 0.3s var(--ease-out);
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  font-size: 0.68rem !important; padding: 8px 20px;
+  border: 1px solid var(--border-medium); transition: all 0.3s ease;
+}
+.nav-cta:hover { border-color: var(--text-primary); background: var(--text-primary); color: var(--bg-primary) !important; }
+.nav-cta::after { display: none !important; }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1px; background: var(--text-primary); margin: 5px 0; transition: all 0.3s ease; }
+
+/* --- FOOTER --- */
+footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
+.footer-layout { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 300; font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-tertiary); }
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a { font-size: 0.72rem; color: var(--text-tertiary); transition: color 0.3s ease; }
+.footer-links a:hover { color: var(--text-primary); }
+.footer-copy { font-size: 0.68rem; color: var(--text-tertiary); }
+
+/* --- SCROLL ANIMATIONS --- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: 100%; left: 0; right: 0; background: rgba(10, 10, 10, 0.97);
+    backdrop-filter: blur(20px); padding: 28px; gap: 20px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .footer-layout { flex-direction: column; text-align: center; }
+}
+
+</style>
+  <style>
+    .post-hero { padding: 160px 0 48px; }
+    .post-hero .label { margin-bottom: 16px; }
+    .post-hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); max-width: 720px; margin-bottom: 16px; }
+    .post-meta { font-size: 0.78rem; color: var(--text-tertiary); display: flex; gap: 16px; }
+
+    .post-body {
+      padding: 48px 0 80px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .post-body .container--narrow { max-width: 720px; }
+
+    .post-body p {
+      font-size: 1rem; line-height: 1.85; color: var(--text-secondary);
+      margin-bottom: 24px; max-width: none;
+    }
+    .post-body h2 {
+      font-size: 1.6rem; margin: 48px 0 16px; color: var(--text-primary);
+    }
+    .post-body h3 {
+      font-size: 1.2rem; margin: 36px 0 12px; color: var(--text-primary);
+    }
+    .post-body blockquote {
+      border-left: 2px solid var(--accent-blue); padding-left: 24px;
+      margin: 32px 0; font-style: italic; color: var(--text-primary);
+      font-family: var(--font-heading); font-weight: 300; font-size: 1.15rem;
+      line-height: 1.5;
+    }
+    .post-body ul, .post-body ol {
+      margin: 16px 0 24px 24px; color: var(--text-secondary);
+    }
+    .post-body li { margin-bottom: 8px; line-height: 1.7; font-size: 0.95rem; }
+    .post-body strong { color: var(--text-primary); font-weight: 500; }
+    .post-body a { color: var(--accent-blue); border-bottom: 1px solid transparent; transition: border-color 0.3s ease; }
+    .post-body a:hover { border-color: var(--accent-blue); }
+
+    .post-cta {
+      background: var(--bg-secondary); border: 1px solid var(--border-subtle);
+      padding: 40px; margin: 48px 0; text-align: center;
+    }
+    .post-cta h3 { margin-bottom: 10px; }
+    .post-cta p { margin: 0 auto 20px; text-align: center; }
+
+    .post-nav {
+      display: flex; justify-content: space-between; padding-top: 32px;
+      border-top: 1px solid var(--border-subtle); margin-top: 48px;
+    }
+    .post-nav a {
+      font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-tertiary); transition: color 0.3s ease;
+    }
+    .post-nav a:hover { color: var(--text-primary); }
+  
+    .has-dropdown{position:relative}
+    .dropdown{display:none;position:absolute;top:100%;left:0;background:var(--bg-secondary);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:8px 0;min-width:200px;z-index:200;list-style:none;margin:0;padding-top:8px}
+    .dropdown li{padding:0}
+    .dropdown li a{display:block;padding:8px 20px;font-size:.75rem;color:var(--text-secondary);text-transform:none;letter-spacing:.02em;white-space:nowrap;transition:color .2s}
+    .dropdown li a:hover{color:var(--text-primary);background:rgba(255,255,255,.03)}
+    .has-dropdown:hover .dropdown{display:block}
+    @media(max-width:768px){
+      .dropdown{position:static;display:none;background:transparent;border:none;padding:0 0 0 16px;min-width:0;margin:4px 0}
+      .dropdown li a{padding:6px 0;font-size:.8rem}
+      .has-dropdown:hover .dropdown,.nav-links.open .has-dropdown .dropdown{display:block}
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav id="nav" class="scrolled">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
+            <ul class="nav-links" id="navLinks">
+        <li><a href="/what.html">What</a></li>
+        <li class="has-dropdown"><a href="/audit.html">How</a>
+          <ul class="dropdown">
+            <li><a href="/audit.html">Intelligence Audit</a></li>
+            <li><a href="/how-it-works.html">How It Works</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown"><a href="/#solution">Solutions</a>
+          <ul class="dropdown">
+            <li><a href="/solutions/cro.html">For the CRO</a></li>
+            <li><a href="/solutions/ceo.html">For the CEO</a></li>
+            <li><a href="/solutions/cfo.html">For the CFO</a></li>
+            <li><a href="/solutions/sales-director.html">For Sales Directors</a></li>
+            <li><a href="/solutions/pmm.html">For PMM &amp; Enablement</a></li>
+            <li><a href="/solutions/revops.html">For RevOps</a></li>
+            <li><a href="/solutions/training.html">For Sales Training</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown"><a href="/landscape.html">Compare</a>
+          <ul class="dropdown">
+            <li><a href="/landscape.html">Competitive Landscape</a></li>
+            <li><a href="/vs/gong.html">vs Gong</a></li>
+            <li><a href="/vs/klue.html">vs Klue</a></li>
+            <li><a href="/vs/clozd.html">vs Clozd</a></li>
+            <li><a href="/vs/crayon.html">vs Crayon</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown"><a href="/blog/">Resources</a>
+          <ul class="dropdown">
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/blog/">Articles</a></li>
+            <li><a href="/roi.html">ROI Calculator</a></li>
+            <li><a href="/about.html">Founder</a></li>
+            <li><a href="/security.html">Data &amp; Security</a></li>
+          </ul>
+        </li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="post-hero">
+    <div class="container--narrow" style="max-width: 720px;">
+      <div class="label label--accent">Leadership</div>
+      <h1>Scoreboard vs. Game Film</h1>
+      <div class="post-meta">
+        <span>Colin Dowling</span>
+        <span>May 2026</span>
+        <span>6 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="post-body">
+    <div class="container--narrow" style="max-width: 720px;">
+
+      <!-- ===== POST CONTENT STARTS HERE ===== -->
+      <p>A football coach who only watched the scoreboard wouldn't be a coach for long.</p>
+
+      <p>The scoreboard tells you the score. The score tells you the outcome. The outcome doesn't tell you the play that got run, the formation the opponent shifted to, the read your quarterback missed, or the third-and-six that decided the drive.</p>
+
+      <p>That information lives in the game film. Coaches watch film for hours every week — their team's, their opponent's, the historical archive — because watching the scoreboard alone produces a coach who can describe what happened but can't change what happens next.</p>
+
+      <p><strong>Most revenue leaders watch the scoreboard.</strong></p>
+
+      <h2>What dashboards are actually for</h2>
+
+      <p>Modern revenue dashboards are a marvel. They tell you ARR, win rate by segment, pipeline coverage, sales velocity, conversion rates by stage, attribution by source, attainment by rep, deal size distribution. They surface the score in a hundred different views.</p>
+
+      <p>Dashboards are excellent at this. That's not the problem.</p>
+
+      <p>The problem is that the score is an outcome. It's the result of the game. It tells you that you're losing more deals against Competitor X than last quarter. It doesn't tell you which talk track is working when reps <em>do</em> win against them, or which objection has emerged as the new dealbreaker, or how the competitor has changed their pitch.</p>
+
+      <blockquote>The dashboard tells you the score has changed. It doesn't tell you the game has changed.</blockquote>
+
+      <h2>What game film is for</h2>
+
+      <p>Game film is forensic. It's pattern recognition across many games, looking for what's actually happening on the field — the play the opponent runs more often when they're trailing, the formation that breaks down your blitz package, the receiver who's been getting open against single coverage all season.</p>
+
+      <p>Translated to sales:</p>
+
+      <ul>
+        <li><strong>Scoreboard</strong> = win rate, ARR, pipeline coverage, attainment by rep</li>
+        <li><strong>Game film</strong> = call recordings, win/loss interviews, post-mortems, deal histories</li>
+        <li><strong>Coach</strong> = CRO, VP Sales, Sales Director</li>
+        <li><strong>Star player</strong> = top rep, with their unique talk tracks</li>
+        <li><strong>Opponent's tape</strong> = competitor mentions across all your calls</li>
+        <li><strong>The playbook</strong> = battlecards</li>
+        <li><strong>The audible</strong> = the improvised talk track that actually works</li>
+      </ul>
+
+      <p>The film is where coaching happens. The scoreboard is where reporting happens. They are different artifacts for different jobs.</p>
+
+      <h2>The leadership pattern that doesn't work</h2>
+
+      <p>Most revenue leaders develop a routine: weekly or monthly dashboard review, quarterly business review with finance, board narrative every 90 days. The cadence is around the scoreboard. The conversation is about the score.</p>
+
+      <p>When the score moves the wrong direction — say enterprise win rate drops 8 points in a quarter — the next move is usually to dig into the dashboard. Which segment? Which stage? Which competitor? Which rep? The dashboard answers all of those, but the answer is always another decomposition of the same outcome data. You can slice the score a hundred ways. You can't watch the game by slicing the score.</p>
+
+      <h2>"I'll just ask my team"</h2>
+
+      <p>The most common substitute for watching film is asking the team.</p>
+
+      <p>The CRO holds a Monday meeting. <em>"What are we hearing in deals against Competitor X?"</em> Two reps speak up. They share the objection that's bothering them most personally — the one from yesterday's call they can still hear in their head.</p>
+
+      <p>This is human, and it produces signal, and it is also wildly insufficient.</p>
+
+      <p>Reps remember:</p>
+
+      <ul>
+        <li>The deal they lost yesterday</li>
+        <li>The competitor pricing they got pushback on most loudly</li>
+        <li>The objection that bothered them most personally</li>
+        <li>The win that felt great</li>
+      </ul>
+
+      <p>Reps don't remember:</p>
+
+      <ul>
+        <li>The objection they handled 14 times last month and never escalated</li>
+        <li>The competitor mention frequency trend across the team</li>
+        <li>The pricing reaction patterns across deal sizes</li>
+        <li>The talk tracks that worked across multiple reps but originated with one</li>
+      </ul>
+
+      <p>The full picture isn't in any rep's head. The full picture is in the corpus. The corpus doesn't talk to the CRO in a Monday meeting.</p>
+
+      <h2>How head coaches operate</h2>
+
+      <p>The reason head coaches watch film and revenue leaders watch dashboards isn't that revenue leaders are lazy. It's that watching the film at scale is impossible without infrastructure. A football coaching staff has a film room with multiple analysts. A revenue org of similar headcount has a CRO and maybe a couple of enablement folks who are already underwater.</p>
+
+      <p>So the work doesn't get done. The CRO does the equivalent of skimming the box score and asking the QB how he felt about the game.</p>
+
+      <p>Football figured this out fifty years ago: you don't expect the head coach to watch every play of every game. You build a coaching staff and a film operation. The job of the head coach is to make decisions based on what the film operation surfaces — not to do the film review themselves.</p>
+
+      <p>The revenue function hasn't built that infrastructure. Most companies have a CRM (the box score), a CI tool (the opponent's PR clippings), and a conversation intelligence platform (the unedited footage). Nothing turns the unedited footage into a coaching tape.</p>
+
+      <h2>What watching the film actually unlocks</h2>
+
+      <p>Concrete things that only become visible when someone has watched the film at scale:</p>
+
+      <ul>
+        <li>Which competitive objections correlate with losses (not just which ones get mentioned, but which ones move the deal in the wrong direction)</li>
+        <li>Which talk tracks are quietly working — one rep's improvisation that should be everyone's standard</li>
+        <li>How a competitor's positioning has shifted — not because their website changed, but because their reps started using new language in the deals you're competing on</li>
+        <li>The early-quarter signal that win rate is about to drop, before it shows up on the dashboard</li>
+      </ul>
+
+      <p>These are leadership decisions. They require pattern recognition across hundreds of conversations. They are what the dashboard cannot give you.</p>
+
+      <h2>What to do</h2>
+
+      <p>Three commitments worth making, in order:</p>
+
+      <ol>
+        <li><strong>Treat your call corpus like game film, not archive.</strong> It's not a compliance record. It's the raw material for next quarter's strategy. The audio you've already recorded is the most valuable strategic asset you own — and it's currently unread.</li>
+        <li><strong>Synthesize, don't sample.</strong> Twenty calls is a vibes check. Five hundred calls is a corpus. The patterns only emerge at scale. You need the equivalent of a film operation — automated where it can be, supervised where it can't.</li>
+        <li><strong>Get the analysis off your team's plate.</strong> Your PMM doesn't have time. Your enablement lead doesn't have time. Your reps definitely don't have time. The work has to be done somewhere and it can't be done on your team's existing capacity.</li>
+      </ol>
+
+      <p>The scoreboard tells you you're losing. The film tells you why. Most revenue leaders only watch the scoreboard. The teams that watch the film are the ones who pull ahead.</p>
+
+      <!-- Inline CTA block -->
+      <div class="post-cta">
+        <h3>Watch the film on your last two quarters.</h3>
+        <p>The Intelligence Audit is RAINCLOUD's film operation for revenue teams — we analyze every competitive deal, surface the patterns the dashboard can't see, and present them to leadership in a 60-minute session. Two weeks. $7,500. Credited against any ongoing engagement.</p>
+        <a href="/audit.html" class="btn btn--primary">
+          <span>Book Your Audit</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <!-- ===== POST CONTENT ENDS HERE ===== -->
+
+      <div class="post-nav">
+        <a href="/blog/">← All Posts</a>
+        <a href="/blog/">See all articles →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-layout">
+        <span class="footer-logo">RAINCLOUD</span>
+        <ul class="footer-links">
+          <li><a href="/blog/">Resources</a></li>
+          <li><a href="mailto:hello@rncld.com">hello@rncld.com</a></li>
+        </ul>
+        <span class="footer-copy">&copy; 2025 RAINCLOUD. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
