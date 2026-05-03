@@ -524,6 +524,83 @@ footer {
 .footer-copy { font-size: 0.7rem; color: var(--text-tertiary); }
 @media (max-width: 768px) { .footer-inner { flex-direction: column; text-align: center; } }
 
+/* NEWS SCOUT */
+.news-scout { background: var(--bg-primary); }
+.news-scout .section-header { margin-bottom: 56px; max-width: 760px; }
+.news-scout .section-header h2 { margin-bottom: 18px; }
+.news-scout .section-header .lead {
+  font-size: 0.98rem; color: var(--text-secondary); line-height: 1.78;
+  max-width: 660px;
+}
+.signal-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--border-subtle); border: 1px solid var(--border-subtle);
+  margin-bottom: 56px;
+}
+@media (max-width: 980px) { .signal-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .signal-grid { grid-template-columns: 1fr; } }
+.signal-card {
+  background: var(--bg-card); padding: 32px 28px;
+  transition: background 0.25s;
+}
+.signal-card:hover { background: var(--bg-tertiary); }
+.signal-card .sig-icon {
+  font-family: var(--font-heading); font-size: 1.4rem; font-weight: 200;
+  color: var(--accent-blue); margin-bottom: 18px;
+  width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--accent-blue-dim); border-radius: 50%;
+}
+.signal-card h4 {
+  font-family: var(--font-heading); font-size: 0.92rem; font-weight: 500;
+  margin-bottom: 10px; color: var(--text-primary);
+}
+.signal-card p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.7; }
+
+.example-card {
+  background: var(--bg-secondary); border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--accent-blue);
+  padding: 36px 40px; border-radius: 0 4px 4px 0;
+  margin-bottom: 32px;
+}
+.example-card .example-eyebrow {
+  font-family: var(--font-body); font-size: 0.66rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-blue);
+  margin-bottom: 22px;
+}
+.example-grid {
+  display: grid;
+  grid-template-columns: 1fr 24px 1.4fr 24px 1.4fr;
+  gap: 0; align-items: start;
+}
+@media (max-width: 980px) {
+  .example-grid { grid-template-columns: 1fr; gap: 18px; }
+  .example-arrow { display: none; }
+}
+.example-step {
+  font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-tertiary);
+  margin-bottom: 10px;
+}
+.example-event p, .example-action p, .example-result p {
+  font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65;
+}
+.example-action p strong { color: var(--text-primary); font-weight: 500; }
+.example-arrow {
+  font-family: var(--font-heading); font-size: 1.2rem; color: var(--text-tertiary);
+  text-align: center; padding-top: 26px; font-weight: 200;
+}
+.example-headline {
+  font-family: var(--font-heading); font-size: 0.95rem; font-weight: 500;
+  color: var(--text-primary); line-height: 1.4; letter-spacing: -0.01em;
+  margin-top: 12px; padding: 14px 16px;
+  background: var(--bg-primary); border: 1px solid var(--border-subtle);
+  border-radius: 3px; font-style: italic;
+}
+.news-scout-foot {
+  font-size: 0.92rem; color: var(--text-secondary); line-height: 1.78;
+  max-width: 720px; font-style: italic;
+}
+
 /* REVEAL */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -773,6 +850,63 @@ footer {
     </div>
   </section>
 
+  <!-- NEWS SCOUT / LIVE CAPTURE -->
+  <section class="news-scout">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label label--accent">The News Scout</div>
+        <h2>Your competitors moved this week.<br><span class="dim">Your content goes live next week.</span></h2>
+        <p class="lead">A daily AI-driven intelligence sweep monitors your market for the events that move buyer intent — pricing changes, new product launches, funding rounds, regulatory shifts. The moment a relevant signal hits, content briefs generate automatically and pages publish within 14 days. You rank while the topic is hot — long before competitors realize what happened.</p>
+      </div>
+
+      <div class="signal-grid reveal">
+        <div class="signal-card">
+          <div class="sig-icon">$</div>
+          <h4>Pricing Changes</h4>
+          <p>A competitor raises, drops, or restructures pricing. We capture the buyer's question — "is [competitor] still worth it?" — within 24 hours of the announcement.</p>
+        </div>
+        <div class="signal-card">
+          <div class="sig-icon">+</div>
+          <h4>New Products &amp; Features</h4>
+          <p>A competitor ships something new. Buyers immediately search whether it changes the calculus. We have the page ready before the conversation peaks.</p>
+        </div>
+        <div class="signal-card">
+          <div class="sig-icon">↑</div>
+          <h4>Funding &amp; Acquisitions</h4>
+          <p>A competitor raises a round, gets acquired, or a new entrant arrives with capital. The market re-prices. We capture the "is [new player] credible?" search intent.</p>
+        </div>
+        <div class="signal-card">
+          <div class="sig-icon">⟳</div>
+          <h4>Market Shifts</h4>
+          <p>Industry consolidation, regulatory changes, ICP-reshaping events. The questions buyers ask change overnight. So does our content.</p>
+        </div>
+      </div>
+
+      <div class="example-card reveal">
+        <div class="example-eyebrow">Live Example</div>
+        <div class="example-grid">
+          <div class="example-event">
+            <div class="example-step">01 · The Event</div>
+            <p>Gong raises pricing 20% on March 14.</p>
+          </div>
+          <div class="example-arrow">→</div>
+          <div class="example-action">
+            <div class="example-step">02 · The Response</div>
+            <p>Within 7 days, content brief drafted in your voice. Within <strong>14 days</strong>, page published:</p>
+            <div class="example-headline">"What Gong's New Pricing Means for [Your Category] in 2026"</div>
+          </div>
+          <div class="example-arrow">→</div>
+          <div class="example-result">
+            <div class="example-step">03 · The Outcome</div>
+            <p>You rank for "Gong pricing 2026," "Gong alternative pricing," "cheaper than Gong," and 12 related queries — while every competitor is still figuring out what happened.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="news-scout-foot reveal">This sits on top of your evergreen BoFu architecture. Static pages compound. Timely pages capture moments. Together: a content flywheel built around your competitors' actual movements — not editorial guesses or quarterly content calendars.</p>
+    </div>
+  </section>
+
   <!-- TIMELINE -->
   <section class="tl-section">
     <div class="container">
@@ -882,6 +1016,10 @@ footer {
         <div class="cc cross">Monthly retainer — costs regardless</div>
         <div class="cc check">Deliverable model — you own everything</div>
 
+        <div class="cc dim">Real-time competitor monitoring</div>
+        <div class="cc cross">None — quarterly content planning</div>
+        <div class="cc check">Daily news scout; content live within 14 days</div>
+
         <div class="cc dim">Guarantee</div>
         <div class="cc cross">None</div>
         <div class="cc gold">50% back if KPIs not met in 6 months</div>
@@ -929,6 +1067,7 @@ footer {
           <ul class="p-list">
             <li>Everything in The Plan, plus:</li>
             <li><strong>Full execution</strong> — we build, publish, and optimize everything</li>
+            <li><strong>News Scout</strong> — daily competitor monitoring; timely pages live within 14 days of any pricing change, product launch, funding event, or market shift</li>
             <li><strong>AI-enabled production</strong> — proprietary models, your brand's voice</li>
             <li><strong>Monthly strategy calls</strong> — review data, iterate, compound</li>
             <li><strong>Pipeline reporting</strong> — leads, opportunities, and revenue attribution</li>
