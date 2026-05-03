@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-041BP5G4HF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-041BP5G4HF');
+
+    // Custom event: audit_cta_click — body-content links to /audit.html or /contact.html
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (!/\/(audit|contact)(\.html)?(\?|#|$)/.test(href)) return;
+      if (a.closest('nav') || a.closest('footer')) return;
+      gtag('event', 'audit_cta_click', {
+        cta_text: (a.textContent || '').trim().slice(0, 100),
+        cta_destination: href,
+        cta_location: window.location.pathname
+      });
+    });
+  </script>
+  <title>BoFu SEO &amp; Content Intelligence — RAINCLOUD</title>
+  <meta name="description" content="The bottom-of-funnel searches that close deals are already happening — your buyers are typing 'competitor alternative,' 'best [category] for [industry],' and 'pricing' right now. We find them, build for them, and deliver the traffic into your pipeline. First rankings in 30–60 days.">
+  <meta property="og:title" content="BoFu SEO &amp; Content Intelligence — RAINCLOUD">
+  <meta property="og:description" content="Bottom-of-funnel keywords convert at 4–8× the site average. We find them, build for them, and deliver into your pipeline. First rankings in 30–60 days. 50% money-back guarantee.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+/* RAINCLOUD DESIGN SYSTEM */
+:root {
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #111111;
+  --bg-tertiary: #181818;
+  --bg-card: #141414;
+  --text-primary: #F0EDE8;
+  --text-secondary: #9A9A9A;
+  --text-tertiary: #5A5A5A;
+  --accent-blue: #4A9EBF;
+  --accent-blue-dim: rgba(74, 158, 191, 0.12);
+  --accent-red: #BF4A4A;
+  --accent-green: #4ABF7A;
+  --accent-amber: #BF9A4A;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-medium: rgba(255, 255, 255, 0.1);
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --container: 1280px;
+  --container-narrow: 880px;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-body); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
+::selection { background: var(--accent-blue); color: var(--bg-primary); }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+body::after {
+  content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9999; opacity: 0.4;
+}
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+.container--narrow { max-width: var(--container-narrow); margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+section { padding: clamp(64px, 10vh, 140px) 0; }
+
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.6rem, 5.5vw, 4.4rem); font-weight: 200; }
+h2 { font-size: clamp(1.7rem, 3.2vw, 2.6rem); font-weight: 200; }
+h3 { font-size: clamp(1rem, 1.5vw, 1.2rem); font-weight: 500; }
+p { font-size: clamp(0.92rem, 1vw, 1rem); color: var(--text-secondary); line-height: 1.75; }
+.dim { color: var(--text-secondary); font-weight: 200; font-style: italic; }
+
+.label {
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-tertiary);
+  display: inline-flex; align-items: center; gap: 12px; margin-bottom: 24px;
+}
+.label::before {
+  content: ''; display: block; width: 24px; height: 1px;
+  background: currentColor; opacity: 0.5;
+}
+.label--accent { color: var(--accent-blue); }
+.label--green { color: var(--accent-green); }
+.label--amber { color: var(--accent-amber); }
+.label--red { color: var(--accent-red); }
+
+/* MINIMAL LP NAV (no main menu — standalone page) */
+.lp-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 18px 0; background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.lp-nav .lp-nav-inner {
+  max-width: var(--container); margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 80px);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.lp-nav .nav-logo {
+  font-family: var(--font-heading); font-weight: 300; font-size: 1.1rem;
+  letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-primary);
+}
+.lp-nav .nav-logo em { font-style: normal; color: var(--text-tertiary); font-weight: 200; }
+.lp-nav .nav-cta {
+  font-family: var(--font-heading); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 9px 22px; border: 1px solid var(--text-primary);
+  color: var(--text-primary); transition: all 0.3s ease;
+}
+.lp-nav .nav-cta:hover { background: var(--text-primary); color: var(--bg-primary); }
+
+/* HERO */
+.bf-hero {
+  min-height: 86vh; display: flex; align-items: center;
+  padding: 160px 0 60px; position: relative;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.bf-hero .container { width: 100%; }
+.bf-hero h1 {
+  line-height: 1.05; margin-bottom: 28px; max-width: 920px;
+}
+.bf-hero h1 .dim { display: block; margin-top: 8px; font-size: 0.78em; }
+.bf-hero .hero-sub {
+  font-size: 1.05rem; color: var(--text-secondary); line-height: 1.75;
+  max-width: 600px; margin-bottom: 36px;
+}
+.bf-hero .hero-sub strong { color: var(--text-primary); font-weight: 500; }
+.hero-cta-row {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 16px 32px; background: var(--bg-primary); color: var(--text-primary);
+  border: 1px solid var(--text-primary); font-family: var(--font-heading);
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; transition: all 0.3s ease;
+}
+.hero-cta:hover { background: var(--text-primary); color: var(--bg-primary); }
+.hero-cta-secondary {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 16px 28px; background: transparent; color: var(--text-secondary);
+  border: 1px solid var(--border-medium); font-family: var(--font-heading);
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; transition: all 0.3s ease;
+}
+.hero-cta-secondary:hover { color: var(--text-primary); border-color: var(--text-primary); }
+
+/* STAT STRIP */
+.stat-strip {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--border-subtle);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+@media (max-width: 768px) { .stat-strip { grid-template-columns: 1fr; } }
+.stat-cell {
+  background: var(--bg-primary); padding: 48px 32px; text-align: center;
+}
+.stat-cell .num {
+  font-family: var(--font-heading); font-size: clamp(2.2rem, 3.6vw, 3rem);
+  font-weight: 200; color: var(--text-primary); margin-bottom: 8px;
+  letter-spacing: -0.02em; line-height: 1;
+}
+.stat-cell .desc {
+  font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--text-tertiary); max-width: 280px; margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* IMAGE BAND */
+.image-band { position: relative; height: clamp(260px, 38vh, 420px); overflow: hidden; }
+.image-band .band-img {
+  position: absolute; top: -20%; left: 0; width: 100%; height: 140%;
+  object-fit: cover; filter: grayscale(100%) brightness(0.45) contrast(1.2);
+}
+.image-band .band-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, var(--bg-primary) 0%, rgba(10,10,10,0.25) 20%, rgba(10,10,10,0.25) 80%, var(--bg-primary) 100%);
+  pointer-events: none;
+}
+
+/* PROBLEM */
+.problem { background: var(--bg-primary); }
+.problem-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 6vw, 84px);
+  align-items: start;
+}
+@media (max-width: 880px) { .problem-grid { grid-template-columns: 1fr; gap: 48px; } }
+.problem-prose h2 { margin-bottom: 22px; }
+.problem-prose p {
+  font-size: 0.96rem; color: var(--text-secondary); line-height: 1.85;
+  margin-bottom: 18px; max-width: 540px;
+}
+.problem-prose p strong { color: var(--text-primary); font-weight: 500; }
+.problem-cards { display: flex; flex-direction: column; gap: 1px; }
+.pcard {
+  background: var(--bg-card); border: 1px solid var(--border-subtle);
+  padding: 28px 30px; transition: border-color 0.25s;
+}
+.pcard:hover { border-color: var(--border-medium); }
+.pcard .pnum {
+  font-family: var(--font-heading); font-size: 0.78rem;
+  letter-spacing: 0.22em; color: var(--accent-amber);
+  font-weight: 500; margin-bottom: 10px; display: block;
+}
+.pcard h3 { font-size: 0.94rem; font-weight: 500; margin-bottom: 8px; }
+.pcard p { font-size: 0.84rem; line-height: 1.7; color: var(--text-secondary); }
+
+/* OPPORTUNITY / INTENT */
+.opp { background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+.opp-grid {
+  display: grid; grid-template-columns: 5fr 6fr; gap: clamp(48px, 6vw, 84px);
+  align-items: center;
+}
+@media (max-width: 880px) { .opp-grid { grid-template-columns: 1fr; gap: 48px; } }
+.opp-prose h2 { margin-bottom: 22px; }
+.opp-prose .lead {
+  font-size: 0.98rem; color: var(--text-secondary); line-height: 1.78;
+  max-width: 480px;
+}
+.intent-rows { display: flex; flex-direction: column; }
+.irow {
+  display: flex; gap: 18px; align-items: flex-start;
+  padding: 22px 0; border-bottom: 1px solid var(--border-subtle);
+}
+.irow:first-child { border-top: 1px solid var(--border-subtle); }
+.itag {
+  font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase; padding: 4px 10px;
+  white-space: nowrap; flex-shrink: 0; margin-top: 2px; border-radius: 2px;
+}
+.itag-hi { color: var(--accent-blue); background: var(--accent-blue-dim); border: 1px solid rgba(74,158,191,0.28); }
+.itag-lo { color: var(--text-tertiary); background: transparent; border: 1px solid var(--border-subtle); }
+.irow-body strong {
+  display: block; font-size: 0.92rem; font-weight: 500; color: var(--text-primary);
+  margin-bottom: 4px; font-family: var(--font-heading);
+}
+.irow-body span {
+  font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65;
+}
+
+/* HOW IT WORKS — 6 source cards */
+.how { background: var(--bg-primary); }
+.how .section-header { margin-bottom: 56px; max-width: 720px; }
+.how .section-header h2 { margin-bottom: 18px; }
+.how .section-header .lead {
+  font-size: 0.98rem; color: var(--text-secondary); line-height: 1.78;
+  max-width: 640px;
+}
+.src-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--border-subtle); border: 1px solid var(--border-subtle);
+}
+@media (max-width: 880px) { .src-grid { grid-template-columns: 1fr; } }
+.scard {
+  background: var(--bg-primary); padding: 36px 32px;
+  transition: background 0.25s;
+}
+.scard:hover { background: var(--bg-card); }
+.scard .snum {
+  font-family: var(--font-heading); font-style: italic; font-size: 1.7rem;
+  color: var(--text-tertiary); display: block; margin-bottom: 16px;
+  font-weight: 200; letter-spacing: -0.02em;
+}
+.scard h4 {
+  font-family: var(--font-heading); font-size: 0.95rem; font-weight: 500;
+  margin-bottom: 10px; color: var(--text-primary);
+}
+.scard p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.7; }
+
+/* DELIVERABLES */
+.deliv { background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+.deliv .section-header { margin-bottom: 56px; max-width: 720px; }
+.deliv .section-header h2 { margin-bottom: 18px; }
+.deliv .section-header .lead {
+  font-size: 0.98rem; color: var(--text-secondary); line-height: 1.78;
+  max-width: 640px;
+}
+.del-list { display: flex; flex-direction: column; gap: 1px; }
+.del-row {
+  display: grid; grid-template-columns: 48px 1fr auto;
+  background: var(--bg-card); border: 1px solid var(--border-subtle);
+  padding: 28px 32px; align-items: start; gap: 20px;
+  transition: border-color 0.25s;
+}
+.del-row:hover { border-color: var(--border-medium); }
+@media (max-width: 768px) {
+  .del-row { grid-template-columns: 36px 1fr; gap: 14px; }
+  .del-pills { display: none; }
+}
+.del-n {
+  font-family: var(--font-heading); font-style: italic; font-size: 1.3rem;
+  color: var(--accent-green); padding-top: 1px; font-weight: 300;
+}
+.del-title {
+  font-family: var(--font-heading); font-size: 0.95rem; font-weight: 500;
+  color: var(--text-primary); margin-bottom: 6px;
+}
+.del-body { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; }
+.del-pills { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 2px; }
+.pill {
+  font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary);
+  border: 1px solid var(--border-subtle); padding: 4px 9px;
+  white-space: nowrap; border-radius: 2px;
+}
+
+/* TIMELINE */
+.tl-section { background: var(--bg-primary); }
+.tl-section .section-header { margin-bottom: 48px; max-width: 720px; }
+.tl-section .section-header h2 { margin-bottom: 14px; }
+.tl { display: flex; flex-direction: column; }
+.tl-row {
+  display: grid; grid-template-columns: 156px 1fr; gap: 32px;
+  padding: 28px 0; border-bottom: 1px solid var(--border-subtle);
+  align-items: start;
+}
+.tl-row:first-child { border-top: 1px solid var(--border-subtle); }
+@media (max-width: 768px) { .tl-row { grid-template-columns: 1fr; gap: 8px; } }
+.tl-period {
+  font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-blue);
+  padding-top: 3px;
+}
+.tl-title {
+  font-family: var(--font-heading); font-size: 0.98rem; font-weight: 500;
+  color: var(--text-primary); margin-bottom: 7px;
+}
+.tl-body { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.75; }
+
+/* BRIDGE TO 4D */
+.bridge { background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+.bridge-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 6vw, 84px);
+  align-items: center;
+}
+@media (max-width: 880px) { .bridge-grid { grid-template-columns: 1fr; gap: 40px; } }
+.bridge-prose h2 { margin-bottom: 22px; }
+.bridge-prose .lead {
+  font-size: 0.98rem; color: var(--text-secondary); line-height: 1.78;
+  max-width: 460px;
+}
+.bridge-prose .lead-2 {
+  font-size: 0.88rem; color: var(--text-tertiary); margin-top: 16px;
+  font-style: italic;
+}
+.bcard {
+  background: var(--bg-primary); border: 1px solid var(--border-medium);
+  padding: 44px 40px; border-radius: 4px; position: relative;
+}
+.bcard::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent-blue) 0%, transparent 100%);
+  border-radius: 4px 4px 0 0;
+}
+.bcard .badge {
+  font-family: var(--font-body); font-size: 0.66rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-blue);
+  margin-bottom: 16px; display: block;
+}
+.bcard h3 {
+  font-family: var(--font-heading); font-size: 1.55rem; font-weight: 200;
+  line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.02em;
+}
+.bcard p {
+  font-size: 0.88rem; color: var(--text-secondary); line-height: 1.78;
+  margin-bottom: 24px;
+}
+.blink {
+  font-family: var(--font-heading); font-size: 0.78rem; font-weight: 500;
+  color: var(--text-primary); letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-medium); padding-bottom: 3px;
+  transition: border-color 0.2s;
+}
+.blink:hover { border-color: var(--text-primary); }
+
+/* COMPARISON */
+.cmp-section { background: var(--bg-primary); }
+.cmp-section .section-header { margin-bottom: 48px; max-width: 720px; }
+.cmp-section .section-header h2 { margin-bottom: 14px; }
+.cmp {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid var(--border-subtle); overflow: hidden;
+}
+.ch {
+  padding: 18px 24px; border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-tertiary);
+}
+.ch.hl { color: var(--text-primary); }
+.cc {
+  padding: 16px 24px; border-bottom: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle); font-size: 0.84rem; line-height: 1.55;
+}
+.cc:nth-child(3n) { border-right: none; }
+.cc.dim { color: var(--text-tertiary); font-size: 0.8rem; font-family: var(--font-heading); font-weight: 500; letter-spacing: 0.04em; }
+.cc.cross { color: var(--text-tertiary); }
+.cc.check { color: var(--text-primary); }
+.cc.gold { color: var(--accent-green); font-weight: 500; }
+@media (max-width: 768px) {
+  .cmp { grid-template-columns: 1fr 1fr; }
+  .ch:nth-child(2), .cc:nth-child(3n+2) { display: none; }
+  .cc:nth-child(3n) { border-right: 1px solid var(--border-subtle); }
+}
+
+/* GUARANTEE */
+.guar { background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+.guar-inner {
+  max-width: 720px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px);
+  text-align: center;
+}
+.guar-inner .label { justify-content: center; }
+.guar-inner h2 { margin-bottom: 22px; line-height: 1.25; }
+.guar-inner h2 .dim { display: block; margin-top: 6px; font-size: 0.85em; }
+.guar-inner p {
+  font-size: 0.98rem; color: var(--text-secondary); line-height: 1.85;
+}
+
+/* PRICING */
+.pricing { background: var(--bg-primary); }
+.pricing .section-header { margin-bottom: 48px; max-width: 720px; }
+.pricing .section-header h2 { margin-bottom: 14px; }
+.pricing .section-header .lead {
+  font-size: 0.98rem; color: var(--text-secondary); line-height: 1.78;
+  max-width: 540px;
+}
+.p-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--border-subtle);
+}
+@media (max-width: 880px) { .p-grid { grid-template-columns: 1fr; } }
+.pcard2 {
+  background: var(--bg-card); border: 1px solid var(--border-subtle);
+  padding: 52px 44px; position: relative; transition: border-color 0.25s;
+}
+.pcard2:hover { border-color: var(--border-medium); }
+.pcard2.featured { border-color: var(--accent-blue); }
+.pcard2.featured::after {
+  content: 'MOST COMMON'; position: absolute; top: -1px; left: 44px;
+  background: var(--accent-blue); color: var(--bg-primary);
+  font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.18em; padding: 5px 14px;
+}
+.p-tier {
+  font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-tertiary);
+  margin-bottom: 20px; display: block;
+}
+.p-price {
+  font-family: var(--font-heading); font-size: clamp(2.6rem, 4.5vw, 3.6rem);
+  font-weight: 200; line-height: 1; color: var(--text-primary);
+  margin-bottom: 8px; letter-spacing: -0.04em;
+}
+.p-note { font-size: 0.84rem; color: var(--text-tertiary); margin-bottom: 32px; }
+.p-div { border: none; border-top: 1px solid var(--border-subtle); margin: 24px 0; }
+.p-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
+.p-list li {
+  font-size: 0.86rem; color: var(--text-secondary); display: flex; gap: 12px;
+  align-items: flex-start; line-height: 1.55;
+}
+.p-list li::before { content: '—'; color: var(--text-tertiary); flex-shrink: 0; }
+.p-list li strong { color: var(--text-primary); font-weight: 500; }
+.p-cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 100%; padding: 14px 28px;
+  font-family: var(--font-heading); font-size: 0.78rem; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase; transition: all 0.3s ease;
+}
+.p-cta-outline {
+  border: 1px solid var(--border-medium); color: var(--text-primary); background: transparent;
+}
+.p-cta-outline:hover { border-color: var(--text-primary); background: var(--text-primary); color: var(--bg-primary); }
+.p-cta-solid {
+  border: 1px solid var(--text-primary); color: var(--text-primary); background: transparent;
+}
+.p-cta-solid:hover { background: var(--text-primary); color: var(--bg-primary); }
+
+/* FINAL CTA */
+.final-cta { padding: clamp(80px, 12vh, 140px) 0; text-align: center; }
+.final-cta .label { justify-content: center; }
+.final-cta h2 {
+  max-width: 680px; margin: 0 auto 22px; line-height: 1.2;
+}
+.final-cta h2 .dim { display: block; margin-top: 6px; }
+.final-cta p {
+  color: var(--text-secondary); font-size: 0.98rem; max-width: 520px;
+  margin: 0 auto 40px; line-height: 1.78;
+}
+.final-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border-subtle); padding: 36px 0;
+}
+.footer-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+  max-width: var(--container); margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 80px);
+}
+.footer-logo {
+  font-family: var(--font-heading); font-weight: 300; font-size: 0.85rem;
+  letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-tertiary);
+}
+.footer-logo em { font-style: normal; color: var(--text-tertiary); font-weight: 200; }
+.footer-links { display: flex; gap: 24px; list-style: none; }
+.footer-links a {
+  font-size: 0.72rem; color: var(--text-tertiary);
+  transition: color 0.3s ease;
+}
+.footer-links a:hover { color: var(--text-primary); }
+.footer-copy { font-size: 0.7rem; color: var(--text-tertiary); }
+@media (max-width: 768px) { .footer-inner { flex-direction: column; text-align: center; } }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+  </style>
+</head>
+<body>
+
+  <!-- MINIMAL LP NAV -->
+  <div class="lp-nav">
+    <div class="lp-nav-inner">
+      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
+      <a href="/contact.html" class="nav-cta">Talk to the Founder</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="bf-hero">
+    <div class="container">
+      <div class="label label--accent">BoFu SEO &amp; Content Intelligence</div>
+      <h1>The searches that close deals are already happening.<span class="dim">You're just not on the page.</span></h1>
+      <p class="hero-sub">Bottom-of-funnel keywords convert at 4–8× the site average. We find them, build for them, and deliver the traffic directly into your pipeline. <strong>First rankings visible in 30–60 days.</strong></p>
+      <div class="hero-cta-row">
+        <a href="/contact.html" class="hero-cta">Start the Conversation →</a>
+        <a href="#how" class="hero-cta-secondary">See How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT STRIP -->
+  <div class="stat-strip">
+    <div class="stat-cell">
+      <div class="num">30–60</div>
+      <div class="desc">Days to first measurable rankings</div>
+    </div>
+    <div class="stat-cell">
+      <div class="num">6×</div>
+      <div class="desc">Higher conversion vs. top-funnel traffic</div>
+    </div>
+    <div class="stat-cell">
+      <div class="num">50%</div>
+      <div class="desc">Money back if agreed KPIs aren't met in 6 months</div>
+    </div>
+  </div>
+
+  <!-- IMAGE BAND -->
+  <div class="image-band">
+    <img class="band-img" src="/assets/band-dataviz.jpg" alt="Search data visualization">
+    <div class="band-overlay"></div>
+  </div>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="container">
+      <div class="problem-grid">
+        <div class="problem-prose reveal">
+          <div class="label label--amber">The Problem</div>
+          <h2>Your buyers are at the bottom of the funnel.<br><span class="dim">Your content is at the top.</span></h2>
+          <p>The average B2B buying decision involves 6 to 10 searches. Most happen <strong>after</strong> the buyer already knows they have a problem — they're evaluating vendors, comparing pricing, researching alternatives.</p>
+          <p>These are BoFu searches — Bottom of Funnel. The highest-intent, highest-converting searches in your market. And most content programs completely ignore them.</p>
+          <p>Meanwhile, your buyers are typing <strong>"[competitor] alternative,"</strong> <strong>"[competitor] pricing,"</strong> and <strong>"best [your category] for [their industry]"</strong> — and landing on someone else's page.</p>
+        </div>
+        <div class="problem-cards">
+          <div class="pcard reveal">
+            <span class="pnum">01</span>
+            <h3>You're targeting traffic that doesn't convert.</h3>
+            <p>Informational keywords drive sessions, not pipeline. The analytics look fine. The pipeline doesn't reflect it.</p>
+          </div>
+          <div class="pcard reveal">
+            <span class="pnum">02</span>
+            <h3>Your competitors own the comparison pages.</h3>
+            <p>"[Your competitor] alternative" is being searched by your best-fit buyers right now. Someone ranks for it. It isn't you.</p>
+          </div>
+          <div class="pcard reveal">
+            <span class="pnum">03</span>
+            <h3>AI search is changing who gets cited.</h3>
+            <p>ChatGPT, Perplexity, and Google AI Overviews answer buyer questions by citing pages. Without structured content, you're invisible there too.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPPORTUNITY / INTENT -->
+  <section class="opp">
+    <div class="container">
+      <div class="opp-grid reveal">
+        <div class="opp-prose">
+          <div class="label label--accent">The Opportunity</div>
+          <h2>The searches your buyers run<br><span class="dim">right before they decide.</span></h2>
+          <p class="lead">This is the highest-intent traffic in your entire market — and everyone else is ignoring it. We identify it, capture it, and deliver it straight into your funnel.</p>
+        </div>
+        <div class="intent-rows">
+          <div class="irow">
+            <span class="itag itag-hi">High Intent</span>
+            <div class="irow-body">
+              <strong>"[Competitor] alternative"</strong>
+              <span>Buyer is actively evaluating options. Comparison pages convert at 4–8× the site average.</span>
+            </div>
+          </div>
+          <div class="irow">
+            <span class="itag itag-hi">High Intent</span>
+            <div class="irow-body">
+              <strong>"Best [your category] for [ICP]"</strong>
+              <span>Buyer is shortlisting vendors. They're asking for a recommendation. You're on the list or you're not.</span>
+            </div>
+          </div>
+          <div class="irow">
+            <span class="itag itag-hi">High Intent</span>
+            <div class="irow-body">
+              <strong>"[Competitor] pricing" or "[Competitor] reviews"</strong>
+              <span>Buyer is validating a decision. The most-cited content type in AI search for commercial queries.</span>
+            </div>
+          </div>
+          <div class="irow">
+            <span class="itag itag-lo">Low Intent</span>
+            <div class="irow-body">
+              <strong>"What is [category]" — what most agencies target</strong>
+              <span>Window shoppers. They read, bounce, never buy. Looks great in a traffic report. Doesn't close deals.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="how">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label label--accent">How It Works</div>
+        <h2>Built from your buyers' actual search behavior.<br><span class="dim">Delivered as pipeline.</span></h2>
+        <p class="lead">Six automated data sources sweep your market simultaneously — live search data, competitor positioning, real buyer language from review platforms, and community conversations. Scored by our proprietary models and ranked by revenue potential.</p>
+      </div>
+      <div class="src-grid">
+        <div class="scard">
+          <span class="snum">01</span>
+          <h4>Your Site &amp; Analytics</h4>
+          <p>GA4 + Search Console baseline. We identify what you already rank for, striking-distance positions 4–20, and content gaps costing you pipeline.</p>
+        </div>
+        <div class="scard">
+          <span class="snum">02</span>
+          <h4>Competitor Search Footprint</h4>
+          <p>Live keyword overlap analysis identifies who you actually compete with in search — often different from who you think — and where you can displace them.</p>
+        </div>
+        <div class="scard">
+          <span class="snum">03</span>
+          <h4>G2 &amp; Review Intelligence</h4>
+          <p>We mine G2, TrustRadius, and Capterra for your competitors' reviews — extracting the exact language real buyers use when describing what those tools fail to do. That language becomes your copy.</p>
+        </div>
+        <div class="scard">
+          <span class="snum">04</span>
+          <h4>Live SERP Analysis</h4>
+          <p>For every keyword opportunity, we pull actual page-1 results — domain authority, content format, and where the displacement gap exists right now.</p>
+        </div>
+        <div class="scard">
+          <span class="snum">05</span>
+          <h4>Community &amp; Reddit Mining</h4>
+          <p>The public conversations your buyers are already having. "I wish there was a tool that..." posts surface intent that keyword tools miss entirely.</p>
+        </div>
+        <div class="scard">
+          <span class="snum">06</span>
+          <h4>Keyword Permutation Engine</h4>
+          <p>Every relevant combination for your offer — category + ICP, competitor alternatives, pricing, commercial modifiers — scored on a 100-point scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERABLES -->
+  <section class="deliv">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label label--green">What You Get</div>
+        <h2>Our proprietary ranking system<br><span class="dim">includes everything.</span></h2>
+        <p class="lead">Not a strategy document. Not a brief. Six publish-ready deliverables — built by our system, refined by our team, and ready to deploy the moment they're handed off.</p>
+      </div>
+      <div class="del-list">
+        <div class="del-row">
+          <div class="del-n">1</div>
+          <div>
+            <div class="del-title">Scored &amp; Ranked Keyword Universe</div>
+            <div class="del-body">Every BoFu opportunity in your market ranked by volume, difficulty, CPC, and SERP displaceability. Striking-distance quick wins flagged with plain-English justification per cluster.</div>
+          </div>
+          <div class="del-pills">
+            <span class="pill">CSV Export</span>
+            <span class="pill">Quick Wins</span>
+          </div>
+        </div>
+        <div class="del-row">
+          <div class="del-n">2</div>
+          <div>
+            <div class="del-title">BoFu Landing Pages — Publish-Ready HTML</div>
+            <div class="del-body">Complete standalone pages per keyword cluster. On-brand copy in your buyers' exact language, comparison tables, FAQ schema, lead CTA, meta tags embedded. Drop into any CMS.</div>
+          </div>
+          <div class="del-pills">
+            <span class="pill">AEO Ready</span>
+            <span class="pill">Schema</span>
+            <span class="pill">Mobile</span>
+          </div>
+        </div>
+        <div class="del-row">
+          <div class="del-n">3</div>
+          <div>
+            <div class="del-title">Supporting Articles — Full Bodies</div>
+            <div class="del-body">Complete articles for mid-funnel keywords that feed your BoFu pages via internal links. Voice-guided, PAA-structured, sourced from G2 and community language. Plagiarism-checked. Google Doc export.</div>
+          </div>
+          <div class="del-pills">
+            <span class="pill">Internal Links</span>
+            <span class="pill">Google Doc</span>
+          </div>
+        </div>
+        <div class="del-row">
+          <div class="del-n">4</div>
+          <div>
+            <div class="del-title">LinkedIn Content — 6 Posts Per Article</div>
+            <div class="del-body">3 posts for a named executive (hook, story, data) and 3 for the company page. Voice-guided, character-count verified, ready to schedule.</div>
+          </div>
+          <div class="del-pills">
+            <span class="pill">3 Personal</span>
+            <span class="pill">3 Company</span>
+          </div>
+        </div>
+        <div class="del-row">
+          <div class="del-n">5</div>
+          <div>
+            <div class="del-title">Complete Technical SEO Package</div>
+            <div class="del-body">robots.txt, llms.txt (AI crawler guidance), XML sitemap, meta tags CSV, schema JSON-LD blocks, and a GSC indexing queue. Technically clean from day one.</div>
+          </div>
+          <div class="del-pills">
+            <span class="pill">llms.txt</span>
+            <span class="pill">Schema JSON</span>
+          </div>
+        </div>
+        <div class="del-row">
+          <div class="del-n">6</div>
+          <div>
+            <div class="del-title">Monthly Performance Reporting</div>
+            <div class="del-body">GA4 + Search Console delta vs. baseline monthly — which pages moved, which keywords entered the top 10, what to do next. Position-by-position. Plain English.</div>
+          </div>
+          <div class="del-pills">
+            <span class="pill">Per-Page</span>
+            <span class="pill">Monthly Delta</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="tl-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label label--accent">Timeline</div>
+        <h2>First rankings in 30–60 days.<br><span class="dim">Compounding returns by month 6.</span></h2>
+      </div>
+      <div class="tl">
+        <div class="tl-row">
+          <div class="tl-period">Weeks 1–2</div>
+          <div>
+            <div class="tl-title">Research &amp; Intelligence Sweep</div>
+            <div class="tl-body">Full analytics baseline, competitor keyword overlap, G2 and community mining, live SERP analysis. Output: complete opportunity list with every page defined, scored, and sequenced by revenue potential.</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-period">Weeks 3–4</div>
+          <div>
+            <div class="tl-title">Foundation &amp; Quick Wins</div>
+            <div class="tl-body">Technical SEO package deployed. Striking-distance pages optimized — keywords at positions 4–20 that need a content refresh or internal link to reach page 1. These rank fastest.</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-period">Month 2</div>
+          <div>
+            <div class="tl-title">Top BoFu Pages Live</div>
+            <div class="tl-body">Highest-scoring BoFu and comparison pages published. Supporting content with internal links in place. GSC indexing requests submitted. First ranking signals visible.</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-period">Month 3</div>
+          <div>
+            <div class="tl-title">First Rankings + Content Velocity</div>
+            <div class="tl-body">Weeks 3–4 pages typically reach positions 6–15. Comparison and alternative pages rank fastest — keyword difficulty often 0–15 in these clusters. Measurable traffic increase visible in GSC.</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-period">Months 4–6</div>
+          <div>
+            <div class="tl-title">Compounding Returns</div>
+            <div class="tl-body">Internal link network strengthens all pages simultaneously. Monthly reporting tracks position per page. By month 6: a complete BoFu architecture that keeps compounding without additional investment.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE BAND -->
+  <div class="image-band">
+    <img class="band-img" src="/assets/band-city.png" alt="City skyline">
+    <div class="band-overlay"></div>
+  </div>
+
+  <!-- BRIDGE TO 4D -->
+  <section class="bridge">
+    <div class="container">
+      <div class="bridge-grid reveal">
+        <div class="bridge-prose">
+          <div class="label label--accent">The Full Picture</div>
+          <h2>BoFu SEO fills your pipeline.<br><span class="dim">4D Intelligence helps you close it.</span></h2>
+          <p class="lead">RAINCLOUD's BoFu SEO drives high-intent inbound into your funnel. RAINCLOUD's 4D Sales Intelligence analyzes what comes in — synthesizing call recordings, CRM data, and deal history to tell you exactly why deals close and what's killing the ones that don't.</p>
+          <p class="lead-2">Two products. One competitive edge.</p>
+        </div>
+        <div class="bcard">
+          <span class="badge">Also from RAINCLOUD</span>
+          <h3>4D Sales Intelligence</h3>
+          <p>RAINCLOUD analyzes your call recordings, CRM data, and deal history at scale — then delivers the competitive intelligence your revenue team needs to win more deals. No dashboards. No new logins. Just answers.</p>
+          <a href="/what.html" class="blink">See 4D Sales Intelligence →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="cmp-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Why This Is Different</div>
+        <h2>Traditional agency<br><span class="dim">vs. RAINCLOUD BoFu SEO.</span></h2>
+      </div>
+      <div class="cmp">
+        <div class="ch"></div>
+        <div class="ch">Traditional Agency</div>
+        <div class="ch hl">RAINCLOUD</div>
+
+        <div class="cc dim">Timeline to first output</div>
+        <div class="cc cross">Months of strategy before content</div>
+        <div class="cc check">Research in days — pages live in weeks</div>
+
+        <div class="cc dim">Keyword targeting</div>
+        <div class="cc cross">Informational / top-funnel traffic</div>
+        <div class="cc check">BoFu-first, buyer intent validated live</div>
+
+        <div class="cc dim">Copy sourcing</div>
+        <div class="cc cross">Generic briefs and assumptions</div>
+        <div class="cc check">Buyers' actual G2 &amp; community language</div>
+
+        <div class="cc dim">AI search (AEO)</div>
+        <div class="cc cross">Rarely addressed</div>
+        <div class="cc check">Built into every deliverable</div>
+
+        <div class="cc dim">Success metric</div>
+        <div class="cc cross">Traffic and impressions</div>
+        <div class="cc check">Position movement and pipeline</div>
+
+        <div class="cc dim">Commercial model</div>
+        <div class="cc cross">Monthly retainer — costs regardless</div>
+        <div class="cc check">Deliverable model — you own everything</div>
+
+        <div class="cc dim">Guarantee</div>
+        <div class="cc cross">None</div>
+        <div class="cc gold">50% back if KPIs not met in 6 months</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="guar">
+    <div class="guar-inner reveal">
+      <div class="label label--green">The Guarantee</div>
+      <h2>We hit agreed KPIs in 6 months,<span class="dim">or 50% of your investment back.</span></h2>
+      <p>Our DFY program includes the strongest guarantee in the industry: if we don't hit our agreed-upon KPIs by the end of 6 months, we will refund half of your investment. You keep the work and the results.</p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Pricing</div>
+        <h2>Two ways to engage.</h2>
+        <p class="lead">Start with the plan if you have a team to run it. Or hand it to us entirely.</p>
+      </div>
+      <div class="p-grid reveal">
+        <div class="pcard2">
+          <span class="p-tier">The Plan — Strategy Only</span>
+          <div class="p-price">$10,000</div>
+          <div class="p-note">One-time · Delivered in 3 weeks · No guarantee</div>
+          <hr class="p-div">
+          <ul class="p-list">
+            <li><strong>Scored keyword universe</strong> — every BoFu opportunity ranked by revenue potential</li>
+            <li><strong>BoFu page architecture</strong> — every page defined, briefed, and sequenced</li>
+            <li><strong>Technical SEO package</strong> — robots.txt, llms.txt, sitemap, schema JSON</li>
+            <li><strong>LinkedIn content framework</strong> — post templates per article</li>
+            <li><strong>6-month execution calendar</strong> — Notion export, every task sequenced by week</li>
+          </ul>
+          <a href="/contact.html" class="p-cta p-cta-outline">Get the Plan</a>
+        </div>
+        <div class="pcard2 featured">
+          <span class="p-tier">Plan + Done For You</span>
+          <div class="p-price">$5,000</div>
+          <div class="p-note">/month · 6-month contract · Results guaranteed</div>
+          <hr class="p-div">
+          <ul class="p-list">
+            <li>Everything in The Plan, plus:</li>
+            <li><strong>Full execution</strong> — we build, publish, and optimize everything</li>
+            <li><strong>AI-enabled production</strong> — proprietary models, your brand's voice</li>
+            <li><strong>Monthly strategy calls</strong> — review data, iterate, compound</li>
+            <li><strong>Pipeline reporting</strong> — leads, opportunities, and revenue attribution</li>
+            <li><strong>50% money-back guarantee</strong> — if agreed KPIs aren't met in 6 months, you get half back. You keep the work.</li>
+          </ul>
+          <a href="/contact.html" class="p-cta p-cta-solid">Start the System</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container reveal">
+      <div class="label">Ready to own the bottom of your funnel</div>
+      <h2>The patterns are in your market.<span class="dim">Let's put you on the page.</span></h2>
+      <p>Start with a 30-minute conversation. We'll show you exactly what BoFu opportunities exist in your market before you commit to anything.</p>
+      <div class="final-ctas">
+        <a href="/contact.html" class="hero-cta">Talk to the Founder →</a>
+        <a href="/what.html" class="hero-cta-secondary">See 4D Sales Intelligence</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">RAIN<em>CLOUD</em></div>
+      <ul class="footer-links">
+        <li><a href="/what.html">What</a></li>
+        <li><a href="/audit.html">How</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="https://rncld.com" target="_blank" rel="noopener noreferrer">rncld.com</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 RAINCLOUD. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Reveal on scroll
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
