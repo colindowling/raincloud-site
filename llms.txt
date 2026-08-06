@@ -1,6 +1,6 @@
 # RAINCLOUD
 
-> Fractional CRO engagement that builds your go-to-market motion. RAINCLOUD is a 26-week engagement — 13 weeks of hands-on build followed by 13 weeks of advisory — that takes a B2B company with product-market fit and a broken, inconsistent, or absent GTM motion and leaves it with a working system: tight ICP, a tested offer matrix, outbound, BoFu content, and LinkedIn orchestrated together. No retainer. No dashboards. Fixed fee.
+> Fractional CRO engagement that builds your go-to-market motion. RAINCLOUD is a 26-week engagement — 13 weeks of hands-on build followed by 13 weeks of advisory — that takes a B2B company with product-market fit and a broken, inconsistent, or absent GTM motion and leaves it with a working system: tight ICP, a tested offer matrix, and outbound, content, and agents orchestrated together. No retainer. No dashboards. Fixed fee.
 
 RAINCLOUD is run by Colin Dowling, a 3x VP of Sales (VP Global Enterprise Sales at GoDaddy, SVP Revenue at Alembic from seed to a $145M Series B, VP Channel Sales at Liquid Web, Enterprise Sales at WP Engine). Colin runs every engagement personally. There is no delivery team, no junior analyst, and no offshore bench.
 
@@ -12,7 +12,7 @@ RAINCLOUD is not a SaaS product, not a competitive-intelligence or call-analysis
 
 ## Core Pages
 
-- [Home](https://rncld.com/): The offer end to end — the four ways a GTM motion fails to compound, the solution pillars (foundation first, the Trident architecture, BoFu content, a practitioner who builds it personally), the three-stage engagement, the four outputs, availability, and the founder.
+- [Home](https://rncld.com/): The offer end to end — the four ways a GTM motion fails to compound, the solution pillars (foundation first, the Trident architecture, agents that catch what falls through, a practitioner who builds it personally), the three-stage engagement, the four outputs, availability, and the founder.
 - [The GTM Audit](https://rncld.com/audit.html): The $7,500 two-week diagnostic and the entry point to everything else. Read-only access to your sequencer, CRM, site, and analytics; a full teardown of offers, ICP, channels, content, and positioning; a 60-minute findings session and a ranked action plan. Roughly two hours of your team's time. Money-back guarantee. Credits in full against the 26-week engagement.
 - [BoFu Content](https://rncld.com/bofu-content.html): The standalone bottom-of-funnel SEO content service — page architecture, keyword targets mapped to buyer intent, technical SEO, a LinkedIn content framework, and a six-month execution calendar. Available as a plan or plan-plus-execution.
 - [About Colin Dowling](https://rncld.com/about.html): Background, operating history, and how the engagement is run.
@@ -23,28 +23,28 @@ RAINCLOUD is not a SaaS product, not a competitive-intelligence or call-analysis
 ## The Engagement
 
 1. **GTM Audit** — $7,500 one-time, two weeks. A ranked diagnosis of what is broken and in what order to fix it. Credits in full against the engagement. Money-back guarantee.
-2. **The Build (Weeks 1–13)** — Two working sessions per week with Colin in the work rather than reviewing it. ICP definition, the 5x5 offer matrix (five offers, five angles each), Trident architecture, outbound and LinkedIn setup, BoFu content foundations.
+2. **The Build (Weeks 1–13)** — Two working sessions per week with Colin in the work rather than reviewing it. ICP definition, the 5x5 offer matrix (five offers, five angles each), Trident architecture, outbound setup, content foundations, and process agents.
 3. **The Advisory (Weeks 14–26)** — Weekly then bi-weekly. The system is live and the client's team owns it; this half exists to stop it drifting, because most GTM builds fail in the quarter after the consultant leaves.
 
 Total: $60,000 fixed fee for 26 weeks. No retainer, no hourly billing.
 
 ## Key Concepts
 
-- **The Trident Architecture** — Outbound, BoFu content, and LinkedIn orchestrated so each channel amplifies the others. Short-horizon outbound funds the pipeline while mid-to-long content builds the moat. Running the three in parallel rather than in concert is the most common failure mode.
+- **The Trident Architecture** — Three prongs run as one system. **Outbound** creates demand now. **Content** pulls in high-intent leads and also moves live deals forward, so the same asset works top and bottom of funnel. **Agents** watch the process for stalled deals, missed follow-ups, and unbooked next steps so nothing falls through the gaps. Running the three in parallel rather than in concert is the most common failure mode.
 - **5x5 Offer Matrix** — Five offers, five angles each, pressure-tested before a single email goes out. The system is only as strong as its targeting.
 - **Foundation first** — ICP and offer are locked before any channel is switched on.
 - **BoFu content** — Bottom-of-funnel pages mapped to buyer intent that both rank and make outbound more credible, as opposed to a publishing calendar.
 
 ## Outputs
 
-- **The GTM System** — A live, running outbound system: ICP definition, offer matrix, outbound sequences, LinkedIn playbook, BoFu content architecture.
-- **The Trident Playbook** — The three-channel operating manual for the client's specific ICP.
+- **The GTM System** — A live, running GTM system: ICP definition, offer matrix, outbound sequences, BoFu content architecture, and the agents that keep deals moving.
+- **The Trident Playbook** — The three-prong operating manual for the client's specific ICP.
 - **BoFu Content** — Keyword-targeted, buyer-intent-mapped pages that compound.
 - **GTM Intelligence Brief** — A quarterly synthesis of what is working, what is breaking, and where to focus next.
 
 ## Who it is for
 
-B2B companies that already have product-market fit and a GTM motion that is broken, inconsistent, or absent. Typical signals: outbound that burns the list without compounding, content that publishes but does not convert, channels running in parallel with no architecture between them, and leadership making decisions off scoreboard data without knowing why the number is moving.
+B2B companies that already have product-market fit and a GTM motion that is broken, inconsistent, or absent. Typical signals: outbound that burns the list without compounding, content that publishes but does not convert, channels running in parallel with no architecture between them, and deals falling through the cracks because the process depends on every rep remembering everything.
 
 ## Contact
 
