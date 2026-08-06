@@ -1,54 +1,52 @@
 # RAINCLOUD
 
-> 4D Sales Intelligence for B2B revenue teams. RAINCLOUD analyzes competitive deals across width (every call), depth (synthesized across sources), time (patterns over quarters), and perspective (buyer's voice and seller's voice) — then delivers finished intelligence as living battlecards, win/loss patterns, weekly competitive radar, and board-ready narratives. No dashboards. No new logins. No SaaS to learn.
+> Fractional CRO engagement that builds your go-to-market motion. RAINCLOUD is a 26-week engagement — 13 weeks of hands-on build followed by 13 weeks of advisory — that takes a B2B company with product-market fit and a broken, inconsistent, or absent GTM motion and leaves it with a working system: tight ICP, a tested offer matrix, outbound, BoFu content, and LinkedIn orchestrated together. No retainer. No dashboards. Fixed fee.
 
-RAINCLOUD is a technology-enabled consultancy founded by Colin Dowling (3x VP of Sales — GoDaddy Enterprise, Alembic SVP Revenue, Liquid Web VP Channel). Proprietary AI models running on private AWS infrastructure analyze your call recordings, CRM data, and win/loss interviews at scale. Senior practitioners synthesize the patterns. Output ships as finished documents — not another tool your team has to operate.
+RAINCLOUD is run by Colin Dowling, a 3x VP of Sales (VP Global Enterprise Sales at GoDaddy, SVP Revenue at Alembic from seed to a $145M Series B, VP Channel Sales at Liquid Web, Enterprise Sales at WP Engine). Colin runs every engagement personally. There is no delivery team, no junior analyst, and no offshore bench.
 
-Core engagement model: a $7,500 two-week Intelligence Audit (credited against any ongoing retainer), then quarterly engagements starting at $25K/quarter. Typical outcomes from existing case studies: +18 to +23 percentage point lift in competitive close rates within 30 days.
+Core engagement model: a $7,500 two-week GTM Audit that credits in full against a $60,000 fixed-fee 26-week engagement. Both carry a money-back guarantee. Availability is deliberately limited to between two and four companies at a time.
+
+## What RAINCLOUD is not
+
+RAINCLOUD is not a SaaS product, not a competitive-intelligence or call-analysis service, and not an open-ended monthly retainer. It does not sell dashboards, seats, or software. Earlier versions of this site described a "4D Sales Intelligence" offering built on call-recording analysis; that offering is no longer part of RAINCLOUD.
 
 ## Core Pages
 
-- [Home](https://rncld.com/): RAINCLOUD overview — Adaptive GTM Intelligence positioning, the four problems revenue teams face when flying blind, two case studies (Series B endpoint security: +23pt win rate; Series A data integration: +18pt win rate), the four deliverables (win/loss analysis, living battlecards, competitive radar, board narrative), the founder.
-- [What is RAINCLOUD](https://rncld.com/what.html): The 4D Sales Intelligence framework explained — Width (every call, not 20), Depth (synthesized across calls + CRM + emails + post-mortems), Time (patterns over quarters, not snapshots), Perspective (buyer's voice and seller's voice). Plus 7 role-card grid linking to each Solutions page and a benchmark report download CTA.
-- [How It Works](https://rncld.com/how-it-works.html): RAINCLOUD as technology-enabled service. Private models on private infrastructure. Read-only access, finished intelligence delivered to inbox. The is/is-not framing — RAINCLOUD is not a SaaS platform, not a CI tool to manage, not consultants billing by the hour.
-- [Intelligence Audit](https://rncld.com/audit.html): The $7,500 two-week engagement. Connect read-only to call recording platform + CRM. Analyze last two quarters of competitive deals. Present findings to leadership in a 60-minute session. Includes FAQ on Gong/Chorus/Fireflies compatibility, security, what happens after.
-- [Competitive Landscape](https://rncld.com/landscape.html): How RAINCLOUD compares to traditional consulting, conversation intelligence platforms (Gong, Chorus), battlecard SaaS (Klue, Crayon), and win/loss firms (Clozd).
-- [ROI Calculator](https://rncld.com/roi.html): Interactive calculator. Three sliders (avg deal size, current competitive close rate, competitive deals per quarter). Models a 5–13 percentage point close rate improvement based on starting position (more headroom at lower starts; diminishing returns near the ceiling). Outputs verdict, ROI multiple, additional revenue per quarter and year, quarterly comparison bars.
+- [Home](https://rncld.com/): The offer end to end — the four ways a GTM motion fails to compound, the solution pillars (foundation first, the Trident architecture, BoFu content, a practitioner who builds it personally), the three-stage engagement, the four outputs, availability, and the founder.
+- [The GTM Audit](https://rncld.com/audit.html): The $7,500 two-week diagnostic and the entry point to everything else. Read-only access to your sequencer, CRM, site, and analytics; a full teardown of offers, ICP, channels, content, and positioning; a 60-minute findings session and a ranked action plan. Roughly two hours of your team's time. Money-back guarantee. Credits in full against the 26-week engagement.
+- [BoFu Content](https://rncld.com/bofu-content.html): The standalone bottom-of-funnel SEO content service — page architecture, keyword targets mapped to buyer intent, technical SEO, a LinkedIn content framework, and a six-month execution calendar. Available as a plan or plan-plus-execution.
+- [About Colin Dowling](https://rncld.com/about.html): Background, operating history, and how the engagement is run.
+- [Contact](https://rncld.com/contact.html): Booking and availability enquiries.
+- [Articles](https://rncld.com/blog/): Long-form writing on GTM, pipeline, and revenue operating problems.
+- [2026 B2B Sales Benchmark Report](https://rncld.com/resources/benchmark-2026.html): Gated benchmark report on what separates top-quartile B2B sales teams from the rest.
 
-## Solutions (by role)
+## The Engagement
 
-- [For the CRO](https://rncld.com/solutions/cro.html): Forecast accuracy from competitive deal intelligence. Win/loss patterns the dashboard can't see. Board-ready competitive narrative each quarter.
-- [For the CEO](https://rncld.com/solutions/ceo.html): The competitive threat picture before investors ask. Early warning on win-rate drift. Strategic synthesis your CRO doesn't have bandwidth to produce.
-- [For the CFO](https://rncld.com/solutions/cfo.html): Pipeline leakage. Spend efficiency in GTM. Where deal economics are eroding before they show up in the variance report.
-- [For Sales Directors](https://rncld.com/solutions/sales-director.html): Battlecards refreshed monthly from real buyer conversations. Rep readiness signal. Talk tracks proven to work across multiple reps.
-- [For PMM & Enablement](https://rncld.com/solutions/pmm.html): Cross-source competitive synthesis your team doesn't have bandwidth for. Call analysis at scale; you keep narrative ownership.
-- [For RevOps](https://rncld.com/solutions/revops.html): The synthesized signal layer your CRM was never designed to produce. QBR inputs that connect deal data to deal causes.
-- [For Sales Training](https://rncld.com/solutions/training.html): Real talk tracks pulled from real wins. Replace generic training with proven competitive plays from your own deal library.
+1. **GTM Audit** — $7,500 one-time, two weeks. A ranked diagnosis of what is broken and in what order to fix it. Credits in full against the engagement. Money-back guarantee.
+2. **The Build (Weeks 1–13)** — Two working sessions per week with Colin in the work rather than reviewing it. ICP definition, the 5x5 offer matrix (five offers, five angles each), Trident architecture, outbound and LinkedIn setup, BoFu content foundations.
+3. **The Advisory (Weeks 14–26)** — Weekly then bi-weekly. The system is live and the client's team owns it; this half exists to stop it drifting, because most GTM builds fail in the quarter after the consultant leaves.
 
-## Competitor Comparisons
+Total: $60,000 fixed fee for 26 weeks. No retainer, no hourly billing.
 
-- [vs Gong](https://rncld.com/vs/gong.html): Why conversation intelligence platforms (Gong, Chorus, Fireflies) record and transcribe at the call level but don't cross-reference hundreds of calls to extract competitive patterns. RAINCLOUD starts where Gong's analytics end.
-- [vs Klue](https://rncld.com/vs/klue.html): Where battlecard SaaS falls short. The 73% staleness problem. Why teams stop opening Klue and what they actually need instead.
-- [vs Clozd](https://rncld.com/vs/clozd.html): Why traditional win/loss interview programs (10-20 buyer interviews per quarter) miss the patterns visible only at the corpus level (500+ calls).
-- [vs Crayon](https://rncld.com/vs/crayon.html): Competitive monitoring vs competitive intelligence. The difference between "your competitor changed their pricing page" and "here's how their reps are positioning against you in active deals."
+## Key Concepts
 
-## Articles
+- **The Trident Architecture** — Outbound, BoFu content, and LinkedIn orchestrated so each channel amplifies the others. Short-horizon outbound funds the pipeline while mid-to-long content builds the moat. Running the three in parallel rather than in concert is the most common failure mode.
+- **5x5 Offer Matrix** — Five offers, five angles each, pressure-tested before a single email goes out. The system is only as strong as its targeting.
+- **Foundation first** — ICP and offer are locked before any channel is switched on.
+- **BoFu content** — Bottom-of-funnel pages mapped to buyer intent that both rank and make outbound more credible, as opposed to a publishing calendar.
 
-- [The 480-Call Problem](https://rncld.com/blog/the-480-call-problem.html): You record 500 sales calls per quarter and listen to 20. Everything you'd want to know is in the 480 you skipped. Why sampling fails, why your conversation intelligence platform isn't fixing it, what it actually takes to solve.
-- [Scoreboard vs. Game Film](https://rncld.com/blog/scoreboard-vs-game-film.html): Revenue dashboards are scoreboards (outcome reporting). Call corpora are game film (pattern recognition). Most revenue leaders watch the scoreboard. The teams that watch the film pull ahead.
-- [Why Your Battlecards Are Costing You Deals](https://rncld.com/blog/why-your-battlecards-cost-you-deals.html): 73% of battlecards are never updated after creation. What happens to win rates when you fix that.
-- [Blog Index](https://rncld.com/blog/): All RAINCLOUD perspectives on competitive intelligence, revenue operations, and the intelligence gap in modern SaaS.
+## Outputs
 
-## Resources
+- **The GTM System** — A live, running outbound system: ICP definition, offer matrix, outbound sequences, LinkedIn playbook, BoFu content architecture.
+- **The Trident Playbook** — The three-channel operating manual for the client's specific ICP.
+- **BoFu Content** — Keyword-targeted, buyer-intent-mapped pages that compound.
+- **GTM Intelligence Brief** — A quarterly synthesis of what is working, what is breaking, and where to focus next.
 
-- [2026 B2B Technology Sales Benchmark Report](https://rncld.com/resources/benchmark-2026.html): Free gated download (name + email + company). The Intelligence Gap: what separates the top quartile from everyone else. Built on 4.2 million analyzed opportunities, 50,000 structured win-loss interviews, 939 tracked B2B companies, and synthesis from 30+ published benchmark studies. Sections include the revenue math, the zombie pipeline, champion departure risk model, competitive event framework, and stage-specific guidance for Series A through Series C.
+## Who it is for
 
-## About & Contact
+B2B companies that already have product-market fit and a GTM motion that is broken, inconsistent, or absent. Typical signals: outbound that burns the list without compounding, content that publishes but does not convert, channels running in parallel with no architecture between them, and leadership making decisions off scoreboard data without knowing why the number is moving.
 
-- [Founder: Colin Dowling](https://rncld.com/about.html): 3x VP of Sales. VP Enterprise Sales at GoDaddy (NYSE: GDDY), SVP Revenue at Alembic (Seed → $145M Series B), VP Channel at PE-backed cloud infrastructure firm Liquid Web. Built RAINCLOUD so revenue leaders can enter every competitive deal with the best possible chance to win.
-- [Contact](https://rncld.com/contact.html): Book a 30-minute discovery call via Calendly, or send a message. Direct email: hello@rncld.com.
-- [Data & Security](https://rncld.com/security.html): How RAINCLOUD handles customer data. Three principles: read-only access, private models on AWS infrastructure dedicated to RAINCLOUD, no training on your data. Operates as a data processor under GDPR. Detailed coverage of encryption (AES-256, AWS KMS), sub-processors, data residency (us-east-1 default, EU regions on request), retention (engagement + 90 days), incident response (72-hour notification), and access controls.
+## Contact
 
-## Optional
-
-- [Series B SaaS Landing Page](https://rncld.com/lp/series-b-saas.html): Campaign-specific landing page targeting Series B SaaS revenue teams running 500+ calls per quarter. Minimal nav. Conversion-focused.
+- Email: hello@rncld.com
+- Site: https://rncld.com
