@@ -302,43 +302,13 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     <div class="container nav-inner">
       <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
             <ul class="nav-links" id="navLinks">
-        <li><a href="/what.html">What</a></li>
-        <li class="has-dropdown"><a href="/audit.html">How</a>
-          <ul class="dropdown">
-            <li><a href="/audit.html">Intelligence Audit</a></li>
-            <li><a href="/how-it-works.html">How It Works</a></li>
-          </ul>
-        </li>
-        <li class="has-dropdown"><a href="/#solution">Solutions</a>
-          <ul class="dropdown">
-            <li><a href="/solutions/cro.html">For the CRO</a></li>
-            <li><a href="/solutions/ceo.html">For the CEO</a></li>
-            <li><a href="/solutions/cfo.html">For the CFO</a></li>
-            <li><a href="/solutions/sales-director.html">For Sales Directors</a></li>
-            <li><a href="/solutions/pmm.html">For PMM &amp; Enablement</a></li>
-            <li><a href="/solutions/revops.html">For RevOps</a></li>
-            <li><a href="/solutions/training.html">For Sales Training</a></li>
-          </ul>
-        </li>
-        <li class="has-dropdown"><a href="/landscape.html">Compare</a>
-          <ul class="dropdown">
-            <li><a href="/landscape.html">Competitive Landscape</a></li>
-            <li><a href="/vs/gong.html">vs Gong</a></li>
-            <li><a href="/vs/klue.html">vs Klue</a></li>
-            <li><a href="/vs/clozd.html">vs Clozd</a></li>
-            <li><a href="/vs/crayon.html">vs Crayon</a></li>
-          </ul>
-        </li>
-        <li class="has-dropdown"><a href="/blog/">Resources</a>
-          <ul class="dropdown">
-            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/#process">The Engagement</a></li>
+            <li><a href="/audit.html">GTM Audit</a></li>
+            <li><a href="/bofu-content.html">BoFu Content</a></li>
             <li><a href="/blog/">Articles</a></li>
-            <li><a href="/roi.html">ROI Calculator</a></li>
-            <li><a href="/about.html">Founder</a></li>
-            <li><a href="/security.html">Data &amp; Security</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
-        </li>
-      </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
@@ -430,5 +400,34 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     </div>
   </footer>
 
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script>
-    const t=document.getElementById('navToggl
+    (function () {
+      var nav = document.getElementById('nav');
+      if (nav) {
+        window.addEventListener('scroll', function () {
+          nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+      }
+      var toggle = document.getElementById('navToggle');
+      var links = document.getElementById('navLinks');
+      if (toggle && links) {
+        toggle.addEventListener('click', function () {
+          links.classList.toggle('open');
+        });
+      }
+      var reveals = document.querySelectorAll('.reveal');
+      if (reveals.length && 'IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) e.target.classList.add('visible');
+          });
+        }, { threshold: 0.08 });
+        reveals.forEach(function (el) { obs.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add('visible'); });
+      }
+    })();
+  </script>
+</body>
+</html>
