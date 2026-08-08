@@ -367,6 +367,24 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     .cf-row input::placeholder, .cf-row textarea::placeholder {
       color: var(--text-tertiary);
     }
+    .cf-row select {
+      width: 100%; padding: 13px 16px; background: var(--bg-primary);
+      border: 1px solid var(--border-medium); color: var(--text-primary);
+      font-family: var(--font-body); font-size: 0.95rem;
+      border-radius: 4px; transition: all 0.25s ease; outline: none;
+      font-weight: 400; cursor: pointer;
+      appearance: none; -webkit-appearance: none; -moz-appearance: none;
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%235A5A5A' stroke-width='1.5'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 16px center;
+      padding-right: 44px;
+    }
+    .cf-row select:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(74, 158, 191, 0.12);
+    }
+    .cf-row select:invalid { color: var(--text-tertiary); }
+    .cf-row select option { background: var(--bg-secondary); color: var(--text-primary); }
+    .cf-hint { margin-top: 7px; font-size: 0.74rem; color: var(--text-tertiary); line-height: 1.5; }
     .cf-submit {
       margin-top: 8px; padding: 16px 32px;
       background: var(--text-primary); color: var(--bg-primary);
@@ -501,6 +519,17 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           <input type="text" id="ccompany" name="company" placeholder="Company name" required autocomplete="organization">
         </div>
         <div class="cf-row">
+          <label for="coffer">What are you interested in?</label>
+          <select id="coffer" name="offer" required>
+            <option value="" disabled selected>Select one&hellip;</option>
+            <option value="GTM Audit">GTM Audit &mdash; $7,500</option>
+            <option value="26-Week Engagement">The 26-week engagement &mdash; $60,000</option>
+            <option value="Monthly Advisory">Monthly advisory &mdash; from $3,000/mo</option>
+            <option value="Not Sure Yet">Not sure yet &mdash; help me figure it out</option>
+          </select>
+          <p class="cf-hint">Not a commitment. It just tells Colin which conversation to prepare for.</p>
+        </div>
+        <div class="cf-row">
           <label for="cmessage">Message</label>
           <textarea id="cmessage" name="message" placeholder="What's on your mind?" rows="5" required></textarea>
         </div>
@@ -553,6 +582,21 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     function cfShowError(msg) { cError.textContent = msg; cError.classList.add('active'); }
     function cfClearError() { cError.classList.remove('active'); cError.textContent = ''; }
 
+    // Prefill the offer select from ?offer= so on-site CTAs carry intent through
+    if (cForm) {
+      const OFFER_MAP = {
+        audit: 'GTM Audit',
+        engagement: '26-Week Engagement',
+        advisory: 'Monthly Advisory'
+      };
+      const requested = new URLSearchParams(window.location.search).get('offer');
+      const mapped = requested && OFFER_MAP[requested.toLowerCase()];
+      if (mapped) {
+        const sel = cForm.querySelector('#coffer');
+        if (sel) sel.value = mapped;
+      }
+    }
+
     if (cForm) {
       cForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -561,10 +605,15 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         const name = cForm.name.value.trim();
         const email = cForm.email.value.trim();
         const company = cForm.company.value.trim();
+        const offer = cForm.offer.value;
         const message = cForm.message.value.trim();
 
         if (!name || !email || !company || !message) {
           cfShowError('Please fill in all fields.');
+          return;
+        }
+        if (!offer) {
+          cfShowError('Please tell us which offer you\'re interested in.');
           return;
         }
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -579,14 +628,14 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           const res = await fetch(CONTACT_ENDPOINT, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify({ name, email, company, message, source: 'contact-page' })
+            body: JSON.stringify({ name, email, company, offer, message, source: 'contact-page', _subject: 'RAINCLOUD inquiry (' + offer + ') — ' + company })
           });
 
           if (res.ok) {
             cForm.style.display = 'none';
             cSuccess.classList.add('active');
             if (typeof gtag === 'function') {
-              gtag('event', 'contact_form_submit', { form_location: 'contact-page' });
+              gtag('event', 'contact_form_submit', { form_location: 'contact-page', offer: offer });
             }
           } else {
             const data = await res.json().catch(() => ({}));
