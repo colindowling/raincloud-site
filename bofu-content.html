@@ -95,30 +95,44 @@ p { font-size: clamp(0.92rem, 1vw, 1rem); color: var(--text-secondary); line-hei
 .label--amber { color: var(--accent-amber); }
 .label--red { color: var(--accent-red); }
 
-/* MINIMAL LP NAV (no main menu — standalone page) */
-.lp-nav {
+/* --- NAVIGATION (canonical site nav) --- */
+nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  padding: 18px 0; background: rgba(10,10,10,0.92);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-subtle);
+  padding: 18px 0; transition: all 0.5s var(--ease-out);
 }
-.lp-nav .lp-nav-inner {
-  max-width: var(--container); margin: 0 auto;
-  padding: 0 clamp(20px, 5vw, 80px);
-  display: flex; align-items: center; justify-content: space-between;
+nav.scrolled {
+  background: rgba(10, 10, 10, 0.92); backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-subtle);
+  padding: 12px 0;
 }
-.lp-nav .nav-logo {
-  font-family: var(--font-heading); font-weight: 300; font-size: 1.1rem;
-  letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-primary);
+nav .container { display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-family: var(--font-heading); font-weight: 300; font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-primary); }
+.nav-logo em { font-style: normal; color: var(--text-tertiary); font-weight: 200; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 0.72rem; font-weight: 400; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-tertiary); transition: color 0.3s ease;
+  position: relative;
 }
-.lp-nav .nav-logo em { font-style: normal; color: var(--text-tertiary); font-weight: 200; }
-.lp-nav .nav-cta {
-  font-family: var(--font-heading); font-size: 0.72rem; font-weight: 500;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 9px 22px; border: 1px solid var(--text-primary);
-  color: var(--text-primary); transition: all 0.3s ease;
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px; background: var(--text-primary);
+  transition: width 0.3s var(--ease-out);
 }
-.lp-nav .nav-cta:hover { background: var(--text-primary); color: var(--bg-primary); }
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1px; background: var(--text-primary); margin: 5px 0; transition: all 0.3s ease; }
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: 100%; left: 0; right: 0; background: rgba(10, 10, 10, 0.97);
+    backdrop-filter: blur(20px); padding: 28px; gap: 20px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+}
 
 /* HERO */
 .bf-hero {
@@ -609,13 +623,21 @@ footer {
 </head>
 <body>
 
-  <!-- MINIMAL LP NAV -->
-  <div class="lp-nav">
-    <div class="lp-nav-inner">
+  <!-- NAV -->
+  <nav id="nav" class="scrolled">
+    <div class="container nav-inner">
       <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
-      <a href="/contact.html" class="nav-cta">Learn More</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/#process">The Engagement</a></li>
+        <li><a href="/audit.html">GTM Audit</a></li>
+        <li><a href="/bofu-content.html">BoFu Content</a></li>
+        <li><a href="/blog/">Articles</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
-  </div>
+  </nav>
 
   <!-- HERO -->
   <section class="bf-hero">
@@ -1076,8 +1098,9 @@ footer {
     <div class="footer-inner">
       <div class="footer-logo">RAIN<em>CLOUD</em></div>
       <ul class="footer-links">
-        <li><a href="/">What</a></li>
-        <li><a href="/audit.html">How</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/audit.html">GTM Audit</a></li>
+        <li><a href="/blog/">Resources</a></li>
         <li><a href="/contact.html">Contact</a></li>
         <li><a href="https://rncld.com" target="_blank" rel="noopener noreferrer">rncld.com</a></li>
       </ul>
@@ -1086,6 +1109,24 @@ footer {
   </footer>
 
   <script>
+    // Nav scroll state
+    var _nav = document.getElementById('nav');
+    if (_nav) {
+      window.addEventListener('scroll', function () {
+        _nav.classList.toggle('scrolled', window.scrollY > 60);
+      });
+    }
+    // Mobile nav toggle
+    (function () {
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+      if (!navToggle || !navLinks) return;
+      navToggle.addEventListener('click', function () { navLinks.classList.toggle('open'); });
+      navLinks.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { navLinks.classList.remove('open'); });
+      });
+    })();
+
     // Reveal on scroll
     const obs = new IntersectionObserver(entries => {
       entries.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); });
