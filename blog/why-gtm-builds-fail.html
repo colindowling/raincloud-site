@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-041BP5G4HF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-041BP5G4HF');
+
+    // Custom event: audit_cta_click — body-content links to /audit.html or /contact.html
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (!/\/(audit|contact)(\.html)?(\?|#|$)/.test(href)) return;
+      if (a.closest('nav') || a.closest('footer')) return;
+      gtag('event', 'audit_cta_click', {
+        cta_text: (a.textContent || '').trim().slice(0, 100),
+        cta_destination: href,
+        cta_location: window.location.pathname
+      });
+    });
+
+    // Mobile-aware nav toggle: hamburger opens menu; on mobile, parent dropdown taps expand/collapse instead of navigating; leaf taps close the menu.
+    document.addEventListener('DOMContentLoaded', function() {
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+      if (!navToggle || !navLinks) return;
+      navToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('open');
+        // Reset expanded states when closing
+        if (!navLinks.classList.contains('open')) {
+          navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+            item.classList.remove('expanded');
+          });
+        }
+      });
+      navLinks.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          var li = a.parentElement;
+          var isDropdownParent = li && li.classList.contains('has-dropdown');
+          var isMobile = window.innerWidth <= 768;
+          var navOpen = navLinks.classList.contains('open');
+          if (isDropdownParent && isMobile && navOpen) {
+            // On mobile while menu is open, tapping a dropdown parent expands/collapses it
+            e.preventDefault();
+            li.classList.toggle('expanded');
+          } else {
+            // Any other link click closes the menu and resets expanded states
+            navLinks.classList.remove('open');
+            navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+              item.classList.remove('expanded');
+            });
+          }
+        });
+      });
+    });
+  </script>
+  <title>Most GTM Builds Fail in the Quarter After the Consultant Leaves — RAINCLOUD</title>
+  <meta name="description" content="The build is rarely the hard part. The quarter after handoff is where go-to-market systems quietly fall apart, and the failure is predictable enough to design against.">
+  <link rel="canonical" href="https://rncld.com/blog/why-gtm-builds-fail.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+/* ========================================
+   RAINCLOUD DESIGN SYSTEM
+   Montserrat Light headings / Manrope body
+   Dark, monochromatic, premium
+   ======================================== */
+
+/* --- VARIABLES --- */
+:root {
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #111111;
+  --bg-tertiary: #181818;
+  --bg-card: #141414;
+  --text-primary: #F0EDE8;
+  --text-secondary: #9A9A9A;
+  --text-tertiary: #5A5A5A;
+  --accent-blue: #4A9EBF;
+  --accent-blue-dim: rgba(74, 158, 191, 0.12);
+  --accent-red: #BF4A4A;
+  --accent-green: #4ABF7A;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-medium: rgba(255, 255, 255, 0.1);
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --container: 1280px;
+  --container-narrow: 880px;
+}
+
+/* --- RESET --- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-body); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
+::selection { background: var(--accent-blue); color: var(--bg-primary); }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* --- GRAIN OVERLAY --- */
+body::after {
+  content: '';
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9999; opacity: 0.4;
+}
+
+/* --- LAYOUT --- */
+.container { max-width: var(--container); margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+.container--narrow { max-width: var(--container-narrow); margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); }
+section { padding: clamp(64px, 10vh, 140px) 0; }
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.4rem, 5.5vw, 4.5rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+h3 { font-size: clamp(1.2rem, 1.8vw, 1.5rem); font-weight: 400; }
+p { font-size: clamp(0.9rem, 1vw, 1rem); color: var(--text-secondary); max-width: 600px; }
+
+.label {
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary);
+}
+.label--accent { color: var(--accent-blue); }
+
+.section-header { margin-bottom: clamp(40px, 5vh, 64px); }
+.section-header .label { margin-bottom: 16px; }
+.section-header p { margin-top: 16px; }
+
+.divider { width: 100%; height: 1px; background: var(--border-subtle); }
+
+/* --- BUTTONS --- */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 32px; font-family: var(--font-body); font-size: 0.8rem;
+  font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+  border: 1px solid var(--border-medium); background: transparent;
+  color: var(--text-primary); cursor: pointer; position: relative; overflow: hidden;
+  transition: all 0.4s var(--ease-out);
+}
+.btn::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: var(--text-primary); transform: translateX(-101%);
+  transition: transform 0.4s var(--ease-out);
+}
+.btn:hover::before { transform: translateX(0); }
+.btn:hover { color: var(--bg-primary); border-color: var(--text-primary); }
+.btn span, .btn svg { position: relative; z-index: 1; }
+.btn svg { transition: transform 0.4s var(--ease-out); }
+.btn:hover svg { transform: translateX(4px); }
+
+.btn--primary { background: var(--bg-primary); color: var(--text-primary); border-color: var(--text-primary); }
+.btn--primary::before { background: var(--text-primary); }
+.btn--primary:hover { color: var(--bg-primary); }
+
+.btn-arrow {
+  width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2;
+}
+
+/* --- NAVIGATION --- */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 18px 0; transition: all 0.5s var(--ease-out);
+}
+nav.scrolled {
+  background: rgba(10, 10, 10, 0.92); backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-subtle);
+  padding: 12px 0;
+}
+nav .container { display: flex; align-items: center; justify-content: space-between; }
+
+.nav-logo { font-family: var(--font-heading); font-weight: 300; font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; }
+.nav-logo em { font-style: normal; color: var(--text-tertiary); font-weight: 200; }
+
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 0.72rem; font-weight: 400; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-tertiary); transition: color 0.3s ease;
+  position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px; background: var(--text-primary);
+  transition: width 0.3s var(--ease-out);
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  font-size: 0.68rem !important; padding: 8px 20px;
+  border: 1px solid var(--border-medium); transition: all 0.3s ease;
+}
+.nav-cta:hover { border-color: var(--text-primary); background: var(--text-primary); color: var(--bg-primary) !important; }
+.nav-cta::after { display: none !important; }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1px; background: var(--text-primary); margin: 5px 0; transition: all 0.3s ease; }
+
+/* --- FOOTER --- */
+footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
+.footer-layout { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 300; font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-tertiary); }
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a { font-size: 0.72rem; color: var(--text-tertiary); transition: color 0.3s ease; }
+.footer-links a:hover { color: var(--text-primary); }
+.footer-copy { font-size: 0.68rem; color: var(--text-tertiary); }
+
+/* --- SCROLL ANIMATIONS --- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav-links.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: 100%; left: 0; right: 0; background: rgba(10, 10, 10, 0.97);
+    backdrop-filter: blur(20px); padding: 28px; gap: 20px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .footer-layout { flex-direction: column; text-align: center; }
+}
+
+</style>
+  <style>
+    .post-hero { padding: 160px 0 48px; }
+    .post-hero .label { margin-bottom: 16px; }
+    .post-hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); max-width: 720px; margin-bottom: 16px; }
+    .post-meta { font-size: 0.78rem; color: var(--text-tertiary); display: flex; gap: 16px; }
+
+    .post-body {
+      padding: 48px 0 80px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .post-body .container--narrow { max-width: 720px; }
+
+    .post-body p {
+      font-size: 1rem; line-height: 1.85; color: var(--text-secondary);
+      margin-bottom: 24px; max-width: none;
+    }
+    .post-body h2 {
+      font-size: 1.6rem; margin: 48px 0 16px; color: var(--text-primary);
+    }
+    .post-body h3 {
+      font-size: 1.2rem; margin: 36px 0 12px; color: var(--text-primary);
+    }
+    .post-body blockquote {
+      border-left: 2px solid var(--accent-blue); padding-left: 24px;
+      margin: 32px 0; font-style: italic; color: var(--text-primary);
+      font-family: var(--font-heading); font-weight: 300; font-size: 1.15rem;
+      line-height: 1.5;
+    }
+    .post-body ul, .post-body ol {
+      margin: 16px 0 24px 24px; color: var(--text-secondary);
+    }
+    .post-body li { margin-bottom: 8px; line-height: 1.7; font-size: 0.95rem; }
+    .post-body strong { color: var(--text-primary); font-weight: 500; }
+    .post-body a { color: var(--accent-blue); border-bottom: 1px solid transparent; transition: border-color 0.3s ease; }
+    .post-body a:hover { border-color: var(--accent-blue); }
+
+    .post-cta {
+      background: var(--bg-secondary); border: 1px solid var(--border-subtle);
+      padding: 40px; margin: 48px 0; text-align: center;
+    }
+    .post-cta h3 { margin-bottom: 10px; }
+    .post-cta p { margin: 0 auto 20px; text-align: center; }
+
+    .post-nav {
+      display: flex; justify-content: space-between; padding-top: 32px;
+      border-top: 1px solid var(--border-subtle); margin-top: 48px;
+    }
+    .post-nav a {
+      font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-tertiary); transition: color 0.3s ease;
+    }
+    .post-nav a:hover { color: var(--text-primary); }
+  
+    .has-dropdown{position:relative}
+    .dropdown{display:none;position:absolute;top:100%;left:0;background:var(--bg-secondary);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:8px 0;min-width:200px;z-index:200;list-style:none;margin:0;padding-top:8px}
+    .dropdown li{padding:0}
+    .dropdown li a{display:block;padding:8px 20px;font-size:.75rem;color:var(--text-secondary);text-transform:none;letter-spacing:.02em;white-space:nowrap;transition:color .2s}
+    .dropdown li a:hover{color:var(--text-primary);background:rgba(255,255,255,.03)}
+    .has-dropdown:hover .dropdown{display:block}
+    @media(max-width:768px){
+      .dropdown{position:static;display:none;background:transparent;border:none;padding:0 0 0 16px;min-width:0;margin:4px 0}
+      .dropdown li a{padding:6px 0;font-size:.8rem}
+      .nav-links.open .has-dropdown.expanded > .dropdown{display:block}
+    }
+
+  </style>
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="RAINCLOUD">
+  <meta property="og:title" content="Most GTM Builds Fail in the Quarter After the Consultant Leaves">
+  <meta property="og:description" content="The build is rarely the hard part. The quarter after handoff is where go-to-market systems quietly fall apart, and the failure is predictable enough to design against.">
+  <meta property="og:url" content="https://rncld.com/blog/why-gtm-builds-fail.html">
+  <meta property="og:image" content="https://rncld.com/assets/band-boardroom.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Most GTM Builds Fail in the Quarter After the Consultant Leaves">
+  <meta name="twitter:description" content="The build is rarely the hard part. The quarter after handoff is where go-to-market systems quietly fall apart, and the failure is predictable enough to design against.">
+  <meta name="twitter:image" content="https://rncld.com/assets/band-boardroom.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Most GTM Builds Fail in the Quarter After the Consultant Leaves",
+    "description": "The build is rarely the hard part. The quarter after handoff is where go-to-market systems quietly fall apart, and the failure is predictable enough to design against.",
+    "author": { "@type": "Person", "name": "Colin Dowling", "url": "https://rncld.com/about.html" },
+    "publisher": { "@type": "Organization", "name": "RAINCLOUD", "url": "https://rncld.com/" },
+    "mainEntityOfPage": "https://rncld.com/blog/why-gtm-builds-fail.html",
+    "datePublished": "2026-08-08",
+    "articleSection": "Go-to-Market"
+  }
+  </script>
+</head>
+<body>
+
+  <nav id="nav" class="scrolled">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
+            <ul class="nav-links" id="navLinks">
+            <li><a href="/#process">The Engagement</a></li>
+            <li><a href="/audit.html">GTM Audit</a></li>
+            <li><a href="/bofu-content.html">BoFu Content</a></li>
+            <li><a href="/blog/">Articles</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="post-hero">
+    <div class="container--narrow" style="max-width: 720px;">
+      <div class="label label--accent">Go-to-Market</div>
+      <h1>Most GTM Builds Fail in the Quarter After the Consultant Leaves</h1>
+      <div class="post-meta">
+        <span>Colin Dowling</span>
+        <span>August 2026</span>
+        <span>8 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="post-body">
+    <div class="container--narrow" style="max-width: 720px;">
+
+      <p>The engagement ends well. The system is built, the sequences are live, the dashboards populate, everyone is pleased. The consultant writes a handover document and leaves.</p>
+
+      <p>Ninety days later the sequences have been edited into something unrecognisable, two of the four channels are dormant, nobody is running the weekly review, and the founder is back to doing sales personally.</p>
+
+      <p>I have watched this happen from the inside more than once, including as the executive inheriting the wreckage. It is not a competence problem and it is rarely a quality problem with the original build. It is a structural problem, and it is predictable enough that you can design against it.</p>
+
+      <h2>Failure one: the system has no owner</h2>
+
+      <p>During the build, the consultant is the owner. They convene the meeting, they notice the drift, they make the call when two parts of the system conflict.</p>
+
+      <p>At handoff, that ownership is usually distributed rather than transferred. Outbound goes to the SDR lead, content to marketing, reporting to ops. Each piece has a custodian and the system as a whole has none.</p>
+
+      <p>Systems with no owner do not fail loudly. They degrade. Nobody notices for a quarter, because every individual part still has someone tending it.</p>
+
+      <h2>Failure two: the first bad month triggers a rewrite</h2>
+
+      <p>Every go-to-market motion has variance. A bad fortnight is normal.</p>
+
+      <p>But a new system has no track record, so a bad fortnight reads as evidence that the system does not work. Somebody changes the targeting. Somebody else rewrites the sequence. Two weeks later, another dip, and the offer changes too.</p>
+
+      <p>By the end of the quarter the motion has been modified so many times that it no longer resembles what was built, and &mdash; more importantly &mdash; nobody can tell what caused what. The learning loop is destroyed, which is worse than the original dip.</p>
+
+      <blockquote>The most valuable thing an experienced operator does in the quarter after launch is stop people changing things for the wrong reasons.</blockquote>
+
+      <h2>Failure three: the tooling survives, the process does not</h2>
+
+      <p>Tools persist because someone pays for them. The behaviour around them is what decays.</p>
+
+      <p>The sequencing platform is still there. The weekly fifteen minutes where somebody actually reads the reply data and decides something is what quietly disappears &mdash; usually in a busy month, and it never comes back, because nothing breaks visibly when it stops.</p>
+
+      <p>Six months on, the company has all the infrastructure and none of the practice. This is the most common state I find when I audit a motion someone else built.</p>
+
+      <h2>Failure four: the founder takes the wheel back</h2>
+
+      <p>This one is specific to founder-led companies and it is the hardest to talk about, because it comes from good instincts.</p>
+
+      <p>The founder built the original motion on instinct and relationships. That worked. When the new system has a soft month, the fastest path to relief is to go do it themselves the old way &mdash; work the network, run the deals personally, hit the number.</p>
+
+      <p>It works, which is the problem. It relieves the pressure that would otherwise have forced the system to mature, and it signals to the team that the system is optional. The company ends up back where it started, with a founder as the bottleneck and an expensive set of assets nobody uses.</p>
+
+      <h2>What this implies about how engagements should be structured</h2>
+
+      <p>If the failure reliably happens after handoff, then an engagement that ends at handoff is structured to fail. It is optimised for delivering a build rather than for the outcome the client actually wanted, which was a working motion six months later.</p>
+
+      <p>This is why I structure the RAINCLOUD engagement as thirteen weeks of building followed by thirteen weeks of advisory rather than a longer build. The second half is not padding, and it is not support. It exists specifically to survive the four failures above:</p>
+
+      <ul>
+        <li><strong>Ownership is transferred deliberately</strong>, to a named person, while there is still someone around to notice it has not really happened.</li>
+        <li><strong>The first bad month happens with an experienced operator in the room</strong> &mdash; someone who can tell the difference between normal variance and a real problem, and who has the standing to say "change nothing this week."</li>
+        <li><strong>The weekly practice gets rehearsed enough times to become habit</strong> rather than remaining an instruction in a document.</li>
+        <li><strong>Somebody is there to tell the founder to keep their hands off the wheel</strong>, which is a job that requires having done it, and having been wrong about it.</li>
+      </ul>
+
+      <h2>How to evaluate anyone who wants to rebuild your go-to-market</h2>
+
+      <p>Whether or not you work with me, ask these before you sign anything:</p>
+
+      <ol>
+        <li><strong>What happens in the quarter after you leave, and are you there for it?</strong> If the engagement ends at delivery, you are buying a build and hoping for an outcome.</li>
+        <li><strong>Who owns the system by name when you are gone?</strong> If the answer is a team rather than a person, it has no owner.</li>
+        <li><strong>What is the rule for changing something?</strong> A motion with no change-control policy will be modified into noise by month three.</li>
+        <li><strong>Which weekly practice must survive?</strong> If they cannot name one specific recurring habit, they built assets, not a system.</li>
+      </ol>
+
+      <p>A good answer to all four is worth more than a longer list of deliverables. The deliverables were never the thing that was going to fail.</p>
+
+      <div class="post-cta">
+        <h3>Already had something built that didn't hold?</h3>
+        <p>The GTM Audit works just as well on a motion someone else built. Two weeks, a ranked diagnosis of what is actually broken, and a plan you can run with or without us. $7,500, credited in full against the 26-week engagement. Money-back guarantee.</p>
+        <a href="/audit.html" class="btn btn--primary">
+          <span>Book Your GTM Audit</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="post-nav">
+        <a href="/blog/">&larr; All Posts</a>
+        <a href="/blog/">See all articles &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-layout">
+        <span class="footer-logo">RAINCLOUD</span>
+        <ul class="footer-links">
+          <li><a href="/blog/">Articles</a></li>
+          <li><a href="mailto:colin@rncld.com">colin@rncld.com</a></li>
+          <li><a href="https://rncld.com" target="_blank" rel="noopener noreferrer">rncld.com</a></li>
+        </ul>
+        <span class="footer-copy">&copy; 2026 RAINCLOUD. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script>
+    (function () {
+      var nav = document.getElementById('nav');
+      if (nav) {
+        window.addEventListener('scroll', function () {
+          nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+      }
+      var toggle = document.getElementById('navToggle');
+      var links = document.getElementById('navLinks');
+      if (toggle && links) {
+        toggle.addEventListener('click', function () {
+          links.classList.toggle('open');
+        });
+      }
+      var reveals = document.querySelectorAll('.reveal');
+      if (reveals.length && 'IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) e.target.classList.add('visible');
+          });
+        }, { threshold: 0.08 });
+        reveals.forEach(function (el) { obs.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add('visible'); });
+      }
+    })();
+  </script>
+</body>
+</html>
