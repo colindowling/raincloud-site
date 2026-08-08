@@ -61,7 +61,7 @@
     });
   </script>
   <title>RAINCLOUD — Fix Your GTM Motion in 13 Weeks | Fractional CRO</title>
-  <meta name="description" content="RAINCLOUD is a 26-week fractional CRO engagement that builds your complete B2B GTM motion — cold outbound, LinkedIn, BoFu content, and channels — from the ground up. Fixed-fee. No retainer.">
+  <meta name="description" content="RAINCLOUD is a 26-week fractional CRO engagement that builds your complete B2B GTM motion — cold outbound, LinkedIn, BoFu content, and channels — from the ground up. Fixed-fee. No hourly billing.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -510,6 +510,27 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       .del-card { position: relative; top: 0 !important; grid-template-columns: 1fr; min-height: auto; }
       .image-band { height: 200px; }
     }
+    /* Monthly advisory downshift */
+    .advisory-note {
+      margin-top: 1px; background: var(--bg-primary);
+      border-left: 2px solid var(--accent-blue);
+      padding: clamp(28px, 3.5vw, 40px) clamp(24px, 3vw, 44px);
+      max-width: 780px;
+    }
+    .advisory-note .advisory-label {
+      font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--accent-blue); margin-bottom: 14px;
+    }
+    .advisory-note h3 { font-size: 1.15rem; font-weight: 500; margin-bottom: 14px; }
+    .advisory-note p { font-size: 0.88rem; line-height: 1.75; color: var(--text-secondary); }
+    .advisory-note p + p { margin-top: 14px; }
+    .advisory-note .advisory-scope { color: var(--text-tertiary); font-size: 0.82rem; }
+    .advisory-note .advisory-link {
+      display: inline-block; margin-top: 22px; font-size: 0.78rem; letter-spacing: 0.02em;
+      color: var(--text-primary); border-bottom: 1px solid var(--border-medium); padding-bottom: 2px;
+    }
+    .advisory-note .advisory-link:hover { color: var(--accent-blue); border-color: var(--accent-blue); }
+
   </style>
 </head>
 <body>
@@ -537,7 +558,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <span class="line1"><span class="typewriter" id="type1"></span></span><br>
         <span class="line2 thin"><span class="typewriter" id="type2"></span></span>
       </h1>
-      <p class="hero-sub">You have product-market fit. Your GTM motion is broken, inconsistent, or absent. RAINCLOUD is a 26-week fractional CRO engagement: 13 weeks building your go-to-market system hands-on, then 13 weeks of advisory to make sure it holds.<br><br>No retainer. No dashboards. Just a working GTM motion.</p>
+      <p class="hero-sub">You have product-market fit. Your GTM motion is broken, inconsistent, or absent. RAINCLOUD is a 26-week fractional CRO engagement: 13 weeks building your go-to-market system hands-on, then 13 weeks of advisory to make sure it holds.<br><br>No hourly billing. No dashboards. Just a working GTM motion.</p>
       <div class="hero-cta">
         <a href="/audit.html" class="btn btn--primary">
           <span>Book a GTM Audit</span>
@@ -546,7 +567,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <a href="/#process" style="display:inline-block; margin-top:22px; font-size:0.8rem; letter-spacing:0.02em; color:var(--text-secondary); border-bottom:1px solid var(--border-medium); padding-bottom:2px;">See how the 26-week engagement works →</a>
       </div>
       <div class="hero-stats">
-        <div class="hero-stat"><div class="num">$60K</div><div class="desc">Fixed-fee. No retainer, no hourly.</div></div>
+        <div class="hero-stat"><div class="num">$60K</div><div class="desc">Fixed-fee. Not billed by the hour.</div></div>
         <div class="hero-stat"><div class="num">13 + 13</div><div class="desc">Weeks building, then weeks advising.</div></div>
         <div class="hero-stat"><div class="num">2&ndash;4</div><div class="desc">Companies I work with at a time.</div></div>
       </div>
@@ -639,6 +660,24 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <div class="process-step"><div class="sn">03</div><h3>The Advisory (Weeks 14–26)</h3><p>The system is live and your team owns it. I stay on to make sure it doesn't drift — weekly then bi-weekly, catching the wrong calls before they compound. Most GTM builds fail in the quarter after the consultant leaves. This is the half that prevents that.</p><div class="price">Included in the fixed-fee engagement</div></div>
       </div>
 
+      <!-- MONTHLY ADVISORY (downshift) -->
+      <div id="advisory" class="advisory-note reveal">
+        <div class="advisory-label">If the timing isn&rsquo;t right</div>
+        <h3>Not ready for the full GTM rebuild?</h3>
+        <p>
+          The 26-week engagement is the right answer for most companies at this stage. It is not the
+          only door. Monthly guidance and coaching starts at $3,000: standing working sessions with me,
+          async access in between, and the same operator judgment applied to the calls you are actually
+          about to make.
+        </p>
+        <p class="advisory-scope">
+          Guidance, not build labor. I am on the call, not in the build &mdash; no team embedded, no
+          system shipped. For founders and revenue leaders who know roughly what to do and want to stop
+          guessing about the sequencing.
+        </p>
+        <a href="/contact.html" class="advisory-link">Ask about monthly advisory &rarr;</a>
+      </div>
+
       <div class="section-header reveal" style="margin-top: clamp(48px, 8vh, 80px);">
         <h2>Four outputs. <span style="color: var(--text-tertiary);">Zero dashboards.</span></h2>
       </div>
@@ -708,7 +747,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           weeks, and there is no version of that which scales to a dozen clients at once. So it doesn't.
         </p>
         <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.75; margin-top: 18px;">
-          Great-fit companies get a real seat. Everyone else gets an honest answer about when one opens up.
+          Great-fit companies get a real seat. Everyone else gets an honest answer about when one opens up &mdash; and if a build seat is the wrong shape for where you are, <a href="/#advisory" style="color: var(--text-primary); border-bottom: 1px solid var(--border-medium);">monthly advisory</a> is the other way in.
           Get in touch to find out where availability stands and what working together would look like.
         </p>
         <a href="/contact.html" class="btn btn--primary" style="margin-top: 34px;">
