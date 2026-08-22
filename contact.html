@@ -61,7 +61,7 @@
     });
   </script>
   <title>Contact — RAINCLOUD</title>
-  <meta name="description" content="Talk to Colin Dowling about your go-to-market motion. Book a 30-minute call or send a note — the GTM Audit, the 26-week engagement, or monthly advisory.">
+  <meta name="description" content="Talk to Colin Dowling about your go-to-market motion. Book a 30-minute call or send a note — the GTM Audit, the Fix + Hold engagement, or Foundations advisory.">
   <link rel="canonical" href="https://rncld.com/contact.html">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -439,12 +439,12 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="RAINCLOUD">
   <meta property="og:title" content="Contact — RAINCLOUD">
-  <meta property="og:description" content="Talk to Colin Dowling about your go-to-market motion. Book a 30-minute call or send a note — the GTM Audit, the 26-week engagement, or monthly advisory.">
+  <meta property="og:description" content="Talk to Colin Dowling about your go-to-market motion. Book a 30-minute call or send a note — the GTM Audit, the Fix + Hold engagement, or Foundations advisory.">
   <meta property="og:url" content="https://rncld.com/contact.html">
   <meta property="og:image" content="https://rncld.com/assets/band-boardroom.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact — RAINCLOUD">
-  <meta name="twitter:description" content="Talk to Colin Dowling about your go-to-market motion. Book a 30-minute call or send a note — the GTM Audit, the 26-week engagement, or monthly advisory.">
+  <meta name="twitter:description" content="Talk to Colin Dowling about your go-to-market motion. Book a 30-minute call or send a note — the GTM Audit, the Fix + Hold engagement, or Foundations advisory.">
   <meta name="twitter:image" content="https://rncld.com/assets/band-boardroom.png">
   <script type="application/ld+json">
   {
@@ -546,8 +546,10 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           <select id="coffer" name="offer" required>
             <option value="" disabled selected>Select one&hellip;</option>
             <option value="GTM Audit">GTM Audit &mdash; $7,500</option>
-            <option value="26-Week Engagement">The 26-week engagement &mdash; $60,000</option>
-            <option value="Monthly Advisory">Monthly advisory &mdash; from $3,000/mo</option>
+            <option value="Foundations">Foundations &mdash; from $3,000/mo (Pre-Seed / Seed)</option>
+            <option value="Series A Engagement">Fix + Hold &mdash; $85,000 (Series A)</option>
+            <option value="Series B Engagement">Fix + Hold &mdash; $145,000 (Series B)</option>
+            <option value="Enterprise Engagement">Fix + Hold &mdash; from $250,000 (Series D+)</option>
             <option value="Not Sure Yet">Not sure yet &mdash; help me figure it out</option>
           </select>
           <p class="cf-hint">Not a commitment. It just tells Colin which conversation to prepare for.</p>
@@ -609,8 +611,12 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     if (cForm) {
       const OFFER_MAP = {
         audit: 'GTM Audit',
-        engagement: '26-Week Engagement',
-        advisory: 'Monthly Advisory'
+        foundations: 'Foundations',
+        advisory: 'Foundations',
+        'series-a': 'Series A Engagement',
+        engagement: 'Series A Engagement',
+        'series-b': 'Series B Engagement',
+        enterprise: 'Enterprise Engagement'
       };
       const requested = new URLSearchParams(window.location.search).get('offer');
       const mapped = requested && OFFER_MAP[requested.toLowerCase()];

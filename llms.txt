@@ -4,7 +4,7 @@
 
 RAINCLOUD is run by Colin Dowling, a 3x VP of Sales (VP Global Enterprise Sales at GoDaddy, SVP Revenue at Alembic from seed to a $145M Series B, VP Channel Sales at Liquid Web, Enterprise Sales at WP Engine). Colin runs every engagement personally. There is no delivery team, no junior analyst, and no offshore bench.
 
-Core engagement model: a $7,500 two-week GTM Audit that credits in full against a $60,000 fixed-fee 26-week engagement. Both carry a money-back guarantee. Availability is deliberately limited to between two and four companies at a time.
+Core engagement model: a $7,500 two-week GTM Audit that credits in full against a fixed-fee 26-week engagement, priced by tier. Both carry a money-back guarantee. Availability is deliberately limited to between two and four companies at a time.
 
 ## What RAINCLOUD is not
 
@@ -13,7 +13,7 @@ RAINCLOUD is not a SaaS product, not a competitive-intelligence or call-analysis
 ## Core Pages
 
 - [Home](https://rncld.com/): The offer end to end — the four ways a GTM motion fails to compound, the solution pillars (foundation first, the Trident architecture, agents that catch what falls through, a practitioner who builds it personally), the three-stage engagement, the four outputs, availability, and the founder.
-- [The GTM Audit](https://rncld.com/audit.html): The $7,500 two-week diagnostic and the entry point to everything else. Read-only access to your sequencer, CRM, site, and analytics; a full teardown of offers, ICP, channels, content, and positioning; a 60-minute findings session and a ranked action plan. Roughly two hours of your team's time. Money-back guarantee. Credits in full against the 26-week engagement.
+- [The GTM Audit](https://rncld.com/audit.html): The $7,500 two-week diagnostic and the entry point to everything else. Read-only access to your sequencer, CRM, site, and analytics; a full teardown of offers, ICP, channels, content, and positioning; a 60-minute findings session and a ranked action plan. Roughly two hours of your team's time. Money-back guarantee. Credits in full against the engagement at any tier.
 - [BoFu Content](https://rncld.com/bofu-content.html): The standalone bottom-of-funnel SEO content service — page architecture, keyword targets mapped to buyer intent, technical SEO, a LinkedIn content framework, and a six-month execution calendar. Available as a plan or plan-plus-execution.
 - [About Colin Dowling](https://rncld.com/about.html): Background, operating history, and how the engagement is run.
 - [Contact](https://rncld.com/contact.html): Booking and availability enquiries.
@@ -23,10 +23,19 @@ RAINCLOUD is not a SaaS product, not a competitive-intelligence or call-analysis
 ## The Engagement
 
 1. **GTM Audit** — $7,500 one-time, two weeks. A ranked diagnosis of what is broken and in what order to fix it. Credits in full against the engagement. Money-back guarantee.
-2. **The Build (Weeks 1–13)** — Two working sessions per week with Colin in the work rather than reviewing it. ICP definition, the 5x5 offer matrix (five offers, five angles each), Trident architecture, outbound setup, content foundations, and process agents.
-3. **The Advisory (Weeks 14–26)** — Weekly then bi-weekly. The system is live and the client's team owns it; this half exists to stop it drifting, because most GTM builds fail in the quarter after the consultant leaves.
+2. **The Fix (Days 1–90 / Weeks 1–13)** — Two working sessions per week with Colin in the work rather than reviewing it. ICP definition, the 5x5 offer matrix (five offers, five angles each), Trident architecture, outbound setup, content foundations, and process agents.
+3. **The Hold (Days 91–180 / Weeks 14–26)** — Weekly then bi-weekly. The system is live and the client's team owns it; this half exists to stop it drifting, because most GTM builds fail in the quarter after the consultant leaves. The Hold phase is mandatory in every Fix engagement, not an optional add-on, and is not sold separately.
 
-Total: $60,000 fixed fee for 26 weeks. No retainer, no hourly billing.
+## Pricing
+
+Fix and Hold are quoted together as a single fixed fee, agreed before the engagement starts. No retainer, no hourly billing.
+
+- **Foundations (Pre-Seed / Seed)** — Starting at $3,000 per month, scaling to $6,000 by scope. Month-to-month, no long-term commitment. GTM audit, messaging and ICP tightening, CRM and process cleanup, and a weekly advisory cadence. Advisory-led rather than rebuild-led. The natural upgrade path is the Series A tier.
+- **Series A** — $85,000 total across 180 days. Fix $65,000 (Days 1–90) plus Hold $20,000 (Days 91–180).
+- **Series B** — $145,000 total across 180 days. Fix $110,000 plus Hold $35,000.
+- **Series D+** — Starting at $250,000 total, scoped and contracted as a project SOW rather than a retainer. Fix from $200,000 plus Hold from $50,000, to a ceiling of roughly $375,000.
+
+The $7,500 GTM Audit credits in full against any tier. Companies between Series B and Series D+ are quoted individually.
 
 ## Key Concepts
 
@@ -44,7 +53,15 @@ Total: $60,000 fixed fee for 26 weeks. No retainer, no hourly billing.
 
 ## Who it is for
 
-B2B companies that already have product-market fit and a GTM motion that is broken, inconsistent, or absent. Typical signals: outbound that burns the list without compounding, content that publishes but does not convert, channels running in parallel with no architecture between them, and deals falling through the cracks because the process depends on every rep remembering everything.
+B2B companies that already have product-market fit and a GTM motion that is broken, inconsistent, or absent. This is not restricted to venture-backed software companies. SaaS, tech-enabled services, manufacturing, IT services, and any organization selling to other businesses are all in scope. If a team works out of a CRM and closes business through email and phone conversations, the work applies.
+
+Qualifying check — all three should be true:
+
+1. You have a CRM (HubSpot, Salesforce, Pipedrive, or comparable).
+2. Your team sells through outbound or inbound email and phone conversations.
+3. You have a defined sales process, even an informal one.
+
+Typical signals: outbound that burns the list without compounding, content that publishes but does not convert, channels running in parallel with no architecture between them, and deals falling through the cracks because the process depends on every rep remembering everything.
 
 ## Contact
 
