@@ -589,7 +589,11 @@ footer {
 
       const payload = {
         name, email, company,
-        source: 'benchmark-2026-lp',
+        _subject: 'RAINCLOUD — 2026 benchmark report download from ' + company,
+        property: 'RAINCLOUD',
+        site: 'rncld.com',
+        source: 'raincloud-benchmark-2026-lp',
+        page_url: window.location.href,
         ts: new Date().toISOString()
       };
 
