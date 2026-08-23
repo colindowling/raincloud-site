@@ -533,6 +533,84 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     }
     .advisory-note .advisory-link:hover { color: var(--accent-blue); border-color: var(--accent-blue); }
 
+    /* Pricing tiers */
+    .tier-intro { margin-top: clamp(52px, 8vh, 88px); max-width: 720px; }
+    .tier-intro .tier-label {
+      font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--accent-blue); margin-bottom: 14px;
+    }
+    .tier-intro h3 { font-size: clamp(1.4rem, 2.6vw, 2rem); font-weight: 500; margin-bottom: 16px; }
+    .tier-intro p { font-size: 0.92rem; line-height: 1.75; color: var(--text-secondary); }
+    .tier-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+      background: var(--border-subtle); margin-top: clamp(28px, 4vh, 40px);
+    }
+    .tier-card {
+      background: var(--bg-card); padding: clamp(24px, 2.4vw, 32px);
+      display: flex; flex-direction: column;
+    }
+    .tier-card--feature { background: var(--bg-tertiary); box-shadow: inset 0 2px 0 var(--accent-blue); }
+    .tier-name { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 600; letter-spacing: 0.01em; }
+    .tier-stage {
+      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-tertiary); margin-top: 6px;
+    }
+    .tier-price {
+      margin-top: 20px; font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 2.4vw, 1.9rem); font-weight: 500; line-height: 1.1; color: var(--text-primary);
+    }
+    .tier-prefix {
+      display: block; font-family: var(--font-body); font-size: 0.7rem; font-weight: 400;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px;
+    }
+    .tier-unit {
+      display: block; font-family: var(--font-body); font-size: 0.72rem; font-weight: 400;
+      letter-spacing: 0.04em; color: var(--text-tertiary); margin-top: 8px;
+    }
+    .tier-phases { margin-top: 18px; border-top: 1px solid var(--border-subtle); }
+    .tier-phase {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+      padding: 9px 0; border-bottom: 1px solid var(--border-subtle); font-size: 0.78rem;
+    }
+    .tier-phase span { color: var(--text-tertiary); }
+    .tier-phase strong { color: var(--text-primary); font-weight: 500; }
+    .tier-terms { margin-top: 16px; font-size: 0.78rem; line-height: 1.6; color: var(--accent-blue); }
+    .tier-desc { margin-top: 14px; font-size: 0.82rem; line-height: 1.7; color: var(--text-secondary); flex-grow: 1; }
+    .tier-link {
+      display: inline-block; margin-top: 20px; font-size: 0.76rem; align-self: flex-start;
+      color: var(--text-primary); border-bottom: 1px solid var(--border-medium); padding-bottom: 2px;
+    }
+    .tier-link:hover { color: var(--accent-blue); border-color: var(--accent-blue); }
+    .tier-foot {
+      margin-top: 26px; font-size: 0.82rem; line-height: 1.75; color: var(--text-tertiary); max-width: 780px;
+    }
+    @media (max-width: 1080px) { .tier-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 620px) { .tier-grid { grid-template-columns: 1fr; } }
+
+    /* ICP qualifier */
+    .icp-check {
+      margin-top: clamp(52px, 8vh, 88px); background: var(--bg-primary);
+      border-left: 2px solid var(--accent-blue);
+      padding: clamp(28px, 3.5vw, 40px) clamp(24px, 3vw, 44px); max-width: 820px;
+    }
+    .icp-check .icp-label {
+      font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--accent-blue); margin-bottom: 14px;
+    }
+    .icp-check h3 { font-size: 1.15rem; font-weight: 500; margin-bottom: 14px; }
+    .icp-check p { font-size: 0.88rem; line-height: 1.75; color: var(--text-secondary); }
+    .icp-list { list-style: none; margin: 18px 0 0; padding: 0; }
+    .icp-list li {
+      position: relative; padding-left: 26px; font-size: 0.88rem; line-height: 1.65;
+      color: var(--text-secondary); margin-bottom: 11px;
+    }
+    .icp-list li::before {
+      content: ""; position: absolute; left: 0; top: 6px; width: 11px; height: 6px;
+      border-left: 1.5px solid var(--accent-blue); border-bottom: 1.5px solid var(--accent-blue);
+      transform: rotate(-45deg);
+    }
+    .icp-check .icp-foot { margin-top: 16px; font-size: 0.82rem; color: var(--text-tertiary); }
+
   </style>
 
   <meta property="og:type" content="website">
@@ -566,10 +644,80 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     "areaServed": "US",
     "description": "90 days building a go-to-market system hands-on, followed by 90 days of advisory.",
     "offers": {
-      "@type": "Offer",
-      "price": "60000",
+      "@type": "AggregateOffer",
       "priceCurrency": "USD",
-      "description": "Fixed-fee 26-week engagement"
+      "lowPrice": "85000",
+      "highPrice": "375000",
+      "offerCount": "3",
+      "description": "Fixed-fee 26-week Fix + Hold engagement, priced by tier",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Series A — Fix + Hold",
+          "price": "85000",
+          "priceCurrency": "USD",
+          "description": "Fix phase $65,000 (Days 1–90) plus mandatory Hold phase $20,000 (Days 91–180)"
+        },
+        {
+          "@type": "Offer",
+          "name": "Series B — Fix + Hold",
+          "price": "145000",
+          "priceCurrency": "USD",
+          "description": "Fix phase $110,000 (Days 1–90) plus mandatory Hold phase $35,000 (Days 91–180)"
+        },
+        {
+          "@type": "Offer",
+          "name": "Series D+ — Custom SOW",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "USD",
+            "minPrice": "250000",
+            "maxPrice": "375000"
+          },
+          "description": "Fix phase from $200,000 plus Hold phase from $50,000, scoped per engagement"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "RAINCLOUD Foundations",
+    "serviceType": "Fractional CRO / go-to-market advisory",
+    "provider": { "@type": "Organization", "name": "RAINCLOUD", "url": "https://rncld.com/" },
+    "areaServed": "US",
+    "description": "Advisory-led GTM engagement for pre-seed and seed companies. GTM audit, messaging and ICP tightening, CRM and process cleanup, and a weekly advisory cadence.",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "priceCurrency": "USD",
+        "minPrice": "3000",
+        "maxPrice": "6000",
+        "unitCode": "MON"
+      },
+      "description": "Month-to-month, starting at $3,000 per month and scaling to $6,000 by scope"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "RAINCLOUD GTM Audit",
+    "serviceType": "Go-to-market diagnostic",
+    "provider": { "@type": "Organization", "name": "RAINCLOUD", "url": "https://rncld.com/" },
+    "areaServed": "US",
+    "description": "One-time GTM diagnostic covering offers, ICP, channel mix, content and competitive position, delivered with a ranked action plan.",
+    "offers": {
+      "@type": "Offer",
+      "price": "7500",
+      "priceCurrency": "USD",
+      "description": "One-time, credited in full against any engagement tier. Money-back guarantee."
     }
   }
   </script>
@@ -605,10 +753,10 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           <span>Book a GTM Audit</span>
           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="/#process" style="display:inline-block; margin-top:22px; font-size:0.8rem; letter-spacing:0.02em; color:var(--text-secondary); border-bottom:1px solid var(--border-medium); padding-bottom:2px;">See how the 26-week engagement works →</a>
+        <a href="/#process" style="display:inline-block; margin-top:22px; font-size:0.8rem; letter-spacing:0.02em; color:var(--text-secondary); border-bottom:1px solid var(--border-medium); padding-bottom:2px;">See how the Fix + Hold engagement works →</a>
       </div>
       <div class="hero-stats">
-        <div class="hero-stat"><div class="num">$60K</div><div class="desc">Fixed-fee. Not billed by the hour.</div></div>
+        <div class="hero-stat"><div class="num">Fixed fee</div><div class="desc">Agreed up front. Not billed by the hour.</div></div>
         <div class="hero-stat"><div class="num">90 + 90</div><div class="desc">Days building, then days advising.</div></div>
         <div class="hero-stat"><div class="num">2&ndash;4</div><div class="desc">Companies I work with at a time.</div></div>
       </div>
@@ -620,7 +768,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     <!-- REPLACE: add background-image url and remove .placeholder class -->
     <div class="quote-bg placeholder"></div>
     <div class="container--narrow">
-      <blockquote>"Most founders and CROs know their GTM is broken. They just don't know in what order to fix it. That's the audit."</blockquote>
+      <blockquote>"Most operators and revenue leaders know their GTM is broken. They just don't know in what order to fix it. That's the audit."</blockquote>
       <cite><strong>Colin Dowling</strong> — Founder, RAINCLOUD</cite>
     </div>
   </div>
@@ -697,26 +845,108 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       </div>
       <div class="process-row reveal">
         <div class="process-step"><div class="sn">01</div><h3><a href="/audit.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid var(--border-medium);">GTM Audit</a></h3><p>We audit your current motion — offers, ICP, channel mix, content, competitive position — and deliver a full diagnosis with a ranked action plan. One session. One deliverable. You'll know exactly what's broken and in what order to fix it.</p><div class="price">$7,500 one-time — credited in full against the engagement. Money-back guarantee.</div></div>
-        <div class="process-step"><div class="sn">02</div><h3>The Build (Days 1–90)</h3><p>Two working sessions per week, with me in the work rather than reviewing it. ICP definition, offer matrix, Trident architecture, outbound setup, content foundations, and the smart targeting that surfaces in-market buyers. The infrastructure of a working GTM motion — built live.</p><div class="price">$60,000 fixed-fee for the full 26 weeks</div></div>
-        <div class="process-step"><div class="sn">03</div><h3>The Advisory (Days 91–180)</h3><p>The system is live and your team owns it. I stay on to make sure it doesn't drift — weekly then bi-weekly, catching the wrong calls before they compound. Most GTM builds fail in the quarter after the consultant leaves. This is the half that prevents that.</p><div class="price">Included in the fixed-fee engagement</div></div>
+        <div class="process-step"><div class="sn">02</div><h3>The Fix (Days 1–90)</h3><p>Two working sessions per week, with me in the work rather than reviewing it. ICP definition, offer matrix, Trident architecture, outbound setup, content foundations, and the smart targeting that surfaces in-market buyers. The infrastructure of a working GTM motion — built live.</p><div class="price">Fixed fee, priced by tier — see below</div></div>
+        <div class="process-step"><div class="sn">03</div><h3>The Hold (Days 91–180)</h3><p>The system is live and your team owns it. I stay on to make sure it doesn't drift — weekly then bi-weekly, catching the wrong calls before they compound. Most GTM builds fail in the quarter after the consultant leaves. This is the half that prevents that.</p><div class="price">Mandatory second phase, not an optional add-on</div></div>
       </div>
 
-      <!-- MONTHLY ADVISORY (downshift) -->
-      <div id="advisory" class="advisory-note reveal">
-        <div class="advisory-label">If the timing isn&rsquo;t right</div>
-        <h3>Not ready for the full GTM rebuild?</h3>
+      <!-- PRICING TIERS -->
+      <div class="tier-intro reveal">
+        <div class="tier-label">Investment</div>
+        <h3>Four ways in. One methodology.</h3>
         <p>
-          The 26-week engagement is the right answer for most companies at this stage. It is not the
-          only door. Monthly guidance and coaching starts at $3,000: standing working sessions with me,
-          async access in between, and the same operator judgment applied to the calls you are actually
-          about to make.
+          Every tier runs the same two phases and the same operator. What changes is the size of the
+          motion being rebuilt. Fix and Hold are quoted together as one fixed fee, agreed before we
+          start &mdash; not billed by the hour, and not re-scoped halfway through.
         </p>
-        <p class="advisory-scope">
-          Guidance, not build labor. I am on the call, not in the build &mdash; no team embedded, no
-          system shipped. For founders and revenue leaders who know roughly what to do and want to stop
-          guessing about the sequencing.
+      </div>
+
+      <div class="tier-grid reveal">
+        <div class="tier-card" id="advisory">
+          <div class="tier-name">Foundations</div>
+          <div class="tier-stage">Pre-Seed / Seed</div>
+          <div class="tier-price"><span class="tier-prefix">Starting at</span>$3,000<span class="tier-unit">per month, scaling to $6,000 by scope</span></div>
+          <div class="tier-terms">Month-to-month. No long-term commitment.</div>
+          <p class="tier-desc">
+            GTM audit, messaging and ICP tightening, CRM and process cleanup, and a weekly advisory
+            cadence. Advisory-led rather than rebuild-led &mdash; I am on the call, not embedded in the
+            build. The entry point for teams that need real GTM guidance before they can carry a full
+            engagement.
+          </p>
+          <a href="/contact.html?offer=foundations" class="tier-link">Ask about Foundations &rarr;</a>
+        </div>
+
+        <div class="tier-card tier-card--feature">
+          <div class="tier-name">Series A</div>
+          <div class="tier-stage">Fix + Hold</div>
+          <div class="tier-price"><span class="tier-prefix" aria-hidden="true">&nbsp;</span>$85,000<span class="tier-unit">total &middot; 180 days</span></div>
+          <div class="tier-phases">
+            <div class="tier-phase"><span>Fix &middot; Days 1&ndash;90</span><strong>$65,000</strong></div>
+            <div class="tier-phase"><span>Hold &middot; Days 91&ndash;180</span><strong>$20,000</strong></div>
+          </div>
+          <p class="tier-desc">
+            The full GTM motion rebuild, then ninety days of holding it in place. This is the shape
+            most companies at this stage need.
+          </p>
+          <a href="/contact.html?offer=series-a" class="tier-link">Ask about availability &rarr;</a>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-name">Series B</div>
+          <div class="tier-stage">Fix + Hold</div>
+          <div class="tier-price"><span class="tier-prefix" aria-hidden="true">&nbsp;</span>$145,000<span class="tier-unit">total &middot; 180 days</span></div>
+          <div class="tier-phases">
+            <div class="tier-phase"><span>Fix &middot; Days 1&ndash;90</span><strong>$110,000</strong></div>
+            <div class="tier-phase"><span>Hold &middot; Days 91&ndash;180</span><strong>$35,000</strong></div>
+          </div>
+          <p class="tier-desc">
+            A larger revenue org, more channels in play, and more existing process to unwind before
+            the rebuild can hold. Same two phases, wider surface area.
+          </p>
+          <a href="/contact.html?offer=series-b" class="tier-link">Ask about availability &rarr;</a>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-name">Series D+</div>
+          <div class="tier-stage">Custom SOW</div>
+          <div class="tier-price"><span class="tier-prefix">Starting at</span>$250,000<span class="tier-unit">total &middot; scoped per engagement</span></div>
+          <div class="tier-phases">
+            <div class="tier-phase"><span>Fix &middot; Days 1&ndash;90</span><strong>From $200,000</strong></div>
+            <div class="tier-phase"><span>Hold &middot; Days 91&ndash;180</span><strong>From $50,000</strong></div>
+          </div>
+          <p class="tier-desc">
+            Contracted as a project SOW rather than a retainer. Scoped and priced against the specific
+            motion, the number of segments, and the internal teams involved.
+          </p>
+          <a href="/contact.html?offer=enterprise" class="tier-link">Start a scoping conversation &rarr;</a>
+        </div>
+      </div>
+
+      <p class="tier-foot">
+        The Hold phase is mandatory in every Fix engagement. It is not an optional add-on and it is not
+        sold separately &mdash; most GTM rebuilds fail in the quarter after the consultant leaves, and
+        pricing them as one engagement is the only way to prevent that. The $7,500 GTM Audit credits in
+        full against any tier. Companies between Series B and Series D+ are quoted individually; ask and
+        we will scope it.
+      </p>
+
+      <!-- ICP QUALIFIER -->
+      <div class="icp-check reveal">
+        <div class="icp-label">Is this you?</div>
+        <h3>Built for B2B companies that sell through people.</h3>
+        <p>
+          SaaS, tech-enabled services, manufacturing, IT services, and any organization selling to
+          other businesses. If your team works out of a CRM and closes business through email and
+          phone conversations, this applies to you.
         </p>
-        <a href="/contact.html?offer=advisory" class="advisory-link">Ask about monthly advisory &rarr;</a>
+        <ul class="icp-list">
+          <li>You have a CRM &mdash; HubSpot, Salesforce, Pipedrive, or anything comparable.</li>
+          <li>Your team sells through outbound or inbound email and phone conversations.</li>
+          <li>You have a defined sales process, even an informal one.</li>
+        </ul>
+        <p class="icp-foot">
+          Three for three means the work applies. A twenty-person industrial services firm and a
+          Series B software company run the same diagnosis here.
+        </p>
       </div>
 
       <div class="section-header reveal" style="margin-top: clamp(48px, 8vh, 80px);">
@@ -788,7 +1018,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           days, and there is no version of that which scales to a dozen clients at once. So it doesn't.
         </p>
         <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.75; margin-top: 18px;">
-          Great-fit companies get a real seat. Everyone else gets an honest answer about when one opens up &mdash; and if a build seat is the wrong shape for where you are, <a href="/#advisory" style="color: var(--text-primary); border-bottom: 1px solid var(--border-medium);">monthly advisory</a> is the other way in.
+          Great-fit companies get a real seat. Everyone else gets an honest answer about when one opens up &mdash; and if a build seat is the wrong shape for where you are, <a href="/#advisory" style="color: var(--text-primary); border-bottom: 1px solid var(--border-medium);">Foundations</a> is the other way in.
           Get in touch to find out where availability stands and what working together would look like.
         </p>
         <a href="/contact.html?offer=engagement" class="btn btn--primary" style="margin-top: 34px;">
