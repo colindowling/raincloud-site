@@ -1,67 +1,36 @@
 # RAINCLOUD
 
-> Fractional CRO engagement that builds your go-to-market motion. RAINCLOUD is a 26-week engagement — 13 weeks of hands-on build followed by 13 weeks of advisory — that takes a B2B company with product-market fit and a broken, inconsistent, or absent GTM motion and leaves it with a working system: tight ICP, a tested offer matrix, and outbound, content, and agents orchestrated together. No retainer. No dashboards. Fixed fee.
+> RAINCLOUD is an operator-led, tech-enabled go-to-market practice. I diagnose what is broken, build the system, and run the parts your team should not be spending time on. One practice, six ways in: GTM Audit, GTM Consulting, Demand Generation, Content, AI Readiness, and AI Agents. No hourly billing. No dashboards.
 
-RAINCLOUD is run by Colin Dowling, a 3x VP of Sales (VP Global Enterprise Sales at GoDaddy, SVP Revenue at Alembic from seed to a $145M Series B, VP Channel Sales at Liquid Web, Enterprise Sales at WP Engine). Colin runs every engagement personally. There is no delivery team, no junior analyst, and no offshore bench.
+RAINCLOUD is run by Colin Dowling, a 3x VP of Sales (VP Global Enterprise Sales at GoDaddy, SVP Revenue at Alembic from seed to a $145M Series B, VP Channel Sales at Liquid Web, Enterprise Sales at WP Engine) and 2x founder. Colin runs every engagement personally. There is no delivery team, no junior analyst, and no offshore bench. Availability is limited: I take on a limited number of engagements at a time.
 
-Core engagement model: a $7,500 two-week GTM Audit that credits in full against a fixed-fee 26-week engagement, priced by tier. Both carry a money-back guarantee. Availability is deliberately limited to between two and four companies at a time.
+## How it fits together
 
-## What RAINCLOUD is not
+Everything starts from the same foundation: a locked ICP and a 5x5 offer matrix (five offers, five angles each). Strategy decides what to do (GTM Audit, GTM Consulting, AI Readiness). Pipeline executes against the foundation (Demand Generation, Content). Automation protects what the other two produce (AI Agents).
 
-RAINCLOUD is not a SaaS product, not a competitive-intelligence or call-analysis service, and not an open-ended monthly retainer. It does not sell dashboards, seats, or software. Earlier versions of this site described a "4D Sales Intelligence" offering built on call-recording analysis; that offering is no longer part of RAINCLOUD.
+The RAINCLOUD Engine is the proprietary system behind the pipeline work. Its public components: Hunter (finds companies showing signs of the problem you solve and starts the conversation by email), Harvester (turns LinkedIn engagement from the right people into real conversations), Farmer (plants bottom-of-funnel content that ranks, compounds, and feeds the other three), and Shepherd (short-form social video that guides attention to your site, fulfilled with a partner).
 
 ## Core Pages
 
-- [Home](https://rncld.com/): The offer end to end — the four ways a GTM motion fails to compound, the solution pillars (foundation first, the Trident architecture, agents that catch what falls through, a practitioner who builds it personally), the three-stage engagement, the four outputs, availability, and the founder.
-- [The GTM Audit](https://rncld.com/audit.html): The $7,500 two-week diagnostic and the entry point to everything else. Read-only access to your sequencer, CRM, site, and analytics; a full teardown of offers, ICP, channels, content, and positioning; a 60-minute findings session and a ranked action plan. Roughly two hours of your team's time. Money-back guarantee. Credits in full against the engagement at any tier.
-- [BoFu Content](https://rncld.com/bofu-content.html): The standalone bottom-of-funnel SEO content service — page architecture, keyword targets mapped to buyer intent, technical SEO, a LinkedIn content framework, and a six-month execution calendar. Available as a plan or plan-plus-execution.
-- [About Colin Dowling](https://rncld.com/about.html): Background, operating history, and how the engagement is run.
-- [Contact](https://rncld.com/contact.html): Booking and availability enquiries.
-- [Articles](https://rncld.com/blog/): Long-form writing on GTM, pipeline, and revenue operating problems.
-- [2026 B2B Sales Benchmark Report](https://rncld.com/resources/benchmark-2026.html): Gated benchmark report on what separates top-quartile B2B sales teams from the rest.
-
-## The Engagement
-
-1. **GTM Audit** — $7,500 one-time, two weeks. A ranked diagnosis of what is broken and in what order to fix it. Credits in full against the engagement. Money-back guarantee.
-2. **The Fix (Days 1–90 / Weeks 1–13)** — Two working sessions per week with Colin in the work rather than reviewing it. ICP definition, the 5x5 offer matrix (five offers, five angles each), Trident architecture, outbound setup, content foundations, and process agents.
-3. **The Hold (Days 91–180 / Weeks 14–26)** — Weekly then bi-weekly. The system is live and the client's team owns it; this half exists to stop it drifting, because most GTM builds fail in the quarter after the consultant leaves. The Hold phase is mandatory in every Fix engagement, not an optional add-on, and is not sold separately.
-
-## Pricing
-
-Fix and Hold are quoted together as a single fixed fee, agreed before the engagement starts. No retainer, no hourly billing.
-
-- **Foundations (Pre-Seed / Seed)** — Starting at $3,000 per month, scaling to $6,000 by scope. Month-to-month, no long-term commitment. GTM audit, messaging and ICP tightening, CRM and process cleanup, and a weekly advisory cadence. Advisory-led rather than rebuild-led. The natural upgrade path is the Series A tier.
-- **Series A** — $85,000 total across 180 days. Fix $65,000 (Days 1–90) plus Hold $20,000 (Days 91–180).
-- **Series B** — $145,000 total across 180 days. Fix $110,000 plus Hold $35,000.
-- **Series D+** — Starting at $250,000 total, scoped and contracted as a project SOW rather than a retainer. Fix from $200,000 plus Hold from $50,000, to a ceiling of roughly $375,000.
-
-The $7,500 GTM Audit credits in full against any tier. Companies between Series B and Series D+ are quoted individually.
-
-## Key Concepts
-
-- **The Trident Architecture** — Three prongs run as one system. **Outbound** creates demand now. **Content** pulls in high-intent leads and also moves live deals forward, so the same asset works top and bottom of funnel. **Agents** watch the process for stalled deals, missed follow-ups, and unbooked next steps so nothing falls through the gaps. Running the three in parallel rather than in concert is the most common failure mode.
-- **5x5 Offer Matrix** — Five offers, five angles each, pressure-tested before a single email goes out. The system is only as strong as its targeting.
-- **Foundation first** — ICP and offer are locked before any channel is switched on.
-- **BoFu content** — Bottom-of-funnel pages mapped to buyer intent that both rank and make outbound more credible, as opposed to a publishing calendar.
-
-## Outputs
-
-- **The GTM System** — A live, running GTM system: ICP definition, offer matrix, outbound sequences, BoFu content architecture, and the agents that keep deals moving.
-- **The Trident Playbook** — The three-prong operating manual for the client's specific ICP.
-- **BoFu Content** — Keyword-targeted, buyer-intent-mapped pages that compound.
-- **GTM Intelligence Brief** — A quarterly synthesis of what is working, what is breaking, and where to focus next.
+- [Home](https://rncld.com/): Positioning, the five problems RAINCLOUD solves, the Engine, a "start where you are" router, and the six offers.
+- [GTM Consulting](https://rncld.com/gtm-consulting.html): The 180-day Fix + Hold engagement (90 days building, 90 days holding). Foundations from $3,000 per month; Series A $85,000; Series B $145,000; Series D+ from $250,000. The Hold phase is mandatory.
+- [GTM Audit](https://rncld.com/audit.html): $7,500, two weeks, full refund guarantee. Credits in full toward any RAINCLOUD engagement. An agent opportunity map is available as an add-on, scoped as appropriate.
+- [Demand Generation](https://rncld.com/demand-generation.html): The Engine run for you (Hunter, Harvester, Farmer; Shepherd optional). $10,000 for a 3-month launch phase paid up front, or $4,000 per month for 3 months, then 15% of closed-won total contract value on Engine-sourced deals. Farmer content is included.
+- [Content](https://rncld.com/content.html): Two tracks. Track 1, bottom-of-funnel search content ([details](https://rncld.com/bofu-content.html)): plan $10,000 one-time; plan plus done-for-you $5,000 per month on a 6-month contract with 50% back if agreed KPIs are not met. Track 2, executive ghostwriting: Strategy from $3,000 per month, Execution from $1,000 per month, retainer minimum of two pieces a month, written, edited, and reviewed by a human.
+- [AI Readiness](https://rncld.com/ai-readiness.html): A fixed-fee executive advisory engagement, from AI gap to boardroom-ready in 30 days. Solo Executive $20,000 (30 days), Leadership Trio $45,000 (35 days, up to 3 executives), Full C-Suite $75,000 (45 days, up to 5). 50% deposit to begin. Alignment offsite from $6,000.
+- [AI Agents](https://rncld.com/ai-agents.html): Managed AI agents for sales and marketing inside the client's existing CRM and stack. Outpost $5,000 per month on a 12-month term; entry is the GTM Audit with the agent add-on. Multi-function coverage (Colony $9,500, Supercolony $17,000 per month) is available on request. Platform pages: [HubSpot](https://rncld.com/ai-agents/hubspot.html), [Pipedrive](https://rncld.com/ai-agents/pipedrive.html), [ConnectWise and Autotask](https://rncld.com/ai-agents/connectwise-autotask.html).
+- [About Colin Dowling](https://rncld.com/about.html): Background and operating history.
+- [Contact](https://rncld.com/contact.html): Booking and availability. Deep links accept ?offer= (audit, foundations, series-a, series-b, enterprise, engagement, demand-gen, content, ghostwriting, ai-readiness, agents, not-sure) and ?src= for source attribution.
+- [Articles](https://rncld.com/blog/): Long-form writing on GTM, pipeline, content, and AI agents, including [Is There a Claudeforce for HubSpot?](https://rncld.com/blog/claudeforce-for-hubspot.html).
+- [2026 B2B Sales Benchmark Report](https://rncld.com/resources/benchmark-2026.html): Gated benchmark report.
 
 ## Who it is for
 
-B2B companies that already have product-market fit and a GTM motion that is broken, inconsistent, or absent. This is not restricted to venture-backed software companies. SaaS, tech-enabled services, manufacturing, IT services, and any organization selling to other businesses are all in scope. If a team works out of a CRM and closes business through email and phone conversations, the work applies.
+B2B companies that already have product-market fit and a GTM motion that is broken, inconsistent, or absent, and that work out of a CRM and sell through email and phone conversations. AI Readiness is for CEOs, boards, and C-suites regardless of CRM.
 
-Qualifying check — all three should be true:
+## What RAINCLOUD is not
 
-1. You have a CRM (HubSpot, Salesforce, Pipedrive, or comparable).
-2. Your team sells through outbound or inbound email and phone conversations.
-3. You have a defined sales process, even an informal one.
-
-Typical signals: outbound that burns the list without compounding, content that publishes but does not convert, channels running in parallel with no architecture between them, and deals falling through the cracks because the process depends on every rep remembering everything.
+Not a SaaS product, not a dashboard or seat-based software vendor, and not an open-ended hourly engagement. Earlier versions of this site described a "4D Sales Intelligence" offering built on call-recording analysis and a "Trident" architecture; both are retired.
 
 ## Contact
 

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-041BP5G4HF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-041BP5G4HF');
+
+    // Custom event: audit_cta_click — body-content links to /audit.html or /contact.html
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (!/\/(audit|contact)(\.html)?(\?|#|$)/.test(href)) return;
+      if (a.closest('nav') || a.closest('footer')) return;
+      gtag('event', 'audit_cta_click', {
+        cta_text: (a.textContent || '').trim().slice(0, 100),
+        cta_destination: href,
+        cta_location: window.location.pathname
+      });
+    });
+
+    // Mobile-aware nav toggle: hamburger opens menu; on mobile, parent dropdown taps expand/collapse instead of navigating; leaf taps close the menu.
+    document.addEventListener('DOMContentLoaded', function() {
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+      if (!navToggle || !navLinks) return;
+      navToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('open');
+        // Reset expanded states when closing
+        if (!navLinks.classList.contains('open')) {
+          navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+            item.classList.remove('expanded');
+          });
+        }
+      });
+      navLinks.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          var li = a.parentElement;
+          var isDropdownParent = li && li.classList.contains('has-dropdown');
+          var isMobile = window.innerWidth <= 768;
+          var navOpen = navLinks.classList.contains('open');
+          if (isDropdownParent && isMobile && navOpen) {
+            // On mobile while menu is open, tapping a dropdown parent expands/collapses it
+            e.preventDefault();
+            li.classList.toggle('expanded');
+          } else {
+            // Any other link click closes the menu and resets expanded states
+            navLinks.classList.remove('open');
+            navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+              item.classList.remove('expanded');
+            });
+          }
+        });
+      });
+    });
+  </script>
+  <title>Content | BoFu Search Content and Executive Ghostwriting | RAINCLOUD</title>
+  <meta name="description" content="Bottom-of-funnel search content from $10,000 and executive ghostwriting from $1,000 per month. Written, edited, and reviewed by a human subject-matter expert.">
+  <link rel="canonical" href="https://rncld.com/content.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/site-extra.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RAINCLOUD">
+  <meta property="og:title" content="Content | BoFu Search Content and Executive Ghostwriting | RAINCLOUD">
+  <meta property="og:description" content="Bottom-of-funnel search content from $10,000 and executive ghostwriting from $1,000 per month. Written, edited, and reviewed by a human subject-matter expert.">
+  <meta property="og:url" content="https://rncld.com/content.html">
+  <meta property="og:image" content="https://rncld.com/assets/band-dataviz.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Content | BoFu Search Content and Executive Ghostwriting | RAINCLOUD">
+  <meta name="twitter:description" content="Bottom-of-funnel search content from $10,000 and executive ghostwriting from $1,000 per month. Written, edited, and reviewed by a human subject-matter expert.">
+  <meta name="twitter:image" content="https://rncld.com/assets/band-dataviz.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "RAINCLOUD",
+    "url": "https://rncld.com/",
+    "email": "colin@rncld.com",
+    "description": "An operator-led, tech-enabled go-to-market practice: GTM consulting, demand generation, content, AI readiness, and AI agents.",
+    "founder": {
+      "@type": "Person",
+      "name": "Colin Dowling"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Content",
+    "serviceType": "BoFu search content and ghostwriting",
+    "url": "https://rncld.com/content.html",
+    "provider": {
+      "@type": "Organization",
+      "name": "RAINCLOUD",
+      "url": "https://rncld.com/"
+    },
+    "description": "Two tracks: bottom-of-funnel SEO content that targets buyer-intent searches, and executive ghostwriting written and reviewed by a human subject-matter expert.",
+    "offers": {
+      "@type": "Offer",
+      "price": "10000",
+      "priceCurrency": "USD",
+      "description": "BoFu content plan, one-time. Plan plus done-for-you $5,000 per month. Ghostwriting from $1,000 per month."
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you use AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, and pretending otherwise would be its own kind of slop. AI is genuinely useful for research, building an outline, and finding good internal links. It does not write the piece. Every word that ships is written, edited, and reviewed by a human who knows what is true about your business, your buyer, and your last ten deals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you write for my industry?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Very likely. More than twenty years of writing across a wide spread: software and SaaS, hardware and infrastructure, data and analytics, AI and automation, professional services, medical and insurance, health and wellness, eCommerce, and web development."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does it cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BoFu search content is a $10,000 plan, or $5,000 per month on a six-month contract with a 50% money-back guarantee if agreed KPIs are not met. Ghostwriting starts at $1,000 per month for execution and $3,000 per month for strategy, with a retainer minimum of two pieces a month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do you actually need from me?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Less than you would think. Access to what you already know: a sales call recording, a competitor you keep losing to, the objection you answer every week. The research and structure are my job."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is this different from Demand Generation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Content is Farmer on its own, plus ghostwriting. If you want outbound, LinkedIn, and content running together as one system, that is Demand Generation, and Farmer content is included."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav" class="scrolled">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li class="has-dropdown"><a href="/#offers">Work With Me<span class="caret"></span></a>
+          <ul class="dropdown">
+            <li><a href="/gtm-consulting.html">GTM Consulting</a></li>
+            <li><a href="/audit.html">GTM Audit</a></li>
+            <li><a href="/demand-generation.html">Demand Generation</a></li>
+            <li><a href="/content.html">Content</a></li>
+            <li><a href="/ai-readiness.html">AI Readiness</a></li>
+            <li><a href="/ai-agents.html">AI Agents</a></li>
+          </ul>
+        </li>
+        <li><a href="/blog/">Articles</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/contact.html?offer=not-sure" class="nav-cta">Book a call</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow"><span class="line"></span><span class="label label--accent">Content</span></div>
+      <h1>Content that your buyers search for, <span class="thin">and your reps actually send.</span></h1>
+      <p class="lede">Two ways in. Bottom-of-funnel search content that puts you on the page when buyers are choosing, and executive ghostwriting that sounds like someone who knows what is true. Both are written, edited, and reviewed by a human.</p>
+      <div class="hero-actions">
+        <a href="/contact.html?offer=content" class="btn btn--primary"><span>Book a call</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#tracks" class="text-link">Compare the two tracks</a>
+      </div>
+      <div class="facts">
+        <div class="fact"><div class="num">$10,000</div><div class="desc">BoFu search content plan</div></div>
+        <div class="fact"><div class="num">$5,000/mo</div><div class="desc">Plan plus done-for-you, 6 months</div></div>
+        <div class="fact"><div class="num">From $1,000/mo</div><div class="desc">Ghostwriting, two pieces a month minimum</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Who it is for</div>
+        <h2>For teams whose content <span style="color:var(--text-tertiary)">is not doing its job yet.</span></h2>
+      </div>
+      <div class="fit-grid reveal">
+        <div class="fit-col fit-col--yes"><h3>Who it is for</h3><ul><li>B2B teams that publish and are not seeing pipeline from it.</li><li>Companies that lose comparison and alternative searches to competitors.</li><li>Executives and marketing leads who have a strategy and need it executed at a higher standard.</li></ul></div>
+        <div class="fit-col fit-col--no"><h3>Who it is not for</h3><ul><li>Teams that want volume of generic posts for a content calendar.</li><li>Companies looking for the cheapest possible word count.</li><li>Anyone who wants the prompt-and-publish approach.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tracks" class="alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Two tracks</div>
+        <h2>Pick the door <span style="color:var(--text-tertiary)">that matches your problem.</span></h2>
+      </div>
+      <div class="cards c2 reveal">
+        <a class="card" href="/bofu-content.html" style="padding:clamp(28px,3.4vw,46px)"><div class="cn">Track 1</div><h3 style="font-size:1.3rem;margin-bottom:12px">Search content (BoFu)</h3><p>The searches that close deals are already happening. I find them, build for them, and deliver the traffic into your pipeline. Page architecture, keyword targets mapped to buyer intent, technical SEO, and a six-month execution calendar.</p><div class="price-list" style="margin-top:22px"><li style="list-style:none"><span>The plan</span><strong>$10,000 one-time</strong></li><li style="list-style:none"><span>Plan plus done-for-you</span><strong>$5,000/mo, 6 months</strong></li><li style="list-style:none"><span>Guarantee</span><strong>50% back if KPIs missed</strong></li></div><p class="offer-link" style="margin-top:22px;color:var(--text-primary);font-size:.8rem;border-bottom:1px solid var(--border-medium);width:fit-content">See search content &rarr;</p></a>
+        <a class="card" href="#ghostwriting" style="padding:clamp(28px,3.4vw,46px)"><div class="cn">Track 2</div><h3 style="font-size:1.3rem;margin-bottom:12px">Executive ghostwriting</h3><p>Blog posts, case studies, ebooks, and whitepapers, written, edited, and reviewed by a human subject-matter expert. You talk to Colin Dowling, who is also the one writing.</p><div class="price-list" style="margin-top:22px"><li style="list-style:none"><span>Strategy</span><strong>from $3,000/mo</strong></li><li style="list-style:none"><span>Execution</span><strong>from $1,000/mo</strong></li><li style="list-style:none"><span>Retainer minimum</span><strong>2 pieces a month</strong></li></div><p class="offer-link" style="margin-top:22px;color:var(--text-primary);font-size:.8rem;border-bottom:1px solid var(--border-medium);width:fit-content">See ghostwriting &darr;</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Track 1</div>
+        <h2>Search content, built for the <span style="color:var(--text-tertiary)">searches that close.</span></h2>
+      </div>
+      <p class="lead-p reveal">Bottom-of-funnel searches are where buyers compare, shortlist, and decide. Most content programs ignore them. Track 1 is the Farmer component of the Engine on its own: research, ranking pages, comparison content, and a technical SEO package, built to also get cited by AI search.</p>
+      <div class="cards c3 reveal" style="margin-top:36px">
+        <div class="card"><div class="cn">/ 01</div><h3>The plan: $10,000</h3><p>One-time, delivered in three weeks, no guarantee. A scored keyword universe, BoFu page architecture, technical SEO package, LinkedIn content framework, and a six-month execution calendar. Best if you have a team to run it.</p></div>
+        <div class="card"><div class="cn">/ 02</div><h3>Plan plus done-for-you: $5,000/mo</h3><p>Six-month contract. Everything in the plan plus full execution: I build, publish, and optimize. Daily competitor monitoring, monthly strategy calls, and pipeline reporting.</p></div>
+        <div class="card"><div class="cn">/ 03</div><h3>50% back if KPIs are missed</h3><p>If we do not hit the agreed KPIs by the end of six months on the done-for-you program, I refund half of your investment. You keep the work and the results.</p></div>
+      </div>
+      <p style="margin-top:28px"><a class="btn btn--primary" href="/bofu-content.html"><span>See how search content works</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></p>
+    </div>
+  </section>
+
+  <section id="ghostwriting" class="alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Track 2: ghostwriting</div>
+        <h2>Ghostwriting that drives growth, <span style="color:var(--text-tertiary)">not traffic.</span></h2>
+      </div>
+      <div class="reveal" style="max-width:820px">
+        <p class="lead-p">AI slop is polluting the internet, and that is a big opportunity for you. More content is being created than ever before, and most of it is garbage. Great content with an original point of view cuts through better than ever, earning the trust of potential buyers and the attention of crawlers from Google, Microsoft, OpenAI, and Anthropic.</p>
+      </div>
+      <div class="callout reveal" style="margin-top:40px"><h3>&ldquo;We could just write this with Claude.&rdquo;</h3><p>The objection I hear most. Every business and agency is thinking that ChatGPT or Claude is good enough to produce their content. The mistake is not recognizing that good enough no longer cuts it with customers, search engines, and answer engines. LLMs are fantastic for research, a brief, an outline, and even a first draft. But if you want content that represents your brand voice, resonates with readers, ranks, and leads to growth, you need a human subject-matter expert at the end of the production line to edit, polish, and enhance it.</p></div>
+      <div class="cards c3 reveal" style="margin-top:28px">
+        <div class="card"><div class="cn">/ 01</div><h3>The baseline</h3><p>When every competitor can produce competent AI content, competent stops being an edge. It is the entry fee. The bar just moved up, not down.</p></div>
+        <div class="card"><div class="cn">/ 02</div><h3>The judgment call</h3><p>A model has no opinion on which of your offers deserves the next six weeks of content, or which claim is technically true but wrong for this buyer. That call gets made by someone who has watched what actually closes.</p></div>
+        <div class="card"><div class="cn">/ 03</div><h3>The hours</h3><p>If your most expensive person is the one prompting the model, that is a six-figure employee doing the job of an intern. The real question was never whether AI can write it. It is who is holding the pen.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">What I do differently</div>
+        <h2>Everyone is using AI now. <span style="color:var(--text-tertiary)">Here is where I draw the line.</span></h2>
+        <p>Pretending otherwise would be its own kind of slop. The honest question was never whether AI touches the work. It is what it is allowed to decide.</p>
+      </div>
+      <div class="cards c4 reveal">
+        <div class="card"><h3>Signal</h3><p>First I look at competitors, market dynamics, review sites, and sales conversations (if allowed) to find hidden opportunities to reach buyers in their own language.</p></div>
+        <div class="card"><h3>Structure</h3><p>Every page is built for three readers: the human, a search crawler, and an answer engine. Headings, schema, and passages that can be lifted cleanly, so the piece can be found and cited, not just published.</p></div>
+        <div class="card"><h3>Pathing</h3><p>Internal links are placed with purpose. Each one moves the reader further down your funnel, not into a &ldquo;related posts&rdquo; dead end.</p></div>
+        <div class="card"><h3>Coverage</h3><p>I keep a live map of what competitors are saying and, as important, what they are not saying. Those gaps inform a strategy optimized in real time.</p></div>
+      </div>
+      <p class="pull reveal" style="margin-top:48px">None of that is where the writing actually happens. That part still needs someone in the room who knows what is true about your business, your buyer, and your last ten deals, plus the discipline to say only that.</p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Price</div>
+        <h2>Two doors. <span style="color:var(--text-tertiary)">Both wrong in different ways.</span></h2>
+      </div>
+      <div class="tier-grid t3 reveal" style="grid-template-columns:repeat(2,1fr)">
+        <div class="tier-card"><div class="tier-name">Strategy</div><div class="tier-stage">For &ldquo;content does not work for us&rdquo;</div><div class="tier-price"><span class="tier-prefix">From</span>$3,000<span class="tier-unit">per month &middot; two pieces a month minimum</span></div><p class="tier-desc">You are right about the flood. You are wrong that it means the channel is dead. It means the bar just dropped for everyone except the people still doing it well.</p><ul class="tier-list"><li>Signal research and competitor coverage map</li><li>Content strategy, voice, and pathing</li><li>Written, edited, and reviewed pieces</li><li>Direct access to me, the one writing</li></ul><a href="/contact.html?offer=ghostwriting" class="tier-link">Ask about strategy &rarr;</a></div>
+        <div class="tier-card"><div class="tier-name">Execution</div><div class="tier-stage">For &ldquo;we already have a strategy&rdquo;</div><div class="tier-price"><span class="tier-prefix">From</span>$1,000<span class="tier-unit">per month &middot; two pieces a month minimum</span></div><p class="tier-desc">Good. I am not here to replace it. I am here to execute it at the level you set, consistently, without it becoming one more thing your team has to hold together.</p><ul class="tier-list"><li>Blog posts, case studies, ebooks, whitepapers</li><li>Written, edited, and reviewed by a human subject-matter expert</li><li>Voice captured through repetition</li><li>Direct access to me, the one writing</li></ul><a href="/contact.html?offer=ghostwriting" class="tier-link">Ask about execution &rarr;</a></div>
+      </div>
+      <p class="tier-foot">Two doors, one standard. Retainers run at least two pieces a month, which is also where the writing gets best, because capturing a voice takes repetition. These are &ldquo;from&rdquo; prices: subject matter, research depth, and volume move them. Ask and you will get a real number, not a discovery call to get one. <strong>Who you will talk to:</strong> Colin Dowling, who will also be the one writing.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Compared with the alternatives</div>
+        <h2>Instead of&hellip;</h2>
+      </div>
+      <div class="instead reveal">
+        <div class="instead-row"><div class="io">Instead of</div><h3>A traditional SEO agency</h3><p>Months of strategy, informational keywords, and a retainer that bills whether or not deals close.</p><div class="tradeoff"><b>Honest tradeoff:</b> An agency has more hands and can cover a wide topic map. It will not target the searches that close first.</div></div>
+        <div class="instead-row"><div class="io">Instead of</div><h3>Generic AI content</h3><p>Competent, fast, and indistinguishable from the other nineteen results.</p><div class="tradeoff"><b>Honest tradeoff:</b> It is nearly free and instant. It is also an entry fee, not an edge.</div></div>
+        <div class="instead-row"><div class="io">Instead of</div><h3>Hiring a writer</h3><p>A full-time hire who has to learn your buyer, your market, and your voice from scratch.</p><div class="tradeoff"><b>Honest tradeoff:</b> A full-time writer lives in the business every day. They rarely come with signal research, search structure, and the sales context.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pairs-wrap">
+    <div class="container">
+      <div class="pairs"><span class="pl">Pairs with</span><a class="pair-chip" href="/demand-generation.html">Demand Generation (the full system)</a><a class="pair-chip" href="/audit.html">GTM Audit</a></div>
+    </div>
+  </div>
+
+  <section class="alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">FAQ</div>
+        <h2>The obvious ones, <span style="color:var(--text-tertiary)">answered plainly.</span></h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item"><summary>Do you use AI?</summary><div class="faq-a"><p>Yes, and pretending otherwise would be its own kind of slop. AI is genuinely useful for research, building an outline, and finding good internal links. <strong>It does not write the piece.</strong> Every word that ships is written, edited, and reviewed by a human who knows what is true about your business, your buyer, and your last ten deals.</p></div></details>
+        <details class="faq-item"><summary>Can you write for my industry?</summary><div class="faq-a"><p>Very likely. More than twenty years of writing across a wide spread: software and SaaS, hardware and infrastructure, data and analytics, AI and automation, professional services, medical and insurance, health and wellness, eCommerce, and web development.</p></div></details>
+        <details class="faq-item"><summary>What does it cost?</summary><div class="faq-a"><p>BoFu search content is a $10,000 plan, or $5,000 per month on a six-month contract with a 50% money-back guarantee if agreed KPIs are not met. Ghostwriting starts at $1,000 per month for execution and $3,000 per month for strategy, with a retainer minimum of two pieces a month.</p></div></details>
+        <details class="faq-item"><summary>What do you actually need from me?</summary><div class="faq-a"><p>Less than you would think. Access to what you already know: a sales call recording, a competitor you keep losing to, the objection you answer every week. The research and structure are my job.</p></div></details>
+        <details class="faq-item"><summary>How is this different from Demand Generation?</summary><div class="faq-a"><p>Content is Farmer on its own, plus ghostwriting. If you want outbound, LinkedIn, and content running together as one system, that is <a href='/demand-generation.html' class='text-link'>Demand Generation</a>, and Farmer content is included.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-block" style="background:var(--bg-secondary)">
+    <div class="container">
+      <div class="reveal">
+        <div class="label label--accent" style="margin-bottom:20px">Get started</div>
+        <h2>Twenty minutes. No pitch.</h2>
+        <p>Tell me what you are publishing now and what it is supposed to be doing for you. If I am not the right fit, I will say so. I take on a limited number of engagements at a time.</p>
+        <a href="/contact.html?offer=content" class="btn btn--primary"><span>Book a call</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="sf">
+    <div class="container">
+      <div class="sf-top">
+        <div>
+          <div class="sf-logo">RAIN<em>CLOUD</em></div>
+          <p class="sf-tag">An operator-led, tech-enabled go-to-market practice. Run personally by Colin Dowling.</p>
+        </div>
+        <div class="sf-cols">
+          <div>
+            <div class="sf-h">Work with me</div>
+            <ul>
+              <li><a href="/gtm-consulting.html">GTM Consulting</a></li>
+              <li><a href="/audit.html">GTM Audit</a></li>
+              <li><a href="/demand-generation.html">Demand Generation</a></li>
+              <li><a href="/content.html">Content</a></li>
+              <li><a href="/ai-readiness.html">AI Readiness</a></li>
+              <li><a href="/ai-agents.html">AI Agents</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Read</div>
+            <ul>
+              <li><a href="/blog/">Articles</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
+              <li><a href="/llms.txt">llms.txt</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Talk</div>
+            <ul>
+              <li><a href="/contact.html?offer=not-sure">Book a call</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sf-copy">&copy; 2026 RAINCLOUD. All rights reserved.</div>
+    </div>
+  </footer>
+  <script>
+    window.addEventListener('scroll', function(){ var n=document.getElementById('nav'); if(n) n.classList.toggle('scrolled', window.scrollY > 60); });
+    var revealObs = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el){ revealObs.observe(el); });
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click', function(e){ var h=a.getAttribute('href'); if(h.length>1){ var t=document.querySelector(h); if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); } } }); });
+  </script>
+</body>
+</html>

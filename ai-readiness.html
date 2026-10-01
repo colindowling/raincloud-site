@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-041BP5G4HF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-041BP5G4HF');
+
+    // Custom event: audit_cta_click — body-content links to /audit.html or /contact.html
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (!/\/(audit|contact)(\.html)?(\?|#|$)/.test(href)) return;
+      if (a.closest('nav') || a.closest('footer')) return;
+      gtag('event', 'audit_cta_click', {
+        cta_text: (a.textContent || '').trim().slice(0, 100),
+        cta_destination: href,
+        cta_location: window.location.pathname
+      });
+    });
+
+    // Mobile-aware nav toggle: hamburger opens menu; on mobile, parent dropdown taps expand/collapse instead of navigating; leaf taps close the menu.
+    document.addEventListener('DOMContentLoaded', function() {
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+      if (!navToggle || !navLinks) return;
+      navToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('open');
+        // Reset expanded states when closing
+        if (!navLinks.classList.contains('open')) {
+          navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+            item.classList.remove('expanded');
+          });
+        }
+      });
+      navLinks.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          var li = a.parentElement;
+          var isDropdownParent = li && li.classList.contains('has-dropdown');
+          var isMobile = window.innerWidth <= 768;
+          var navOpen = navLinks.classList.contains('open');
+          if (isDropdownParent && isMobile && navOpen) {
+            // On mobile while menu is open, tapping a dropdown parent expands/collapses it
+            e.preventDefault();
+            li.classList.toggle('expanded');
+          } else {
+            // Any other link click closes the menu and resets expanded states
+            navLinks.classList.remove('open');
+            navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+              item.classList.remove('expanded');
+            });
+          }
+        });
+      });
+    });
+  </script>
+  <title>AI Readiness for Executives | 30-Day Boardroom-Ready AI Strategy | RAINCLOUD</title>
+  <meta name="description" content="A fixed-fee, 30-day AI readiness engagement for CEOs, boards, and C-suites. Outcomes-first strategy, vendor framework, and a board-ready narrative. From $20,000.">
+  <link rel="canonical" href="https://rncld.com/ai-readiness.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/site-extra.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RAINCLOUD">
+  <meta property="og:title" content="AI Readiness for Executives | 30-Day Boardroom-Ready AI Strategy | RAINCLOUD">
+  <meta property="og:description" content="A fixed-fee, 30-day AI readiness engagement for CEOs, boards, and C-suites. Outcomes-first strategy, vendor framework, and a board-ready narrative. From $20,000.">
+  <meta property="og:url" content="https://rncld.com/ai-readiness.html">
+  <meta property="og:image" content="https://rncld.com/assets/band-boardroom.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Readiness for Executives | 30-Day Boardroom-Ready AI Strategy | RAINCLOUD">
+  <meta name="twitter:description" content="A fixed-fee, 30-day AI readiness engagement for CEOs, boards, and C-suites. Outcomes-first strategy, vendor framework, and a board-ready narrative. From $20,000.">
+  <meta name="twitter:image" content="https://rncld.com/assets/band-boardroom.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "RAINCLOUD",
+    "url": "https://rncld.com/",
+    "email": "colin@rncld.com",
+    "description": "An operator-led, tech-enabled go-to-market practice: GTM consulting, demand generation, content, AI readiness, and AI agents.",
+    "founder": {
+      "@type": "Person",
+      "name": "Colin Dowling"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI Readiness for Executives",
+    "serviceType": "Executive AI readiness advisory",
+    "url": "https://rncld.com/ai-readiness.html",
+    "provider": {
+      "@type": "Organization",
+      "name": "RAINCLOUD",
+      "url": "https://rncld.com/"
+    },
+    "description": "A fixed-fee, fixed-timeline executive advisory engagement that takes a leadership team from AI gap to boardroom-ready in 30 days.",
+    "offers": {
+      "@type": "Offer",
+      "price": "20000",
+      "priceCurrency": "USD",
+      "description": "Solo Executive, 30 days. Leadership Trio $45,000. Full C-Suite $75,000."
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is this different from hiring a big consulting firm to do our AI strategy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Large firms send a senior partner to sell the work, then hand it to a team of analysts you have never met. The thinking you are paying for gets diluted before it reaches you. This engagement is different by design: you work directly with me from intake to delivery, and the strategy is built around your business, not adapted from a template. You also get a fixed fee and a fixed timeline. No billable-hour surprises, no scope drift, and no 200-page deck that sits unread until the next planning cycle."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "We already have some AI initiatives underway. Is this still relevant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Often more relevant. Most organizations running AI initiatives are doing so without a clear outcomes framework, without defined ownership, and without a coherent view of how the pieces fit together. The readiness assessment is built to diagnose exactly that: where you have real momentum versus where you have the appearance of progress. If your pilots are not converting to enterprise-wide impact, that is a leadership and governance problem, not a technology problem. That is what I fix."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do we actually walk away with at the end of 30 days?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Five concrete deliverables, all owned by you permanently: a written AI readiness assessment documenting your current state across five dimensions; an outcomes-first AI strategy aligned to your business priorities; a tool and vendor evaluation framework you can use independently; a 90-day execution blueprint with sequenced milestones, owners, and decision gates; and a board-ready AI narrative you can present with confidence. Everything is written, structured, and handed over, not locked in my head or dependent on ongoing access to me."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much of our team's time does this require?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Less than you would expect, on purpose. For the Solo Executive engagement, plan on roughly 4 to 5 hours of your time across the full 30 days: the initial intake session, one or two working sessions during the strategy build, and the final walkthrough. For the Leadership Trio and Full C-Suite tiers, individual executive time stays similar. The additional time is in the cross-functional alignment sessions, which are structured and facilitated so they do not sprawl."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens after the engagement ends? Is there ongoing support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every engagement includes a period of async Q&amp;A access after delivery: 30, 45, or 60 days depending on your tier. Beyond that, I do not push retainers as a default. Some clients continue with me into implementation, often through GTM consulting or AI agents; others take the strategy and execute on their own. What matters is that you leave with everything you need to move without me."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "We already have a Chief AI Officer or a Head of Innovation. Do we still need this?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Possibly the most common situation I see, and one of the most useful applications of this engagement. A Chief AI Officer is responsible for execution. What this engagement addresses is executive alignment above that layer: whether the C-suite and board are asking the right questions, whether strategy is being set at the leadership level rather than delegated to a single internal champion, and whether the organization has a coherent framework the CAIO is executing against, or just a mandate with no guardrails. It also gives your innovation leader something to point to when they need air cover."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav" class="scrolled">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li class="has-dropdown"><a href="/#offers">Work With Me<span class="caret"></span></a>
+          <ul class="dropdown">
+            <li><a href="/gtm-consulting.html">GTM Consulting</a></li>
+            <li><a href="/audit.html">GTM Audit</a></li>
+            <li><a href="/demand-generation.html">Demand Generation</a></li>
+            <li><a href="/content.html">Content</a></li>
+            <li><a href="/ai-readiness.html">AI Readiness</a></li>
+            <li><a href="/ai-agents.html">AI Agents</a></li>
+          </ul>
+        </li>
+        <li><a href="/blog/">Articles</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/contact.html?offer=not-sure" class="nav-cta">Book a call</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow"><span class="line"></span><span class="label label--accent">AI Readiness</span></div>
+      <h1>Your board expects you to have this handled.</h1>
+      <p class="lede">Half of CEOs believe their position depends on getting AI right in 2026. Most do not know where to start. I work directly with C-suite leaders to close that gap, before the board asks why you have not.</p>
+      <div class="hero-actions">
+        <a href="/contact.html?offer=ai-readiness" class="btn btn--primary"><span>Request a readiness conversation</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#framework" class="text-link">See the framework</a>
+      </div>
+      <div class="facts">
+        <div class="fact"><div class="num">30 days</div><div class="desc">From AI gap to boardroom-ready</div></div>
+        <div class="fact"><div class="num">$20,000</div><div class="desc">Fixed fee, Solo Executive</div></div>
+        <div class="fact"><div class="num">4 to 5 hrs</div><div class="desc">Of your time, in total</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">The problem</div>
+        <h2>AI strategy has become the CEO&rsquo;s mandate. <span style="color:var(--text-tertiary)">Most are not ready for it.</span></h2>
+      </div>
+      <div class="stat-row reveal">
+        <div class="stat-cell"><div class="n">50%</div><div class="d">of CEOs say their job depends on getting AI right in 2026</div><div class="s">BCG AI Radar, 2026</div></div>
+        <div class="stat-cell"><div class="n">12&times;</div><div class="d">more likely to win with AI when the C-suite is deeply engaged</div><div class="s">BCG, The Widening AI Gap, 2025</div></div>
+        <div class="stat-cell"><div class="n">42%</div><div class="d">of companies abandoned most AI initiatives in 2025, up from 17% the year prior</div><div class="s">Alpha Apex / Industry Analysis, 2026</div></div>
+      </div>
+      <div style="margin-top:56px" class="reveal">
+        <p class="pull">&ldquo;Companies that crowdsource AI efforts create impressive adoption numbers, but almost never produce meaningful business outcomes.&rdquo;<span style="display:block;margin-top:14px;font-size:.75rem;font-style:normal;color:var(--text-tertiary);font-family:var(--font-body)">PwC, AI Predictions, 2026</span></p>
+        <p class="lead-p" style="margin-top:36px">The failure mode is not technology and it is not budget. It is leadership clarity. Boards are mandating readiness assessments. Investors are benchmarking execution. The question is not whether AI will reshape your business. It is whether you will be the one steering it.</p>
+        <ul class="icp-list" style="max-width:720px;margin-top:24px">
+          <li>Your team is running disconnected pilots with no enterprise-wide strategy or ownership.</li>
+          <li>You lack a framework to evaluate AI tools, separate signal from noise, and define outcomes first.</li>
+          <li>Workforce culture has not shifted. Employees are experimenting without direction.</li>
+          <li>The board is asking questions you do not yet have crisp answers to.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Who it is for</div>
+        <h2>Leaders who are <span style="color:var(--text-tertiary)">accountable</span> for what happens next.</h2>
+      </div>
+      <div class="fit-grid reveal">
+        <div class="fit-col fit-col--yes"><h3>Who it is for</h3><ul><li>A CEO or President who owns the AI mandate and needs a defensible plan.</li><li>A board member who wants to test management&rsquo;s AI claims against a framework, not instinct.</li><li>A COO, CFO, or strategy lead who has to approve AI spend and govern what gets funded.</li><li>An executive team that already has pilots running and needs to know which ones matter.</li></ul></div>
+        <div class="fit-col fit-col--no"><h3>Who it is not for</h3><ul><li>Anyone looking for executive education, a course, or a cohort.</li><li>Teams that want a vendor selected for them.</li><li>Leaders who want a 200-page deck rather than decisions.</li><li>Companies where nobody at the top will make time for it.</li></ul></div>
+      </div>
+      <div class="cards c4 reveal" style="margin-top:1px">
+        <div class="card"><h3>CEO / President</h3><p>AI is now your mandate, not your CTO&rsquo;s. Own the strategy before the board demands an accounting.</p></div>
+        <div class="card"><h3>Board member</h3><p>Ask the right questions. Evaluate management&rsquo;s AI claims against a framework, not instinct.</p></div>
+        <div class="card"><h3>COO</h3><p>Your operations are the implementation surface. Build the culture and change architecture that makes adoption real.</p></div>
+        <div class="card"><h3>CFO / strategy lead</h3><p>Approve AI investments with a framework for outcomes, not vendor enthusiasm.</p></div>
+      </div>
+      <p style="margin-top:24px;font-size:.85rem;color:var(--text-tertiary);max-width:720px">This is for executives regardless of your CRM or sales process. The CRM test I use for the pipeline and agent offers does not apply here.</p>
+    </div>
+  </section>
+
+  <section id="framework">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">What you get</div>
+        <h2>Built for how <span style="color:var(--text-tertiary)">executives</span> actually operate.</h2>
+        <p>Not a course. Not a cohort. A structured advisory engagement that produces real decisions, a defensible strategy, and a leadership team that can execute.</p>
+      </div>
+      <div class="cards c3 reveal">
+        <div class="card"><h3>I. Executive AI readiness assessment</h3><p>An honest audit of where your leadership team, culture, data, and governance actually stand before any investment is made. Gaps surfaced. No flattery.</p></div>
+        <div class="card"><h3>II. Outcomes-first strategy design</h3><p>Define business outcomes before evaluating tools or vendors. Most organizations do this backwards. I reverse it, forcing ROI clarity before a dollar is committed.</p></div>
+        <div class="card"><h3>III. AI-ready culture and change architecture</h3><p>A culture that can absorb AI needs deliberate design at the executive layer first. I build the signals, norms, and operating model your organization will follow.</p></div>
+        <div class="card"><h3>IV. Tool and vendor evaluation framework</h3><p>A structured lens for assessing AI tools against your specific use cases. Not vendor demos, not hype cycles.</p></div>
+        <div class="card"><h3>V. Board-level readiness narrative</h3><p>Leave with a clear, defensible AI strategy you can present to your board, investors, and leadership team.</p></div>
+        <div class="card"><h3>VI. 90-day execution blueprint</h3><p>A sequenced roadmap with owners, milestones, and decision gates. Built to move, not to sit in a slide deck until the next offsite.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">How it works</div>
+        <h2>From gap to <span style="color:var(--text-tertiary)">boardroom-ready</span> in 30 days.</h2>
+        <p>A structured, time-bounded engagement. You know exactly what you are getting and when. No open-ended retainers. No deliverable drift.</p>
+      </div>
+      <div class="steps c4 reveal">
+        <div class="step"><div class="sn">01</div><div class="st">Days 1 to 3</div><h3>Intake and diagnostic</h3><p>A deep-dive interview with you and up to two key leadership stakeholders. I map your current AI posture, existing initiatives, board expectations, and where the real gaps live.</p></div>
+        <div class="step"><div class="sn">02</div><div class="st">Days 4 to 10</div><h3>Readiness assessment</h3><p>A structured evaluation across five dimensions: leadership alignment, data and infrastructure, culture and workforce readiness, governance, and use-case pipeline. Written findings by Day 10.</p></div>
+        <div class="step"><div class="sn">03</div><div class="st">Days 11 to 21</div><h3>Strategy and framework build</h3><p>An outcomes-first AI strategy built around your business, not a template. Tool evaluation framework, vendor criteria, and change architecture designed for your org structure.</p></div>
+        <div class="step"><div class="sn">04</div><div class="st">Days 22 to 30</div><h3>Blueprint and board narrative</h3><p>The final 90-day execution blueprint with owners and decision gates, plus a board-ready AI narrative. A live working session to walk through everything.</p></div>
+      </div>
+      <div class="callout reveal"><h3>Day 30 outcome</h3><p>A complete, defensible AI readiness strategy: a written assessment of your current state, an outcomes-first roadmap, a tool evaluation framework, a change architecture, and a board narrative. Delivered in 30 days, built around your business, owned by you permanently.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Price</div>
+        <h2>One engagement. <span style="color:var(--text-tertiary)">Three entry points.</span></h2>
+        <p>Every tier delivers the same 30-day timeline and the same quality of thinking. The difference is depth, access, and what we build together.</p>
+      </div>
+      <div class="tier-grid t3 reveal">
+        <div class="tier-card">
+          <div class="tier-name">Solo Executive</div>
+          <div class="tier-price">$20,000<span class="tier-unit">flat &middot; 30 days &middot; 1 executive</span></div>
+          <ul class="tier-list"><li>Executive intake and diagnostic interview (90 min)</li><li>AI readiness assessment across 5 dimensions</li><li>Outcomes-first AI strategy built for your org</li><li>Tool and vendor evaluation framework</li><li>90-day execution blueprint with owners and milestones</li><li>Board-ready AI narrative document</li><li>Final working session and delivery walkthrough</li><li>30 days async Q&amp;A access after delivery</li></ul>
+          <p class="tier-desc">The complete engagement for a single executive who needs to move fast and own the strategy personally.</p>
+          <a href="/contact.html?offer=ai-readiness" class="tier-link">Request a readiness conversation &rarr;</a>
+        </div>
+        <div class="tier-card tier-card--feature">
+          <span class="tier-badge">Most requested</span><div class="tier-name">Leadership Trio</div>
+          <div class="tier-price">$45,000<span class="tier-unit">flat &middot; 35 days &middot; up to 3 executives</span></div>
+          <ul class="tier-list"><li>Everything in Solo Executive</li><li>Individual intake sessions with all 3 executives</li><li>Cross-functional alignment workshop (half day)</li><li>Role-specific AI briefings per executive</li><li>Unified strategy that accounts for functional tensions</li><li>45 days async Q&amp;A access after delivery</li><li>One board presentation prep session</li></ul>
+          <p class="tier-desc">For leadership teams that need to move together. Alignment at the top before strategy hits the organization.</p>
+          <a href="/contact.html?offer=ai-readiness" class="tier-link">Request a readiness conversation &rarr;</a>
+        </div>
+        <div class="tier-card">
+          <div class="tier-name">Full C-Suite</div>
+          <div class="tier-price">$75,000<span class="tier-unit">flat &middot; 45 days &middot; up to 5 executives</span></div>
+          <ul class="tier-list"><li>Everything in Leadership Trio</li><li>Individual sessions with all 5 C-suite members</li><li>Full-day executive alignment offsite: 6 hours, from $6,000 (virtual or in person)</li><li>Org-wide AI culture change architecture</li><li>Manager-level briefing framework for cascade</li><li>60 days async Q&amp;A access after delivery</li><li>Two board presentation prep sessions</li><li>30-day check-in session after implementation</li></ul>
+          <p class="tier-desc">Enterprise-level alignment. Five executives, one unified strategy, and a cascade plan the whole organization can follow.</p>
+          <a href="/contact.html?offer=ai-readiness" class="tier-link">Request a readiness conversation &rarr;</a>
+        </div>
+      </div>
+      <p class="tier-foot">All engagements are fixed fee. No hourly billing, no scope creep, no surprises. A 50% deposit is required to begin; the balance is due on delivery of final materials. The alignment offsite is available on its own from $6,000. Custom scopes are available for portfolio companies and multi-entity organizations. The $7,500 <a href="/audit.html" class="text-link">GTM Audit</a> credits in full toward this engagement if you start there. I take on a limited number of engagements at a time.</p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Compared with the alternatives</div>
+        <h2>Instead of&hellip;</h2>
+      </div>
+      <div class="instead reveal">
+        <div class="instead-row"><div class="io">Instead of</div><h3>Big-firm AI strategy</h3><p>A partner sells the work and a team of analysts you never meet builds it. You get a long deck and a long invoice.</p><div class="tradeoff"><b>Honest tradeoff:</b> A large firm has bench depth, global benchmarks, and implementation capacity I do not. If you need hundreds of people to execute, hire them.</div></div>
+        <div class="instead-row"><div class="io">Instead of</div><h3>Vendor-led AI workshops</h3><p>Free or cheap, and every recommendation conveniently ends in their product.</p><div class="tradeoff"><b>Honest tradeoff:</b> Vendors know their own tools better than I do, and a workshop is a fast way to see what is possible.</div></div>
+        <div class="instead-row"><div class="io">Instead of</div><h3>Waiting</h3><p>Wait for the market to settle, the board to calm down, or the pilots to prove themselves.</p><div class="tradeoff"><b>Honest tradeoff:</b> Waiting costs nothing this quarter, and some AI spending really is premature. The risk is that your board asks first.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pairs-wrap">
+    <div class="container">
+      <div class="pairs"><span class="pl">Pairs with</span><a class="pair-chip" href="/ai-agents.html">AI Agents</a><a class="pair-chip" href="/gtm-consulting.html">GTM Consulting</a><a class="pair-chip" href="/audit.html">GTM Audit</a></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">FAQ</div>
+        <h2>Questions worth asking <span style="color:var(--text-tertiary)">before you engage.</span></h2>
+        <p>If something is not answered here, ask it in the intake call. I would rather you go in clear than uncertain.</p>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item"><summary>How is this different from hiring a big consulting firm to do our AI strategy?</summary><div class="faq-a"><p>Large firms send a senior partner to sell the work, then hand it to a team of analysts you have never met. The thinking you are paying for gets diluted before it reaches you. This engagement is different by design: you work directly with me from intake to delivery, and the strategy is built around your business, not adapted from a template. You also get a fixed fee and a fixed timeline. No billable-hour surprises, no scope drift, and no 200-page deck that sits unread until the next planning cycle.</p></div></details>
+        <details class="faq-item"><summary>We already have some AI initiatives underway. Is this still relevant?</summary><div class="faq-a"><p>Often more relevant. Most organizations running AI initiatives are doing so without a clear outcomes framework, without defined ownership, and without a coherent view of how the pieces fit together. The readiness assessment is built to diagnose exactly that: where you have real momentum versus where you have the appearance of progress. If your pilots are not converting to enterprise-wide impact, that is a leadership and governance problem, not a technology problem. That is what I fix.</p></div></details>
+        <details class="faq-item"><summary>What do we actually walk away with at the end of 30 days?</summary><div class="faq-a"><p>Five concrete deliverables, all owned by you permanently: a written AI readiness assessment documenting your current state across five dimensions; an outcomes-first AI strategy aligned to your business priorities; a tool and vendor evaluation framework you can use independently; a 90-day execution blueprint with sequenced milestones, owners, and decision gates; and a board-ready AI narrative you can present with confidence. Everything is written, structured, and handed over, not locked in my head or dependent on ongoing access to me.</p></div></details>
+        <details class="faq-item"><summary>How much of our team's time does this require?</summary><div class="faq-a"><p>Less than you would expect, on purpose. For the Solo Executive engagement, plan on roughly 4 to 5 hours of your time across the full 30 days: the initial intake session, one or two working sessions during the strategy build, and the final walkthrough. For the Leadership Trio and Full C-Suite tiers, individual executive time stays similar. The additional time is in the cross-functional alignment sessions, which are structured and facilitated so they do not sprawl.</p></div></details>
+        <details class="faq-item"><summary>What happens after the engagement ends? Is there ongoing support?</summary><div class="faq-a"><p>Every engagement includes a period of async Q&amp;A access after delivery: 30, 45, or 60 days depending on your tier. Beyond that, I do not push retainers as a default. Some clients continue with me into implementation, often through <a href='/gtm-consulting.html' class='text-link'>GTM consulting</a> or <a href='/ai-agents.html' class='text-link'>AI agents</a>; others take the strategy and execute on their own. What matters is that you leave with everything you need to move without me.</p></div></details>
+        <details class="faq-item"><summary>We already have a Chief AI Officer or a Head of Innovation. Do we still need this?</summary><div class="faq-a"><p>Possibly the most common situation I see, and one of the most useful applications of this engagement. A Chief AI Officer is responsible for execution. What this engagement addresses is executive alignment above that layer: whether the C-suite and board are asking the right questions, whether strategy is being set at the leadership level rather than delegated to a single internal champion, and whether the organization has a coherent framework the CAIO is executing against, or just a mandate with no guardrails. It also gives your innovation leader something to point to when they need air cover.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-block" style="background:var(--bg-secondary)">
+    <div class="container">
+      <div class="reveal">
+        <div class="label label--accent" style="margin-bottom:20px">Next step</div>
+        <h2>Start with a 20-minute readiness conversation.</h2>
+        <p>No pitch. No deck. A direct conversation about where your organization stands, what is blocking you, and whether this engagement is the right fit. I take on a limited number of engagements at a time.<br><br><span style="color:var(--text-tertiary)">Leave-behind booklet tagline: &ldquo;Don&rsquo;t waste money on AI. Ask me how.&rdquo;</span></p>
+        <a href="/contact.html?offer=ai-readiness" class="btn btn--primary"><span>Request a readiness conversation</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="sf">
+    <div class="container">
+      <div class="sf-top">
+        <div>
+          <div class="sf-logo">RAIN<em>CLOUD</em></div>
+          <p class="sf-tag">An operator-led, tech-enabled go-to-market practice. Run personally by Colin Dowling.</p>
+        </div>
+        <div class="sf-cols">
+          <div>
+            <div class="sf-h">Work with me</div>
+            <ul>
+              <li><a href="/gtm-consulting.html">GTM Consulting</a></li>
+              <li><a href="/audit.html">GTM Audit</a></li>
+              <li><a href="/demand-generation.html">Demand Generation</a></li>
+              <li><a href="/content.html">Content</a></li>
+              <li><a href="/ai-readiness.html">AI Readiness</a></li>
+              <li><a href="/ai-agents.html">AI Agents</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Read</div>
+            <ul>
+              <li><a href="/blog/">Articles</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
+              <li><a href="/llms.txt">llms.txt</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Talk</div>
+            <ul>
+              <li><a href="/contact.html?offer=not-sure">Book a call</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sf-copy">&copy; 2026 RAINCLOUD. All rights reserved.</div>
+    </div>
+  </footer>
+  <script>
+    window.addEventListener('scroll', function(){ var n=document.getElementById('nav'); if(n) n.classList.toggle('scrolled', window.scrollY > 60); });
+    var revealObs = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el){ revealObs.observe(el); });
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click', function(e){ var h=a.getAttribute('href'); if(h.length>1){ var t=document.querySelector(h); if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); } } }); });
+  </script>
+</body>
+</html>

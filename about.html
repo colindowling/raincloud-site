@@ -409,20 +409,29 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     "description": "Three-time founder and former VP/SVP of revenue at GoDaddy, WP Engine, Liquid Web and Alembic."
   }
   </script>
+  <link rel="stylesheet" href="/assets/site-nav.css">
 </head>
 <body>
-
+  <!-- NAV -->
   <nav id="nav" class="scrolled">
-    <div class="container">
+    <div class="container nav-inner">
       <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
-            <ul class="nav-links" id="navLinks">
-            <li><a href="/#process">The Engagement</a></li>
+      <ul class="nav-links" id="navLinks">
+        <li class="has-dropdown"><a href="/#offers">Work With Me<span class="caret"></span></a>
+          <ul class="dropdown">
+            <li><a href="/gtm-consulting.html">GTM Consulting</a></li>
             <li><a href="/audit.html">GTM Audit</a></li>
-            <li><a href="/bofu-content.html">BoFu Content</a></li>
-            <li><a href="/blog/">Articles</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/demand-generation.html">Demand Generation</a></li>
+            <li><a href="/content.html">Content</a></li>
+            <li><a href="/ai-readiness.html">AI Readiness</a></li>
+            <li><a href="/ai-agents.html">AI Agents</a></li>
           </ul>
+        </li>
+        <li><a href="/blog/">Articles</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/contact.html?offer=not-sure" class="nav-cta">Book a call</a></li>
+      </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
@@ -516,8 +525,8 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           </div>
           <div class="story-body">
             <p>I built RAINCLOUD for me long ago and I've seen it work for me, my teams, and my clients.</p>
-            <p>If you think your team's close rates should be higher, if marking something "closed lost" stings, or if you're tired of being haunted by the deals you know you should have won — we should talk.</p>
-            <p>Not ready for that? Start with our ROI Calculator to understand the impact RAINCLOUD can have on your team and your business.</p>
+            <p>If you think your team's close rates should be higher, if marking something "closed lost" stings, or if you're tired of being haunted by the deals you know you should have won — let's talk.</p>
+            <p>Not ready for that? Start with my ROI Calculator to understand the impact RAINCLOUD can have on your team and your business.</p>
 
             <div class="closing-ctas">
               <a href="/contact.html" class="btn btn--primary">
@@ -537,18 +546,46 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         </div>
     </div>
   </section>
-
-  <footer>
+  <!-- FOOTER -->
+  <footer class="sf">
     <div class="container">
-      <div class="footer-layout">
-        <div class="footer-logo">RAINCLOUD</div>
-        <ul class="footer-links">
-          <li><a href="/blog/">Articles</a></li>
-          <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
-          <li><a href="https://rncld.com">rncld.com</a></li>
-        </ul>
-        <div class="footer-copy">© 2026 RAINCLOUD. All rights reserved.</div>
+      <div class="sf-top">
+        <div>
+          <div class="sf-logo">RAIN<em>CLOUD</em></div>
+          <p class="sf-tag">An operator-led, tech-enabled go-to-market practice. Run personally by Colin Dowling.</p>
+        </div>
+        <div class="sf-cols">
+          <div>
+            <div class="sf-h">Work with me</div>
+            <ul>
+              <li><a href="/gtm-consulting.html">GTM Consulting</a></li>
+              <li><a href="/audit.html">GTM Audit</a></li>
+              <li><a href="/demand-generation.html">Demand Generation</a></li>
+              <li><a href="/content.html">Content</a></li>
+              <li><a href="/ai-readiness.html">AI Readiness</a></li>
+              <li><a href="/ai-agents.html">AI Agents</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Read</div>
+            <ul>
+              <li><a href="/blog/">Articles</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
+              <li><a href="/llms.txt">llms.txt</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Talk</div>
+            <ul>
+              <li><a href="/contact.html?offer=not-sure">Book a call</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
+            </ul>
+          </div>
+        </div>
       </div>
+      <div class="sf-copy">&copy; 2026 RAINCLOUD. All rights reserved.</div>
     </div>
   </footer>
 

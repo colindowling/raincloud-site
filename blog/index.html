@@ -316,21 +316,29 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     "publisher": { "@type": "Organization", "name": "RAINCLOUD", "url": "https://rncld.com/" }
   }
   </script>
+  <link rel="stylesheet" href="/assets/site-nav.css">
 </head>
 <body>
-
   <!-- NAV -->
   <nav id="nav" class="scrolled">
     <div class="container nav-inner">
       <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
-            <ul class="nav-links" id="navLinks">
-            <li><a href="/#process">The Engagement</a></li>
+      <ul class="nav-links" id="navLinks">
+        <li class="has-dropdown"><a href="/#offers">Work With Me<span class="caret"></span></a>
+          <ul class="dropdown">
+            <li><a href="/gtm-consulting.html">GTM Consulting</a></li>
             <li><a href="/audit.html">GTM Audit</a></li>
-            <li><a href="/bofu-content.html">BoFu Content</a></li>
-            <li><a href="/blog/">Articles</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/demand-generation.html">Demand Generation</a></li>
+            <li><a href="/content.html">Content</a></li>
+            <li><a href="/ai-readiness.html">AI Readiness</a></li>
+            <li><a href="/ai-agents.html">AI Agents</a></li>
           </ul>
+        </li>
+        <li><a href="/blog/">Articles</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/contact.html?offer=not-sure" class="nav-cta">Book a call</a></li>
+      </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
@@ -345,6 +353,14 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
 
   <div class="container" style="padding-top: 0; padding-bottom: 0;">
     <div class="blog-grid">
+
+      <a href="/blog/claudeforce-for-hubspot.html" class="blog-card">
+        <span class="blog-tag">AI Agents</span>
+        <div class="date">September 2026</div>
+        <h2>Is There a Claudeforce for HubSpot?</h2>
+        <p>Claudeforce gives Salesforce sellers 37 prebuilt AI skills inside Claude. HubSpot doesn&rsquo;t get it. What it is, what is Salesforce-locked, and how to build the equivalent on HubSpot.</p>
+        <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
 
       <a href="/blog/outbound-reply-rates-2026.html" class="blog-card">
         <span class="blog-tag">Outbound</span>
@@ -371,6 +387,48 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       </a>
 
     </div>
+    </div>
+
+  <!-- FOOTER -->
+  <footer class="sf">
+    <div class="container">
+      <div class="sf-top">
+        <div>
+          <div class="sf-logo">RAIN<em>CLOUD</em></div>
+          <p class="sf-tag">An operator-led, tech-enabled go-to-market practice. Run personally by Colin Dowling.</p>
+        </div>
+        <div class="sf-cols">
+          <div>
+            <div class="sf-h">Work with me</div>
+            <ul>
+              <li><a href="/gtm-consulting.html">GTM Consulting</a></li>
+              <li><a href="/audit.html">GTM Audit</a></li>
+              <li><a href="/demand-generation.html">Demand Generation</a></li>
+              <li><a href="/content.html">Content</a></li>
+              <li><a href="/ai-readiness.html">AI Readiness</a></li>
+              <li><a href="/ai-agents.html">AI Agents</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Read</div>
+            <ul>
+              <li><a href="/blog/">Articles</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
+              <li><a href="/llms.txt">llms.txt</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Talk</div>
+            <ul>
+              <li><a href="/contact.html?offer=not-sure">Book a call</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sf-copy">&copy; 2026 RAINCLOUD. All rights reserved.</div>
     </div>
   </footer>
 

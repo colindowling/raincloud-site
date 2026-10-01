@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-041BP5G4HF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-041BP5G4HF');
+
+    // Custom event: audit_cta_click — body-content links to /audit.html or /contact.html
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (!/\/(audit|contact)(\.html)?(\?|#|$)/.test(href)) return;
+      if (a.closest('nav') || a.closest('footer')) return;
+      gtag('event', 'audit_cta_click', {
+        cta_text: (a.textContent || '').trim().slice(0, 100),
+        cta_destination: href,
+        cta_location: window.location.pathname
+      });
+    });
+
+    // Mobile-aware nav toggle: hamburger opens menu; on mobile, parent dropdown taps expand/collapse instead of navigating; leaf taps close the menu.
+    document.addEventListener('DOMContentLoaded', function() {
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+      if (!navToggle || !navLinks) return;
+      navToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('open');
+        // Reset expanded states when closing
+        if (!navLinks.classList.contains('open')) {
+          navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+            item.classList.remove('expanded');
+          });
+        }
+      });
+      navLinks.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          var li = a.parentElement;
+          var isDropdownParent = li && li.classList.contains('has-dropdown');
+          var isMobile = window.innerWidth <= 768;
+          var navOpen = navLinks.classList.contains('open');
+          if (isDropdownParent && isMobile && navOpen) {
+            // On mobile while menu is open, tapping a dropdown parent expands/collapses it
+            e.preventDefault();
+            li.classList.toggle('expanded');
+          } else {
+            // Any other link click closes the menu and resets expanded states
+            navLinks.classList.remove('open');
+            navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+              item.classList.remove('expanded');
+            });
+          }
+        });
+      });
+    });
+  </script>
+  <title>GTM Consulting | Fractional CRO Build and Hold | RAINCLOUD</title>
+  <meta name="description" content="Fixed-fee GTM consulting: 90 days building your ICP, offer matrix, outbound, content, and agents as one system, then 90 days holding it. From $3,000 per month. Run personally by a 3x VP of Sales.">
+  <link rel="canonical" href="https://rncld.com/gtm-consulting.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/site-extra.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RAINCLOUD">
+  <meta property="og:title" content="GTM Consulting | Fractional CRO Build and Hold | RAINCLOUD">
+  <meta property="og:description" content="Fixed-fee GTM consulting: 90 days building your ICP, offer matrix, outbound, content, and agents as one system, then 90 days holding it. From $3,000 per month. Run personally by a 3x VP of Sales.">
+  <meta property="og:url" content="https://rncld.com/gtm-consulting.html">
+  <meta property="og:image" content="https://rncld.com/assets/band-boardroom.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GTM Consulting | Fractional CRO Build and Hold | RAINCLOUD">
+  <meta name="twitter:description" content="Fixed-fee GTM consulting: 90 days building your ICP, offer matrix, outbound, content, and agents as one system, then 90 days holding it. From $3,000 per month. Run personally by a 3x VP of Sales.">
+  <meta name="twitter:image" content="https://rncld.com/assets/band-boardroom.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "RAINCLOUD",
+    "url": "https://rncld.com/",
+    "email": "colin@rncld.com",
+    "description": "An operator-led, tech-enabled go-to-market practice: GTM consulting, demand generation, content, AI readiness, and AI agents.",
+    "founder": {
+      "@type": "Person",
+      "name": "Colin Dowling"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "GTM Consulting",
+    "serviceType": "Fractional CRO engagement",
+    "url": "https://rncld.com/gtm-consulting.html",
+    "provider": {
+      "@type": "Organization",
+      "name": "RAINCLOUD",
+      "url": "https://rncld.com/"
+    },
+    "description": "A 180-day fixed-fee engagement that rebuilds a B2B go-to-market motion (Fix, 90 days) and holds it in place (Hold, 90 days).",
+    "offers": {
+      "@type": "Offer",
+      "price": "85000",
+      "priceCurrency": "USD",
+      "description": "Series A tier, total across 180 days. Foundations from $3,000 per month."
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is the Hold phase mandatory?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most GTM rebuilds fail in the quarter after the consultant leaves. The system drifts, nobody owns the calls that keep it tuned, and the team reverts to old habits. The Hold phase exists to stop that, so it is priced and contracted with the Fix as one engagement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Foundations and the Series A tier?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Foundations is advisory-led: I am on the call, not embedded in the build. It suits pre-seed and seed teams that need real GTM guidance before they can carry a full rebuild. Series A is the full Fix and Hold, with me in the work two sessions a week for 90 days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to do the GTM Audit first?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is the recommended entry point, and the $7,500 credits in full toward the engagement. If you already know what is broken, we can talk about skipping it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who actually does the work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I do. There is no delivery team, no junior analyst, and no offshore bench. Where a part of the work is better run by software, I hand it to the Engine or to AI agents, and I run those too."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav" class="scrolled">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li class="has-dropdown"><a href="/#offers">Work With Me<span class="caret"></span></a>
+          <ul class="dropdown">
+            <li><a href="/gtm-consulting.html">GTM Consulting</a></li>
+            <li><a href="/audit.html">GTM Audit</a></li>
+            <li><a href="/demand-generation.html">Demand Generation</a></li>
+            <li><a href="/content.html">Content</a></li>
+            <li><a href="/ai-readiness.html">AI Readiness</a></li>
+            <li><a href="/ai-agents.html">AI Agents</a></li>
+          </ul>
+        </li>
+        <li><a href="/blog/">Articles</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/contact.html?offer=not-sure" class="nav-cta">Book a call</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow"><span class="line"></span><span class="label label--accent">GTM Consulting</span></div>
+      <h1>Outbound, content, and your CRM are all running. <span class="thin">None of it compounds.</span></h1>
+      <p class="lede">I rebuild the whole motion: ICP, a tested offer matrix, and outbound, content, and agents working as one system. 90 days building it with you, 90 days making sure it holds. Fixed fee. No hourly billing.</p>
+      <div class="hero-actions">
+        <a href="/contact.html?offer=engagement" class="btn btn--primary"><span>Book a call</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#investment" class="text-link">See the tiers</a>
+      </div>
+      <div class="facts">
+        <div class="fact"><div class="num">180 days</div><div class="desc">90 to build, 90 to hold</div></div>
+        <div class="fact"><div class="num">From $3,000/mo</div><div class="desc">Foundations, month-to-month</div></div>
+        <div class="fact"><div class="num">$7,500</div><div class="desc">Audit credits in full</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Who it is for</div>
+        <h2>Built for companies that sell through people.</h2>
+      </div>
+      <div class="fit-grid reveal">
+        <div class="fit-col fit-col--yes"><h3>Who it is for</h3><ul><li>B2B companies with product-market fit and a GTM motion that is broken, inconsistent, or absent.</li><li>Teams working out of a CRM that sell through outbound or inbound email and phone conversations.</li><li>Founders and revenue leaders who want the operator in the work, not reviewing it.</li></ul></div>
+        <div class="fit-col fit-col--no"><h3>Who it is not for</h3><ul><li>Companies that want a deck and a handoff rather than a working system.</li><li>Teams that want to pay hourly or by the deliverable with no commitment to the Hold phase.</li><li>Pre-product-market-fit companies still searching for what to sell.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="engagement" class="alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">The engagement</div>
+        <h2>90 days to build it. <span style="color:var(--text-tertiary)">90 days to make it stick.</span></h2>
+      </div>
+<div class="process-row reveal">
+        <div class="process-step"><div class="sn">01</div><h3><a href="/audit.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid var(--border-medium);">GTM Audit</a></h3><p>I audit your current motion (offers, ICP, channel mix, content, competitive position) and deliver a full diagnosis with a ranked action plan. Two weeks. One findings session. You will know exactly what is broken and in what order to fix it.</p><div class="price">$7,500 one-time — credited in full toward any engagement. Money-back guarantee.</div></div>
+        <div class="process-step"><div class="sn">02</div><h3>The Fix (Days 1–90)</h3><p>Two working sessions per week, with me in the work rather than reviewing it. ICP definition, offer matrix, Engine architecture, outbound setup, content foundations, and the targeting that surfaces in-market buyers. The infrastructure of a working GTM motion — built live.</p><div class="price">Fixed fee, priced by tier — see below</div></div>
+        <div class="process-step"><div class="sn">03</div><h3>The Hold (Days 91–180)</h3><p>The system is live and your team owns it. I stay on to make sure it doesn't drift — weekly then bi-weekly, catching the wrong calls before they compound. Most GTM builds fail in the quarter after the consultant leaves. This is the half that prevents that.</p><div class="price">Mandatory second phase, not an optional add-on</div></div>
+      </div>    </div>
+  </section>
+
+  <section id="investment">
+    <div class="container">
+      <div class="tier-intro reveal" style="margin-top:0">
+        <div class="tier-label">Investment</div>
+        <h3>Four ways in. One methodology.</h3>
+        <p>
+          Every tier runs the same two phases and the same operator. What changes is the size of the
+          motion being rebuilt. Fix and Hold are quoted together as one fixed fee, agreed before we
+          start &mdash; not billed by the hour, and not re-scoped halfway through.
+        </p>
+      </div>
+
+      <div class="tier-grid reveal">
+        <div class="tier-card" id="advisory">
+          <div class="tier-name">Foundations</div>
+          <div class="tier-stage">Pre-Seed / Seed</div>
+          <div class="tier-price"><span class="tier-prefix">Starting at</span>$3,000<span class="tier-unit">per month, scaling to $6,000 by scope</span></div>
+          <div class="tier-terms">Month-to-month. No long-term commitment.</div>
+          <p class="tier-desc">
+            GTM audit, messaging and ICP tightening, CRM and process cleanup, and a weekly advisory
+            cadence. Advisory-led rather than rebuild-led &mdash; I am on the call, not embedded in the
+            build. The entry point for teams that need real GTM guidance before they can carry a full
+            engagement.
+          </p>
+          <a href="/contact.html?offer=foundations" class="tier-link">Ask about Foundations &rarr;</a>
+        </div>
+
+        <div class="tier-card tier-card--feature">
+          <div class="tier-name">Series A</div>
+          <div class="tier-stage">Fix + Hold</div>
+          <div class="tier-price"><span class="tier-prefix" aria-hidden="true">&nbsp;</span>$85,000<span class="tier-unit">total &middot; 180 days</span></div>
+          <div class="tier-phases">
+            <div class="tier-phase"><span>Fix &middot; Days 1&ndash;90</span><strong>$65,000</strong></div>
+            <div class="tier-phase"><span>Hold &middot; Days 91&ndash;180</span><strong>$20,000</strong></div>
+          </div>
+          <p class="tier-desc">
+            The full GTM motion rebuild, then ninety days of holding it in place. This is the shape
+            most companies at this stage need.
+          </p>
+          <a href="/contact.html?offer=series-a" class="tier-link">Ask about availability &rarr;</a>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-name">Series B</div>
+          <div class="tier-stage">Fix + Hold</div>
+          <div class="tier-price"><span class="tier-prefix" aria-hidden="true">&nbsp;</span>$145,000<span class="tier-unit">total &middot; 180 days</span></div>
+          <div class="tier-phases">
+            <div class="tier-phase"><span>Fix &middot; Days 1&ndash;90</span><strong>$110,000</strong></div>
+            <div class="tier-phase"><span>Hold &middot; Days 91&ndash;180</span><strong>$35,000</strong></div>
+          </div>
+          <p class="tier-desc">
+            A larger revenue org, more channels in play, and more existing process to unwind before
+            the rebuild can hold. Same two phases, wider surface area.
+          </p>
+          <a href="/contact.html?offer=series-b" class="tier-link">Ask about availability &rarr;</a>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-name">Series D+</div>
+          <div class="tier-stage">Custom SOW</div>
+          <div class="tier-price"><span class="tier-prefix">Starting at</span>$250,000<span class="tier-unit">total &middot; scoped per engagement</span></div>
+          <div class="tier-phases">
+            <div class="tier-phase"><span>Fix &middot; Days 1&ndash;90</span><strong>From $200,000</strong></div>
+            <div class="tier-phase"><span>Hold &middot; Days 91&ndash;180</span><strong>From $50,000</strong></div>
+          </div>
+          <p class="tier-desc">
+            Contracted as a project SOW rather than a retainer. Scoped and priced against the specific
+            motion, the number of segments, and the internal teams involved.
+          </p>
+          <a href="/contact.html?offer=enterprise" class="tier-link">Start a scoping conversation &rarr;</a>
+        </div>
+      </div>
+
+      <p class="tier-foot">
+        The Hold phase is mandatory in every Fix engagement. It is not an optional add-on and it is not
+        sold separately &mdash; most GTM rebuilds fail in the quarter after the consultant leaves, and
+        pricing them as one engagement is the only way to prevent that. The $7,500 GTM Audit credits in
+        full toward any tier, or toward any other RAINCLOUD engagement. Companies between Series B and Series D+ are quoted individually; ask and
+        I will scope it.
+      </p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">What you get</div>
+        <h2>Four outputs. <span style="color:var(--text-tertiary)">Zero dashboards.</span></h2>
+      </div>
+      <div class="del-stack">
+        <div class="del-card">
+          <div class="del-text"><span class="cadence c-q">Weeks 1–8</span><h3>The GTM System</h3><p>A fully built, live GTM system. ICP definition, offer matrix, outbound sequences, BoFu content architecture, and the targeting that surfaces in-market buyers. Not a doc. A running system.</p></div>
+          <div class="del-img"><img src="/assets/out-gtm-system.webp" alt="The GTM system overview: ICP, offers and channels" width="820" height="547"></div>
+        </div>
+        <div class="del-card">
+          <div class="del-text"><span class="cadence c-m">Ongoing</span><h3>The Engine Playbook</h3><p>Your operating manual for the Engine. How outbound, content, and agents work in concert for your specific ICP. Updated as you learn what converts.</p></div>
+          <div class="del-img"><img src="/assets/out-engine-playbook.webp" alt="The Engine playbook: outbound, content and agents working in concert" width="820" height="547"></div>
+        </div>
+        <div class="del-card">
+          <div class="del-text"><span class="cadence c-w">Monthly</span><h3>BoFu Content</h3><p>Keyword-targeted, buyer-intent-mapped content that compounds over time. Ranking pages, comparison content, and lead magnets that make your outbound more credible.</p></div>
+          <div class="del-img"><img src="/assets/out-bofu-content.webp" alt="Bottom-of-funnel content plan with target keywords" width="820" height="547"></div>
+        </div>
+        <div class="del-card">
+          <div class="del-text"><span class="cadence c-q">Quarterly</span><h3>GTM Intelligence Brief</h3><p>A structured synthesis of what is working, what is breaking, what competitors are doing, and where to focus next quarter. The report your board actually wants to see.</p></div>
+          <div class="del-img"><img src="/assets/out-intel-brief.webp" alt="Quarterly GTM brief: pipeline contribution by motion" width="820" height="547"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Compared with the alternatives</div>
+        <h2>Instead of&hellip;</h2>
+      </div>
+      <div class="instead reveal">
+        <div class="instead-row"><div class="io">Instead of</div><h3>A full-time CRO hire</h3><p>One person, one point of view, a long search, and a salary before the system exists.</p><div class="tradeoff"><b>Honest tradeoff:</b> A full-time hire lives in the business every day and owns the team. I do not. The rebuild is faster and cheaper, but then someone has to carry it.</div></div>
+        <div class="instead-row"><div class="io">Instead of</div><h3>A big-firm strategy deck</h3><p>A confident deck from people who will not be there when the system has to run.</p><div class="tradeoff"><b>Honest tradeoff:</b> A big firm brings research depth and brand weight for a board. A deck is not a working motion, but it may be the artifact you need.</div></div>
+        <div class="instead-row"><div class="io">Instead of</div><h3>DIY by committee</h3><p>Everyone adds a channel. Nobody owns the architecture that makes them work together.</p><div class="tradeoff"><b>Honest tradeoff:</b> Doing it yourselves keeps every lesson in house. It also tends to take twice as long and still miss the foundation.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:48px 0 0"><div class="container"><p class="lead-p reveal"><strong>The build can hand off.</strong> Once the foundation and the Engine are in place, <a class="text-link" href="/demand-generation.html">Demand Generation</a> or <a class="text-link" href="/ai-agents.html">AI Agents</a> can keep the parts your team should not be spending time on running. I take on a limited number of engagements at a time.</p></div></section>
+
+  <div class="pairs-wrap">
+    <div class="container">
+      <div class="pairs"><span class="pl">Pairs with</span><a class="pair-chip" href="/demand-generation.html">Demand Generation</a><a class="pair-chip" href="/ai-agents.html">AI Agents</a><a class="pair-chip" href="/audit.html">GTM Audit (entry)</a></div>
+    </div>
+  </div>
+
+  <section class="alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">FAQ</div>
+        <h2>The obvious questions.</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item"><summary>Why is the Hold phase mandatory?</summary><div class="faq-a"><p>Most GTM rebuilds fail in the quarter after the consultant leaves. The system drifts, nobody owns the calls that keep it tuned, and the team reverts to old habits. The Hold phase exists to stop that, so it is priced and contracted with the Fix as one engagement.</p></div></details>
+        <details class="faq-item"><summary>What is the difference between Foundations and the Series A tier?</summary><div class="faq-a"><p>Foundations is advisory-led: I am on the call, not embedded in the build. It suits pre-seed and seed teams that need real GTM guidance before they can carry a full rebuild. Series A is the full Fix and Hold, with me in the work two sessions a week for 90 days.</p></div></details>
+        <details class="faq-item"><summary>Do I need to do the GTM Audit first?</summary><div class="faq-a"><p>It is the recommended entry point, and the $7,500 credits in full toward the engagement. If you already know what is broken, we can talk about skipping it.</p></div></details>
+        <details class="faq-item"><summary>Who actually does the work?</summary><div class="faq-a"><p>I do. There is no delivery team, no junior analyst, and no offshore bench. Where a part of the work is better run by software, I hand it to the Engine or to AI agents, and I run those too.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-block" style="background:var(--bg-secondary)">
+    <div class="container">
+      <div class="reveal">
+        <div class="label label--accent" style="margin-bottom:20px">Get started</div>
+        <h2>Book a 30-minute call.</h2>
+        <p>Not sure which tier fits? I will tell you. I take on a limited number of engagements at a time.</p>
+        <a href="/contact.html?offer=engagement" class="btn btn--primary"><span>Book a call</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="sf">
+    <div class="container">
+      <div class="sf-top">
+        <div>
+          <div class="sf-logo">RAIN<em>CLOUD</em></div>
+          <p class="sf-tag">An operator-led, tech-enabled go-to-market practice. Run personally by Colin Dowling.</p>
+        </div>
+        <div class="sf-cols">
+          <div>
+            <div class="sf-h">Work with me</div>
+            <ul>
+              <li><a href="/gtm-consulting.html">GTM Consulting</a></li>
+              <li><a href="/audit.html">GTM Audit</a></li>
+              <li><a href="/demand-generation.html">Demand Generation</a></li>
+              <li><a href="/content.html">Content</a></li>
+              <li><a href="/ai-readiness.html">AI Readiness</a></li>
+              <li><a href="/ai-agents.html">AI Agents</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Read</div>
+            <ul>
+              <li><a href="/blog/">Articles</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
+              <li><a href="/llms.txt">llms.txt</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Talk</div>
+            <ul>
+              <li><a href="/contact.html?offer=not-sure">Book a call</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sf-copy">&copy; 2026 RAINCLOUD. All rights reserved.</div>
+    </div>
+  </footer>
+  <script>
+    window.addEventListener('scroll', function(){ var n=document.getElementById('nav'); if(n) n.classList.toggle('scrolled', window.scrollY > 60); });
+    var revealObs = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el){ revealObs.observe(el); });
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click', function(e){ var h=a.getAttribute('href'); if(h.length>1){ var t=document.querySelector(h); if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); } } }); });
+  </script>
+</body>
+</html>
