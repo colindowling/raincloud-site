@@ -13,13 +13,13 @@
     gtag('config', 'G-041BP5G4HF');
     document.addEventListener('click', function(e){
       var a = e.target.closest('[data-cta]'); if(!a) return;
-      gtag('event', 'pricing_v2_cta_click', { cta: a.getAttribute('data-cta'), cta_text: (a.textContent||'').trim().slice(0,80), page: location.pathname });
+      gtag('event', 'pricing_cta_click', { cta: a.getAttribute('data-cta'), cta_text: (a.textContent||'').trim().slice(0,80), page: location.pathname });
     });
   </script>
   <title>Pricing | RAINCLOUD</title>
   <meta name="description" content="Every price, published. $5,000 audit. $37,500 over 90 days, stepping down $15,000, $12,500, $10,000. Then $7,500/mo ongoing. Every engagement starts with the 100-Point GTM Audit.">
-  <!-- DRAFT: unlinked and noindex until approved. Do not add to sitemap or nav. -->
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://rncld.com/pricing/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +27,9 @@
   <link rel="stylesheet" href="/assets/site.css">
   <link rel="stylesheet" href="/assets/site-extra.css">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rncld.com/pricing/">
+  <meta property="og:image" content="https://rncld.com/assets/band-boardroom.png">
+  <meta name="twitter:card" content="summary_large_image">
   <meta property="og:site_name" content="RAINCLOUD">
   <meta property="og:title" content="Pay less every month. Own more every month. | RAINCLOUD">
   <meta property="og:description" content="$5,000 audit · $37,500 over 90 days · $7,500/mo ongoing. The GTM engagement that gets cheaper as you take it over.">
@@ -444,10 +447,11 @@
             <li><a href="/ai-agents.html">AI Agents</a></li>
           </ul>
         </li>
+        <li><a href="/pricing/" aria-current="page" style="color:var(--text-primary)">Pricing</a></li>
         <li><a href="/blog/">Articles</a></li>
         <li><a href="/about.html">About</a></li>
         <li><a href="/contact.html">Contact</a></li>
-        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=pricing_v2&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav">Book the audit call</a></li>
+        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=pricing_page&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav">Book the audit call</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -470,7 +474,7 @@
             <div class="it"><span class="pp-num">$7,500/mo</span><span class="w">ongoing</span></div>
           </div>
           <div class="pp-cta-row">
-            <a class="btn btn--solid" href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=pricing_v2&amp;utm_content=hero" target="_blank" rel="noopener" data-cta="hero"><span>Book the audit call</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a class="btn btn--solid" href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=pricing_page&amp;utm_content=hero" target="_blank" rel="noopener" data-cta="hero"><span>Book the audit call</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             <button type="button" class="text-link" data-fw data-cta="hero-framework">Download the 100-point framework</button>
           </div>
           <p class="support">Every engagement starts with the 100-Point GTM Audit. Nothing is sold before it.</p>
@@ -612,7 +616,7 @@
             <div class="pr pp-num">$5,000</div>
             <div class="tm">10 business days</div>
             <p class="ln">I score all 100 points against your CRM data and your team, measure your baseline, and give you the five findings costing you pipeline right now.</p>
-            <a class="btn btn--solid" href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=pricing_v2&amp;utm_content=ladder" target="_blank" rel="noopener" data-cta="ladder"><span>Book the audit call</span></a>
+            <a class="btn btn--solid" href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=pricing_page&amp;utm_content=ladder" target="_blank" rel="noopener" data-cta="ladder"><span>Book the audit call</span></a>
           </div>
         </li>
         <li class="step s3">
@@ -680,7 +684,7 @@
           <p class="isnt">The audit diagnoses. It does not build. The ICP rebuild, the message map, the pipeline model, the sequences, the scorecard in your CRM &mdash; those are the 90-day engagement. The audit tells you precisely what&rsquo;s broken and what it&rsquo;s worth fixing. What you do with that is yours.</p>
           <div class="pp-terms">$5,000<span>&middot;</span>10 business days<span>&middot;</span>required before any engagement<span>&middot;</span>not credited toward the build<span>&middot;</span>no discount</div>
           <div class="pp-aside" style="margin-top:22px">I don&rsquo;t sell a 90-day build off a sales call, and you shouldn&rsquo;t buy one. The audit is how we both find out whether this is worth doing. Roughly half the companies I audit don&rsquo;t go further, and that&rsquo;s a fine outcome &mdash; they still own the diagnosis.</div>
-          <a class="btn btn--solid" href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=pricing_v2&amp;utm_content=audit" target="_blank" rel="noopener" data-cta="audit"><span>Book the audit call</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a class="btn btn--solid" href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=pricing_page&amp;utm_content=audit" target="_blank" rel="noopener" data-cta="audit"><span>Book the audit call</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
     </div>
@@ -758,7 +762,7 @@
         <div>
           <p class="pp-small" style="margin-top:6px">I run two of these at a time. Start dates are limited by that, not by sales.</p>
           <div class="pp-cta-row" style="margin-top:24px">
-            <a class="btn btn--solid" href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=pricing_v2&amp;utm_content=fix" target="_blank" rel="noopener" data-cta="fix"><span>Book the audit call</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a class="btn btn--solid" href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=pricing_page&amp;utm_content=fix" target="_blank" rel="noopener" data-cta="fix"><span>Book the audit call</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             <span class="sub">The audit comes first. Always.</span>
           </div>
         </div>
@@ -951,7 +955,7 @@
       <h2>Start where everyone starts</h2>
       <p>Thirty minutes to see whether this fits. If it does, the audit starts within a week and you have your score ten business days later.</p>
       <p class="sl">$5,000<span>&middot;</span>10 business days<span>&middot;</span>100 points scored<span>&middot;</span>five findings that are costing you pipeline</p>
-      <a class="btn btn--solid" href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=pricing_v2&amp;utm_content=final" target="_blank" rel="noopener" data-cta="final"><span>Book the audit call</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a class="btn btn--solid" href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=pricing_page&amp;utm_content=final" target="_blank" rel="noopener" data-cta="final"><span>Book the audit call</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <button type="button" class="text-link sec" data-fw data-cta="final-framework">Or download the 100-point framework and score yourself against it.</button>
     </div>
   </section>
@@ -970,6 +974,7 @@
             <ul>
               <li><a href="/gtm-consulting.html">GTM Consulting</a></li>
               <li><a href="/audit.html">GTM Audit</a></li>
+              <li><a href="/pricing/">Pricing</a></li>
               <li><a href="/demand-generation.html">Demand Generation</a></li>
               <li><a href="/content.html">Content</a></li>
               <li><a href="/ai-readiness.html">AI Readiness</a></li>
@@ -988,7 +993,7 @@
           <div>
             <div class="sf-h">Talk</div>
             <ul>
-              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=pricing_v2&amp;utm_content=footer" target="_blank" rel="noopener">Book the audit call</a></li>
+              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=pricing_page&amp;utm_content=footer" target="_blank" rel="noopener">Book the audit call</a></li>
               <li><a href="/contact.html">Contact</a></li>
               <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
             </ul>
@@ -1003,7 +1008,7 @@
   <div class="dock" id="dock" aria-hidden="true">
     <div class="container">
       <div class="t"><b>$5,000 audit</b><span>10 business days &middot; 100 points scored</span></div>
-      <a class="btn btn--solid" tabindex="-1" href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=pricing_v2&amp;utm_content=dock" target="_blank" rel="noopener" data-cta="dock"><span>Book the audit call</span></a>
+      <a class="btn btn--solid" tabindex="-1" href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=pricing_page&amp;utm_content=dock" target="_blank" rel="noopener" data-cta="dock"><span>Book the audit call</span></a>
     </div>
   </div>
 
@@ -1060,7 +1065,7 @@
       var em=fwForm.email.value.trim();
       if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){ fwMsg.textContent='Please enter a valid work email.'; fwMsg.className='msg err'; return; }
       fwMsg.textContent='Sending\u2026'; fwMsg.className='msg';
-      fetch('https://formspree.io/f/xjglkdyp', { method:'POST', headers:{'Accept':'application/json','Content-Type':'application/json'}, body: JSON.stringify({ email: em, offer: '100-Point GTM Framework download', source: 'pricing-v2', _subject: 'Framework request: ' + em }) })
+      fetch('https://formspree.io/f/xjglkdyp', { method:'POST', headers:{'Accept':'application/json','Content-Type':'application/json'}, body: JSON.stringify({ email: em, offer: '100-Point GTM Framework download', source: 'pricing', _subject: 'Framework request: ' + em }) })
         .then(function(r){ if(!r.ok) throw 0; fwMsg.textContent='Done. The framework is on its way to ' + em + '.'; fwForm.email.value=''; if(window.gtag) gtag('event','framework_request',{page:location.pathname}); })
         .catch(function(){ fwMsg.textContent='Something went wrong. Email colin@rncld.com and I\u2019ll send it directly.'; fwMsg.className='msg err'; });
     });

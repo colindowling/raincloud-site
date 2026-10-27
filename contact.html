@@ -61,7 +61,7 @@
     });
   </script>
   <title>Contact — RAINCLOUD</title>
-  <meta name="description" content="Talk to Colin Dowling about your go-to-market motion. Book a 30-minute call or send a note — the GTM Audit, the Fix + Hold engagement, or Foundations advisory.">
+  <meta name="description" content="Talk to Colin Dowling about your go-to-market motion. Book a 30-minute call or send a note — the 100-Point GTM Audit, the 90-Day GTM Fix, or ongoing advisory.">
   <link rel="canonical" href="https://rncld.com/contact.html">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -439,12 +439,12 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="RAINCLOUD">
   <meta property="og:title" content="Contact — RAINCLOUD">
-  <meta property="og:description" content="Talk to Colin Dowling about your go-to-market motion. Book a 30-minute call or send a note — the GTM Audit, the Fix + Hold engagement, or Foundations advisory.">
+  <meta property="og:description" content="Talk to Colin Dowling about your go-to-market motion. Book a 30-minute call or send a note — the 100-Point GTM Audit, the 90-Day GTM Fix, or ongoing advisory.">
   <meta property="og:url" content="https://rncld.com/contact.html">
   <meta property="og:image" content="https://rncld.com/assets/band-boardroom.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact — RAINCLOUD">
-  <meta name="twitter:description" content="Talk to Colin Dowling about your go-to-market motion. Book a 30-minute call or send a note — the GTM Audit, the Fix + Hold engagement, or Foundations advisory.">
+  <meta name="twitter:description" content="Talk to Colin Dowling about your go-to-market motion. Book a 30-minute call or send a note — the 100-Point GTM Audit, the 90-Day GTM Fix, or ongoing advisory.">
   <meta name="twitter:image" content="https://rncld.com/assets/band-boardroom.png">
   <script type="application/ld+json">
   {
@@ -475,6 +475,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
             <li><a href="/ai-agents.html">AI Agents</a></li>
           </ul>
         </li>
+        <li><a href="/pricing/">Pricing</a></li>
         <li><a href="/blog/">Articles</a></li>
         <li><a href="/about.html">About</a></li>
         <li><a href="/contact.html">Contact</a></li>
@@ -554,11 +555,9 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           <label for="coffer">What are you interested in?</label>
           <select id="coffer" name="offer" required>
             <option value="" disabled selected>Select one&hellip;</option>
-            <option value="GTM Audit">GTM Audit &mdash; $7,500</option>
-            <option value="Foundations">Foundations &mdash; from $3,000/mo (Pre-Seed / Seed)</option>
-            <option value="Series A Engagement">Fix + Hold &mdash; $85,000 (Series A)</option>
-            <option value="Series B Engagement">Fix + Hold &mdash; $145,000 (Series B)</option>
-            <option value="Enterprise Engagement">Fix + Hold &mdash; from $250,000 (Series D+)</option>
+            <option value="GTM Audit">100-Point GTM Audit &mdash; $5,000 (everyone starts here)</option>
+            <option value="90-Day GTM Fix">90-Day GTM Fix &mdash; $37,500, then $7,500/mo advisory</option>
+            <option value="GTM Scorecard">GTM Scorecard &mdash; $4,000/mo, billed quarterly</option>
             <option value="Demand Generation">Demand Generation &mdash; $10,000 launch + 15% of closed-won</option>
             <option value="Content">Content &mdash; BoFu search content</option>
             <option value="Ghostwriting">Ghostwriting &mdash; from $1,000/mo</option>
@@ -602,6 +601,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
             <ul>
               <li><a href="/gtm-consulting.html">GTM Consulting</a></li>
               <li><a href="/audit.html">GTM Audit</a></li>
+              <li><a href="/pricing/">Pricing</a></li>
               <li><a href="/demand-generation.html">Demand Generation</a></li>
               <li><a href="/content.html">Content</a></li>
               <li><a href="/ai-readiness.html">AI Readiness</a></li>
@@ -656,12 +656,15 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     if (cForm) {
       const OFFER_MAP = {
         audit: 'GTM Audit',
-        foundations: 'Foundations',
-        advisory: 'Foundations',
-        'series-a': 'Series A Engagement',
-        engagement: 'Series A Engagement',
-        'series-b': 'Series B Engagement',
-        enterprise: 'Enterprise Engagement',
+        engagement: '90-Day GTM Fix',
+        fix: '90-Day GTM Fix',
+        advisory: '90-Day GTM Fix',
+        scorecard: 'GTM Scorecard',
+        // legacy deep links from the retired tier model
+        foundations: 'GTM Scorecard',
+        'series-a': '90-Day GTM Fix',
+        'series-b': '90-Day GTM Fix',
+        enterprise: '90-Day GTM Fix',
         'demand-gen': 'Demand Generation',
         content: 'Content',
         ghostwriting: 'Ghostwriting',
