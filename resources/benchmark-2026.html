@@ -61,7 +61,7 @@
     });
   </script>
   <title>2026 B2B Sales Benchmark Report — RAINCLOUD</title>
-  <meta name="description" content="The 2026 B2B Technology Sales Benchmark Report. Built on 4.2M analyzed opportunities, 50,000 win-loss interviews, and 939 tracked B2B companies. The Intelligence Gap: what separates the top quartile from everyone else. Free download.">
+  <meta name="description" content="The 2026 B2B Technology Sales Benchmark Report. A synthesis of more than thirty published benchmark studies on B2B revenue performance. The Intelligence Gap: what separates the top quartile from everyone else. Free download.">
   <link rel="canonical" href="https://rncld.com/resources/benchmark-2026.html">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -377,16 +377,73 @@ footer {
   }
   </script>
   <link rel="stylesheet" href="/assets/site-nav.css">
+  <style id="rc-navbase">
+/* --- NAVIGATION --- */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 18px 0; transition: all 0.5s var(--ease-out);
+}
+nav.scrolled {
+  background: rgba(10, 10, 10, 0.92); backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-subtle);
+  padding: 12px 0;
+}
+nav .container { display: flex; align-items: center; justify-content: space-between; }
+
+.nav-logo { font-family: var(--font-heading); font-weight: 400; font-size: 1.1rem; letter-spacing: 0.25em; text-transform: uppercase; }
+.nav-logo em { font-style: normal; color: var(--text-secondary); font-weight: 300; }
+
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 0.72rem; font-weight: 400; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-secondary); transition: color 0.3s ease;
+  position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px; background: var(--accent-blue);
+  transition: width 0.3s var(--ease-out);
+}
+.nav-links a:hover { color: var(--accent-blue); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  font-size: 0.68rem !important; padding: 8px 20px;
+  border: 1px solid var(--border-medium); transition: all 0.3s ease;
+}
+.nav-cta:hover { border-color: var(--text-primary); background: var(--text-primary); color: var(--bg-primary) !important; }
+.nav-cta::after { display: none !important; }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1px; background: var(--text-primary); margin: 5px 0; transition: all 0.3s ease; }
+
+
+@media (max-width: 768px){ .nav-links{display:none} .nav-toggle{display:block}
+ .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(10,10,10,.97);backdrop-filter:blur(20px);padding:28px;gap:20px;border-bottom:1px solid var(--border-subtle)} }
+.report-hero{padding-top:150px}
+</style>
+  <style id="rc-global">
+    nav .nav-links a[aria-current="page"]{color:var(--text-primary);}
+    footer.sf .sf-also{margin-top:14px;font-size:.72rem;line-height:1.6;color:var(--text-tertiary);max-width:300px;}
+    footer.sf .sf-also a{color:var(--text-secondary);border-bottom:1px solid var(--border-subtle);}
+    footer.sf .sf-also a:hover{color:var(--text-primary);}
+  </style>
 </head>
 <body>
-
-  <!-- MINIMAL LP NAV -->
-  <div class="lp-nav">
-    <div class="lp-nav-inner">
+  <nav id="nav" class="scrolled">
+    <div class="container nav-inner">
       <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
-      <a href="/" class="back-link">← Back to RAINCLOUD</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/audit.html">The Audit</a></li>
+        <li><a href="/gtm-consulting.html">The Engagement</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/">Articles</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=benchmark_page&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav">Book the audit call</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
-  </div>
+  </nav>
 
   <!-- HERO -->
   <section class="report-hero">
@@ -400,23 +457,11 @@ footer {
           <p class="lede">Something is wrong in B2B technology sales. Win rates have fallen to 21 percent. Sales cycles are 38 percent longer than they were in 2021. Nearly three out of every four reps missed quota last year. The data points to a single, organizing conclusion — and the teams that close the gap consistently outperform those that don't. Not by five percent. By fifty percent within twelve months.</p>
 
           <div class="report-stats">
-            <div class="r-stat">
-              <div class="num">4.2<span style="font-size: 0.65em; color: var(--text-tertiary);">M</span></div>
-              <div class="desc">Analyzed opportunities</div>
+            <div class="r-stat"><div class="num">30+</div><div class="desc">Published benchmark studies synthesized</div></div>
+            <div class="r-stat"><div class="num">4.2<span style="font-size: 0.65em; color: var(--text-tertiary);">M</span></div><div class="desc">Opportunities across the cited studies</div></div>
+            <div class="r-stat"><div class="num">50,000</div><div class="desc">Win-loss interviews across the cited studies</div></div>
+            <div class="r-stat"><div class="num">939</div><div class="desc">B2B companies across the cited studies</div></div>
             </div>
-            <div class="r-stat">
-              <div class="num">50,000</div>
-              <div class="desc">Structured win-loss interviews</div>
-            </div>
-            <div class="r-stat">
-              <div class="num">939</div>
-              <div class="desc">B2B companies tracked</div>
-            </div>
-            <div class="r-stat">
-              <div class="num">30+</div>
-              <div class="desc">Benchmark studies synthesized</div>
-            </div>
-          </div>
         </div>
 
         <div class="report-form-wrap">
@@ -508,7 +553,7 @@ footer {
   <div class="method-strip">
     <div class="container">
       <div class="label">Methodology</div>
-      <h2>Built on <em>4.2 million analyzed opportunities</em>, <em>50,000 win-loss interviews</em>, <em>700 competitive intelligence practitioners</em>, <em>939 tracked B2B companies</em>, and synthesis from more than thirty published benchmark studies.</h2>
+      <h2>A synthesis of more than thirty published benchmark studies on B2B revenue performance. Sources and derivations in the appendix.</h2>
       <p>RAINCLOUD's perspective, where it appears, reflects the analytical framework applied to that data — the lens through which revenue teams diagnose competitive deal patterns, win-loss drivers, and intelligence gaps. The full citation list and derivations appear in the appendix.</p>
     </div>
   </div>
@@ -518,19 +563,16 @@ footer {
       <div class="sf-top">
         <div>
           <div class="sf-logo">RAIN<em>CLOUD</em></div>
-          <p class="sf-tag">An operator-led, tech-enabled go-to-market practice. Run personally by Colin Dowling.</p>
+          <p class="sf-tag">One engagement: a 100-point GTM audit, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
+          <p class="sf-also">Also from Colin Dowling: <a href="https://www.withants.com/" target="_blank" rel="noopener">Ants</a> (managed AI agents), <a href="https://www.friendlyghostwriter.com/" target="_blank" rel="noopener">Ghostwriter</a> (B2B content), The AI Ready Advisor (executive AI strategy).</p>
         </div>
         <div class="sf-cols">
           <div>
             <div class="sf-h">Work with me</div>
             <ul>
-              <li><a href="/gtm-consulting.html">GTM Consulting</a></li>
-              <li><a href="/audit.html">GTM Audit</a></li>
+              <li><a href="/audit.html">The Audit</a></li>
+              <li><a href="/gtm-consulting.html">The Engagement</a></li>
               <li><a href="/pricing/">Pricing</a></li>
-              <li><a href="/demand-generation.html">Demand Generation</a></li>
-              <li><a href="/content.html">Content</a></li>
-              <li><a href="/ai-readiness.html">AI Readiness</a></li>
-              <li><a href="/ai-agents.html">AI Agents</a></li>
             </ul>
           </div>
           <div>
@@ -538,6 +580,7 @@ footer {
             <ul>
               <li><a href="/blog/">Articles</a></li>
               <li><a href="/about.html">About</a></li>
+              <li><a href="/resources/100-point-gtm-framework.html">The 100-Point GTM Framework</a></li>
               <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
               <li><a href="/llms.txt">llms.txt</a></li>
             </ul>
@@ -545,7 +588,7 @@ footer {
           <div>
             <div class="sf-h">Talk</div>
             <ul>
-              <li><a href="/contact.html?offer=not-sure">Book a call</a></li>
+              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=benchmark_page&amp;utm_content=footer" target="_blank" rel="noopener" data-cta="footer">Book the audit call</a></li>
               <li><a href="/contact.html">Contact</a></li>
               <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
             </ul>

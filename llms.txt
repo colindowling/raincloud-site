@@ -1,39 +1,44 @@
 # RAINCLOUD
 
-> RAINCLOUD is an operator-led, tech-enabled go-to-market practice. I diagnose what is broken, build the system, and run the parts your team should not be spending time on. One practice, six ways in: GTM Audit, GTM Consulting, Demand Generation, Content, AI Readiness, and AI Agents. No hourly billing. No dashboards.
+> RAINCLOUD sells one engagement: a 100-point GTM audit, a 90-day rebuild of the go-to-market motion on a fee that steps down every month, and ongoing advisory while the client's own team runs it. Run personally by Colin Dowling.
 
-RAINCLOUD is run by Colin Dowling, a 3x VP of Sales (VP Global Enterprise Sales at GoDaddy, SVP Revenue at Alembic from seed to a $145M Series B, VP Channel Sales at Liquid Web, Enterprise Sales at WP Engine) and 2x founder. Colin runs every engagement personally. There is no delivery team, no junior analyst, and no offshore bench. Availability is limited: I take on a limited number of engagements at a time.
+RAINCLOUD is run by Colin Dowling: 3x VP of Sales · 2x founder · Host, Modern Business Life. VP Global Enterprise Sales at GoDaddy, SVP Revenue at Alembic (Seed to $145M Series B), VP Channel Sales at Liquid Web, Enterprise Sales at WP Engine. Colin runs every engagement personally. There is no delivery team, no junior analyst, and no offshore bench. Two builds at a time, with a small number of advisory clients alongside them.
 
-## How it fits together
+## The engagement
 
-Everything starts from the same foundation: a locked ICP and a 5x5 offer matrix (five offers, five angles each). Strategy decides what to do (GTM Audit, GTM Consulting, AI Readiness). Pipeline executes against the foundation (Demand Generation, Content). Automation protects what the other two produce (AI Agents).
+1. The 100-Point GTM Framework. Free. Every point the audit scores, published in full.
+2. The 100-Point GTM Audit. $5,000, 10 business days. All 100 points across ten sections scored 0-3 against the client's CRM data and four to six interviews; a signed baseline; the five findings costing the most pipeline, each quantified; the fix sequence; a one-page business case; a 45-minute readout. Required before any engagement. Not credited toward the build. No refund.
+3. The 90-Day GTM Fix. $37,500, billed $15,000 (month 1, diagnose and rebuild), $12,500 (month 2, install), $10,000 (month 3, prove and hand off). The outbound architecture installed in month 2 uses four components: Hunter, Harvester, Farmer and Shepherd.
+4. Ongoing. Advisory at $7,500 per month from month four (monthly operating review, monthly work session, weekly office hours, quarterly re-score of all 100 points). Or the GTM Scorecard at $4,000 per month, billed quarterly: measurement and direction only, available from month seven or directly after an audit.
 
-The RAINCLOUD Engine is the proprietary system behind the pipeline work. Its public components: Hunter (finds companies showing signs of the problem you solve and starts the conversation by email), Harvester (turns LinkedIn engagement from the right people into real conversations), Farmer (plants bottom-of-funnel content that ranks, compounds, and feeds the other three), and Shepherd (short-form social video that guides attention to your site, fulfilled with a partner).
-
-## Core Pages
-
-- [Home](https://rncld.com/): Positioning, the five problems RAINCLOUD solves, the Engine, a "start where you are" router, and the six offers.
-- [Pricing](https://rncld.com/pricing/): Every GTM price, published. 100-Point GTM Audit $5,000 (10 business days, required before any engagement, not credited, no refund). 90-Day GTM Fix $37,500, billed $15,000 / $12,500 / $10,000 across months 1-3. Advisory $7,500 per month from month four. Six-month minimum from engagement start, cancel any time after. GTM Scorecard $4,000 per month, billed quarterly, available from month seven or directly after an audit. No money-back guarantee.
-- [GTM Consulting](https://rncld.com/gtm-consulting.html): The 90-Day GTM Fix and Advisory, run personally by Colin Dowling. Fee steps down $2,500 a month as the client's team takes over. See Pricing for full terms.
-- [GTM Audit](https://rncld.com/audit.html): The 100-Point GTM Audit. $5,000, 10 business days. Required before any engagement, not credited toward it, no refund. An agent opportunity map is available as an add-on, scoped as appropriate.
-- [Demand Generation](https://rncld.com/demand-generation.html): The Engine run for you (Hunter, Harvester, Farmer; Shepherd optional). $10,000 for a 3-month launch phase paid up front, or $4,000 per month for 3 months, then 15% of closed-won total contract value on Engine-sourced deals. Farmer content is included.
-- [Content](https://rncld.com/content.html): Two tracks. Track 1, bottom-of-funnel search content ([details](https://rncld.com/bofu-content.html)): plan $10,000 one-time; plan plus done-for-you $5,000 per month on a 6-month contract with 50% back if agreed KPIs are not met. Track 2, executive ghostwriting: Strategy from $3,000 per month, Execution from $1,000 per month, retainer minimum of two pieces a month, written, edited, and reviewed by a human.
-- [AI Readiness](https://rncld.com/ai-readiness.html): A fixed-fee executive advisory engagement, from AI gap to boardroom-ready in 30 days. Solo Executive $20,000 (30 days), Leadership Trio $45,000 (35 days, up to 3 executives), Full C-Suite $75,000 (45 days, up to 5). 50% deposit to begin. Alignment offsite from $6,000.
-- [AI Agents](https://rncld.com/ai-agents.html): Managed AI agents for sales and marketing inside the client's existing CRM and stack. Outpost $5,000 per month on a 12-month term; entry is the GTM Audit with the agent add-on. Multi-function coverage (Colony $9,500, Supercolony $17,000 per month) is available on request. Platform pages: [HubSpot](https://rncld.com/ai-agents/hubspot.html), [Pipedrive](https://rncld.com/ai-agents/pipedrive.html), [ConnectWise and Autotask](https://rncld.com/ai-agents/connectwise-autotask.html).
-- [About Colin Dowling](https://rncld.com/about.html): Background and operating history.
-- [Contact](https://rncld.com/contact.html): Booking and availability. Deep links accept ?offer= (audit, engagement, advisory, scorecard, demand-gen, content, ghostwriting, ai-readiness, agents, not-sure) and ?src= for source attribution.
-- [Articles](https://rncld.com/blog/): Long-form writing on GTM, pipeline, content, and AI agents, including [Is There a Claudeforce for HubSpot?](https://rncld.com/blog/claudeforce-for-hubspot.html).
-- [2026 B2B Sales Benchmark Report](https://rncld.com/resources/benchmark-2026.html): Gated benchmark report.
+Terms: six-month minimum from engagement start (three months of build, three of advisory), cancel any time after. No money-back guarantee; the audit is the risk reversal. Nothing is sold before the audit.
 
 ## Who it is for
 
-B2B companies that already have product-market fit and a GTM motion that is broken, inconsistent, or absent, and that work out of a CRM and sell through email and phone conversations. AI Readiness is for CEOs, boards, and C-suites regardless of CRM.
+B2B companies between $50M and $200M in revenue, with a sales team that works out of a CRM (HubSpot, Salesforce, Pipedrive or comparable), selling through outbound or inbound email and phone conversations, missing a number they have already committed to, with one executive who will own the work for six months. Below the range is sometimes a fit; above it there is usually an internal team.
+
+## Results
+
+- AgentPress: 7 to 25 qualified meetings a month in 45 days.
+- 1905 New Media: digital services from $4M to $11M over two years.
+
+## Pages
+
+- [Home](https://rncld.com/): The argument, the method (diagnose, rebuild, hand over) and the four-step ladder.
+- [The Audit](https://rncld.com/audit.html): The 100-Point GTM Audit in full: the ten sections, what it needs from the client, the ten-day schedule and the deliverables.
+- [The Engagement](https://rncld.com/gtm-consulting.html): The 90-day build in detail, the scope boundaries, and how it compares with a CRO hire or a strategy deck.
+- [Pricing](https://rncld.com/pricing/): Every price and term, published, with the month-by-month fee schedule.
+- [The 100-Point GTM Framework](https://rncld.com/resources/100-point-gtm-framework.html): The full scoring list, free with a work email.
+- [About Colin Dowling](https://rncld.com/about.html): Background and why RAINCLOUD exists.
+- [Articles](https://rncld.com/blog/): Writing on GTM, pipeline and why builds fail after handover.
+- [Contact](https://rncld.com/contact.html): Write to Colin, or book the 30-minute audit call.
 
 ## What RAINCLOUD is not
 
-Not a SaaS product, not a dashboard or seat-based software vendor, and not an open-ended hourly engagement. Earlier versions of this site described a "4D Sales Intelligence" offering built on call-recording analysis and a "Trident" architecture; both are retired.
+Not a SaaS product, not a dashboard or seat-based software vendor, not an agency, and not an open-ended hourly engagement. Earlier versions of this site described a "4D Sales Intelligence" offering, a "Trident" architecture, and separate offers for demand generation, content, AI readiness and AI agents. All are retired here. RAINCLOUD sells one engagement: a 100-point GTM audit, a 90-day rebuild on a declining fee, and ongoing advisory. Colin's other ventures are separate sites: Ants (managed AI agents, withants.com), Ghostwriter (B2B content, friendlyghostwriter.com) and The AI Ready Advisor (executive AI strategy).
 
 ## Contact
 
+- Book the audit call: https://calendly.com/30minutechat/30min
 - Email: colin@rncld.com
 - Site: https://rncld.com
