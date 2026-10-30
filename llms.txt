@@ -7,7 +7,7 @@ RAINCLOUD is run by Colin Dowling: 3x VP of Sales · 2x founder · Host, Modern 
 ## The engagement
 
 1. The 100-Point GTM Framework. Free. Every point the audit scores, published in full.
-2. The 100-Point GTM Audit. $5,000, 10 business days. All 100 points across ten sections scored 0-3 against the client's CRM data and four to six interviews; a signed baseline; the five findings costing the most pipeline, each quantified; the fix sequence; a one-page business case; a 45-minute readout. Required before any engagement. Not credited toward the build. No refund.
+2. The 100-Point GTM Audit. $5,000, 10 business days. All 100 points across ten sections, each scored met or not met (one point each, 100 total), against the client's CRM data and four to six interviews; a signed baseline; every finding, ranked by what it costs in pipeline, each quantified; the fix sequence; a one-page business case; a 45-minute readout. Required before any engagement. Not credited toward the build. No refund.
 3. The 90-Day GTM Fix. $37,500, billed $15,000 (month 1, diagnose and rebuild), $12,500 (month 2, install), $10,000 (month 3, prove and hand off). The outbound architecture installed in month 2 uses four components: Hunter, Harvester, Farmer and Shepherd.
 4. Ongoing. Advisory at $7,500 per month from month four (monthly operating review, monthly work session, weekly office hours, quarterly re-score of all 100 points). Or the GTM Scorecard at $4,000 per month, billed quarterly: measurement and direction only, available from month seven or directly after an audit.
 
