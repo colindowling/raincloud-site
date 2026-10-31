@@ -63,7 +63,7 @@ def strip_added(chunk: str) -> str:
         r'<figure class="post-video".*?</figure>',
         r'<div class="post-cta".*?</div>',
         r'<section class="post-faq".*?</section>',
-        r'<nav class="post-related".*?</nav>',
+        r'<aside class="post-related".*?</aside>',
         r'<div class="post-nav">.*?</div>',
     )
     for pattern in patterns:

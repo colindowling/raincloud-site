@@ -334,12 +334,12 @@ def related_html(post: dict, by_slug: dict) -> str:
         rel = ' target="_blank" rel="noopener"' if external else ""
         links.append(f'        <li><a href="{esc(href)}"{rel}>{esc(label)}</a></li>')
     inner = "\n".join(links)
-    return f"""<nav class="post-related" aria-label="Related">
+    return f"""<aside class="post-related" aria-label="Related">
         <div class="label">On this topic</div>
         <ul>
 {inner}
         </ul>
-      </nav>"""
+      </aside>"""
 
 
 def json_ld(post: dict) -> str:
