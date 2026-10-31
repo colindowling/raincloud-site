@@ -3,20 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-041BP5G4HF"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-041BP5G4HF');
-
-    // Custom event: audit_cta_click — body-content links to /audit.html or /contact.html
     document.addEventListener('click', function(e) {
       var a = e.target.closest('a[href]');
       if (!a) return;
       var href = a.getAttribute('href') || '';
-      if (!/\/(audit|contact)(\.html)?(\?|#|$)/.test(href)) return;
+      if (!/\/(audit|contact|gtm-consulting|resources)(\.html)?(\?|#|$)/.test(href) && href.indexOf('calendly.com') === -1) return;
       if (a.closest('nav') || a.closest('footer')) return;
       gtag('event', 'audit_cta_click', {
         cta_text: (a.textContent || '').trim().slice(0, 100),
@@ -24,15 +21,12 @@
         cta_location: window.location.pathname
       });
     });
-
-    // Mobile-aware nav toggle: hamburger opens menu; on mobile, parent dropdown taps expand/collapse instead of navigating; leaf taps close the menu.
     document.addEventListener('DOMContentLoaded', function() {
       var navToggle = document.getElementById('navToggle');
       var navLinks = document.getElementById('navLinks');
       if (!navToggle || !navLinks) return;
       navToggle.addEventListener('click', function() {
         navLinks.classList.toggle('open');
-        // Reset expanded states when closing
         if (!navLinks.classList.contains('open')) {
           navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
             item.classList.remove('expanded');
@@ -46,11 +40,9 @@
           var isMobile = window.innerWidth <= 768;
           var navOpen = navLinks.classList.contains('open');
           if (isDropdownParent && isMobile && navOpen) {
-            // On mobile while menu is open, tapping a dropdown parent expands/collapses it
             e.preventDefault();
             li.classList.toggle('expanded');
           } else {
-            // Any other link click closes the menu and resets expanded states
             navLinks.classList.remove('open');
             navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
               item.classList.remove('expanded');
@@ -60,125 +52,123 @@
       });
     });
   </script>
-  <title>Is There a Claudeforce for HubSpot? | RAINCLOUD</title>
+  <title>Is There a Claudeforce for HubSpot? — RAINCLOUD</title>
   <meta name="description" content="Claudeforce gives Salesforce sellers 37 prebuilt AI skills inside Claude. HubSpot doesn&#x27;t get it. What it is, what is Salesforce-locked, and how to build the equivalent on HubSpot.">
-  <link rel="canonical" href="https://rncld.com/blog/claudeforce-for-hubspot.html">
+  <link rel="canonical" href="https://www.withants.com/blog/claudeforce-for-hubspot/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/site.css">
   <link rel="stylesheet" href="/assets/site-extra.css">
+  <link rel="stylesheet" href="/assets/site-nav.css">
+  <link rel="stylesheet" href="/assets/blog-post.css">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="RAINCLOUD">
-  <meta property="og:title" content="Is There a Claudeforce for HubSpot? | RAINCLOUD">
+  <meta property="og:title" content="Is There a Claudeforce for HubSpot?">
   <meta property="og:description" content="Claudeforce gives Salesforce sellers 37 prebuilt AI skills inside Claude. HubSpot doesn&#x27;t get it. What it is, what is Salesforce-locked, and how to build the equivalent on HubSpot.">
-  <meta property="og:url" content="https://rncld.com/blog/claudeforce-for-hubspot.html">
+  <meta property="og:url" content="https://www.withants.com/blog/claudeforce-for-hubspot/">
   <meta property="og:image" content="https://rncld.com/assets/band-boardroom.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Is There a Claudeforce for HubSpot? | RAINCLOUD">
+  <meta name="twitter:title" content="Is There a Claudeforce for HubSpot?">
   <meta name="twitter:description" content="Claudeforce gives Salesforce sellers 37 prebuilt AI skills inside Claude. HubSpot doesn&#x27;t get it. What it is, what is Salesforce-locked, and how to build the equivalent on HubSpot.">
   <meta name="twitter:image" content="https://rncld.com/assets/band-boardroom.png">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "RAINCLOUD",
-    "url": "https://rncld.com/",
-    "email": "colin@rncld.com",
-    "description": "One engagement: a 100-point GTM audit, a 90-day rebuild of the go-to-market motion on a fee that steps down every month, and ongoing advisory. Run personally by Colin Dowling.",
-    "founder": {
-      "@type": "Person",
-      "name": "Colin Dowling"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Is There a Claudeforce for HubSpot?",
-    "description": "Claudeforce gives Salesforce sellers 37 prebuilt AI skills inside Claude. HubSpot doesn't get it. What it is, what is Salesforce-locked, and how to build the equivalent on HubSpot.",
-    "datePublished": "2026-09-05",
-    "author": {
-      "@type": "Person",
-      "name": "Colin Dowling"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Is There a Claudeforce for HubSpot?",
+      "description": "Claudeforce gives Salesforce sellers 37 prebuilt AI skills inside Claude. HubSpot doesn't get it. What it is, what is Salesforce-locked, and how to build the equivalent on HubSpot.",
+      "image": "https://rncld.com/assets/band-boardroom.png",
+      "author": {
+        "@type": "Person",
+        "name": "Colin Dowling",
+        "url": "https://rncld.com/about/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "RAINCLOUD",
+        "url": "https://rncld.com/"
+      },
+      "mainEntityOfPage": "https://rncld.com/blog/claudeforce-for-hubspot.html",
+      "datePublished": "2026-09-05",
+      "dateModified": "2026-10-31",
+      "articleSection": "AI Agents",
+      "inLanguage": "en"
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "RAINCLOUD"
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is there a Claudeforce for HubSpot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The short answer is no. Salesforce and Anthropic built Claudeforce together, against Salesforce’s data model and permissions layer. There is no equivalent shipping for HubSpot from either company."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Claudeforce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On August 26, 2026, Salesforce and Anthropic announced Claudeforce. The partnership puts Claude’s reasoning inside Agentforce and gives Salesforce sellers a plugin with 37 prebuilt sales skills they can run from Claude’s chat interface. Pipeline reviews, deal health checks, meeting prep, follow-up drafts, forecast narratives, stakeholder maps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does not carry over to HubSpot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 37 prebuilt skills are Salesforce-native. The Trust Boundary is Salesforce infrastructure. Centralized admin governance is tied to Salesforce’s identity layer. The honest read: Claudeforce is a platform partnership between two specific companies, not a Claude capability you can redirect at a different CRM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can a HubSpot team assemble instead?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The building blocks exist on HubSpot’s side: HubSpot’s Claude Connector, workflows with webhook-based AI integration, HubSpot’s Agent Builder, and tools such as Zapier, Make, and n8n. The individual pieces work. But the assembled system is a project you run, not a product that runs for you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the actual gap?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The gap between Claudeforce and what you can build on HubSpot is not a gap in capability. The gap is in operations: who builds the agents, who governs them, who tunes them when your process changes, who monitors them for silent failures, and who owns it when something breaks at a moment your team is not watching."
+          }
+        }
+      ]
     },
-    "mainEntityOfPage": "https://rncld.com/blog/claudeforce-for-hubspot.html"
-  }
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rncld.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articles",
+          "item": "https://rncld.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Is There a Claudeforce for HubSpot?",
+          "item": "https://rncld.com/blog/claudeforce-for-hubspot.html"
+        }
+      ]
+    }
+  ]
+}
   </script>
-<style>
-    .post-hero { padding: 160px 0 48px; }
-    .post-hero .label { margin-bottom: 16px; }
-    .post-hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); max-width: 720px; margin-bottom: 16px; }
-    .post-meta { font-size: 0.78rem; color: var(--text-tertiary); display: flex; gap: 16px; }
-
-    .post-body {
-      padding: 48px 0 80px;
-      border-top: 1px solid var(--border-subtle);
-    }
-    .post-body .container--narrow { max-width: 720px; }
-
-    .post-body p {
-      font-size: 1rem; line-height: 1.85; color: var(--text-secondary);
-      margin-bottom: 24px; max-width: none;
-    }
-    .post-body h2 {
-      font-size: 1.6rem; margin: 48px 0 16px; color: var(--text-primary);
-    }
-    .post-body h3 {
-      font-size: 1.2rem; margin: 36px 0 12px; color: var(--text-primary);
-    }
-    .post-body blockquote {
-      border-left: 2px solid var(--accent-blue); padding-left: 24px;
-      margin: 32px 0; font-style: italic; color: var(--text-primary);
-      font-family: var(--font-heading); font-weight: 300; font-size: 1.15rem;
-      line-height: 1.5;
-    }
-    .post-body ul, .post-body ol {
-      margin: 16px 0 24px 24px; color: var(--text-secondary);
-    }
-    .post-body li { margin-bottom: 8px; line-height: 1.7; font-size: 0.95rem; }
-    .post-body strong { color: var(--text-primary); font-weight: 500; }
-    .post-body a { color: var(--accent-blue); border-bottom: 1px solid transparent; transition: border-color 0.3s ease; }
-    .post-body a:hover { border-color: var(--accent-blue); }
-
-    .post-cta {
-      background: var(--bg-secondary); border: 1px solid var(--border-subtle);
-      padding: 40px; margin: 48px 0; text-align: center;
-    }
-    .post-cta h3 { margin-bottom: 10px; }
-    .post-cta p { margin: 0 auto 20px; text-align: center; }
-
-    .post-nav {
-      display: flex; justify-content: space-between; padding-top: 32px;
-      border-top: 1px solid var(--border-subtle); margin-top: 48px;
-    }
-    .post-nav a {
-      font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--text-tertiary); transition: color 0.3s ease;
-    }
-    .post-nav a:hover { color: var(--text-primary); }
-  
-    .has-dropdown{position:relative}
-    .dropdown{display:none;position:absolute;top:100%;left:0;background:var(--bg-secondary);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:8px 0;min-width:200px;z-index:200;list-style:none;margin:0;padding-top:8px}
-    .dropdown li{padding:0}
-    .dropdown li a{display:block;padding:8px 20px;font-size:.75rem;color:var(--text-secondary);text-transform:none;letter-spacing:.02em;white-space:nowrap;transition:color .2s}
-    .dropdown li a:hover{color:var(--text-primary);background:rgba(255,255,255,.03)}
-    .has-dropdown:hover .dropdown{display:block}
-    @media(max-width:768px){
-      .dropdown{position:static;display:none;background:transparent;border:none;padding:0 0 0 16px;min-width:0;margin:4px 0}
-      .dropdown li a{padding:6px 0;font-size:.8rem}
-      .nav-links.open .has-dropdown.expanded > .dropdown{display:block}
-    }
-
-  </style>
-  <link rel="stylesheet" href="/assets/site-nav.css">
-  <style>.post-cta .post-cta-sec{margin:16px auto 0;font-size:.85rem}</style>
   <style id="rc-global">
     nav .nav-links a[aria-current="page"]{color:var(--text-primary);}
     footer.sf .sf-also{margin-top:14px;font-size:.72rem;line-height:1.6;color:var(--text-tertiary);max-width:300px;}
@@ -187,8 +177,8 @@
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
+  <!-- Duplicate of https://www.withants.com/blog/claudeforce-for-hubspot/. Kept on rncld.com. Do not delete. rel=canonical points at the Ants URL. -->
+  <!-- Duplicate of the Ants post. Kept here. rel=canonical points at the Ants URL. Do not delete. -->
   <nav id="nav" class="scrolled">
     <div class="container nav-inner">
       <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
@@ -197,8 +187,8 @@
         <li><a href="/gtm-consulting.html">The Engagement</a></li>
         <li><a href="/pricing/">Pricing</a></li>
         <li><a href="/blog/" aria-current="page">Articles</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=blog_claudeforce_for_hubspot&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav">Book the audit call</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=blog_claudeforce-for-hubspot&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav">Book the audit call</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -208,13 +198,27 @@
     <div class="container--narrow" style="max-width: 720px;">
       <div class="label label--accent">AI Agents</div>
       <h1>Is There a Claudeforce for HubSpot?</h1>
-      <div class="post-meta"><span>Colin Dowling</span><span>September 2026</span><span>12 min read</span></div>
+      <div class="post-meta">
+        <span><a href="/about/">Colin Dowling</a></span>
+        <span>September 2026</span>
+        <span>12 min read</span>
+      </div>
     </div>
   </section>
 
   <div class="post-body">
     <div class="container--narrow" style="max-width: 720px;">
-
+      <aside class="takeaways" aria-label="Key takeaways">
+        <div class="label label--accent">Key takeaways</div>
+        <ol>
+        <li>The short answer is no. There is no equivalent shipping for HubSpot from either company.</li>
+        <li>The 37 prebuilt skills are Salesforce-native. There is no version of these skills that works against HubSpot’s data model.</li>
+        <li>HubSpot’s Claude Connector is a data connection with growing action capability. It does not give you 37 maintained skills with centralized governance.</li>
+        <li>The individual pieces work. But the assembled system is a project you run, not a product that runs for you.</li>
+        <li>Projects without a named owner stop getting maintained the quarter after they launch.</li>
+        </ol>
+      </aside>
+      <div class="post-video" data-video-slot="empty" hidden></div>
       <p class="lede" style="font-size:1.1rem;color:var(--text-primary)">Claudeforce gives Salesforce sellers 37 prebuilt AI skills inside Claude. HubSpot doesn't get it. Here's what Claudeforce actually is, what's Salesforce-locked, and how to build the equivalent on HubSpot.</p>
 
       <h2>What Salesforce Just Shipped</h2>
@@ -248,6 +252,17 @@
       <p>These skills were built by Salesforce and Anthropic together. They're engineered against Salesforce's specific object model, not generic CRM prompts wrapped around an API. When a seller asks Claude to review a deal, Claude executes against Salesforce's MCP (Model Context Protocol) server using that seller's existing credentials and permissions. If the seller can't access a record in Salesforce, Claude can't either. Write actions still trigger Salesforce validation rules, Flows, Apex triggers, and governor limits. The business logic your admin built stays enforced.</p>
 
       <p>For regulated industries, the trust architecture is significant. Claudeforce routes Claude inference through Amazon Bedrock inside Salesforce's Trust Boundary. Data and AI workloads stay within Salesforce's security perimeter rather than round-tripping to an external API endpoint. Salesforce and Anthropic have stated zero data retention for Sonnet, Opus, and Haiku models inside this boundary. The plugin reached select pilot customers at announcement, with an open beta expected in September 2026 and additional skills for service, marketing, and commerce planned for later in the year.</p>
+
+      <div class="post-cta" data-cta-block="inbody">
+        <h3>The 100-Point GTM Framework.</h3>
+        <p>Every point I score, published in full. It’s the full list the audit scores against, so you can see exactly what it measures before you spend anything.</p>
+        <p class="post-cta-meta">Free</p>
+        <a href="/resources/100-point-gtm-framework.html?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=blog_claudeforce-for-hubspot&amp;utm_content=inbody" class="btn btn--primary" data-cta="inbody">
+          <span>Download the 100-point framework</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="post-cta-sec"><a class="text-link" href="/audit.html?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=blog_claudeforce-for-hubspot&amp;utm_content=inbody">Or see the 100-Point GTM Audit</a></p>
+      </div>
 
       <h2>What This Gets Salesforce Sellers</h2>
 
@@ -305,19 +320,55 @@
       <p>The gap between Claudeforce and what you can build on HubSpot is not a gap in capability. The individual skills are buildable, the data connections exist, and the APIs are there. The gap is in operations: who builds the agents, who governs them, who tunes them when your process changes, who monitors them for silent failures, and who owns it when something breaks at a moment your team is not watching.</p>
       <p>This is what I do. I build the equivalent agent layer inside HubSpot (and <a href="https://www.withants.com/platforms/pipedrive/">Pipedrive</a>, and <a href="https://www.withants.com/platforms/connectwise-autotask/">ConnectWise and Autotask</a>) and then operate it: weekly tuning against live performance data, uptime monitoring with incident response, and a live inventory of every agent running in your stack.</p>
       <p>The deal-health review a Claudeforce user gets as a prebuilt skill, I build for your HubSpot pipeline and keep current as your pipeline definitions change. The meeting prep Salesforce sellers trigger from inside Claude, I build against your HubSpot deal and contact records. Follow-up that fires the same day a deal goes quiet, lead scoring and routing that works on form submission, and renewal and expansion signals read off your deal and contact properties.</p>
-      <div class="post-cta">
-        <h3>Not sure what to fix first?</h3>
-        <p>The 100-Point GTM Audit scores your go-to-market against 100 points and ranks every finding by what it&rsquo;s costing you in pipeline. $5,000, ten business days.</p>
-        <a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=blog_claudeforce_for_hubspot&amp;utm_content=post_end" class="btn btn--primary" target="_blank" rel="noopener" data-cta="post_end">
-          <span>Book the audit call</span>
+      <p style="font-size:.72rem;color:var(--text-tertiary);margin-top:32px;line-height:1.6">Sources: <a href="https://www.salesforce.com/news/press-releases/2026/08/27/salesforce-and-anthropic-announce-claudeforce/" target="_blank" rel="noopener noreferrer">Salesforce and Anthropic announce Claudeforce</a> (Salesforce press release, 26 August 2026). <a href="https://overcentral.com/en/claudeforce-salesforce-crm-integration-77998/" target="_blank" rel="noopener noreferrer">Patrick Stokes interview on Claudeforce</a> (Overcentral / VentureBeat). <a href="https://hubspot.com/company-news/hubspot-connector-claude" target="_blank" rel="noopener noreferrer">HubSpot launches first CRM connector for Claude</a> (HubSpot, July 2025). <a href="https://hubspot.com/company-news/meet-agent-hub-and-agent-builder" target="_blank" rel="noopener noreferrer">Agent Hub and Agent Builder</a> (HubSpot, July 2026). Claudeforce and Salesforce are trademarks of Salesforce, Inc. Claude is a trademark of Anthropic PBC. HubSpot is a trademark of HubSpot, Inc. RAINCLOUD is not affiliated with, endorsed by, or a partner of any of these companies. Product details and timelines described here reflect the announcements as published and may since have changed.</p>
+      <section class="post-faq" aria-label="Questions">
+        <h2>Questions this post answers</h2>
+        <div class="faq-item">
+          <h3>Is there a Claudeforce for HubSpot?</h3>
+          <p>The short answer is no. Salesforce and Anthropic built Claudeforce together, against Salesforce’s data model and permissions layer. There is no equivalent shipping for HubSpot from either company.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is Claudeforce?</h3>
+          <p>On August 26, 2026, Salesforce and Anthropic announced Claudeforce. The partnership puts Claude’s reasoning inside Agentforce and gives Salesforce sellers a plugin with 37 prebuilt sales skills they can run from Claude’s chat interface. Pipeline reviews, deal health checks, meeting prep, follow-up drafts, forecast narratives, stakeholder maps.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What does not carry over to HubSpot?</h3>
+          <p>The 37 prebuilt skills are Salesforce-native. The Trust Boundary is Salesforce infrastructure. Centralized admin governance is tied to Salesforce’s identity layer. The honest read: Claudeforce is a platform partnership between two specific companies, not a Claude capability you can redirect at a different CRM.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What can a HubSpot team assemble instead?</h3>
+          <p>The building blocks exist on HubSpot’s side: HubSpot’s Claude Connector, workflows with webhook-based AI integration, HubSpot’s Agent Builder, and tools such as Zapier, Make, and n8n. The individual pieces work. But the assembled system is a project you run, not a product that runs for you.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is the actual gap?</h3>
+          <p>The gap between Claudeforce and what you can build on HubSpot is not a gap in capability. The gap is in operations: who builds the agents, who governs them, who tunes them when your process changes, who monitors them for silent failures, and who owns it when something breaks at a moment your team is not watching.</p>
+        </div>
+      </section>
+      <div class="post-cta" data-cta-block="post_end">
+        <h3>The 100-Point GTM Framework.</h3>
+        <p>Every point I score, published in full. It’s the full list the audit scores against, so you can see exactly what it measures before you spend anything.</p>
+        <p class="post-cta-meta">Free</p>
+        <a href="/resources/100-point-gtm-framework.html?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=blog_claudeforce-for-hubspot&amp;utm_content=post_end" class="btn btn--primary" data-cta="post_end">
+          <span>Download the 100-point framework</span>
           <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <p class="post-cta-sec"><a class="text-link" href="/resources/100-point-gtm-framework.html">Or download the 100-point framework</a></p>
+        <p class="post-cta-sec"><a class="text-link" href="/audit.html?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=blog_claudeforce-for-hubspot&amp;utm_content=post_end">Or see the 100-Point GTM Audit</a></p>
       </div>
-<p style="font-size:.72rem;color:var(--text-tertiary);margin-top:32px;line-height:1.6">Sources: <a href="https://www.salesforce.com/news/press-releases/2026/08/27/salesforce-and-anthropic-announce-claudeforce/" target="_blank" rel="noopener noreferrer">Salesforce and Anthropic announce Claudeforce</a> (Salesforce press release, 26 August 2026). <a href="https://overcentral.com/en/claudeforce-salesforce-crm-integration-77998/" target="_blank" rel="noopener noreferrer">Patrick Stokes interview on Claudeforce</a> (Overcentral / VentureBeat). <a href="https://hubspot.com/company-news/hubspot-connector-claude" target="_blank" rel="noopener noreferrer">HubSpot launches first CRM connector for Claude</a> (HubSpot, July 2025). <a href="https://hubspot.com/company-news/meet-agent-hub-and-agent-builder" target="_blank" rel="noopener noreferrer">Agent Hub and Agent Builder</a> (HubSpot, July 2026). Claudeforce and Salesforce are trademarks of Salesforce, Inc. Claude is a trademark of Anthropic PBC. HubSpot is a trademark of HubSpot, Inc. RAINCLOUD is not affiliated with, endorsed by, or a partner of any of these companies. Product details and timelines described here reflect the announcements as published and may since have changed.</p>
+      <nav class="post-related" aria-label="Related">
+        <div class="label">On this topic</div>
+        <ul>
+        <li><a href="/resources/100-point-gtm-framework.html">The 100-Point GTM Framework</a></li>
+        <li><a href="/blog/why-gtm-builds-fail.html">Most GTM Builds Fail in the Quarter After the Consultant Leaves</a></li>
+        <li><a href="/blog/bofu-content-that-moves-deals.html">The Only Content That Moves a Live Deal</a></li>
+        <li><a href="https://www.withants.com/blog/claudeforce-for-hubspot/" target="_blank" rel="noopener">The same article on Ants</a></li>
+        </ul>
+      </nav>
+      <div class="post-nav">
+        <a href="/blog/">&larr; All Posts</a>
+        <a href="/blog/">See all articles &rarr;</a>
+      </div>
     </div>
   </div>
-  <!-- FOOTER -->
   <footer class="sf">
     <div class="container">
       <div class="sf-top">
@@ -339,7 +390,7 @@
             <div class="sf-h">Read</div>
             <ul>
               <li><a href="/blog/">Articles</a></li>
-              <li><a href="/about.html">About</a></li>
+              <li><a href="/about/">About</a></li>
               <li><a href="/resources/100-point-gtm-framework.html">The 100-Point GTM Framework</a></li>
               <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
               <li><a href="/llms.txt">llms.txt</a></li>
@@ -348,7 +399,7 @@
           <div>
             <div class="sf-h">Talk</div>
             <ul>
-              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=blog_claudeforce_for_hubspot&amp;utm_content=footer" target="_blank" rel="noopener" data-cta="footer">Book the audit call</a></li>
+              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=blog_claudeforce-for-hubspot&amp;utm_content=footer" target="_blank" rel="noopener" data-cta="footer">Book the audit call</a></li>
               <li><a href="/contact.html">Contact</a></li>
               <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
             </ul>
@@ -358,11 +409,5 @@
       <div class="sf-copy">&copy; 2026 RAINCLOUD. All rights reserved.</div>
     </div>
   </footer>
-  <script>
-    window.addEventListener('scroll', function(){ var n=document.getElementById('nav'); if(n) n.classList.toggle('scrolled', window.scrollY > 60); });
-    var revealObs = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el){ revealObs.observe(el); });
-    document.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener('click', function(e){ var h=a.getAttribute('href'); if(h.length>1){ var t=document.querySelector(h); if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); } } }); });
-  </script>
 </body>
 </html>

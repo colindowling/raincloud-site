@@ -316,6 +316,41 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     "publisher": { "@type": "Organization", "name": "RAINCLOUD", "url": "https://rncld.com/" }
   }
   </script>
+  <!-- BLOG_INDEX_LD:START -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "RAINCLOUD Articles",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "https://rncld.com/blog/claudeforce-for-hubspot.html",
+      "name": "Is There a Claudeforce for HubSpot?"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "url": "https://rncld.com/blog/outbound-reply-rates-2026.html",
+      "name": "Your Outbound Didn't Stop Working. The Infrastructure Changed."
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "url": "https://rncld.com/blog/bofu-content-that-moves-deals.html",
+      "name": "The Only Content That Moves a Live Deal"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "url": "https://rncld.com/blog/why-gtm-builds-fail.html",
+      "name": "Most GTM Builds Fail in the Quarter After the Consultant Leaves"
+    }
+  ]
+}
+  </script>
+      <!-- BLOG_INDEX_LD:END -->
   <link rel="stylesheet" href="/assets/site-nav.css">
   <style id="rc-global">
     nav .nav-links a[aria-current="page"]{color:var(--text-primary);}
@@ -334,7 +369,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <li><a href="/gtm-consulting.html">The Engagement</a></li>
         <li><a href="/pricing/">Pricing</a></li>
         <li><a href="/blog/" aria-current="page">Articles</a></li>
-        <li><a href="/about.html">About</a></li>
+        <li><a href="/about/">About</a></li>
         <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=blog_index&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav">Book the audit call</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -351,20 +386,20 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
 
   <div class="container" style="padding-top: 0; padding-bottom: 0;">
     <div class="blog-grid">
-
+      <!-- BLOG_CARDS:START -->
       <a href="/blog/claudeforce-for-hubspot.html" class="blog-card">
         <span class="blog-tag">AI Agents</span>
         <div class="date">September 2026</div>
         <h2>Is There a Claudeforce for HubSpot?</h2>
-        <p>Claudeforce gives Salesforce sellers 37 prebuilt AI skills inside Claude. HubSpot doesn&rsquo;t get it. What it is, what is Salesforce-locked, and how to build the equivalent on HubSpot.</p>
+        <p>Claudeforce gives Salesforce sellers 37 prebuilt AI skills inside Claude. HubSpot doesn’t get it. What it is, what is Salesforce-locked, and how to build the equivalent on HubSpot.</p>
         <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
 
       <a href="/blog/outbound-reply-rates-2026.html" class="blog-card">
         <span class="blog-tag">Outbound</span>
         <div class="date">August 2026</div>
-        <h2>Your Outbound Didn&rsquo;t Stop Working. The Infrastructure Changed.</h2>
-        <p>Reply rates really have fallen &mdash; but most of the numbers being quoted measure different things. What the data actually shows, what changed in the inbox in 2024 and 2025, and the seven things that still move the number.</p>
+        <h2>Your Outbound Didn&#x27;t Stop Working. The Infrastructure Changed.</h2>
+        <p>Reply rates really have fallen — but most of the numbers being quoted measure different things. What the data actually shows, what changed in the inbox in 2024 and 2025, and the seven things that still move the number.</p>
         <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
 
@@ -372,7 +407,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <span class="blog-tag">Content</span>
         <div class="date">August 2026</div>
         <h2>The Only Content That Moves a Live Deal</h2>
-        <p>Most B2B content is written for people who aren&rsquo;t buying anything. Bottom-of-funnel content is written for people already in a deal with you &mdash; and it&rsquo;s the only content your reps will actually send.</p>
+        <p>Most B2B content is written for people who aren’t buying anything. Bottom-of-funnel content is written for people already in a deal with you — and it’s the only content your reps will actually send.</p>
         <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
 
@@ -383,7 +418,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <p>The build is rarely the hard part. Four predictable failures show up after handoff, and they explain why an engagement that ends at delivery is structured to fail.</p>
         <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
-
+      <!-- BLOG_CARDS:END -->
     </div>
     </div>
 
@@ -409,7 +444,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
             <div class="sf-h">Read</div>
             <ul>
               <li><a href="/blog/">Articles</a></li>
-              <li><a href="/about.html">About</a></li>
+              <li><a href="/about/">About</a></li>
               <li><a href="/resources/100-point-gtm-framework.html">The 100-Point GTM Framework</a></li>
               <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
               <li><a href="/llms.txt">llms.txt</a></li>
