@@ -29,9 +29,19 @@ B2B companies between $50M and $200M in revenue, with a sales team that works ou
 - [The Engagement](https://rncld.com/gtm-consulting.html): The 90-day build in detail, the scope boundaries, and how it compares with a CRO hire or a strategy deck.
 - [Pricing](https://rncld.com/pricing/): Every price and term, published, with the month-by-month fee schedule.
 - [The 100-Point GTM Framework](https://rncld.com/resources/100-point-gtm-framework.html): The full scoring list, free with a work email.
-- [About Colin Dowling](https://rncld.com/about.html): Background and why RAINCLOUD exists.
+- [About Colin Dowling](https://rncld.com/about/): Founder of RAINCLOUD. 3x VP of Sales, 2x founder, host of Modern Business Life. Runs every engagement personally. A longer background page remains at /about.html.
 - [Articles](https://rncld.com/blog/): Writing on GTM, pipeline and why builds fail after handover.
+- [Outbound not landing](https://rncld.com/problems/outbound-not-landing/): If your reply rates fell and you have spent three months rewriting sequences, you have been debugging the wrong layer. Next step: the 100-Point GTM Audit.
+- [First sales hire](https://rncld.com/problems/first-sales-hire/): One person, one point of view, a long search, and a salary before the system exists. Next step: the 90-day engagement.
+- [Founder-led sales trap](https://rncld.com/problems/founder-led-sales-trap/): It works, which is the problem. It relieves the pressure that would otherwise have forced the system to mature, and it signals to the team that the system is optional. Next step: the 90-day engagement.
+- [Pipeline not growing](https://rncld.com/problems/pipeline-not-growing/): Stage definitions that mean different things to different reps. Coverage math built on deals that are already dead. Next step: the 100-Point GTM Audit.
+- [FAQ](https://rncld.com/faq/): Questions already answered on the audit, the engagement, and pricing.
+- [Videos](https://rncld.com/videos/): Tip videos live on the article they belong to. None are embedded yet.
 - [Contact](https://rncld.com/contact.html): Write to Colin, or book the 30-minute audit call.
+
+The free 40-Point Outside Audit does not have a page or a form yet. New pages point that step at the existing audit call: https://calendly.com/30minutechat/30min
+
+Keyword landing pages (fractional CRO, B2B sales consulting, sales consulting firms, fractional sales leader, GTM checklist, GTM consulting, RevOps consultant, GTM Autopsy) are on hold and are not on this site.
 
 ## What RAINCLOUD is not
 
