@@ -166,6 +166,8 @@ def check_sitemap() -> None:
         f"{SITE}/problems/founder-led-sales-trap/",
         f"{SITE}/problems/pipeline-not-growing/",
         f"{SITE}/about/",
+        f"{SITE}/faq/",
+        f"{SITE}/videos/",
     ]
     for loc in required:
         if loc not in locs:
@@ -181,6 +183,8 @@ def check_sitemap() -> None:
             fail("claudeforce canonical does not point at the Ants post")
     if f"{SITE}/blog/claudeforce-for-hubspot.html" in locs:
         fail("claudeforce is canonicalized to Ants and should not be in the sitemap")
+    if any("/bofu/" in loc for loc in locs):
+        fail("unlisted BoFu keyword pages are on hold and must not be in the sitemap")
 
 
 def main() -> int:

@@ -22,6 +22,7 @@ nav .nav-links .nav-cta::after { display: none; }
   .dropdown { position: static; display: none; padding: 0 0 0 16px; min-width: 0; margin: 4px 0; }
   .dropdown::before { display:none; }
   .dropdown li a { padding: 7px 0; font-size: 0.8rem; }
+  .nav-links.open .has-dropdown > .dropdown,
   .nav-links.open .has-dropdown.expanded > .dropdown { display: block; }
   nav .nav-links .nav-cta { display:inline-block; text-align:center; }
 }

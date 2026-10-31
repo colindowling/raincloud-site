@@ -53,6 +53,10 @@ Post bylines and `BlogPosting` author URLs point at [/about/](/about/). That pag
 
 Set `video` in the post's front matter and rebuild. The page embeds that video and emits `VideoObject`. The YouTube description should link back to `https://rncld.com/blog/<slug>.html`. There is no video yet, so every slot is empty.
 
+## Keyword pages
+
+Held. Do not add unlisted pages for fractional CRO, B2B sales consulting, sales consulting firms, fractional sales leader, GTM checklist, GTM consulting, RevOps consultant, or GTM Autopsy until Colin approves that draft.
+
 ## Adding a spoke
 
 1. Write the post (`blog/README.md`). Set `topic`, `hub`, and two `related` slugs.

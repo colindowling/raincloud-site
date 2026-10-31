@@ -36,44 +36,55 @@ OG_IMAGE = f"{SITE}/assets/band-boardroom.png"
 TOPICS = {
     "diagnosis": {
         "path": "/audit.html",
-        "heading": "Not sure what to fix first?",
+        "heading": "Start with the free 40-Point Outside Audit.",
         "body": (
-            "The 100-Point GTM Audit scores your go-to-market against 100 points "
-            "and ranks every finding by what it\u2019s costing you in pipeline. "
-            "$5,000, ten business days."
+            "It is the part of the 100-Point GTM Autopsy that can be scored from "
+            "outside the company, from public sources alone. There is no page for "
+            "it yet. The audit call is how you ask for it. The paid GTM Autopsy "
+            "is $5,000, ten business days, required before the 90-day fix, and "
+            "not credited toward the build."
         ),
-        "meta": "$5,000 \u00b7 10 business days \u00b7 required before any engagement",
-        "button": "See the 100-Point GTM Audit",
-        "secondary_label": "Book the audit call",
-        "secondary_kind": "calendly",
+        "meta": "Then the $5,000 GTM Autopsy. Then the 90-day fix.",
+        "button": "Book the audit call",
+        "button_kind": "calendly",
+        "secondary_label": "See the GTM Autopsy",
+        "secondary_kind": "path",
+        "secondary_path": "/audit.html",
     },
     "build": {
         "path": "/gtm-consulting.html",
-        "heading": "Ninety days to rebuild the motion.",
+        "heading": "The 90-day fix comes after the GTM Autopsy.",
         "body": (
             "The audit tells you what\u2019s broken and in what order. The engagement "
             "builds it \u2014 ICP, positioning, the pipeline model, outbound, the "
             "scorecard in your CRM and the playbook \u2014 in your tools, with the "
-            "people who will run it after I\u2019m gone."
+            "people who will run it after I\u2019m gone. $37,500 over 90 days, then "
+            "$7,500 a month. It starts with the free 40-Point Outside Audit. There "
+            "is no page for that yet. The audit call is how you ask for it."
         ),
-        "meta": "$5,000 audit \u00b7 $37,500 over 90 days \u00b7 $7,500/mo after",
-        "button": "See the 90-day engagement",
-        "secondary_label": "Book the audit call",
-        "secondary_kind": "calendly",
+        "meta": "$15,000, then $12,500, then $10,000.",
+        "button": "Book the audit call",
+        "button_kind": "calendly",
+        "secondary_label": "See the 90-day engagement",
+        "secondary_kind": "path",
+        "secondary_path": "/gtm-consulting.html",
     },
     "soft": {
         "path": "/resources/100-point-gtm-framework.html",
-        "heading": "The 100-Point GTM Framework.",
+        "heading": "The list is free. The score is the GTM Autopsy.",
         "body": (
             "Every point I score, published in full. It\u2019s the full list the "
             "audit scores against, so you can see exactly what it measures before "
-            "you spend anything."
+            "you spend anything. The free 40-Point Outside Audit is the slice that "
+            "can be scored from outside the company. There is no page for it yet. "
+            "The audit call is how you ask for it."
         ),
-        "meta": "Free",
-        "button": "Download the 100-point framework",
-        "secondary_label": "Or see the 100-Point GTM Audit",
+        "meta": "Then the $5,000 GTM Autopsy.",
+        "button": "Book the audit call",
+        "button_kind": "calendly",
+        "secondary_label": "Download the 100-point framework",
         "secondary_kind": "path",
-        "secondary_path": "/audit.html",
+        "secondary_path": "/resources/100-point-gtm-framework.html",
     },
 }
 
@@ -234,7 +245,12 @@ def body_html(post: dict) -> str:
 def cta_html(post: dict, content: str) -> str:
     topic = TOPICS[post["topic"]]
     slug = post["slug"]
-    primary = utm(slug, content, topic["path"])
+    if topic.get("button_kind") == "calendly":
+        primary = utm(slug, content)
+        primary_extra = ' target="_blank" rel="noopener"'
+    else:
+        primary = utm(slug, content, topic["path"])
+        primary_extra = ""
     if topic["secondary_kind"] == "calendly":
         secondary = utm(slug, content)
         extra = ' target="_blank" rel="noopener"'
@@ -245,7 +261,7 @@ def cta_html(post: dict, content: str) -> str:
     return f"""<div class="post-cta" data-cta-block="{esc(content)}">
         <h3>{esc(topic["heading"])}</h3>
         <p>{esc(topic["body"])}</p>{meta}
-        <a href="{primary}" class="btn btn--primary" data-cta="{esc(content)}">
+        <a href="{primary}" class="btn btn--primary" data-cta="{esc(content)}"{primary_extra}>
           <span>{esc(topic["button"])}</span>
           <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -514,6 +530,14 @@ def page_html(post: dict, by_slug: dict) -> str:
         <li><a href="/gtm-consulting.html">The Engagement</a></li>
         <li><a href="/pricing/">Pricing</a></li>
         <li><a href="/blog/" aria-current="page">Articles</a></li>
+        <li class="has-dropdown"><a href="/problems/outbound-not-landing/">Problems <span class="caret"></span></a>
+          <ul class="dropdown">
+            <li><a href="/problems/outbound-not-landing/">Outbound not landing</a></li>
+            <li><a href="/problems/pipeline-not-growing/">Pipeline not growing</a></li>
+            <li><a href="/problems/first-sales-hire/">First sales hire</a></li>
+            <li><a href="/problems/founder-led-sales-trap/">Founder-led sales</a></li>
+          </ul>
+        </li>
         <li><a href="/about/">About</a></li>
         <li><a href="{utm(slug, "nav")}" class="nav-cta" target="_blank" rel="noopener" data-cta="nav">Book the audit call</a></li>
       </ul>
@@ -568,6 +592,8 @@ def page_html(post: dict, by_slug: dict) -> str:
             <div class="sf-h">Read</div>
             <ul>
               <li><a href="/blog/">Articles</a></li>
+              <li><a href="/faq/">FAQ</a></li>
+              <li><a href="/videos/">Videos</a></li>
               <li><a href="/about/">About</a></li>
               <li><a href="/resources/100-point-gtm-framework.html">The 100-Point GTM Framework</a></li>
               <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
@@ -667,7 +693,11 @@ def update_sitemap(posts: list[dict]) -> None:
         loc = loc_match.group(1)
         if loc == f"{SITE}/blog/":
             continue
-        if loc.startswith(f"{SITE}/blog/") or loc.startswith(f"{SITE}/fix/") or loc.startswith(f"{SITE}/problems/") or loc == f"{SITE}/about/":
+        if loc.startswith((
+            f"{SITE}/blog/",
+            f"{SITE}/fix/",
+            f"{SITE}/problems/",
+        )) or loc in {f"{SITE}/about/", f"{SITE}/faq/", f"{SITE}/videos/"}:
             continue
         kept.append(block)
     blog_index = sitemap_url(f"{SITE}/blog/", PUBLISHED_STAMP, "weekly", "0.7")
@@ -679,12 +709,15 @@ def update_sitemap(posts: list[dict]) -> None:
         post_blocks.append(
             sitemap_url(f"{SITE}/blog/{post['slug']}.html", lastmod, "monthly", "0.6")
         )
-    extra_blocks = [sitemap_url(f"{SITE}/about/", PUBLISHED_STAMP, "monthly", "0.6")]
+    extra_blocks = [
+        sitemap_url(f"{SITE}/about/", PUBLISHED_STAMP, "monthly", "0.6"),
+        sitemap_url(f"{SITE}/faq/", PUBLISHED_STAMP, "monthly", "0.6"),
+        sitemap_url(f"{SITE}/videos/", PUBLISHED_STAMP, "monthly", "0.5"),
+    ]
     if PROBLEMS_DIR.is_dir():
         for page in sorted(PROBLEMS_DIR.glob("*/index.html")):
-            slug = page.parent.name
             extra_blocks.append(
-                sitemap_url(f"{SITE}/problems/{slug}/", PUBLISHED_STAMP, "monthly", "0.8")
+                sitemap_url(f"{SITE}/problems/{page.parent.name}/", PUBLISHED_STAMP, "monthly", "0.8")
             )
     ordered = kept + [blog_index] + post_blocks + extra_blocks
     body = "\n".join(ordered)
