@@ -11,19 +11,6 @@
     gtag('js', new Date());
     gtag('config', 'G-041BP5G4HF');
 
-    // Custom event: audit_cta_click — body-content links to /audit.html or /contact.html
-    document.addEventListener('click', function(e) {
-      var a = e.target.closest('a[href]');
-      if (!a) return;
-      var href = a.getAttribute('href') || '';
-      if (!/\/(audit|contact)(\.html)?(\?|#|$)/.test(href)) return;
-      if (a.closest('nav') || a.closest('footer')) return;
-      gtag('event', 'audit_cta_click', {
-        cta_text: (a.textContent || '').trim().slice(0, 100),
-        cta_destination: href,
-        cta_location: window.location.pathname
-      });
-    });
 
     // Mobile-aware nav toggle: hamburger opens menu; on mobile, parent dropdown taps expand/collapse instead of navigating; leaf taps close the menu.
     document.addEventListener('DOMContentLoaded', function() {
@@ -87,7 +74,7 @@
     "name": "RAINCLOUD",
     "url": "https://rncld.com/",
     "email": "colin@rncld.com",
-    "description": "One engagement: a 100-point GTM audit, a 90-day rebuild of the go-to-market motion on a fee that steps down every month, and ongoing advisory. Run personally by Colin Dowling.",
+    "description": "One engagement: a 100-point GTM autopsy, a 90-day rebuild of the go-to-market motion on a fee that steps down every month, and ongoing advisory. Run personally by Colin Dowling.",
     "founder": {
       "@type": "Person",
       "name": "Colin Dowling"
@@ -177,20 +164,29 @@
     footer.sf .sf-also a{color:var(--text-secondary);border-bottom:1px solid var(--border-subtle);}
     footer.sf .sf-also a:hover{color:var(--text-primary);}
   </style>
+  <script src="/assets/track.js" defer></script>
 </head>
-<body>
+<body data-page-template="ai-readiness" data-cluster="off-offer" data-persona="">
 
   <!-- NAV -->
   <nav id="nav" class="scrolled">
     <div class="container nav-inner">
       <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="/audit.html">The Audit</a></li>
+        <li><a href="/gtm-autopsy/">The Autopsy</a></li>
         <li><a href="/gtm-consulting.html">The Engagement</a></li>
         <li><a href="/pricing/">Pricing</a></li>
         <li><a href="/blog/">Articles</a></li>
+                <li class="has-dropdown"><a href="/problems/outbound-not-landing/">Problems <span class="caret"></span></a>
+          <ul class="dropdown">
+            <li><a href="/problems/outbound-not-landing/">Outbound not landing</a></li>
+            <li><a href="/problems/pipeline-not-growing/">Pipeline not growing</a></li>
+            <li><a href="/problems/first-sales-hire/">First sales hire</a></li>
+            <li><a href="/problems/founder-led-sales-trap/">Founder-led sales</a></li>
+          </ul>
+        </li>
         <li><a href="/about.html">About</a></li>
-        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=ai-readiness_page&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav">Book the audit call</a></li>
+        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=ai-readiness&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav" data-track="book_call" data-cta-id="book_call-nav" data-cta-position="nav" data-cluster="off-offer" data-persona="">Book the audit call</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -322,7 +318,7 @@
           <a href="/contact.html?offer=ai-readiness" class="tier-link">Request a readiness conversation &rarr;</a>
         </div>
       </div>
-      <p class="tier-foot">All engagements are fixed fee. No hourly billing, no scope creep, no surprises. A 50% deposit is required to begin; the balance is due on delivery of final materials. The alignment offsite is available on its own from $6,000. Custom scopes are available for portfolio companies and multi-entity organizations. The <a href="/audit.html" class="text-link">GTM Audit</a> is a separate $5,000 diagnostic of your go-to-market motion. I take on a limited number of engagements at a time.</p>
+      <p class="tier-foot">All engagements are fixed fee. No hourly billing, no scope creep, no surprises. A 50% deposit is required to begin; the balance is due on delivery of final materials. The alignment offsite is available on its own from $6,000. Custom scopes are available for portfolio companies and multi-entity organizations. The <a href="/gtm-autopsy/" class="text-link">100-Point GTM Autopsy</a> is a separate $5,000 diagnostic of your go-to-market motion. I take on a limited number of engagements at a time.</p>
     </div>
   </section>
 
@@ -342,7 +338,7 @@
 
   <div class="pairs-wrap">
     <div class="container">
-      <div class="pairs"><span class="pl">Pairs with</span><a class="pair-chip" href="/ai-agents.html">AI Agents</a><a class="pair-chip" href="/gtm-consulting.html">GTM Consulting</a><a class="pair-chip" href="/audit.html">GTM Audit</a></div>
+      <div class="pairs"><span class="pl">Pairs with</span><a class="pair-chip" href="/ai-agents.html">AI Agents</a><a class="pair-chip" href="/gtm-consulting.html">GTM Consulting</a><a class="pair-chip" href="/gtm-autopsy/">100-Point GTM Autopsy</a></div>
     </div>
   </div>
 
@@ -381,14 +377,14 @@
       <div class="sf-top">
         <div>
           <div class="sf-logo">RAIN<em>CLOUD</em></div>
-          <p class="sf-tag">One engagement: a 100-point GTM audit, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
+          <p class="sf-tag">One engagement: a 100-point GTM autopsy, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
           <p class="sf-also">Also from Colin Dowling: <a href="https://www.withants.com/" target="_blank" rel="noopener">Ants</a> (managed AI agents), <a href="https://www.friendlyghostwriter.com/" target="_blank" rel="noopener">Ghostwriter</a> (B2B content), The AI Ready Advisor (executive AI strategy).</p>
         </div>
         <div class="sf-cols">
           <div>
             <div class="sf-h">Work with me</div>
             <ul>
-              <li><a href="/audit.html">The Audit</a></li>
+              <li><a href="/gtm-autopsy/">The Autopsy</a></li>
               <li><a href="/gtm-consulting.html">The Engagement</a></li>
               <li><a href="/pricing/">Pricing</a></li>
             </ul>
@@ -397,6 +393,8 @@
             <div class="sf-h">Read</div>
             <ul>
               <li><a href="/blog/">Articles</a></li>
+              <li><a href="/faq/">FAQ</a></li>
+              <li><a href="/videos/">Videos</a></li>
               <li><a href="/about.html">About</a></li>
               <li><a href="/resources/100-point-gtm-framework.html">The 100-Point GTM Framework</a></li>
               <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
@@ -406,7 +404,7 @@
           <div>
             <div class="sf-h">Talk</div>
             <ul>
-              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=ai-readiness_page&amp;utm_content=footer" target="_blank" rel="noopener" data-cta="footer">Book the audit call</a></li>
+              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=ai-readiness&amp;utm_content=footer" target="_blank" rel="noopener" data-cta="footer" data-track="book_call" data-cta-id="book_call-footer" data-cta-position="footer" data-cluster="off-offer" data-persona="">Book the audit call</a></li>
               <li><a href="/contact.html">Contact</a></li>
               <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
             </ul>

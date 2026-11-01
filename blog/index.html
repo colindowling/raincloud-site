@@ -11,19 +11,6 @@
     gtag('js', new Date());
     gtag('config', 'G-041BP5G4HF');
 
-    // Custom event: audit_cta_click — body-content links to /audit.html or /contact.html
-    document.addEventListener('click', function(e) {
-      var a = e.target.closest('a[href]');
-      if (!a) return;
-      var href = a.getAttribute('href') || '';
-      if (!/\/(audit|contact)(\.html)?(\?|#|$)/.test(href)) return;
-      if (a.closest('nav') || a.closest('footer')) return;
-      gtag('event', 'audit_cta_click', {
-        cta_text: (a.textContent || '').trim().slice(0, 100),
-        cta_destination: href,
-        cta_location: window.location.pathname
-      });
-    });
 
     // Mobile-aware nav toggle: hamburger opens menu; on mobile, parent dropdown taps expand/collapse instead of navigating; leaf taps close the menu.
     document.addEventListener('DOMContentLoaded', function() {
@@ -316,6 +303,113 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     "publisher": { "@type": "Organization", "name": "RAINCLOUD", "url": "https://rncld.com/" }
   }
   </script>
+  <!-- BLOG_INDEX_LD:START -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "RAINCLOUD Articles",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "https://rncld.com/blog/add-value-not-more-activity.html",
+      "name": "Stop Grinding Harder: Why the Sellers Who Add Value Win Over Time"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "url": "https://rncld.com/blog/cold-outreach-unknown-vendor.html",
+      "name": "Why Cold Pitches From Unknown Vendors Get Ignored, and How to Stop Being a Stranger"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "url": "https://rncld.com/blog/customer-retention-beyond-software.html",
+      "name": "Customers Don't Renew Features: How to Build Retention Beyond the Software"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "url": "https://rncld.com/blog/define-icp-stop-selling-features.html",
+      "name": "Stop Selling Features to Anyone Who'll Listen: Define an ICP You Can Actually Sell To"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "url": "https://rncld.com/blog/enable-every-buying-committee-stakeholder.html",
+      "name": "Selling to a Buying Committee: How to Enable Every Stakeholder and Shorten the Cycle"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "url": "https://rncld.com/blog/founder-story-sales-handoff.html",
+      "name": "Why the Founder Outsells the Sales Team, and How to Hand That Story to Your Reps"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "url": "https://rncld.com/blog/new-decision-maker-mid-deal.html",
+      "name": "When a New Decision-Maker Shows Up Mid-Deal and Wants Their Old Tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "url": "https://rncld.com/blog/reset-expectations-longer-sales-cycles.html",
+      "name": "Your Sales Cycle Got Longer. Here's How to Reset Forecasts and Expectations"
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "url": "https://rncld.com/blog/sales-message-consistency.html",
+      "name": "Every Rep Is Telling a Different Story: How to Fix Sales Message Consistency"
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "url": "https://rncld.com/blog/selling-to-technical-buyers.html",
+      "name": "How to Sell to Technical Buyers Without Faking Expertise"
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "url": "https://rncld.com/blog/which-buyer-signals-matter.html",
+      "name": "Not Every Buyer Signal Matters: How to Decide Which Intent Signals Are Worth Acting On"
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "url": "https://rncld.com/blog/why-deals-die-after-the-yes.html",
+      "name": "Why Deals Die After the Yes, and How to Surface Late Surprises Early"
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "url": "https://rncld.com/blog/claudeforce-for-hubspot.html",
+      "name": "Is There a Claudeforce for HubSpot?"
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "url": "https://rncld.com/blog/outbound-reply-rates-2026.html",
+      "name": "Your Outbound Didn't Stop Working. The Infrastructure Changed."
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "url": "https://rncld.com/blog/bofu-content-that-moves-deals.html",
+      "name": "The Only Content That Moves a Live Deal"
+    },
+    {
+      "@type": "ListItem",
+      "position": 16,
+      "url": "https://rncld.com/blog/why-gtm-builds-fail.html",
+      "name": "Most GTM Builds Fail in the Quarter After the Consultant Leaves"
+    }
+  ]
+}
+  </script>
+      <!-- BLOG_INDEX_LD:END -->
   <link rel="stylesheet" href="/assets/site-nav.css">
   <style id="rc-global">
     nav .nav-links a[aria-current="page"]{color:var(--text-primary);}
@@ -323,19 +417,28 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     footer.sf .sf-also a{color:var(--text-secondary);border-bottom:1px solid var(--border-subtle);}
     footer.sf .sf-also a:hover{color:var(--text-primary);}
   </style>
+  <script src="/assets/track.js" defer></script>
 </head>
-<body>
+<body data-page-template="blog" data-cluster="articles" data-persona="">
   <!-- NAV -->
   <nav id="nav" class="scrolled">
     <div class="container nav-inner">
       <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="/audit.html">The Audit</a></li>
+        <li><a href="/gtm-autopsy/">The Autopsy</a></li>
         <li><a href="/gtm-consulting.html">The Engagement</a></li>
         <li><a href="/pricing/">Pricing</a></li>
         <li><a href="/blog/" aria-current="page">Articles</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=blog_index&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav">Book the audit call</a></li>
+                <li class="has-dropdown"><a href="/problems/outbound-not-landing/">Problems <span class="caret"></span></a>
+          <ul class="dropdown">
+            <li><a href="/problems/outbound-not-landing/">Outbound not landing</a></li>
+            <li><a href="/problems/pipeline-not-growing/">Pipeline not growing</a></li>
+            <li><a href="/problems/first-sales-hire/">First sales hire</a></li>
+            <li><a href="/problems/founder-led-sales-trap/">Founder-led sales</a></li>
+          </ul>
+        </li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=blog&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav" data-track="outside_audit" data-cta-id="outside_audit-nav" data-cta-position="nav" data-cluster="articles" data-persona="">Book your free 40-Point Outside Audit</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -351,20 +454,116 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
 
   <div class="container" style="padding-top: 0; padding-bottom: 0;">
     <div class="blog-grid">
+      <!-- BLOG_CARDS:START -->
+      <a href="/blog/add-value-not-more-activity.html" class="blog-card">
+        <span class="blog-tag">Sales leadership</span>
+        <div class="date">November 2026</div>
+        <h2>Stop Grinding Harder: Why the Sellers Who Add Value Win Over Time</h2>
+        <p>More calls and longer days rarely fix a missed number. Why value added to relationships beats raw activity, and how sales leaders can build teams around it.</p>
+        <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/cold-outreach-unknown-vendor.html" class="blog-card">
+        <span class="blog-tag">Outbound</span>
+        <div class="date">November 2026</div>
+        <h2>Why Cold Pitches From Unknown Vendors Get Ignored, and How to Stop Being a Stranger</h2>
+        <p>Buyers ignore outreach from vendors they don&#x27;t recognize. Here&#x27;s how to earn a reply: warm paths, timely reasons, relevant proof and a useful first touch.</p>
+        <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/customer-retention-beyond-software.html" class="blog-card">
+        <span class="blog-tag">Retention</span>
+        <div class="date">November 2026</div>
+        <h2>Customers Don&#x27;t Renew Features: How to Build Retention Beyond the Software</h2>
+        <p>If customers stay only for what your software does, they&#x27;ll leave when something cheaper does it too. How to build retention on outcomes, expertise and relationships.</p>
+        <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/define-icp-stop-selling-features.html" class="blog-card">
+        <span class="blog-tag">Sales</span>
+        <div class="date">November 2026</div>
+        <h2>Stop Selling Features to Anyone Who&#x27;ll Listen: Define an ICP You Can Actually Sell To</h2>
+        <p>Pitching features to every possible customer stalls growth. Here&#x27;s how to define an ideal customer profile and sell the problem you actually solve.</p>
+        <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/enable-every-buying-committee-stakeholder.html" class="blog-card">
+        <span class="blog-tag">Sales</span>
+        <div class="date">November 2026</div>
+        <h2>Selling to a Buying Committee: How to Enable Every Stakeholder and Shorten the Cycle</h2>
+        <p>Big buying committees stretch sales cycles. Here&#x27;s how to map each stakeholder, give them what they need, and keep complex deals moving.</p>
+        <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/founder-story-sales-handoff.html" class="blog-card">
+        <span class="blog-tag">Sales</span>
+        <div class="date">November 2026</div>
+        <h2>Why the Founder Outsells the Sales Team, and How to Hand That Story to Your Reps</h2>
+        <p>Founders often outsell experienced reps because of their story. Here&#x27;s how to capture that story and teach your team to tell it without faking it.</p>
+        <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/new-decision-maker-mid-deal.html" class="blog-card">
+        <span class="blog-tag">Sales</span>
+        <div class="date">November 2026</div>
+        <h2>When a New Decision-Maker Shows Up Mid-Deal and Wants Their Old Tools</h2>
+        <p>A new leader arrives mid-deal and wants the vendor they used before. Here&#x27;s how to re-qualify, earn their trust and keep the deal alive.</p>
+        <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/reset-expectations-longer-sales-cycles.html" class="blog-card">
+        <span class="blog-tag">Forecasting</span>
+        <div class="date">November 2026</div>
+        <h2>Your Sales Cycle Got Longer. Here&#x27;s How to Reset Forecasts and Expectations</h2>
+        <p>Sales cycles are stretching in many markets. Here&#x27;s how to reset your forecast, your pipeline coverage and your board&#x27;s expectations without panicking.</p>
+        <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/sales-message-consistency.html" class="blog-card">
+        <span class="blog-tag">Messaging</span>
+        <div class="date">November 2026</div>
+        <h2>Every Rep Is Telling a Different Story: How to Fix Sales Message Consistency</h2>
+        <p>When every rep uses a different deck and pitch, buyers get confused and deals slow. Here&#x27;s how to keep sales messaging consistent and current.</p>
+        <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/selling-to-technical-buyers.html" class="blog-card">
+        <span class="blog-tag">Sales</span>
+        <div class="date">November 2026</div>
+        <h2>How to Sell to Technical Buyers Without Faking Expertise</h2>
+        <p>Faking technical depth gets you laughed out of the room. Here&#x27;s how non-technical sellers earn credibility with engineers and technical buyers.</p>
+        <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/which-buyer-signals-matter.html" class="blog-card">
+        <span class="blog-tag">Outbound</span>
+        <div class="date">November 2026</div>
+        <h2>Not Every Buyer Signal Matters: How to Decide Which Intent Signals Are Worth Acting On</h2>
+        <p>Tracking every buyer signal buries reps in noise. Here&#x27;s how to decide which intent signals are material and build outreach around the few that matter.</p>
+        <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a href="/blog/why-deals-die-after-the-yes.html" class="blog-card">
+        <span class="blog-tag">Sales</span>
+        <div class="date">November 2026</div>
+        <h2>Why Deals Die After the Yes, and How to Surface Late Surprises Early</h2>
+        <p>Deals often stall after verbal agreement, or die when a late cost or third party shows up. Here&#x27;s how to find those risks in discovery, not at signature.</p>
+        <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </a>
 
       <a href="/blog/claudeforce-for-hubspot.html" class="blog-card">
         <span class="blog-tag">AI Agents</span>
         <div class="date">September 2026</div>
         <h2>Is There a Claudeforce for HubSpot?</h2>
-        <p>Claudeforce gives Salesforce sellers 37 prebuilt AI skills inside Claude. HubSpot doesn&rsquo;t get it. What it is, what is Salesforce-locked, and how to build the equivalent on HubSpot.</p>
+        <p>Claudeforce gives Salesforce sellers 37 prebuilt AI skills inside Claude. HubSpot doesn’t get it. What it is, what is Salesforce-locked, and how to build the equivalent on HubSpot.</p>
         <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
 
       <a href="/blog/outbound-reply-rates-2026.html" class="blog-card">
         <span class="blog-tag">Outbound</span>
         <div class="date">August 2026</div>
-        <h2>Your Outbound Didn&rsquo;t Stop Working. The Infrastructure Changed.</h2>
-        <p>Reply rates really have fallen &mdash; but most of the numbers being quoted measure different things. What the data actually shows, what changed in the inbox in 2024 and 2025, and the seven things that still move the number.</p>
+        <h2>Your Outbound Didn&#x27;t Stop Working. The Infrastructure Changed.</h2>
+        <p>Reply rates really have fallen — but most of the numbers being quoted measure different things. What the data actually shows, what changed in the inbox in 2024 and 2025, and the seven things that still move the number.</p>
         <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
 
@@ -372,7 +571,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <span class="blog-tag">Content</span>
         <div class="date">August 2026</div>
         <h2>The Only Content That Moves a Live Deal</h2>
-        <p>Most B2B content is written for people who aren&rsquo;t buying anything. Bottom-of-funnel content is written for people already in a deal with you &mdash; and it&rsquo;s the only content your reps will actually send.</p>
+        <p>Most B2B content is written for people who aren’t buying anything. Bottom-of-funnel content is written for people already in a deal with you — and it’s the only content your reps will actually send.</p>
         <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
 
@@ -383,24 +582,34 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <p>The build is rarely the hard part. Four predictable failures show up after handoff, and they explain why an engagement that ends at delivery is structured to fail.</p>
         <span class="read">Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
-
+      <!-- BLOG_CARDS:END -->
     </div>
     </div>
 
   <!-- FOOTER -->
+    <section class="blog-hero" id="blog-end-cta">
+    <div class="container">
+      <h2>Start with the free 40-Point Outside Audit.</h2>
+      <p>It is the part of the 100-Point GTM Autopsy that can be scored from outside the company, from public sources alone. No mystery shop. The 100-Point GTM Autopsy is $5,000, ten business days, required before the 90-day fix, and not credited toward the build.</p>
+      <div class="hero-cta-row">
+        <a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=blog&amp;utm_content=post_end" class="hero-cta" data-track="outside_audit" data-cta="post_end" data-cta-id="outside_audit-post_end" data-cta-position="post_end" data-cluster="articles" data-persona="">Book your free 40-Point Outside Audit &rarr;</a>
+        <span class="hero-meta"><a class="text-link" href="/gtm-autopsy/">Next: the 100-Point GTM Autopsy</a></span>
+      </div>
+    </div>
+  </section>
   <footer class="sf">
     <div class="container">
       <div class="sf-top">
         <div>
           <div class="sf-logo">RAIN<em>CLOUD</em></div>
-          <p class="sf-tag">One engagement: a 100-point GTM audit, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
+          <p class="sf-tag">One engagement: a 100-point GTM autopsy, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
           <p class="sf-also">Also from Colin Dowling: <a href="https://www.withants.com/" target="_blank" rel="noopener">Ants</a> (managed AI agents), <a href="https://www.friendlyghostwriter.com/" target="_blank" rel="noopener">Ghostwriter</a> (B2B content), The AI Ready Advisor (executive AI strategy).</p>
         </div>
         <div class="sf-cols">
           <div>
             <div class="sf-h">Work with me</div>
             <ul>
-              <li><a href="/audit.html">The Audit</a></li>
+              <li><a href="/gtm-autopsy/">The Autopsy</a></li>
               <li><a href="/gtm-consulting.html">The Engagement</a></li>
               <li><a href="/pricing/">Pricing</a></li>
             </ul>
@@ -409,7 +618,9 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
             <div class="sf-h">Read</div>
             <ul>
               <li><a href="/blog/">Articles</a></li>
-              <li><a href="/about.html">About</a></li>
+              <li><a href="/faq/">FAQ</a></li>
+              <li><a href="/videos/">Videos</a></li>
+              <li><a href="/about/">About</a></li>
               <li><a href="/resources/100-point-gtm-framework.html">The 100-Point GTM Framework</a></li>
               <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
               <li><a href="/llms.txt">llms.txt</a></li>
@@ -418,7 +629,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           <div>
             <div class="sf-h">Talk</div>
             <ul>
-              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=blog_index&amp;utm_content=footer" target="_blank" rel="noopener" data-cta="footer">Book the audit call</a></li>
+              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=blog&amp;utm_content=footer" target="_blank" rel="noopener" data-cta="footer" data-track="outside_audit" data-cta-id="outside_audit-footer" data-cta-position="footer" data-cluster="articles" data-persona="">Book your free 40-Point Outside Audit</a></li>
               <li><a href="/contact.html">Contact</a></li>
               <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
             </ul>

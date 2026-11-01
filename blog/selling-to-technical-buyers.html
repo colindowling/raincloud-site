@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-041BP5G4HF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-041BP5G4HF');
+    document.addEventListener('DOMContentLoaded', function() {
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+      if (!navToggle || !navLinks) return;
+      navToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('open');
+        if (!navLinks.classList.contains('open')) {
+          navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+            item.classList.remove('expanded');
+          });
+        }
+      });
+      navLinks.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          var li = a.parentElement;
+          var isDropdownParent = li && li.classList.contains('has-dropdown');
+          var isMobile = window.innerWidth <= 768;
+          var navOpen = navLinks.classList.contains('open');
+          if (isDropdownParent && isMobile && navOpen) {
+            e.preventDefault();
+            li.classList.toggle('expanded');
+          } else {
+            navLinks.classList.remove('open');
+            navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+              item.classList.remove('expanded');
+            });
+          }
+        });
+      });
+    });
+  </script>
+  <script src="/assets/track.js" defer></script>
+  <title>How to Sell to Technical Buyers Without Faking Expertise — RAINCLOUD</title>
+  <meta name="description" content="Faking technical depth gets you laughed out of the room. Here&#x27;s how non-technical sellers earn credibility with engineers and technical buyers.">
+  <link rel="canonical" href="https://rncld.com/blog/selling-to-technical-buyers.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/site-extra.css">
+  <link rel="stylesheet" href="/assets/site-nav.css">
+  <link rel="stylesheet" href="/assets/blog-post.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="RAINCLOUD">
+  <meta property="og:title" content="How to Sell to Technical Buyers Without Faking Expertise">
+  <meta property="og:description" content="Faking technical depth gets you laughed out of the room. Here&#x27;s how non-technical sellers earn credibility with engineers and technical buyers.">
+  <meta property="og:url" content="https://rncld.com/blog/selling-to-technical-buyers.html">
+  <meta property="og:image" content="https://rncld.com/assets/band-boardroom.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Sell to Technical Buyers Without Faking Expertise">
+  <meta name="twitter:description" content="Faking technical depth gets you laughed out of the room. Here&#x27;s how non-technical sellers earn credibility with engineers and technical buyers.">
+  <meta name="twitter:image" content="https://rncld.com/assets/band-boardroom.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "How to Sell to Technical Buyers Without Faking Expertise",
+      "description": "Faking technical depth gets you laughed out of the room. Here's how non-technical sellers earn credibility with engineers and technical buyers.",
+      "image": "https://rncld.com/assets/band-boardroom.png",
+      "author": {
+        "@type": "Person",
+        "name": "Colin Dowling",
+        "url": "https://rncld.com/about/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "RAINCLOUD",
+        "url": "https://rncld.com/"
+      },
+      "mainEntityOfPage": "https://rncld.com/blog/selling-to-technical-buyers.html",
+      "datePublished": "2026-11-02",
+      "dateModified": "2026-11-02",
+      "articleSection": "Sales",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do non-technical salespeople sell to engineers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By being curious instead of clever. Ask how their system works today, where it breaks and what they've already tried. Engineers respect people who understand the business problem and admit what they don't know. Bring in a technical colleague for deep questions, and make sure you've briefed them on the problem first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do technical buyers hate in a sales process?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bluffing, buzzwords and pitches that skip their actual question. They'll often ask a pointed question early to see if you know your product. A confident wrong answer ends your credibility. Long decks and vague claims without proof also lose them. They want specifics, documentation and a way to test it themselves."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I say 'I don't know' to a technical buyer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, as long as you follow it with when you'll get the answer and then deliver. 'I don't know, I'll find out by Thursday' builds trust. Guessing destroys it, because technical buyers can usually tell immediately and will remember. Following up on time is often what earns the second meeting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should a sales engineer join the deal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Once you understand the problem well enough to brief them. Bringing technical help in too early turns discovery into a demo. Too late, and the buyer has already dismissed you. A good rule is after the first discovery call, when you can say what the buyer is trying to fix and what success looks like."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rncld.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articles",
+          "item": "https://rncld.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Sell to Technical Buyers Without Faking Expertise",
+          "item": "https://rncld.com/blog/selling-to-technical-buyers.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style id="rc-global">
+    nav .nav-links a[aria-current="page"]{color:var(--text-primary);}
+    footer.sf .sf-also{margin-top:14px;font-size:.72rem;line-height:1.6;color:var(--text-tertiary);max-width:300px;}
+    footer.sf .sf-also a{color:var(--text-secondary);border-bottom:1px solid var(--border-subtle);}
+    footer.sf .sf-also a:hover{color:var(--text-primary);}
+  </style>
+</head>
+<body data-page-template="post" data-cluster="diagnosis" data-persona="">
+  <nav id="nav" class="scrolled">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/gtm-autopsy/">The Autopsy</a></li>
+        <li><a href="/gtm-consulting.html">The Engagement</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/" aria-current="page">Articles</a></li>
+        <li class="has-dropdown"><a href="/problems/outbound-not-landing/">Problems <span class="caret"></span></a>
+          <ul class="dropdown">
+            <li><a href="/problems/outbound-not-landing/">Outbound not landing</a></li>
+            <li><a href="/problems/pipeline-not-growing/">Pipeline not growing</a></li>
+            <li><a href="/problems/first-sales-hire/">First sales hire</a></li>
+            <li><a href="/problems/founder-led-sales-trap/">Founder-led sales</a></li>
+          </ul>
+        </li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=selling-to-technical-buyers&amp;utm_content=nav" class="nav-cta" data-track="outside_audit" data-cta="nav" data-cta-id="outside_audit-nav" data-cta-position="nav" data-cluster="diagnosis" data-persona="">Book your free 40-Point Outside Audit</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="post-hero">
+    <div class="container--narrow" style="max-width: 720px;">
+      <div class="label label--accent">Sales</div>
+      <h1>How to Sell to Technical Buyers Without Faking Expertise</h1>
+      <div class="post-meta">
+        <span><a href="/about/">Colin Dowling</a></span>
+        <span>November 2026</span>
+        <span>4 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="post-body">
+    <div class="container--narrow" style="max-width: 720px;">
+      <aside class="takeaways" aria-label="Key takeaways">
+        <div class="label label--accent">Key takeaways</div>
+        <ol>
+        <li>Technical buyers test you early, and bluffing is the fastest way to lose them.</li>
+        <li>Your job is to understand their problem, not to out-engineer them.</li>
+        <li>Say &#x27;I don&#x27;t know, I&#x27;ll find out&#x27; and then actually follow up.</li>
+        <li>Bring technical help in at the right moment, with a clear brief.</li>
+        </ol>
+      </aside>
+      <div class="post-video" data-video-slot="empty" hidden></div>
+      <p>You sell to technical buyers by being curious instead of clever. Understand their problem better than anyone else in the deal, admit what you don&#x27;t know, and bring in technical help with a clear brief. Faking expertise is the one move that reliably ends the conversation.</p>
+
+<p>A go-to-market leader I spoke with recently, who&#x27;s spent years selling to engineers, put it bluntly. Faking technical knowledge is absolutely a way to get shown the door, get laughed out of the room, and destroy your credibility.</p>
+
+<p>I&#x27;ve sold to IT and engineering teams. It&#x27;s been my experience that they&#x27;re often just waiting to drag you into deep water and drown you. Not because they&#x27;re mean. Because they&#x27;ve been burned by people who pretended.</p>
+
+<h2>Why technical buyers test you</h2>
+
+<p>Engineers and technical leaders get pitched constantly. Most of those pitches are vague, overconfident or both. So they&#x27;ve learned to run a quick filter.</p>
+
+<p>Somewhere in the first few minutes, they&#x27;ll ask a question to see if you actually know what you&#x27;re talking about. Sometimes it&#x27;s a real question. Sometimes it&#x27;s a trap.</p>
+
+<p>If you answer with confidence and you&#x27;re wrong, you&#x27;re done. They won&#x27;t say so. They&#x27;ll just stop taking you seriously.</p>
+
+<h2>You don&#x27;t need to be the expert</h2>
+
+<p>Here&#x27;s the tension. You want to sound credible. But you&#x27;ll never out-engineer the engineer, and trying makes it worse.</p>
+
+<p>I land here: your job isn&#x27;t to know their stack better than they do. Your job is to understand the problem better than anyone else in the deal. What&#x27;s broken, who feels it, what it costs, and what they&#x27;ve already tried.</p>
+
+<p>That&#x27;s something you can own. And it&#x27;s what technical buyers rarely get from a seller.</p>
+
+<div class="post-cta" data-cta-block="inbody">
+        <h3>Start with the free 40-Point Outside Audit.</h3>
+        <p>It is the part of the 100-Point GTM Autopsy that can be scored from outside the company, from public sources alone. No mystery shop. Scored by Colin, with an offer to walk through what he found. The 100-Point GTM Autopsy is $5,000, ten business days, required before the 90-day fix, and not credited toward the build.</p>
+        <p class="post-cta-meta">Then the $5,000 100-Point GTM Autopsy. Then the 90-day fix.</p>
+        <a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=selling-to-technical-buyers&amp;utm_content=inbody" class="btn btn--primary" data-track="outside_audit" data-cta="inbody" data-cta-id="outside_audit-inbody" data-cta-position="inbody" data-cluster="diagnosis" data-persona="">
+          <span>Book your free 40-Point Outside Audit</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="post-cta-sec"><a class="text-link" href="/gtm-autopsy/" data-track="autopsy" data-cta="inbody" data-cta-id="autopsy-inbody" data-cta-position="inbody" data-cluster="diagnosis" data-persona="">See the 100-Point GTM Autopsy</a></p>
+      </div>
+
+      <h2>How to earn credibility instead</h2>
+
+<h3>Ask before you tell</h3>
+
+<p>Start with how things work today. Where does it break? What have you tried? What would good look like? Technical people usually like explaining their systems. Let them.</p>
+
+<p>Anytime somebody shows up to show how smart they are instead of asking about the real pain, it doesn&#x27;t work. That goes double with engineers.</p>
+
+<h3>Use &quot;I don&#x27;t know&quot; on purpose</h3>
+
+<p>When you get a question you can&#x27;t answer, say so. Then say when you&#x27;ll have the answer, and deliver it on time. Not knowing is fixable. Bluffing isn&#x27;t.</p>
+
+<p>Following up exactly when you said you would is often what earns the next meeting.</p>
+
+<h3>Learn the vocabulary, not the deep end</h3>
+
+<p>Know your product&#x27;s main concepts well enough to describe them accurately. Know the terms your buyers use. You don&#x27;t need to explain the internals. You need to avoid getting the basics wrong.</p>
+
+<h3>Bring technical help in at the right time</h3>
+
+<p>A sales engineer or product specialist is valuable, but timing matters:</p>
+
+<ul>
+<li>Too early, and discovery turns into a demo of things nobody asked about.</li>
+<li>Too late, and the buyer has already decided you&#x27;re not serious.</li>
+<li>About right is after your first real discovery call, once you can brief them.</li>
+</ul>
+
+<p>Give them a short brief: what the buyer is trying to fix, what they&#x27;ve tried, what success looks like, and what questions came up. Then let them go deep while you keep track of the business case.</p>
+
+<p>In bigger deals, the engineer is one of several people to <a href="/blog/enable-every-buying-committee-stakeholder.html">enable across the buying committee</a>.</p>
+
+<h3>Give them proof they can check</h3>
+
+<p>Technical buyers trust documentation, specific examples and things they can test themselves. Offer those instead of adjectives. A trial, a sandbox or a short technical doc does more than any slide.</p>
+
+<h2>Make it a team habit</h2>
+
+<p>If one rep on your team bluffs, the whole brand pays for it with that buyer. So make it explicit. Tell your team it&#x27;s fine, even good, to say &quot;I&#x27;ll find out.&quot; Review calls where technical questions came up and talk about how they were handled.</p>
+
+<p>The reps who learn this tend to do better with technical buyers, because they become the one person in the process who isn&#x27;t pretending.</p>
+
+<h2>Signs your team is bluffing</h2>
+
+<ul>
+<li>Technical stakeholders stop showing up after the first meeting.</li>
+<li>Follow-up questions go unanswered for days.</li>
+<li>Your sales engineer spends calls correcting what the rep said earlier.</li>
+</ul>
+
+<p>Any one of those is worth a call review this week.</p>
+
+<h2>Common mistakes</h2>
+
+<ul>
+<li><strong>Answering a question you weren&#x27;t asked.</strong> Technical buyers notice when you dodge.</li>
+<li><strong>Bringing the sales engineer in cold.</strong> Brief them first, every time.</li>
+</ul>
+
+<h2>If your team keeps losing technical evaluations</h2>
+
+<p>Sometimes it&#x27;s a messaging problem. Sometimes it&#x27;s how discovery is run, or when technical help shows up. The <a href="/gtm-autopsy/">100-Point GTM Autopsy</a> looks at the full sales process, so you can see where credibility is being lost and what to fix first.</p>
+
+<p><strong>Losing technical deals and not sure why?</strong> Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it&#x27;s useful, the next step is the <a href="/gtm-autopsy/">100-Point GTM Autopsy</a>, which scores your whole go-to-market with your data and your team. <a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=selling-to-technical-buyers&amp;utm_content=inbody_text" data-track="outside_audit" data-cta="inbody_text" data-cta-id="outside_audit-inbody_text" data-cta-position="inbody_text" data-cluster="diagnosis" data-persona="">Book your free 40-Point Outside Audit</a>.</p>
+      <section class="post-faq" aria-label="Questions">
+        <h2>Questions this post answers</h2>
+        <div class="faq-item">
+          <h3>How do non-technical salespeople sell to engineers?</h3>
+          <p>By being curious instead of clever. Ask how their system works today, where it breaks and what they&#x27;ve already tried. Engineers respect people who understand the business problem and admit what they don&#x27;t know. Bring in a technical colleague for deep questions, and make sure you&#x27;ve briefed them on the problem first.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What do technical buyers hate in a sales process?</h3>
+          <p>Bluffing, buzzwords and pitches that skip their actual question. They&#x27;ll often ask a pointed question early to see if you know your product. A confident wrong answer ends your credibility. Long decks and vague claims without proof also lose them. They want specifics, documentation and a way to test it themselves.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Should I say &#x27;I don&#x27;t know&#x27; to a technical buyer?</h3>
+          <p>Yes, as long as you follow it with when you&#x27;ll get the answer and then deliver. &#x27;I don&#x27;t know, I&#x27;ll find out by Thursday&#x27; builds trust. Guessing destroys it, because technical buyers can usually tell immediately and will remember. Following up on time is often what earns the second meeting.</p>
+        </div>
+        <div class="faq-item">
+          <h3>When should a sales engineer join the deal?</h3>
+          <p>Once you understand the problem well enough to brief them. Bringing technical help in too early turns discovery into a demo. Too late, and the buyer has already dismissed you. A good rule is after the first discovery call, when you can say what the buyer is trying to fix and what success looks like.</p>
+        </div>
+      </section>
+      <div class="post-cta" data-cta-block="post_end">
+        <h3>Start with the free 40-Point Outside Audit.</h3>
+        <p>It is the part of the 100-Point GTM Autopsy that can be scored from outside the company, from public sources alone. No mystery shop. Scored by Colin, with an offer to walk through what he found. The 100-Point GTM Autopsy is $5,000, ten business days, required before the 90-day fix, and not credited toward the build.</p>
+        <p class="post-cta-meta">Then the $5,000 100-Point GTM Autopsy. Then the 90-day fix.</p>
+        <a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=selling-to-technical-buyers&amp;utm_content=post_end" class="btn btn--primary" data-track="outside_audit" data-cta="post_end" data-cta-id="outside_audit-post_end" data-cta-position="post_end" data-cluster="diagnosis" data-persona="">
+          <span>Book your free 40-Point Outside Audit</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="post-cta-sec"><a class="text-link" href="/gtm-autopsy/" data-track="autopsy" data-cta="post_end" data-cta-id="autopsy-post_end" data-cta-position="post_end" data-cluster="diagnosis" data-persona="">See the 100-Point GTM Autopsy</a></p>
+      </div>
+      <aside class="post-related" aria-label="Related">
+        <div class="label">On this topic</div>
+        <ul>
+        <li><a href="/gtm-autopsy/">The 100-Point GTM Autopsy</a></li>
+        <li><a href="/blog/enable-every-buying-committee-stakeholder.html">Selling to a Buying Committee: How to Enable Every Stakeholder and Shorten the Cycle</a></li>
+        <li><a href="/blog/sales-message-consistency.html">Every Rep Is Telling a Different Story: How to Fix Sales Message Consistency</a></li>
+        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=selling-to-technical-buyers&amp;utm_content=related_box" data-track="outside_audit" data-cta="related_box" data-cta-id="outside_audit-related_box" data-cta-position="related_box" data-cluster="diagnosis" data-persona="">Book your free 40-Point Outside Audit</a></li>
+        </ul>
+      </aside>
+      <div class="post-nav">
+        <a href="/blog/">&larr; All Posts</a>
+        <a href="/blog/">See all articles &rarr;</a>
+      </div>
+    </div>
+  </div>
+  <footer class="sf">
+    <div class="container">
+      <div class="sf-top">
+        <div>
+          <div class="sf-logo">RAIN<em>CLOUD</em></div>
+          <p class="sf-tag">One engagement: a 100-point GTM autopsy, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
+          <p class="sf-also">Also from Colin Dowling: <a href="https://www.withants.com/" target="_blank" rel="noopener">Ants</a> (managed AI agents), <a href="https://www.friendlyghostwriter.com/" target="_blank" rel="noopener">Ghostwriter</a> (B2B content), The AI Ready Advisor (executive AI strategy).</p>
+        </div>
+        <div class="sf-cols">
+          <div>
+            <div class="sf-h">Work with me</div>
+            <ul>
+              <li><a href="/gtm-autopsy/">The Autopsy</a></li>
+              <li><a href="/gtm-consulting.html">The Engagement</a></li>
+              <li><a href="/pricing/">Pricing</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Read</div>
+            <ul>
+              <li><a href="/blog/">Articles</a></li>
+              <li><a href="/faq/">FAQ</a></li>
+              <li><a href="/videos/">Videos</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/resources/100-point-gtm-framework.html">The 100-Point GTM Framework</a></li>
+              <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
+              <li><a href="/llms.txt">llms.txt</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Talk</div>
+            <ul>
+              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=selling-to-technical-buyers&amp;utm_content=footer" data-track="outside_audit" data-cta="footer" data-cta-id="outside_audit-footer" data-cta-position="footer" data-cluster="diagnosis" data-persona="">Book your free 40-Point Outside Audit</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sf-copy">&copy; 2026 RAINCLOUD. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>

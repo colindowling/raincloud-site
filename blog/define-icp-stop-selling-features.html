@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-041BP5G4HF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-041BP5G4HF');
+    document.addEventListener('DOMContentLoaded', function() {
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+      if (!navToggle || !navLinks) return;
+      navToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('open');
+        if (!navLinks.classList.contains('open')) {
+          navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+            item.classList.remove('expanded');
+          });
+        }
+      });
+      navLinks.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          var li = a.parentElement;
+          var isDropdownParent = li && li.classList.contains('has-dropdown');
+          var isMobile = window.innerWidth <= 768;
+          var navOpen = navLinks.classList.contains('open');
+          if (isDropdownParent && isMobile && navOpen) {
+            e.preventDefault();
+            li.classList.toggle('expanded');
+          } else {
+            navLinks.classList.remove('open');
+            navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+              item.classList.remove('expanded');
+            });
+          }
+        });
+      });
+    });
+  </script>
+  <script src="/assets/track.js" defer></script>
+  <title>Stop Selling Features to Anyone Who&#x27;ll Listen: Define an ICP You Can Actually Sell To — RAINCLOUD</title>
+  <meta name="description" content="Pitching features to every possible customer stalls growth. Here&#x27;s how to define an ideal customer profile and sell the problem you actually solve.">
+  <link rel="canonical" href="https://rncld.com/blog/define-icp-stop-selling-features.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/site-extra.css">
+  <link rel="stylesheet" href="/assets/site-nav.css">
+  <link rel="stylesheet" href="/assets/blog-post.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="RAINCLOUD">
+  <meta property="og:title" content="Stop Selling Features to Anyone Who&#x27;ll Listen: Define an ICP You Can Actually Sell To">
+  <meta property="og:description" content="Pitching features to every possible customer stalls growth. Here&#x27;s how to define an ideal customer profile and sell the problem you actually solve.">
+  <meta property="og:url" content="https://rncld.com/blog/define-icp-stop-selling-features.html">
+  <meta property="og:image" content="https://rncld.com/assets/band-boardroom.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stop Selling Features to Anyone Who&#x27;ll Listen: Define an ICP You Can Actually Sell To">
+  <meta name="twitter:description" content="Pitching features to every possible customer stalls growth. Here&#x27;s how to define an ideal customer profile and sell the problem you actually solve.">
+  <meta name="twitter:image" content="https://rncld.com/assets/band-boardroom.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Stop Selling Features to Anyone Who'll Listen: Define an ICP You Can Actually Sell To",
+      "description": "Pitching features to every possible customer stalls growth. Here's how to define an ideal customer profile and sell the problem you actually solve.",
+      "image": "https://rncld.com/assets/band-boardroom.png",
+      "author": {
+        "@type": "Person",
+        "name": "Colin Dowling",
+        "url": "https://rncld.com/about/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "RAINCLOUD",
+        "url": "https://rncld.com/"
+      },
+      "mainEntityOfPage": "https://rncld.com/blog/define-icp-stop-selling-features.html",
+      "datePublished": "2026-11-02",
+      "dateModified": "2026-11-02",
+      "articleSection": "Sales",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an ideal customer profile in B2B sales?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An ideal customer profile, or ICP, describes the companies most likely to buy, succeed and stay. It covers firmographics like industry and size, the systems they use, and the situation that made them buy. It describes companies, not people. Buyer personas sit inside the ICP and describe the individuals involved."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find my ICP if I have only a few customers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Look at your best few customers, not all of them. Ask what they had in common before they bought: the trigger, the team size, the tool they replaced, how fast they decided. Interview two or three of them. Even five good customers usually reveal a pattern you can write down and test."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does selling features not work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Buyers don't buy features. They buy a fix for a problem they already feel. A feature list asks the buyer to do the translation work, and most won't. Leading with the specific problem a defined group of customers has lets them recognize themselves quickly and decide whether the conversation is worth having."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How narrow should my ICP be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Narrow enough that your message would sound wrong to someone outside it. If the same pitch could go to a hospital and a software startup, it's too broad. You can widen later. Starting narrow makes every part of sales sharper: the list, the message, the proof and the follow-up."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rncld.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articles",
+          "item": "https://rncld.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Stop Selling Features to Anyone Who'll Listen: Define an ICP You Can Actually Sell To",
+          "item": "https://rncld.com/blog/define-icp-stop-selling-features.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style id="rc-global">
+    nav .nav-links a[aria-current="page"]{color:var(--text-primary);}
+    footer.sf .sf-also{margin-top:14px;font-size:.72rem;line-height:1.6;color:var(--text-tertiary);max-width:300px;}
+    footer.sf .sf-also a{color:var(--text-secondary);border-bottom:1px solid var(--border-subtle);}
+    footer.sf .sf-also a:hover{color:var(--text-primary);}
+  </style>
+</head>
+<body data-page-template="post" data-cluster="diagnosis" data-persona="">
+  <nav id="nav" class="scrolled">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/gtm-autopsy/">The Autopsy</a></li>
+        <li><a href="/gtm-consulting.html">The Engagement</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/" aria-current="page">Articles</a></li>
+        <li class="has-dropdown"><a href="/problems/outbound-not-landing/">Problems <span class="caret"></span></a>
+          <ul class="dropdown">
+            <li><a href="/problems/outbound-not-landing/">Outbound not landing</a></li>
+            <li><a href="/problems/pipeline-not-growing/">Pipeline not growing</a></li>
+            <li><a href="/problems/first-sales-hire/">First sales hire</a></li>
+            <li><a href="/problems/founder-led-sales-trap/">Founder-led sales</a></li>
+          </ul>
+        </li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=define-icp-stop-selling-features&amp;utm_content=nav" class="nav-cta" data-track="outside_audit" data-cta="nav" data-cta-id="outside_audit-nav" data-cta-position="nav" data-cluster="diagnosis" data-persona="">Book your free 40-Point Outside Audit</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="post-hero">
+    <div class="container--narrow" style="max-width: 720px;">
+      <div class="label label--accent">Sales</div>
+      <h1>Stop Selling Features to Anyone Who&#x27;ll Listen: Define an ICP You Can Actually Sell To</h1>
+      <div class="post-meta">
+        <span><a href="/about/">Colin Dowling</a></span>
+        <span>November 2026</span>
+        <span>4 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="post-body">
+    <div class="container--narrow" style="max-width: 720px;">
+      <aside class="takeaways" aria-label="Key takeaways">
+        <div class="label label--accent">Key takeaways</div>
+        <ol>
+        <li>Selling features to everyone means you&#x27;re not really selling to anyone.</li>
+        <li>An ICP is a short list of traits your best customers share, plus the situation they were in.</li>
+        <li>Lead with the problem those customers had, not the feature list.</li>
+        <li>A tight ICP makes targeting, messaging and hiring easier at the same time.</li>
+        </ol>
+      </aside>
+      <div class="post-video" data-video-slot="empty" hidden></div>
+      <p>To define an ICP you can sell to, start with your best few customers, write down what they had in common before they bought, and then sell the problem those customers had instead of the feature list. If your pitch would work on almost anyone, it&#x27;s not working on anyone in particular.</p>
+
+<p>An operator I spoke with recently, someone who&#x27;s been inside a lot of growing companies, said he can&#x27;t tell you how many companies he walks into where they&#x27;re selling a product by talking about features and attributes and throwing it at almost any customer.</p>
+
+<h2>Why &quot;anyone could use this&quot; is a trap</h2>
+
+<p>When a product can help a lot of people, it&#x27;s tempting to sell it to all of them. It feels like a bigger market. It feels safer.</p>
+
+<p>It isn&#x27;t. A broad target means a generic message. A generic message means the buyer has to figure out on their own why your product matters to them. Most won&#x27;t bother.</p>
+
+<p>Here&#x27;s the tension. Founders and sales leaders worry that narrowing the market will shrink the pipeline. In practice, a tight target usually grows it, because the people you reach actually recognize themselves in what you say.</p>
+
+<h2>What an ICP actually is</h2>
+
+<p>An ideal customer profile isn&#x27;t a persona and it isn&#x27;t a wish list. It&#x27;s a short description of the companies most likely to buy, get value and stay. Keep it to things you can check:</p>
+
+<ul>
+<li><strong>Firmographics:</strong> industry, size, region, growth stage.</li>
+<li><strong>Environment:</strong> the systems they run, the team that would own your product.</li>
+<li><strong>Situation:</strong> what was happening when your best customers bought. A new leader, a failed project, a growth target, a compliance deadline.</li>
+</ul>
+
+<p>That last one matters most. Two companies can look identical on paper, and only one of them has the problem right now.</p>
+
+<div class="post-cta" data-cta-block="inbody">
+        <h3>Start with the free 40-Point Outside Audit.</h3>
+        <p>It is the part of the 100-Point GTM Autopsy that can be scored from outside the company, from public sources alone. No mystery shop. Scored by Colin, with an offer to walk through what he found. The 100-Point GTM Autopsy is $5,000, ten business days, required before the 90-day fix, and not credited toward the build.</p>
+        <p class="post-cta-meta">Then the $5,000 100-Point GTM Autopsy. Then the 90-day fix.</p>
+        <a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=define-icp-stop-selling-features&amp;utm_content=inbody" class="btn btn--primary" data-track="outside_audit" data-cta="inbody" data-cta-id="outside_audit-inbody" data-cta-position="inbody" data-cluster="diagnosis" data-persona="">
+          <span>Book your free 40-Point Outside Audit</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="post-cta-sec"><a class="text-link" href="/gtm-autopsy/" data-track="autopsy" data-cta="inbody" data-cta-id="autopsy-inbody" data-cta-position="inbody" data-cluster="diagnosis" data-persona="">See the 100-Point GTM Autopsy</a></p>
+      </div>
+
+      <h2>How to build one in a week</h2>
+
+<h3>Pick your best customers, not all of them</h3>
+
+<p>Pull the five to ten customers you&#x27;d clone if you could. Happy, profitable, easy to work with, got value fast. Ignore the rest for this exercise.</p>
+
+<h3>Find what they shared before they bought</h3>
+
+<p>What were they using before? Who brought you in? What triggered the search? How long did it take? Look for the pattern, not the exceptions.</p>
+
+<p>If you can, call two or three of them and ask why they bought. Their words will be more useful than yours.</p>
+
+<h3>Write it in plain language</h3>
+
+<p>One paragraph. Something like: &quot;Mid-market companies in this industry, with a small sales team on this CRM, who just lost a deal to the status quo and have a new revenue leader.&quot; If a rep can&#x27;t read it and build a list from it, rewrite it.</p>
+
+<h3>Test it against your pipeline</h3>
+
+<p>Go through current deals. The ones that fit should be moving better than the ones that don&#x27;t. If they aren&#x27;t, adjust.</p>
+
+<h2>Then change the pitch</h2>
+
+<p>Once you know who you&#x27;re selling to, stop leading with features. Lead with the problem that specific group has, in their language.</p>
+
+<p>Instead of &quot;our platform has automated workflows and real-time dashboards,&quot; try &quot;most teams your size lose hours every week reconciling reports by hand.&quot; The feature is still there. It just shows up as the answer instead of the opening.</p>
+
+<p>Anytime somebody shows up trying to show how smart their product is, instead of asking about the buyer&#x27;s real pain, it doesn&#x27;t work. Features prove you can solve the problem. They don&#x27;t prove you understand it.</p>
+
+<h2>What a tight ICP fixes downstream</h2>
+
+<p>A clear ICP pays off everywhere:</p>
+
+<ul>
+<li>Outbound lists get shorter, and replies tend to improve.</li>
+<li>Messaging gets specific, so marketing and sales say the same thing.</li>
+<li>Case studies get picked for the people who&#x27;ll read them.</li>
+<li>Hiring gets easier, because you know what kind of buyer reps will sell to.</li>
+</ul>
+
+<p>It&#x27;s one of those things that should be obvious, and the older I get, the more I learn things that should have been obvious years ago. Defining who you&#x27;re for is one of them.</p>
+
+<h2>Signs your ICP is too loose</h2>
+
+<ul>
+<li>Reps build their own target lists, and no two lists look alike.</li>
+<li>Your best and worst customers came in through the same pitch.</li>
+<li>Win rates vary wildly by rep, and nobody can explain why.</li>
+<li>Marketing and sales give different answers to &quot;who&#x27;s our customer?&quot;</li>
+</ul>
+
+<p>If two or more of those sound familiar, the ICP exists on a slide but not in the work.</p>
+
+<p>Once the ICP is set, the next questions are <a href="/blog/which-buyer-signals-matter.html">which buyer signals are worth acting on</a> and whether <a href="/blog/sales-message-consistency.html">every rep tells the same story</a>.</p>
+
+<h2>If you&#x27;re not sure where you stand</h2>
+
+<p>If your team describes the ideal customer differently depending on who you ask, that&#x27;s a sign. ICP definition is one of the first things I score in the <a href="/gtm-autopsy/">100-Point GTM Autopsy</a>, because almost everything else in go-to-market depends on it. If you already know the ICP and need the motion rebuilt around it, that&#x27;s what <a href="/gtm-consulting.html">the 90-day engagement</a> is for.</p>
+
+<p><strong>Want to know if your ICP is costing you pipeline?</strong> Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it&#x27;s useful, the next step is the <a href="/gtm-autopsy/">100-Point GTM Autopsy</a>, which scores your whole go-to-market with your data and your team. <a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=define-icp-stop-selling-features&amp;utm_content=inbody_text" data-track="outside_audit" data-cta="inbody_text" data-cta-id="outside_audit-inbody_text" data-cta-position="inbody_text" data-cluster="diagnosis" data-persona="">Book your free 40-Point Outside Audit</a>.</p>
+      <section class="post-faq" aria-label="Questions">
+        <h2>Questions this post answers</h2>
+        <div class="faq-item">
+          <h3>What is an ideal customer profile in B2B sales?</h3>
+          <p>An ideal customer profile, or ICP, describes the companies most likely to buy, succeed and stay. It covers firmographics like industry and size, the systems they use, and the situation that made them buy. It describes companies, not people. Buyer personas sit inside the ICP and describe the individuals involved.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I find my ICP if I have only a few customers?</h3>
+          <p>Look at your best few customers, not all of them. Ask what they had in common before they bought: the trigger, the team size, the tool they replaced, how fast they decided. Interview two or three of them. Even five good customers usually reveal a pattern you can write down and test.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Why does selling features not work?</h3>
+          <p>Buyers don&#x27;t buy features. They buy a fix for a problem they already feel. A feature list asks the buyer to do the translation work, and most won&#x27;t. Leading with the specific problem a defined group of customers has lets them recognize themselves quickly and decide whether the conversation is worth having.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How narrow should my ICP be?</h3>
+          <p>Narrow enough that your message would sound wrong to someone outside it. If the same pitch could go to a hospital and a software startup, it&#x27;s too broad. You can widen later. Starting narrow makes every part of sales sharper: the list, the message, the proof and the follow-up.</p>
+        </div>
+      </section>
+      <div class="post-cta" data-cta-block="post_end">
+        <h3>Start with the free 40-Point Outside Audit.</h3>
+        <p>It is the part of the 100-Point GTM Autopsy that can be scored from outside the company, from public sources alone. No mystery shop. Scored by Colin, with an offer to walk through what he found. The 100-Point GTM Autopsy is $5,000, ten business days, required before the 90-day fix, and not credited toward the build.</p>
+        <p class="post-cta-meta">Then the $5,000 100-Point GTM Autopsy. Then the 90-day fix.</p>
+        <a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=define-icp-stop-selling-features&amp;utm_content=post_end" class="btn btn--primary" data-track="outside_audit" data-cta="post_end" data-cta-id="outside_audit-post_end" data-cta-position="post_end" data-cluster="diagnosis" data-persona="">
+          <span>Book your free 40-Point Outside Audit</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="post-cta-sec"><a class="text-link" href="/gtm-autopsy/" data-track="autopsy" data-cta="post_end" data-cta-id="autopsy-post_end" data-cta-position="post_end" data-cluster="diagnosis" data-persona="">See the 100-Point GTM Autopsy</a></p>
+      </div>
+      <aside class="post-related" aria-label="Related">
+        <div class="label">On this topic</div>
+        <ul>
+        <li><a href="/gtm-autopsy/">The 100-Point GTM Autopsy</a></li>
+        <li><a href="/blog/which-buyer-signals-matter.html">Not Every Buyer Signal Matters: How to Decide Which Intent Signals Are Worth Acting On</a></li>
+        <li><a href="/blog/sales-message-consistency.html">Every Rep Is Telling a Different Story: How to Fix Sales Message Consistency</a></li>
+        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=define-icp-stop-selling-features&amp;utm_content=related_box" data-track="outside_audit" data-cta="related_box" data-cta-id="outside_audit-related_box" data-cta-position="related_box" data-cluster="diagnosis" data-persona="">Book your free 40-Point Outside Audit</a></li>
+        </ul>
+      </aside>
+      <div class="post-nav">
+        <a href="/blog/">&larr; All Posts</a>
+        <a href="/blog/">See all articles &rarr;</a>
+      </div>
+    </div>
+  </div>
+  <footer class="sf">
+    <div class="container">
+      <div class="sf-top">
+        <div>
+          <div class="sf-logo">RAIN<em>CLOUD</em></div>
+          <p class="sf-tag">One engagement: a 100-point GTM autopsy, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
+          <p class="sf-also">Also from Colin Dowling: <a href="https://www.withants.com/" target="_blank" rel="noopener">Ants</a> (managed AI agents), <a href="https://www.friendlyghostwriter.com/" target="_blank" rel="noopener">Ghostwriter</a> (B2B content), The AI Ready Advisor (executive AI strategy).</p>
+        </div>
+        <div class="sf-cols">
+          <div>
+            <div class="sf-h">Work with me</div>
+            <ul>
+              <li><a href="/gtm-autopsy/">The Autopsy</a></li>
+              <li><a href="/gtm-consulting.html">The Engagement</a></li>
+              <li><a href="/pricing/">Pricing</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Read</div>
+            <ul>
+              <li><a href="/blog/">Articles</a></li>
+              <li><a href="/faq/">FAQ</a></li>
+              <li><a href="/videos/">Videos</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/resources/100-point-gtm-framework.html">The 100-Point GTM Framework</a></li>
+              <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
+              <li><a href="/llms.txt">llms.txt</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Talk</div>
+            <ul>
+              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=define-icp-stop-selling-features&amp;utm_content=footer" data-track="outside_audit" data-cta="footer" data-cta-id="outside_audit-footer" data-cta-position="footer" data-cluster="diagnosis" data-persona="">Book your free 40-Point Outside Audit</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sf-copy">&copy; 2026 RAINCLOUD. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,110 @@
+/* Blog post template additions. Base look stays in site.css / site-extra.css. */
+
+.post-hero { padding: 160px 0 48px; }
+.post-hero .label { margin-bottom: 16px; }
+.post-hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); max-width: 720px; margin-bottom: 16px; }
+.post-meta { font-size: 0.78rem; color: var(--text-tertiary); display: flex; gap: 16px; flex-wrap: wrap; }
+.post-meta a { border-bottom: 1px solid var(--border-medium); }
+.post-meta a:hover { color: var(--text-primary); }
+
+.post-body {
+  padding: 48px 0 80px;
+  border-top: 1px solid var(--border-subtle);
+}
+.post-body .container--narrow { max-width: 720px; }
+.post-body p {
+  font-size: 1rem; line-height: 1.85; color: var(--text-secondary);
+  margin-bottom: 24px; max-width: none;
+}
+.post-body h2 {
+  font-size: 1.6rem; margin: 48px 0 16px; color: var(--text-primary);
+}
+.post-body h3 {
+  font-size: 1.2rem; margin: 36px 0 12px; color: var(--text-primary);
+}
+.post-body blockquote {
+  border-left: 2px solid var(--accent-blue); padding-left: 24px;
+  margin: 32px 0; font-style: italic; color: var(--text-primary);
+  font-family: var(--font-heading); font-weight: 300; font-size: 1.15rem;
+  line-height: 1.5;
+}
+.post-body ul, .post-body ol {
+  margin: 16px 0 24px 24px; color: var(--text-secondary);
+}
+.post-body li { margin-bottom: 8px; line-height: 1.7; font-size: 0.95rem; }
+.post-body strong { color: var(--text-primary); font-weight: 500; }
+.post-body a { color: var(--accent-blue); border-bottom: 1px solid transparent; transition: border-color 0.3s ease; }
+.post-body a:hover { border-color: var(--accent-blue); }
+.post-body .lede { font-size: 1.1rem; color: var(--text-primary); }
+
+.takeaways {
+  border: 1px solid var(--border-medium);
+  background: var(--bg-secondary);
+  padding: 28px 28px 8px;
+  margin: 0 0 40px;
+}
+.takeaways .label { display: block; margin-bottom: 14px; }
+.takeaways ol { margin: 0 0 18px 1.2em; }
+.takeaways li { color: var(--text-primary); }
+
+.post-video { margin: 0 0 36px; }
+.post-video[data-video-slot="empty"] { display: none; }
+.yt-lite {
+  position: relative; background: #000; aspect-ratio: 16 / 9; cursor: pointer;
+  border: 1px solid var(--border-subtle);
+}
+.yt-lite img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+.yt-lite .yt-play {
+  position: absolute; inset: 0; margin: auto; width: 68px; height: 48px;
+  background: var(--accent-blue); border: 0; cursor: pointer;
+}
+.yt-lite .yt-play::before {
+  content: ""; position: absolute; left: 26px; top: 14px;
+  border-style: solid; border-width: 10px 0 10px 16px;
+  border-color: transparent transparent transparent var(--bg-primary);
+}
+.yt-lite figcaption, .post-video figcaption {
+  margin-top: 10px; font-size: 0.78rem; color: var(--text-tertiary);
+}
+.post-video iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; display: block; }
+
+.post-cta {
+  background: var(--bg-secondary); border: 1px solid var(--border-subtle);
+  padding: 40px; margin: 48px 0; text-align: center;
+}
+.post-cta h3 { margin: 0 0 10px; font-size: 1.35rem; }
+.post-cta p { margin: 0 auto 12px; text-align: center; max-width: 540px; }
+.post-cta .post-cta-meta {
+  font-size: 0.85rem; color: var(--text-primary); letter-spacing: 0.02em;
+}
+.post-cta .btn { margin-top: 8px; }
+.post-cta .post-cta-sec { margin: 16px auto 0; font-size: 0.85rem; }
+.post-cta .post-cta-sec a { color: var(--text-secondary); }
+
+.post-faq { margin: 48px 0 8px; }
+.post-faq h2 { font-size: 1.35rem; margin: 0 0 8px; }
+.post-faq .faq-item { padding: 18px 0; border-bottom: 1px solid var(--border-subtle); }
+.post-faq .faq-item h3 { font-size: 1rem; font-weight: 500; margin: 0 0 8px; }
+.post-faq .faq-item p { margin: 0; font-size: 0.92rem; }
+
+.post-related {
+  margin: 36px 0 8px; padding-top: 28px;
+  border-top: 1px solid var(--border-subtle);
+}
+.post-related .label { display: block; margin-bottom: 12px; }
+.post-related ul { list-style: none; margin: 12px 0 0; padding: 0; }
+.post-related li { margin: 0 0 8px; }
+.post-related a { color: var(--accent-blue); font-size: 0.92rem; }
+
+.post-nav {
+  display: flex; justify-content: space-between; gap: 16px; padding-top: 32px;
+  border-top: 1px solid var(--border-subtle); margin-top: 48px;
+}
+.post-nav a {
+  font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-tertiary); transition: color 0.3s ease;
+}
+.post-nav a:hover { color: var(--text-primary); }
+
+.sources-note { font-size: 0.72rem; color: var(--text-tertiary); margin-top: 32px; line-height: 1.6; }
+.sources-note a { color: var(--text-tertiary); }

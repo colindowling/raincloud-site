@@ -11,19 +11,6 @@
     gtag('js', new Date());
     gtag('config', 'G-041BP5G4HF');
 
-    // Custom event: audit_cta_click — body-content links to /audit.html or /contact.html
-    document.addEventListener('click', function(e) {
-      var a = e.target.closest('a[href]');
-      if (!a) return;
-      var href = a.getAttribute('href') || '';
-      if (!/\/(audit|contact)(\.html)?(\?|#|$)/.test(href)) return;
-      if (a.closest('nav') || a.closest('footer')) return;
-      gtag('event', 'audit_cta_click', {
-        cta_text: (a.textContent || '').trim().slice(0, 100),
-        cta_destination: href,
-        cta_location: window.location.pathname
-      });
-    });
 
     // Mobile-aware nav toggle: hamburger opens menu; on mobile, parent dropdown taps expand/collapse instead of navigating; leaf taps close the menu.
     document.addEventListener('DOMContentLoaded', function() {
@@ -60,7 +47,7 @@
       });
     });
   </script>
-  <title>RAINCLOUD | The 100-Point GTM Audit and 90-Day Rebuild</title>
+  <title>RAINCLOUD | The 100-Point GTM Autopsy and 90-Day Rebuild</title>
   <meta name="description" content="Your go-to-market isn't compounding. I score it against 100 points, rank every finding by what it costs you in pipeline, and rebuild it in 90 days on a fee that falls every month. $5,000 audit. Run personally by Colin Dowling.">
   <link rel="canonical" href="https://rncld.com/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -616,12 +603,12 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
   <link rel="stylesheet" href="/assets/site-extra.css">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="RAINCLOUD">
-  <meta property="og:title" content="RAINCLOUD | The 100-Point GTM Audit and 90-Day Rebuild">
+  <meta property="og:title" content="RAINCLOUD | The 100-Point GTM Autopsy and 90-Day Rebuild">
   <meta property="og:description" content="Your go-to-market isn't compounding. I score it against 100 points, rank every finding by what it costs you in pipeline, and rebuild it in 90 days on a fee that falls every month. $5,000 audit. Run personally by Colin Dowling.">
   <meta property="og:url" content="https://rncld.com/">
   <meta property="og:image" content="https://rncld.com/assets/band-boardroom.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="RAINCLOUD | The 100-Point GTM Audit and 90-Day Rebuild">
+  <meta name="twitter:title" content="RAINCLOUD | The 100-Point GTM Autopsy and 90-Day Rebuild">
   <meta name="twitter:description" content="Your go-to-market isn't compounding. I score it against 100 points, rank every finding by what it costs you in pipeline, and rebuild it in 90 days on a fee that falls every month. $5,000 audit. Run personally by Colin Dowling.">
   <meta name="twitter:image" content="https://rncld.com/assets/band-boardroom.png">
   <script type="application/ld+json">
@@ -631,7 +618,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     "name": "RAINCLOUD",
     "url": "https://rncld.com/",
     "email": "colin@rncld.com",
-    "description": "One engagement: a 100-point GTM audit, a 90-day rebuild of the go-to-market motion on a fee that steps down every month, and ongoing advisory. Run personally by Colin Dowling.",
+    "description": "One engagement: a 100-point GTM autopsy, a 90-day rebuild of the go-to-market motion on a fee that steps down every month, and ongoing advisory. Run personally by Colin Dowling.",
     "founder": {
       "@type": "Person",
       "name": "Colin Dowling"
@@ -644,6 +631,65 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     "@type": "WebSite",
     "name": "RAINCLOUD",
     "url": "https://rncld.com/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "100-Point GTM Autopsy",
+        "url": "https://rncld.com/gtm-autopsy/",
+        "provider": { "@type": "Organization", "name": "RAINCLOUD", "url": "https://rncld.com/" },
+        "description": "I score your go-to-market against 100 points across ten sections, measure your baseline, and hand you every finding — each one quantified, ranked by what it’s costing you in pipeline, in the order it should be fixed.",
+        "offers": {
+          "@type": "Offer",
+          "price": "5000",
+          "priceCurrency": "USD",
+          "description": "$5,000 · 10 business days · required before any engagement · not credited toward the build · no refund"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "90-Day GTM Fix",
+        "url": "https://rncld.com/gtm-consulting.html",
+        "provider": { "@type": "Organization", "name": "RAINCLOUD", "url": "https://rncld.com/" },
+        "description": "The audit tells you what’s broken and in what order. The engagement builds it — ICP, positioning, the pipeline model, outbound, the scorecard in your CRM and the playbook — in your tools, with the people who will run it after I’m gone.",
+        "offers": {
+          "@type": "Offer",
+          "price": "37500",
+          "priceCurrency": "USD",
+          "description": "$15,000, then $12,500, then $10,000."
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Advisory",
+        "url": "https://rncld.com/pricing/#ongoing",
+        "provider": { "@type": "Organization", "name": "RAINCLOUD", "url": "https://rncld.com/" },
+        "description": "The motion is built and your team owns it. My job is now diagnosis and direction: find what’s leaking, say what to do about it, name who owns it and by when — and tell you the truth about whether it’s working.",
+        "offers": {
+          "@type": "Offer",
+          "price": "7500",
+          "priceCurrency": "USD",
+          "description": "$7,500/mo · starts month four · six-month minimum from engagement start · cancel any time after that"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "GTM Scorecard",
+        "url": "https://rncld.com/pricing/#ongoing",
+        "provider": { "@type": "Organization", "name": "RAINCLOUD", "url": "https://rncld.com/" },
+        "description": "Someone independent measures whether your go-to-market is actually improving, every month, against a baseline you signed — and tells you the truth about it. Your team does the work. I hold the number.",
+        "offers": {
+          "@type": "Offer",
+          "price": "4000",
+          "priceCurrency": "USD",
+          "description": "$4,000/mo · billed quarterly · available from month seven, or directly after an audit"
+        }
+      }
+    ]
   }
   </script>
   <style id="rc-home">
@@ -685,20 +731,29 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     footer.sf .sf-also a{color:var(--text-secondary);border-bottom:1px solid var(--border-subtle);}
     footer.sf .sf-also a:hover{color:var(--text-primary);}
   </style>
+  <script src="/assets/track.js" defer></script>
 </head>
-<body>
+<body data-page-template="home" data-cluster="offer" data-persona="">
 
   <!-- NAV -->
   <nav id="nav" class="scrolled">
     <div class="container nav-inner">
       <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="/audit.html">The Audit</a></li>
+        <li><a href="/gtm-autopsy/">The Autopsy</a></li>
         <li><a href="/gtm-consulting.html">The Engagement</a></li>
         <li><a href="/pricing/">Pricing</a></li>
         <li><a href="/blog/">Articles</a></li>
+                <li class="has-dropdown"><a href="/problems/outbound-not-landing/">Problems <span class="caret"></span></a>
+          <ul class="dropdown">
+            <li><a href="/problems/outbound-not-landing/">Outbound not landing</a></li>
+            <li><a href="/problems/pipeline-not-growing/">Pipeline not growing</a></li>
+            <li><a href="/problems/first-sales-hire/">First sales hire</a></li>
+            <li><a href="/problems/founder-led-sales-trap/">Founder-led sales</a></li>
+          </ul>
+        </li>
         <li><a href="/about.html">About</a></li>
-        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=home&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav">Book the audit call</a></li>
+        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=home&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav" data-track="book_call" data-cta-id="book_call-nav" data-cta-position="nav" data-cluster="offer" data-persona="">Book the audit call</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -714,7 +769,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       <p class="hero-sub">I score your entire go-to-market against 100 points, rank every finding by what it&rsquo;s costing you in pipeline, and rebuild the motion in 90 days &mdash; on a fee that falls every month as your team takes it over.</p>
       <p class="hero-prices"><span>$5,000</span> audit<i>&middot;</i><span>$37,500</span> over 90 days<i>&middot;</i><span>$7,500/mo</span> after</p>
       <div class="hero-cta">
-        <a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=home&amp;utm_content=hero" class="btn btn--primary" target="_blank" rel="noopener" data-cta="hero"><span>Book the audit call</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=home&amp;utm_content=hero" class="btn btn--primary" target="_blank" rel="noopener" data-cta="hero" data-track="book_call" data-cta-id="book_call-hero" data-cta-position="hero" data-cluster="offer" data-persona=""><span>Book the audit call</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         <a href="/resources/100-point-gtm-framework.html" class="hero-sec">Download the 100-point framework</a>
       </div>
       <div class="hero-stats">
@@ -746,7 +801,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     <div class="container">
       <div class="section-header reveal"><div class="label">The Problem</div><h2>Five symptoms. One underlying problem.</h2><p>These are the things I hear on fit calls. They are also sections 01 through 10 of the audit, which is the point: they are symptoms of a motion that was never architected, and fixing them in the wrong order is why the last attempt didn&rsquo;t hold.</p></div>
       <div class="problem-grid">
-        <div class="problem-card reveal"><div class="num">01</div><h3>Outbound that burns out</h3><p>You spray sequences and hope. No signal-based triggers. No ICP definition tight enough to build a system around. Reps burn leads faster than you can source them.</p><a class="fixlink" href="/audit.html">What the audit looks at &rarr;</a></div><div class="problem-card reveal"><div class="num">02</div><h3>Content that doesn&rsquo;t convert</h3><p>You&rsquo;re publishing. Nobody is buying. The content isn&rsquo;t mapped to the buyer journey. There&rsquo;s no bottom-of-funnel anchor. Traffic doesn&rsquo;t know what to do next.</p><a class="fixlink" href="/audit.html">What the audit looks at &rarr;</a></div><div class="problem-card reveal"><div class="num">03</div><h3>Channels that don&rsquo;t talk to each other</h3><p>Outbound, content, and your CRM all running in parallel, not in concert. There&rsquo;s no Engine: no architecture where each channel makes the others work harder.</p><a class="fixlink" href="/audit.html">What the audit looks at &rarr;</a></div><div class="problem-card reveal"><div class="num">04</div><h3>Deals falling through the cracks</h3><p>The follow-up nobody sent. The stalled deal nobody flagged. The next step that never got booked. Your process depends on every rep remembering everything, every time, and they don&rsquo;t.</p><a class="fixlink" href="/audit.html">What the audit looks at &rarr;</a></div><div class="problem-card problem-card--wide reveal"><div class="num">05</div><h3>A forecast nobody believes</h3><p style="max-width:720px">Stage definitions that mean different things to different reps. Coverage math built on deals that are already dead. You are forecasting against a number that cannot happen, and everyone in the room knows it.</p><a class="fixlink" href="/audit.html">What the audit looks at &rarr;</a></div>
+        <div class="problem-card reveal"><div class="num">01</div><h3>Outbound that burns out</h3><p>You spray sequences and hope. No signal-based triggers. No ICP definition tight enough to build a system around. Reps burn leads faster than you can source them.</p><a class="fixlink" href="/gtm-autopsy/">What the audit looks at &rarr;</a></div><div class="problem-card reveal"><div class="num">02</div><h3>Content that doesn&rsquo;t convert</h3><p>You&rsquo;re publishing. Nobody is buying. The content isn&rsquo;t mapped to the buyer journey. There&rsquo;s no bottom-of-funnel anchor. Traffic doesn&rsquo;t know what to do next.</p><a class="fixlink" href="/gtm-autopsy/">What the audit looks at &rarr;</a></div><div class="problem-card reveal"><div class="num">03</div><h3>Channels that don&rsquo;t talk to each other</h3><p>Outbound, content, and your CRM all running in parallel, not in concert. There&rsquo;s no Engine: no architecture where each channel makes the others work harder.</p><a class="fixlink" href="/gtm-autopsy/">What the audit looks at &rarr;</a></div><div class="problem-card reveal"><div class="num">04</div><h3>Deals falling through the cracks</h3><p>The follow-up nobody sent. The stalled deal nobody flagged. The next step that never got booked. Your process depends on every rep remembering everything, every time, and they don&rsquo;t.</p><a class="fixlink" href="/gtm-autopsy/">What the audit looks at &rarr;</a></div><div class="problem-card problem-card--wide reveal"><div class="num">05</div><h3>A forecast nobody believes</h3><p style="max-width:720px">Stage definitions that mean different things to different reps. Coverage math built on deals that are already dead. You are forecasting against a number that cannot happen, and everyone in the room knows it.</p><a class="fixlink" href="/gtm-autopsy/">What the audit looks at &rarr;</a></div>
       </div>
     </div>
   </section>
@@ -773,7 +828,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       <div class="section-header reveal"><div class="label">Four steps, in sequence</div><h2>Four steps, in order. <span style="color:var(--text-tertiary)">Everyone starts at the audit.</span></h2></div>
       <div class="cards c4 ladder reveal">
         <div class="card rung"><div class="rn">1</div><h3>The framework</h3><div class="rp">Free</div><p>The 100-Point GTM Framework. Every point I score, published in full.</p></div>
-        <div class="card rung rung--start"><div class="rn">2</div><h3>The 100-Point GTM Audit</h3><div class="rp">$5,000<small>ten business days</small></div><p>Required before any engagement. Not credited toward the build.</p></div>
+        <div class="card rung rung--start"><div class="rn">2</div><h3>The 100-Point GTM Autopsy</h3><div class="rp">$5,000<small>ten business days</small></div><p>Required before any engagement. Not credited toward the build.</p></div>
         <div class="card rung"><div class="rn">3</div><h3>The 90-Day GTM Fix</h3><div class="rp">$37,500</div><p>$15,000, then $12,500, then $10,000. It starts at twice the ongoing rate and lands on it.</p></div>
         <div class="card rung"><div class="rn">4</div><h3>Ongoing</h3><div class="rp">$7,500<small>/mo, or $4,000/mo Scorecard</small></div><p>From month four. Your team runs it; I measure it and tell you the truth about it.</p></div>
       </div>
@@ -833,8 +888,8 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       <div class="reveal">
         <div class="label label--accent" style="margin-bottom: 20px;">Get Started</div>
         <h2>Book a 30-minute call.<br>Every engagement starts with the audit.</h2>
-        <p>Every engagement starts with the 100-Point GTM Audit. It is $5,000 and takes ten business days. It is not credited toward the build and there is no refund: the audit is the trial, and you own the diagnosis either way. <a href="/pricing/" class="text-link">See pricing</a>.</p>
-        <a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=home&amp;utm_content=final" class="btn btn--primary" target="_blank" rel="noopener" data-cta="final"><span>Book the audit call</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <p>Every engagement starts with the 100-Point GTM Autopsy. It is $5,000 and takes ten business days. It is not credited toward the build and there is no refund: the audit is the trial, and you own the diagnosis either way. <a href="/pricing/" class="text-link">See pricing</a>.</p>
+        <a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=home&amp;utm_content=final" class="btn btn--primary" target="_blank" rel="noopener" data-cta="final" data-track="book_call" data-cta-id="book_call-final" data-cta-position="final" data-cluster="offer" data-persona=""><span>Book the audit call</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
   </section>
@@ -845,14 +900,14 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       <div class="sf-top">
         <div>
           <div class="sf-logo">RAIN<em>CLOUD</em></div>
-          <p class="sf-tag">One engagement: a 100-point GTM audit, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
+          <p class="sf-tag">One engagement: a 100-point GTM autopsy, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
           <p class="sf-also">Also from Colin Dowling: <a href="https://www.withants.com/" target="_blank" rel="noopener">Ants</a> (managed AI agents), <a href="https://www.friendlyghostwriter.com/" target="_blank" rel="noopener">Ghostwriter</a> (B2B content), The AI Ready Advisor (executive AI strategy).</p>
         </div>
         <div class="sf-cols">
           <div>
             <div class="sf-h">Work with me</div>
             <ul>
-              <li><a href="/audit.html">The Audit</a></li>
+              <li><a href="/gtm-autopsy/">The Autopsy</a></li>
               <li><a href="/gtm-consulting.html">The Engagement</a></li>
               <li><a href="/pricing/">Pricing</a></li>
             </ul>
@@ -861,6 +916,8 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
             <div class="sf-h">Read</div>
             <ul>
               <li><a href="/blog/">Articles</a></li>
+              <li><a href="/faq/">FAQ</a></li>
+              <li><a href="/videos/">Videos</a></li>
               <li><a href="/about.html">About</a></li>
               <li><a href="/resources/100-point-gtm-framework.html">The 100-Point GTM Framework</a></li>
               <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
@@ -870,7 +927,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           <div>
             <div class="sf-h">Talk</div>
             <ul>
-              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=home&amp;utm_content=footer" target="_blank" rel="noopener" data-cta="footer">Book the audit call</a></li>
+              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=home&amp;utm_content=footer" target="_blank" rel="noopener" data-cta="footer" data-track="book_call" data-cta-id="book_call-footer" data-cta-position="footer" data-cluster="offer" data-persona="">Book the audit call</a></li>
               <li><a href="/contact.html">Contact</a></li>
               <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
             </ul>

@@ -1,0 +1,132 @@
+---
+title: Is There a Claudeforce for HubSpot?
+description: Claudeforce gives Salesforce sellers 37 prebuilt AI skills inside Claude. HubSpot doesn't get it. What it is, what is Salesforce-locked, and how to build the equivalent on HubSpot.
+slug: claudeforce-for-hubspot
+date: '2026-09-05'
+date_label: September 2026
+read_time: 12 min read
+tag: AI Agents
+format: html
+topic: soft
+sort: 1
+updated: '2026-10-31'
+hub: /resources/100-point-gtm-framework.html
+hub_label: The 100-Point GTM Framework
+related:
+- why-gtm-builds-fail
+- bofu-content-that-moves-deals
+also:
+- href: https://www.withants.com/blog/claudeforce-for-hubspot/
+  label: The same article on Ants
+duplicate_of: https://www.withants.com/blog/claudeforce-for-hubspot/
+editorial_note: Duplicate of the Ants post. Kept here. rel=canonical points at the Ants URL. Do not delete.
+excerpt: Claudeforce gives Salesforce sellers 37 prebuilt AI skills inside Claude. HubSpot doesn’t get it. What it is, what is Salesforce-locked, and how to build the equivalent on HubSpot.
+takeaways:
+- The short answer is no. There is no equivalent shipping for HubSpot from either company.
+- The 37 prebuilt skills are Salesforce-native. There is no version of these skills that works against HubSpot’s data model.
+- HubSpot’s Claude Connector is a data connection with growing action capability. It does not give you 37 maintained skills with centralized governance.
+- The individual pieces work. But the assembled system is a project you run, not a product that runs for you.
+- Projects without a named owner stop getting maintained the quarter after they launch.
+faqs:
+- q: Is there a Claudeforce for HubSpot?
+  a: The short answer is no. Salesforce and Anthropic built Claudeforce together, against Salesforce’s data model and permissions layer. There is no equivalent shipping for HubSpot from either company.
+- q: What is Claudeforce?
+  a: On August 26, 2026, Salesforce and Anthropic announced Claudeforce. The partnership puts Claude’s reasoning inside Agentforce and gives Salesforce sellers a plugin with 37 prebuilt sales skills they can run from Claude’s chat interface. Pipeline reviews, deal health checks, meeting prep, follow-up drafts, forecast narratives, stakeholder maps.
+- q: What does not carry over to HubSpot?
+  a: 'The 37 prebuilt skills are Salesforce-native. The Trust Boundary is Salesforce infrastructure. Centralized admin governance is tied to Salesforce’s identity layer. The honest read: Claudeforce is a platform partnership between two specific companies, not a Claude capability you can redirect at a different CRM.'
+- q: What can a HubSpot team assemble instead?
+  a: 'The building blocks exist on HubSpot’s side: HubSpot’s Claude Connector, workflows with webhook-based AI integration, HubSpot’s Agent Builder, and tools such as Zapier, Make, and n8n. The individual pieces work. But the assembled system is a project you run, not a product that runs for you.'
+- q: What is the actual gap?
+  a: 'The gap between Claudeforce and what you can build on HubSpot is not a gap in capability. The gap is in operations: who builds the agents, who governs them, who tunes them when your process changes, who monitors them for silent failures, and who owns it when something breaks at a moment your team is not watching.'
+---
+<p class="lede" style="font-size:1.1rem;color:var(--text-primary)">Claudeforce gives Salesforce sellers 37 prebuilt AI skills inside Claude. HubSpot doesn't get it. Here's what Claudeforce actually is, what's Salesforce-locked, and how to build the equivalent on HubSpot.</p>
+
+      <h2>What Salesforce Just Shipped</h2>
+
+      <p>On August 26, 2026, Salesforce and Anthropic announced Claudeforce. The partnership puts Claude's reasoning inside Agentforce and gives Salesforce sellers a plugin with 37 prebuilt sales skills they can run from Claude's chat interface. Pipeline reviews, deal health checks, meeting prep, follow-up drafts, forecast narratives, stakeholder maps. All wired to live CRM data, all governed by Salesforce's existing admin permissions, all routed through Salesforce's own security perimeter.</p>
+
+      <p>If you run HubSpot, the question is obvious: do I get this too?</p>
+
+      <p>The short answer is no. Salesforce and Anthropic built Claudeforce together, against Salesforce's data model and permissions layer. There is no equivalent shipping for HubSpot from either company. But the longer answer matters more than the headline. The capabilities Claudeforce packages are not exclusive to Salesforce's architecture. The building blocks exist on HubSpot's side. What's missing is the assembled, operated system that ties them together and keeps working after launch.</p>
+
+      <p>This post examines what Claudeforce actually is, what stays locked inside Salesforce's ecosystem, and what you can build on HubSpot today to close the gap.</p>
+
+      <h2>What Claudeforce Actually Is</h2>
+
+      <p>The first thing worth clarifying: Claude has been available as a model option inside Agentforce since late 2025. Salesforce was already offering Claude alongside other models in Agent Builder well before this announcement. Claudeforce formalizes and deepens that existing relationship, and it adds a new product that didn't exist before.</p>
+
+      <p>The partnership breaks into two distinct pieces, and understanding the difference between them matters for what comes next.</p>
+
+      <h3>Claude Inside Agentforce</h3>
+
+      <p>Claude now serves as the default reasoning model across four Agentforce surfaces: the Atlas Reasoning Engine, Agentforce Vibes, Agentforce Coworker, and Agent Builder. For teams already using Claude in Agent Builder, the model access didn't change. What changed is positioning: Claude moves from "one of the available models" to "the default." Salesforce is also making Claude the default across Slack, powering Slackbot, Claude Tag (which Anthropic previewed in June 2026), and the new Slack Code product. Internal Salesforce numbers put Slackbot at 8.1 million hours of annualized productivity gains, more than double the prior quarter.</p>
+
+      <p>For most HubSpot teams, this half of the announcement is context rather than cause for concern. It's an infrastructure choice inside Salesforce's own product. The part that changes the calculus is the second piece.</p>
+
+      <h3>Salesforce Inside Claude</h3>
+
+      <p>This is the new product. Salesforce in Claude is a plugin carrying 37 prebuilt sales skills that let a seller interact with live Salesforce data from inside Claude's chat interface. Not from inside Salesforce. From inside Claude. The seller opens Claude, asks a question about their pipeline, and Claude reads from and writes back to Salesforce without the seller switching tabs or writing a prompt from scratch.</p>
+
+      <p>The 37 skills span five categories. In planning and pipeline, a seller can pull a daily briefing of what needs attention, review deal signals across their book, run a pipeline review by stage or segment, generate a forecast narrative, and model deal-slip scenarios. In deal strategy, Claude can produce a deal review with risk factors, map the stakeholder landscape, draft a close plan, handle objection responses tied to deal history, and identify gaps between where a deal is and what needs to happen to advance it. The prospecting and account growth skills cover lead triage, account tiering by fit and intent, outreach drafting against contact and account context, customer health scoring, renewal risk detection, and expansion whitespace analysis. Meetings and communication skills handle call preparation (pulling deal context, recent activity, and stakeholder notes before a meeting), call follow-up (summarizing action items and drafting next steps from transcripts), and inbox management. And a set of CRM intelligence skills cover win-loss analysis, activity logging, data hygiene checks, and a "most-prepared analysis" that shows how well a rep prepared before calls over time.</p>
+
+      <p>These skills were built by Salesforce and Anthropic together. They're engineered against Salesforce's specific object model, not generic CRM prompts wrapped around an API. When a seller asks Claude to review a deal, Claude executes against Salesforce's MCP (Model Context Protocol) server using that seller's existing credentials and permissions. If the seller can't access a record in Salesforce, Claude can't either. Write actions still trigger Salesforce validation rules, Flows, Apex triggers, and governor limits. The business logic your admin built stays enforced.</p>
+
+      <p>For regulated industries, the trust architecture is significant. Claudeforce routes Claude inference through Amazon Bedrock inside Salesforce's Trust Boundary. Data and AI workloads stay within Salesforce's security perimeter rather than round-tripping to an external API endpoint. Salesforce and Anthropic have stated zero data retention for Sonnet, Opus, and Haiku models inside this boundary. The plugin reached select pilot customers at announcement, with an open beta expected in September 2026 and additional skills for service, marketing, and commerce planned for later in the year.</p>
+
+      <h2>What This Gets Salesforce Sellers</h2>
+
+      <p>Four things are happening at once in Claudeforce, and each one addresses a friction point that GTM (Go-to-Market) teams have been working around for years.</p>
+
+      <p>The first is that sellers can act on live CRM data without leaving a chat window. No tab-switching between Claude and Salesforce. No copying a deal summary into a prompt and hoping the context is current. A rep sitting in Claude can pull a deal health summary, review their pipeline against forecast, prep for a call with full stakeholder context, or draft a follow-up email referencing the latest conversation transcript, and every action reads from and writes back to their Salesforce instance in real time. Patrick Stokes, Salesforce's President of Applications, described the problem this replaces as "10,000 clicks inside of Salesforce" to evaluate records, synthesize data, and build a plan. Now that process runs in thirty seconds inside Claude.</p>
+
+      <p>Second, governance is centralized. An admin connects the Salesforce-in-Claude plugin once, configures authentication and permissions at the org level, and every seller on the team gets access from that point. No per-user setup. No individual MCP server configuration. No "how do I wire this up" questions filed with ops. The permission model your org already built in Salesforce carries over intact: role hierarchies, field-level security, sharing rules, record ownership. The MCP server inherits all of it through per-user OAuth, which means every call runs as the requesting person, not a shared service account.</p>
+
+      <p>Third, the skills are prebuilt and maintained. Meeting prep, deal review, pipeline hygiene, lead triage, stakeholder mapping, forecast narratives: Salesforce and Anthropic package, test, and keep all of them current. Your team doesn't need to write custom prompts for each of these workflows, debug them when the API changes, or rebuild them when your sales process evolves. That maintenance burden sits with the vendor, not your ops team.</p>
+
+      <p>Fourth is reasoning depth. Claude isn't retrieving surface-level data. It applies multistep analysis to live revenue context: weighing deal signals against forecast targets, comparing call transcript content against close-plan criteria, identifying pipeline patterns that no single rep would catch by scanning records one at a time. This is the difference between a search bar and an analyst who understands your business.</p>
+
+      <p>All four of these are real, material improvements to how sellers interact with their system of record. They're also, in every case, specific to Salesforce's infrastructure. Which brings us to the part that matters most if HubSpot is your CRM.</p>
+
+      <h2>What Doesn't Carry Over to HubSpot</h2>
+
+      <p>This section is worth reading with care, because the difference between what Salesforce gained and what HubSpot lacks is more specific than the headline suggests. Understanding where the boundary sits is what makes the rest of this piece useful instead of just discouraging.</p>
+
+      <p>The 37 prebuilt skills are Salesforce-native. Salesforce and Anthropic engineered them against Salesforce's object model, its API structure, and its permission layer. There is no version of these skills that works against HubSpot's data model. Anthropic didn't build a "CRM plugin" you can point at any system of record. Salesforce built a "Salesforce plugin" that runs inside Claude. The skills that do pipeline reviews read Salesforce Opportunity objects, not HubSpot Deal objects. The skills that handle lead triage read Salesforce Lead records, not HubSpot Contact properties. The skills that score customer health read Salesforce Account fields, not HubSpot Company properties. This isn't a gap that a future HubSpot release will close. The skills were designed for one data model, and that model isn't yours.</p>
+
+      <p>The Trust Boundary is Salesforce infrastructure. Claudeforce routes Claude inference through Amazon Bedrock inside a governed security perimeter because Salesforce built that perimeter as a product feature. Anthropic doesn't offer it as a standalone capability that other CRM vendors can adopt. If your compliance team needs to know where AI inference happens and whether data leaves a controlled environment, the Claudeforce answer is clear and documented. For HubSpot, the answer depends on how you build, what model provider you choose, and where you host the integration layer.</p>
+
+      <p>Centralized admin governance is tied to Salesforce's identity layer. The "connect once, every rep inherits access" pattern works because Salesforce has a mature org-level permission structure that the MCP server inherits through per-user OAuth. HubSpot has its own permission system, and it's capable, but no third-party integration plugs into it the way the Claudeforce plugin plugs into Salesforce's. You're managing auth and access per integration, per tool, not through a single admin connection.</p>
+
+      <p>The deep Slack integration assumes a Salesforce-plus-Slack stack. The meeting-prep and deal-review skills that Claudeforce delivers through Claude's interface are built with the assumption that your conversation data, your deal records, and your team communication all live inside the Salesforce ecosystem (Salesforce acquired Slack in 2021). If your team uses Slack but runs HubSpot as your CRM, the data paths these skills depend on don't connect the same way. You can get Slack data into HubSpot and HubSpot data into Claude through separate integrations, but nobody has assembled and maintained those connections as a single governed product for you.</p>
+
+      <p>HubSpot has its own AI path through Breeze, which now includes agents for customer support, prospecting, and deal progression, plus an Agent Builder that entered public beta in July 2026. These are real capabilities. HubSpot also launched Agent Hub in July 2026, a centralized control panel for managing all agents from one screen. But Breeze is HubSpot's product, built on its own model stack (HubSpot doesn't disclose which LLMs power it). It isn't part of the Claudeforce partnership and was never intended to be.</p>
+
+      <p>The honest read: Claudeforce is a platform partnership between two specific companies, not a Claude capability you can redirect at a different CRM.</p>
+
+      <h2>How to Build the Equivalent on HubSpot</h2>
+
+      <p>If you want the capabilities Claudeforce packages, the building blocks exist on HubSpot's side. They require assembly, and the ongoing maintenance lands on you, but the raw material is there. Here's what's available and where each option fits.</p>
+
+      <p><strong>HubSpot's Claude Connector</strong> is the closest native equivalent to the Salesforce-in-Claude plugin, and it's more capable than most HubSpot users realize. HubSpot launched it in July 2025 as the first CRM connector built for Claude and expanded it with a major update in July 2026. The connector gives Claude read and write access to HubSpot CRM data from inside Claude's own interface. You can query contacts, companies, deals, and tickets in natural language. The July 2026 expansion added landing page creation and editing from within Claude, campaign attribution and revenue reporting, marketing email analytics and drafting, Help Desk conversation access across connected channels, and (in public beta) revenue objects including quotes, contracts, subscriptions, invoices, and payment links. Everything runs through HubSpot's published MCP server, which means any MCP-capable client (not just Claude's web interface) can connect to it.</p>
+
+      <p>The connector is real and it's getting deeper with each release. What it doesn't give you is 37 maintained skills with centralized governance. It's a data connection with growing action capability. What you build on top of it, how you govern it, and who maintains it when things change is up to you.</p>
+
+      <p><strong>HubSpot workflows with webhook-based AI integration</strong> are how most teams build AI-powered automation on HubSpot today. A deal stage change, a form submission, a contact property update, or a Help Desk ticket creation can fire a webhook to an external service. That service calls Claude's API (or any other model), processes the result, and writes it back to HubSpot through the CRM API. This is the pattern behind deal-health scoring, automated follow-up drafts, meeting prep summaries, and lead enrichment workflows that teams run in production right now.</p>
+
+      <p>The constraint worth knowing: HubSpot's workflow custom code actions carry a 20-second hard timeout and a 100 MB memory cap. If you're calling Claude's API for a complex analysis that takes longer than twenty seconds to process, the action will time out. Anything beyond a quick enrichment or scoring call needs to run as an async webhook: your service receives the trigger, processes it on its own timeline, and writes results back through HubSpot's API when done. This is a standard pattern for any RevOps engineer who's built workflow integrations before, but it adds architectural complexity that Claudeforce users never have to think about.</p>
+
+      <p><strong>HubSpot's Agent Builder</strong> entered public beta in July 2026 for Professional and Enterprise customers. It provides a no-code canvas for creating custom agents with four building blocks: instructions (role, goal, expected output), actions (including MCP connections to external systems, CRM reads and writes, and web browsing), knowledge sources (knowledge vaults, brand kits, ICPs, uploaded documents), and input triggers (CRM record changes, scheduled times, webhooks). This is real infrastructure for building agents inside HubSpot, and it's improving with each release. HubSpot reports that early adopters like Ignite Reading used it to automate a task that took 15 to 20 minutes per record down to seconds, projecting 350 hours saved per year.</p>
+
+      <p><strong>Zapier, Make, and n8n</strong> can stitch HubSpot triggers to Claude API calls for lighter automation. A CRM event feeds into AI processing, and the result writes back to HubSpot. These platforms give you longer timeout windows than HubSpot's native code actions, visual workflow builders, and retry logic. They work well for straightforward, single-step automations where you need Claude to process a record and return a result.</p>
+
+      <p>Here is where all of it breaks down.</p>
+
+      <p>Nobody governs the system you assemble from these pieces. You manage auth and permissions per integration, per tool, per user. There's no centralized admin panel where you connect once and every rep inherits access. Every "skill" you create is prompt engineering that you own and need to keep current when HubSpot's API changes, your sales process evolves, your data model shifts, or your model provider ships a behavior update. Security review, uptime monitoring, error handling, and incident response all land on your team or on the one person in ops who understands how the pieces connect. There's no vendor maintaining a skill library for you. There's no Trust Boundary routing your inference through a governed security perimeter.</p>
+
+      <p>The individual pieces work. But the assembled system is a project you run, not a product that runs for you. And projects without a named owner stop getting maintained the quarter after they launch. This is the core of the build-versus-managed question for GTM agents.</p>
+
+      <h2>What changes when someone operates it for you</h2>
+      <p>The gap between Claudeforce and what you can build on HubSpot is not a gap in capability. The individual skills are buildable, the data connections exist, and the APIs are there. The gap is in operations: who builds the agents, who governs them, who tunes them when your process changes, who monitors them for silent failures, and who owns it when something breaks at a moment your team is not watching.</p>
+      <p>This is what I do. I build the equivalent agent layer inside HubSpot (and <a href="https://www.withants.com/platforms/pipedrive/">Pipedrive</a>, and <a href="https://www.withants.com/platforms/connectwise-autotask/">ConnectWise and Autotask</a>) and then operate it: weekly tuning against live performance data, uptime monitoring with incident response, and a live inventory of every agent running in your stack.</p>
+      <p>The deal-health review a Claudeforce user gets as a prebuilt skill, I build for your HubSpot pipeline and keep current as your pipeline definitions change. The meeting prep Salesforce sellers trigger from inside Claude, I build against your HubSpot deal and contact records. Follow-up that fires the same day a deal goes quiet, lead scoring and routing that works on form submission, and renewal and expansion signals read off your deal and contact properties.</p>
+      <p style="font-size:.72rem;color:var(--text-tertiary);margin-top:32px;line-height:1.6">Sources: <a href="https://www.salesforce.com/news/press-releases/2026/08/27/salesforce-and-anthropic-announce-claudeforce/" target="_blank" rel="noopener noreferrer">Salesforce and Anthropic announce Claudeforce</a> (Salesforce press release, 26 August 2026). <a href="https://overcentral.com/en/claudeforce-salesforce-crm-integration-77998/" target="_blank" rel="noopener noreferrer">Patrick Stokes interview on Claudeforce</a> (Overcentral / VentureBeat). <a href="https://hubspot.com/company-news/hubspot-connector-claude" target="_blank" rel="noopener noreferrer">HubSpot launches first CRM connector for Claude</a> (HubSpot, July 2025). <a href="https://hubspot.com/company-news/meet-agent-hub-and-agent-builder" target="_blank" rel="noopener noreferrer">Agent Hub and Agent Builder</a> (HubSpot, July 2026). Claudeforce and Salesforce are trademarks of Salesforce, Inc. Claude is a trademark of Anthropic PBC. HubSpot is a trademark of HubSpot, Inc. RAINCLOUD is not affiliated with, endorsed by, or a partner of any of these companies. Product details and timelines described here reflect the announcements as published and may since have changed.</p>
