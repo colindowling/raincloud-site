@@ -1,35 +1,105 @@
+# MIRROR of the live DigitalOcean App Platform spec for app raincloud-site
+# (id f5de17d3-15e9-4148-a201-ae3090289c7f), exported 2026-11-01. Secrets/env values stripped.
+# Reference only. NEVER apply this file to the live app (doctl apps update --spec / API / dashboard)
+# without first diffing it against the live spec: an unchecked copy can wipe the rncld.com
+# domains and the 301 redirects. Make ingress/domain changes on the live app, then re-export here.
 name: raincloud-site
-region: nyc
 static_sites:
-  - name: raincloud-web
-    github:
-      repo: your-github-username/raincloud-site
-      branch: main
-      deploy_on_push: true
-    source_dir: /
-    build_command: ""
-    output_dir: /
-    # Kept so a deploy that has not picked up ingress yet still serves the site.
-    routes:
-      - path: /
-    index_document: index.html
-    environment_slug: html
-
-# True 301. App Platform applies this at the edge, before the static file is
-# served. A git push updates the static files; applying this spec (Apps →
-# Settings → App Spec, or `doctl apps update --spec .do/app.yaml`) is what
-# turns /audit.html into an HTTP 301. Until that spec is live, audit.html is
-# also a meta/JS redirect to the same URL.
+- name: raincloud-site-raincloud-site
+  github:
+    repo: colindowling/raincloud-site
+    branch: main
+    deploy_on_push: true
+  environment_slug: html
+domains:
+- domain: rncld.com
+  type: PRIMARY
+- domain: www.rncld.com
+  type: ALIAS
+region: nyc
+alerts:
+- rule: DEPLOYMENT_FAILED
+- rule: DOMAIN_FAILED
 ingress:
   rules:
-    - match:
-        path:
-          exact: /audit.html
-      redirect:
-        uri: /gtm-autopsy/
-        redirect_code: 301
-    - match:
-        path:
-          prefix: /
-      component:
-        name: raincloud-web
+  - match:
+      path:
+        prefix: /vs
+    redirect:
+      uri: /
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /solutions
+    redirect:
+      uri: /
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /lp
+    redirect:
+      uri: /
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /what.html
+    redirect:
+      uri: /
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /how-it-works.html
+    redirect:
+      uri: /
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /landscape.html
+    redirect:
+      uri: /
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /security.html
+    redirect:
+      uri: /
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /roi.html
+    redirect:
+      uri: /gtm-autopsy/
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /blog/the-480-call-problem.html
+    redirect:
+      uri: /blog/outbound-reply-rates-2026.html
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /blog/why-your-battlecards-cost-you-deals.html
+    redirect:
+      uri: /blog/bofu-content-that-moves-deals.html
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /blog/scoreboard-vs-game-film.html
+    redirect:
+      uri: /blog/why-gtm-builds-fail.html
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /audit.html
+    redirect:
+      uri: /gtm-autopsy/
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /
+      authority:
+        exact: ''
+    component:
+      name: raincloud-site-raincloud-site
+features:
+- buildpack-stack=ubuntu-22
