@@ -12,40 +12,7 @@
     gtag('config', 'G-041BP5G4HF');
 
 
-    // Mobile-aware nav toggle: hamburger opens menu; on mobile, parent dropdown taps expand/collapse instead of navigating; leaf taps close the menu.
-    document.addEventListener('DOMContentLoaded', function() {
-      var navToggle = document.getElementById('navToggle');
-      var navLinks = document.getElementById('navLinks');
-      if (!navToggle || !navLinks) return;
-      navToggle.addEventListener('click', function() {
-        navLinks.classList.toggle('open');
-        // Reset expanded states when closing
-        if (!navLinks.classList.contains('open')) {
-          navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
-            item.classList.remove('expanded');
-          });
-        }
-      });
-      navLinks.querySelectorAll('a').forEach(function(a) {
-        a.addEventListener('click', function(e) {
-          var li = a.parentElement;
-          var isDropdownParent = li && li.classList.contains('has-dropdown');
-          var isMobile = window.innerWidth <= 768;
-          var navOpen = navLinks.classList.contains('open');
-          if (isDropdownParent && isMobile && navOpen) {
-            // On mobile while menu is open, tapping a dropdown parent expands/collapses it
-            e.preventDefault();
-            li.classList.toggle('expanded');
-          } else {
-            // Any other link click closes the menu and resets expanded states
-            navLinks.classList.remove('open');
-            navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
-              item.classList.remove('expanded');
-            });
-          }
-        });
-      });
-    });
+
   </script>
   <title>About Colin Dowling — RAINCLOUD</title>
   <meta name="description" content="Colin Dowling is a 3x VP of Sales and 2x founder who has built GTM motions from scratch at GoDaddy, WP Engine, Liquid Web and Alembic. He runs every RAINCLOUD engagement personally.">
@@ -404,31 +371,65 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     footer.sf .sf-also a:hover{color:var(--text-primary);}
   </style>
   <script src="/assets/track.js" defer></script>
+  <script src="/assets/site-nav.js" defer></script>
 </head>
 <body data-page-template="about-html" data-cluster="founder" data-persona="">
   <!-- NAV -->
   <nav id="nav" class="scrolled">
-    <div class="container nav-inner">
-      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="/gtm-autopsy/">The Autopsy</a></li>
-        <li><a href="/gtm-consulting.html">The Engagement</a></li>
-        <li><a href="/pricing/">Pricing</a></li>
-        <li><a href="/blog/">Articles</a></li>
-                <li class="has-dropdown"><a href="/problems/outbound-not-landing/">Problems <span class="caret"></span></a>
-          <ul class="dropdown">
-            <li><a href="/problems/outbound-not-landing/">Outbound not landing</a></li>
-            <li><a href="/problems/pipeline-not-growing/">Pipeline not growing</a></li>
-            <li><a href="/problems/first-sales-hire/">First sales hire</a></li>
-            <li><a href="/problems/founder-led-sales-trap/">Founder-led sales</a></li>
-          </ul>
-        </li>
-        <li><a href="/about.html" aria-current="page">About</a></li>
-        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=about-html&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav" data-track="book_call" data-cta-id="book_call-nav" data-cta-position="nav" data-cluster="founder" data-persona="">Book the audit call</a></li>
-      </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li class="has-dropdown">
+        <button type="button" class="nav-parent" aria-expanded="false" aria-haspopup="true" aria-controls="nav-menu-autopsy">
+          <span class="nav-parent-label">The Autopsy</span>
+          <svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="dropdown" id="nav-menu-autopsy">
+          <li><a href="/gtm-autopsy/">The Autopsy</a></li>
+          <li><a href="/outside-audit/">40-Point Outside Audit</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <button type="button" class="nav-parent" aria-expanded="false" aria-haspopup="true" aria-controls="nav-menu-engagement">
+          <span class="nav-parent-label">The Engagement</span>
+          <svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="dropdown" id="nav-menu-engagement">
+          <li><a href="/gtm-consulting.html">The Engagement</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <button type="button" class="nav-parent" aria-expanded="false" aria-haspopup="true" aria-controls="nav-menu-problems">
+          <span class="nav-parent-label">Problems</span>
+          <svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="dropdown" id="nav-menu-problems">
+          <li><a href="/problems/outbound-not-landing/">Outbound not landing</a></li>
+          <li><a href="/problems/pipeline-not-growing/">Pipeline not growing</a></li>
+          <li><a href="/problems/first-sales-hire/">First sales hire</a></li>
+          <li><a href="/problems/founder-led-sales-trap/">Founder-led sales</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <button type="button" class="nav-parent" aria-expanded="false" aria-haspopup="true" aria-controls="nav-menu-insights">
+          <span class="nav-parent-label">Insights</span>
+          <svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="dropdown" id="nav-menu-insights">
+          <li><a href="/blog/">Articles</a></li>
+          <li><a href="/videos/">Videos</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+        </ul>
+      </li>
+      <li><a href="/about/" aria-current="page">About</a></li>
+      <li class="nav-cta-item"><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=about-html&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav" data-track="book_call" data-cta-id="book_call-nav" data-cta-position="nav" data-cluster="founder" data-persona="">Book the audit call</a></li>
+    </ul>
+  </div>
+</nav>
 
   <!-- HERO -->
   <section class="about-hero">
