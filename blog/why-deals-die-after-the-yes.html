@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-041BP5G4HF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-041BP5G4HF');
+    document.addEventListener('DOMContentLoaded', function() {
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+      if (!navToggle || !navLinks) return;
+      navToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('open');
+        if (!navLinks.classList.contains('open')) {
+          navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+            item.classList.remove('expanded');
+          });
+        }
+      });
+      navLinks.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          var li = a.parentElement;
+          var isDropdownParent = li && li.classList.contains('has-dropdown');
+          var isMobile = window.innerWidth <= 768;
+          var navOpen = navLinks.classList.contains('open');
+          if (isDropdownParent && isMobile && navOpen) {
+            e.preventDefault();
+            li.classList.toggle('expanded');
+          } else {
+            navLinks.classList.remove('open');
+            navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+              item.classList.remove('expanded');
+            });
+          }
+        });
+      });
+    });
+  </script>
+  <script src="/assets/track.js" defer></script>
+  <title>Why Deals Die After the Yes, and How to Surface Late Surprises Early — RAINCLOUD</title>
+  <meta name="description" content="Deals often stall after verbal agreement, or die when a late cost or third party shows up. Here&#x27;s how to find those risks in discovery, not at signature.">
+  <link rel="canonical" href="https://rncld.com/blog/why-deals-die-after-the-yes.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/site-extra.css">
+  <link rel="stylesheet" href="/assets/site-nav.css">
+  <link rel="stylesheet" href="/assets/blog-post.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="RAINCLOUD">
+  <meta property="og:title" content="Why Deals Die After the Yes, and How to Surface Late Surprises Early">
+  <meta property="og:description" content="Deals often stall after verbal agreement, or die when a late cost or third party shows up. Here&#x27;s how to find those risks in discovery, not at signature.">
+  <meta property="og:url" content="https://rncld.com/blog/why-deals-die-after-the-yes.html">
+  <meta property="og:image" content="https://rncld.com/assets/band-boardroom.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why Deals Die After the Yes, and How to Surface Late Surprises Early">
+  <meta name="twitter:description" content="Deals often stall after verbal agreement, or die when a late cost or third party shows up. Here&#x27;s how to find those risks in discovery, not at signature.">
+  <meta name="twitter:image" content="https://rncld.com/assets/band-boardroom.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Why Deals Die After the Yes, and How to Surface Late Surprises Early",
+      "description": "Deals often stall after verbal agreement, or die when a late cost or third party shows up. Here's how to find those risks in discovery, not at signature.",
+      "image": "https://rncld.com/assets/band-boardroom.png",
+      "author": {
+        "@type": "Person",
+        "name": "Colin Dowling",
+        "url": "https://rncld.com/about/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "RAINCLOUD",
+        "url": "https://rncld.com/"
+      },
+      "mainEntityOfPage": "https://rncld.com/blog/why-deals-die-after-the-yes.html",
+      "datePublished": "2026-11-02",
+      "dateModified": "2026-11-02",
+      "articleSection": "Sales",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why do deals stall after the prospect says yes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common causes are internal approvals nobody mentioned, a budget that wasn't really allocated, legal or procurement steps, competing priorities and third parties whose sign-off or costs weren't known. The buyer meant the yes, but they couldn't see every obstacle either. Most of these can be uncovered earlier with direct questions about process and dependencies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a mutual action plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A mutual action plan is a short shared document listing the steps both buyer and seller must complete to go live, with owners and dates. It covers approvals, legal review, security checks and outside dependencies. It turns a vague yes into a sequence of commitments and makes stalls visible as soon as a date slips."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you uncover hidden deal risks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ask directly and early: who else has to approve this, what could add cost, what happened the last time you bought something like this, and what would make this not happen. Include third parties such as vendors, regulators or partners. Buyers usually know the answers but won't volunteer them unless asked."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do when a deal goes quiet after verbal agreement?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Reach out with something specific, not a check-in. Reference the next step in your plan and ask what's changed. Offer to help with the obstacle, such as a document for finance. If your champion is stuck, ask to meet the person who is blocking. If nothing moves, say so plainly and agree when to revisit."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rncld.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articles",
+          "item": "https://rncld.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Why Deals Die After the Yes, and How to Surface Late Surprises Early",
+          "item": "https://rncld.com/blog/why-deals-die-after-the-yes.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style id="rc-global">
+    nav .nav-links a[aria-current="page"]{color:var(--text-primary);}
+    footer.sf .sf-also{margin-top:14px;font-size:.72rem;line-height:1.6;color:var(--text-tertiary);max-width:300px;}
+    footer.sf .sf-also a{color:var(--text-secondary);border-bottom:1px solid var(--border-subtle);}
+    footer.sf .sf-also a:hover{color:var(--text-primary);}
+  </style>
+</head>
+<body data-page-template="post" data-cluster="diagnosis" data-persona="">
+  <nav id="nav" class="scrolled">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/gtm-autopsy/">The Autopsy</a></li>
+        <li><a href="/gtm-consulting.html">The Engagement</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/" aria-current="page">Articles</a></li>
+        <li class="has-dropdown"><a href="/problems/outbound-not-landing/">Problems <span class="caret"></span></a>
+          <ul class="dropdown">
+            <li><a href="/problems/outbound-not-landing/">Outbound not landing</a></li>
+            <li><a href="/problems/pipeline-not-growing/">Pipeline not growing</a></li>
+            <li><a href="/problems/first-sales-hire/">First sales hire</a></li>
+            <li><a href="/problems/founder-led-sales-trap/">Founder-led sales</a></li>
+          </ul>
+        </li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=why-deals-die-after-the-yes&amp;utm_content=nav" class="nav-cta" data-track="outside_audit" data-cta="nav" data-cta-id="outside_audit-nav" data-cta-position="nav" data-cluster="diagnosis" data-persona="">Book your free 40-Point Outside Audit</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="post-hero">
+    <div class="container--narrow" style="max-width: 720px;">
+      <div class="label label--accent">Sales</div>
+      <h1>Why Deals Die After the Yes, and How to Surface Late Surprises Early</h1>
+      <div class="post-meta">
+        <span><a href="/about/">Colin Dowling</a></span>
+        <span>November 2026</span>
+        <span>4 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="post-body">
+    <div class="container--narrow" style="max-width: 720px;">
+      <aside class="takeaways" aria-label="Key takeaways">
+        <div class="label label--accent">Key takeaways</div>
+        <ol>
+        <li>A yes isn&#x27;t a close. Most post-yes stalls trace back to something discovery missed.</li>
+        <li>Map every party who can add cost or delay, including outsiders, early in the deal.</li>
+        <li>Agree on a mutual plan with dates and owners after the verbal yes.</li>
+        <li>Ask the &#x27;what could kill this&#x27; question before the buyer has to.</li>
+        </ol>
+      </aside>
+      <div class="post-video" data-video-slot="empty" hidden></div>
+      <p>Deals die after the yes because something nobody surfaced in discovery shows up late: an approval, a budget gap, or a third party who adds cost or delay. The fix is to map every party who can stop the deal early, then turn the verbal yes into a dated plan both sides own.</p>
+
+<p>A leader I spoke with recently runs large commercial projects, and he described two ways deals die late. In one, the client says yes and then hits a bottleneck on their side that won&#x27;t let the project move. In the other, an outside party shows up near the end and says, by the way, this will add a large cost nobody planned for. Projects die at that point.</p>
+
+<p>His industry has unusual third parties. But every B2B seller has a version of this.</p>
+
+<h2>A yes is not a close</h2>
+
+<p>I&#x27;d argue the moment a buyer says yes is the most dangerous point in a deal. Everybody relaxes. The seller forecasts it. The buyer moves on to the next fire.</p>
+
+<p>Then nothing happens for three weeks.</p>
+
+<p>The buyer usually meant the yes. They just couldn&#x27;t see every obstacle either. The question isn&#x27;t whether surprises happen. It&#x27;s whether you find them in discovery or at signature.</p>
+
+<h2>The two kinds of late surprise</h2>
+
+<h3>Inside the buyer</h3>
+
+<ul>
+<li>An approval nobody mentioned, from finance, legal, security or a board.</li>
+<li>A budget that was hoped for, not allocated.</li>
+<li>A competing priority that just jumped the line.</li>
+<li>A champion who left, or who had less pull than you thought.</li>
+</ul>
+
+<h3>Outside the buyer</h3>
+
+<ul>
+<li>A vendor, partner or contractor whose work the deal depends on.</li>
+<li>A regulator, inspector or approval body.</li>
+<li>An existing contract that has to end first.</li>
+<li>A cost that appears only once someone outside looks closely.</li>
+</ul>
+
+<p>Inside surprises slow deals. Outside surprises often kill them, because nobody in the room controls them.</p>
+
+<div class="post-cta" data-cta-block="inbody">
+        <h3>Start with the free 40-Point Outside Audit.</h3>
+        <p>It is the part of the 100-Point GTM Autopsy that can be scored from outside the company, from public sources alone. No mystery shop. Scored by Colin, with an offer to walk through what he found. The 100-Point GTM Autopsy is $5,000, ten business days, required before the 90-day fix, and not credited toward the build.</p>
+        <p class="post-cta-meta">Then the $5,000 100-Point GTM Autopsy. Then the 90-day fix.</p>
+        <a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=why-deals-die-after-the-yes&amp;utm_content=inbody" class="btn btn--primary" data-track="outside_audit" data-cta="inbody" data-cta-id="outside_audit-inbody" data-cta-position="inbody" data-cluster="diagnosis" data-persona="">
+          <span>Book your free 40-Point Outside Audit</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="post-cta-sec"><a class="text-link" href="/gtm-autopsy/" data-track="autopsy" data-cta="inbody" data-cta-id="autopsy-inbody" data-cta-position="inbody" data-cluster="diagnosis" data-persona="">See the 100-Point GTM Autopsy</a></p>
+      </div>
+
+      <h2>Ask the uncomfortable questions early</h2>
+
+<p>Most of these risks are knowable. Buyers just don&#x27;t volunteer them. So ask, in the first or second meeting:</p>
+
+<ul>
+<li>Who else has to approve this, and how do they decide?</li>
+<li>What has to be true outside your company for this to work?</li>
+<li>What could add cost we haven&#x27;t talked about?</li>
+<li>What happened the last time you bought something like this?</li>
+<li>What would make this not happen?</li>
+</ul>
+
+<p>That last one feels risky. It isn&#x27;t. The buyer already knows the answer. Asking it shows you&#x27;re thinking about their success, not just your signature.</p>
+
+<h2>Turn the yes into a plan</h2>
+
+<p>When you get a verbal yes, don&#x27;t celebrate yet. Build a short mutual plan with the buyer. One page is plenty:</p>
+
+<ul>
+<li>Every step between now and go-live.</li>
+<li>Who owns each step, on both sides.</li>
+<li>A date for each.</li>
+<li>Outside parties and when you&#x27;ll hear from them.</li>
+</ul>
+
+<p>Now a stall isn&#x27;t a mystery. It&#x27;s a date that slipped, and you know exactly whom to ask about it.</p>
+
+<p>The same mapping is how you <a href="/blog/enable-every-buying-committee-stakeholder.html">sell to a whole buying committee</a>, and why <a href="/blog/reset-expectations-longer-sales-cycles.html">longer cycles</a> need a reset, not more pressure.</p>
+
+<h2>When it goes quiet anyway</h2>
+
+<p>Sometimes a deal still stalls. When it does:</p>
+
+<ul>
+<li><strong>Follow up with something specific.</strong> Reference the step in your plan, not &quot;just checking in.&quot;</li>
+<li><strong>Offer help with the obstacle.</strong> A document for finance, a call with their legal team, an answer for the outside party.</li>
+<li><strong>Ask to meet the blocker.</strong> If your champion is stuck, the person causing it is the one you need.</li>
+<li><strong>Be honest about timing.</strong> If it&#x27;s really paused, agree when to revisit, and take it out of this quarter&#x27;s forecast.</li>
+</ul>
+
+<p>Don&#x27;t let a deal that&#x27;s &quot;not dead yet&quot; sit in your forecast for months. That hurts everyone&#x27;s planning, including yours.</p>
+
+<h2>Signs your deals are at risk after the yes</h2>
+
+<ul>
+<li>There&#x27;s no date on the next step.</li>
+<li>You haven&#x27;t met anyone outside your champion&#x27;s team.</li>
+<li>Nobody has asked about outside parties, contracts or approvals.</li>
+<li>&quot;Legal is reviewing it&quot; has been the status for three weeks.</li>
+</ul>
+
+<h2>What to do this week</h2>
+
+<p>Go through every deal with a verbal yes. For each one, write the next step, the owner and the date. If you can&#x27;t, call the champion and build it together. Ask the &quot;what could kill this&quot; question on every call this week. You&#x27;ll likely find at least one surprise early enough to deal with it.</p>
+
+<h2>Fix it upstream</h2>
+
+<p>If your team regularly loses deals after the yes, the real issue is usually how discovery and qualification are run. That&#x27;s one of the areas I score in the <a href="/gtm-autopsy/">100-Point GTM Autopsy</a>. If the problem is the sales process itself, and you need it rebuilt with mutual plans and stage rules that hold, that&#x27;s what <a href="/gtm-consulting.html">the 90-day engagement</a> does.</p>
+
+<p><strong>Losing deals you thought were won?</strong> Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it&#x27;s useful, the next step is the <a href="/gtm-autopsy/">100-Point GTM Autopsy</a>, which scores your whole go-to-market with your data and your team. <a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=why-deals-die-after-the-yes&amp;utm_content=inbody_text" data-track="outside_audit" data-cta="inbody_text" data-cta-id="outside_audit-inbody_text" data-cta-position="inbody_text" data-cluster="diagnosis" data-persona="">Book your free 40-Point Outside Audit</a>.</p>
+      <section class="post-faq" aria-label="Questions">
+        <h2>Questions this post answers</h2>
+        <div class="faq-item">
+          <h3>Why do deals stall after the prospect says yes?</h3>
+          <p>Common causes are internal approvals nobody mentioned, a budget that wasn&#x27;t really allocated, legal or procurement steps, competing priorities and third parties whose sign-off or costs weren&#x27;t known. The buyer meant the yes, but they couldn&#x27;t see every obstacle either. Most of these can be uncovered earlier with direct questions about process and dependencies.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is a mutual action plan?</h3>
+          <p>A mutual action plan is a short shared document listing the steps both buyer and seller must complete to go live, with owners and dates. It covers approvals, legal review, security checks and outside dependencies. It turns a vague yes into a sequence of commitments and makes stalls visible as soon as a date slips.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do you uncover hidden deal risks?</h3>
+          <p>Ask directly and early: who else has to approve this, what could add cost, what happened the last time you bought something like this, and what would make this not happen. Include third parties such as vendors, regulators or partners. Buyers usually know the answers but won&#x27;t volunteer them unless asked.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What should I do when a deal goes quiet after verbal agreement?</h3>
+          <p>Reach out with something specific, not a check-in. Reference the next step in your plan and ask what&#x27;s changed. Offer to help with the obstacle, such as a document for finance. If your champion is stuck, ask to meet the person who is blocking. If nothing moves, say so plainly and agree when to revisit.</p>
+        </div>
+      </section>
+      <div class="post-cta" data-cta-block="post_end">
+        <h3>Start with the free 40-Point Outside Audit.</h3>
+        <p>It is the part of the 100-Point GTM Autopsy that can be scored from outside the company, from public sources alone. No mystery shop. Scored by Colin, with an offer to walk through what he found. The 100-Point GTM Autopsy is $5,000, ten business days, required before the 90-day fix, and not credited toward the build.</p>
+        <p class="post-cta-meta">Then the $5,000 100-Point GTM Autopsy. Then the 90-day fix.</p>
+        <a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=why-deals-die-after-the-yes&amp;utm_content=post_end" class="btn btn--primary" data-track="outside_audit" data-cta="post_end" data-cta-id="outside_audit-post_end" data-cta-position="post_end" data-cluster="diagnosis" data-persona="">
+          <span>Book your free 40-Point Outside Audit</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="post-cta-sec"><a class="text-link" href="/gtm-autopsy/" data-track="autopsy" data-cta="post_end" data-cta-id="autopsy-post_end" data-cta-position="post_end" data-cluster="diagnosis" data-persona="">See the 100-Point GTM Autopsy</a></p>
+      </div>
+      <aside class="post-related" aria-label="Related">
+        <div class="label">On this topic</div>
+        <ul>
+        <li><a href="/gtm-autopsy/">The 100-Point GTM Autopsy</a></li>
+        <li><a href="/blog/enable-every-buying-committee-stakeholder.html">Selling to a Buying Committee: How to Enable Every Stakeholder and Shorten the Cycle</a></li>
+        <li><a href="/blog/reset-expectations-longer-sales-cycles.html">Your Sales Cycle Got Longer. Here&#x27;s How to Reset Forecasts and Expectations</a></li>
+        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=why-deals-die-after-the-yes&amp;utm_content=related_box" data-track="outside_audit" data-cta="related_box" data-cta-id="outside_audit-related_box" data-cta-position="related_box" data-cluster="diagnosis" data-persona="">Book your free 40-Point Outside Audit</a></li>
+        </ul>
+      </aside>
+      <div class="post-nav">
+        <a href="/blog/">&larr; All Posts</a>
+        <a href="/blog/">See all articles &rarr;</a>
+      </div>
+    </div>
+  </div>
+  <footer class="sf">
+    <div class="container">
+      <div class="sf-top">
+        <div>
+          <div class="sf-logo">RAIN<em>CLOUD</em></div>
+          <p class="sf-tag">One engagement: a 100-point GTM autopsy, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
+          <p class="sf-also">Also from Colin Dowling: <a href="https://www.withants.com/" target="_blank" rel="noopener">Ants</a> (managed AI agents), <a href="https://www.friendlyghostwriter.com/" target="_blank" rel="noopener">Ghostwriter</a> (B2B content), The AI Ready Advisor (executive AI strategy).</p>
+        </div>
+        <div class="sf-cols">
+          <div>
+            <div class="sf-h">Work with me</div>
+            <ul>
+              <li><a href="/gtm-autopsy/">The Autopsy</a></li>
+              <li><a href="/gtm-consulting.html">The Engagement</a></li>
+              <li><a href="/pricing/">Pricing</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Read</div>
+            <ul>
+              <li><a href="/blog/">Articles</a></li>
+              <li><a href="/faq/">FAQ</a></li>
+              <li><a href="/videos/">Videos</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/resources/100-point-gtm-framework.html">The 100-Point GTM Framework</a></li>
+              <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
+              <li><a href="/llms.txt">llms.txt</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Talk</div>
+            <ul>
+              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=why-deals-die-after-the-yes&amp;utm_content=footer" data-track="outside_audit" data-cta="footer" data-cta-id="outside_audit-footer" data-cta-position="footer" data-cluster="diagnosis" data-persona="">Book your free 40-Point Outside Audit</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sf-copy">&copy; 2026 RAINCLOUD. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>

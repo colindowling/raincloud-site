@@ -2,13 +2,13 @@
 
 Four hubs. Each one is a page that already exists. A post links up to its hub, across to two sibling posts, and to the problem page and offer that match the topic. Hubs link down to their spokes. Topic hubs at `/topics/` wait until a topic has three or more posts. Until then the problem page and the offer page are the hub.
 
-Campaigns on blog CTAs: `utm_campaign=blog_<slug>` and `utm_content=inbody` or `post_end`.
+Campaigns on blog CTAs: `utm_source=rncld`, `utm_medium=site`, `utm_campaign=<slug>`, `utm_content=inbody` or `post_end`. No UTMs on internal links.
 
-Flow: post, then the problem page, then the offer, then the audit call.
+Flow: post, then the problem page, then the 40-Point Outside Audit, then the 100-Point GTM Autopsy.
 
 ## 1. Diagnose the motion
 
-Pillar: [/audit.html](/audit.html) — 100-Point GTM Audit, $5,000, ten business days.
+Pillar: [/gtm-autopsy/](/gtm-autopsy/) — 100-Point GTM Autopsy, $5,000, ten business days. The free entry offer is [/outside-audit/](/outside-audit/).
 
 Spokes:
 
@@ -55,7 +55,7 @@ Set `video` in the post's front matter and rebuild. The page embeds that video a
 
 ## Keyword pages
 
-Held. Do not add unlisted pages for fractional CRO, B2B sales consulting, sales consulting firms, fractional sales leader, GTM checklist, GTM consulting, RevOps consultant, or GTM Autopsy until Colin approves that draft.
+Held. Do not add unlisted pages for fractional CRO, B2B sales consulting, sales consulting firms, fractional sales leader, GTM checklist, GTM consulting, or RevOps consultant until Colin approves that draft. /gtm-autopsy/ is the paid 100-Point GTM Autopsy.
 
 ## Adding a spoke
 

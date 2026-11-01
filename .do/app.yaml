@@ -9,6 +9,27 @@ static_sites:
     source_dir: /
     build_command: ""
     output_dir: /
+    # Kept so a deploy that has not picked up ingress yet still serves the site.
     routes:
       - path: /
+    index_document: index.html
     environment_slug: html
+
+# True 301. App Platform applies this at the edge, before the static file is
+# served. A git push updates the static files; applying this spec (Apps →
+# Settings → App Spec, or `doctl apps update --spec .do/app.yaml`) is what
+# turns /audit.html into an HTTP 301. Until that spec is live, audit.html is
+# also a meta/JS redirect to the same URL.
+ingress:
+  rules:
+    - match:
+        path:
+          exact: /audit.html
+      redirect:
+        uri: /gtm-autopsy/
+        redirect_code: 301
+    - match:
+        path:
+          prefix: /
+      component:
+        name: raincloud-web

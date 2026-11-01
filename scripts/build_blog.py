@@ -33,58 +33,41 @@ SITE = "https://rncld.com"
 PUBLISHED_STAMP = "2026-10-31"
 OG_IMAGE = f"{SITE}/assets/band-boardroom.png"
 
+CALENDLY = "https://calendly.com/30minutechat/30min"
+AUTOPSY_PATH = "/gtm-autopsy/"
+
 TOPICS = {
     "diagnosis": {
-        "path": "/audit.html",
         "heading": "Start with the free 40-Point Outside Audit.",
         "body": (
             "It is the part of the 100-Point GTM Autopsy that can be scored from "
-            "outside the company, from public sources alone. There is no page for "
-            "it yet. The audit call is how you ask for it. The paid GTM Autopsy "
-            "is $5,000, ten business days, required before the 90-day fix, and "
-            "not credited toward the build."
+            "outside the company, from public sources alone. No mystery shop. "
+            "Scored by Colin, with an offer to walk through what he found. The "
+            "100-Point GTM Autopsy is $5,000, ten business days, required before "
+            "the 90-day fix, and not credited toward the build."
         ),
-        "meta": "Then the $5,000 GTM Autopsy. Then the 90-day fix.",
-        "button": "Book the audit call",
-        "button_kind": "calendly",
-        "secondary_label": "See the GTM Autopsy",
-        "secondary_kind": "path",
-        "secondary_path": "/audit.html",
+        "meta": "Then the $5,000 100-Point GTM Autopsy. Then the 90-day fix.",
     },
     "build": {
-        "path": "/gtm-consulting.html",
-        "heading": "The 90-day fix comes after the GTM Autopsy.",
+        "heading": "The 90-day fix comes after the 100-Point GTM Autopsy.",
         "body": (
-            "The audit tells you what\u2019s broken and in what order. The engagement "
-            "builds it \u2014 ICP, positioning, the pipeline model, outbound, the "
-            "scorecard in your CRM and the playbook \u2014 in your tools, with the "
-            "people who will run it after I\u2019m gone. $37,500 over 90 days, then "
-            "$7,500 a month. It starts with the free 40-Point Outside Audit. There "
-            "is no page for that yet. The audit call is how you ask for it."
+            "The 100-Point GTM Autopsy tells you what\u2019s broken and in what order. "
+            "The engagement builds it \u2014 ICP, positioning, the pipeline model, "
+            "outbound, the scorecard in your CRM and the playbook \u2014 in your tools, "
+            "with the people who will run it after I\u2019m gone. $37,500 over 90 days, "
+            "then $7,500 a month. It starts with the free 40-Point Outside Audit."
         ),
         "meta": "$15,000, then $12,500, then $10,000.",
-        "button": "Book the audit call",
-        "button_kind": "calendly",
-        "secondary_label": "See the 90-day engagement",
-        "secondary_kind": "path",
-        "secondary_path": "/gtm-consulting.html",
     },
     "soft": {
-        "path": "/resources/100-point-gtm-framework.html",
-        "heading": "The list is free. The score is the GTM Autopsy.",
+        "heading": "The list is free. The score is the 100-Point GTM Autopsy.",
         "body": (
             "Every point I score, published in full. It\u2019s the full list the "
-            "audit scores against, so you can see exactly what it measures before "
-            "you spend anything. The free 40-Point Outside Audit is the slice that "
-            "can be scored from outside the company. There is no page for it yet. "
-            "The audit call is how you ask for it."
+            "100-Point GTM Autopsy scores against, so you can see exactly what it "
+            "measures before you spend anything. The free 40-Point Outside Audit "
+            "is the slice that can be scored from outside the company."
         ),
-        "meta": "Then the $5,000 GTM Autopsy.",
-        "button": "Book the audit call",
-        "button_kind": "calendly",
-        "secondary_label": "Download the 100-point framework",
-        "secondary_kind": "path",
-        "secondary_path": "/resources/100-point-gtm-framework.html",
+        "meta": "Then the $5,000 100-Point GTM Autopsy.",
     },
 }
 
@@ -107,22 +90,26 @@ def esc(value: str) -> str:
     return html.escape(value, quote=True)
 
 
-def campaign_for(slug: str) -> str:
-    return "blog_" + slug
-
-
-def utm(slug: str, content: str, path: str | None = None) -> str:
-    query = (
-        "utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign="
-        + esc(campaign_for(slug))
+def calendly_href(slug: str, content: str) -> str:
+    return (
+        CALENDLY
+        + "?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign="
+        + esc(slug)
         + "&amp;utm_content="
         + esc(content)
     )
-    if path is None:
-        base = "https://calendly.com/30minutechat/30min"
-        return base + "?" + query
-    join = "&amp;" if "?" in path else "?"
-    return path + join + query
+
+
+def cta_attrs(kind: str, position: str, cluster: str, persona: str = "") -> str:
+    cta_id = kind + "-" + position
+    return (
+        f' data-track="{esc(kind)}"'
+        f' data-cta="{esc(position)}"'
+        f' data-cta-id="{esc(cta_id)}"'
+        f' data-cta-position="{esc(position)}"'
+        f' data-cluster="{esc(cluster)}"'
+        f' data-persona="{esc(persona)}"'
+    )
 
 
 def load_post(path: Path) -> dict:
@@ -175,21 +162,33 @@ def youtube_id(url: str) -> str:
     raise SystemExit(f"Could not read a YouTube id from {url}")
 
 
-def render_markdown(source: str) -> str:
+def render_markdown(source: str, post: dict | None = None) -> str:
     """Small Markdown subset: headings, paragraphs, lists, quotes, links, emphasis."""
     lines = source.replace("\r\n", "\n").split("\n")
     blocks: list[str] = []
     i = 0
+    slug = (post or {}).get("slug") or ""
+    cluster = (post or {}).get("topic") or ""
+
+    def linkify(match: re.Match) -> str:
+        label, href = match.group(1), match.group(2)
+        if "calendly.com" in href and slug:
+            return (
+                '<a href="'
+                + calendly_href(slug, "inbody_text")
+                + '"'
+                + cta_attrs("outside_audit", "inbody_text", cluster)
+                + ">"
+                + label
+                + "</a>"
+            )
+        return '<a href="' + href + '">' + label + "</a>"
 
     def inline(text: str) -> str:
         text = html.escape(text)
         text = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
         text = re.sub(r"(?<!\*)\*(.+?)\*(?!\*)", r"<em>\1</em>", text)
-        text = re.sub(
-            r"\[([^\]]+)\]\(([^)]+)\)",
-            lambda m: '<a href="' + m.group(2) + '">' + m.group(1) + "</a>",
-            text,
-        )
+        text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", linkify, text)
         return text
 
     while i < len(lines):
@@ -239,33 +238,23 @@ def render_markdown(source: str) -> str:
 def body_html(post: dict) -> str:
     if post.get("format") == "html":
         return post["body"].strip("\n")
-    return render_markdown(post["body"])
+    return render_markdown(post["body"], post)
 
 
 def cta_html(post: dict, content: str) -> str:
     topic = TOPICS[post["topic"]]
     slug = post["slug"]
-    if topic.get("button_kind") == "calendly":
-        primary = utm(slug, content)
-        primary_extra = ' target="_blank" rel="noopener"'
-    else:
-        primary = utm(slug, content, topic["path"])
-        primary_extra = ""
-    if topic["secondary_kind"] == "calendly":
-        secondary = utm(slug, content)
-        extra = ' target="_blank" rel="noopener"'
-    else:
-        secondary = utm(slug, content, topic["secondary_path"])
-        extra = ""
+    cluster = post["topic"]
+    primary = calendly_href(slug, content)
     meta = f'\n        <p class="post-cta-meta">{esc(topic["meta"])}</p>' if topic.get("meta") else ""
     return f"""<div class="post-cta" data-cta-block="{esc(content)}">
         <h3>{esc(topic["heading"])}</h3>
         <p>{esc(topic["body"])}</p>{meta}
-        <a href="{primary}" class="btn btn--primary" data-cta="{esc(content)}"{primary_extra}>
-          <span>{esc(topic["button"])}</span>
+        <a href="{primary}" class="btn btn--primary"{cta_attrs("outside_audit", content, cluster)}>
+          <span>Book your free 40-Point Outside Audit</span>
           <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <p class="post-cta-sec"><a class="text-link" href="{secondary}"{extra}>{esc(topic["secondary_label"])}</a></p>
+        <p class="post-cta-sec"><a class="text-link" href="{AUTOPSY_PATH}"{cta_attrs("autopsy", content, cluster)}>See the 100-Point GTM Autopsy</a></p>
       </div>"""
 
 
@@ -343,9 +332,21 @@ def related_html(post: dict, by_slug: dict) -> str:
         links.append(
             f'        <li><a href="/blog/{esc(slug)}.html">{esc(other["title"])}</a></li>'
         )
+    cluster = post["topic"]
     for item in post.get("also") or []:
         href = item["href"]
         label = item["label"]
+        if "calendly.com" in href:
+            links.append(
+                "        <li><a href=\""
+                + calendly_href(post["slug"], "related_box")
+                + "\""
+                + cta_attrs("outside_audit", "related_box", cluster)
+                + ">"
+                + esc(label)
+                + "</a></li>"
+            )
+            continue
         external = href.startswith("http")
         rel = ' target="_blank" rel="noopener"' if external else ""
         links.append(f'        <li><a href="{esc(href)}"{rel}>{esc(label)}</a></li>')
@@ -447,18 +448,6 @@ def page_html(post: dict, by_slug: dict) -> str:
     function gtag(){{dataLayer.push(arguments);}}
     gtag('js', new Date());
     gtag('config', 'G-041BP5G4HF');
-    document.addEventListener('click', function(e) {{
-      var a = e.target.closest('a[href]');
-      if (!a) return;
-      var href = a.getAttribute('href') || '';
-      if (!/\\/(audit|contact|gtm-consulting|resources)(\\.html)?(\\?|#|$)/.test(href) && href.indexOf('calendly.com') === -1) return;
-      if (a.closest('nav') || a.closest('footer')) return;
-      gtag('event', 'audit_cta_click', {{
-        cta_text: (a.textContent || '').trim().slice(0, 100),
-        cta_destination: href,
-        cta_location: window.location.pathname
-      }});
-    }});
     document.addEventListener('DOMContentLoaded', function() {{
       var navToggle = document.getElementById('navToggle');
       var navLinks = document.getElementById('navLinks');
@@ -490,6 +479,7 @@ def page_html(post: dict, by_slug: dict) -> str:
       }});
     }});
   </script>
+  <script src="/assets/track.js" defer></script>
   <title>{esc(title)} — RAINCLOUD</title>
   <meta name="description" content="{esc(description)}">
   <link rel="canonical" href="{esc(post.get("duplicate_of") or f"{SITE}/blog/{slug}.html")}">
@@ -521,12 +511,12 @@ def page_html(post: dict, by_slug: dict) -> str:
     footer.sf .sf-also a:hover{{color:var(--text-primary);}}
   </style>
 </head>
-<body>
+<body data-page-template="post" data-cluster="{esc(post["topic"])}" data-persona="">
 {duplicate}{note_html}  <nav id="nav" class="scrolled">
     <div class="container nav-inner">
       <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="/audit.html">The Audit</a></li>
+        <li><a href="/gtm-autopsy/">The Autopsy</a></li>
         <li><a href="/gtm-consulting.html">The Engagement</a></li>
         <li><a href="/pricing/">Pricing</a></li>
         <li><a href="/blog/" aria-current="page">Articles</a></li>
@@ -539,7 +529,7 @@ def page_html(post: dict, by_slug: dict) -> str:
           </ul>
         </li>
         <li><a href="/about/">About</a></li>
-        <li><a href="{utm(slug, "nav")}" class="nav-cta" target="_blank" rel="noopener" data-cta="nav">Book the audit call</a></li>
+        <li><a href="{calendly_href(slug, "nav")}" class="nav-cta"{cta_attrs("outside_audit", "nav", post["topic"])}>Book your free 40-Point Outside Audit</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -576,14 +566,14 @@ def page_html(post: dict, by_slug: dict) -> str:
       <div class="sf-top">
         <div>
           <div class="sf-logo">RAIN<em>CLOUD</em></div>
-          <p class="sf-tag">One engagement: a 100-point GTM audit, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
+          <p class="sf-tag">One engagement: a 100-point GTM autopsy, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
           <p class="sf-also">Also from Colin Dowling: <a href="https://www.withants.com/" target="_blank" rel="noopener">Ants</a> (managed AI agents), <a href="https://www.friendlyghostwriter.com/" target="_blank" rel="noopener">Ghostwriter</a> (B2B content), The AI Ready Advisor (executive AI strategy).</p>
         </div>
         <div class="sf-cols">
           <div>
             <div class="sf-h">Work with me</div>
             <ul>
-              <li><a href="/audit.html">The Audit</a></li>
+              <li><a href="/gtm-autopsy/">The Autopsy</a></li>
               <li><a href="/gtm-consulting.html">The Engagement</a></li>
               <li><a href="/pricing/">Pricing</a></li>
             </ul>
@@ -603,7 +593,7 @@ def page_html(post: dict, by_slug: dict) -> str:
           <div>
             <div class="sf-h">Talk</div>
             <ul>
-              <li><a href="{utm(slug, "footer")}" target="_blank" rel="noopener" data-cta="footer">Book the audit call</a></li>
+              <li><a href="{calendly_href(slug, "footer")}"{cta_attrs("outside_audit", "footer", post["topic"])}>Book your free 40-Point Outside Audit</a></li>
               <li><a href="/contact.html">Contact</a></li>
               <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
             </ul>
@@ -697,7 +687,14 @@ def update_sitemap(posts: list[dict]) -> None:
             f"{SITE}/blog/",
             f"{SITE}/fix/",
             f"{SITE}/problems/",
-        )) or loc in {f"{SITE}/about/", f"{SITE}/faq/", f"{SITE}/videos/"}:
+        )) or loc in {
+            f"{SITE}/about/",
+            f"{SITE}/faq/",
+            f"{SITE}/videos/",
+            f"{SITE}/audit.html",
+            f"{SITE}/gtm-autopsy/",
+            f"{SITE}/outside-audit/",
+        }:
             continue
         kept.append(block)
     blog_index = sitemap_url(f"{SITE}/blog/", PUBLISHED_STAMP, "weekly", "0.7")
@@ -710,6 +707,8 @@ def update_sitemap(posts: list[dict]) -> None:
             sitemap_url(f"{SITE}/blog/{post['slug']}.html", lastmod, "monthly", "0.6")
         )
     extra_blocks = [
+        sitemap_url(f"{SITE}/gtm-autopsy/", "2026-11-02", "monthly", "0.9"),
+        sitemap_url(f"{SITE}/outside-audit/", "2026-11-02", "monthly", "0.8"),
         sitemap_url(f"{SITE}/about/", PUBLISHED_STAMP, "monthly", "0.6"),
         sitemap_url(f"{SITE}/faq/", PUBLISHED_STAMP, "monthly", "0.6"),
         sitemap_url(f"{SITE}/videos/", PUBLISHED_STAMP, "monthly", "0.5"),

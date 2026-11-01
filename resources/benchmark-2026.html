@@ -11,19 +11,6 @@
     gtag('js', new Date());
     gtag('config', 'G-041BP5G4HF');
 
-    // Custom event: audit_cta_click — body-content links to /audit.html or /contact.html
-    document.addEventListener('click', function(e) {
-      var a = e.target.closest('a[href]');
-      if (!a) return;
-      var href = a.getAttribute('href') || '';
-      if (!/\/(audit|contact)(\.html)?(\?|#|$)/.test(href)) return;
-      if (a.closest('nav') || a.closest('footer')) return;
-      gtag('event', 'audit_cta_click', {
-        cta_text: (a.textContent || '').trim().slice(0, 100),
-        cta_destination: href,
-        cta_location: window.location.pathname
-      });
-    });
 
     // Mobile-aware nav toggle: hamburger opens menu; on mobile, parent dropdown taps expand/collapse instead of navigating; leaf taps close the menu.
     document.addEventListener('DOMContentLoaded', function() {
@@ -428,13 +415,14 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
     footer.sf .sf-also a{color:var(--text-secondary);border-bottom:1px solid var(--border-subtle);}
     footer.sf .sf-also a:hover{color:var(--text-primary);}
   </style>
+  <script src="/assets/track.js" defer></script>
 </head>
-<body>
+<body data-page-template="benchmark-2026" data-cluster="benchmark" data-persona="">
   <nav id="nav" class="scrolled">
     <div class="container nav-inner">
       <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="/audit.html">The Audit</a></li>
+        <li><a href="/gtm-autopsy/">The Autopsy</a></li>
         <li><a href="/gtm-consulting.html">The Engagement</a></li>
         <li><a href="/pricing/">Pricing</a></li>
         <li><a href="/blog/">Articles</a></li>
@@ -447,7 +435,7 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
           </ul>
         </li>
         <li><a href="/about.html">About</a></li>
-        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=benchmark_page&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav">Book the audit call</a></li>
+        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=benchmark-2026&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav" data-track="book_call" data-cta-id="book_call-nav" data-cta-position="nav" data-cluster="benchmark" data-persona="">Book the audit call</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -476,7 +464,7 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
           <div class="report-form" id="formCard">
             <div class="form-eyebrow">Get the Report</div>
 
-            <form id="benchmarkForm" novalidate>
+            <form id="benchmarkForm" novalidate data-track="benchmark" data-cta-id="benchmark-form" data-cta-position="form" data-cluster="benchmark" data-persona="">
               <div class="form-row">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="First and last name" required autocomplete="name">
@@ -502,7 +490,7 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
             <div class="form-success" id="formSuccess">
               <h3>Your download is ready.</h3>
               <p>If the download didn't start automatically, use the link below.</p>
-              <a href="/assets/RAINCLOUD_2026_Benchmark_Report.pdf" class="download-link" download>
+              <a href="/assets/RAINCLOUD_2026_Benchmark_Report.pdf" class="download-link" download data-track="benchmark" data-cta-id="benchmark-download" data-cta-position="download" data-cluster="benchmark" data-persona="">
                 Download PDF
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
               </a>
@@ -571,14 +559,14 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
       <div class="sf-top">
         <div>
           <div class="sf-logo">RAIN<em>CLOUD</em></div>
-          <p class="sf-tag">One engagement: a 100-point GTM audit, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
+          <p class="sf-tag">One engagement: a 100-point GTM autopsy, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
           <p class="sf-also">Also from Colin Dowling: <a href="https://www.withants.com/" target="_blank" rel="noopener">Ants</a> (managed AI agents), <a href="https://www.friendlyghostwriter.com/" target="_blank" rel="noopener">Ghostwriter</a> (B2B content), The AI Ready Advisor (executive AI strategy).</p>
         </div>
         <div class="sf-cols">
           <div>
             <div class="sf-h">Work with me</div>
             <ul>
-              <li><a href="/audit.html">The Audit</a></li>
+              <li><a href="/gtm-autopsy/">The Autopsy</a></li>
               <li><a href="/gtm-consulting.html">The Engagement</a></li>
               <li><a href="/pricing/">Pricing</a></li>
             </ul>
@@ -598,7 +586,7 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
           <div>
             <div class="sf-h">Talk</div>
             <ul>
-              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld.com&amp;utm_medium=website&amp;utm_campaign=benchmark_page&amp;utm_content=footer" target="_blank" rel="noopener" data-cta="footer">Book the audit call</a></li>
+              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=benchmark-2026&amp;utm_content=footer" target="_blank" rel="noopener" data-cta="footer" data-track="book_call" data-cta-id="book_call-footer" data-cta-position="footer" data-cluster="benchmark" data-persona="">Book the audit call</a></li>
               <li><a href="/contact.html">Contact</a></li>
               <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
             </ul>
@@ -709,12 +697,7 @@ nav .container { display: flex; align-items: center; justify-content: space-betw
       triggerDownload();
       form.style.display = 'none';
       success.classList.add('active');
-      if (typeof gtag === 'function') {
-        gtag('event', 'benchmark_download', {
-          report: '2026 B2B Sales Benchmark Report',
-          company: company
-        });
-      }
+      if (window.rcTrack) rcTrack('benchmark_download', form);
     });
 
     // Reveal on scroll

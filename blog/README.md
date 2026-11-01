@@ -29,8 +29,8 @@ topic: diagnosis          # diagnosis | build | soft
 excerpt: The card text on /blog/.
 sort: 1                   # tie-break when two posts share a date; higher is newer
 updated: 2026-11-01       # sitemap lastmod and dateModified
-hub: /audit.html
-hub_label: The 100-Point GTM Audit
+hub: /gtm-autopsy/
+hub_label: The 100-Point GTM Autopsy
 related:                  # at least two other post slugs
   - outbound-reply-rates-2026
   - why-gtm-builds-fail
@@ -56,15 +56,17 @@ The article, in Markdown.
 
 `format: html` is only for the four posts that were retrofitted. Their bodies are the original HTML so the wording does not change. New posts should be Markdown. The converter supports paragraphs, `##` and `###`, `-` and `1.` lists, `>` quotes, `**bold**`, `*italic*`, and `[links](url)`.
 
-## Topic decides both CTAs
+## Topic decides the CTA copy
 
-| `topic` | When to use it | Button goes to |
-| --- | --- | --- |
-| `diagnosis` | The post is about something that is broken | `/audit.html` |
-| `build` | The post is about building, hiring, or the process after handoff | `/gtm-consulting.html` |
-| `soft` | The post should offer the free list, not a paid next step | `/resources/100-point-gtm-framework.html` |
+Every post, whatever `topic` is, ends with the same buttons. The primary button is "Book your free 40-Point Outside Audit" and opens the Calendly popup. The text link under it is the 100-Point GTM Autopsy at `/gtm-autopsy/`, with no UTM parameters. `topic` only changes the heading and the sentence above the buttons.
 
-The same block is inserted after the second section (before the third `h2`) and again at the end. Links carry `utm_source=rncld.com`, `utm_medium=website`, `utm_campaign=blog_<slug>`, and `utm_content=inbody` or `utm_content=post_end`.
+| `topic` | When to use it |
+| --- | --- |
+| `diagnosis` | The post is about something that is broken |
+| `build` | The post is about building, hiring, or the process after handoff |
+| `soft` | The post is closer to the free list than to the paid next step |
+
+The same block is inserted after the second section (before the third `h2`) and again at the end. Calendly links carry `utm_source=rncld`, `utm_medium=site`, `utm_campaign=<slug>`, and `utm_content=inbody` or `utm_content=post_end` (also `nav`, `footer`, `related_box`, `inbody_text`). Internal links do not get UTMs.
 
 ## What the template always emits
 

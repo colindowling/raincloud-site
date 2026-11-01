@@ -4,7 +4,7 @@ nav .nav-links { gap: 28px; }
 nav .nav-links a { color: var(--text-secondary); }
 nav .nav-links a:hover { color: var(--accent-blue); }
 nav .nav-links a:hover::after { background: var(--accent-blue); }
-nav .nav-links .nav-cta { color: var(--text-primary); font-size: 0.68rem; padding: 9px 20px; border: 1px solid var(--text-primary); transition: all .3s ease; }
+nav .nav-links .nav-cta { color: var(--text-primary); font-size: 0.68rem; padding: 9px 14px; border: 1px solid var(--text-primary); transition: all .3s ease; max-width: 240px; line-height: 1.35; text-align: center; white-space: normal; }
 nav .nav-links .nav-cta:hover { background: var(--text-primary); color: var(--bg-primary); }
 nav .nav-links .nav-cta::after { display: none; }
 .has-dropdown { position: relative; }

@@ -10,8 +10,8 @@ format: html
 topic: diagnosis
 sort: 3
 updated: '2026-10-31'
-hub: /audit.html
-hub_label: The 100-Point GTM Audit
+hub: /gtm-autopsy/
+hub_label: The 100-Point GTM Autopsy
 related:
 - bofu-content-that-moves-deals
 - why-gtm-builds-fail

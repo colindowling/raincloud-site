@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-041BP5G4HF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-041BP5G4HF');
+    document.addEventListener('DOMContentLoaded', function() {
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+      if (!navToggle || !navLinks) return;
+      navToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('open');
+        if (!navLinks.classList.contains('open')) {
+          navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+            item.classList.remove('expanded');
+          });
+        }
+      });
+      navLinks.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          var li = a.parentElement;
+          var isDropdownParent = li && li.classList.contains('has-dropdown');
+          var isMobile = window.innerWidth <= 768;
+          var navOpen = navLinks.classList.contains('open');
+          if (isDropdownParent && isMobile && navOpen) {
+            e.preventDefault();
+            li.classList.toggle('expanded');
+          } else {
+            navLinks.classList.remove('open');
+            navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {
+              item.classList.remove('expanded');
+            });
+          }
+        });
+      });
+    });
+  </script>
+  <script src="/assets/track.js" defer></script>
+  <title>When a New Decision-Maker Shows Up Mid-Deal and Wants Their Old Tools — RAINCLOUD</title>
+  <meta name="description" content="A new leader arrives mid-deal and wants the vendor they used before. Here&#x27;s how to re-qualify, earn their trust and keep the deal alive.">
+  <link rel="canonical" href="https://rncld.com/blog/new-decision-maker-mid-deal.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/site-extra.css">
+  <link rel="stylesheet" href="/assets/site-nav.css">
+  <link rel="stylesheet" href="/assets/blog-post.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="RAINCLOUD">
+  <meta property="og:title" content="When a New Decision-Maker Shows Up Mid-Deal and Wants Their Old Tools">
+  <meta property="og:description" content="A new leader arrives mid-deal and wants the vendor they used before. Here&#x27;s how to re-qualify, earn their trust and keep the deal alive.">
+  <meta property="og:url" content="https://rncld.com/blog/new-decision-maker-mid-deal.html">
+  <meta property="og:image" content="https://rncld.com/assets/band-boardroom.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="When a New Decision-Maker Shows Up Mid-Deal and Wants Their Old Tools">
+  <meta name="twitter:description" content="A new leader arrives mid-deal and wants the vendor they used before. Here&#x27;s how to re-qualify, earn their trust and keep the deal alive.">
+  <meta name="twitter:image" content="https://rncld.com/assets/band-boardroom.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "When a New Decision-Maker Shows Up Mid-Deal and Wants Their Old Tools",
+      "description": "A new leader arrives mid-deal and wants the vendor they used before. Here's how to re-qualify, earn their trust and keep the deal alive.",
+      "image": "https://rncld.com/assets/band-boardroom.png",
+      "author": {
+        "@type": "Person",
+        "name": "Colin Dowling",
+        "url": "https://rncld.com/about/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "RAINCLOUD",
+        "url": "https://rncld.com/"
+      },
+      "mainEntityOfPage": "https://rncld.com/blog/new-decision-maker-mid-deal.html",
+      "datePublished": "2026-11-02",
+      "dateModified": "2026-11-02",
+      "articleSection": "Sales",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What happens to a deal when a new decision-maker arrives?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The deal effectively starts over. The new person wasn't part of earlier conversations, may have different priorities and often prefers tools they've used before. Prior agreement from their predecessor carries little weight. Treat it as a new opportunity: meet them, learn their goals and re-qualify the deal against what they want."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you win over a new executive who prefers a competitor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start by listening, not defending. Ask what they used before, what they liked and what they'd change. Then show how your solution fits their goals, with proof from companies like theirs. Respect their experience. If their old tool truly fits better, say so and stay in touch, since priorities often change."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I protect deals from stakeholder turnover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Build relationships with several people, not just one champion. Document the business case in writing so it survives a change in leadership. Watch for signals like job postings or LinkedIn updates in key roles. When turnover is common in a buyer role, ask about it early and plan for it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I contact a new leader right away?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, but with help rather than a pitch. Ask your champion to introduce you, and offer something useful for their first months, like a summary of where the project stands and what's been decided. New leaders are busy and forming opinions fast. Being useful early beats waiting for them to find you."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rncld.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articles",
+          "item": "https://rncld.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "When a New Decision-Maker Shows Up Mid-Deal and Wants Their Old Tools",
+          "item": "https://rncld.com/blog/new-decision-maker-mid-deal.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style id="rc-global">
+    nav .nav-links a[aria-current="page"]{color:var(--text-primary);}
+    footer.sf .sf-also{margin-top:14px;font-size:.72rem;line-height:1.6;color:var(--text-tertiary);max-width:300px;}
+    footer.sf .sf-also a{color:var(--text-secondary);border-bottom:1px solid var(--border-subtle);}
+    footer.sf .sf-also a:hover{color:var(--text-primary);}
+  </style>
+</head>
+<body data-page-template="post" data-cluster="diagnosis" data-persona="">
+  <nav id="nav" class="scrolled">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/gtm-autopsy/">The Autopsy</a></li>
+        <li><a href="/gtm-consulting.html">The Engagement</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/" aria-current="page">Articles</a></li>
+        <li class="has-dropdown"><a href="/problems/outbound-not-landing/">Problems <span class="caret"></span></a>
+          <ul class="dropdown">
+            <li><a href="/problems/outbound-not-landing/">Outbound not landing</a></li>
+            <li><a href="/problems/pipeline-not-growing/">Pipeline not growing</a></li>
+            <li><a href="/problems/first-sales-hire/">First sales hire</a></li>
+            <li><a href="/problems/founder-led-sales-trap/">Founder-led sales</a></li>
+          </ul>
+        </li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=new-decision-maker-mid-deal&amp;utm_content=nav" class="nav-cta" data-track="outside_audit" data-cta="nav" data-cta-id="outside_audit-nav" data-cta-position="nav" data-cluster="diagnosis" data-persona="">Book your free 40-Point Outside Audit</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="post-hero">
+    <div class="container--narrow" style="max-width: 720px;">
+      <div class="label label--accent">Sales</div>
+      <h1>When a New Decision-Maker Shows Up Mid-Deal and Wants Their Old Tools</h1>
+      <div class="post-meta">
+        <span><a href="/about/">Colin Dowling</a></span>
+        <span>November 2026</span>
+        <span>4 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="post-body">
+    <div class="container--narrow" style="max-width: 720px;">
+      <aside class="takeaways" aria-label="Key takeaways">
+        <div class="label label--accent">Key takeaways</div>
+        <ol>
+        <li>A new decision-maker resets the deal, so treat it like a new opportunity.</li>
+        <li>New leaders bring the tools and processes they trust from their last job.</li>
+        <li>Meet them early, learn their goals, and don&#x27;t defend the old decision.</li>
+        <li>Plan for turnover in roles that change often by building multiple relationships.</li>
+        </ol>
+      </aside>
+      <div class="post-video" data-video-slot="empty" hidden></div>
+      <p>When a new decision-maker joins mid-deal, treat it as a new opportunity. Meet them early, learn what they&#x27;re trying to do and what they used before, and re-qualify the deal around their goals instead of defending what their predecessor agreed to.</p>
+
+<p>A marketing leader I spoke with recently sells into a market where key buyer roles turn over often. New leaders come in used to certain old tools, or wanting to bring in the processes they ran at their last company. A deal that looked solid can change overnight.</p>
+
+<p>Every seller has had this happen. The champion you spent months with leaves, or a new boss arrives above them, and suddenly the conversation is about a product you&#x27;ve never heard of.</p>
+
+<h2>Why new leaders bring old tools</h2>
+
+<p>It&#x27;s not stubbornness. A new leader has to show results quickly, and they&#x27;re under pressure from the day they arrive. The fastest way to reduce risk is to use what they already know works.</p>
+
+<p>Their old tools come with a track record they personally lived. Your product comes with a track record their predecessor believed in. That&#x27;s not the same thing.</p>
+
+<h2>The tension: momentum versus a reset</h2>
+
+<p>On one hand, you&#x27;ve done the work. There&#x27;s a business case, a timeline, maybe a verbal yes. On the other hand, the person who has to own the result now didn&#x27;t build any of that.</p>
+
+<p>I land on accepting the reset. Pretending the deal is where it was just makes you look out of touch.</p>
+
+<div class="post-cta" data-cta-block="inbody">
+        <h3>Start with the free 40-Point Outside Audit.</h3>
+        <p>It is the part of the 100-Point GTM Autopsy that can be scored from outside the company, from public sources alone. No mystery shop. Scored by Colin, with an offer to walk through what he found. The 100-Point GTM Autopsy is $5,000, ten business days, required before the 90-day fix, and not credited toward the build.</p>
+        <p class="post-cta-meta">Then the $5,000 100-Point GTM Autopsy. Then the 90-day fix.</p>
+        <a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=new-decision-maker-mid-deal&amp;utm_content=inbody" class="btn btn--primary" data-track="outside_audit" data-cta="inbody" data-cta-id="outside_audit-inbody" data-cta-position="inbody" data-cluster="diagnosis" data-persona="">
+          <span>Book your free 40-Point Outside Audit</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="post-cta-sec"><a class="text-link" href="/gtm-autopsy/" data-track="autopsy" data-cta="inbody" data-cta-id="autopsy-inbody" data-cta-position="inbody" data-cluster="diagnosis" data-persona="">See the 100-Point GTM Autopsy</a></p>
+      </div>
+
+      <h2>What to do in the first two weeks</h2>
+
+<h3>Get introduced, don&#x27;t cold-call</h3>
+
+<p>Ask your champion, if they&#x27;re still there, to introduce you. If they&#x27;ve left, find someone else on the team who was involved. A warm intro beats an unsolicited email to a busy new leader.</p>
+
+<h3>Offer help, not a pitch</h3>
+
+<p>New leaders are trying to get up to speed. Offer them something useful: a short summary of where the project stands, what was decided and why, and what&#x27;s still open. That saves them time and makes you a resource instead of a vendor waiting for a signature.</p>
+
+<h3>Ask what they want to accomplish</h3>
+
+<p>In the first meeting, listen more than you talk:</p>
+
+<ul>
+<li>What are you trying to get done in your first six months?</li>
+<li>What did you use before, and what did you like about it?</li>
+<li>What would you change about how things work here?</li>
+<li>What would make this project worth doing to you?</li>
+</ul>
+
+<h3>Don&#x27;t defend the old decision</h3>
+
+<p>Their predecessor&#x27;s reasons may not be their reasons. If you argue for the old plan, you&#x27;re arguing with their judgment. Instead, connect what your product does to the goals they just told you.</p>
+
+<h2>Compete with their old tool fairly</h2>
+
+<p>If they bring up the product they used before, respect it. Ask what it did well. Then be specific about where you&#x27;re different and where you&#x27;re better for this company&#x27;s situation, with proof from similar customers.</p>
+
+<p>Sometimes their old tool really is a better fit. If so, say that. You&#x27;ll be remembered as honest, and new leaders change jobs too.</p>
+
+<h2>Build deals that survive turnover</h2>
+
+<p>You can&#x27;t stop people from leaving. You can make deals less fragile:</p>
+
+<ul>
+<li><strong>Multi-thread.</strong> Know several people, not one champion.</li>
+<li><strong>Map the committee.</strong> <a href="/blog/enable-every-buying-committee-stakeholder.html">Give every stakeholder what they need</a>, so no single exit sinks the deal.</li>
+<li><strong>Write it down.</strong> A business case in the buyer&#x27;s numbers outlives the person who agreed to it.</li>
+<li><strong>Watch for signals.</strong> Job postings, announcements and profile changes in key roles.</li>
+<li><strong>Ask early.</strong> &quot;How long has everyone on this project been in their role?&quot; is a fair question.</li>
+</ul>
+
+<p>In roles that turn over often, assume it will happen and plan for it.</p>
+
+<h2>Signs a deal is about to reset</h2>
+
+<ul>
+<li>Your champion stops replying, or starts copying someone new.</li>
+<li>A job posting appears for the role above your buyer.</li>
+<li>Meetings get pushed &quot;until the new person is settled.&quot;</li>
+<li>Questions you already answered come back, worded differently.</li>
+</ul>
+
+<h2>A short script for the first conversation</h2>
+
+<p>Keep it simple: &quot;Congratulations on the new role. I&#x27;ve been working with your team on this project. I&#x27;d be glad to give you a five-minute summary of where it stands and what&#x27;s been decided, so you can decide what you want to do with it.&quot; Then stop talking and listen. You&#x27;re not asking them to keep the old plan. You&#x27;re offering to save them time.</p>
+
+<h2>If turnover keeps resetting your deals</h2>
+
+<p>Fragile, single-threaded deals are a process problem, not bad luck. Stakeholder mapping and multi-threading are part of what I score in the <a href="/gtm-autopsy/">100-Point GTM Autopsy</a>, so you can see how exposed your pipeline is and what to fix first.</p>
+
+<p><strong>Deals keep resetting when people change jobs?</strong> Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it&#x27;s useful, the next step is the <a href="/gtm-autopsy/">100-Point GTM Autopsy</a>, which scores your whole go-to-market with your data and your team. <a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=new-decision-maker-mid-deal&amp;utm_content=inbody_text" data-track="outside_audit" data-cta="inbody_text" data-cta-id="outside_audit-inbody_text" data-cta-position="inbody_text" data-cluster="diagnosis" data-persona="">Book your free 40-Point Outside Audit</a>.</p>
+      <section class="post-faq" aria-label="Questions">
+        <h2>Questions this post answers</h2>
+        <div class="faq-item">
+          <h3>What happens to a deal when a new decision-maker arrives?</h3>
+          <p>The deal effectively starts over. The new person wasn&#x27;t part of earlier conversations, may have different priorities and often prefers tools they&#x27;ve used before. Prior agreement from their predecessor carries little weight. Treat it as a new opportunity: meet them, learn their goals and re-qualify the deal against what they want.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do you win over a new executive who prefers a competitor?</h3>
+          <p>Start by listening, not defending. Ask what they used before, what they liked and what they&#x27;d change. Then show how your solution fits their goals, with proof from companies like theirs. Respect their experience. If their old tool truly fits better, say so and stay in touch, since priorities often change.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How can I protect deals from stakeholder turnover?</h3>
+          <p>Build relationships with several people, not just one champion. Document the business case in writing so it survives a change in leadership. Watch for signals like job postings or LinkedIn updates in key roles. When turnover is common in a buyer role, ask about it early and plan for it.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Should I contact a new leader right away?</h3>
+          <p>Yes, but with help rather than a pitch. Ask your champion to introduce you, and offer something useful for their first months, like a summary of where the project stands and what&#x27;s been decided. New leaders are busy and forming opinions fast. Being useful early beats waiting for them to find you.</p>
+        </div>
+      </section>
+      <div class="post-cta" data-cta-block="post_end">
+        <h3>Start with the free 40-Point Outside Audit.</h3>
+        <p>It is the part of the 100-Point GTM Autopsy that can be scored from outside the company, from public sources alone. No mystery shop. Scored by Colin, with an offer to walk through what he found. The 100-Point GTM Autopsy is $5,000, ten business days, required before the 90-day fix, and not credited toward the build.</p>
+        <p class="post-cta-meta">Then the $5,000 100-Point GTM Autopsy. Then the 90-day fix.</p>
+        <a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=new-decision-maker-mid-deal&amp;utm_content=post_end" class="btn btn--primary" data-track="outside_audit" data-cta="post_end" data-cta-id="outside_audit-post_end" data-cta-position="post_end" data-cluster="diagnosis" data-persona="">
+          <span>Book your free 40-Point Outside Audit</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p class="post-cta-sec"><a class="text-link" href="/gtm-autopsy/" data-track="autopsy" data-cta="post_end" data-cta-id="autopsy-post_end" data-cta-position="post_end" data-cluster="diagnosis" data-persona="">See the 100-Point GTM Autopsy</a></p>
+      </div>
+      <aside class="post-related" aria-label="Related">
+        <div class="label">On this topic</div>
+        <ul>
+        <li><a href="/gtm-autopsy/">The 100-Point GTM Autopsy</a></li>
+        <li><a href="/blog/enable-every-buying-committee-stakeholder.html">Selling to a Buying Committee: How to Enable Every Stakeholder and Shorten the Cycle</a></li>
+        <li><a href="/blog/why-deals-die-after-the-yes.html">Why Deals Die After the Yes, and How to Surface Late Surprises Early</a></li>
+        <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=new-decision-maker-mid-deal&amp;utm_content=related_box" data-track="outside_audit" data-cta="related_box" data-cta-id="outside_audit-related_box" data-cta-position="related_box" data-cluster="diagnosis" data-persona="">Book your free 40-Point Outside Audit</a></li>
+        </ul>
+      </aside>
+      <div class="post-nav">
+        <a href="/blog/">&larr; All Posts</a>
+        <a href="/blog/">See all articles &rarr;</a>
+      </div>
+    </div>
+  </div>
+  <footer class="sf">
+    <div class="container">
+      <div class="sf-top">
+        <div>
+          <div class="sf-logo">RAIN<em>CLOUD</em></div>
+          <p class="sf-tag">One engagement: a 100-point GTM autopsy, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
+          <p class="sf-also">Also from Colin Dowling: <a href="https://www.withants.com/" target="_blank" rel="noopener">Ants</a> (managed AI agents), <a href="https://www.friendlyghostwriter.com/" target="_blank" rel="noopener">Ghostwriter</a> (B2B content), The AI Ready Advisor (executive AI strategy).</p>
+        </div>
+        <div class="sf-cols">
+          <div>
+            <div class="sf-h">Work with me</div>
+            <ul>
+              <li><a href="/gtm-autopsy/">The Autopsy</a></li>
+              <li><a href="/gtm-consulting.html">The Engagement</a></li>
+              <li><a href="/pricing/">Pricing</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Read</div>
+            <ul>
+              <li><a href="/blog/">Articles</a></li>
+              <li><a href="/faq/">FAQ</a></li>
+              <li><a href="/videos/">Videos</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/resources/100-point-gtm-framework.html">The 100-Point GTM Framework</a></li>
+              <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
+              <li><a href="/llms.txt">llms.txt</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Talk</div>
+            <ul>
+              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=new-decision-maker-mid-deal&amp;utm_content=footer" data-track="outside_audit" data-cta="footer" data-cta-id="outside_audit-footer" data-cta-position="footer" data-cluster="diagnosis" data-persona="">Book your free 40-Point Outside Audit</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sf-copy">&copy; 2026 RAINCLOUD. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>

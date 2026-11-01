@@ -130,9 +130,19 @@ def check_post(path: Path, text: str, blocks: list[dict]) -> None:
     if not has_video and not has_empty:
         fail(f"{path.name}: missing video slot")
     slug = path.stem
-    campaign = f"utm_campaign=blog_{slug}"
+    campaign = f"utm_campaign={slug}&amp;"
     if text.count(campaign) < 4:
-        fail(f"{path.name}: expected utm_campaign=blog_{slug} on nav, footer, and both CTAs")
+        fail(f"{path.name}: expected utm_campaign={slug} on nav, footer, and both CTAs")
+    if "utm_source=rncld&amp;utm_medium=site" not in text:
+        fail(f"{path.name}: Calendly CTAs are missing utm_source=rncld&utm_medium=site")
+    if "Book your free 40-Point Outside Audit" not in text:
+        fail(f"{path.name}: missing the 40-Point Outside Audit CTA")
+    if 'href="/gtm-autopsy/?' in text or "gtm-autopsy/?" in text:
+        fail(f"{path.name}: internal /gtm-autopsy/ link has a query string")
+    if "/assets/track.js" not in text:
+        fail(f"{path.name}: missing /assets/track.js")
+    if "data-cta-id=" not in text or "data-cta-position=" not in text:
+        fail(f"{path.name}: CTA is missing data-cta-id or data-cta-position")
     if 'data-cta-block="inbody"' not in text or 'data-cta-block="post_end"' not in text:
         fail(f"{path.name}: missing inbody or post_end CTA")
     if "Key takeaways" not in text:
@@ -168,6 +178,8 @@ def check_sitemap() -> None:
         f"{SITE}/about/",
         f"{SITE}/faq/",
         f"{SITE}/videos/",
+        f"{SITE}/gtm-autopsy/",
+        f"{SITE}/outside-audit/",
     ]
     for loc in required:
         if loc not in locs:
@@ -185,6 +197,36 @@ def check_sitemap() -> None:
         fail("claudeforce is canonicalized to Ants and should not be in the sitemap")
     if any("/bofu/" in loc for loc in locs):
         fail("unlisted BoFu keyword pages are on hold and must not be in the sitemap")
+    if f"{SITE}/audit.html" in locs:
+        fail("audit.html redirects to /gtm-autopsy/ and should not be in the sitemap")
+
+
+def check_offer_name(path: Path, text: str) -> None:
+    if "GTM Audit" in text:
+        fail(f"{path.relative_to(ROOT)}: still says GTM Audit")
+    bare = re.sub(r"100-Point GTM Autopsy", "", text)
+    if "GTM Autopsy" in bare:
+        fail(f"{path.relative_to(ROOT)}: bare GTM Autopsy (use 100-Point GTM Autopsy)")
+
+
+def check_tracking(path: Path, text: str) -> None:
+    if path.name == "audit.html":
+        return
+    if "/assets/track.js" not in text:
+        fail(f"{path.relative_to(ROOT)}: missing /assets/track.js")
+    if "calendly.com" not in text:
+        return
+    for match in re.finditer(r"<a\b[^>]*calendly\.com[^>]*>", text):
+        tag = match.group(0)
+        if "utm_source=rncld" not in tag or "utm_medium=site" not in tag:
+            fail(f"{path.relative_to(ROOT)}: Calendly link missing rncld/site UTMs")
+            break
+        if "data-cta-id=" not in tag or "data-cta-position=" not in tag or "data-track=" not in tag:
+            fail(f"{path.relative_to(ROOT)}: Calendly link missing data attributes")
+            break
+        if "utm_source=rncld.com" in tag or "utm_medium=website" in tag:
+            fail(f"{path.relative_to(ROOT)}: Calendly link still uses the old UTM source or medium")
+            break
 
 
 def main() -> int:
@@ -193,8 +235,15 @@ def main() -> int:
         text = path.read_text(encoding="utf-8")
         blocks = check_jsonld(path, text)
         check_links(path, text)
+        check_offer_name(path, text)
+        check_tracking(path, text)
         if path.parent == ROOT / "blog" and path.name != "index.html":
             check_post(path, text, blocks)
+    for path in (ROOT / "llms.txt", ROOT / "blog" / "README.md"):
+        if path.is_file():
+            check_offer_name(path, path.read_text(encoding="utf-8"))
+    for path in (ROOT / "blog" / "posts").glob("*.md"):
+        check_offer_name(path, path.read_text(encoding="utf-8"))
     check_sitemap()
     if errors:
         print(f"{len(errors)} problem(s):")
