@@ -1,30 +1,5 @@
-/* ===== RAINCLOUD shared additions (nav, footer, sub-page components) ===== */
-/* NAV */
-nav .nav-links { gap: 28px; }
-nav .nav-links a { color: var(--text-secondary); }
-nav .nav-links a:hover { color: var(--accent-blue); }
-nav .nav-links a:hover::after { background: var(--accent-blue); }
-nav .nav-links .nav-cta { color: var(--text-primary); font-size: 0.68rem; padding: 9px 20px; border: 1px solid var(--text-primary); transition: all .3s ease; }
-nav .nav-links .nav-cta:hover { background: var(--text-primary); color: var(--bg-primary); }
-nav .nav-links .nav-cta::after { display: none; }
-.has-dropdown { position: relative; }
-.has-dropdown > a::after { display: none; }
-.has-dropdown > a .caret { display:inline-block; margin-left:6px; width:6px; height:6px; border-right:1px solid currentColor; border-bottom:1px solid currentColor; transform: rotate(45deg) translateY(-2px); }
-.dropdown { display: none; position: absolute; top: 100%; left: -20px; padding-top: 14px; min-width: 220px; z-index: 200; list-style: none; margin: 0; }
-.dropdown::before { content:''; position:absolute; top:14px; left:0; right:0; bottom:0; background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); z-index:-1; }
-.dropdown li { padding: 0; }
-.dropdown li a { display: block; padding: 9px 22px; font-size: 0.72rem; color: var(--text-secondary); text-transform: none; letter-spacing: 0.02em; white-space: nowrap; }
-.dropdown li a::after { display: none; }
-.dropdown li a:hover { color: var(--text-primary); background: rgba(255,255,255,0.03); }
-.has-dropdown:hover .dropdown, .has-dropdown:focus-within .dropdown { display: block; }
-@media (max-width: 768px) {
-  .nav-links.open { max-height: calc(100vh - 60px); overflow-y: auto; }
-  .dropdown { position: static; display: none; padding: 0 0 0 16px; min-width: 0; margin: 4px 0; }
-  .dropdown::before { display:none; }
-  .dropdown li a { padding: 7px 0; font-size: 0.8rem; }
-  .nav-links.open .has-dropdown.expanded > .dropdown { display: block; }
-  nav .nav-links .nav-cta { display:inline-block; text-align:center; }
-}
+/* ===== RAINCLOUD shared additions (footer, sub-page components) ===== */
+/* Header nav: includes/site-nav.html and assets/site-nav.css. */
 /* FOOTER */
 footer.sf { border-top: 1px solid var(--border-subtle); padding: 56px 0 40px; background: var(--bg-primary); }
 footer.sf .sf-top { display: grid; grid-template-columns: 1.1fr 2fr; gap: 40px; align-items: start; }

@@ -21,6 +21,8 @@ from xml.sax.saxutils import escape as xml_escape
 
 import yaml
 
+from site_nav import render_nav
+
 ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / "blog" / "posts"
 BLOG_DIR = ROOT / "blog"
@@ -437,6 +439,14 @@ def page_html(post: dict, by_slug: dict) -> str:
     note_html = f"  <!-- {note} -->\n" if note else ""
     title = post["title"]
     description = post["description"]
+    nav = render_nav(
+        '<a href="'
+        + calendly_href(slug, "nav")
+        + '" class="nav-cta"'
+        + cta_attrs("outside_audit", "nav", post["topic"])
+        + ">Book your free 40-Point Outside Audit</a>",
+        f"/blog/{slug}.html",
+    )
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -448,37 +458,8 @@ def page_html(post: dict, by_slug: dict) -> str:
     function gtag(){{dataLayer.push(arguments);}}
     gtag('js', new Date());
     gtag('config', 'G-041BP5G4HF');
-    document.addEventListener('DOMContentLoaded', function() {{
-      var navToggle = document.getElementById('navToggle');
-      var navLinks = document.getElementById('navLinks');
-      if (!navToggle || !navLinks) return;
-      navToggle.addEventListener('click', function() {{
-        navLinks.classList.toggle('open');
-        if (!navLinks.classList.contains('open')) {{
-          navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {{
-            item.classList.remove('expanded');
-          }});
-        }}
-      }});
-      navLinks.querySelectorAll('a').forEach(function(a) {{
-        a.addEventListener('click', function(e) {{
-          var li = a.parentElement;
-          var isDropdownParent = li && li.classList.contains('has-dropdown');
-          var isMobile = window.innerWidth <= 768;
-          var navOpen = navLinks.classList.contains('open');
-          if (isDropdownParent && isMobile && navOpen) {{
-            e.preventDefault();
-            li.classList.toggle('expanded');
-          }} else {{
-            navLinks.classList.remove('open');
-            navLinks.querySelectorAll('.has-dropdown.expanded').forEach(function(item) {{
-              item.classList.remove('expanded');
-            }});
-          }}
-        }});
-      }});
-    }});
   </script>
+  <script src="/assets/site-nav.js" defer></script>
   <script src="/assets/track.js" defer></script>
   <title>{esc(title)} — RAINCLOUD</title>
   <meta name="description" content="{esc(description)}">
@@ -512,28 +493,7 @@ def page_html(post: dict, by_slug: dict) -> str:
   </style>
 </head>
 <body data-page-template="post" data-cluster="{esc(post["topic"])}" data-persona="">
-{duplicate}{note_html}  <nav id="nav" class="scrolled">
-    <div class="container nav-inner">
-      <a href="/" class="nav-logo">RAIN<em>CLOUD</em></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="/gtm-autopsy/">The Autopsy</a></li>
-        <li><a href="/gtm-consulting.html">The Engagement</a></li>
-        <li><a href="/pricing/">Pricing</a></li>
-        <li><a href="/blog/" aria-current="page">Articles</a></li>
-        <li class="has-dropdown"><a href="/problems/outbound-not-landing/">Problems <span class="caret"></span></a>
-          <ul class="dropdown">
-            <li><a href="/problems/outbound-not-landing/">Outbound not landing</a></li>
-            <li><a href="/problems/pipeline-not-growing/">Pipeline not growing</a></li>
-            <li><a href="/problems/first-sales-hire/">First sales hire</a></li>
-            <li><a href="/problems/founder-led-sales-trap/">Founder-led sales</a></li>
-          </ul>
-        </li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="{calendly_href(slug, "nav")}" class="nav-cta"{cta_attrs("outside_audit", "nav", post["topic"])}>Book your free 40-Point Outside Audit</a></li>
-      </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
+{duplicate}{note_html}  {nav}
 
   <section class="post-hero">
     <div class="container--narrow" style="max-width: 720px;">

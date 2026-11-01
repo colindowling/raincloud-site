@@ -209,6 +209,50 @@ def check_offer_name(path: Path, text: str) -> None:
         fail(f"{path.relative_to(ROOT)}: bare GTM Autopsy (use 100-Point GTM Autopsy)")
 
 
+def check_nav(path: Path, text: str) -> None:
+    if '<nav id="nav"' not in text or "includes" in path.parts:
+        return
+    nav_match = re.search(r'<nav id="nav"[^>]*>.*?</nav>', text, flags=re.S)
+    if not nav_match:
+        fail(f"{path.relative_to(ROOT)}: nav id is unclosed")
+        return
+    nav = nav_match.group(0)
+    if 'id="navToggle"' not in nav or 'aria-controls="navLinks"' not in nav or 'aria-expanded="false"' not in nav:
+        fail(f"{path.relative_to(ROOT)}: hamburger is missing aria-expanded or aria-controls")
+    if 'type="button"' not in nav:
+        fail(f"{path.relative_to(ROOT)}: nav toggle is not a button")
+    if "/assets/site-nav.css" not in text or "/assets/site-nav.js" not in text:
+        fail(f"{path.relative_to(ROOT)}: shared nav assets are not linked")
+    if 'class="nav-cta"' not in nav:
+        fail(f"{path.relative_to(ROOT)}: nav CTA is missing")
+    required = [
+        "/gtm-autopsy/",
+        "/outside-audit/",
+        "/gtm-consulting.html",
+        "/pricing/",
+        "/problems/outbound-not-landing/",
+        "/problems/pipeline-not-growing/",
+        "/problems/first-sales-hire/",
+        "/problems/founder-led-sales-trap/",
+        "/blog/",
+        "/videos/",
+        "/faq/",
+        "/about/",
+    ]
+    for href in required:
+        if f'href="{href}"' not in nav:
+            fail(f"{path.relative_to(ROOT)}: nav is missing {href}")
+    for banned in ("/ai-agents", "/bofu-content", "/demand-generation", "/content.html", "/audit.html", "15minutepipelineteardown"):
+        if banned in nav:
+            fail(f"{path.relative_to(ROOT)}: unlisted page {banned} is in the nav")
+    # Five top-level destinations: four groups plus About. The CTA is not one of them.
+    groups = len(re.findall(r'<li class="has-dropdown(?: is-ancestor)?">', nav))
+    if groups != 4:
+        fail(f"{path.relative_to(ROOT)}: expected 4 nav groups, found {groups}")
+    if not re.search(r'<li><a\b[^>]*href="/about/"', nav):
+        fail(f"{path.relative_to(ROOT)}: About is not a top-level nav item")
+
+
 def check_tracking(path: Path, text: str) -> None:
     if path.name == "audit.html":
         return
@@ -230,13 +274,17 @@ def check_tracking(path: Path, text: str) -> None:
 
 
 def main() -> int:
-    html_files = [p for p in local_files() if p.suffix == ".html"]
+    html_files = [
+        p for p in local_files()
+        if p.suffix == ".html" and "includes" not in p.relative_to(ROOT).parts
+    ]
     for path in html_files:
         text = path.read_text(encoding="utf-8")
         blocks = check_jsonld(path, text)
         check_links(path, text)
         check_offer_name(path, text)
         check_tracking(path, text)
+        check_nav(path, text)
         if path.parent == ROOT / "blog" and path.name != "index.html":
             check_post(path, text, blocks)
     for path in (ROOT / "llms.txt", ROOT / "blog" / "README.md"):
