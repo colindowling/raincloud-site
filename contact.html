@@ -475,7 +475,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         </ul>
       </li>
       <li><a href="/about/">About</a></li>
-      <li class="nav-cta-item"><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=contact&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav" data-track="book_call" data-cta-id="book_call-nav" data-cta-position="nav" data-cluster="offer" data-persona="">Book the audit call</a></li>
+      <li class="nav-cta-item"><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=contact&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav" data-track="book_call" data-offer="gtm-autopsy" data-cta-id="book_call-nav" data-cta-position="nav" data-cluster="offer" data-persona="">Book the audit call</a></li>
     </ul>
   </div>
 </nav>
@@ -494,7 +494,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           <h3>Get in Touch</h3>
           <div class="contact-detail">
             <div class="label">Email</div>
-            <a href="mailto:colin@rncld.com">colin@rncld.com</a>
+            <a href="mailto:colin@rncld.com" data-cta-position="contact">colin@rncld.com</a>
           </div>
           <div class="contact-detail">
             <div class="label">Website</div>
@@ -518,7 +518,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         </div>
 
         <div class="calendly-wrapper">
-          <div class="calendly-inline-widget" data-url="https://calendly.com/30minutechat/30min?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=111111&amp;text_color=f0ede8&amp;primary_color=4a9ebf&amp;utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=contact&amp;utm_content=embed"></div>
+          <div class="calendly-inline-widget" data-url="https://calendly.com/30minutechat/30min?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=111111&amp;text_color=f0ede8&amp;primary_color=4a9ebf&amp;utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=contact&amp;utm_content=embed" data-track="book_call" data-cta-id="contact-embed" data-cta-position="embed" data-offer="gtm-autopsy" data-cluster="offer" data-persona=""></div>
         </div>
       </div>
 
@@ -533,7 +533,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <h2>Not ready to book?</h2>
         <p>Write to me instead. I reply personally, usually within one business day.</p>
       </div>
-      <form id="contactForm" class="contact-msg-form" novalidate data-track="contact" data-cta-id="contact-form" data-cta-position="form" data-cluster="offer" data-persona="">
+      <form id="contactForm" class="contact-msg-form" novalidate data-track="contact" data-cta-id="contact-form" data-cta-position="form" data-offer="gtm-autopsy" data-cluster="offer" data-persona="">
         <div class="cf-row">
           <label for="cname">Name</label>
           <input type="text" id="cname" name="name" placeholder="First and last name" required autocomplete="name">
@@ -608,7 +608,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           <div>
             <div class="sf-h">Talk</div>
             <ul>
-              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=contact&amp;utm_content=footer" target="_blank" rel="noopener" data-cta="footer" data-track="book_call" data-cta-id="book_call-footer" data-cta-position="footer" data-cluster="offer" data-persona="">Book the audit call</a></li>
+              <li><a href="https://calendly.com/30minutechat/30min?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=contact&amp;utm_content=footer" target="_blank" rel="noopener" data-cta="footer" data-track="book_call" data-offer="gtm-autopsy" data-cta-id="book_call-footer" data-cta-position="footer" data-cluster="offer" data-persona="">Book the audit call</a></li>
               <li><a href="/contact.html">Contact</a></li>
               <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
             </ul>
@@ -644,6 +644,12 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     (function(){ var s=new URLSearchParams(window.location.search).get('src'), st=null;
       try { st=localStorage.getItem('rc_src'); if (s && !st) { localStorage.setItem('rc_src', s); st=s; } } catch(e){}
       window.RC_SRC = st || s || ''; })();
+
+    function utmVal(name) {
+      var stored = window.rcAttribution ? window.rcAttribution() : {};
+      var field = cForm && cForm.querySelector('input[name="' + name + '"]');
+      return (field && field.value) || stored[name] || '';
+    }
 
     if (cForm) {
       cForm.addEventListener('submit', async (e) => {
@@ -683,6 +689,12 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
             body: JSON.stringify({
               name, email, company, revenue, prompting, message,
               src: window.RC_SRC || '',
+              utm_source: utmVal('utm_source'),
+              utm_medium: utmVal('utm_medium'),
+              utm_campaign: utmVal('utm_campaign'),
+              utm_term: utmVal('utm_term'),
+              utm_content: utmVal('utm_content'),
+              referrer: utmVal('referrer'),
               _subject: 'RAINCLOUD — inquiry (' + revenue + ') from ' + company,
               property: 'RAINCLOUD',
               site: 'rncld.com',
