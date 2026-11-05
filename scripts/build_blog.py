@@ -46,7 +46,7 @@ TOPICS = {
             "outside the company, from public sources alone. No mystery shop. "
             "Scored by Colin, with an offer to walk through what he found. The "
             "100-Point GTM Autopsy is $5,000, ten business days, required before "
-            "the 90-day fix, and not credited toward the build."
+            "the 90-day fix, credited in full toward any engagement, and covered by a no-questions-asked money-back guarantee."
         ),
         "meta": "Then the $5,000 100-Point GTM Autopsy. Then the 90-day fix.",
     },
