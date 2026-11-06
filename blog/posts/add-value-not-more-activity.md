@@ -16,7 +16,7 @@ related:
 - which-buyer-signals-matter
 - define-icp-stop-selling-features
 also:
-- href: https://calendly.com/30minutechat/30min?utm_source=rncld&utm_medium=site&utm_campaign=add-value-not-more-activity&utm_content=related_box
+- href: https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=add-value-not-more-activity&utm_content=related_box
   label: Book your free 40-Point Outside Audit
 excerpt: More calls and longer days rarely fix a missed number. Why value added to relationships beats raw activity, and how sales leaders can build teams around it.
 takeaways:
@@ -98,4 +98,4 @@ Pull your team's last month of activity and set it next to the opportunities tha
 
 When activity rises and pipeline doesn't, the problem is usually upstream: targeting, discovery, messaging or how reps are measured. Those are all scored in the [100-Point GTM Autopsy](/gtm-autopsy/), ranked by what they're costing you in pipeline.
 
-**Working harder and still missing?** Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book your free 40-Point Outside Audit](https://calendly.com/30minutechat/30min?utm_source=rncld&utm_medium=site&utm_campaign=add-value-not-more-activity&utm_content=inbody_text).
+**Working harder and still missing?** Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book your free 40-Point Outside Audit](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=add-value-not-more-activity&utm_content=inbody_text).
