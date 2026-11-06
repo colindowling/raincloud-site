@@ -16,7 +16,7 @@ related:
 - new-decision-maker-mid-deal
 - why-deals-die-after-the-yes
 also:
-- href: https://calendly.com/30minutechat/30min?utm_source=rncld&utm_medium=site&utm_campaign=enable-every-buying-committee-stakeholder&utm_content=related_box
+- href: https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=enable-every-buying-committee-stakeholder&utm_content=related_box
   label: Book your free 40-Point Outside Audit
 excerpt: Big buying committees stretch sales cycles. Here's how to map each stakeholder, give them what they need, and keep complex deals moving.
 takeaways:
@@ -115,4 +115,4 @@ Pick your five biggest open deals. For each, write down every role involved in t
 
 Multi-threading, stakeholder mapping and buyer enablement are all scored in the [100-Point GTM Autopsy](/gtm-autopsy/). If you need a sales process built around committee deals, with the assets each role needs, that's part of [the 90-day engagement](/gtm-consulting.html).
 
-**Complex deals taking forever?** Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book your free 40-Point Outside Audit](https://calendly.com/30minutechat/30min?utm_source=rncld&utm_medium=site&utm_campaign=enable-every-buying-committee-stakeholder&utm_content=inbody_text).
+**Complex deals taking forever?** Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book your free 40-Point Outside Audit](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=enable-every-buying-committee-stakeholder&utm_content=inbody_text).

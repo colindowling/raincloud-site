@@ -35,7 +35,7 @@ SITE = "https://rncld.com"
 PUBLISHED_STAMP = "2026-10-31"
 OG_IMAGE = f"{SITE}/assets/band-boardroom.png"
 
-CALENDLY = "https://calendly.com/30minutechat/30min"
+CALENDLY = "https://calendly.com/30minutechat/20-minute-go-to-market-w-colin"
 AUTOPSY_PATH = "/gtm-autopsy/"
 
 TOPICS = {

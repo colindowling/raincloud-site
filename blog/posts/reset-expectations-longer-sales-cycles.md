@@ -16,7 +16,7 @@ related:
 - why-deals-die-after-the-yes
 - enable-every-buying-committee-stakeholder
 also:
-- href: https://calendly.com/30minutechat/30min?utm_source=rncld&utm_medium=site&utm_campaign=reset-expectations-longer-sales-cycles&utm_content=related_box
+- href: https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=reset-expectations-longer-sales-cycles&utm_content=related_box
   label: Book your free 40-Point Outside Audit
 excerpt: Sales cycles are stretching in many markets. Here's how to reset your forecast, your pipeline coverage and your board's expectations without panicking.
 takeaways:
@@ -117,4 +117,4 @@ If that's you, the plan is wrong, not the reps.
 
 If your cycle length has drifted and you're not sure why, the answer usually sits in a handful of places: qualification, multi-threading, business case and forecasting. Those are all scored in the [100-Point GTM Autopsy](/gtm-autopsy/), ranked by what they're costing you in pipeline.
 
-**Deals taking longer than your plan assumes?** Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book your free 40-Point Outside Audit](https://calendly.com/30minutechat/30min?utm_source=rncld&utm_medium=site&utm_campaign=reset-expectations-longer-sales-cycles&utm_content=inbody_text).
+**Deals taking longer than your plan assumes?** Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book your free 40-Point Outside Audit](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=reset-expectations-longer-sales-cycles&utm_content=inbody_text).

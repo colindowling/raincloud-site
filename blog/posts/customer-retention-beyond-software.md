@@ -16,7 +16,7 @@ related:
 - enable-every-buying-committee-stakeholder
 - new-decision-maker-mid-deal
 also:
-- href: https://calendly.com/30minutechat/30min?utm_source=rncld&utm_medium=site&utm_campaign=customer-retention-beyond-software&utm_content=related_box
+- href: https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=customer-retention-beyond-software&utm_content=related_box
   label: Book your free 40-Point Outside Audit
 excerpt: If customers stay only for what your software does, they'll leave when something cheaper does it too. How to build retention on outcomes, expertise and relationships.
 takeaways:
@@ -95,4 +95,4 @@ Pick your ten largest customers. For each, write one sentence on the business re
 
 Retention and expansion belong in the go-to-market motion, not just in customer success. How you hand off, measure outcomes and work existing accounts is part of what I score in the [100-Point GTM Autopsy](/gtm-autopsy/). If the motion needs rebuilding, that's [the 90-day engagement](/gtm-consulting.html).
 
-**Losing customers you thought were happy?** Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book your free 40-Point Outside Audit](https://calendly.com/30minutechat/30min?utm_source=rncld&utm_medium=site&utm_campaign=customer-retention-beyond-software&utm_content=inbody_text).
+**Losing customers you thought were happy?** Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book your free 40-Point Outside Audit](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=customer-retention-beyond-software&utm_content=inbody_text).

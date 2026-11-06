@@ -16,7 +16,7 @@ related:
 - define-icp-stop-selling-features
 - founder-story-sales-handoff
 also:
-- href: https://calendly.com/30minutechat/30min?utm_source=rncld&utm_medium=site&utm_campaign=sales-message-consistency&utm_content=related_box
+- href: https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=sales-message-consistency&utm_content=related_box
   label: Book your free 40-Point Outside Audit
 excerpt: When every rep uses a different deck and pitch, buyers get confused and deals slow. Here's how to keep sales messaging consistent and current.
 takeaways:
@@ -115,4 +115,4 @@ Collect every deck, one-pager and template your team actually sent in the last m
 
 Messaging consistency is one of the areas I score in the [100-Point GTM Autopsy](/gtm-autopsy/), alongside the sales process and the materials behind it. If you already know it's a mess, rebuilding the message and enablement is part of [the 90-day engagement](/gtm-consulting.html).
 
-**Not sure your team is telling the same story?** Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book your free 40-Point Outside Audit](https://calendly.com/30minutechat/30min?utm_source=rncld&utm_medium=site&utm_campaign=sales-message-consistency&utm_content=inbody_text).
+**Not sure your team is telling the same story?** Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book your free 40-Point Outside Audit](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=sales-message-consistency&utm_content=inbody_text).
