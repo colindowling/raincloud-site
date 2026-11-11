@@ -3,6 +3,8 @@
 # Reference only. NEVER apply this file to the live app (doctl apps update --spec / API / dashboard)
 # without first diffing it against the live spec: an unchecked copy can wipe the rncld.com
 # domains and the 301 redirects. Make ingress/domain changes on the live app, then re-export here.
+# The www host rule and the /about.html and retired-stub 301s were added in git after the
+# 2026-11-01 export. Pushing main does not apply them. Diff against the live spec, then update.
 name: raincloud-site
 static_sites:
 - name: raincloud-site-raincloud-site
@@ -22,6 +24,17 @@ alerts:
 - rule: DOMAIN_FAILED
 ingress:
   rules:
+  # Whole-host 301. No path match, so this does not collide with the catch-all prefix "/".
+  # uri is omitted so the request path is kept. scheme https sends the Location to https://rncld.com.
+  # This rule is first: the path rules below do not set a host, and a www request that matched
+  # one of them would 301 to https://www and then need a second hop.
+  - match:
+      authority:
+        exact: www.rncld.com
+    redirect:
+      authority: rncld.com
+      scheme: https
+      redirect_code: 301
   - match:
       path:
         prefix: /vs
@@ -93,6 +106,42 @@ ingress:
         prefix: /audit.html
     redirect:
       uri: /gtm-autopsy/
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /about.html
+    redirect:
+      uri: /about/
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /ai-agents.html
+    redirect:
+      uri: /
+      authority: www.withants.com
+      scheme: https
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /bofu-content.html
+    redirect:
+      uri: /
+      authority: www.bofubaby.com
+      scheme: https
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /content.html
+    redirect:
+      uri: /
+      authority: www.friendlyghostwriter.com
+      scheme: https
+      redirect_code: 301
+  - match:
+      path:
+        prefix: /demand-generation.html
+    redirect:
+      uri: /gtm-consulting.html
       redirect_code: 301
   - match:
       path:

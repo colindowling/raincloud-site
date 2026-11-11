@@ -43,7 +43,7 @@ Pillar: [/pricing/](/pricing/). Not a content hub. Problem pages link here for t
 
 ## Author
 
-Post bylines and `BlogPosting` author URLs point at [/about/](/about/). That page is Colin as the author: Person and AboutPage schema, a Modern Business Life link, and the audit-call button. It does not name past clients or employers. The older [/about.html](/about.html) is unchanged.
+Post bylines and `BlogPosting` author URLs point at [/about/](/about/). That page is Colin as the author: Person and AboutPage schema, a Modern Business Life link, and the audit-call button. It does not name past clients or employers. The older /about.html URL 301s to [/about/](/about/).
 
 ## Cross-site
 

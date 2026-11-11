@@ -178,6 +178,7 @@ def check_sitemap() -> None:
         f"{SITE}/about/",
         f"{SITE}/faq/",
         f"{SITE}/videos/",
+        f"{SITE}/15minutepipelineteardown/",
         f"{SITE}/gtm-autopsy/",
         f"{SITE}/outside-audit/",
     ]
@@ -199,6 +200,11 @@ def check_sitemap() -> None:
         fail("unlisted BoFu keyword pages are on hold and must not be in the sitemap")
     if f"{SITE}/audit.html" in locs:
         fail("audit.html redirects to /gtm-autopsy/ and should not be in the sitemap")
+    if f"{SITE}/about.html" in locs:
+        fail("about.html duplicates /about/ and should not be in the sitemap")
+    for retired in ("/ai-agents.html", "/bofu-content.html", "/content.html", "/demand-generation.html"):
+        if f"{SITE}{retired}" in locs:
+            fail(f"{retired} is a redirect and should not be in the sitemap")
 
 
 def check_offer_name(path: Path, text: str) -> None:
@@ -285,6 +291,8 @@ def main() -> int:
         check_offer_name(path, text)
         check_tracking(path, text)
         check_nav(path, text)
+        if 'href="/about.html"' in text or "href='/about.html'" in text:
+            fail(f"{path.relative_to(ROOT)}: link points at /about.html; use /about/")
         if path.parent == ROOT / "blog" and path.name != "index.html":
             check_post(path, text, blocks)
     for path in (ROOT / "llms.txt", ROOT / "blog" / "README.md"):
