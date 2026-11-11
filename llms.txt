@@ -32,7 +32,7 @@ B2B companies between $50M and $200M in revenue, with a sales team that works ou
 - [The Engagement](https://rncld.com/gtm-consulting.html): The 90-day build in detail, the scope boundaries, and how it compares with a CRO hire or a strategy deck.
 - [Pricing](https://rncld.com/pricing/): Every price and term, published, with the month-by-month fee schedule.
 - [The 100-Point GTM Framework](https://rncld.com/resources/100-point-gtm-framework.html): The full scoring list, free with a work email.
-- [About Colin Dowling](https://rncld.com/about/): Founder of RAINCLOUD. 3x VP of Sales, 2x founder, host of Modern Business Life. Runs every engagement personally. A longer background page remains at /about.html.
+- [About Colin Dowling](https://rncld.com/about/): Founder of RAINCLOUD. 3x VP of Sales, 2x founder, host of Modern Business Life. Runs every engagement personally.
 - [Articles](https://rncld.com/blog/): Writing on GTM, pipeline and why builds fail after handover.
 - [Outbound not landing](https://rncld.com/problems/outbound-not-landing/): If your reply rates fell and you have spent three months rewriting sequences, you have been debugging the wrong layer. Next step: the 40-Point Outside Audit, then the 100-Point GTM Autopsy.
 - [First sales hire](https://rncld.com/problems/first-sales-hire/): One person, one point of view, a long search, and a salary before the system exists. Next step: the 90-day engagement.
