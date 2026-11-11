@@ -67,6 +67,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://rncld.com/blog/complaints-arent-demand.html</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://rncld.com/blog/customer-retention-beyond-software.html</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -117,6 +123,12 @@
   <url>
     <loc>https://rncld.com/blog/selling-to-technical-buyers.html</loc>
     <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rncld.com/blog/stop-hunting-commissions.html</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
