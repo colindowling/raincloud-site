@@ -97,6 +97,6 @@ Take your top twenty target accounts. For each one, write down two things: who y
 
 ## If your outbound is getting ignored
 
-When reply rates fall, teams usually blame the copy. More often it's targeting, timing and how the company shows up before the first email. Those are scored in the [100-Point GTM Autopsy](/gtm-autopsy/), and rebuilding outbound around them is part of [the 90-day engagement](/gtm-consulting.html).
+When reply rates fall, teams usually blame the copy. More often it's targeting, timing and how the company shows up before the first email. Those are scored in the [100-Point GTM Autopsy](/gtm-autopsy/), and building and running outbound around them is part of [done-for-you B2B demand generation](/done-for-you-gtm/).
 
 **Outbound going nowhere?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=cold-outreach-unknown-vendor&utm_content=inbody_text).

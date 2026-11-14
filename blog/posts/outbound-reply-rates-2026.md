@@ -1,6 +1,6 @@
 ---
-title: Your Outbound Didn't Stop Working. The Infrastructure Changed.
-description: Cold email reply rates really have fallen, but most of the numbers being quoted are measuring different things. What the data actually shows, what changed in the inbox in 2024 and 2025, and what still works.
+title: "2026 Cold Email Reply Rates: What the Data Shows"
+description: Cold email reply rates have fallen, but most quoted numbers measure different things. What the data shows, what changed in the inbox, and what still works.
 slug: outbound-reply-rates-2026
 date: '2026-08-08'
 date_label: August 2026
@@ -31,7 +31,7 @@ faqs:
 - q: What should you say when you quote a reply rate?
   a: If you are going to quote a reply rate to your board, say what you divided by. Most people quoting these numbers cannot tell you.
 - q: What do the credible 2025 and 2026 benchmarks show?
-  a: Measured against total emails sent, Instantly reports a 3.43% average reply rate, with the top 10% of campaigns above 10.7%. Hunter.io reports 4.5% across all use cases and 3.0% for sales outreach, across 31 million emails. Sales.co reports a 2.09% reply rate across 2 million emails, of which only 14.1% were actually positive. Gong and 30 Minutes to President’s Club found the average rep now sends 344 cold emails per meeting booked.
+  a: Measured against total emails sent, Instantly reports a 3.43% average reply rate, with the top 10% of campaigns above 10.7%. Hunter.io reports 4.5% across all use cases and 3.0% for sales outreach, across 31 million emails. Sales.co reports a 2.09% reply rate across 2 million emails, of which only 14.1% were actually positive. Gong and President’s Club found the average rep now sends 344 cold emails per meeting booked.
 - q: What should you check before rewriting the copy?
   a: If your reply rate fell off a cliff somewhere in 2024 or 2025 and never recovered, check your DNS records before you rewrite a single sentence of copy. A meaningful share of the “outbound stopped working” stories turn out to be a DMARC record that was never published.
 - q: Is outbound dead?
@@ -61,7 +61,7 @@ faqs:
         <li><strong>2.09%</strong> reply rate, of which only 14.1% were actually positive &mdash; <a href="https://sales.co/research/cold-email-statistics" target="_blank" rel="noopener noreferrer">Sales.co</a>, across 2 million emails. That is roughly one interested human per 157 contacts. Another 45% of their replies were out-of-office autoresponders.</li>
       </ul>
 
-      <p>And the number that matters most to anyone building a team: analysis of 85 million cold emails by <a href="https://www.gong.io/blog/does-cold-email-even-work-any-more-heres-what-the-data-says" target="_blank" rel="noopener noreferrer">Gong and 30 Minutes to President's Club</a> found the average rep now sends <strong>344 cold emails per meeting booked</strong>.</p>
+      <p>And the number that matters most to anyone building a team: analysis of 85 million cold emails by <a href="https://www.gong.io/blog/does-cold-email-even-work-any-more-heres-what-the-data-says" target="_blank" rel="noopener noreferrer">Gong and President's Club</a> found the average rep now sends <strong>344 cold emails per meeting booked</strong>.</p>
 
       <p>So the decline is real. It is just less dramatic, and better documented, than the version in the LinkedIn posts. What deserves your attention is not the size of the drop. It is the three things underneath it, because two of them are infrastructure problems you can actually fix.</p>
 

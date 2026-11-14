@@ -177,8 +177,8 @@ def check_sitemap() -> None:
         f"{SITE}/problems/pipeline-not-growing/",
         f"{SITE}/about/",
         f"{SITE}/faq/",
-        f"{SITE}/videos/",
-        f"{SITE}/15minutepipelineteardown/",
+        f"{SITE}/teardown/",
+        f"{SITE}/done-for-you-gtm/",
         f"{SITE}/gtm-autopsy/",
     ]
     for loc in required:
@@ -202,7 +202,11 @@ def check_sitemap() -> None:
     if f"{SITE}/about.html" in locs:
         fail("about.html duplicates /about/ and should not be in the sitemap")
     if f"{SITE}/outside-audit/" in locs:
-        fail("outside-audit redirects to /15minutepipelineteardown/ and should not be in the sitemap")
+        fail("outside-audit is noindex and should not be in the sitemap")
+    if f"{SITE}/15minutepipelineteardown/" in locs:
+        fail("15minutepipelineteardown is noindex and should not be in the sitemap")
+    if f"{SITE}/videos/" in locs:
+        fail("videos is retired from the sitemap")
     for retired in ("/ai-agents.html", "/bofu-content.html", "/content.html", "/demand-generation.html"):
         if f"{SITE}{retired}" in locs:
             fail(f"{retired} is a redirect and should not be in the sitemap")
@@ -234,7 +238,8 @@ def check_nav(path: Path, text: str) -> None:
         fail(f"{path.relative_to(ROOT)}: nav CTA is missing")
     required = [
         "/gtm-autopsy/",
-        "/15minutepipelineteardown/",
+        "/teardown/",
+        "/done-for-you-gtm/",
         "/gtm-consulting.html",
         "/pricing/",
         "/problems/outbound-not-landing/",

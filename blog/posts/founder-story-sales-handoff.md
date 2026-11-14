@@ -107,6 +107,6 @@ Record the founder telling the company's origin story, start to finish, in five 
 
 ## If you're stuck as the company's best seller
 
-The jump from founder-led sales to a repeatable motion is one of the hardest in a company's life. It's exactly the kind of build I do in [the 90-day RAINCLOUD engagement](/gtm-consulting.html): capture what works, turn it into a process reps can run, and step the founder back on a plan.
+The jump from founder-led sales to a repeatable motion is one of the hardest in a company's life.
 
 **Still the best salesperson at your own company?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=founder-story-sales-handoff&utm_content=inbody_text).

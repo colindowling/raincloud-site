@@ -93,6 +93,6 @@ Pick your ten largest customers. For each, write one sentence on the business re
 
 ## If renewals feel fragile
 
-Retention and expansion belong in the go-to-market motion, not just in customer success. How you hand off, measure outcomes and work existing accounts is part of what I score in the [100-Point GTM Autopsy](/gtm-autopsy/). If the motion needs rebuilding, that's [the 90-day engagement](/gtm-consulting.html).
+Retention and expansion belong in the go-to-market motion, not just in customer success. How you hand off, measure outcomes and work existing accounts is part of what I score in the [100-Point GTM Autopsy](/gtm-autopsy/).
 
 **Losing customers you thought were happy?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=customer-retention-beyond-software&utm_content=inbody_text).

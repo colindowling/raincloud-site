@@ -20,7 +20,7 @@ also:
 - href: /fractional-sales-leader/
   label: Fractional sales leader
 - href: /gtm-consulting.html
-  label: The 90-day engagement
+  label: The system
 takeaways:
 - The sales owner can turn a bad job down and write the motion.
 - Estimating skill and owning the number are different jobs.
@@ -60,8 +60,8 @@ One voice on each account. The other partner can join a meeting. One person send
 
 ## When should the revenue lane move off both founders?
 
-When the motion is written down and the limit is the calendar. Then you are choosing a seller, or a [fractional sales leader](/fractional-sales-leader/) who builds the process that seller will run. A second founder staying in every deal is not that choice. I do not recruit the seller. The build, if you want it from me, is [the 90-day engagement](/gtm-consulting.html), and it comes after the autopsy.
+When the motion is written down and the limit is the calendar. Then you are choosing a seller, or a [fractional sales leader](/fractional-sales-leader/) who builds the process that seller will run. A second founder staying in every deal is not that choice. I do not recruit the seller. I do not recruit the seller.
 
 ## Where do you start?
 
-The [20 Minute Teardown](/15minutepipelineteardown/). It is twenty minutes. If the two of you are both still the process, the [100-Point GTM Autopsy](/gtm-autopsy/) is the paid next step.
+The [20 Minute Teardown](/teardown/). It is twenty minutes. If the two of you are both still the process, the [100-Point GTM Autopsy](/gtm-autopsy/) is the paid next step.
