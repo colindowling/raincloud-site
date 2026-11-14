@@ -35,6 +35,7 @@ B2B companies between $50M and $200M in revenue, with a sales team that works ou
 - [Fractional CRO vs VP of sales](https://rncld.com/fractional-cro-vs-vp-of-sales/): A part-time rebuild versus a full-time VP. No invented salary.
 - [Fractional CRO network alternative](https://rncld.com/compare/fractional-cro-network-alternative/): One named person instead of a roster. No firm names.
 - [Outbound agency vs fractional CRO](https://rncld.com/compare/outbound-agency-vs-fractional-cro/): A demand generation agency alternative. Activity versus owning the motion.
+- [RevOps consultant vs fractional CRO](https://rncld.com/compare/revops-consultant-vs-fractional-cro/): RevOps vs sales ops, a revenue operations consultant, and a sales operations consultant, set next to the fractional CRO path. No invented RevOps rate.
 - [Pricing](https://rncld.com/pricing/): Every price and term, published, with the month-by-month fee schedule.
 - [The 100-Point GTM Framework](https://rncld.com/resources/100-point-gtm-framework.html): The full scoring list, free with a work email.
 - [About Colin Dowling](https://rncld.com/about/): Founder of RAINCLOUD. 3x VP of Sales, 2x founder, host of Modern Business Life. Runs every engagement personally.
@@ -49,6 +50,7 @@ B2B companies between $50M and $200M in revenue, with a sales team that works ou
 
 ## Articles
 
+- [GTM audit checklist: go to market audit template](https://rncld.com/blog/gtm-audit-checklist.html): The 100 points already published on the autopsy page. Not a new list.
 - [What does a fractional CRO do?](https://rncld.com/blog/what-does-a-fractional-cro-do.html)
 - [Why is our outbound not working?](https://rncld.com/blog/why-is-our-outbound-not-working.html)
 - [How to get out of founder-led sales](https://rncld.com/blog/how-to-get-out-of-founder-led-sales.html)
