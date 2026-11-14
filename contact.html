@@ -15,7 +15,7 @@
 
   </script>
   <title>Contact — RAINCLOUD</title>
-  <meta name="description" content="Write to Colin Dowling, or book the 30-minute audit call. Every RAINCLOUD engagement starts with the 100-Point GTM Autopsy: $5,000, ten business days.">
+  <meta name="description" content="Write to Colin Dowling, or book the 20-minute audit call. Every RAINCLOUD engagement starts with the 100-Point GTM Autopsy: $5,000, ten business days.">
   <link rel="canonical" href="https://rncld.com/contact.html">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -340,6 +340,17 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     }
     .cf-row select:invalid { color: var(--text-tertiary); }
     .cf-row select option { background: var(--bg-secondary); color: var(--text-primary); }
+    .cf-row input[aria-invalid="true"] {
+      border-color: var(--accent-red);
+      box-shadow: 0 0 0 3px rgba(191, 74, 74, 0.12);
+    }
+    .cf-field-error {
+      margin: -6px 0 18px; font-size: 0.82rem; color: var(--accent-red); line-height: 1.5;
+    }
+    .cf-field-error:empty {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
     .cf-hint { margin-top: 7px; font-size: 0.74rem; color: var(--text-tertiary); line-height: 1.5; }
     .cf-submit {
       margin-top: 8px; padding: 16px 32px;
@@ -393,12 +404,12 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="RAINCLOUD">
   <meta property="og:title" content="Contact — RAINCLOUD">
-  <meta property="og:description" content="Write to Colin Dowling, or book the 30-minute audit call. Every RAINCLOUD engagement starts with the 100-Point GTM Autopsy: $5,000, ten business days.">
+  <meta property="og:description" content="Write to Colin Dowling, or book the 20-minute audit call. Every RAINCLOUD engagement starts with the 100-Point GTM Autopsy: $5,000, ten business days.">
   <meta property="og:url" content="https://rncld.com/contact.html">
   <meta property="og:image" content="https://rncld.com/assets/band-boardroom.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact — RAINCLOUD">
-  <meta name="twitter:description" content="Write to Colin Dowling, or book the 30-minute audit call. Every RAINCLOUD engagement starts with the 100-Point GTM Autopsy: $5,000, ten business days.">
+  <meta name="twitter:description" content="Write to Colin Dowling, or book the 20-minute audit call. Every RAINCLOUD engagement starts with the 100-Point GTM Autopsy: $5,000, ten business days.">
   <meta name="twitter:image" content="https://rncld.com/assets/band-boardroom.png">
   <script type="application/ld+json">
   {
@@ -483,7 +494,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
   <section class="contact-hero">
     <div class="container">
       <h1>Write to me, or book the call.</h1>
-      <p>Most people book the 30-minute audit call below. If you&rsquo;d rather write first, the form further down comes straight to me, and I reply personally within one business day.</p>
+      <p>Most people book the 20-minute audit call below. If you&rsquo;d rather write first, the form further down comes straight to me, and I reply personally within one business day.</p>
     </div>
   </section>
 
@@ -508,7 +519,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           <div class="what-to-expect">
             <h3>What to Expect</h3>
             <ul>
-              <li>A 30-minute fit call, with me</li>
+              <li>A 20-minute fit call, with me</li>
               <li>Whether you&rsquo;re a fit: $50M&ndash;$200M B2B, missing a number you&rsquo;ve committed to</li>
               <li>If you are, the audit gets scheduled: $5,000, ten business days</li>
               <li>If you aren&rsquo;t, I&rsquo;ll say so on the call</li>
@@ -533,14 +544,15 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <h2>Not ready to book?</h2>
         <p>Write to me instead. I reply personally, usually within one business day.</p>
       </div>
-      <form id="contactForm" class="contact-msg-form" novalidate data-track="contact" data-cta-id="contact-form" data-cta-position="form" data-cluster="offer" data-persona="">
+      <form id="contactForm" class="contact-msg-form" action="https://formspree.io/f/xjglkdyp" method="POST" novalidate data-track="contact" data-cta-id="contact-form" data-cta-position="form" data-cluster="offer" data-persona="">
         <div class="cf-row">
           <label for="cname">Name</label>
           <input type="text" id="cname" name="name" placeholder="First and last name" required autocomplete="name">
         </div>
         <div class="cf-row">
           <label for="cemail">Work email</label>
-          <input type="email" id="cemail" name="email" placeholder="you@company.com" required autocomplete="email">
+          <input type="email" id="cemail" name="email" placeholder="you@company.com" required autocomplete="email" aria-describedby="cemailError">
+          <p class="cf-field-error" id="cemailError" role="alert"></p>
         </div>
         <div class="cf-row">
           <label for="ccompany">Company</label>
@@ -563,6 +575,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           <label for="cmessage">Message</label>
           <textarea id="cmessage" name="message" placeholder="Describe the problem in your own words" rows="5" required></textarea>
         </div>
+        <input type="hidden" name="_subject" id="csubject" value="RAINCLOUD — website inquiry">
         <button type="submit" class="cf-submit" id="cfSubmitBtn">
           <span>Send Message</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -640,6 +653,62 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     function cfShowError(msg) { cError.textContent = msg; cError.classList.add('active'); }
     function cfClearError() { cError.classList.remove('active'); cError.textContent = ''; }
 
+    // Free-mail domains are rejected on submit. Exact domain match for the
+    // listed hosts; country variants (yahoo.co.uk, outlook.fr, live.ca) match
+    // the second-level label of gmail, googlemail, outlook, hotmail, live,
+    // msn, yahoo and ymail. me.com, icloud.com and mac.com are exact only.
+    var FREE_MAIL_EXACT = {
+      'gmail.com': true, 'googlemail.com': true, 'outlook.com': true, 'hotmail.com': true,
+      'live.com': true, 'msn.com': true, 'yahoo.com': true, 'ymail.com': true,
+      'me.com': true, 'icloud.com': true, 'mac.com': true
+    };
+    var FREE_MAIL_SLD = {
+      gmail: true, googlemail: true, outlook: true, hotmail: true,
+      live: true, msn: true, yahoo: true, ymail: true
+    };
+    var CC_SECOND_LEVEL = { co: true, com: true, net: true, org: true, ac: true, gov: true, edu: true, or: true, ne: true, go: true };
+    var WORK_EMAIL_MSG = 'Please use your work email.';
+
+    function emailDomain(email) {
+      var at = email.lastIndexOf('@');
+      if (at < 0) return '';
+      return email.slice(at + 1).trim().toLowerCase().replace(/\.$/, '');
+    }
+
+    function secondLevelLabel(domain) {
+      var parts = domain.split('.').filter(Boolean);
+      if (parts.length < 2) return '';
+      var tld = parts[parts.length - 1];
+      var sld = parts[parts.length - 2];
+      if (tld.length === 2 && CC_SECOND_LEVEL[sld] && parts.length >= 3) return parts[parts.length - 3];
+      return sld;
+    }
+
+    function isFreeMail(email) {
+      var domain = emailDomain(email);
+      if (!domain) return false;
+      if (FREE_MAIL_EXACT[domain]) return true;
+      return !!FREE_MAIL_SLD[secondLevelLabel(domain)];
+    }
+
+    var cEmail = document.getElementById('cemail');
+    var cEmailError = document.getElementById('cemailError');
+
+    function cfClearEmailError() {
+      if (!cEmail || !cEmailError) return;
+      cEmail.removeAttribute('aria-invalid');
+      cEmail.setCustomValidity('');
+      cEmailError.textContent = '';
+    }
+
+    function cfShowEmailError() {
+      cEmail.setAttribute('aria-invalid', 'true');
+      cEmail.setCustomValidity(WORK_EMAIL_MSG);
+      cEmailError.textContent = WORK_EMAIL_MSG;
+    }
+
+    if (cEmail) cEmail.addEventListener('input', cfClearEmailError);
+
     // first-touch source attribution: ?src= is stored once and never overwritten
     (function(){ var s=new URLSearchParams(window.location.search).get('src'), st=null;
       try { st=localStorage.getItem('rc_src'); if (s && !st) { localStorage.setItem('rc_src', s); st=s; } } catch(e){}
@@ -669,6 +738,17 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           cfShowError('Please enter a valid email address.');
           return;
         }
+        if (isFreeMail(email)) {
+          cfClearError();
+          cfShowEmailError();
+          cEmail.focus();
+          return;
+        }
+        cfClearEmailError();
+
+        var subject = 'RAINCLOUD — ' + name + ' — ' + email;
+        var subjectInput = document.getElementById('csubject');
+        if (subjectInput) subjectInput.value = subject;
 
         cBtn.disabled = true;
         cBtn.querySelector('span').textContent = 'Sending…';
@@ -683,7 +763,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
             body: JSON.stringify({
               name, email, company, revenue, prompting, message,
               src: window.RC_SRC || '',
-              _subject: 'RAINCLOUD — inquiry (' + revenue + ') from ' + company,
+              _subject: subject,
               property: 'RAINCLOUD',
               site: 'rncld.com',
               source: 'raincloud-contact-page',

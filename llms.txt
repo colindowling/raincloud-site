@@ -40,7 +40,7 @@ B2B companies between $50M and $200M in revenue, with a sales team that works ou
 - [Pipeline not growing](https://rncld.com/problems/pipeline-not-growing/): Stage definitions that mean different things to different reps. Coverage math built on deals that are already dead. Next step: the 40-Point Outside Audit, then the 100-Point GTM Autopsy.
 - [FAQ](https://rncld.com/faq/): Questions already answered on the 100-Point GTM Autopsy, the engagement, and pricing.
 - [Videos](https://rncld.com/videos/): Tip videos live on the article they belong to. None are embedded yet.
-- [Contact](https://rncld.com/contact.html): Write to Colin, or book the 30-minute call.
+- [Contact](https://rncld.com/contact.html): Write to Colin, or book the 20-minute call.
 
 ## Articles
 

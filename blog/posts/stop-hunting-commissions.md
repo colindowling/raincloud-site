@@ -18,7 +18,6 @@ related:
 also:
 - href: https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=stop-hunting-commissions&utm_content=related_box
   label: Book your free 40-Point Outside Audit
-editorial_note: 'TODO BOFU LINK: swap /outside-audit/ for /fractional-sales-leader/ once that page is approved and live. TIP VIDEO SLOT: no video recorded yet; when it exists set video, video_name, video_description, video_upload_date, video_duration in front matter.'
 excerpt: When reps chase the commission instead of the client's outcome, buyers can tell. Here's how revenue leaders refocus a team on solving the problem.
 takeaways:
 - The commission is the byproduct of doing the job well. It isn't the job.

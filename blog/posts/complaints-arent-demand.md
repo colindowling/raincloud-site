@@ -18,7 +18,6 @@ related:
 also:
 - href: https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=complaints-arent-demand&utm_content=related_box
   label: Book your free 40-Point Outside Audit
-editorial_note: 'TODO BOFU LINK: swap /outside-audit/ for /fractional-cro/ once that page is approved and live. TIP VIDEO SLOT: no video recorded yet; when it exists set video, video_name, video_description, video_upload_date, video_duration in front matter.'
 excerpt: Buyers complaining about a problem doesn't mean they'll pay to fix it. Here's how to test real demand, starting with the customers who left you.
 takeaways:
 - A loud complaint isn't a budget. The real question is whether they'll pay for the pain to go away.
