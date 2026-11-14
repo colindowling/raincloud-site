@@ -661,6 +661,7 @@ def update_sitemap(posts: list[dict]) -> None:
             f"{SITE}/fractional-cro-vs-vp-of-sales/",
             f"{SITE}/compare/fractional-cro-network-alternative/",
             f"{SITE}/compare/outbound-agency-vs-fractional-cro/",
+            f"{SITE}/compare/revops-consultant-vs-fractional-cro/",
         }:
             continue
         kept.append(block)
@@ -681,6 +682,7 @@ def update_sitemap(posts: list[dict]) -> None:
         sitemap_url(f"{SITE}/fractional-cro-vs-vp-of-sales/", "2026-11-14", "monthly", "0.7"),
         sitemap_url(f"{SITE}/compare/fractional-cro-network-alternative/", "2026-11-14", "monthly", "0.7"),
         sitemap_url(f"{SITE}/compare/outbound-agency-vs-fractional-cro/", "2026-11-14", "monthly", "0.7"),
+        sitemap_url(f"{SITE}/compare/revops-consultant-vs-fractional-cro/", "2026-11-14", "monthly", "0.7"),
         sitemap_url(f"{SITE}/about/", PUBLISHED_STAMP, "monthly", "0.6"),
         sitemap_url(f"{SITE}/faq/", PUBLISHED_STAMP, "monthly", "0.6"),
         sitemap_url(f"{SITE}/videos/", PUBLISHED_STAMP, "monthly", "0.5"),
