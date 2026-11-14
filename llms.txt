@@ -29,7 +29,12 @@ B2B companies between $50M and $200M in revenue, with a sales team that works ou
 - [Home](https://rncld.com/): The argument, the method (diagnose, rebuild, hand over) and the published fee ladder.
 - [20 Minute Teardown](https://rncld.com/15minutepipelineteardown/): The free entry offer. It covers roughly 40 of the 100 points that can be scored from public sources alone. Book it from the page.
 - [100-Point GTM Autopsy](https://rncld.com/gtm-autopsy/): The paid diagnostic in full: the ten sections, what it needs from the client, the ten-day schedule and the deliverables. $5,000.
-- [The Engagement](https://rncld.com/gtm-consulting.html): The 90-day build in detail, the scope boundaries, and how it compares with a CRO hire or a strategy deck.
+- [The Engagement](https://rncld.com/gtm-consulting.html): B2B sales consulting and GTM consulting, as one operator rather than a sales consulting firm. The 90-day build, the scope, and the published fees.
+- [Fractional CRO](https://rncld.com/fractional-cro/): What the title means here, what it costs on the published schedule, and who it is for. Not an open-ended seat.
+- [Fractional sales leader](https://rncld.com/fractional-sales-leader/): Fractional sales leadership and a fractional CSO, including a sales process for a 50-person company, versus a fractional CRO.
+- [Fractional CRO vs VP of sales](https://rncld.com/fractional-cro-vs-vp-of-sales/): A part-time rebuild versus a full-time VP. No invented salary.
+- [Fractional CRO network alternative](https://rncld.com/compare/fractional-cro-network-alternative/): One named person instead of a roster. No firm names.
+- [Outbound agency vs fractional CRO](https://rncld.com/compare/outbound-agency-vs-fractional-cro/): A demand generation agency alternative. Activity versus owning the motion.
 - [Pricing](https://rncld.com/pricing/): Every price and term, published, with the month-by-month fee schedule.
 - [The 100-Point GTM Framework](https://rncld.com/resources/100-point-gtm-framework.html): The full scoring list, free with a work email.
 - [About Colin Dowling](https://rncld.com/about/): Founder of RAINCLOUD. 3x VP of Sales, 2x founder, host of Modern Business Life. Runs every engagement personally.
@@ -44,6 +49,15 @@ B2B companies between $50M and $200M in revenue, with a sales team that works ou
 
 ## Articles
 
+- [What does a fractional CRO do?](https://rncld.com/blog/what-does-a-fractional-cro-do.html)
+- [Why is our outbound not working?](https://rncld.com/blog/why-is-our-outbound-not-working.html)
+- [How to get out of founder-led sales](https://rncld.com/blog/how-to-get-out-of-founder-led-sales.html)
+- [When the first sales hire is not working](https://rncld.com/blog/first-sales-hire-not-working.html)
+- [Forecast accuracy starts with the stage](https://rncld.com/blog/forecast-accuracy.html)
+- [What fractional CRO cost means here](https://rncld.com/blog/fractional-cro-cost.html)
+- [High-volume cold outreach can hurt your brand](https://rncld.com/blog/burning-your-market-with-outbound.html)
+- [How to get more B2B referrals](https://rncld.com/blog/keep-referral-network-producing.html)
+- [How to sell with no compelling event](https://rncld.com/blog/no-compelling-event-painful-workaround.html)
 - [Your Outbound Didn't Stop Working. The Infrastructure Changed.](https://rncld.com/blog/outbound-reply-rates-2026.html)
 - [The Only Content That Moves a Live Deal](https://rncld.com/blog/bofu-content-that-moves-deals.html)
 - [Most GTM Builds Fail in the Quarter After the Consultant Leaves](https://rncld.com/blog/why-gtm-builds-fail.html)
