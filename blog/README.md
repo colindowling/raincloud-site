@@ -37,6 +37,7 @@ related:                  # at least two other post slugs
 also:                     # optional extra links (problem pages, the other site)
   - href: /problems/outbound-not-landing/
     label: Outbound that gets no replies
+answer:                  # optional. 40-60 words, rendered directly under the H1.
 takeaways:                # 3 to 6. Shown in the box at the top.
   - First takeaway.
   - Second takeaway.

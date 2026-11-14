@@ -145,6 +145,13 @@ def load_post(path: Path) -> dict:
         for key in ("video_name", "video_description", "video_upload_date", "video_duration"):
             if not meta.get(key):
                 raise SystemExit(f"{path}: video is set, so {key} is required")
+    answer = meta.get("answer")
+    if answer is not None:
+        if not isinstance(answer, str) or not answer.strip():
+            raise SystemExit(f"{path}: answer must be a non-empty string")
+        words = answer.split()
+        if not 40 <= len(words) <= 60:
+            raise SystemExit(f"{path}: answer must be 40-60 words (got {len(words)})")
     if Path(meta["slug"]).name != meta["slug"] or "/" in meta["slug"]:
         raise SystemExit(f"{path}: slug must be a single path segment")
     return meta
@@ -439,6 +446,8 @@ def page_html(post: dict, by_slug: dict) -> str:
     note_html = f"  <!-- {note} -->\n" if note else ""
     title = post["title"]
     description = post["description"]
+    answer = (post.get("answer") or "").strip()
+    lede = f'      <p class="lede">{esc(answer)}</p>\n' if answer else ""
     nav = render_nav(
         '<a href="'
         + calendly_href(slug, "nav")
@@ -499,7 +508,7 @@ def page_html(post: dict, by_slug: dict) -> str:
     <div class="container--narrow" style="max-width: 720px;">
       <div class="label label--accent">{esc(post["tag"])}</div>
       <h1>{esc(title)}</h1>
-      <div class="post-meta">
+{lede}      <div class="post-meta">
         <span><a href="/about/">Colin Dowling</a></span>
         <span>{esc(post["date_label"])}</span>
         <span>{esc(post["read_time"])}</span>

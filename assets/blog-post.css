@@ -3,6 +3,10 @@
 .post-hero { padding: 160px 0 48px; }
 .post-hero .label { margin-bottom: 16px; }
 .post-hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); max-width: 720px; margin-bottom: 16px; }
+.post-hero .lede {
+  font-size: 1.05rem; line-height: 1.7; color: var(--text-primary);
+  max-width: 720px; margin: 0 0 20px;
+}
 .post-meta { font-size: 0.78rem; color: var(--text-tertiary); display: flex; gap: 16px; flex-wrap: wrap; }
 .post-meta a { border-bottom: 1px solid var(--border-medium); }
 .post-meta a:hover { color: var(--text-primary); }

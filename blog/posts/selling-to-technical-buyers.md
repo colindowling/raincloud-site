@@ -3,7 +3,7 @@ title: How to Sell to Technical Buyers Without Faking Expertise
 description: Faking technical depth gets you laughed out of the room. Here's how non-technical sellers earn credibility with engineers and technical buyers.
 slug: selling-to-technical-buyers
 date: '2026-11-02'
-updated: '2026-11-02'
+updated: '2026-11-14'
 date_label: November 2026
 read_time: 4 min read
 tag: Sales
@@ -15,6 +15,7 @@ hub_label: The 100-Point GTM Autopsy
 related:
 - enable-every-buying-committee-stakeholder
 - sales-message-consistency
+- how-to-run-discovery-with-technical-buyers
 also:
 - href: https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=selling-to-technical-buyers&utm_content=related_box
   label: Book the 20 Minute Teardown
@@ -61,6 +62,8 @@ That's something you can own. And it's what technical buyers rarely get from a s
 ### Ask before you tell
 
 Start with how things work today. Where does it break? What have you tried? What would good look like? Technical people usually like explaining their systems. Let them.
+
+When the buyer is an estimator, a plant engineer, or a superintendent, the shape of that conversation is [how to run discovery with technical buyers](/blog/how-to-run-discovery-with-technical-buyers.html).
 
 Anytime somebody shows up to show how smart they are instead of asking about the real pain, it doesn't work. That goes double with engineers.
 
