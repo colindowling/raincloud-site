@@ -656,6 +656,11 @@ def update_sitemap(posts: list[dict]) -> None:
             f"{SITE}/gtm-autopsy/",
             f"{SITE}/outside-audit/",
             f"{SITE}/15minutepipelineteardown/",
+            f"{SITE}/fractional-cro/",
+            f"{SITE}/fractional-sales-leader/",
+            f"{SITE}/fractional-cro-vs-vp-of-sales/",
+            f"{SITE}/compare/fractional-cro-network-alternative/",
+            f"{SITE}/compare/outbound-agency-vs-fractional-cro/",
         }:
             continue
         kept.append(block)
@@ -671,6 +676,11 @@ def update_sitemap(posts: list[dict]) -> None:
     extra_blocks = [
         sitemap_url(f"{SITE}/gtm-autopsy/", "2026-11-02", "monthly", "0.9"),
         sitemap_url(f"{SITE}/15minutepipelineteardown/", "2026-11-14", "monthly", "0.8"),
+        sitemap_url(f"{SITE}/fractional-cro/", "2026-11-14", "monthly", "0.8"),
+        sitemap_url(f"{SITE}/fractional-sales-leader/", "2026-11-14", "monthly", "0.8"),
+        sitemap_url(f"{SITE}/fractional-cro-vs-vp-of-sales/", "2026-11-14", "monthly", "0.7"),
+        sitemap_url(f"{SITE}/compare/fractional-cro-network-alternative/", "2026-11-14", "monthly", "0.7"),
+        sitemap_url(f"{SITE}/compare/outbound-agency-vs-fractional-cro/", "2026-11-14", "monthly", "0.7"),
         sitemap_url(f"{SITE}/about/", PUBLISHED_STAMP, "monthly", "0.6"),
         sitemap_url(f"{SITE}/faq/", PUBLISHED_STAMP, "monthly", "0.6"),
         sitemap_url(f"{SITE}/videos/", PUBLISHED_STAMP, "monthly", "0.5"),
