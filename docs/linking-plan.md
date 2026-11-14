@@ -4,11 +4,11 @@ Four hubs. Each one is a page that already exists. A post links up to its hub, a
 
 Campaigns on blog CTAs: `utm_source=rncld`, `utm_medium=site`, `utm_campaign=<slug>`, `utm_content=inbody` or `post_end`. No UTMs on internal links.
 
-Flow: post, then the problem page, then the 40-Point Outside Audit, then the 100-Point GTM Autopsy.
+Flow: post, then the problem page, then the 20 Minute Teardown, then the 100-Point GTM Autopsy.
 
 ## 1. Diagnose the motion
 
-Pillar: [/gtm-autopsy/](/gtm-autopsy/) — 100-Point GTM Autopsy, $5,000, ten business days. The free entry offer is [/outside-audit/](/outside-audit/).
+Pillar: [/gtm-autopsy/](/gtm-autopsy/) — 100-Point GTM Autopsy, $5,000, ten business days. The free entry offer is the [20 Minute Teardown](/15minutepipelineteardown/).
 
 Spokes:
 

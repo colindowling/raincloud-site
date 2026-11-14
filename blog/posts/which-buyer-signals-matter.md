@@ -17,7 +17,7 @@ related:
 - new-decision-maker-mid-deal
 also:
 - href: https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=which-buyer-signals-matter&utm_content=related_box
-  label: Book your free 40-Point Outside Audit
+  label: Book the 20 Minute Teardown
 excerpt: Tracking every buyer signal buries reps in noise. Here's how to decide which intent signals are material and build outreach around the few that matter.
 takeaways:
 - You can't track everything, and trying to buries the signals that matter.
@@ -112,4 +112,4 @@ Take your last ten closed-won deals. For each, look at the 60 days before the fi
 
 When signal tools, CRM data and outbound all run separately, reps end up with noise instead of next steps. Connecting those pieces is part of what I score in the [100-Point GTM Autopsy](/gtm-autopsy/), and building signal-based outreach that reps actually use is part of [the 90-day engagement](/gtm-consulting.html).
 
-**Lots of data, not many meetings?** Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book your free 40-Point Outside Audit](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=which-buyer-signals-matter&utm_content=inbody_text).
+**Lots of data, not many meetings?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=which-buyer-signals-matter&utm_content=inbody_text).

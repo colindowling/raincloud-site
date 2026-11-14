@@ -17,7 +17,7 @@ related:
 - sales-message-consistency
 also:
 - href: https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=selling-to-technical-buyers&utm_content=related_box
-  label: Book your free 40-Point Outside Audit
+  label: Book the 20 Minute Teardown
 excerpt: Faking technical depth gets you laughed out of the room. Here's how non-technical sellers earn credibility with engineers and technical buyers.
 takeaways:
 - Technical buyers test you early, and bluffing is the fastest way to lose them.
@@ -113,4 +113,4 @@ Any one of those is worth a call review this week.
 
 Sometimes it's a messaging problem. Sometimes it's how discovery is run, or when technical help shows up. The [100-Point GTM Autopsy](/gtm-autopsy/) looks at the full sales process, so you can see where credibility is being lost and what to fix first.
 
-**Losing technical deals and not sure why?** Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book your free 40-Point Outside Audit](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=selling-to-technical-buyers&utm_content=inbody_text).
+**Losing technical deals and not sure why?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=selling-to-technical-buyers&utm_content=inbody_text).

@@ -17,7 +17,7 @@ related:
 - define-icp-stop-selling-features
 also:
 - href: https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=cold-outreach-unknown-vendor&utm_content=related_box
-  label: Book your free 40-Point Outside Audit
+  label: Book the 20 Minute Teardown
 excerpt: 'Buyers ignore outreach from vendors they don''t recognize. Here''s how to earn a reply: warm paths, timely reasons, relevant proof and a useful first touch.'
 takeaways:
 - Buyers sort unknown vendors out before they ever judge the product.
@@ -99,4 +99,4 @@ Take your top twenty target accounts. For each one, write down two things: who y
 
 When reply rates fall, teams usually blame the copy. More often it's targeting, timing and how the company shows up before the first email. Those are scored in the [100-Point GTM Autopsy](/gtm-autopsy/), and rebuilding outbound around them is part of [the 90-day engagement](/gtm-consulting.html).
 
-**Outbound going nowhere?** Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book your free 40-Point Outside Audit](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=cold-outreach-unknown-vendor&utm_content=inbody_text).
+**Outbound going nowhere?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=cold-outreach-unknown-vendor&utm_content=inbody_text).

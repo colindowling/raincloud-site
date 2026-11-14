@@ -58,7 +58,7 @@ The article, in Markdown.
 
 ## Topic decides the CTA copy
 
-Every post, whatever `topic` is, ends with the same buttons. The primary button is "Book your free 40-Point Outside Audit" and opens the Calendly popup. The text link under it is the 100-Point GTM Autopsy at `/gtm-autopsy/`, with no UTM parameters. `topic` only changes the heading and the sentence above the buttons.
+Every post, whatever `topic` is, ends with the same buttons. The primary button is "Book the 20 Minute Teardown" and opens the Calendly popup. The text link under it is the 100-Point GTM Autopsy at `/gtm-autopsy/`, with no UTM parameters. `topic` only changes the heading and the sentence above the buttons.
 
 | `topic` | When to use it |
 | --- | --- |

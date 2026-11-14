@@ -6,7 +6,7 @@ RAINCLOUD is run by Colin Dowling: 3x VP of Sales · 2x founder · Host, Modern 
 
 ## The offer ladder
 
-1. The 40-Point Outside Audit. Free. Roughly 40 of the 100-Point GTM Autopsy's 100 points: the ones that can be scored from outside the company, from public sources alone. No mystery shop. Scored by Colin, with an offer to walk through what he found. Request it at https://rncld.com/outside-audit/ or book https://calendly.com/30minutechat/20-minute-go-to-market-w-colin
+1. The 20 Minute Teardown. Free. It covers roughly 40 of the 100-Point GTM Autopsy's 100 points: the ones that can be scored from outside the company, from public sources alone. No mystery shop. Book it at https://rncld.com/15minutepipelineteardown/ or https://calendly.com/30minutechat/20-minute-go-to-market-w-colin
 2. The 100-Point GTM Autopsy. $5,000, 10 business days. All 100 points across ten sections, each scored met or not met (one point each, 100 total), against the client's CRM data and four to six interviews; a signed baseline; every finding, ranked by what it costs in pipeline, each quantified; the fix sequence; a one-page business case; a 45-minute readout. Required before any engagement. Credited in full toward any engagement. No-questions-asked money-back guarantee.
 3. The 90-Day GTM Fix. $37,500, billed $15,000 (month 1, diagnose and rebuild), $12,500 (month 2, install), $10,000 (month 3, prove and hand off). The outbound architecture installed in month 2 uses four components: Hunter, Harvester, Farmer and Shepherd.
 4. Ongoing. Advisory at $7,500 per month from month four (monthly operating review, monthly work session, weekly office hours, quarterly re-score of all 100 points). Or the GTM Scorecard at $4,000 per month, billed quarterly: measurement and direction only, available from month seven or directly after a 100-Point GTM Autopsy.
@@ -27,20 +27,20 @@ B2B companies between $50M and $200M in revenue, with a sales team that works ou
 ## Pages
 
 - [Home](https://rncld.com/): The argument, the method (diagnose, rebuild, hand over) and the published fee ladder.
-- [40-Point Outside Audit](https://rncld.com/outside-audit/): The free entry offer. Request it through the Calendly link on the page.
+- [20 Minute Teardown](https://rncld.com/15minutepipelineteardown/): The free entry offer. It covers roughly 40 of the 100 points that can be scored from public sources alone. Book it from the page.
 - [100-Point GTM Autopsy](https://rncld.com/gtm-autopsy/): The paid diagnostic in full: the ten sections, what it needs from the client, the ten-day schedule and the deliverables. $5,000.
 - [The Engagement](https://rncld.com/gtm-consulting.html): The 90-day build in detail, the scope boundaries, and how it compares with a CRO hire or a strategy deck.
 - [Pricing](https://rncld.com/pricing/): Every price and term, published, with the month-by-month fee schedule.
 - [The 100-Point GTM Framework](https://rncld.com/resources/100-point-gtm-framework.html): The full scoring list, free with a work email.
 - [About Colin Dowling](https://rncld.com/about/): Founder of RAINCLOUD. 3x VP of Sales, 2x founder, host of Modern Business Life. Runs every engagement personally.
 - [Articles](https://rncld.com/blog/): Writing on GTM, pipeline and why builds fail after handover.
-- [Outbound not landing](https://rncld.com/problems/outbound-not-landing/): If your reply rates fell and you have spent three months rewriting sequences, you have been debugging the wrong layer. Next step: the 40-Point Outside Audit, then the 100-Point GTM Autopsy.
+- [Outbound not landing](https://rncld.com/problems/outbound-not-landing/): If your reply rates fell and you have spent three months rewriting sequences, you have been debugging the wrong layer. Next step: the 20 Minute Teardown, then the 100-Point GTM Autopsy.
 - [First sales hire](https://rncld.com/problems/first-sales-hire/): One person, one point of view, a long search, and a salary before the system exists. Next step: the 90-day engagement.
 - [Founder-led sales trap](https://rncld.com/problems/founder-led-sales-trap/): It works, which is the problem. It relieves the pressure that would otherwise have forced the system to mature, and it signals to the team that the system is optional. Next step: the 90-day engagement.
-- [Pipeline not growing](https://rncld.com/problems/pipeline-not-growing/): Stage definitions that mean different things to different reps. Coverage math built on deals that are already dead. Next step: the 40-Point Outside Audit, then the 100-Point GTM Autopsy.
+- [Pipeline not growing](https://rncld.com/problems/pipeline-not-growing/): Stage definitions that mean different things to different reps. Coverage math built on deals that are already dead. Next step: the 20 Minute Teardown, then the 100-Point GTM Autopsy.
 - [FAQ](https://rncld.com/faq/): Questions already answered on the 100-Point GTM Autopsy, the engagement, and pricing.
 - [Videos](https://rncld.com/videos/): Tip videos live on the article they belong to. None are embedded yet.
-- [Contact](https://rncld.com/contact.html): Write to Colin, or book the 30-minute call.
+- [Contact](https://rncld.com/contact.html): Write to Colin, or book the 20 Minute Teardown.
 
 ## Articles
 
@@ -64,10 +64,10 @@ Keyword landing pages (fractional CRO, B2B sales consulting, sales consulting fi
 
 ## What RAINCLOUD is not
 
-Not a SaaS product, not a dashboard or seat-based software vendor, not an agency, and not an open-ended hourly engagement. Earlier versions of this site described a "4D Sales Intelligence" offering, a "Trident" architecture, and separate offers for demand generation, content, AI readiness and AI agents. All are retired here. RAINCLOUD sells GTM diagnosis and repair: a 40-Point Outside Audit, a 100-Point GTM Autopsy, a 90-day rebuild on a declining fee, and ongoing advisory. Colin's other ventures are separate sites: Ants (managed AI agents, withants.com), Ghostwriter (B2B content, friendlyghostwriter.com) and The AI Ready Advisor (executive AI strategy).
+Not a SaaS product, not a dashboard or seat-based software vendor, not an agency, and not an open-ended hourly engagement. Earlier versions of this site described a "4D Sales Intelligence" offering, a "Trident" architecture, and separate offers for demand generation, content, AI readiness and AI agents. All are retired here. RAINCLOUD sells GTM diagnosis and repair: a free 20 Minute Teardown, a 100-Point GTM Autopsy, a 90-day rebuild on a declining fee, and ongoing advisory. Colin's other ventures are separate sites: Ants (managed AI agents, withants.com), Ghostwriter (B2B content, friendlyghostwriter.com) and The AI Ready Advisor (executive AI strategy).
 
 ## Contact
 
-- Book the 40-Point Outside Audit: https://calendly.com/30minutechat/20-minute-go-to-market-w-colin
+- Book the 20 Minute Teardown: https://calendly.com/30minutechat/20-minute-go-to-market-w-colin
 - Email: colin@rncld.com
 - Site: https://rncld.com
