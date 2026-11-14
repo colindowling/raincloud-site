@@ -115,6 +115,6 @@ Go through every deal with a verbal yes. For each one, write the next step, the 
 
 ## Fix it upstream
 
-If your team regularly loses deals after the yes, the real issue is usually how discovery and qualification are run. That's one of the areas I score in the [100-Point GTM Autopsy](/gtm-autopsy/). If the problem is the sales process itself, and you need it rebuilt with mutual plans and stage rules that hold, that's what [the 90-day engagement](/gtm-consulting.html) does.
+If your team regularly loses deals after the yes, the real issue is usually how discovery and qualification are run. That's one of the areas I score in the [100-Point GTM Autopsy](/gtm-autopsy/).
 
 **Losing deals you thought were won?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=why-deals-die-after-the-yes&utm_content=inbody_text).

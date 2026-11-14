@@ -42,32 +42,28 @@ TOPICS = {
     "diagnosis": {
         "heading": "Start with the 20 Minute Teardown.",
         "body": (
-            "It covers roughly 40 of the 100-Point GTM Autopsy\u2019s 100 points: "
-            "the ones that can be scored from outside the company, from public "
-            "sources alone. No mystery shop. The 100-Point GTM Autopsy is $5,000, "
-            "ten business days, required before the 90-day fix, credited in full "
-            "toward any engagement, and covered by a no-questions-asked money-back guarantee."
+            "The call is the free 40-point Outside-In Teardown: the 40 points of the "
+            "100-Point GTM Autopsy that can be scored from public sources. The next step "
+            "is the Autopsy. It is $5,000, five business days from access, credited in full "
+            "against the $25,000 build. Nothing skips it. There is no cash refund. The paid audit is the trial."
         ),
-        "meta": "Then the $5,000 100-Point GTM Autopsy. Then the 90-day fix.",
+        "meta": "Then the $5,000 100-Point GTM Autopsy. Then the build.",
     },
     "build": {
-        "heading": "The 90-day fix comes after the 100-Point GTM Autopsy.",
+        "heading": "The build comes after the 100-Point GTM Autopsy.",
         "body": (
-            "The 100-Point GTM Autopsy tells you what\u2019s broken and in what order. "
-            "The engagement builds it \u2014 ICP, positioning, the pipeline model, "
-            "outbound, the scorecard in your CRM and the playbook \u2014 in your tools, "
-            "with the people who will run it after I\u2019m gone. $37,500 over 90 days, "
-            "then $7,500 a month. It starts with the 20 Minute Teardown."
+            "The Autopsy is the build specification. RAINCLOUD then builds the system on your CRM "
+            "for $25,000, which is $20,000 after the audit credit. From go-live, RAINCLOUD runs it "
+            "at $10,000 a month, six-month minimum. It starts with the 20 Minute Teardown."
         ),
-        "meta": "$15,000, then $12,500, then $10,000.",
+        "meta": "$5,000 autopsy, credited against the $25,000 build, then $10,000 a month.",
     },
     "soft": {
         "heading": "The list is free. The score is the 100-Point GTM Autopsy.",
         "body": (
-            "Every point I score, published in full. It\u2019s the full list the "
-            "100-Point GTM Autopsy scores against, so you can see exactly what it "
-            "measures before you spend anything. The 20 Minute Teardown covers "
-            "the slice that can be scored from outside the company."
+            "The 100 points are published so you can see what gets scored. Clients do not self-score. "
+            "The 20 Minute Teardown covers the 40 points that can be read from the outside. "
+            "The Autopsy scores all 100, pass, partial, or fail."
         ),
         "meta": "Then the $5,000 100-Point GTM Autopsy.",
     },
@@ -535,16 +531,16 @@ def page_html(post: dict, by_slug: dict) -> str:
       <div class="sf-top">
         <div>
           <div class="sf-logo">RAIN<em>CLOUD</em></div>
-          <p class="sf-tag">One engagement: a 100-point GTM autopsy, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
+          <p class="sf-tag">RAINCLOUD builds and runs a full-funnel demand system on your CRM. Autopsy $5,000, build $25,000, then $10,000 a month. Run by Colin Dowling.</p>
           <p class="sf-also">Also from Colin Dowling: <a href="https://www.withants.com/" target="_blank" rel="noopener">Ants</a> (managed AI agents), <a href="https://www.friendlyghostwriter.com/" target="_blank" rel="noopener">Ghostwriter</a> (B2B content), The AI Ready Advisor (executive AI strategy).</p>
         </div>
         <div class="sf-cols">
           <div>
             <div class="sf-h">Work with me</div>
             <ul>
-              <li><a href="/15minutepipelineteardown/">20 Minute Teardown</a></li>
+              <li><a href="/teardown/">20 Minute Teardown</a></li>
               <li><a href="/gtm-autopsy/">The Autopsy</a></li>
-              <li><a href="/gtm-consulting.html">The Engagement</a></li>
+              <li><a href="/done-for-you-gtm/">The program</a></li>
               <li><a href="/pricing/">Pricing</a></li>
             </ul>
           </div>
@@ -665,6 +661,8 @@ def update_sitemap(posts: list[dict]) -> None:
             f"{SITE}/gtm-autopsy/",
             f"{SITE}/outside-audit/",
             f"{SITE}/15minutepipelineteardown/",
+            f"{SITE}/teardown/",
+            f"{SITE}/done-for-you-gtm/",
             f"{SITE}/fractional-cro/",
             f"{SITE}/fractional-sales-leader/",
             f"{SITE}/fractional-cro-vs-vp-of-sales/",
@@ -685,7 +683,8 @@ def update_sitemap(posts: list[dict]) -> None:
         )
     extra_blocks = [
         sitemap_url(f"{SITE}/gtm-autopsy/", "2026-11-02", "monthly", "0.9"),
-        sitemap_url(f"{SITE}/15minutepipelineteardown/", "2026-11-14", "monthly", "0.8"),
+        sitemap_url(f"{SITE}/teardown/", "2026-11-14", "monthly", "0.8"),
+        sitemap_url(f"{SITE}/done-for-you-gtm/", "2026-11-14", "monthly", "0.9"),
         sitemap_url(f"{SITE}/fractional-cro/", "2026-11-14", "monthly", "0.8"),
         sitemap_url(f"{SITE}/fractional-sales-leader/", "2026-11-14", "monthly", "0.8"),
         sitemap_url(f"{SITE}/fractional-cro-vs-vp-of-sales/", "2026-11-14", "monthly", "0.7"),
@@ -694,7 +693,6 @@ def update_sitemap(posts: list[dict]) -> None:
         sitemap_url(f"{SITE}/compare/revops-consultant-vs-fractional-cro/", "2026-11-14", "monthly", "0.7"),
         sitemap_url(f"{SITE}/about/", PUBLISHED_STAMP, "monthly", "0.6"),
         sitemap_url(f"{SITE}/faq/", PUBLISHED_STAMP, "monthly", "0.6"),
-        sitemap_url(f"{SITE}/videos/", PUBLISHED_STAMP, "monthly", "0.5"),
     ]
     if PROBLEMS_DIR.is_dir():
         for page in sorted(PROBLEMS_DIR.glob("*/index.html")):

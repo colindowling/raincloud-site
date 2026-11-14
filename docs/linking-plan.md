@@ -8,7 +8,7 @@ Flow: post, then the problem page, then the 20 Minute Teardown, then the 100-Poi
 
 ## 1. Diagnose the motion
 
-Pillar: [/gtm-autopsy/](/gtm-autopsy/) — 100-Point GTM Autopsy, $5,000, ten business days. The free entry offer is the [20 Minute Teardown](/15minutepipelineteardown/).
+Pillar: [/gtm-autopsy/](/gtm-autopsy/) — 100-Point GTM Autopsy, $5,000, five business days from access. The free entry offer is the [20 Minute Teardown](/teardown/), the 40-point Outside-In Teardown.
 
 Spokes:
 
@@ -17,9 +17,9 @@ Spokes:
 - [/problems/outbound-not-landing/](/problems/outbound-not-landing/) — offer: the audit
 - [/problems/pipeline-not-growing/](/problems/pipeline-not-growing/) — offer: the audit. No post yet.
 
-## 2. Rebuild and hand it over
+## 2. Build it, then run it
 
-Pillar: [/gtm-consulting.html](/gtm-consulting.html) — 90-Day GTM Fix, $37,500 over 90 days, then advisory at $7,500 a month.
+Pillar: [/gtm-consulting.html](/gtm-consulting.html) — the build is $25,000, then RAINCLOUD runs the system at $10,000 a month.
 
 Spokes:
 

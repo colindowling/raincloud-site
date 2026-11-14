@@ -1,6 +1,6 @@
 ---
-title: "GTM audit checklist: go to market audit template"
-description: A GTM audit checklist copied from the 100 points on the autopsy page. The go to market audit template is that list. The PDF is the framework download.
+title: "Sales Funnel Audit Checklist: 100 Points"
+description: A sales funnel audit checklist of the 100 points the 100-Point GTM Autopsy scores. See where the funnel leaks. Clients do not self-score.
 slug: gtm-audit-checklist
 date: '2026-11-14'
 updated: '2026-11-14'
@@ -8,7 +8,7 @@ date_label: November 2026
 read_time: 12 min read
 tag: Audit
 topic: soft
-excerpt: The 100 statements already published on the autopsy page, in the framework's ten sections. Not a new list.
+excerpt: The 100 points, in eight sections. Outside-in marks the 40 a buyer can see. Clients do not self-score.
 sort: 10
 hub: /gtm-autopsy/
 hub_label: The 100-Point GTM Autopsy
@@ -18,165 +18,171 @@ related:
 also:
 - href: /resources/100-point-gtm-framework.html
   label: Download the 100-point framework
-- href: /15minutepipelineteardown/
-  label: 20 Minute Teardown
+- href: /teardown/
+  label: Outside-In GTM Teardown
 takeaways:
-- The checklist is the 100 points already published on the autopsy page.
-- Ten sections, ten statements, one point each, met or not met.
-- The framework download is that list as a PDF.
-- The teardown covers roughly 40 from the outside. Which 40 is not published, so this page does not guess.
+- The checklist is the 100 points, regrouped into eight sections.
+- Outside-in marks the 40 points that can be scored from public sources.
+- Clients do not self-score. The scoring is the service.
+- The same list is free at the 100-Point GTM Framework page. Print or save it.
 faqs:
-- q: What is a GTM audit checklist?
-  a: It is the hundred yes-or-no statements the 100-Point GTM Autopsy scores. This page copies those statements. It does not add points.
-- q: What is a go to market audit template?
-  a: The same list, used before you have a score. The downloadable version is the 100-Point GTM Framework. A template is not a diagnosis.
+- q: What is a sales funnel audit checklist?
+  a: It is the 100 points the 100-Point GTM Autopsy scores, published so you can see the list. This page does not score you.
 - q: Can I score myself with this?
-  a: You can mark each line met or not met. That is a reading exercise. The score that uses your CRM and your team is the autopsy, which is $5,000 and takes ten business days.
+  a: No. Clients do not self-score. The score that uses your CRM is the 100-Point GTM Autopsy, which is $5,000 and takes five business days from access granted.
 - q: Which points does the 20 Minute Teardown cover?
-  a: Roughly 40 of the 100, the ones that can be read from public sources. The site does not publish which 40, so this checklist does not mark them.
+  a: The 40 points marked outside-in. The split is 10, 6, 8, 10, 4 and 2 across the first six sections. The last two sections are not scoreable from public sources.
+- q: Where is the downloadable framework?
+  a: On the 100-Point GTM Framework page. It is the same 100 points. Print or save that page. The scoring is the service, not the list.
 ---
-A GTM audit checklist is the list of statements a go to market audit template should force you to answer yes or no. These one hundred lines are copied from the points already published on the 100-Point GTM Autopsy page. I did not add any.
+A sales funnel audit checklist is the 100 points the 100-Point GTM Autopsy scores, published here so you can see the list. Clients do not self-score. The scoring is the service.
 
-The [100-Point GTM Framework](/resources/100-point-gtm-framework.html) is the same list as a free PDF. The [20 Minute Teardown](/15minutepipelineteardown/) covers roughly 40 of these points from public sources. This site does not publish which 40 those are, so this checklist does not guess. Scoring them against your CRM is the [100-Point GTM Autopsy](/gtm-autopsy/): $5,000, ten business days.
+The [100-Point GTM Framework](/resources/100-point-gtm-framework.html) is the same list, free on this site. Print or save that page. The [Outside-In GTM Teardown](/teardown/) is the 40 points marked outside-in. Scoring the full list against your CRM is the [100-Point GTM Autopsy](/gtm-autopsy/): $5,000, five business days from access granted, then a recorded 90-minute walkthrough.
 
-## What is on a GTM audit checklist?
+## What is on a sales funnel audit checklist?
 
-Ten sections. Ten statements each. One point each, met or not met. The section names match the framework page and the autopsy page.
+Eight sections. One hundred points. Each point on the scored report is pass, partial, or fail. Points marked outside-in are the ones that can be read from public sources.
 
-## How do you use a go to market audit template?
+## How do you use it?
 
-Read each line as a yes or no. If you cannot show the artifact, it is not met. A self-score is a reading exercise. The number that uses your data is the autopsy, not this page. Fees are on the [pricing page](/pricing/).
+Read the lines so you know what gets measured. Do not self-score. The number that uses your data is the 100-Point GTM Autopsy, not this page. Fees are on the [pricing page](/pricing/).
 
-## 01 Market & ICP
+## 01 Positioning and messaging
 
-- A written ICP specific enough that a rep can disqualify an account with it
-- The ICP is derived from closed-won data, not from aspiration
-- Firmographic boundaries are explicit: revenue band, headcount, industry, geography
-- The buying triggers that put an account in-market now are named
-- The buying committee is mapped: economic buyer, champion, likely blockers
-- Written disqualification criteria exist and are used
-- A target account list exists, sized and prioritized against the ICP
-- Win rate, deal size and cycle length are known by ICP segment
-- The ICP is re-checked against new closed-won and closed-lost data at least twice a year
-- Sales, marketing and leadership describe the same ICP when asked separately
+14 points. 10 can be scored from public sources. Those are marked outside-in. Clients do not self-score.
 
-## 02 Positioning & Messaging
+- 001. One sentence states who the company is for and why it wins. (outside-in)
+- 002. Positioning names the real alternatives, including doing nothing. (outside-in)
+- 003. Differentiation is specific and provable, not adjectives. (outside-in)
+- 004. Messaging is written by persona, not one message for every buyer. (outside-in)
+- 005. Every claim is mapped to a customer, a number, or a case. (outside-in)
+- 006. That proof sits next to the claim, not only in a sales folder. (outside-in)
+- 007. Website, decks, sequences and reps say the same thing. (outside-in)
+- 008. A buyer can tell the company apart from its top two competitors before the first call. (outside-in)
+- 009. Customers describe the value in the same terms the company uses. (outside-in)
+- 010. Each offer has a written scope and a written outcome. (outside-in)
+- 011. The top five objections have written, tested responses.
+- 012. Messaging has been tested against reply, meeting or conversion data in the last two quarters.
+- 013. A defined entry offer lowers the risk of the first purchase.
+- 014. The offer gives a buyer a reason to act this quarter.
 
-- One sentence states who the company is for and why it wins
-- Positioning names the real alternatives, including doing nothing
-- Differentiation is specific and provable, not adjectives
-- Messaging is written by persona, not one message for every buyer
-- Every claim is mapped to proof: a customer, a number, a case
-- The top five objections have written, tested responses
-- Website, decks, sequences and reps say the same thing
-- A buyer can tell you apart from your top two competitors before the first call
-- Messaging has been tested against reply, meeting or conversion data in the last two quarters
-- Customers describe the value in the same terms the company uses
+## 02 ICP and TAM definition
 
-## 03 Offer & Pricing
+12 points. 6 can be scored from public sources. Those are marked outside-in. Clients do not self-score.
 
-- Each offer has a written scope and a written outcome
-- Pricing is tied to the value delivered, and the logic is documented
-- A defined entry offer lowers the risk of the first purchase
-- Discounting runs on written rules and approval levels
-- Average discount is tracked and is flat or falling
-- Packaging matches how the ICP actually buys
-- The offer gives a buyer a reason to act this quarter
-- Price objections are tracked by stage and by reason
-- Pricing has been reviewed against competitors and win-loss data in the last year
-- Reps can explain pricing without escalating
+- 015. A written ICP is specific enough that a rep can disqualify an account with it. (outside-in)
+- 016. Firmographic boundaries name a revenue band and a headcount range. (outside-in)
+- 017. Firmographic boundaries name industry and geography. (outside-in)
+- 018. The buying triggers that put an account in-market now are named. (outside-in)
+- 019. The buying committee is mapped: economic buyer, champion, likely blockers. (outside-in)
+- 020. A target account list exists. (outside-in)
+- 021. The ICP is derived from closed-won data, not from aspiration.
+- 022. Written disqualification criteria exist and are used.
+- 023. The target account list is sized and prioritized against the ICP.
+- 024. Win rate, deal size and cycle length are known by ICP segment.
+- 025. The ICP is re-checked against new closed-won and closed-lost data at least twice a year.
+- 026. Sales, marketing and leadership describe the same ICP when asked separately.
 
-## 04 Pipeline Math & Forecast
+## 03 Demand generation, top of funnel
 
-- Every pipeline stage has written entry and exit criteria
-- Stage definitions mean the same thing to every rep
-- Conversion rates between stages are measured, by segment
-- The top-of-funnel volume the number requires is calculated from those rates
-- Coverage is calculated on qualified opportunities only
-- Deals with no activity inside a defined window are flagged or closed out
-- Forecast categories are defined and applied consistently
-- Forecast accuracy is measured against actuals every quarter
-- Sales cycle length is measured by segment and deal size
-- The forecast describes a number the pipeline can actually produce
+14 points. 8 can be scored from public sources. Those are marked outside-in. Clients do not self-score.
 
-## 05 Outbound
+- 027. The website says who it is for, above the fold. (outside-in)
+- 028. The website says what to do next, above the fold. (outside-in)
+- 029. Content exists for buyers who are not yet in a deal. (outside-in)
+- 030. That content is mapped to the early stages of the buying journey. (outside-in)
+- 031. The problem the company creates demand around is named in public. (outside-in)
+- 032. Content aimed at that problem is published on a cadence, not only when a live deal needs a page. (outside-in)
+- 033. Top-of-funnel demand is aimed at the written ICP. (outside-in)
+- 034. More than one channel creates demand before a buyer raises a hand. (outside-in)
+- 035. A written content plan covers buyers who are not in a live deal.
+- 036. Top-of-funnel activity is attributed separately from outbound and from inbound response.
+- 037. One person owns top-of-funnel demand as a number.
+- 038. Sales and marketing share targets and meet on them.
+- 039. References and case studies are captured systematically for later use.
+- 040. Early-stage content does not assume the reader is already in a sales cycle.
 
-- Outbound targets the ICP and the target account list, not bought lists at random
-- Signals or triggers decide who gets contacted and when
-- Sequence architecture is documented: steps, channels, timing
-- Copy is written by persona and references something specific to the account
-- Sending domains, authentication and warm-up are configured and monitored
-- Bounce, reply and spam-complaint rates are tracked against thresholds
-- Replies are routed and worked inside a defined time
-- Meetings booked and meetings held are tracked separately
-- Outbound-sourced pipeline and revenue are attributable in the CRM
-- Sequences are tested and retired on data at least quarterly
+## 04 Consideration and bottom-of-funnel presence
 
-## 06 Demand Capture
+12 points. 10 can be scored from public sources. Those are marked outside-in. Clients do not self-score.
 
-- The website says who it is for and what to do next, above the fold
-- High-intent pages exist: pricing, comparisons, use cases
-- The bottom-of-funnel search terms buyers actually use are targeted
-- Inbound leads reach a person inside a defined time
-- Inbound response time is measured
-- Form conversion rates are measured by page
-- Lead source is captured consistently on every record
-- Content is mapped to stages of the buying journey
-- Proof is easy to find on the site: results, case studies, references
-- Inbound-sourced pipeline and revenue are reported monthly
+- 041. A pricing page exists. (outside-in)
+- 042. Comparison pages exist against the real alternatives. (outside-in)
+- 043. Use-case pages exist for the way the ICP buys. (outside-in)
+- 044. The bottom-of-funnel search terms buyers actually use are targeted. (outside-in)
+- 045. Results and numbers are easy to find on the site. (outside-in)
+- 046. Case studies are easy to find on the site. (outside-in)
+- 047. A buyer searching the problem in AI answers finds the company, or a clear gap. (outside-in)
+- 048. The company is present in the directories a buyer in this category would check. (outside-in)
+- 049. Reviews a buyer would read are findable. (outside-in)
+- 050. The company shows up, or is clearly absent, in the forums where buyers ask. (outside-in)
+- 051. Pricing has been reviewed against competitors and win-loss data in the last year.
+- 052. Battlecards exist for the top competitors and are current.
 
-## 07 Sales Process & Conversion
+## 05 Outbound motion
 
-- A written discovery framework is used on first calls
-- Qualification criteria are defined and recorded in the CRM
-- Every open opportunity has a dated next step
-- A mutual action plan is used on deals above a set size
-- Deal reviews follow a consistent format and cadence
-- Battlecards exist for the top competitors and are current
-- Win-loss reasons are captured on every closed deal
-- Win rate is measured by segment, source and rep
-- Where deals stall is known by stage, with a reason
-- The handoff from sales to delivery or onboarding is documented
+12 points. 4 can be scored from public sources. Those are marked outside-in. Clients do not self-score.
 
-## 08 Retention & Expansion
+- 053. Outbound targets the stated ICP, not a random bought list. (outside-in)
+- 054. Copy is written by persona and references something specific to the account. (outside-in)
+- 055. Sending uses authenticated domains rather than a freemail identity. (outside-in)
+- 056. The channels in the motion match what the company says in public. (outside-in)
+- 057. Signals or triggers decide who gets contacted, and those signals are named.
+- 058. Signals acted on are under seven days old.
+- 059. Sequence architecture is documented: steps, timing, and the writing.
+- 060. Warm-up is configured and monitored.
+- 061. Bounce, reply and spam-complaint rates are tracked against thresholds.
+- 062. Meetings booked and meetings held are tracked separately.
+- 063. Outbound-sourced pipeline and revenue are attributable in the CRM.
+- 064. Sequences are tested and retired on data at least quarterly.
 
-- Gross and net revenue retention are measured
-- One person owns retention and expansion as a number
-- Onboarding has a defined time to first value
-- Customer health is scored on defined signals
-- Churn reasons are captured and reviewed
-- Expansion paths are defined by customer type
-- Renewal dates are in the CRM with enough lead time to act
-- References and case studies are captured systematically
-- Expansion pipeline is tracked separately from new business
-- Customer feedback reaches positioning and product decisions
+## 06 Inbound handling and speed to lead
 
-## 09 RevOps, Data & Tooling
+10 points. 2 can be scored from public sources. Those are marked outside-in. Clients do not self-score.
 
-- The CRM is the single source of truth for pipeline
-- Required fields are enforced at each stage
-- Completeness of key fields is measured
-- Duplicate and stale records are cleaned on a schedule
-- Pipeline and conversion dashboards exist and are used in meetings
-- Every tool in the GTM stack has an owner and measured use
-- Tool spend is reviewed against usage at least yearly
-- Attribution rules are written and applied consistently
-- Sales and marketing share one definition of lead, qualified lead and opportunity
-- Core reports run without manual spreadsheet work
+- 065. A form or other request path is present on high-intent pages. (outside-in)
+- 066. The site states what happens after a request, including who it reaches. (outside-in)
+- 067. Inbound leads reach a person inside a defined time.
+- 068. Inbound response time is measured.
+- 069. That measured time is compared with the standard the company set.
+- 070. Form conversion rates are measured by page.
+- 071. Lead source is captured consistently on every record.
+- 072. Inbound-sourced pipeline is reported monthly.
+- 073. Inbound-sourced revenue is reported monthly.
+- 074. Replies are routed and worked inside a defined time.
 
-## 10 Team, Enablement & Leadership
+## 07 Sales process and pipeline hygiene
 
-- One executive owns the revenue number end to end
-- Quotas are set from capacity and pipeline math, not only top-down
-- Ramp time for new reps is defined and measured
-- Rep onboarding is documented
-- Reps are coached on recorded calls on a regular cadence
-- Rep performance is reviewed on activity, conversion and outcome
-- A weekly operating cadence (pipeline, forecast, priorities) runs reliably
-- Sales and marketing share targets and meet on them
-- Decisions and owners from GTM meetings are logged and followed up
-- The team believes the number is achievable and can say why
+14 points. 0 can be scored from public sources. Those are marked outside-in. Clients do not self-score.
 
-## Where does the score come from?
+- 075. Stage definitions have written entry and exit criteria and mean the same thing to every rep.
+- 076. Conversion rates between stages are measured by segment, and the volume the number requires is calculated from those rates.
+- 077. Sales cycle length is measured by segment and deal size.
+- 078. Coverage is calculated on qualified opportunities only, and the forecast describes a number the pipeline can produce.
+- 079. Forecast categories are defined, applied consistently, and accuracy is measured against actuals.
+- 080. Deals with no recent activity are flagged or closed out, and every open opportunity has a dated next step.
+- 081. A written discovery framework is used on first calls, and qualification criteria are recorded in the CRM.
+- 082. A mutual action plan is used on deals above a set size, and deal reviews follow a consistent format.
+- 083. Win-loss reasons are captured on every closed deal, and where deals stall is known by stage.
+- 084. Win rate is measured by segment, source and rep, and rep ramp, onboarding and call coaching are defined.
+- 085. The handoff from sales to delivery or onboarding is documented.
+- 086. Discounting runs on written rules, average discount is tracked, and price objections are tracked by stage and reason.
+- 087. Pricing logic is documented, packaging matches how the ICP buys, and reps can explain pricing without escalating.
+- 088. One executive owns the revenue number, quotas come from capacity math, and the weekly operating cadence logs its decisions.
 
-This page is the list. It is not your score. Book the [20 Minute Teardown](/15minutepipelineteardown/) if you want the outside view first. The paid next step is the autopsy.
+## 08 Data, CRM and revenue operations
+
+12 points. 0 can be scored from public sources. Those are marked outside-in. Clients do not self-score.
+
+- 089. The CRM is the single source of truth for pipeline, and sales and marketing share one definition of lead, qualified lead and opportunity.
+- 090. Required fields are enforced at each stage, and completeness of key fields is measured.
+- 091. Duplicate records are cleaned on a schedule.
+- 092. Stale records are cleaned on a schedule.
+- 093. Pipeline and conversion dashboards exist and are used, and core reports run without manual spreadsheet work.
+- 094. Every tool in the go-to-market stack has an owner and measured use, and tool spend is reviewed against usage at least yearly.
+- 095. Attribution rules are written and applied consistently.
+- 096. Gross and net revenue retention are measured, and one person owns retention and expansion as a number.
+- 097. Onboarding has a defined time to first value, and customer health is scored on defined signals.
+- 098. Churn reasons are captured, and renewal dates are in the CRM with enough lead time to act.
+- 099. Expansion paths are defined by customer type, and expansion pipeline is tracked separately from new business.
+- 100. Customer feedback reaches positioning and product decisions.

@@ -113,13 +113,19 @@ ingress:
     redirect:
       uri: /about/
       redirect_code: 301
-  # The 40-Point Outside Audit is the content of the 20 Minute Teardown.
-  # prefix matches both /outside-audit and /outside-audit/.
+  # Single hop. prefix matches the path with or without a trailing slash.
+  # These 301s apply only after the live DigitalOcean spec is updated.
+  - match:
+      path:
+        prefix: /15minutepipelineteardown
+    redirect:
+      uri: /teardown/
+      redirect_code: 301
   - match:
       path:
         prefix: /outside-audit
     redirect:
-      uri: /15minutepipelineteardown/
+      uri: /teardown/
       redirect_code: 301
   - match:
       path:

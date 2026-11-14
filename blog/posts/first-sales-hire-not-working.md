@@ -58,4 +58,4 @@ A [fractional sales leader](/fractional-sales-leader/) is the role that builds t
 
 ## Where do you start?
 
-The [20 Minute Teardown](/15minutepipelineteardown/), free. The next step, if you want the score, is the [100-Point GTM Autopsy](/gtm-autopsy/).
+The [20 Minute Teardown](/teardown/), free. The next step, if you want the score, is the [100-Point GTM Autopsy](/gtm-autopsy/).

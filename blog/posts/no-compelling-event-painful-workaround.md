@@ -18,7 +18,7 @@ related:
 also:
 - href: /problems/pipeline-not-growing/
   label: Pipeline not growing
-- href: /15minutepipelineteardown/
+- href: /teardown/
   label: 20 Minute Teardown
 takeaways:
 - A feature buyers already replace for free will not create urgency.
@@ -55,4 +55,4 @@ Some deals already have a compelling event: a renewal, an audit, a new leader, a
 
 ## What if a lot of deals sit at "interested"?
 
-The problem is upstream. Who you target, what you lead with, and how discovery is run. That is the [100-Point GTM Autopsy](/gtm-autopsy/), after a free look. [Pipeline that is not growing](/problems/pipeline-not-growing/) is the symptom. The first conversation is the [20 Minute Teardown](/15minutepipelineteardown/).
+The problem is upstream. Who you target, what you lead with, and how discovery is run. That is the [100-Point GTM Autopsy](/gtm-autopsy/), after a free look. [Pipeline that is not growing](/problems/pipeline-not-growing/) is the symptom. The first conversation is the [free 40-point GTM teardown](/teardown/).

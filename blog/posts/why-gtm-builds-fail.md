@@ -10,8 +10,8 @@ format: html
 topic: build
 sort: 1
 updated: '2026-10-31'
-hub: /gtm-consulting.html
-hub_label: The Engagement
+hub: /done-for-you-gtm/
+hub_label: The program
 related:
 - outbound-reply-rates-2026
 - bofu-content-that-moves-deals
@@ -29,11 +29,11 @@ takeaways:
 - The deliverables were never the thing that was going to fail.
 faqs:
 - q: When do most GTM builds fail?
-  a: The build is rarely the hard part. The quarter after handoff is where go-to-market systems quietly fall apart, and the failure is predictable enough to design against. Ninety days later the sequences have been edited into something unrecognisable, two of the four channels are dormant, nobody is running the weekly review, and the founder is back to doing sales personally.
+  a: The build is rarely the hard part. The quarter after handoff is where go-to-market systems quietly fall apart, and the failure is predictable enough to design against. Ninety days later the sequences have been edited into something unrecognisable, channels have gone quiet, nobody is running the weekly review, and the founder is back to doing sales personally.
 - q: What are the four failures after handoff?
   a: The system has no owner. The first bad month triggers a rewrite. The tooling survives and the process does not. The founder takes the wheel back. Systems with no owner do not fail loudly. They degrade. By the end of the quarter the motion has been modified so many times that nobody can tell what caused what.
-- q: Why is the engagement 90 days of building and then advisory?
-  a: If the failure reliably happens after handoff, then an engagement that ends at handoff is structured to fail. This is why the RAINCLOUD engagement is 90 days of building followed by 90 days of advisory rather than a longer build. The second half is not padding, and it is not support. It exists specifically to survive those four failures.
+- q: Why does RAINCLOUD keep running the system?
+  a: If the failure reliably happens after handoff, then an engagement that ends at handoff is structured to fail. RAINCLOUD builds the system in the first month and then runs it, six months from go-live. If the agreed day-90 pipeline target is missed, it keeps running at no charge until the target is hit.
 - q: What should you ask anyone who wants to rebuild your go-to-market?
   a: What happens in the quarter after you leave, and are you there for it? Who owns the system by name when you are gone? What is the rule for changing something? Which weekly practice must survive? A good answer to all four is worth more than a longer list of deliverables.
 ---
@@ -81,13 +81,13 @@ faqs:
 
       <p>If the failure reliably happens after handoff, then an engagement that ends at handoff is structured to fail. It is optimised for delivering a build rather than for the outcome the client actually wanted, which was a working motion six months later.</p>
 
-      <p>This is why I structure the RAINCLOUD engagement as 90 days of building followed by 90 days of advisory rather than a longer build. The second half is not padding, and it is not support. It exists specifically to survive the four failures above:</p>
+      <p>This is why RAINCLOUD does not hand the system back. The build is the first month. From go-live, RAINCLOUD runs it: mass email, bottom-of-funnel content, and signal outbound, plus a governance layer and a learnings layer. The minimum is six months from go-live. If the agreed day-90 pipeline target is missed, RAINCLOUD keeps running the system at no charge until it is hit. The target is qualified opportunities created, with qualified defined in the client's own words and set jointly by day 30.</p>
 
       <ul>
-        <li><strong>Ownership is transferred deliberately</strong>, to a named person, while there is still someone around to notice it has not really happened.</li>
-        <li><strong>The first bad month happens with an experienced operator in the room</strong> &mdash; someone who can tell the difference between normal variance and a real problem, and who has the standing to say "change nothing this week."</li>
-        <li><strong>The weekly practice gets rehearsed enough times to become habit</strong> rather than remaining an instruction in a document.</li>
-        <li><strong>Somebody is there to tell the founder to keep their hands off the wheel</strong>, which is a job that requires having done it, and having been wrong about it.</li>
+        <li><strong>There is still an owner after launch.</strong> RAINCLOUD runs the system. It does not distribute the work across three teams and leave.</li>
+        <li><strong>The first bad month happens with the operator still in the work</strong>, able to tell normal variance from a real problem, and with the standing to say "change nothing this week."</li>
+        <li><strong>The weekly practice is the operating cadence</strong>, not an instruction left in a handover document.</li>
+        <li><strong>The founder is not the backup plan.</strong> A soft month does not have to pull the founder back into every deal.</li>
       </ul>
 
       <h2>How to evaluate anyone who wants to rebuild your go-to-market</h2>
