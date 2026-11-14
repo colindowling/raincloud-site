@@ -15,6 +15,7 @@ hub_label: Fractional CRO
 related:
 - fractional-cro-cost
 - first-sales-hire-not-working
+- questions-to-ask-a-fractional-cro
 also:
 - href: /fractional-cro-vs-vp-of-sales/
   label: Fractional CRO vs VP of sales
@@ -35,7 +36,7 @@ faqs:
 ---
 A fractional CRO scores the revenue motion and rebuilds the parts your team will run, instead of joining as a full-time chief revenue officer. I do that work myself. It starts with a free 20 Minute Teardown, then the 100-Point GTM Autopsy if the teardown is useful.
 
-The title is used loosely. Some buyers want a coach for the VP. Some want a firm to assign them a person. Some want the motion fixed and handed back. Only the last one is what I sell.
+The title is used loosely. Some buyers want a coach for the VP. Some want a firm to assign them a person. Some want the motion fixed and handed back. Only the last one is what I sell. If a fractional person has already come and gone, use the [questions to ask a fractional CRO](/blog/questions-to-ask-a-fractional-cro.html) before you take another meeting.
 
 ## What does the work look like?
 

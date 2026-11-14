@@ -15,6 +15,7 @@ hub_label: The first sales hire
 related:
 - how-to-get-out-of-founder-led-sales
 - define-icp-stop-selling-features
+- find-a-salesperson-through-your-network
 also:
 - href: /fractional-sales-leader/
   label: Fractional sales leader
@@ -50,6 +51,8 @@ The page on [the first sales hire](/problems/first-sales-hire/) is the same argu
 ## What should you do instead of posting the role?
 
 Write the one sentence. Check it against the last ten wins and the last ten losses. If the wins do not cluster, you do not have a hiring problem yet.
+
+When the sentence is real and you are ready to look, [find a salesperson through your network](/blog/find-a-salesperson-through-your-network.html) before you write a posting.
 
 A [fractional sales leader](/fractional-sales-leader/) is the role that builds that sentence and the process around it. A [fractional CRO](/fractional-cro/) is a later title, for a team that already sells. I do not place either person. I build the motion or I don't.
 

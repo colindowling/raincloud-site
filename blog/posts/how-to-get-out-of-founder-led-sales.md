@@ -15,6 +15,7 @@ hub_label: The founder-led sales trap
 related:
 - first-sales-hire-not-working
 - founder-story-sales-handoff
+- which-founder-should-own-sales
 also:
 - href: /fractional-sales-leader/
   label: Fractional sales leader
@@ -33,7 +34,7 @@ faqs:
 - q: What if I am still the only one who can close?
   a: Then the asset is in your head. The job is to get it onto a page your team can use. That is part of the 90-day engagement, after the autopsy, not a slogan.
 ---
-How to get out of founder-led sales starts with a hard fact. It works, which is why it lasts. You are the qualification, the story, and the close. The team treats the system as optional because the founder is the system.
+How to get out of founder-led sales starts with a hard fact. It works, which is why it lasts. You are the qualification, the story, and the close. The team treats the system as optional because the founder is the system. If two of you already sell, settle [which founder should own sales](/blog/which-founder-should-own-sales.html) before you try to leave the deals.
 
 Leaving that role is not a hiring announcement. It is a document. If a new person cannot explain who the company is for, and why a buyer should switch, another seller adds meetings you still have to save.
 
