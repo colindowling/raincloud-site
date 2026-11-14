@@ -17,7 +17,7 @@ related:
 - define-icp-stop-selling-features
 also:
 - href: https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=complaints-arent-demand&utm_content=related_box
-  label: Book your free 40-Point Outside Audit
+  label: Book the 20 Minute Teardown
 excerpt: Buyers complaining about a problem doesn't mean they'll pay to fix it. Here's how to test real demand, starting with the customers who left you.
 takeaways:
 - A loud complaint isn't a budget. The real question is whether they'll pay for the pain to go away.
@@ -76,6 +76,6 @@ If you don't know what a buyer does when they don't choose you, you can't say wh
 
 Pull a list of the customers who left in the last year, and the deals you lost to "no decision." Call three of each. Ask the four questions above and write down the answers word for word. Then put what you hear next to what your team says about why you win. The gap is where your go-to-market is guessing.
 
-If you want a structured way to check the rest, the [100-Point GTM Framework](/resources/100-point-gtm-framework.html) lists every point I score, free to download. When you're ready for experienced help leading the revenue side, [here's how I work](/outside-audit/).
+If you want a structured way to check the rest, the [100-Point GTM Framework](/resources/100-point-gtm-framework.html) lists every point I score, free to download. When you're ready for experienced help leading the revenue side, [here's how I work](/15minutepipelineteardown/).
 
-**Not sure your pipeline is built on real demand?** Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book your free 40-Point Outside Audit](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=complaints-arent-demand&utm_content=inbody_text).
+**Not sure your pipeline is built on real demand?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=complaints-arent-demand&utm_content=inbody_text).

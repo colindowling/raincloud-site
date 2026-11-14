@@ -135,8 +135,8 @@ def check_post(path: Path, text: str, blocks: list[dict]) -> None:
         fail(f"{path.name}: expected utm_campaign={slug} on nav, footer, and both CTAs")
     if "utm_source=rncld&amp;utm_medium=site" not in text:
         fail(f"{path.name}: Calendly CTAs are missing utm_source=rncld&utm_medium=site")
-    if "Book your free 40-Point Outside Audit" not in text:
-        fail(f"{path.name}: missing the 40-Point Outside Audit CTA")
+    if "Book the 20 Minute Teardown" not in text:
+        fail(f"{path.name}: missing the 20 Minute Teardown CTA")
     if 'href="/gtm-autopsy/?' in text or "gtm-autopsy/?" in text:
         fail(f"{path.name}: internal /gtm-autopsy/ link has a query string")
     if "/assets/track.js" not in text:
@@ -180,7 +180,6 @@ def check_sitemap() -> None:
         f"{SITE}/videos/",
         f"{SITE}/15minutepipelineteardown/",
         f"{SITE}/gtm-autopsy/",
-        f"{SITE}/outside-audit/",
     ]
     for loc in required:
         if loc not in locs:
@@ -202,6 +201,8 @@ def check_sitemap() -> None:
         fail("audit.html redirects to /gtm-autopsy/ and should not be in the sitemap")
     if f"{SITE}/about.html" in locs:
         fail("about.html duplicates /about/ and should not be in the sitemap")
+    if f"{SITE}/outside-audit/" in locs:
+        fail("outside-audit redirects to /15minutepipelineteardown/ and should not be in the sitemap")
     for retired in ("/ai-agents.html", "/bofu-content.html", "/content.html", "/demand-generation.html"):
         if f"{SITE}{retired}" in locs:
             fail(f"{retired} is a redirect and should not be in the sitemap")
@@ -233,7 +234,7 @@ def check_nav(path: Path, text: str) -> None:
         fail(f"{path.relative_to(ROOT)}: nav CTA is missing")
     required = [
         "/gtm-autopsy/",
-        "/outside-audit/",
+        "/15minutepipelineteardown/",
         "/gtm-consulting.html",
         "/pricing/",
         "/problems/outbound-not-landing/",
@@ -248,7 +249,7 @@ def check_nav(path: Path, text: str) -> None:
     for href in required:
         if f'href="{href}"' not in nav:
             fail(f"{path.relative_to(ROOT)}: nav is missing {href}")
-    for banned in ("/ai-agents", "/bofu-content", "/demand-generation", "/content.html", "/audit.html", "15minutepipelineteardown"):
+    for banned in ("/ai-agents", "/bofu-content", "/demand-generation", "/content.html", "/audit.html", "/outside-audit/"):
         if banned in nav:
             fail(f"{path.relative_to(ROOT)}: unlisted page {banned} is in the nav")
     # Five top-level destinations: four groups plus About. The CTA is not one of them.

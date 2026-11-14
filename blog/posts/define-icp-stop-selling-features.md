@@ -17,7 +17,7 @@ related:
 - sales-message-consistency
 also:
 - href: https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=define-icp-stop-selling-features&utm_content=related_box
-  label: Book your free 40-Point Outside Audit
+  label: Book the 20 Minute Teardown
 excerpt: Pitching features to every possible customer stalls growth. Here's how to define an ideal customer profile and sell the problem you actually solve.
 takeaways:
 - Selling features to everyone means you're not really selling to anyone.
@@ -110,4 +110,4 @@ Once the ICP is set, the next questions are [which buyer signals are worth actin
 
 If your team describes the ideal customer differently depending on who you ask, that's a sign. ICP definition is one of the first things I score in the [100-Point GTM Autopsy](/gtm-autopsy/), because almost everything else in go-to-market depends on it. If you already know the ICP and need the motion rebuilt around it, that's what [the 90-day engagement](/gtm-consulting.html) is for.
 
-**Want to know if your ICP is costing you pipeline?** Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book your free 40-Point Outside Audit](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=define-icp-stop-selling-features&utm_content=inbody_text).
+**Want to know if your ICP is costing you pipeline?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=define-icp-stop-selling-features&utm_content=inbody_text).

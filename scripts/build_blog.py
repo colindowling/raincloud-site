@@ -40,13 +40,13 @@ AUTOPSY_PATH = "/gtm-autopsy/"
 
 TOPICS = {
     "diagnosis": {
-        "heading": "Start with the free 40-Point Outside Audit.",
+        "heading": "Start with the 20 Minute Teardown.",
         "body": (
-            "It is the part of the 100-Point GTM Autopsy that can be scored from "
-            "outside the company, from public sources alone. No mystery shop. "
-            "Scored by Colin, with an offer to walk through what he found. The "
-            "100-Point GTM Autopsy is $5,000, ten business days, required before "
-            "the 90-day fix, credited in full toward any engagement, and covered by a no-questions-asked money-back guarantee."
+            "It covers roughly 40 of the 100-Point GTM Autopsy\u2019s 100 points: "
+            "the ones that can be scored from outside the company, from public "
+            "sources alone. No mystery shop. The 100-Point GTM Autopsy is $5,000, "
+            "ten business days, required before the 90-day fix, credited in full "
+            "toward any engagement, and covered by a no-questions-asked money-back guarantee."
         ),
         "meta": "Then the $5,000 100-Point GTM Autopsy. Then the 90-day fix.",
     },
@@ -57,7 +57,7 @@ TOPICS = {
             "The engagement builds it \u2014 ICP, positioning, the pipeline model, "
             "outbound, the scorecard in your CRM and the playbook \u2014 in your tools, "
             "with the people who will run it after I\u2019m gone. $37,500 over 90 days, "
-            "then $7,500 a month. It starts with the free 40-Point Outside Audit."
+            "then $7,500 a month. It starts with the 20 Minute Teardown."
         ),
         "meta": "$15,000, then $12,500, then $10,000.",
     },
@@ -66,8 +66,8 @@ TOPICS = {
         "body": (
             "Every point I score, published in full. It\u2019s the full list the "
             "100-Point GTM Autopsy scores against, so you can see exactly what it "
-            "measures before you spend anything. The free 40-Point Outside Audit "
-            "is the slice that can be scored from outside the company."
+            "measures before you spend anything. The 20 Minute Teardown covers "
+            "the slice that can be scored from outside the company."
         ),
         "meta": "Then the $5,000 100-Point GTM Autopsy.",
     },
@@ -253,7 +253,7 @@ def cta_html(post: dict, content: str) -> str:
         <h3>{esc(topic["heading"])}</h3>
         <p>{esc(topic["body"])}</p>{meta}
         <a href="{primary}" class="btn btn--primary"{cta_attrs("outside_audit", content, cluster)}>
-          <span>Book your free 40-Point Outside Audit</span>
+          <span>Book the 20 Minute Teardown</span>
           <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <p class="post-cta-sec"><a class="text-link" href="{AUTOPSY_PATH}"{cta_attrs("autopsy", content, cluster)}>See the 100-Point GTM Autopsy</a></p>
@@ -444,7 +444,7 @@ def page_html(post: dict, by_slug: dict) -> str:
         + calendly_href(slug, "nav")
         + '" class="nav-cta"'
         + cta_attrs("outside_audit", "nav", post["topic"])
-        + ">Book your free 40-Point Outside Audit</a>",
+        + ">Book the 20 Minute Teardown</a>",
         f"/blog/{slug}.html",
     )
     return f"""<!DOCTYPE html>
@@ -533,6 +533,7 @@ def page_html(post: dict, by_slug: dict) -> str:
           <div>
             <div class="sf-h">Work with me</div>
             <ul>
+              <li><a href="/15minutepipelineteardown/">20 Minute Teardown</a></li>
               <li><a href="/gtm-autopsy/">The Autopsy</a></li>
               <li><a href="/gtm-consulting.html">The Engagement</a></li>
               <li><a href="/pricing/">Pricing</a></li>
@@ -553,7 +554,7 @@ def page_html(post: dict, by_slug: dict) -> str:
           <div>
             <div class="sf-h">Talk</div>
             <ul>
-              <li><a href="{calendly_href(slug, "footer")}"{cta_attrs("outside_audit", "footer", post["topic"])}>Book your free 40-Point Outside Audit</a></li>
+              <li><a href="{calendly_href(slug, "footer")}"{cta_attrs("outside_audit", "footer", post["topic"])}>Book the 20 Minute Teardown</a></li>
               <li><a href="/contact.html">Contact</a></li>
               <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
             </ul>
@@ -654,6 +655,7 @@ def update_sitemap(posts: list[dict]) -> None:
             f"{SITE}/audit.html",
             f"{SITE}/gtm-autopsy/",
             f"{SITE}/outside-audit/",
+            f"{SITE}/15minutepipelineteardown/",
         }:
             continue
         kept.append(block)
@@ -668,7 +670,7 @@ def update_sitemap(posts: list[dict]) -> None:
         )
     extra_blocks = [
         sitemap_url(f"{SITE}/gtm-autopsy/", "2026-11-02", "monthly", "0.9"),
-        sitemap_url(f"{SITE}/outside-audit/", "2026-11-02", "monthly", "0.8"),
+        sitemap_url(f"{SITE}/15minutepipelineteardown/", "2026-11-14", "monthly", "0.8"),
         sitemap_url(f"{SITE}/about/", PUBLISHED_STAMP, "monthly", "0.6"),
         sitemap_url(f"{SITE}/faq/", PUBLISHED_STAMP, "monthly", "0.6"),
         sitemap_url(f"{SITE}/videos/", PUBLISHED_STAMP, "monthly", "0.5"),

@@ -17,7 +17,7 @@ related:
 - reset-expectations-longer-sales-cycles
 also:
 - href: https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=stop-hunting-commissions&utm_content=related_box
-  label: Book your free 40-Point Outside Audit
+  label: Book the 20 Minute Teardown
 excerpt: When reps chase the commission instead of the client's outcome, buyers can tell. Here's how revenue leaders refocus a team on solving the problem.
 takeaways:
 - The commission is the byproduct of doing the job well. It isn't the job.
@@ -74,6 +74,6 @@ A rep chasing the commission shows the exciting numbers first. A rep solving the
 
 Pick your five biggest open deals. For each one, ask the rep two questions: what outcome is the client buying, and have we confirmed we can deliver it? If the answers are vague, those are your forecast risks.
 
-If you want a structured way to check the rest, the [100-Point GTM Framework](/resources/100-point-gtm-framework.html) lists every point I score, free to download. When you need experienced sales leadership without a full-time hire, [here's how I work](/outside-audit/).
+If you want a structured way to check the rest, the [100-Point GTM Framework](/resources/100-point-gtm-framework.html) lists every point I score, free to download. When you need experienced sales leadership without a full-time hire, [here's how I work](/15minutepipelineteardown/).
 
-**Not sure what your team is really optimizing for?** Start with the free 40-Point Outside Audit. I score the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book your free 40-Point Outside Audit](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=stop-hunting-commissions&utm_content=inbody_text).
+**Not sure what your team is really optimizing for?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=stop-hunting-commissions&utm_content=inbody_text).
