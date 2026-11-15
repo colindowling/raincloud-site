@@ -61,4 +61,4 @@ That work is part of the [100-Point GTM Autopsy](/gtm-autopsy/). The fees and th
 
 Pull ten open deals. Ask, for each one, what happened last, what happens next, and on what date. The ones with no date are not forecast. They are inventory.
 
-If you want that read from the outside first, start with the [free sales pipeline audit](/teardown/): the Outside-In GTM Teardown.
+If you want that read from the outside first, book the [20 Minute Teardown](/15minutepipelineteardown/).

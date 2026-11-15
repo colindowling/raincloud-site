@@ -19,7 +19,7 @@ related:
 also:
 - href: /blog/define-icp-stop-selling-features.html
   label: Define an ICP you can sell to
-- href: /teardown/
+- href: /15minutepipelineteardown/
   label: 20 Minute Teardown
 takeaways:
 - The technical buyer can throw the job out because the scope is wrong.
@@ -66,4 +66,4 @@ If the note is a list of your services, the meeting was a presentation.
 
 ## Where do you start if these deals keep stalling?
 
-The [20 Minute Teardown](/teardown/). If you want it scored against your pipeline, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/).
+The [20 Minute Teardown](/15minutepipelineteardown/). If you want it scored against your pipeline, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/).

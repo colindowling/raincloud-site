@@ -62,4 +62,4 @@ Then the motion is still in your head, and a wider search will not type it up fo
 
 ## Where do you start?
 
-The [20 Minute Teardown](/teardown/). If the sentence is missing, that is what the conversation will show. The [100-Point GTM Autopsy](/gtm-autopsy/) is the paid score, if you want it.
+The [20 Minute Teardown](/15minutepipelineteardown/). If the sentence is missing, that is what the conversation will show. The [100-Point GTM Autopsy](/gtm-autopsy/) is the paid score, if you want it.

@@ -66,7 +66,7 @@
           "name": "When do most GTM builds fail?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The build is rarely the hard part. The quarter after handoff is where go-to-market systems quietly fall apart, and the failure is predictable enough to design against. Ninety days later the sequences have been edited into something unrecognisable, channels have gone quiet, nobody is running the weekly review, and the founder is back to doing sales personally."
+            "text": "The build is rarely the hard part. The quarter after handoff is where go-to-market systems quietly fall apart, and the failure is predictable enough to design against. Ninety days later the sequences have been edited into something unrecognisable, two of the four channels are dormant, nobody is running the weekly review, and the founder is back to doing sales personally."
           }
         },
         {
@@ -79,10 +79,10 @@
         },
         {
           "@type": "Question",
-          "name": "Why does RAINCLOUD keep running the system?",
+          "name": "Why is the engagement 90 days of building and then advisory?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "If the failure reliably happens after handoff, then an engagement that ends at handoff is structured to fail. RAINCLOUD builds the system in the first month and then runs it, six months from go-live. If the agreed day-90 pipeline target is missed, it keeps running at no charge until the target is hit."
+            "text": "If the failure reliably happens after handoff, then an engagement that ends at handoff is structured to fail. This is why the RAINCLOUD engagement is 90 days of building followed by 90 days of advisory rather than a longer build. The second half is not padding, and it is not support. It exists specifically to survive those four failures."
           }
         },
         {
@@ -136,9 +136,50 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="/done-for-you-gtm/">The offer</a></li>
-      <li><a href="/#proof">Proof</a></li>
-      <li><a href="/pricing/">Pricing</a></li>
+      <li class="has-dropdown">
+        <button type="button" class="nav-parent" aria-expanded="false" aria-haspopup="true" aria-controls="nav-menu-autopsy">
+          <span class="nav-parent-label">The Autopsy</span>
+          <svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="dropdown" id="nav-menu-autopsy">
+          <li><a href="/gtm-autopsy/">The Autopsy</a></li>
+          <li><a href="/15minutepipelineteardown/">20 Minute Teardown</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <button type="button" class="nav-parent" aria-expanded="false" aria-haspopup="true" aria-controls="nav-menu-engagement">
+          <span class="nav-parent-label">The Engagement</span>
+          <svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="dropdown" id="nav-menu-engagement">
+          <li><a href="/gtm-consulting.html">The Engagement</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <button type="button" class="nav-parent" aria-expanded="false" aria-haspopup="true" aria-controls="nav-menu-problems">
+          <span class="nav-parent-label">Problems</span>
+          <svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="dropdown" id="nav-menu-problems">
+          <li><a href="/problems/outbound-not-landing/">Outbound not landing</a></li>
+          <li><a href="/problems/pipeline-not-growing/">Pipeline not growing</a></li>
+          <li><a href="/problems/first-sales-hire/">First sales hire</a></li>
+          <li><a href="/problems/founder-led-sales-trap/">Founder-led sales</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown is-ancestor">
+        <button type="button" class="nav-parent" aria-expanded="false" aria-haspopup="true" aria-controls="nav-menu-insights">
+          <span class="nav-parent-label">Insights</span>
+          <svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="dropdown" id="nav-menu-insights">
+          <li><a href="/blog/" aria-current="page">Articles</a></li>
+          <li><a href="/videos/">Videos</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+        </ul>
+      </li>
+      <li><a href="/about/">About</a></li>
       <li class="nav-cta-item"><a href="https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=why-gtm-builds-fail&amp;utm_content=nav" class="nav-cta" data-track="outside_audit" data-cta="nav" data-cta-id="outside_audit-nav" data-cta-position="nav" data-cluster="build" data-persona="">Book the 20 Minute Teardown</a></li>
     </ul>
   </div>
@@ -194,9 +235,9 @@
       <blockquote>The most valuable thing an experienced operator does in the quarter after launch is stop people changing things for the wrong reasons.</blockquote>
 
       <div class="post-cta" data-cta-block="inbody">
-        <h3>The build comes after the 100-Point GTM Autopsy.</h3>
-        <p>The Autopsy is the build specification. RAINCLOUD then builds the system on your CRM for $25,000, which is $20,000 after the audit credit. From go-live, RAINCLOUD runs it at $10,000 a month, six-month minimum. It starts with the 20 Minute Teardown.</p>
-        <p class="post-cta-meta">$5,000 autopsy, credited against the $25,000 build, then $10,000 a month.</p>
+        <h3>The 90-day fix comes after the 100-Point GTM Autopsy.</h3>
+        <p>The 100-Point GTM Autopsy tells you what’s broken and in what order. The engagement builds it — ICP, positioning, the pipeline model, outbound, the scorecard in your CRM and the playbook — in your tools, with the people who will run it after I’m gone. $37,500 over 90 days, then $7,500 a month. It starts with the 20 Minute Teardown.</p>
+        <p class="post-cta-meta">$15,000, then $12,500, then $10,000.</p>
         <a href="https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=why-gtm-builds-fail&amp;utm_content=inbody" class="btn btn--primary" data-track="outside_audit" data-cta="inbody" data-cta-id="outside_audit-inbody" data-cta-position="inbody" data-cluster="build" data-persona="">
           <span>Book the 20 Minute Teardown</span>
           <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -224,13 +265,13 @@
 
       <p>If the failure reliably happens after handoff, then an engagement that ends at handoff is structured to fail. It is optimised for delivering a build rather than for the outcome the client actually wanted, which was a working motion six months later.</p>
 
-      <p>This is why RAINCLOUD does not hand the system back. The build is the first month. From go-live, RAINCLOUD runs it: mass email, bottom-of-funnel content, and signal outbound, plus a governance layer and a learnings layer. The minimum is six months from go-live. If the agreed day-90 pipeline target is missed, RAINCLOUD keeps running the system at no charge until it is hit. The target is qualified opportunities created, with qualified defined in the client's own words and set jointly by day 30.</p>
+      <p>This is why I structure the RAINCLOUD engagement as 90 days of building followed by 90 days of advisory rather than a longer build. The second half is not padding, and it is not support. It exists specifically to survive the four failures above:</p>
 
       <ul>
-        <li><strong>There is still an owner after launch.</strong> RAINCLOUD runs the system. It does not distribute the work across three teams and leave.</li>
-        <li><strong>The first bad month happens with the operator still in the work</strong>, able to tell normal variance from a real problem, and with the standing to say "change nothing this week."</li>
-        <li><strong>The weekly practice is the operating cadence</strong>, not an instruction left in a handover document.</li>
-        <li><strong>The founder is not the backup plan.</strong> A soft month does not have to pull the founder back into every deal.</li>
+        <li><strong>Ownership is transferred deliberately</strong>, to a named person, while there is still someone around to notice it has not really happened.</li>
+        <li><strong>The first bad month happens with an experienced operator in the room</strong> &mdash; someone who can tell the difference between normal variance and a real problem, and who has the standing to say "change nothing this week."</li>
+        <li><strong>The weekly practice gets rehearsed enough times to become habit</strong> rather than remaining an instruction in a document.</li>
+        <li><strong>Somebody is there to tell the founder to keep their hands off the wheel</strong>, which is a job that requires having done it, and having been wrong about it.</li>
       </ul>
 
       <h2>How to evaluate anyone who wants to rebuild your go-to-market</h2>
@@ -251,15 +292,15 @@
         <h2>Questions this post answers</h2>
         <div class="faq-item">
           <h3>When do most GTM builds fail?</h3>
-          <p>The build is rarely the hard part. The quarter after handoff is where go-to-market systems quietly fall apart, and the failure is predictable enough to design against. Ninety days later the sequences have been edited into something unrecognisable, channels have gone quiet, nobody is running the weekly review, and the founder is back to doing sales personally.</p>
+          <p>The build is rarely the hard part. The quarter after handoff is where go-to-market systems quietly fall apart, and the failure is predictable enough to design against. Ninety days later the sequences have been edited into something unrecognisable, two of the four channels are dormant, nobody is running the weekly review, and the founder is back to doing sales personally.</p>
         </div>
         <div class="faq-item">
           <h3>What are the four failures after handoff?</h3>
           <p>The system has no owner. The first bad month triggers a rewrite. The tooling survives and the process does not. The founder takes the wheel back. Systems with no owner do not fail loudly. They degrade. By the end of the quarter the motion has been modified so many times that nobody can tell what caused what.</p>
         </div>
         <div class="faq-item">
-          <h3>Why does RAINCLOUD keep running the system?</h3>
-          <p>If the failure reliably happens after handoff, then an engagement that ends at handoff is structured to fail. RAINCLOUD builds the system in the first month and then runs it, six months from go-live. If the agreed day-90 pipeline target is missed, it keeps running at no charge until the target is hit.</p>
+          <h3>Why is the engagement 90 days of building and then advisory?</h3>
+          <p>If the failure reliably happens after handoff, then an engagement that ends at handoff is structured to fail. This is why the RAINCLOUD engagement is 90 days of building followed by 90 days of advisory rather than a longer build. The second half is not padding, and it is not support. It exists specifically to survive those four failures.</p>
         </div>
         <div class="faq-item">
           <h3>What should you ask anyone who wants to rebuild your go-to-market?</h3>
@@ -267,9 +308,9 @@
         </div>
       </section>
       <div class="post-cta" data-cta-block="post_end">
-        <h3>The build comes after the 100-Point GTM Autopsy.</h3>
-        <p>The Autopsy is the build specification. RAINCLOUD then builds the system on your CRM for $25,000, which is $20,000 after the audit credit. From go-live, RAINCLOUD runs it at $10,000 a month, six-month minimum. It starts with the 20 Minute Teardown.</p>
-        <p class="post-cta-meta">$5,000 autopsy, credited against the $25,000 build, then $10,000 a month.</p>
+        <h3>The 90-day fix comes after the 100-Point GTM Autopsy.</h3>
+        <p>The 100-Point GTM Autopsy tells you what’s broken and in what order. The engagement builds it — ICP, positioning, the pipeline model, outbound, the scorecard in your CRM and the playbook — in your tools, with the people who will run it after I’m gone. $37,500 over 90 days, then $7,500 a month. It starts with the 20 Minute Teardown.</p>
+        <p class="post-cta-meta">$15,000, then $12,500, then $10,000.</p>
         <a href="https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=why-gtm-builds-fail&amp;utm_content=post_end" class="btn btn--primary" data-track="outside_audit" data-cta="post_end" data-cta-id="outside_audit-post_end" data-cta-position="post_end" data-cluster="build" data-persona="">
           <span>Book the 20 Minute Teardown</span>
           <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -279,8 +320,8 @@
       <aside class="post-related" aria-label="Related">
         <div class="label">On this topic</div>
         <ul>
-        <li><a href="/done-for-you-gtm/">The program</a></li>
-        <li><a href="/blog/outbound-reply-rates-2026.html">2026 Cold Email Reply Rates: What the Data Shows</a></li>
+        <li><a href="/gtm-consulting.html">The Engagement</a></li>
+        <li><a href="/blog/outbound-reply-rates-2026.html">Your Outbound Didn&#x27;t Stop Working. The Infrastructure Changed.</a></li>
         <li><a href="/blog/bofu-content-that-moves-deals.html">The Only Content That Moves a Live Deal</a></li>
         <li><a href="/problems/founder-led-sales-trap/">Founder-led sales trap</a></li>
         <li><a href="/problems/first-sales-hire/">First sales hire timing</a></li>
@@ -297,15 +338,16 @@
       <div class="sf-top">
         <div>
           <div class="sf-logo">RAIN<em>CLOUD</em></div>
-          <p class="sf-tag">RAINCLOUD builds and runs a full-funnel demand system on your CRM. Autopsy $5,000, build $25,000, then $10,000 a month. Run by Colin Dowling.</p>
+          <p class="sf-tag">One engagement: a 100-point GTM autopsy, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
+          <p class="sf-also">Also from Colin Dowling: <a href="https://www.withants.com/" target="_blank" rel="noopener">Ants</a> (managed AI agents), <a href="https://www.friendlyghostwriter.com/" target="_blank" rel="noopener">Ghostwriter</a> (B2B content), The AI Ready Advisor (executive AI strategy).</p>
         </div>
         <div class="sf-cols">
           <div>
             <div class="sf-h">Work with me</div>
             <ul>
-              <li><a href="/teardown/">20 Minute Teardown</a></li>
+              <li><a href="/15minutepipelineteardown/">20 Minute Teardown</a></li>
               <li><a href="/gtm-autopsy/">The Autopsy</a></li>
-              <li><a href="/done-for-you-gtm/">The program</a></li>
+              <li><a href="/gtm-consulting.html">The Engagement</a></li>
               <li><a href="/pricing/">Pricing</a></li>
             </ul>
           </div>
@@ -314,6 +356,7 @@
             <ul>
               <li><a href="/blog/">Articles</a></li>
               <li><a href="/faq/">FAQ</a></li>
+              <li><a href="/videos/">Videos</a></li>
               <li><a href="/about/">About</a></li>
               <li><a href="/resources/100-point-gtm-framework.html">The 100-Point GTM Framework</a></li>
               <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
@@ -325,7 +368,6 @@
             <ul>
               <li><a href="https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=why-gtm-builds-fail&amp;utm_content=footer" data-track="outside_audit" data-cta="footer" data-cta-id="outside_audit-footer" data-cta-position="footer" data-cluster="build" data-persona="">Book the 20 Minute Teardown</a></li>
               <li><a href="/contact.html">Contact</a></li>
-              <li><a href="/trust/">Data handling &amp; security</a></li>
               <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
             </ul>
           </div>

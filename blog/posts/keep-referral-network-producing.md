@@ -10,7 +10,7 @@ tag: Referrals
 topic: build
 excerpt: A referral network is a pipeline. Leave it alone and it fades. Work a short list and it keeps sending.
 sort: 2
-hub: /done-for-you-gtm/
+hub: /gtm-consulting.html
 hub_label: The engagement
 related:
 - how-to-get-out-of-founder-led-sales
@@ -51,10 +51,10 @@ Tell them, in one or two sentences, who you help and what situation should make 
 
 Close the loop. Thank them. Tell them what happened, including when it did not become a deal. Then look for a way to return the introduction. Partners who hear back keep sending.
 
-Put an owner on it. Referrals that sit outside the motion get forgotten the week the quarter gets loud. Inside the motion, they are a source with a rhythm, the same way outbound is. Put the source on a cadence the team already keeps.
+Put an owner on it. Referrals that sit outside the motion get forgotten the week the quarter gets loud. Inside the motion, they are a source with a rhythm, the same way outbound is. That is part of what the [90-day engagement](/gtm-consulting.html) installs, after you know the motion is worth installing.
 
 ## How does this sit next to outbound?
 
 Outbound pointed at strangers and referrals pointed at people who already trust someone are different tools. If cold outreach is noisy, read [why outbound is not working](/blog/why-is-our-outbound-not-working.html) before you add another sequence. The diagnosis that covers both is the [100-Point GTM Autopsy](/gtm-autopsy/). Fees are on [the pricing page](/pricing/).
 
-The free start is the [20 Minute Teardown](/teardown/).
+The free start is the [20 Minute Teardown](/15minutepipelineteardown/).
