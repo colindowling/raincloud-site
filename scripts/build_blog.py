@@ -33,7 +33,7 @@ ABOUT_DIR = ROOT / "about"
 
 SITE = "https://rncld.com"
 PUBLISHED_STAMP = "2026-10-31"
-OG_IMAGE = f"{SITE}/assets/band-boardroom.png"
+OG_IMAGE = f"{SITE}/assets/og-rncld.png"
 
 CALENDLY = "https://calendly.com/30minutechat/20-minute-go-to-market-w-colin"
 AUTOPSY_PATH = "/gtm-autopsy/"
