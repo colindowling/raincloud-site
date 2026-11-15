@@ -43,7 +43,7 @@ The teardown is the free 40-point Outside-In Teardown. It is the 40 points of th
 
 The autopsy scores all 100 points against your CRM, pass, partial, or fail. You get the findings ranked by revenue impact, and the ten highest-impact gaps up front. The report is the build specification. The $5,000 is credited in full against the build. There is no cash refund. [The autopsy page](/gtm-autopsy/) is the scope. [Pricing](/pricing/) is the schedule.
 
-The build invoice is $20,000 after that credit. Days 0 to 30 cover access, domains and mailboxes, warmup, the TAM, CRM mapping, the content plan, and the first sequences. From go-live, RAINCLOUD runs the system for a six-month minimum, billed quarterly in advance. Infrastructure is included. The first seven months, audit through the minimum, are $85,000.
+The build invoice is $20,000 after that credit. The 30 business days to go-live cover access, domains and mailboxes, warmup, the TAM, CRM mapping, the content plan, and the first sequences. From go-live, RAINCLOUD runs the system for a six-month minimum, billed quarterly in advance. Infrastructure is included. The first seven months, audit through the minimum, are $85,000.
 
 ## What is not included in the price?
 
