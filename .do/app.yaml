@@ -155,7 +155,7 @@ ingress:
       path:
         prefix: /demand-generation.html
     redirect:
-      uri: /gtm-consulting.html
+      uri: /done-for-you-gtm/
       redirect_code: 301
   - match:
       path:

@@ -19,8 +19,8 @@ related:
 also:
 - href: /fractional-sales-leader/
   label: Fractional sales leader
-- href: /gtm-consulting.html
-  label: The system
+- href: /done-for-you-gtm/
+  label: The program
 takeaways:
 - The founder being the best seller is the trap, not the compliment.
 - Write who you sell to, what a good deal is, and the story, before the hire.

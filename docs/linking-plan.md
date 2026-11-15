@@ -19,7 +19,7 @@ Spokes:
 
 ## 2. Build it, then run it
 
-Pillar: [/gtm-consulting.html](/gtm-consulting.html) — the build is $25,000, then RAINCLOUD runs the system at $10,000 a month.
+Pillar: [/done-for-you-gtm/](/done-for-you-gtm/) — the build is $25,000, then RAINCLOUD runs the system at $10,000 a month.
 
 Spokes:
 
