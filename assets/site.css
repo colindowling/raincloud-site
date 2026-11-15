@@ -443,26 +443,6 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       .del-card { position: relative; top: 0 !important; grid-template-columns: 1fr; min-height: auto; }
       .image-band { height: 200px; }
     }
-    /* Monthly advisory downshift */
-    .advisory-note {
-      margin-top: 1px; background: var(--bg-primary);
-      border-left: 2px solid var(--accent-blue);
-      padding: clamp(28px, 3.5vw, 40px) clamp(24px, 3vw, 44px);
-      max-width: 780px;
-    }
-    .advisory-note .advisory-label {
-      font-family: var(--font-heading); font-size: 0.62rem; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--accent-blue); margin-bottom: 14px;
-    }
-    .advisory-note h3 { font-size: 1.15rem; font-weight: 500; margin-bottom: 14px; }
-    .advisory-note p { font-size: 0.88rem; line-height: 1.75; color: var(--text-secondary); }
-    .advisory-note p + p { margin-top: 14px; }
-    .advisory-note .advisory-scope { color: var(--text-tertiary); font-size: 0.82rem; }
-    .advisory-note .advisory-link {
-      display: inline-block; margin-top: 22px; font-size: 0.78rem; letter-spacing: 0.02em;
-      color: var(--text-primary); border-bottom: 1px solid var(--border-medium); padding-bottom: 2px;
-    }
-    .advisory-note .advisory-link:hover { color: var(--accent-blue); border-color: var(--accent-blue); }
 
     /* Pricing tiers */
     .tier-intro { margin-top: clamp(52px, 8vh, 88px); max-width: 720px; }
