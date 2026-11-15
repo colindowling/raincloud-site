@@ -72,6 +72,8 @@ def strip_added(chunk: str) -> str:
 
 
 def check_links(path: Path, text: str) -> None:
+    # Hidden placeholder slots live in HTML comments until their assets exist.
+    text = re.sub(r"<!--.*?-->", " ", text, flags=re.S)
     for match in re.finditer(r'''(?:href|src)\s*=\s*["']([^"']+)["']''', text):
         url = html.unescape(match.group(1)).strip()
         if not url or url.startswith(("mailto:", "http://", "https://", "data:", "tel:", "#", "javascript:")):
@@ -236,34 +238,20 @@ def check_nav(path: Path, text: str) -> None:
         fail(f"{path.relative_to(ROOT)}: shared nav assets are not linked")
     if 'class="nav-cta"' not in nav:
         fail(f"{path.relative_to(ROOT)}: nav CTA is missing")
-    required = [
-        "/gtm-autopsy/",
-        "/teardown/",
-        "/done-for-you-gtm/",
-        "/gtm-consulting.html",
-        "/pricing/",
-        "/problems/outbound-not-landing/",
-        "/problems/pipeline-not-growing/",
-        "/problems/first-sales-hire/",
-        "/problems/founder-led-sales-trap/",
-        "/blog/",
-        "/faq/",
-        "/about/",
-    ]
+    # Four items only (Nov 2026): the offer, proof, pricing, and the booking CTA. No groups, no sub-menus.
+    required = ["/done-for-you-gtm/", "/#proof", "/pricing/"]
     for href in required:
         if f'href="{href}"' not in nav:
             fail(f"{path.relative_to(ROOT)}: nav is missing {href}")
-    if 'href="/videos/"' in nav or "href='/videos/'" in nav:
-        fail(f"{path.relative_to(ROOT)}: Videos link should not be in the nav")
-    for banned in ("/ai-agents", "/bofu-content", "/demand-generation", "/content.html", "/audit.html", "/outside-audit/"):
+    items = re.findall(r'<li\b', nav)
+    if len(items) != 4:
+        fail(f"{path.relative_to(ROOT)}: expected 4 nav items, found {len(items)}")
+    if "has-dropdown" in nav or 'class="dropdown"' in nav:
+        fail(f"{path.relative_to(ROOT)}: nav should have no sub-menus")
+    # Problems pages stay live as unlisted landing pages, reached from outbound and search.
+    for banned in ("/problems/", "/videos/", "/ai-agents", "/bofu-content", "/demand-generation", "/content.html", "/audit.html", "/outside-audit/"):
         if banned in nav:
             fail(f"{path.relative_to(ROOT)}: unlisted page {banned} is in the nav")
-    # Five top-level destinations: four groups plus About. The CTA is not one of them.
-    groups = len(re.findall(r'<li class="has-dropdown(?: is-ancestor)?">', nav))
-    if groups != 4:
-        fail(f"{path.relative_to(ROOT)}: expected 4 nav groups, found {groups}")
-    if not re.search(r'<li><a\b[^>]*href="/about/"', nav):
-        fail(f"{path.relative_to(ROOT)}: About is not a top-level nav item")
 
 
 def check_tracking(path: Path, text: str) -> None:

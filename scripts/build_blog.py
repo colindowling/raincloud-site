@@ -532,7 +532,6 @@ def page_html(post: dict, by_slug: dict) -> str:
         <div>
           <div class="sf-logo">RAIN<em>CLOUD</em></div>
           <p class="sf-tag">RAINCLOUD builds and runs a full-funnel demand system on your CRM. Autopsy $5,000, build $25,000, then $10,000 a month. Run by Colin Dowling.</p>
-          <p class="sf-also">Also from Colin Dowling: <a href="https://www.withants.com/" target="_blank" rel="noopener">Ants</a> (managed AI agents), <a href="https://www.friendlyghostwriter.com/" target="_blank" rel="noopener">Ghostwriter</a> (B2B content), The AI Ready Advisor (executive AI strategy).</p>
         </div>
         <div class="sf-cols">
           <div>
@@ -560,6 +559,7 @@ def page_html(post: dict, by_slug: dict) -> str:
             <ul>
               <li><a href="{calendly_href(slug, "footer")}"{cta_attrs("outside_audit", "footer", post["topic"])}>Book the 20 Minute Teardown</a></li>
               <li><a href="/contact.html">Contact</a></li>
+              <li><a href="/trust/">Data handling &amp; security</a></li>
               <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
             </ul>
           </div>
