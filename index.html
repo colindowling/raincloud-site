@@ -680,11 +680,6 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
   /* Nov 2026 layout additions */
     .hero-sub strong{color:var(--text-primary);font-weight:500}
     .proof-bar .proofs.proofs--3{grid-template-columns:repeat(3,1fr)}
-    .client-quote{display:flex;gap:28px;align-items:center;margin:0 0 clamp(36px,5vh,56px);padding-bottom:clamp(28px,4vh,44px);border-bottom:1px solid var(--border-subtle)}
-    .client-quote .cq-photo{width:96px;height:96px;border-radius:50%;object-fit:cover;flex:none;filter:grayscale(100%)}
-    .client-quote blockquote{font-family:var(--font-heading);font-weight:200;font-style:italic;font-size:clamp(1.2rem,2.2vw,1.7rem);line-height:1.4;color:var(--text-primary)}
-    .client-quote figcaption{margin-top:12px;font-size:.8rem;color:var(--text-tertiary)}
-    .client-quote figcaption strong{color:var(--text-secondary);font-weight:500}
     .machine-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,36px)}
     .machine-shot{margin:0;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:6px;overflow:hidden}
     .machine-shot a{display:block;cursor:zoom-in}.machine-shot img{display:block;width:100%;height:auto;border-bottom:1px solid var(--border-subtle)}
@@ -732,7 +727,6 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     @media (max-width: 700px){
       .machine-grid,.dont-grid{grid-template-columns:1fr}
       .offramp{flex-direction:column;align-items:flex-start}
-      .client-quote{flex-direction:column;align-items:flex-start}
     }
   @media (max-width: 700px){
       .cmp-wrap{overflow:visible;border:0}
@@ -746,6 +740,13 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       .cmp tbody tr:last-child td{border-bottom:1px solid var(--border-subtle)}
       .cmp tbody tr td:last-child{border-bottom:0}
     }
+      .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;column-gap:clamp(40px,5vw,80px);align-items:center}.hero-grid .hero-main{grid-column:1;grid-row:1}.hero-grid .client-quote{grid-column:2;grid-row:1}.hero-grid .hero-stats{grid-column:1 / -1;grid-row:2}
+    .client-quote{margin:0;padding:28px 28px 26px;background:var(--bg-card);border:1px solid var(--border-medium);border-radius:6px;opacity:0;animation:fadeUp .7s var(--ease-out) .7s forwards}
+    .client-quote .cq-photo{display:block;position:relative;width:72px;height:72px;border-radius:50%;overflow:hidden;margin-bottom:20px;background:#222}.client-quote .cq-photo img{position:absolute;width:180%;height:180%;max-width:none;left:-38%;top:-6%;filter:grayscale(100%)}
+    .client-quote blockquote{font-family:var(--font-heading);font-weight:300;font-style:italic;font-size:1.12rem;line-height:1.55;color:var(--text-primary)}
+    .client-quote figcaption{margin-top:18px;font-size:.8rem;line-height:1.5;color:var(--text-tertiary)}
+    .client-quote figcaption strong{display:block;color:var(--text-secondary);font-weight:500;font-size:.86rem}
+    @media (max-width:1100px){.hero-grid{grid-template-columns:1fr}.hero-grid .client-quote{grid-column:1;grid-row:2;margin-top:44px}.hero-grid .hero-stats{grid-row:3}.client-quote{max-width:560px;display:grid;grid-template-columns:64px 1fr;column-gap:18px}.client-quote .cq-photo{width:64px;height:64px;margin:0;grid-row:1 / 3}.client-quote figcaption{grid-column:2}}
   </style>
   <script src="/assets/track.js" defer></script>
   <link rel="stylesheet" href="/assets/site-nav.css">
@@ -771,7 +772,8 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container">
+    <div class="container hero-grid">
+      <div class="hero-main">
       <h1>
         <span class="line1">Your go-to-market isn&rsquo;t compounding.</span><br>
         <span class="line2 thin typing">I show you EXACTLY why, then I fix it.</span>
@@ -782,6 +784,12 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <a href="https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=home&amp;utm_content=hero" class="btn btn--primary" target="_blank" rel="noopener" data-cta="hero" data-track="book_call" data-cta-id="book_call-hero" data-cta-position="hero" data-cluster="offer" data-persona=""><span>Book the 20 Minute Teardown</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         <a href="/resources/100-point-gtm-framework.html" class="hero-sec" data-track="framework" data-cta-id="framework-hero" data-cta-position="hero">Download the 100 points</a>
       </div>
+      </div>
+      <figure class="client-quote" aria-label="Client testimonial">
+        <span class="cq-photo"><img src="/assets/client-agentpress-andy-walters.svg" alt="Andy Walters, Founder and CEO of AgentPress" width="400" height="400"></span>
+        <blockquote>&ldquo;The real secret sauce has been hiring Colin Dowling and RAINCLOUD, who helped us go from 7 meetings a month to more than 25 in a single month.&rdquo;</blockquote>
+        <figcaption><strong>Andy Walters</strong>Founder + CEO, AgentPress</figcaption>
+      </figure>
       <div class="hero-stats">
         <div class="hero-stat"><div class="num sm">One operator does the work</div></div>
         <div class="hero-stat"><div class="num sm">100 points, five business days from access</div></div>
@@ -792,19 +800,8 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
 
   <section class="proof-bar" id="proof">
     <div class="container">
-      <!-- CLIENT QUOTE SLOT (hidden until real assets arrive).
-           Needs: AgentPress client quote, headshot photo, name, title, and written permission to publish.
-           To publish: save the headshot as /assets/client-agentpress.jpg, fill the four fields, and remove this comment wrapper.
-      <figure class="client-quote reveal">
-        <img class="cq-photo" src="/assets/client-agentpress.jpg" alt="[NAME], [TITLE], AgentPress" width="96" height="96" loading="lazy">
-        <div>
-          <blockquote>&ldquo;[APPROVED QUOTE]&rdquo;</blockquote>
-          <figcaption><strong>[NAME]</strong> &middot; [TITLE], AgentPress</figcaption>
-        </div>
-      </figure>
-      -->
       <div class="proofs proofs--3">
-        <div class="proof reveal"><div class="co">AgentPress</div><div class="rs"><b>7 to 25</b> qualified meetings a month in 45 days.</div></div>
+        <div class="proof reveal"><div class="co">AgentPress</div><div class="rs"><b>7 to 25+</b> meetings a month.</div></div>
         <div class="proof reveal"><div class="co">1905 New Media</div><div class="rs">Digital services from <b>$4M to $11M</b> over two years.</div></div>
         <div class="proof reveal"><div class="co">Capacity</div><div class="rs"><b>Four clients</b> at a time. A fifth waits.</div></div>
       </div>
@@ -926,7 +923,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
           <p>I built RAINCLOUD because the market didn&rsquo;t need another agency or another SaaS tool. It needed a practitioner who could diagnose the motion, build the pipeline on the client&rsquo;s CRM, and run it, personally.</p>
           <p>This is that. When you hire RAINCLOUD, you get me. I score the Autopsy, design the Build and run the system. There is no account manager in between and no pooled team behind me, which is why it is four clients at a time.</p>
           <blockquote class="founder-quote">&ldquo;Most operators and revenue leaders know their GTM is broken. They just don&rsquo;t know in what order to fix it. That&rsquo;s the audit.&rdquo;</blockquote>
-          <div class="founder-results"><p><strong>AgentPress</strong> &mdash; 7 to 25 qualified meetings a month in 45 days.</p><p><strong>1905 New Media</strong> &mdash; digital services from $4M to $11M over two years.</p></div>
+          <div class="founder-results"><p><strong>AgentPress</strong> &mdash; 7 to 25+ meetings a month.</p><p><strong>1905 New Media</strong> &mdash; digital services from $4M to $11M over two years.</p></div>
           <div class="creds">
             <span class="cred">VP Enterprise Sales &mdash; GoDaddy (NYSE: GDDY)</span>
             <span class="cred">SVP Revenue &mdash; Alembic (Seed &rarr; $145M Series B)</span>
