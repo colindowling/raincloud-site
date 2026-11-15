@@ -1,51 +1,69 @@
 # RAINCLOUD
 
-> RAINCLOUD is GTM diagnosis and repair for B2B companies between $50M and $200M. Colin Dowling scores the motion, rebuilds it in 90 days on a fee that steps down, then stays on as the team runs it.
+> RAINCLOUD — a standing hour with an operator who has built the motion. Six clients at a time. Colin Dowling. I won't run your go-to-market for you. I'll teach you exactly what to do (then make sure you run it right).
 
-RAINCLOUD is run by Colin Dowling: 3x VP of Sales · 2x founder · Host, Modern Business Life. VP Global Enterprise Sales at GoDaddy, SVP Revenue at Alembic (Seed to $145M Series B), VP Channel Sales at Liquid Web, Enterprise Sales Director at WP Engine. Colin runs every engagement personally. There is no delivery team, no junior analyst, and no offshore bench. Two builds at a time, with a small number of advisory clients alongside them.
+RAINCLOUD is Colin Dowling. VP Enterprise Sales at GoDaddy. SVP Revenue at Alembic, from seed through a $145M Series B. VP Channel Sales at Liquid Web. Enterprise Sales Director at WP Engine. Three times a VP of Sales, twice a founder. Host of Modern Business Life. Based in Dallas–Fort Worth.
 
-## The offer ladder
+A standing hour every week with someone who has held the VP Sales seat three times and built the motion you're building now. I score your go-to-market against 100 dimensions, we work the gaps in the order that matters, and everything we build is yours.
 
-1. The 20 Minute Teardown. Free. It covers roughly 40 of the 100-Point GTM Autopsy's 100 points: the ones that can be scored from outside the company, from public sources alone. No mystery shop. Book it at https://rncld.com/15minutepipelineteardown/ or https://calendly.com/30minutechat/20-minute-go-to-market-w-colin
-2. The 100-Point GTM Autopsy. $5,000, 10 business days. All 100 points across ten sections, each scored met or not met (one point each, 100 total), against the client's CRM data and four to six interviews; a signed baseline; every finding, ranked by what it costs in pipeline, each quantified; the fix sequence; a one-page business case; a 45-minute readout. Required before any engagement. Credited in full toward any engagement. No-questions-asked money-back guarantee.
-3. The 90-Day GTM Fix. $37,500, billed $15,000 (month 1, diagnose and rebuild), $12,500 (month 2, install), $10,000 (month 3, prove and hand off). The outbound architecture installed in month 2 uses four components: Hunter, Harvester, Farmer and Shepherd.
-4. Ongoing. Advisory at $7,500 per month from month four (monthly operating review, monthly work session, weekly office hours, quarterly re-score of all 100 points). Or the GTM Scorecard at $4,000 per month, billed quarterly: measurement and direction only, available from month seven or directly after a 100-Point GTM Autopsy.
+## The method
 
-The 100-Point GTM Framework is free. It is the full scoring list, not a separate paid step. Reading the list is free. The score is the 100-Point GTM Autopsy.
+Score it. Work it. Re-score it.
 
-Terms: six-month minimum from engagement start (three months of build, three of advisory), cancel any time after. The 100-Point GTM Autopsy is credited in full toward any engagement and covered by a no-questions-asked money-back guarantee. Nothing is sold before it.
+- Score it. Your go-to-market against 100 dimensions, each marked pass, partial or fail, ranked by what it's costing you. Delivered with a recorded walkthrough. Nobody scores 100.
+- Work it. An hour a week. We review what happened, recalibrate where the plan was wrong rather than the execution, set the week, and spend the last twenty minutes on whichever part of the motion your score says is weakest. Anything we build, we build together on the call.
+- Re-score it. Every quarter. The movement is the report.
+
+## How it works
+
+1. The 20 Minute Teardown. Free. Forty of the hundred dimensions, scored from public sources only, nothing needed from you. A recorded walkthrough and the scorecard, ending with two or three things to go and do right now for immediate impact. Book it at https://calendly.com/30minutechat/20-minute-go-to-market-w-colin
+2. The 100-Point Scorecard. $5,000. The full score, including the sixty dimensions that need a look inside. Five business days. Buy it on its own, or let it take month one of the engagement at no extra cost.
+3. The Standing Hour. $4,500 a month. Eleven sessions a quarter, same slot every week. Office hours twice a week in 30-minute blocks. Three-month minimum if you started with the Scorecard, six if you didn't.
+4. The Milestone Analysis. At the end of your first term: your score re-run, what you committed to against what you actually did, and a straight recommendation. Keep building at $4,500, or move to maintenance at $2,500 every other week. Sometimes the recommendation is that I've taken you as far as I can, and I'll tell you that too.
+
+One price. I don't discount it, and there isn't a cheaper version.
+
+The 100-point framework is published in full and free to download. What you're buying isn't the list — it's the scoring, and the order the findings come back in.
 
 ## Who it is for
 
-B2B companies between $50M and $200M in revenue, with a sales team that works out of a CRM (HubSpot, Salesforce, Pipedrive or comparable), selling through outbound or inbound email and phone conversations, missing a number they have already committed to, with one executive who will own the work for six months. Below the range is sometimes a fit; above it there is usually an internal team.
+- You own the business, or you may as well — the number is yours either way.
+- Revenue somewhere between $1M and $25M, B2B.
+- Your marketing is you, or one person, or an agency you're not sure about.
+- Your sales team is you, or you and a couple of others.
+- You intend to run this yourself. You're not looking to hand it over.
+
+Not for you if you want it done for you, want a guarantee on pipeline, have a sales team that needs managing rather than a motion that needs designing, or won't do the homework (two or three things a week, every week).
+
+Six clients. When it's full, it's full.
 
 ## Results
 
-- AgentPress: 7 to 25 qualified meetings a month in 45 days.
+- AgentPress: from 7 to 25 qualified meetings a month, in 45 days. "The real secret sauce has been hiring Colin Dowling and RAINCLOUD, who helped us go from 7 meetings a month to more than 25 in a single month." — Andy Walters, Founder + CEO, AgentPress
 - 1905 New Media: digital services from $4M to $11M over two years.
+
+Both of them did the work. I just made sure it was the right work, in the right order.
 
 ## Pages
 
-- [Home](https://rncld.com/): The argument, the method (diagnose, rebuild, hand over) and the published fee ladder.
-- [20 Minute Teardown](https://rncld.com/15minutepipelineteardown/): The free entry offer. It covers roughly 40 of the 100 points that can be scored from public sources alone. Book it from the page.
-- [100-Point GTM Autopsy](https://rncld.com/gtm-autopsy/): The paid diagnostic in full: the ten sections, what it needs from the client, the ten-day schedule and the deliverables. $5,000.
-- [The Engagement](https://rncld.com/gtm-consulting.html): B2B sales consulting and GTM consulting, as one operator rather than a sales consulting firm. The 90-day build, the scope, and the published fees.
-- [Fractional CRO](https://rncld.com/fractional-cro/): What the title means here, what it costs on the published schedule, and who it is for. Not an open-ended seat.
-- [Fractional sales leader](https://rncld.com/fractional-sales-leader/): Fractional sales leadership and a fractional CSO, including a sales process for a 50-person company, versus a fractional CRO.
-- [Fractional CRO vs VP of sales](https://rncld.com/fractional-cro-vs-vp-of-sales/): A part-time rebuild versus a full-time VP. No invented salary.
-- [Fractional CRO network alternative](https://rncld.com/compare/fractional-cro-network-alternative/): One named person instead of a roster. No firm names.
-- [Outbound agency vs fractional CRO](https://rncld.com/compare/outbound-agency-vs-fractional-cro/): A demand generation agency alternative. Activity versus owning the motion.
-- [RevOps consultant vs fractional CRO](https://rncld.com/compare/revops-consultant-vs-fractional-cro/): RevOps vs sales ops, a revenue operations consultant, and a sales operations consultant, set next to the fractional CRO path. No invented RevOps rate.
-- [Pricing](https://rncld.com/pricing/): Every price and term, published, with the month-by-month fee schedule.
-- [The 100-Point GTM Framework](https://rncld.com/resources/100-point-gtm-framework.html): The full scoring list, free with a work email.
-- [About Colin Dowling](https://rncld.com/about/): Founder of RAINCLOUD. 3x VP of Sales, 2x founder, host of Modern Business Life. Runs every engagement personally.
-- [Articles](https://rncld.com/blog/): Writing on GTM, pipeline and why builds fail after handover.
-- [Outbound not landing](https://rncld.com/problems/outbound-not-landing/): If your reply rates fell and you have spent three months rewriting sequences, you have been debugging the wrong layer. Next step: the 20 Minute Teardown, then the 100-Point GTM Autopsy.
-- [First sales hire](https://rncld.com/problems/first-sales-hire/): One person, one point of view, a long search, and a salary before the system exists. Next step: the 90-day engagement.
-- [Founder-led sales trap](https://rncld.com/problems/founder-led-sales-trap/): It works, which is the problem. It relieves the pressure that would otherwise have forced the system to mature, and it signals to the team that the system is optional. Next step: the 90-day engagement.
-- [Pipeline not growing](https://rncld.com/problems/pipeline-not-growing/): Stage definitions that mean different things to different reps. Coverage math built on deals that are already dead. Next step: the 20 Minute Teardown, then the 100-Point GTM Autopsy.
-- [FAQ](https://rncld.com/faq/): Questions already answered on the 100-Point GTM Autopsy, the engagement, and pricing.
-- [Videos](https://rncld.com/videos/): Tip videos live on the article they belong to. None are embedded yet.
+- [Home](https://rncld.com/): The method (score it, work it, re-score it), how it works, and who it is for.
+- [The Scorecard](https://rncld.com/scorecard/): The free 20 Minute Teardown (forty of the hundred dimensions, from the outside) and the full $5,000 100-Point Scorecard. What the hundred points cover.
+- [The Standing Hour](https://rncld.com/standing-hour/): One hour a week, same slot. $4,500 a month. The hour, office hours, what you own, what I don't do, what it costs, the Milestone Analysis and questions.
+- [The 100-point framework](https://rncld.com/resources/100-point-gtm-framework.html): The full scoring list, free to download.
+- [About Colin Dowling](https://rncld.com/about/): Credentials, why I only advise, and what I'm like to work with.
+- [Articles](https://rncld.com/blog/): Writing on GTM, pipeline and founder-led sales.
+- [Fractional CRO](https://rncld.com/fractional-cro/): What the title means here. Not an open-ended seat.
+- [Fractional sales leader](https://rncld.com/fractional-sales-leader/): Fractional sales leadership versus a fractional CRO.
+- [Fractional CRO vs VP of sales](https://rncld.com/fractional-cro-vs-vp-of-sales/): A standing weekly hour versus a full-time VP. No invented salary.
+- [Fractional CRO network alternative](https://rncld.com/compare/fractional-cro-network-alternative/): One named person instead of a roster.
+- [Outbound agency vs fractional CRO](https://rncld.com/compare/outbound-agency-vs-fractional-cro/): Activity versus owning the motion.
+- [RevOps consultant vs fractional CRO](https://rncld.com/compare/revops-consultant-vs-fractional-cro/): RevOps vs sales ops, set next to the fractional CRO path.
+- [Outbound not landing](https://rncld.com/problems/outbound-not-landing/): If your reply rates fell and you have spent three months rewriting sequences, you have been debugging the wrong layer. Next step: the 20 Minute Teardown.
+- [First sales hire](https://rncld.com/problems/first-sales-hire/): One person, one point of view, a long search, and a salary before the system exists. Next step: the 20 Minute Teardown.
+- [Founder-led sales trap](https://rncld.com/problems/founder-led-sales-trap/): It works, which is the problem. Next step: the 20 Minute Teardown.
+- [Pipeline not growing](https://rncld.com/problems/pipeline-not-growing/): Stage definitions that mean different things to different reps. Next step: the 20 Minute Teardown.
+- [2026 Benchmark Report](https://rncld.com/resources/benchmark-2026.html)
+- [Videos](https://rncld.com/videos/): Tip videos live on the article they belong to.
 - [Contact](https://rncld.com/contact.html): Write to Colin, or book the 20 Minute Teardown.
 
 ## Articles
@@ -54,7 +72,7 @@ B2B companies between $50M and $200M in revenue, with a sales team that works ou
 - [How to run discovery with technical buyers](https://rncld.com/blog/how-to-run-discovery-with-technical-buyers.html): Discovery when the buyer is an estimator, a plant engineer, or the engineer who will live with the software.
 - [Find a salesperson through your network](https://rncld.com/blog/find-a-salesperson-through-your-network.html): How to find a first or next seller through customers, suppliers, and owners in a neighboring trade.
 - [Which founder should own sales](https://rncld.com/blog/which-founder-should-own-sales.html): Splitting the revenue lane between co-founders, or an owner and a partner, before the handoff.
-- [GTM audit checklist: go to market audit template](https://rncld.com/blog/gtm-audit-checklist.html): The 100 points already published on the autopsy page. Not a new list.
+- [GTM audit checklist: go to market audit template](https://rncld.com/blog/gtm-audit-checklist.html): The 100 points already published in the framework. Not a new list.
 - [What does a fractional CRO do?](https://rncld.com/blog/what-does-a-fractional-cro-do.html)
 - [Why is our outbound not working?](https://rncld.com/blog/why-is-our-outbound-not-working.html)
 - [How to get out of founder-led sales](https://rncld.com/blog/how-to-get-out-of-founder-led-sales.html)
@@ -84,7 +102,7 @@ Keyword landing pages (fractional CRO, B2B sales consulting, sales consulting fi
 
 ## What RAINCLOUD is not
 
-Not a SaaS product, not a dashboard or seat-based software vendor, not an agency, and not an open-ended hourly engagement. Earlier versions of this site described a "4D Sales Intelligence" offering, a "Trident" architecture, and separate offers for demand generation, content, AI readiness and AI agents. All are retired here. RAINCLOUD sells GTM diagnosis and repair: a free 20 Minute Teardown, a 100-Point GTM Autopsy, a 90-day rebuild on a declining fee, and ongoing advisory. Colin's other ventures are separate sites: Ants (managed AI agents, withants.com), Ghostwriter (B2B content, friendlyghostwriter.com) and The AI Ready Advisor (executive AI strategy).
+Not an agency, not a done-for-you service, not a SaaS product, and not a fractional CRO who runs your revenue function. I don't run your outbound, write your content, or manage your campaigns. I don't build or maintain anything between sessions. I don't manage your reps. I don't book meetings or carry a number on your behalf. And I don't guarantee a revenue outcome, because the work is yours and so is the result.
 
 ## Contact
 

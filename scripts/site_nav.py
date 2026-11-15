@@ -25,6 +25,17 @@ SKIP_PARTS = {
     "ai-agents",
 }
 
+# Pages retired by the advisory repositioning (Nov 2026). They stay in the repo
+# until the App Platform 301s are live, and they are not restamped.
+RETIRED = {
+    "gtm-autopsy/index.html",
+    "outside-audit/index.html",
+    "pricing/index.html",
+    "faq/index.html",
+    "gtm-consulting.html",
+    "about.html",
+}
+
 
 def file_to_url(path: Path) -> str:
     rel = path.relative_to(ROOT).as_posix()
@@ -201,6 +212,8 @@ def stamp_file(path: Path) -> bool:
     if path.resolve() == TEMPLATE_PATH.resolve():
         return False
     if any(part in SKIP_PARTS or part == "includes" for part in path.parts):
+        return False
+    if path.relative_to(ROOT).as_posix() in RETIRED:
         return False
     original = path.read_text(encoding="utf-8")
     if '<nav id="nav"' not in original:
