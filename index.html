@@ -687,7 +687,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     .client-quote figcaption strong{color:var(--text-secondary);font-weight:500}
     .machine-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,36px)}
     .machine-shot{margin:0;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:6px;overflow:hidden}
-    .machine-shot img{display:block;width:100%;height:auto;border-bottom:1px solid var(--border-subtle)}
+    .machine-shot a{display:block;cursor:zoom-in}.machine-shot img{display:block;width:100%;height:auto;border-bottom:1px solid var(--border-subtle)}
     .machine-shot figcaption{padding:18px 20px;font-size:.88rem;line-height:1.65;color:var(--text-secondary)}
     .machine-shot figcaption b{color:var(--text-primary);font-weight:500}
     .ttv{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,96px);align-items:start}
@@ -820,22 +820,17 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     </div>
   </section>
 
-  <!-- SHOW THE MACHINE (hidden until real assets arrive). Four real, redacted screenshots of RAINCLOUD output. No mockups.
-       Needs: /assets/machine-audit.png (scored audit report page), /assets/machine-digest.png (morning digest email),
-       /assets/machine-drafts.png (HUNTER drafts in a Gmail folder), /assets/machine-dashboard.png (weekly channel dashboard).
-       Redact client names, contact names, emails and deal values before export. To publish, remove this comment wrapper.
   <section id="machine">
     <div class="container">
-      <div class="section-header reveal"><div class="label">Show the machine</div><h2>What it looks like running.</h2><p>Real output from live RAINCLOUD engagements, redacted. Nothing here is a mockup.</p></div>
+      <div class="section-header reveal"><div class="label">Show the machine</div><h2>What it looks like running.</h2><p>The four things a client sees every week, from the first audit page to the weekly dashboard. These are examples. The companies are fictional and the people and emails are redacted, and no client data appears.</p></div>
       <div class="machine-grid">
-        <figure class="machine-shot reveal"><img src="/assets/machine-audit.png" alt="A page from a scored 100-Point GTM Autopsy report, redacted" loading="lazy"><figcaption><b>The scored audit.</b> Every point scored and every finding ranked by what it costs in pipeline. This page is the build specification.</figcaption></figure>
-        <figure class="machine-shot reveal"><img src="/assets/machine-digest.png" alt="The RAINCLOUD morning digest email, redacted" loading="lazy"><figcaption><b>The morning digest.</b> What ran overnight, what replied and what needs a decision, in the inbox before the day starts.</figcaption></figure>
-        <figure class="machine-shot reveal"><img src="/assets/machine-drafts.png" alt="Outbound drafts waiting in a Gmail folder, redacted" loading="lazy"><figcaption><b>Drafts in your inbox.</b> Signal-based emails written and waiting in a Gmail folder. Your rep reviews and presses send.</figcaption></figure>
-        <figure class="machine-shot reveal"><img src="/assets/machine-dashboard.png" alt="The weekly channel dashboard, redacted" loading="lazy"><figcaption><b>The weekly dashboard.</b> Each channel attributed separately, against the agreed day-90 pipeline target.</figcaption></figure>
+        <figure class="machine-shot reveal"><a href="/assets/machine-audit.svg" target="_blank" rel="noopener" aria-label="Open full size"><img src="/assets/machine-audit.svg" alt="Example page from a scored 100-Point GTM Autopsy report: Section 02, ICP and TAM definition, with point-by-point scores and the cost of the top finding" width="2000" height="1250" loading="lazy"></a><figcaption><b>The scored audit.</b> Every point scored pass, partial or fail, with the evidence, and every finding ranked by what it costs in pipeline. The report is the build specification.</figcaption></figure>
+        <figure class="machine-shot reveal"><a href="/assets/machine-digest.svg" target="_blank" rel="noopener" aria-label="Open full size"><img src="/assets/machine-digest.svg" alt="Example RAINCLOUD morning digest email showing overnight sends, replies, decisions needed, suppressions and progress to the day-90 target" width="2000" height="1250" loading="lazy"></a><figcaption><b>The morning digest.</b> What ran overnight, what replied and what needs a decision, in the inbox before the day starts.</figcaption></figure>
+        <figure class="machine-shot reveal"><a href="/assets/machine-drafts.svg" target="_blank" rel="noopener" aria-label="Open full size"><img src="/assets/machine-drafts.svg" alt="Example signal-based outbound drafts waiting in a Gmail label, each tagged with the signal and its age" width="2000" height="1250" loading="lazy"></a><figcaption><b>Drafts in your inbox.</b> Signal-based emails written and waiting in a Gmail label, each tagged with its signal and checked against the CRM. Your rep reviews and presses send.</figcaption></figure>
+        <figure class="machine-shot reveal"><a href="/assets/machine-dashboard.svg" target="_blank" rel="noopener" aria-label="Open full size"><img src="/assets/machine-dashboard.svg" alt="Example weekly channel dashboard: qualified opportunities against the day-90 target, results by channel, deliverability and learnings" width="2000" height="1250" loading="lazy"></a><figcaption><b>The weekly dashboard.</b> Each channel attributed separately, against the agreed day-90 pipeline target.</figcaption></figure>
       </div>
     </div>
   </section>
-  -->
 
   <section id="method">
     <div class="container">
