@@ -52,12 +52,12 @@ Both of them did the work. I just made sure it was the right work, in the right 
 - [The 100-point framework](https://rncld.com/resources/100-point-gtm-framework.html): The full scoring list, free to download.
 - [About Colin Dowling](https://rncld.com/about/): Credentials, why I only advise, and what I'm like to work with.
 - [Articles](https://rncld.com/blog/): Writing on GTM, pipeline and founder-led sales.
-- [Fractional CRO](https://rncld.com/fractional-cro/): What the title means here. Not an open-ended seat.
-- [Fractional sales leader](https://rncld.com/fractional-sales-leader/): Fractional sales leadership versus a fractional CRO.
-- [Fractional CRO vs VP of sales](https://rncld.com/fractional-cro-vs-vp-of-sales/): A standing weekly hour versus a full-time VP. No invented salary.
-- [Fractional CRO network alternative](https://rncld.com/compare/fractional-cro-network-alternative/): One named person instead of a roster.
-- [Outbound agency vs fractional CRO](https://rncld.com/compare/outbound-agency-vs-fractional-cro/): Activity versus owning the motion.
-- [RevOps consultant vs fractional CRO](https://rncld.com/compare/revops-consultant-vs-fractional-cro/): RevOps vs sales ops, set next to the fractional CRO path.
+- [Fractional CRO](https://rncld.com/fractional-cro/): For people searching for a fractional CRO. A fractional CRO runs your revenue function; the Standing Hour is the alternative where you keep the job and I make sure you're doing it well. $4,500 a month, six clients at a time.
+- [Fractional sales leader](https://rncld.com/fractional-sales-leader/): For people searching for a fractional sales leader or fractional CSO. I don't build it for you or manage your reps; you build the sales process in the session, with me in the room once a week.
+- [Fractional CRO vs VP of sales](https://rncld.com/fractional-cro-vs-vp-of-sales/): A VP, a fractional CRO, and the Standing Hour side by side: who carries the number, who manages the reps, the time, the cost. No invented salary.
+- [Fractional CRO network alternative](https://rncld.com/compare/fractional-cro-network-alternative/): One named person instead of a roster. Six clients at a time, and you keep the job.
+- [Outbound agency vs fractional CRO](https://rncld.com/compare/outbound-agency-vs-fractional-cro/): The demand generation agency alternative. An agency runs your outbound; here you run it, and we build it together on the call.
+- [RevOps consultant vs fractional CRO](https://rncld.com/compare/revops-consultant-vs-fractional-cro/): RevOps vs sales ops, a RevOps consultant, a fractional CRO, and the Standing Hour alternative. No invented RevOps rate.
 - [Outbound not landing](https://rncld.com/problems/outbound-not-landing/): If your reply rates fell and you have spent three months rewriting sequences, you have been debugging the wrong layer. Next step: the 20 Minute Teardown.
 - [First sales hire](https://rncld.com/problems/first-sales-hire/): One person, one point of view, a long search, and a salary before the system exists. Next step: the 20 Minute Teardown.
 - [Founder-led sales trap](https://rncld.com/problems/founder-led-sales-trap/): It works, which is the problem. Next step: the 20 Minute Teardown.
@@ -98,7 +98,7 @@ Both of them did the work. I just made sure it was the right work, in the right 
 - [Not Every Buyer Signal Matters: How to Decide Which Intent Signals Are Worth Acting On](https://rncld.com/blog/which-buyer-signals-matter.html)
 - [Why Deals Die After the Yes, and How to Surface Late Surprises Early](https://rncld.com/blog/why-deals-die-after-the-yes.html)
 
-Keyword landing pages (fractional CRO, B2B sales consulting, sales consulting firms, fractional sales leader, GTM checklist, GTM consulting, RevOps consultant) are on hold and are not on this site.
+The fractional CRO, fractional sales leader and comparison pages listed above are live. Each one explains the advisory alternative to what the searcher is shopping for: a fractional CRO runs your revenue function; I don't run anything. You keep the job; I make sure you're doing it well. The GTM consulting page is retired; the Standing Hour replaces it.
 
 ## What RAINCLOUD is not
 
