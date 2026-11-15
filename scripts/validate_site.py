@@ -247,13 +247,14 @@ def check_nav(path: Path, text: str) -> None:
         "/problems/first-sales-hire/",
         "/problems/founder-led-sales-trap/",
         "/blog/",
-        "/videos/",
         "/faq/",
         "/about/",
     ]
     for href in required:
         if f'href="{href}"' not in nav:
             fail(f"{path.relative_to(ROOT)}: nav is missing {href}")
+    if 'href="/videos/"' in nav or "href='/videos/'" in nav:
+        fail(f"{path.relative_to(ROOT)}: Videos link should not be in the nav")
     for banned in ("/ai-agents", "/bofu-content", "/demand-generation", "/content.html", "/audit.html", "/outside-audit/"):
         if banned in nav:
             fail(f"{path.relative_to(ROOT)}: unlisted page {banned} is in the nav")
@@ -297,6 +298,9 @@ def main() -> int:
         check_offer_name(path, text)
         check_tracking(path, text)
         check_nav(path, text)
+        footer = re.search(r"<footer\b.*?</footer>", text, flags=re.S)
+        if footer and ('href="/videos/"' in footer.group(0) or "href='/videos/'" in footer.group(0)):
+            fail(f"{path.relative_to(ROOT)}: Videos link should not be in the footer")
         if 'href="/about.html"' in text or "href='/about.html'" in text:
             fail(f"{path.relative_to(ROOT)}: link points at /about.html; use /about/")
         if path.parent == ROOT / "blog" and path.name != "index.html":
