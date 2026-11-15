@@ -697,6 +697,75 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     footer.sf .sf-also{margin-top:14px;font-size:.72rem;line-height:1.6;color:var(--text-tertiary);max-width:300px;}
     footer.sf .sf-also a{color:var(--text-secondary);border-bottom:1px solid var(--border-subtle);}
     footer.sf .sf-also a:hover{color:var(--text-primary);}
+  /* Nov 2026 layout additions */
+    .hero-sub strong{color:var(--text-primary);font-weight:500}
+    .proof-bar .proofs.proofs--3{grid-template-columns:repeat(3,1fr)}
+    .client-quote{display:flex;gap:28px;align-items:center;margin:0 0 clamp(36px,5vh,56px);padding-bottom:clamp(28px,4vh,44px);border-bottom:1px solid var(--border-subtle)}
+    .client-quote .cq-photo{width:96px;height:96px;border-radius:50%;object-fit:cover;flex:none;filter:grayscale(100%)}
+    .client-quote blockquote{font-family:var(--font-heading);font-weight:200;font-style:italic;font-size:clamp(1.2rem,2.2vw,1.7rem);line-height:1.4;color:var(--text-primary)}
+    .client-quote figcaption{margin-top:12px;font-size:.8rem;color:var(--text-tertiary)}
+    .client-quote figcaption strong{color:var(--text-secondary);font-weight:500}
+    .machine-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,36px)}
+    .machine-shot{margin:0;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:6px;overflow:hidden}
+    .machine-shot img{display:block;width:100%;height:auto;border-bottom:1px solid var(--border-subtle)}
+    .machine-shot figcaption{padding:18px 20px;font-size:.88rem;line-height:1.65;color:var(--text-secondary)}
+    .machine-shot figcaption b{color:var(--text-primary);font-weight:500}
+    .ttv{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,96px);align-items:start}
+    .ttv-copy h2{margin:16px 0 20px}
+    .ttv-copy p{color:var(--text-secondary);line-height:1.8;margin-bottom:14px;max-width:520px}
+    .ttv-steps{list-style:none;margin:0;padding:0;border-left:1px solid var(--border-medium)}
+    .ttv-steps li{position:relative;padding:0 0 26px 28px}
+    .ttv-steps li:last-child{padding-bottom:0}
+    .ttv-steps li::before{content:'';position:absolute;left:-5px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--bg-primary);border:1px solid var(--accent-blue)}
+    .ttv-steps li:last-child::before{background:var(--accent-blue)}
+    .ttv-steps .d{display:block;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-blue);margin-bottom:6px}
+    .ttv-steps .w{display:block;font-size:.95rem;line-height:1.65;color:var(--text-primary)}
+    .cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border-subtle);border-radius:6px}
+    .cmp-wrap:focus{outline:1px solid var(--accent-blue);outline-offset:2px}
+    .cmp{width:100%;min-width:760px;border-collapse:collapse;font-size:.9rem}
+    .cmp th,.cmp td{padding:16px 18px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border-subtle);line-height:1.5}
+    .cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+    .cmp thead th{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);background:var(--bg-secondary)}
+    .cmp tbody th{font-weight:500;color:var(--text-primary);width:18%}
+    .cmp td{color:var(--text-secondary)}
+    .cmp thead th:nth-child(2){color:var(--text-primary)}
+    .cmp .rc{background:var(--accent-blue-dim);color:var(--text-primary)}
+    .cmp thead th.rc{color:var(--accent-blue)}
+    .cmp td.rc b{font-weight:600}
+    .cmp td.rc small{display:block;margin-top:4px;font-size:.75rem;color:var(--text-secondary)}
+    .cmp-note{margin-top:16px;font-size:.78rem;color:var(--text-tertiary);max-width:760px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+    .dont-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border-subtle);border:1px solid var(--border-subtle);border-radius:6px;overflow:hidden}
+    .dont-grid li{background:var(--bg-secondary);padding:22px 24px;font-size:.92rem;line-height:1.65;color:var(--text-secondary)}
+    .dont-grid li b{display:block;color:var(--text-primary);font-weight:500;margin-bottom:4px}
+    .founder-quote{margin:24px 0 8px;padding-left:20px;border-left:2px solid var(--accent-blue);font-family:var(--font-heading);font-weight:200;font-style:italic;font-size:clamp(1.05rem,1.8vw,1.3rem);line-height:1.5;color:var(--text-primary)}
+    .offramp-sec{padding-top:0}
+    .offramp{display:flex;justify-content:space-between;align-items:center;gap:32px;padding:clamp(28px,4vw,44px);border:1px solid var(--border-medium);border-radius:6px}
+    .offramp h3{font-size:1.2rem;font-weight:500;margin:12px 0 10px}
+    .offramp p{font-size:.9rem;line-height:1.75;color:var(--text-secondary);max-width:640px}
+    .offramp .landscape-link{flex:none;margin-top:0}
+    .final-ctas{display:flex;flex-wrap:wrap;align-items:center;gap:24px}
+    @media (max-width: 900px){
+      .ttv{grid-template-columns:1fr}
+      .proof-bar .proofs.proofs--3{grid-template-columns:1fr}
+    }
+    @media (max-width: 700px){
+      .machine-grid,.dont-grid{grid-template-columns:1fr}
+      .offramp{flex-direction:column;align-items:flex-start}
+      .client-quote{flex-direction:column;align-items:flex-start}
+    }
+  @media (max-width: 700px){
+      .cmp-wrap{overflow:visible;border:0}
+      .cmp{min-width:0;font-size:.88rem}
+      .cmp thead{display:none}
+      .cmp tbody tr{display:block;margin-bottom:16px;border:1px solid var(--border-subtle);border-radius:6px;overflow:hidden}
+      .cmp tbody th{display:block;width:auto;background:var(--bg-secondary);padding:12px 16px}
+      .cmp td{display:grid;grid-template-columns:42% 1fr;gap:12px;padding:10px 16px}
+      .cmp td::before{content:attr(data-col);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-tertiary);padding-top:2px}
+      .cmp td.rc::before{color:var(--accent-blue)}
+      .cmp tbody tr:last-child td{border-bottom:1px solid var(--border-subtle)}
+      .cmp tbody tr td:last-child{border-bottom:0}
+    }
   </style>
   <script src="/assets/track.js" defer></script>
   <link rel="stylesheet" href="/assets/site-nav.css">
@@ -712,50 +781,9 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li class="has-dropdown">
-        <button type="button" class="nav-parent" aria-expanded="false" aria-haspopup="true" aria-controls="nav-menu-autopsy">
-          <span class="nav-parent-label">The Autopsy</span>
-          <svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <ul class="dropdown" id="nav-menu-autopsy">
-          <li><a href="/gtm-autopsy/">The Autopsy</a></li>
-          <li><a href="/teardown/">20 Minute Teardown</a></li>
-        </ul>
-      </li>
-      <li class="has-dropdown">
-        <button type="button" class="nav-parent" aria-expanded="false" aria-haspopup="true" aria-controls="nav-menu-engagement">
-          <span class="nav-parent-label">The program</span>
-          <svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <ul class="dropdown" id="nav-menu-engagement">
-          <li><a href="/done-for-you-gtm/">The program</a></li>
-          <li><a href="/gtm-consulting.html">GTM consulting</a></li>
-          <li><a href="/pricing/">Pricing</a></li>
-        </ul>
-      </li>
-      <li class="has-dropdown">
-        <button type="button" class="nav-parent" aria-expanded="false" aria-haspopup="true" aria-controls="nav-menu-problems">
-          <span class="nav-parent-label">Problems</span>
-          <svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <ul class="dropdown" id="nav-menu-problems">
-          <li><a href="/problems/outbound-not-landing/">Outbound not landing</a></li>
-          <li><a href="/problems/pipeline-not-growing/">Pipeline not growing</a></li>
-          <li><a href="/problems/first-sales-hire/">First sales hire</a></li>
-          <li><a href="/problems/founder-led-sales-trap/">Founder-led sales</a></li>
-        </ul>
-      </li>
-      <li class="has-dropdown">
-        <button type="button" class="nav-parent" aria-expanded="false" aria-haspopup="true" aria-controls="nav-menu-insights">
-          <span class="nav-parent-label">Insights</span>
-          <svg class="nav-caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <ul class="dropdown" id="nav-menu-insights">
-          <li><a href="/blog/">Articles</a></li>
-          <li><a href="/faq/">FAQ</a></li>
-        </ul>
-      </li>
-      <li><a href="/about/">About</a></li>
+      <li><a href="/done-for-you-gtm/">The offer</a></li>
+      <li><a href="/#proof">Proof</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
       <li class="nav-cta-item"><a href="https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=home&amp;utm_content=nav" class="nav-cta" target="_blank" rel="noopener" data-cta="nav" data-track="book_call" data-cta-id="book_call-nav" data-cta-position="nav" data-cluster="offer" data-persona="">Book the 20 Minute Teardown</a></li>
     </ul>
   </div>
@@ -768,33 +796,37 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <span class="line1">Your go-to-market isn&rsquo;t compounding.</span><br>
         <span class="line2 thin typing">I show you EXACTLY why, then I fix it.</span>
       </h1>
-      <p class="hero-sub">I score your go-to-market against 100 points, then RAINCLOUD builds a full-funnel pipeline system on your CRM and runs it. B2B demand generation, done for you, starting with the free Outside-In GTM Teardown.</p>
-      <p class="hero-prices"><span>Free</span> teardown<i>&middot;</i><span>$5,000</span> audit<i>&middot;</i><span>$25,000</span> Build<i>&middot;</i><span>$10,000/mo</span> after</p>
+      <p class="hero-sub"><strong>Runs on the CRM you already have.</strong> I score your go-to-market against 100 points, then RAINCLOUD builds a full-funnel pipeline system on your own CRM, domains and mailboxes, and runs it. Done-for-you B2B demand generation, starting with the free 20 Minute Teardown.</p>
+      <p class="hero-prices"><span>Free</span> teardown<i>&middot;</i><span>$5,000</span> audit<i>&middot;</i><span>$25,000</span> Build, $20,000 after credit<i>&middot;</i><span>$10,000/mo</span> after</p>
       <div class="hero-cta">
         <a href="https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=home&amp;utm_content=hero" class="btn btn--primary" target="_blank" rel="noopener" data-cta="hero" data-track="book_call" data-cta-id="book_call-hero" data-cta-position="hero" data-cluster="offer" data-persona=""><span>Book the 20 Minute Teardown</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a href="/resources/100-point-gtm-framework.html" class="hero-sec">Download the 100-point framework</a>
+        <a href="/resources/100-point-gtm-framework.html" class="hero-sec" data-track="framework" data-cta-id="framework-hero" data-cta-position="hero">Download the 100 points</a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat"><div class="num sm">One operator does the work</div></div>
         <div class="hero-stat"><div class="num sm">100 points, five business days from access</div></div>
-        <div class="hero-stat"><div class="num sm">Four clients at a time</div></div>
+        <div class="hero-stat"><div class="num sm">Live in 30 business days</div></div>
       </div>
     </div>
   </section>
 
-  <div class="quote-banner reveal">
-    <div class="quote-bg placeholder"></div>
-    <div class="container--narrow">
-      <blockquote>&ldquo;Most operators and revenue leaders know their GTM is broken. They just don&rsquo;t know in what order to fix it. That&rsquo;s the audit.&rdquo;</blockquote>
-      <cite><strong>Colin Dowling</strong> &mdash; Founder, RAINCLOUD</cite>
-    </div>
-  </div>
-
-  <section class="proof-bar">
+  <section class="proof-bar" id="proof">
     <div class="container">
-      <div class="proofs">
+      <!-- CLIENT QUOTE SLOT (hidden until real assets arrive).
+           Needs: AgentPress client quote, headshot photo, name, title, and written permission to publish.
+           To publish: save the headshot as /assets/client-agentpress.jpg, fill the four fields, and remove this comment wrapper.
+      <figure class="client-quote reveal">
+        <img class="cq-photo" src="/assets/client-agentpress.jpg" alt="[NAME], [TITLE], AgentPress" width="96" height="96" loading="lazy">
+        <div>
+          <blockquote>&ldquo;[APPROVED QUOTE]&rdquo;</blockquote>
+          <figcaption><strong>[NAME]</strong> &middot; [TITLE], AgentPress</figcaption>
+        </div>
+      </figure>
+      -->
+      <div class="proofs proofs--3">
         <div class="proof reveal"><div class="co">AgentPress</div><div class="rs"><b>7 to 25</b> qualified meetings a month in 45 days.</div></div>
         <div class="proof reveal"><div class="co">1905 New Media</div><div class="rs">Digital services from <b>$4M to $11M</b> over two years.</div></div>
+        <div class="proof reveal"><div class="co">Capacity</div><div class="rs"><b>Four clients</b> at a time. A fifth waits.</div></div>
       </div>
     </div>
   </section>
@@ -808,20 +840,52 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     </div>
   </section>
 
-  <div class="image-band band-tall">
-    <video class="band-img" autoplay muted loop playsinline src="assets/band-video.mp4"></video>
-    <div class="band-overlay"></div>
-  </div>
+  <!-- SHOW THE MACHINE (hidden until real assets arrive). Four real, redacted screenshots of RAINCLOUD output. No mockups.
+       Needs: /assets/machine-audit.png (scored audit report page), /assets/machine-digest.png (morning digest email),
+       /assets/machine-drafts.png (HUNTER drafts in a Gmail folder), /assets/machine-dashboard.png (weekly channel dashboard).
+       Redact client names, contact names, emails and deal values before export. To publish, remove this comment wrapper.
+  <section id="machine">
+    <div class="container">
+      <div class="section-header reveal"><div class="label">Show the machine</div><h2>What it looks like running.</h2><p>Real output from live RAINCLOUD engagements, redacted. Nothing here is a mockup.</p></div>
+      <div class="machine-grid">
+        <figure class="machine-shot reveal"><img src="/assets/machine-audit.png" alt="A page from a scored 100-Point GTM Autopsy report, redacted" loading="lazy"><figcaption><b>The scored audit.</b> Every point scored and every finding ranked by what it costs in pipeline. This page is the build specification.</figcaption></figure>
+        <figure class="machine-shot reveal"><img src="/assets/machine-digest.png" alt="The RAINCLOUD morning digest email, redacted" loading="lazy"><figcaption><b>The morning digest.</b> What ran overnight, what replied and what needs a decision, in the inbox before the day starts.</figcaption></figure>
+        <figure class="machine-shot reveal"><img src="/assets/machine-drafts.png" alt="Outbound drafts waiting in a Gmail folder, redacted" loading="lazy"><figcaption><b>Drafts in your inbox.</b> Signal-based emails written and waiting in a Gmail folder. Your rep reviews and presses send.</figcaption></figure>
+        <figure class="machine-shot reveal"><img src="/assets/machine-dashboard.png" alt="The weekly channel dashboard, redacted" loading="lazy"><figcaption><b>The weekly dashboard.</b> Each channel attributed separately, against the agreed day-90 pipeline target.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+  -->
 
   <section id="method">
     <div class="container">
       <div class="section-header reveal"><div class="label">The Method</div><h2>Diagnose it. Build it. Run it.</h2></div>
       <div class="method-grid">
         <div class="method reveal"><div class="mn">01</div><h3>Diagnose.</h3><p>The 100-Point GTM Autopsy. Every point pass, partial, or fail. Findings ranked by revenue impact. Five business days from access granted, then one recorded 90-minute walkthrough. The report is the build specification.</p></div>
-        <div class="method reveal"><div class="mn">02</div><h3>Build.</h3><p>The Build is $25,000, $20,000 after the audit credit. Thirty days: access, domains and mailboxes, warmup, the TAM, CRM mapping, the content plan, and the first sequences. <a href="/done-for-you-gtm/">The program</a>.</p></div>
+        <div class="method reveal"><div class="mn">02</div><h3>Build.</h3><p>The Build is $25,000, $20,000 after the audit credit. Thirty business days to go-live: access, domains and mailboxes, warmup, the TAM, CRM mapping, the content plan, and the first sequences. <a href="/done-for-you-gtm/">The program</a>.</p></div>
         <div class="method reveal"><div class="mn">03</div><h3>Run.</h3><p>Ongoing operation is $10,000 a month from go-live. RAINCLOUD runs mass email, bottom-of-funnel content and signal outbound, with suppression against the live CRM. If the agreed day-90 pipeline target is missed, RAINCLOUD keeps running the system at no charge until it is hit.</p></div>
       </div>
       <p class="method-foot reveal">Most GTM builds fail in the quarter after the consultant leaves. The handover is not the end of this engagement &mdash; it&rsquo;s the half that&rsquo;s priced to last.</p>
+    </div>
+  </section>
+
+  <section id="time-to-value">
+    <div class="container">
+      <div class="ttv reveal">
+        <div class="ttv-copy">
+          <div class="label">Time to value</div>
+          <h2>Thirty business days, because nothing is guessed.</h2>
+          <p>By the time the Build starts, the Autopsy has already scored all 100 points and ranked what is broken by what it costs you. Day one of the Build is execution, not discovery.</p>
+          <p>Anything that promises output on day one is producing it from guesses about your market. The thirty days is the proof that it isn&rsquo;t.</p>
+        </div>
+        <ol class="ttv-steps">
+          <li><span class="d">Day 0</span><span class="w">Access, domains and mailboxes in your company&rsquo;s name, warmup starts, CRM mapping and the TAM.</span></li>
+          <li><span class="d">Around day 10</span><span class="w">Bottom-of-funnel content starts publishing on your domain.</span></li>
+          <li><span class="d">Around day 14</span><span class="w">Signal outbound goes live from your primary domain.</span></li>
+          <li><span class="d">Around day 28</span><span class="w">Mass email starts, after 14 to 21 days of warmup.</span></li>
+          <li><span class="d">Go-live</span><span class="w">Ongoing operation begins. The six-month minimum starts here, not at signature.</span></li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -831,10 +895,72 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       <div class="cards c4 ladder reveal">
         <div class="card rung rung--start"><div class="rn">1</div><h3>20 Minute Teardown</h3><div class="rp">Free</div><p>It covers roughly 40 of the 100 points that can be scored from outside the company, from public sources alone. No mystery shop.</p></div>
         <div class="card rung"><div class="rn">2</div><h3>The 100-Point GTM Autopsy</h3><div class="rp">$5,000<small>five business days from access</small></div><p>Required before the Build. Credited in full against it. No cash refund. The paid Autopsy is the trial.</p></div>
-        <div class="card rung"><div class="rn">3</div><h3>The Build</h3><div class="rp">$25,000</div><p>$20,000 after the audit credit. 30 days. Then RAINCLOUD runs it. <a href="/done-for-you-gtm/">The program</a>.</p></div>
-        <div class="card rung"><div class="rn">4</div><h3>Ongoing operation</h3><div class="rp">$10,000<small>/mo</small></div><p>Six-month minimum from go-live. Infrastructure included. If the agreed day-90 pipeline target is missed, RAINCLOUD keeps running the system at no charge until it is hit.</p></div>
+        <div class="card rung"><div class="rn">3</div><h3>The Build</h3><div class="rp">$25,000</div><p>$20,000 after the audit credit. 30 business days to go-live. Then RAINCLOUD runs it. <a href="/done-for-you-gtm/">The program</a>.</p></div>
+        <div class="card rung"><div class="rn">4</div><h3>Ongoing operation</h3><div class="rp">$10,000<small>/mo</small></div><p>Six-month minimum from go-live. Infrastructure included. First-year client value is $145,000 all in. If the agreed day-90 pipeline target is missed, RAINCLOUD keeps running the system at no charge until it is hit.</p></div>
       </div>
       <a href="/pricing/" class="landscape-link reveal">See the full fee schedule <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </section>
+
+  <section id="alternatives">
+    <div class="container">
+      <div class="section-header reveal"><div class="label">The alternatives</div><h2>Most companies weighing this are weighing a hire.</h2><p>A fully loaded in-house SDR typically costs $75,000 to $95,000 a year, covers one channel and takes three to six months to produce. That is the comparison to beat. Here are the four options side by side.</p></div>
+      <div class="cmp-wrap reveal" role="region" aria-label="Comparison of in-house SDR, agency, AI sales platform and RAINCLOUD" tabindex="0">
+        <table class="cmp">
+          <thead><tr><th scope="col"><span class="sr-only">Compared on</span></th><th scope="col">In-house SDR</th><th scope="col">Agency</th><th scope="col">AI sales platform</th><th scope="col" class="rc">RAINCLOUD</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">First-year cost</th><td data-col="In-house SDR">Typically $75k&ndash;$95k, fully loaded</td><td data-col="Agency">Typically $60k&ndash;$120k (general market range)</td><td data-col="AI sales platform">Platform fee plus migration cost; varies widely</td><td class="rc" data-col="RAINCLOUD"><b>$145,000</b><small>$5k audit + $20k net build + $120k in fees</small></td></tr>
+            <tr><th scope="row">Channels covered</th><td data-col="In-house SDR">One</td><td data-col="Agency">Typically one or two</td><td data-col="AI sales platform">Mostly email</td><td class="rc" data-col="RAINCLOUD">Three, plus governance and learnings</td></tr>
+            <tr><th scope="row">Runs on your CRM</th><td data-col="In-house SDR">Yes</td><td data-col="Agency">Sometimes</td><td data-col="AI sales platform">Usually replaces it</td><td class="rc" data-col="RAINCLOUD">Yes</td></tr>
+            <tr><th scope="row">Who does the work</th><td data-col="In-house SDR">A junior hire you manage</td><td data-col="Agency">A pooled team you rarely meet</td><td data-col="AI sales platform">Agents you supervise</td><td class="rc" data-col="RAINCLOUD">One operator, four clients maximum</td></tr>
+            <tr><th scope="row">Time to first output</th><td data-col="In-house SDR">Three to six months</td><td data-col="Agency">Typically four to eight weeks</td><td data-col="AI sales platform">Day one, on guesses</td><td class="rc" data-col="RAINCLOUD">Thirty business days, on a scored audit</td></tr>
+            <tr><th scope="row">Price published</th><td data-col="In-house SDR">&mdash;</td><td data-col="Agency">Rarely</td><td data-col="AI sales platform">Rarely</td><td class="rc" data-col="RAINCLOUD">Yes, on this page</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="cmp-note reveal">Ranges for the first three columns are general market figures for each category, not quotes from or claims about any named company. Your numbers will differ.</p>
+    </div>
+  </section>
+
+  <section id="scope" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal"><div class="label">What we don&rsquo;t do</div><h2>The scope, stated plainly.</h2><p>RAINCLOUD builds and runs pipeline. Everything below is out of scope, on purpose.</p></div>
+      <ul class="dont-grid reveal">
+        <li><b>Close your deals.</b> Your team closes. RAINCLOUD fills the pipeline they close from.</li>
+        <li><b>Manage your reps.</b> No seat on your org chart, no one-on-ones, no comp plans.</li>
+        <li><b>Replace your CRM.</b> It runs on the one you have and writes only the fields it needs.</li>
+        <li><b>Send from its own domains.</b> Every sending domain is registered in your company&rsquo;s name.</li>
+        <li><b>Automate your LinkedIn.</b> RAINCLOUD drafts. Your rep reviews and presses send.</li>
+        <li><b>Buy paid media or do brand work.</b> No ad spend, no creative, no rebrand.</li>
+        <li><b>Sell a trial.</b> The paid Autopsy is the trial, and nothing skips it.</li>
+        <li><b>Take a fifth client.</b> Four at a time. A fifth good-fit prospect waits.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="founder">
+    <div class="container">
+      <div class="founder-row reveal">
+        <div class="founder-photo"><img src="assets/founder-headshot.jpg" alt="Colin Dowling, Founder of RAINCLOUD"></div>
+        <div class="founder-info">
+          <div class="label" style="margin-bottom: 16px;">About the Founder</div>
+          <h2>Colin Dowling</h2>
+          <div class="founder-title">Founder, RAINCLOUD</div>
+          <p>I&rsquo;ve held VP and SVP revenue roles at GoDaddy (VP Global Enterprise Sales), WP Engine, Liquid Web, and Alembic, and I&rsquo;ve built GTM motions from scratch at every one of them.</p>
+          <p>I know what a broken GTM motion looks like because I&rsquo;ve inherited enough of them. I also know what it takes to fix one: the sequencing, the frameworks, the tradeoffs, and the moments where most operators make the wrong call.</p>
+          <p>I built RAINCLOUD because the market didn&rsquo;t need another agency or another SaaS tool. It needed a practitioner who could diagnose the motion, build the pipeline on the client&rsquo;s CRM, and run it, personally.</p>
+          <p>This is that. When you hire RAINCLOUD, you get me. I score the Autopsy, design the Build and run the system. There is no account manager in between and no pooled team behind me, which is why it is four clients at a time.</p>
+          <blockquote class="founder-quote">&ldquo;Most operators and revenue leaders know their GTM is broken. They just don&rsquo;t know in what order to fix it. That&rsquo;s the audit.&rdquo;</blockquote>
+          <div class="founder-results"><p><strong>AgentPress</strong> &mdash; 7 to 25 qualified meetings a month in 45 days.</p><p><strong>1905 New Media</strong> &mdash; digital services from $4M to $11M over two years.</p></div>
+          <div class="creds">
+            <span class="cred">VP Enterprise Sales &mdash; GoDaddy (NYSE: GDDY)</span>
+            <span class="cred">SVP Revenue &mdash; Alembic (Seed &rarr; $145M Series B)</span>
+            <span class="cred">VP Channel Sales &mdash; Liquid Web</span>
+            <span class="cred">Enterprise Sales Director &mdash; WP Engine</span>
+            <span class="cred">3x VP of Sales &middot; 2x founder &middot; Host, Modern Business Life</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -854,32 +980,15 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
     </div>
   </section>
 
-  <div class="image-band band-tall-2">
-    <img class="band-img" src="assets/band-boardroom.png" alt="Executive boardroom" style="filter: grayscale(100%) brightness(0.95) contrast(1.2);">
-    <div class="band-overlay" style="background: linear-gradient(to bottom, var(--bg-primary) 0%, rgba(10,10,10,0.1) 15%, rgba(10,10,10,0.1) 85%, var(--bg-primary) 100%);"></div>
-  </div>
-
-  <section id="founder">
+  <section id="consulting" class="offramp-sec">
     <div class="container">
-      <div class="founder-row reveal">
-        <div class="founder-photo"><img src="assets/founder-headshot.jpg" alt="Colin Dowling, Founder of RAINCLOUD"></div>
-        <div class="founder-info">
-          <div class="label" style="margin-bottom: 16px;">About the Founder</div>
-          <h2>Colin Dowling</h2>
-          <div class="founder-title">Founder, RAINCLOUD</div>
-          <p>I&rsquo;ve held VP and SVP revenue roles at GoDaddy (VP Global Enterprise Sales), WP Engine, Liquid Web, and Alembic, and I&rsquo;ve built GTM motions from scratch at every one of them.</p>
-          <p>I know what a broken GTM motion looks like because I&rsquo;ve inherited enough of them. I also know what it takes to fix one: the sequencing, the frameworks, the tradeoffs, and the moments where most operators make the wrong call.</p>
-          <p>I built RAINCLOUD because the market didn&rsquo;t need another agency or another SaaS tool. It needed a practitioner who could diagnose the motion, build the pipeline on the client&rsquo;s CRM, and run it, personally.</p>
-          <p>This is that.</p>
-          <div class="founder-results"><p><strong>AgentPress</strong> &mdash; 7 to 25 qualified meetings a month in 45 days.</p><p><strong>1905 New Media</strong> &mdash; digital services from $4M to $11M over two years.</p></div>
-          <div class="creds">
-            <span class="cred">VP Enterprise Sales &mdash; GoDaddy (NYSE: GDDY)</span>
-            <span class="cred">SVP Revenue &mdash; Alembic (Seed &rarr; $145M Series B)</span>
-            <span class="cred">VP Channel Sales &mdash; Liquid Web</span>
-            <span class="cred">Enterprise Sales Director &mdash; WP Engine</span>
-            <span class="cred">3x VP of Sales &middot; 2x founder &middot; Host, Modern Business Life</span>
-          </div>
+      <div class="offramp reveal">
+        <div>
+          <div class="label">Not ready to fund the program?</div>
+          <h3>GTM consulting: $2,000 a month, one hour a week.</h3>
+          <p>One hour a week of Colin Dowling&rsquo;s judgment for a founder or sales leader who can&rsquo;t fund the Build yet. No execution, no delivery team and no system, and it doesn&rsquo;t go through the Autopsy.</p>
         </div>
+        <a href="/gtm-consulting.html" class="landscape-link">How GTM consulting works <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
   </section>
@@ -889,8 +998,8 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
       <div class="reveal">
         <div class="label label--accent" style="margin-bottom: 20px;">Get Started</div>
         <h2>Book the 20 Minute Teardown.<br>Every engagement starts with the audit.</h2>
-        <p>Every program starts with the 100-Point GTM Autopsy. It is $5,000, five business days from access granted, and credited in full against the Build. No cash refund. The paid Autopsy is the trial. If the agreed day-90 pipeline target is missed, RAINCLOUD keeps running the system at no charge until it is hit. <a href="/pricing/" class="text-link">See pricing</a>.</p>
-        <a href="https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=home&amp;utm_content=final" class="btn btn--primary" target="_blank" rel="noopener" data-cta="final" data-track="book_call" data-cta-id="book_call-final" data-cta-position="final" data-cluster="offer" data-persona=""><span>Book the 20 Minute Teardown</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <p>Every program starts with the 100-Point GTM Autopsy. It is $5,000, five business days from access granted, and credited in full against the $25,000 Build. No cash refund. The paid Autopsy is the trial. Ongoing operation is $10,000 a month on a six-month minimum from go-live. If the agreed day-90 pipeline target is missed, RAINCLOUD keeps running the system at no charge until it is hit. <a href="/pricing/" class="text-link">See pricing</a>.</p>
+        <div class="final-ctas"><a href="https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=home&amp;utm_content=final" class="btn btn--primary" target="_blank" rel="noopener" data-cta="final" data-track="book_call" data-cta-id="book_call-final" data-cta-position="final" data-cluster="offer" data-persona=""><span>Book the 20 Minute Teardown</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a href="/resources/100-point-gtm-framework.html" class="hero-sec" data-track="framework" data-cta-id="framework-final" data-cta-position="final">Download the 100 points</a></div>
       </div>
     </div>
   </section>
@@ -902,7 +1011,6 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
         <div>
           <div class="sf-logo">RAIN<em>CLOUD</em></div>
           <p class="sf-tag">RAINCLOUD builds and runs a full-funnel demand system on your CRM. Autopsy $5,000, build $25,000, then $10,000 a month. Run by Colin Dowling.</p>
-          <p class="sf-also">Also from Colin Dowling: <a href="https://www.withants.com/" target="_blank" rel="noopener">Ants</a> (managed AI agents), <a href="https://www.friendlyghostwriter.com/" target="_blank" rel="noopener">Ghostwriter</a> (B2B content), The AI Ready Advisor (executive AI strategy).</p>
         </div>
         <div class="sf-cols">
           <div>
@@ -930,6 +1038,7 @@ footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; }
             <ul>
               <li><a href="https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&amp;utm_medium=site&amp;utm_campaign=home&amp;utm_content=footer" target="_blank" rel="noopener" data-cta="footer" data-track="book_call" data-cta-id="book_call-footer" data-cta-position="footer" data-cluster="offer" data-persona="">Book the 20 Minute Teardown</a></li>
               <li><a href="/contact.html">Contact</a></li>
+              <li><a href="/trust/">Data handling &amp; security</a></li>
               <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
             </ul>
           </div>
