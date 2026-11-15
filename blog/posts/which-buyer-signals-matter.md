@@ -110,6 +110,6 @@ Take your last ten closed-won deals. For each, look at the 60 days before the fi
 
 ## If your team is drowning in data
 
-When signal tools, CRM data and outbound all run separately, reps end up with noise instead of next steps. Connecting those pieces is part of what I score in the [100-Point GTM Autopsy](/gtm-autopsy/), and running signal-based outreach for you is part of [done-for-you B2B demand generation](/done-for-you-gtm/).
+When signal tools, CRM data and outbound all run separately, reps end up with noise instead of next steps. Connecting those pieces is part of what I score in the [100-Point GTM Autopsy](/gtm-autopsy/), and building signal-based outreach that reps actually use is part of [the 90-day engagement](/gtm-consulting.html).
 
 **Lots of data, not many meetings?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=which-buyer-signals-matter&utm_content=inbody_text).
