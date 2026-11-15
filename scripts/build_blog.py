@@ -549,7 +549,6 @@ def page_html(post: dict, by_slug: dict) -> str:
             <ul>
               <li><a href="/blog/">Articles</a></li>
               <li><a href="/faq/">FAQ</a></li>
-              <li><a href="/videos/">Videos</a></li>
               <li><a href="/about/">About</a></li>
               <li><a href="/resources/100-point-gtm-framework.html">The 100-Point GTM Framework</a></li>
               <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
