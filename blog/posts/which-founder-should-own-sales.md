@@ -19,8 +19,8 @@ related:
 also:
 - href: /fractional-sales-leader/
   label: Fractional sales leader
-- href: /gtm-consulting.html
-  label: The system
+- href: /done-for-you-gtm/
+  label: The program
 takeaways:
 - The sales owner can turn a bad job down and write the motion.
 - Estimating skill and owning the number are different jobs.
