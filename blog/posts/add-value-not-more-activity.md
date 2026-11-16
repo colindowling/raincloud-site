@@ -10,8 +10,8 @@ tag: Sales leadership
 topic: diagnosis
 target_query: sales activity vs results
 source_pod: MBL tip-video backfill, pod 2026-10-30 (guest kept anonymous)
-hub: /gtm-autopsy/
-hub_label: The 100-Point GTM Autopsy
+hub: /scorecard/
+hub_label: The 100-Point Scorecard
 related:
 - which-buyer-signals-matter
 - define-icp-stop-selling-features
@@ -96,6 +96,6 @@ Pull your team's last month of activity and set it next to the opportunities tha
 
 ## If your team is busy but the number isn't moving
 
-When activity rises and pipeline doesn't, the problem is usually upstream: targeting, discovery, messaging or how reps are measured. Those are all scored in the [100-Point GTM Autopsy](/gtm-autopsy/), ranked by what they're costing you in pipeline.
+When activity rises and pipeline doesn't, the problem is usually upstream: targeting, discovery, messaging or how reps are measured. Those are all scored in the [100-Point Scorecard](/scorecard/), ranked by what they're costing you in pipeline.
 
-**Working harder and still missing?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=add-value-not-more-activity&utm_content=inbody_text).
+**Working harder and still missing?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point Scorecard](/scorecard/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=add-value-not-more-activity&utm_content=inbody_text).

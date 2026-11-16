@@ -18,8 +18,8 @@ related:
 also:
 - href: /compare/outbound-agency-vs-fractional-cro/
   label: Outbound agency vs fractional CRO
-- href: /gtm-autopsy/
-  label: The 100-Point GTM Autopsy
+- href: /scorecard/
+  label: The 100-Point Scorecard
 takeaways:
 - Volume multiplies whatever the list and the message already are.
 - A market that ignores cold outreach will not improve because you hired more senders.
@@ -33,7 +33,7 @@ faqs:
 - q: Is the copy the problem?
   a: Sometimes. It is the third question, not the first. Who received it, and what they were supposed to do next, usually explain the quiet before the sentence does.
 - q: What is the first step?
-  a: The 20 Minute Teardown. It is free. If it is useful, the 100-Point GTM Autopsy is $5,000 and takes ten business days.
+  a: The 20 Minute Teardown. It is free. If it is useful, the 100-Point Scorecard is $5,000 and takes five business days.
 ---
 Why is our outbound not working is usually the wrong diagnosis of a busy team. The sends are real. The aim is not. Volume multiplies a loose list and a vague reason to write. It does not repair them. I see it every quarter.
 
@@ -59,4 +59,4 @@ An agency will still send if you pay it to. That is a different purchase from ow
 
 ## Where does the teardown fit?
 
-The [20 Minute Teardown](/15minutepipelineteardown/) is the free look at the part of the motion I can read from the outside. The paid next step is the [100-Point GTM Autopsy](/gtm-autopsy/). I do not sell a pile of new sequences off this page.
+The [20 Minute Teardown](/scorecard/#teardown) is the free look at the part of the motion I can read from the outside. The paid next step is the [100-Point Scorecard](/scorecard/). I do not sell a pile of new sequences off this page.

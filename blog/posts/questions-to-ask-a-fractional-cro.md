@@ -34,7 +34,7 @@ faqs:
 - q: Is a fractional CRO the right next hire?
   a: When a team already sells and the gap is the motion. When the company is still an owner and a first seller, a fractional sales leader is the closer description. The larger title does not fix the smaller problem.
 - q: Where are the fees published?
-  a: On the pricing page. The 20 Minute Teardown is free. The 100-Point GTM Autopsy is $5,000 and takes ten business days. The 90-day engagement is $37,500, billed $15,000, then $12,500, then $10,000. I do not quote anyone else's rate.
+  a: On the Standing Hour page. The 20 Minute Teardown is free. The 100-Point Scorecard is $5,000 and takes five business days. The Standing Hour is $4,500 a month. I do not quote anyone else's rate.
 ---
 You have already paid a fractional person. A plan showed up. The stages did not change, and you are still the one who prices the large jobs. Questions to ask a fractional CRO start from that fact, before anyone discusses a retainer.
 
@@ -68,4 +68,4 @@ If the company is still an owner and one seller, the closer title is a [fraction
 
 ## Where do you start?
 
-The [20 Minute Teardown](/15minutepipelineteardown/), free. If it is useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/). I will not sell a 90-day build off an interview script.
+The [20 Minute Teardown](/scorecard/#teardown), free. If it is useful, the next step is the [100-Point Scorecard](/scorecard/). I will not sell the Standing Hour off an interview script. If what you need is someone to help you fix what you’re already doing, that’s [the Standing Hour](/standing-hour/).

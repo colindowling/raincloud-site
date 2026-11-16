@@ -57,4 +57,4 @@ Decide how long you will pursue an account, and stop when the reason is gone. Th
 
 ## Where do you start?
 
-Look at who you target, what triggers a note, and what you measure. That is the [20 Minute Teardown](/15minutepipelineteardown/). The paid next step is the [100-Point GTM Autopsy](/gtm-autopsy/).
+Look at who you target, what triggers a note, and what you measure. That is the [20 Minute Teardown](/scorecard/#teardown). The paid next step is the [100-Point Scorecard](/scorecard/).

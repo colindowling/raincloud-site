@@ -16,9 +16,9 @@ related:
 - why-deals-die-after-the-yes
 - sales-message-consistency
 also:
-- href: /gtm-autopsy/
-  label: The 100-Point GTM Autopsy
-- href: /pricing/
+- href: /scorecard/
+  label: The 100-Point Scorecard
+- href: /standing-hour/#pricing
   label: Pricing
 takeaways:
 - Forecast accuracy is a stage-definition problem before it is a math problem.
@@ -55,10 +55,10 @@ A rule for silence. No activity inside a defined window, and the deal is flagged
 
 A number the pipeline can actually produce, not a target pasted on top of it. I will not promise you a win rate. I will tell you whether the current stages can support the number you already told the board.
 
-That work is part of the [100-Point GTM Autopsy](/gtm-autopsy/). The fees and the six-month terms are on [the pricing page](/pricing/).
+That work is part of the [100-Point Scorecard](/scorecard/). The fees and terms are on [the Standing Hour page](/standing-hour/#pricing).
 
 ## What should you do this week?
 
 Pull ten open deals. Ask, for each one, what happened last, what happens next, and on what date. The ones with no date are not forecast. They are inventory.
 
-If you want that read from the outside first, book the [20 Minute Teardown](/15minutepipelineteardown/).
+If you want that read from the outside first, book the [20 Minute Teardown](/scorecard/#teardown).

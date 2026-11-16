@@ -19,20 +19,20 @@ related:
 also:
 - href: /fractional-sales-leader/
   label: Fractional sales leader
-- href: /gtm-consulting.html
-  label: The 90-day engagement
+- href: /standing-hour/
+  label: The Standing Hour
 takeaways:
 - The founder being the best seller is the trap, not the compliment.
 - Write who you sell to, what a good deal is, and the story, before the hire.
 - A new seller cannot invent the system and hit a number in the same quarter.
-- The teardown is free. The autopsy is the paid next step.
+- The teardown is free. The Scorecard is the paid next step.
 faqs:
 - q: How do you get out of founder-led sales?
   a: Write the motion down so someone else can run a deal without you in the room. Who you sell to, how you qualify, the story, and the next step every opportunity must have. Then hire into that, not into a blank page.
 - q: Should I hire a VP to get out of the deals?
   a: Only after the process converts without you inventing it on every call. A VP hired into fog inherits the fog. A fractional sales leader, in the sense of a process, is often the closer fit than a chief.
 - q: What if I am still the only one who can close?
-  a: Then the asset is in your head. The job is to get it onto a page your team can use. That is part of the 90-day engagement, after the autopsy, not a slogan.
+  a: Then the asset is in your head. The job is to get it onto a page your team can use. That is work we do together in the Standing Hour, not a slogan.
 ---
 How to get out of founder-led sales starts with a hard fact. It works, which is why it lasts. You are the qualification, the story, and the close. The team treats the system as optional because the founder is the system. If two of you already sell, settle [which founder should own sales](/blog/which-founder-should-own-sales.html) before you try to leave the deals.
 
@@ -54,8 +54,8 @@ A way to review deals that does not require you to re-sell them.
 
 Not a chief, if the company is still one seller and a founder. A [fractional sales leader](/fractional-sales-leader/) is the closer description: someone who builds the process the first reps can run. A [fractional CRO vs a VP of sales](/fractional-cro-vs-vp-of-sales/) is a later argument, when a team already exists.
 
-I do not recruit that person. If you want the motion built, that is [the 90-day engagement](/gtm-consulting.html), and it comes after the autopsy.
+I do not recruit that person. If you want help building the motion yourself, that is [the Standing Hour](/standing-hour/), and starting with the Scorecard shortens the minimum commitment from six months to three.
 
 ## What is the first hour?
 
-The [20 Minute Teardown](/15minutepipelineteardown/). Then, if it is useful, the [100-Point GTM Autopsy](/gtm-autopsy/). I will not sell you a 90-day build off a blog post.
+The [20 Minute Teardown](/scorecard/#teardown). Then, if it is useful, the [100-Point Scorecard](/scorecard/). I will not sell you the Standing Hour off a blog post.

@@ -10,8 +10,8 @@ tag: Sales
 topic: diagnosis
 target_query: how to tell if a customer problem is worth solving
 source_pod: MBL pod 2026-10-26 (guest kept anonymous)
-hub: /gtm-autopsy/
-hub_label: The 100-Point GTM Autopsy
+hub: /scorecard/
+hub_label: The 100-Point Scorecard
 related:
 - which-buyer-signals-matter
 - define-icp-stop-selling-features
@@ -76,6 +76,6 @@ If you don't know what a buyer does when they don't choose you, you can't say wh
 
 Pull a list of the customers who left in the last year, and the deals you lost to "no decision." Call three of each. Ask the four questions above and write down the answers word for word. Then put what you hear next to what your team says about why you win. The gap is where your go-to-market is guessing.
 
-If you want a structured way to check the rest, the [100-Point GTM Framework](/resources/100-point-gtm-framework.html) lists every point I score, free to download. When you're ready for experienced help leading the revenue side, start with [what a fractional CRO does](/fractional-cro/). The free conversation is still the [20 Minute Teardown](/15minutepipelineteardown/).
+If you want a structured way to check the rest, the [100-Point GTM Framework](/resources/100-point-gtm-framework.html) lists every point I score, free to download. When you're ready for experienced help leading the revenue side, start with [what a fractional CRO does](/fractional-cro/). The free conversation is still the [20 Minute Teardown](/scorecard/#teardown).
 
-**Not sure your pipeline is built on real demand?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=complaints-arent-demand&utm_content=inbody_text).
+**Not sure your pipeline is built on real demand?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point Scorecard](/scorecard/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=complaints-arent-demand&utm_content=inbody_text).
