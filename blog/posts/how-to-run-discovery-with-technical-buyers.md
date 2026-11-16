@@ -10,8 +10,8 @@ tag: Sales
 topic: diagnosis
 excerpt: Let the estimator, or the engineer who will live with the software, describe the constraint before you describe what you sell.
 sort: 13
-hub: /gtm-autopsy/
-hub_label: The 100-Point GTM Autopsy
+hub: /scorecard/
+hub_label: The 100-Point Scorecard
 answer: "How to run discovery with technical buyers means letting them describe the constraint before you describe what you sell. That person might be an estimator on a job site or the engineer who will live with the software after the contract is signed. Start there. Your capabilities can wait."
 related:
 - selling-to-technical-buyers
@@ -19,7 +19,7 @@ related:
 also:
 - href: /blog/define-icp-stop-selling-features.html
   label: Define an ICP you can sell to
-- href: /15minutepipelineteardown/
+- href: /scorecard/#teardown
   label: 20 Minute Teardown
 takeaways:
 - The technical buyer can throw the job out because the scope is wrong.
@@ -66,4 +66,4 @@ If the note is a list of your services, the meeting was a presentation.
 
 ## Where do you start if these deals keep stalling?
 
-The [20 Minute Teardown](/15minutepipelineteardown/). If you want it scored against your pipeline, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/).
+The [20 Minute Teardown](/scorecard/#teardown). If you want it scored against your pipeline, the next step is the [100-Point Scorecard](/scorecard/).

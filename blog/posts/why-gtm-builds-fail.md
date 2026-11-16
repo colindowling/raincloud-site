@@ -10,8 +10,8 @@ format: html
 topic: build
 sort: 1
 updated: '2026-10-31'
-hub: /gtm-consulting.html
-hub_label: The Engagement
+hub: /standing-hour/
+hub_label: The Standing Hour
 related:
 - outbound-reply-rates-2026
 - bofu-content-that-moves-deals
@@ -32,8 +32,8 @@ faqs:
   a: The build is rarely the hard part. The quarter after handoff is where go-to-market systems quietly fall apart, and the failure is predictable enough to design against. Ninety days later the sequences have been edited into something unrecognisable, two of the four channels are dormant, nobody is running the weekly review, and the founder is back to doing sales personally.
 - q: What are the four failures after handoff?
   a: The system has no owner. The first bad month triggers a rewrite. The tooling survives and the process does not. The founder takes the wheel back. Systems with no owner do not fail loudly. They degrade. By the end of the quarter the motion has been modified so many times that nobody can tell what caused what.
-- q: Why is the engagement 90 days of building and then advisory?
-  a: If the failure reliably happens after handoff, then an engagement that ends at handoff is structured to fail. This is why the RAINCLOUD engagement is 90 days of building followed by 90 days of advisory rather than a longer build. The second half is not padding, and it is not support. It exists specifically to survive those four failures.
+- q: Why is the Standing Hour weekly instead of a build and a handoff?
+  a: If the failure reliably happens after handoff, then an engagement that ends at handoff is structured to fail. This is why I don't build it for you and leave. We build it together on the call, you run it, and I'm there every week to check. It exists specifically to survive those four failures.
 - q: What should you ask anyone who wants to rebuild your go-to-market?
   a: What happens in the quarter after you leave, and are you there for it? Who owns the system by name when you are gone? What is the rule for changing something? Which weekly practice must survive? A good answer to all four is worth more than a longer list of deliverables.
 ---
@@ -81,7 +81,7 @@ faqs:
 
       <p>If the failure reliably happens after handoff, then an engagement that ends at handoff is structured to fail. It is optimised for delivering a build rather than for the outcome the client actually wanted, which was a working motion six months later.</p>
 
-      <p>This is why I structure the RAINCLOUD engagement as 90 days of building followed by 90 days of advisory rather than a longer build. The second half is not padding, and it is not support. It exists specifically to survive the four failures above:</p>
+      <p>This is why I don't build it for you and leave. In <a href="/standing-hour/">the Standing Hour</a> we build it together on the call, you run it, and I'm there every week to check. It exists specifically to survive the four failures above:</p>
 
       <ul>
         <li><strong>Ownership is transferred deliberately</strong>, to a named person, while there is still someone around to notice it has not really happened.</li>

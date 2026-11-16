@@ -13,6 +13,31 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://rncld.com"
 SKIP_PREFIXES = ("/cdn-cgi/",)
 
+# Retired by the Nov 2026 advisory repositioning. Files stay until the App Platform
+# 301s are live; they are not held to the current nav or offer rules.
+RETIRED = {
+    "gtm-autopsy/index.html",
+    "15minutepipelineteardown/index.html",
+    "outside-audit/index.html",
+    "pricing/index.html",
+    "faq/index.html",
+    "gtm-consulting.html",
+    "about.html",
+}
+RETIRED_URLS = ("/gtm-autopsy/", "/15minutepipelineteardown/", "/outside-audit/", "/pricing/", "/faq/", "/gtm-consulting.html")
+# Old-offer language that must not appear on any live, non-blog page.
+OLD_OFFER = (
+    "every penny", "money-back", "$37,500", "$7,500", "$25,000", "$10,000", "$2,000", "$4,000",
+    "ManagedSDR", "two builds at a time", "Two builds at a time", "$50M", "$50 million",
+    "90-Day GTM Fix", "Autopsy", "EXACTLY", "band-boardroom", "withants.com", "friendlyghostwriter.com",
+    "The AI Ready Advisor",
+)
+
+
+def is_live(path: Path) -> bool:
+    rel = path.relative_to(ROOT).as_posix()
+    return rel not in RETIRED and not rel.startswith("blog/") and not rel.startswith("includes/")
+
 errors: list[str] = []
 
 
@@ -176,14 +201,16 @@ def check_sitemap() -> None:
         f"{SITE}/problems/founder-led-sales-trap/",
         f"{SITE}/problems/pipeline-not-growing/",
         f"{SITE}/about/",
-        f"{SITE}/faq/",
         f"{SITE}/videos/",
-        f"{SITE}/15minutepipelineteardown/",
-        f"{SITE}/gtm-autopsy/",
+        f"{SITE}/scorecard/",
+        f"{SITE}/standing-hour/",
     ]
     for loc in required:
         if loc not in locs:
             fail(f"sitemap missing {loc}")
+    for retired in RETIRED_URLS:
+        if f"{SITE}{retired}" in locs:
+            fail(f"{retired} is retired (301 at merge) and should not be in the sitemap")
     for loc in locs:
         target = resolve(loc)
         if target is None or not target.is_file():
@@ -198,11 +225,11 @@ def check_sitemap() -> None:
     if any("/bofu/" in loc for loc in locs):
         fail("unlisted BoFu keyword pages are on hold and must not be in the sitemap")
     if f"{SITE}/audit.html" in locs:
-        fail("audit.html redirects to /gtm-autopsy/ and should not be in the sitemap")
+        fail("audit.html redirects to /scorecard/ and should not be in the sitemap")
     if f"{SITE}/about.html" in locs:
         fail("about.html duplicates /about/ and should not be in the sitemap")
     if f"{SITE}/outside-audit/" in locs:
-        fail("outside-audit redirects to /15minutepipelineteardown/ and should not be in the sitemap")
+        fail("outside-audit is a redirect and should not be in the sitemap")
     for retired in ("/ai-agents.html", "/bofu-content.html", "/content.html", "/demand-generation.html"):
         if f"{SITE}{retired}" in locs:
             fail(f"{retired} is a redirect and should not be in the sitemap")
@@ -232,32 +259,37 @@ def check_nav(path: Path, text: str) -> None:
         fail(f"{path.relative_to(ROOT)}: shared nav assets are not linked")
     if 'class="nav-cta"' not in nav:
         fail(f"{path.relative_to(ROOT)}: nav CTA is missing")
-    required = [
-        "/gtm-autopsy/",
-        "/15minutepipelineteardown/",
-        "/gtm-consulting.html",
-        "/pricing/",
-        "/problems/outbound-not-landing/",
-        "/problems/pipeline-not-growing/",
-        "/problems/first-sales-hire/",
-        "/problems/founder-led-sales-trap/",
-        "/blog/",
-        "/videos/",
-        "/faq/",
-        "/about/",
-    ]
-    for href in required:
-        if f'href="{href}"' not in nav:
-            fail(f"{path.relative_to(ROOT)}: nav is missing {href}")
     for banned in ("/ai-agents", "/bofu-content", "/demand-generation", "/content.html", "/audit.html", "/outside-audit/"):
         if banned in nav:
             fail(f"{path.relative_to(ROOT)}: unlisted page {banned} is in the nav")
-    # Five top-level destinations: four groups plus About. The CTA is not one of them.
-    groups = len(re.findall(r'<li class="has-dropdown(?: is-ancestor)?">', nav))
-    if groups != 4:
-        fail(f"{path.relative_to(ROOT)}: expected 4 nav groups, found {groups}")
-    if not re.search(r'<li><a\b[^>]*href="/about/"', nav):
-        fail(f"{path.relative_to(ROOT)}: About is not a top-level nav item")
+    if not is_live(path):
+        return
+    required = ["/scorecard/", "/standing-hour/", "/blog/", "/about/"]
+    for href in required:
+        if not re.search(r'<li><a\b[^>]*href="' + re.escape(href) + '"', nav):
+            fail(f"{path.relative_to(ROOT)}: nav is missing top-level {href}")
+    for href in RETIRED_URLS + ("/problems/", "/videos/"):
+        if f'href="{href}' in nav:
+            fail(f"{path.relative_to(ROOT)}: {href} should be out of the nav")
+    # Four items and a button. No dropdown groups.
+    if '<li class="has-dropdown' in nav:
+        fail(f"{path.relative_to(ROOT)}: nav should have no dropdown groups")
+    if "Book the 20 Minute Teardown" not in nav:
+        fail(f"{path.relative_to(ROOT)}: nav button should read Book the 20 Minute Teardown")
+
+
+def check_live_copy(path: Path, text: str) -> None:
+    if not is_live(path) or "<nav id=\"nav\"" not in text:
+        return
+    for term in OLD_OFFER:
+        if term in text:
+            fail(f"{path.relative_to(ROOT)}: old-offer term {term!r}")
+    for href in RETIRED_URLS:
+        if f'href="{href}' in text:
+            fail(f"{path.relative_to(ROOT)}: links to retired {href}")
+    footer = re.search(r'<footer class="sf">.*?</footer>', text, flags=re.S)
+    if footer and "a standing hour with an operator who has built the motion" not in footer.group(0):
+        fail(f"{path.relative_to(ROOT)}: footer is not the current footer")
 
 
 def check_tracking(path: Path, text: str) -> None:
@@ -292,6 +324,7 @@ def main() -> int:
         check_offer_name(path, text)
         check_tracking(path, text)
         check_nav(path, text)
+        check_live_copy(path, text)
         if 'href="/about.html"' in text or "href='/about.html'" in text:
             fail(f"{path.relative_to(ROOT)}: link points at /about.html; use /about/")
         if path.parent == ROOT / "blog" and path.name != "index.html":

@@ -10,8 +10,8 @@ format: html
 topic: diagnosis
 sort: 3
 updated: '2026-10-31'
-hub: /gtm-autopsy/
-hub_label: The 100-Point GTM Autopsy
+hub: /scorecard/
+hub_label: The 100-Point Scorecard
 related:
 - bofu-content-that-moves-deals
 - why-gtm-builds-fail

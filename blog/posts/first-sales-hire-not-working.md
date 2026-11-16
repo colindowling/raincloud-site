@@ -54,8 +54,8 @@ Write the one sentence. Check it against the last ten wins and the last ten loss
 
 When the sentence is real and you are ready to look, [find a salesperson through your network](/blog/find-a-salesperson-through-your-network.html) before you write a posting.
 
-A [fractional sales leader](/fractional-sales-leader/) is the role that builds that sentence and the process around it. A [fractional CRO](/fractional-cro/) is a later title, for a team that already sells. I do not place either person. I build the motion or I don't.
+A [fractional sales leader](/fractional-sales-leader/) is the role that builds that sentence and the process around it. A [fractional CRO](/fractional-cro/) is a later title, for a team that already sells. I do not place either person, and I don't build the motion for you. If what you need is someone to help you fix what you’re already doing, that’s [the Standing Hour](/standing-hour/).
 
 ## Where do you start?
 
-The [20 Minute Teardown](/15minutepipelineteardown/), free. The next step, if you want the score, is the [100-Point GTM Autopsy](/gtm-autopsy/).
+The [20 Minute Teardown](/scorecard/#teardown), free. The next step, if you want the score, is the [100-Point Scorecard](/scorecard/).

@@ -1,6 +1,6 @@
 ---
 title: "GTM audit checklist: go to market audit template"
-description: A GTM audit checklist copied from the 100 points on the autopsy page. The go to market audit template is that list. The PDF is the framework download.
+description: A GTM audit checklist copied from the 100 points in the 100-point framework. The go to market audit template is that list. The PDF is the framework download.
 slug: gtm-audit-checklist
 date: '2026-11-14'
 updated: '2026-11-14'
@@ -8,44 +8,44 @@ date_label: November 2026
 read_time: 12 min read
 tag: Audit
 topic: soft
-excerpt: The 100 statements already published on the autopsy page, in the framework's ten sections. Not a new list.
+excerpt: The 100 statements already published in the 100-point framework, in its ten sections. Not a new list.
 sort: 10
-hub: /gtm-autopsy/
-hub_label: The 100-Point GTM Autopsy
+hub: /scorecard/
+hub_label: The 100-Point Scorecard
 related:
 - fractional-cro-cost
 - forecast-accuracy
 also:
 - href: /resources/100-point-gtm-framework.html
   label: Download the 100-point framework
-- href: /15minutepipelineteardown/
+- href: /scorecard/#teardown
   label: 20 Minute Teardown
 takeaways:
-- The checklist is the 100 points already published on the autopsy page.
+- The checklist is the 100 points already published in the 100-point framework.
 - Ten sections, ten statements, one point each, met or not met.
 - The framework download is that list as a PDF.
 - The teardown covers roughly 40 from the outside. Which 40 is not published, so this page does not guess.
 faqs:
 - q: What is a GTM audit checklist?
-  a: It is the hundred yes-or-no statements the 100-Point GTM Autopsy scores. This page copies those statements. It does not add points.
+  a: It is the hundred yes-or-no statements the 100-Point Scorecard scores. This page copies those statements. It does not add points.
 - q: What is a go to market audit template?
   a: The same list, used before you have a score. The downloadable version is the 100-Point GTM Framework. A template is not a diagnosis.
 - q: Can I score myself with this?
-  a: You can mark each line met or not met. That is a reading exercise. The score that uses your CRM and your team is the autopsy, which is $5,000 and takes ten business days.
+  a: You can mark each line met or not met. That is a reading exercise. The score that uses your CRM and your team is the Scorecard, which is $5,000 and takes five business days.
 - q: Which points does the 20 Minute Teardown cover?
   a: Roughly 40 of the 100, the ones that can be read from public sources. The site does not publish which 40, so this checklist does not mark them.
 ---
-A GTM audit checklist is the list of statements a go to market audit template should force you to answer yes or no. These one hundred lines are copied from the points already published on the 100-Point GTM Autopsy page. I did not add any.
+A GTM audit checklist is the list of statements a go to market audit template should force you to answer yes or no. These one hundred lines are copied from the points already published in the 100-point framework. I did not add any.
 
-The [100-Point GTM Framework](/resources/100-point-gtm-framework.html) is the same list as a free PDF. The [20 Minute Teardown](/15minutepipelineteardown/) covers roughly 40 of these points from public sources. This site does not publish which 40 those are, so this checklist does not guess. Scoring them against your CRM is the [100-Point GTM Autopsy](/gtm-autopsy/): $5,000, ten business days.
+The [100-Point GTM Framework](/resources/100-point-gtm-framework.html) is the same list as a free PDF. The [20 Minute Teardown](/scorecard/#teardown) covers roughly 40 of these points from public sources. This site does not publish which 40 those are, so this checklist does not guess. Scoring them against your CRM is the [100-Point Scorecard](/scorecard/): $5,000, five business days.
 
 ## What is on a GTM audit checklist?
 
-Ten sections. Ten statements each. One point each, met or not met. The section names match the framework page and the autopsy page.
+Ten sections. Ten statements each. One point each, met or not met. The section names match the framework page.
 
 ## How do you use a go to market audit template?
 
-Read each line as a yes or no. If you cannot show the artifact, it is not met. A self-score is a reading exercise. The number that uses your data is the autopsy, not this page. Fees are on the [pricing page](/pricing/).
+Read each line as a yes or no. If you cannot show the artifact, it is not met. A self-score is a reading exercise. The number that uses your data is the Scorecard, not this page. Fees are on the [Standing Hour page](/standing-hour/#pricing).
 
 ## 01 Market & ICP
 
@@ -179,4 +179,4 @@ Read each line as a yes or no. If you cannot show the artifact, it is not met. A
 
 ## Where does the score come from?
 
-This page is the list. It is not your score. Book the [20 Minute Teardown](/15minutepipelineteardown/) if you want the outside view first. The paid next step is the autopsy.
+This page is the list. It is not your score. Book the [20 Minute Teardown](/scorecard/#teardown) if you want the outside view first. The paid next step is the Scorecard.

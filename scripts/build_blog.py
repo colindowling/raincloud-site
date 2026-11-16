@@ -3,6 +3,7 @@
 
 Reads blog/posts/*.md, writes blog/<slug>.html, refreshes the card list in
 blog/index.html, and upserts those URLs plus /problems/*/ and /about/ into sitemap.xml.
+Retired pages (/gtm-autopsy/, /15minutepipelineteardown/, /faq/) are not re-added.
 
 Usage (from the repo root):
     python3 scripts/build_blog.py
@@ -33,45 +34,51 @@ ABOUT_DIR = ROOT / "about"
 
 SITE = "https://rncld.com"
 PUBLISHED_STAMP = "2026-10-31"
-OG_IMAGE = f"{SITE}/assets/band-boardroom.png"
+REPOSITION_STAMP = "2026-11-15"
+OG_IMAGE = f"{SITE}/assets/founder-headshot.jpg"
 
 CALENDLY = "https://calendly.com/30minutechat/20-minute-go-to-market-w-colin"
-AUTOPSY_PATH = "/gtm-autopsy/"
+SCORECARD_PATH = "/scorecard/"
+STANDING_HOUR_PATH = "/standing-hour/"
 
-TOPICS = {
-    "diagnosis": {
-        "heading": "Start with the 20 Minute Teardown.",
-        "body": (
-            "It covers roughly 40 of the 100-Point GTM Autopsy\u2019s 100 points: "
-            "the ones that can be scored from outside the company, from public "
-            "sources alone. No mystery shop. The 100-Point GTM Autopsy is $5,000, "
-            "ten business days, required before the 90-day fix, credited in full "
-            "toward any engagement, and covered by a no-questions-asked money-back guarantee."
-        ),
-        "meta": "Then the $5,000 100-Point GTM Autopsy. Then the 90-day fix.",
+# Every topic closes into the same offer (Nov 2026 advisory repositioning).
+# The copy is verbatim from Colin's Page copy: the in-body block uses the
+# Scorecard closing, the end-of-post block uses the Home closing.
+CTA_COPY = {
+    "inbody": {
+        "heading": "Start with the free forty.",
+        "body": ["Twenty minutes, nothing to prepare, and you keep the scorecard either way."],
     },
-    "build": {
-        "heading": "The 90-day fix comes after the 100-Point GTM Autopsy.",
-        "body": (
-            "The 100-Point GTM Autopsy tells you what\u2019s broken and in what order. "
-            "The engagement builds it \u2014 ICP, positioning, the pipeline model, "
-            "outbound, the scorecard in your CRM and the playbook \u2014 in your tools, "
-            "with the people who will run it after I\u2019m gone. $37,500 over 90 days, "
-            "then $7,500 a month. It starts with the 20 Minute Teardown."
-        ),
-        "meta": "$15,000, then $12,500, then $10,000.",
-    },
-    "soft": {
-        "heading": "The list is free. The score is the 100-Point GTM Autopsy.",
-        "body": (
-            "Every point I score, published in full. It\u2019s the full list the "
-            "100-Point GTM Autopsy scores against, so you can see exactly what it "
-            "measures before you spend anything. The 20 Minute Teardown covers "
-            "the slice that can be scored from outside the company."
-        ),
-        "meta": "Then the $5,000 100-Point GTM Autopsy.",
+    "post_end": {
+        "heading": "Start with the teardown.",
+        "body": [
+            "Twenty minutes, free, and you keep the scorecard whether we work together or not. "
+            "I\u2019ll score forty of the hundred points from the outside, walk you through what I found, "
+            "and leave you with two or three things to go and do.",
+            "Do them. If they help, we should talk about the other sixty.",
+        ],
     },
 }
+TOPICS = ("diagnosis", "build", "soft")
+
+# Hub and related-box links that still point at retired pages in post front matter.
+# Front matter is left as written; the rendered chrome points at the live pages.
+RETIRED_LINKS = {
+    "/gtm-autopsy/": ("/scorecard/", "The 100-Point Scorecard"),
+    "/15minutepipelineteardown/": ("/scorecard/#teardown", "The 20 Minute Teardown"),
+    "/outside-audit/": ("/scorecard/#teardown", "The 20 Minute Teardown"),
+    "/gtm-consulting.html": ("/standing-hour/", "The Standing Hour"),
+    "/pricing/": ("/standing-hour/#pricing", "Pricing"),
+    "/faq/": ("/standing-hour/#faq", "FAQ"),
+}
+RENAMED_LABELS = {"The 100-Point GTM Framework": "The 100-point framework"}
+
+
+def live_link(href: str, label: str) -> tuple[str, str]:
+    if href in RETIRED_LINKS:
+        return RETIRED_LINKS[href]
+    return href, RENAMED_LABELS.get(label, label)
+
 
 REQUIRED = (
     "title",
@@ -251,19 +258,19 @@ def body_html(post: dict) -> str:
 
 
 def cta_html(post: dict, content: str) -> str:
-    topic = TOPICS[post["topic"]]
+    copy = CTA_COPY[content]
     slug = post["slug"]
     cluster = post["topic"]
     primary = calendly_href(slug, content)
-    meta = f'\n        <p class="post-cta-meta">{esc(topic["meta"])}</p>' if topic.get("meta") else ""
+    paras = "\n        ".join(f"<p>{esc(line)}</p>" for line in copy["body"])
     return f"""<div class="post-cta" data-cta-block="{esc(content)}">
-        <h3>{esc(topic["heading"])}</h3>
-        <p>{esc(topic["body"])}</p>{meta}
+        <h3>{esc(copy["heading"])}</h3>
+        {paras}
         <a href="{primary}" class="btn btn--primary"{cta_attrs("outside_audit", content, cluster)}>
           <span>Book the 20 Minute Teardown</span>
           <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <p class="post-cta-sec"><a class="text-link" href="{AUTOPSY_PATH}"{cta_attrs("autopsy", content, cluster)}>See the 100-Point GTM Autopsy</a></p>
+        <p class="post-cta-sec"><a class="text-link" href="{SCORECARD_PATH}"{cta_attrs("scorecard", content, cluster)}>The 100-Point Scorecard</a> &middot; <a class="text-link" href="{STANDING_HOUR_PATH}"{cta_attrs("standing_hour", content, cluster)}>The Standing Hour</a></p>
       </div>"""
 
 
@@ -331,8 +338,10 @@ def faq_html(post: dict) -> str:
 
 
 def related_html(post: dict, by_slug: dict) -> str:
+    hub_href, hub_label = live_link(post["hub"], post["hub_label"])
+    seen = {hub_href}
     links = [
-        f'        <li><a href="{esc(post["hub"])}">{esc(post["hub_label"])}</a></li>'
+        f'        <li><a href="{esc(hub_href)}">{esc(hub_label)}</a></li>'
     ]
     for slug in post.get("related") or []:
         other = by_slug.get(slug)
@@ -343,8 +352,11 @@ def related_html(post: dict, by_slug: dict) -> str:
         )
     cluster = post["topic"]
     for item in post.get("also") or []:
-        href = item["href"]
-        label = item["label"]
+        href, label = live_link(item["href"], item["label"])
+        if "calendly.com" not in href:
+            if href in seen:
+                continue
+            seen.add(href)
         if "calendly.com" in href:
             links.append(
                 "        <li><a href=\""
@@ -432,6 +444,52 @@ def json_ld(post: dict) -> str:
     return json.dumps(payload, ensure_ascii=False, indent=2)
 
 
+def site_footer(slug: str, cluster: str) -> str:
+    """The site-wide footer, matching every non-blog page."""
+    book = calendly_href(slug, "footer")
+    return f"""  <footer class="sf">
+    <div class="container">
+      <div class="sf-top">
+        <div>
+          <div class="sf-logo">RAIN<em>CLOUD</em></div>
+          <p class="sf-tag">RAINCLOUD &mdash; a standing hour with an operator who has built the motion. Six clients at a time. Colin Dowling.</p>
+        </div>
+        <div class="sf-cols">
+          <div>
+            <div class="sf-h">Work with me</div>
+            <ul>
+              <li><a href="/scorecard/#teardown">Teardown</a></li>
+              <li><a href="/scorecard/">Scorecard</a></li>
+              <li><a href="/standing-hour/">The Standing Hour</a></li>
+              <li><a href="/standing-hour/#pricing">Pricing</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Read</div>
+            <ul>
+              <li><a href="/blog/">Articles</a></li>
+              <li><a href="/standing-hour/#faq">FAQ</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/resources/100-point-gtm-framework.html">The 100-point framework</a></li>
+              <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
+              <li><a href="/llms.txt">llms.txt</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="sf-h">Talk</div>
+            <ul>
+              <li><a href="{book}" target="_blank" rel="noopener"{cta_attrs("outside_audit", "footer", cluster)}>Book</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sf-copy">&copy; 2026 RAINCLOUD. All rights reserved.</div>
+    </div>
+  </footer>"""
+
+
 def page_html(post: dict, by_slug: dict) -> str:
     slug = post["slug"]
     article = insert_inbody(body_html(post), cta_html(post, "inbody"))
@@ -496,9 +554,6 @@ def page_html(post: dict, by_slug: dict) -> str:
   </script>
   <style id="rc-global">
     nav .nav-links a[aria-current="page"]{{color:var(--text-primary);}}
-    footer.sf .sf-also{{margin-top:14px;font-size:.72rem;line-height:1.6;color:var(--text-tertiary);max-width:300px;}}
-    footer.sf .sf-also a{{color:var(--text-secondary);border-bottom:1px solid var(--border-subtle);}}
-    footer.sf .sf-also a:hover{{color:var(--text-primary);}}
   </style>
 </head>
 <body data-page-template="post" data-cluster="{esc(post["topic"])}" data-persona="">
@@ -530,49 +585,7 @@ def page_html(post: dict, by_slug: dict) -> str:
       </div>
     </div>
   </div>
-  <footer class="sf">
-    <div class="container">
-      <div class="sf-top">
-        <div>
-          <div class="sf-logo">RAIN<em>CLOUD</em></div>
-          <p class="sf-tag">One engagement: a 100-point GTM autopsy, a 90-day rebuild on a fee that steps down, then advisory. Run personally by Colin Dowling.</p>
-          <p class="sf-also">Also from Colin Dowling: <a href="https://www.withants.com/" target="_blank" rel="noopener">Ants</a> (managed AI agents), <a href="https://www.friendlyghostwriter.com/" target="_blank" rel="noopener">Ghostwriter</a> (B2B content), The AI Ready Advisor (executive AI strategy).</p>
-        </div>
-        <div class="sf-cols">
-          <div>
-            <div class="sf-h">Work with me</div>
-            <ul>
-              <li><a href="/15minutepipelineteardown/">20 Minute Teardown</a></li>
-              <li><a href="/gtm-autopsy/">The Autopsy</a></li>
-              <li><a href="/gtm-consulting.html">The Engagement</a></li>
-              <li><a href="/pricing/">Pricing</a></li>
-            </ul>
-          </div>
-          <div>
-            <div class="sf-h">Read</div>
-            <ul>
-              <li><a href="/blog/">Articles</a></li>
-              <li><a href="/faq/">FAQ</a></li>
-              <li><a href="/videos/">Videos</a></li>
-              <li><a href="/about/">About</a></li>
-              <li><a href="/resources/100-point-gtm-framework.html">The 100-Point GTM Framework</a></li>
-              <li><a href="/resources/benchmark-2026.html">2026 Benchmark Report</a></li>
-              <li><a href="/llms.txt">llms.txt</a></li>
-            </ul>
-          </div>
-          <div>
-            <div class="sf-h">Talk</div>
-            <ul>
-              <li><a href="{calendly_href(slug, "footer")}"{cta_attrs("outside_audit", "footer", post["topic"])}>Book the 20 Minute Teardown</a></li>
-              <li><a href="/contact.html">Contact</a></li>
-              <li><a href="mailto:colin@rncld.com"><!--email_off-->colin@rncld.com<!--/email_off--></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="sf-copy">&copy; 2026 RAINCLOUD. All rights reserved.</div>
-    </div>
-  </footer>
+{site_footer(slug, post["topic"])}
 </body>
 </html>
 """
@@ -684,22 +697,19 @@ def update_sitemap(posts: list[dict]) -> None:
             sitemap_url(f"{SITE}/blog/{post['slug']}.html", lastmod, "monthly", "0.6")
         )
     extra_blocks = [
-        sitemap_url(f"{SITE}/gtm-autopsy/", "2026-11-02", "monthly", "0.9"),
-        sitemap_url(f"{SITE}/15minutepipelineteardown/", "2026-11-14", "monthly", "0.8"),
-        sitemap_url(f"{SITE}/fractional-cro/", "2026-11-14", "monthly", "0.8"),
-        sitemap_url(f"{SITE}/fractional-sales-leader/", "2026-11-14", "monthly", "0.8"),
-        sitemap_url(f"{SITE}/fractional-cro-vs-vp-of-sales/", "2026-11-14", "monthly", "0.7"),
-        sitemap_url(f"{SITE}/compare/fractional-cro-network-alternative/", "2026-11-14", "monthly", "0.7"),
-        sitemap_url(f"{SITE}/compare/outbound-agency-vs-fractional-cro/", "2026-11-14", "monthly", "0.7"),
-        sitemap_url(f"{SITE}/compare/revops-consultant-vs-fractional-cro/", "2026-11-14", "monthly", "0.7"),
-        sitemap_url(f"{SITE}/about/", PUBLISHED_STAMP, "monthly", "0.6"),
-        sitemap_url(f"{SITE}/faq/", PUBLISHED_STAMP, "monthly", "0.6"),
+        sitemap_url(f"{SITE}/fractional-cro/", REPOSITION_STAMP, "monthly", "0.8"),
+        sitemap_url(f"{SITE}/fractional-sales-leader/", REPOSITION_STAMP, "monthly", "0.8"),
+        sitemap_url(f"{SITE}/fractional-cro-vs-vp-of-sales/", REPOSITION_STAMP, "monthly", "0.7"),
+        sitemap_url(f"{SITE}/compare/fractional-cro-network-alternative/", REPOSITION_STAMP, "monthly", "0.7"),
+        sitemap_url(f"{SITE}/compare/outbound-agency-vs-fractional-cro/", REPOSITION_STAMP, "monthly", "0.7"),
+        sitemap_url(f"{SITE}/compare/revops-consultant-vs-fractional-cro/", REPOSITION_STAMP, "monthly", "0.7"),
+        sitemap_url(f"{SITE}/about/", REPOSITION_STAMP, "monthly", "0.6"),
         sitemap_url(f"{SITE}/videos/", PUBLISHED_STAMP, "monthly", "0.5"),
     ]
     if PROBLEMS_DIR.is_dir():
         for page in sorted(PROBLEMS_DIR.glob("*/index.html")):
             extra_blocks.append(
-                sitemap_url(f"{SITE}/problems/{page.parent.name}/", PUBLISHED_STAMP, "monthly", "0.8")
+                sitemap_url(f"{SITE}/problems/{page.parent.name}/", REPOSITION_STAMP, "monthly", "0.8")
             )
     ordered = kept + [blog_index] + post_blocks + extra_blocks
     body = "\n".join(ordered)

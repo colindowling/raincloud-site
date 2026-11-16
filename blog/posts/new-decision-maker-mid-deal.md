@@ -10,8 +10,8 @@ tag: Sales
 topic: diagnosis
 target_query: what to do when a new decision maker joins mid deal
 source_pod: MBL tip-video backfill, pod 2026-10-30 (guest kept anonymous)
-hub: /gtm-autopsy/
-hub_label: The 100-Point GTM Autopsy
+hub: /scorecard/
+hub_label: The 100-Point Scorecard
 related:
 - enable-every-buying-committee-stakeholder
 - why-deals-die-after-the-yes
@@ -106,6 +106,6 @@ Keep it simple: "Congratulations on the new role. I've been working with your te
 
 ## If turnover keeps resetting your deals
 
-Fragile, single-threaded deals are a process problem, not bad luck. Stakeholder mapping and multi-threading are part of what I score in the [100-Point GTM Autopsy](/gtm-autopsy/), so you can see how exposed your pipeline is and what to fix first.
+Fragile, single-threaded deals are a process problem, not bad luck. Stakeholder mapping and multi-threading are part of what I score in the [100-Point Scorecard](/scorecard/), so you can see how exposed your pipeline is and what to fix first.
 
-**Deals keep resetting when people change jobs?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=new-decision-maker-mid-deal&utm_content=inbody_text).
+**Deals keep resetting when people change jobs?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point Scorecard](/scorecard/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=new-decision-maker-mid-deal&utm_content=inbody_text).

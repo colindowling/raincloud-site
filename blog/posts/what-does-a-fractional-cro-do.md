@@ -19,37 +19,37 @@ related:
 also:
 - href: /fractional-cro-vs-vp-of-sales/
   label: Fractional CRO vs VP of sales
-- href: /pricing/
+- href: /standing-hour/#pricing
   label: Pricing
 takeaways:
 - A fractional CRO is a part-time revenue operator, not a full-time employee.
 - The useful version rebuilds the motion and leaves it with your team.
 - An open-ended seat that manages reps is a different purchase.
-- I start with a free teardown, then a $5,000 autopsy, then a 90-day build.
+- If you'd rather keep the job and fix what you're already doing, the alternative is the Standing Hour.
 faqs:
 - q: What does a fractional CRO do day to day?
-  a: On an engagement with me, the days are the audit and then the 90-day rebuild. ICP, positioning, the pipeline model, outbound, the scorecard in your CRM, and the playbook. I do not sit in as the manager of your reps.
+  a: The revenue motion. ICP, positioning, the pipeline model, outbound, the scorecard in your CRM, and the playbook. A fractional CRO runs your revenue function. I don't run anything. You keep the job; I make sure you're doing it well.
 - q: Is a fractional CRO the same as a VP of sales?
   a: No. A VP is a full-time employee who runs the team. I do not take that job. The comparison is on the fractional CRO vs VP of sales page.
 - q: What does it cost?
-  a: The 20 Minute Teardown is free. The 100-Point GTM Autopsy is $5,000 and takes ten business days. The 90-day engagement is $37,500. Advisory is $7,500 a month from month four. The schedule is on the pricing page.
+  a: The 20 Minute Teardown is free. The 100-Point Scorecard is $5,000 and takes five business days. The Standing Hour is $4,500 a month. The schedule is on the Standing Hour page.
 ---
-A fractional CRO scores the revenue motion and rebuilds the parts your team will run, instead of joining as a full-time chief revenue officer. I do that work myself. It starts with a free 20 Minute Teardown, then the 100-Point GTM Autopsy if the teardown is useful.
+A fractional CRO scores the revenue motion and rebuilds the parts your team will run, instead of joining as a full-time chief revenue officer. I don't. A fractional CRO runs your revenue function; in the Standing Hour, you keep the job and I make sure you're doing it well. It starts with a free 20 Minute Teardown, then the 100-Point Scorecard if the teardown is useful.
 
-The title is used loosely. Some buyers want a coach for the VP. Some want a firm to assign them a person. Some want the motion fixed and handed back. Only the last one is what I sell. If a fractional person has already come and gone, use the [questions to ask a fractional CRO](/blog/questions-to-ask-a-fractional-cro.html) before you take another meeting.
+The title is used loosely. Some buyers want a coach for the VP. Some want a firm to assign them a person. Some want the motion fixed and handed back. Some want help fixing what they are already doing. Only the last one is what I sell. If a fractional person has already come and gone, use the [questions to ask a fractional CRO](/blog/questions-to-ask-a-fractional-cro.html) before you take another meeting.
 
 ## What does the work look like?
 
-Month one is the foundation: who you sell to, the message, the baseline. Month two puts it in the CRM and the outbound. Month three writes it down so it survives. The detail is on [the engagement page](/gtm-consulting.html). The fees are on [the pricing page](/pricing/).
+In the Standing Hour, the work is an hour a week, same slot: review, recalibrate, plan, and twenty minutes on whichever part of the motion your score says is weakest. Anything we build, we build together on the call. The detail is on [the Standing Hour page](/standing-hour/). The fees are on [the same page](/standing-hour/#pricing).
 
-I run two builds at a time. There is no bench. If you want a roster, that is a [network](/compare/fractional-cro-network-alternative/), and I am the alternative to that.
+I take six clients at a time. There is no bench. If you want a roster, that is a [network](/compare/fractional-cro-network-alternative/), and I am the alternative to that.
 
 ## What does a fractional CRO not do?
 
-I do not carry a quota. I do not manage reps day to day. I do not recruit your next VP. After day 90 your team runs the motion. Advisory, if you want it, starts at month four and is priced on the pricing page.
+I do not carry a quota. I do not manage reps day to day. I do not recruit your next VP. You run the motion. I don't run your outbound, write your content, or manage your campaigns. If what you need is someone to help you fix what you’re already doing, that’s [the Standing Hour](/standing-hour/).
 
 If the company is still one founder and a first seller, you may not need this title at all. Read [the fractional sales leader page](/fractional-sales-leader/) and [when the first sales hire is not working](/blog/first-sales-hire-not-working.html).
 
 ## Where should you start?
 
-Book the [20 Minute Teardown](/15minutepipelineteardown/). If it is useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/): $5,000, ten business days, required before any engagement, credited in full, with a no-questions-asked money-back guarantee.
+Book the [20 Minute Teardown](/scorecard/#teardown). If it is useful, the next step is the [100-Point Scorecard](/scorecard/): $5,000, five business days. Buy it on its own, or let it take month one of the engagement at no extra cost.

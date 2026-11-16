@@ -10,8 +10,8 @@ tag: Messaging
 topic: diagnosis
 target_query: how to keep sales messaging consistent across reps
 source_pod: MBL tip-video backfill, pod 2026-10-28 (guest kept anonymous)
-hub: /gtm-autopsy/
-hub_label: The 100-Point GTM Autopsy
+hub: /scorecard/
+hub_label: The 100-Point Scorecard
 related:
 - define-icp-stop-selling-features
 - founder-story-sales-handoff
@@ -113,6 +113,6 @@ Collect every deck, one-pager and template your team actually sent in the last m
 
 ## If your team's pitch has drifted
 
-Messaging consistency is one of the areas I score in the [100-Point GTM Autopsy](/gtm-autopsy/), alongside the sales process and the materials behind it. If you already know it's a mess, rebuilding the message and enablement is part of [the 90-day engagement](/gtm-consulting.html).
+Messaging consistency is one of the areas I score in the [100-Point Scorecard](/scorecard/), alongside the sales process and the materials behind it. If you already know it's a mess, rebuilding the message and enablement is work we do together in [the Standing Hour](/standing-hour/).
 
-**Not sure your team is telling the same story?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=sales-message-consistency&utm_content=inbody_text).
+**Not sure your team is telling the same story?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point Scorecard](/scorecard/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=sales-message-consistency&utm_content=inbody_text).

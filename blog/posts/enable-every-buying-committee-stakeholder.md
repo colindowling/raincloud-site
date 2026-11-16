@@ -10,8 +10,8 @@ tag: Sales
 topic: diagnosis
 target_query: how to sell to a buying committee
 source_pod: MBL tip-video backfill, pod 2026-10-30 (guest kept anonymous)
-hub: /gtm-autopsy/
-hub_label: The 100-Point GTM Autopsy
+hub: /scorecard/
+hub_label: The 100-Point Scorecard
 related:
 - new-decision-maker-mid-deal
 - why-deals-die-after-the-yes
@@ -113,6 +113,6 @@ Pick your five biggest open deals. For each, write down every role involved in t
 
 ## If your complex deals keep stalling
 
-Multi-threading, stakeholder mapping and buyer enablement are all scored in the [100-Point GTM Autopsy](/gtm-autopsy/). If you need a sales process built around committee deals, with the assets each role needs, that's part of [the 90-day engagement](/gtm-consulting.html).
+Multi-threading, stakeholder mapping and buyer enablement are all scored in the [100-Point Scorecard](/scorecard/). If you need to build a sales process around committee deals, with the assets each role needs, we build it together on the call in [the Standing Hour](/standing-hour/).
 
-**Complex deals taking forever?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point GTM Autopsy](/gtm-autopsy/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=enable-every-buying-committee-stakeholder&utm_content=inbody_text).
+**Complex deals taking forever?** Start with the 20 Minute Teardown. It covers the roughly 40 points of your go-to-market that can be read from the outside, from public sources alone, and I walk you through what I found. If it's useful, the next step is the [100-Point Scorecard](/scorecard/), which scores your whole go-to-market with your data and your team. [Book the 20 Minute Teardown](https://calendly.com/30minutechat/20-minute-go-to-market-w-colin?utm_source=rncld&utm_medium=site&utm_campaign=enable-every-buying-committee-stakeholder&utm_content=inbody_text).
